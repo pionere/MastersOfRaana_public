@@ -11155,9 +11155,9 @@ body: 1,
 &lt;&lt;if $traitrel is 1&gt;&gt;&lt;&lt;set $traitrel to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $traitrel is 3&gt;&gt;&lt;&lt;set $traitrel to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $likeoral lt 0&gt;&gt;&lt;&lt;set $likeoral to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likeanal lt 0&gt;&gt;&lt;&lt;set $likeanal to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likepussy lt 0&gt;&gt;&lt;&lt;set $likepussy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $likeoral=Math.max($likeoral,0)&gt;&gt;
+&lt;&lt;set $likeanal=Math.max($likeanal,0)&gt;&gt;
+&lt;&lt;set $likepussy=Math.max($likepussy,0)&gt;&gt;
 
 
 &lt;&lt;if $back is undefined&gt;&gt;&lt;&lt;set $back = [0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -12376,9 +12376,9 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 &lt;&lt;if $masterstamina gte 80&gt;&gt;&lt;&lt;set $fuckcount+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $fuckskill gte 80&gt;&gt;&lt;&lt;set $fuckcount+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $likeoral lte -10&gt;&gt;&lt;&lt;set $likeoral to -10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likepussy lte -10&gt;&gt;&lt;&lt;set $likepussy to -10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likeanal lte -10&gt;&gt;&lt;&lt;set $likeanal to -10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $likeoral=Math.max($likeoral,-10)&gt;&gt;
+&lt;&lt;set $likepussy=Math.max($likepussy,-10)&gt;&gt;
+&lt;&lt;set $likeanal=Math.max($likeanal,-10)&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -14240,7 +14240,7 @@ What position did you have in mind?
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,1)&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -14299,7 +14299,7 @@ What position did you have in mind?
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,5)&gt;&gt;
 
 &lt;&lt;if $tempstamina lte 0 and $cancelact is false and _readywhip isnot true&gt;&gt;
 
@@ -14507,7 +14507,7 @@ Your choice to continue the act has increased $girlnames &#39;&#39;Fear (+1)&#39
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,5)&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -14731,7 +14731,7 @@ Your continued abuse has increased $girlnames &#39;&#39;Fear (+1)&#39;&#39;&lt;&
 &lt;&lt;if $stampoints lte 1&gt;&gt;&lt;&lt;set $stampoints=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,5)&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -14999,10 +14999,9 @@ Your choice to continue the act has increased $girlnames &#39;&#39;Fear (+1)&#39
 &lt;&lt;include NewLoad&gt;&gt;
 
 
-&lt;&lt;if $arousal gte 2 and $sexfeel lte -2&gt;&gt;&lt;&lt;set $sexfeel to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arousal gte 5 and $sexfeel lte -1&gt;&gt;&lt;&lt;set $sexfeel to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal gte 2&gt;&gt;&lt;&lt;set $sexfeel=Math.max($sexfeel,$arousal gte 5 ? 0 : -1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stampoints=Math.max($stampoints,2)&gt;&gt;
 
 
 &lt;&lt;unset $goingtooff&gt;&gt;
@@ -22796,9 +22795,7 @@ $girlnames &#39;&#39;Corruption (+5)&#39;&#39; has increased! &lt;&lt;set $likes
 &lt;&lt;set $pussyxp+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $tempstamina lt 3&gt;&gt;
-&lt;&lt;set $tempstamina to 3&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,3)&gt;&gt;
 
 &lt;&lt;set $descroll2 to random(1, 5)&gt;&gt;
 
@@ -33391,7 +33388,7 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _price-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _price lte 6&gt;&gt;&lt;&lt;set _price to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _price=Math.max(_price,7)&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
@@ -33490,7 +33487,7 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=112&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _price-=112&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _price lt 80&gt;&gt;&lt;&lt;set _price to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _price=Math.max(_price,80)&gt;&gt;
 
 
 &lt;div class=&quot;row&quot;&gt;
@@ -35467,8 +35464,8 @@ gemstones: random(300,400),
 &lt;&lt;set $stoolbusy to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $rackbusy lt 0&gt;&gt;&lt;&lt;set $rackbusy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $stoolbusy lt 0&gt;&gt;&lt;&lt;set $stoolbusy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $rackbusy=Math.max($rackbusy,0)&gt;&gt;
+&lt;&lt;set $stoolbusy=Math.max($stoolbusy,0)&gt;&gt;
 
 &lt;&lt;if $mastage is undefined&gt;&gt;&lt;&lt;set $mastage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -37488,7 +37485,7 @@ $girlname has a normal and healthy body weight. &lt;br&gt;&lt;br&gt;She might ha
 &lt;&lt;set $arousal+=1&gt;&gt;
 &lt;&lt;set $action to 1&gt;&gt;
 &lt;&lt;set $stress-=1&gt;&gt;
-&lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,1)&gt;&gt;
 
 &lt;&lt;set $refuse2 to false&gt;&gt;
 &lt;&lt;set $refuse3 to false&gt;&gt;
@@ -37715,7 +37712,7 @@ Despite $girlnames obvious rejections, you continue to kiss her body with even m
 &lt;&lt;set $refuse10 to false&gt;&gt;
 &lt;&lt;set $arousal+=2&gt;&gt;
 &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;if $arousal lt 1&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,1)&gt;&gt;
 &lt;&lt;set $bodykissround+=1&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -38167,7 +38164,7 @@ You&#39;ve sustained injuries from the unexpected attack &lt;b&gt;
 &lt;&lt;set $arousal+=2&gt;&gt;
 &lt;&lt;set $pain+=1&gt;&gt;
 &lt;&lt;set $humiliation+=1&gt;&gt;
-&lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,2)&gt;&gt;
 &lt;&lt;if $skillroll lte 3&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist lte 19&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -38460,7 +38457,7 @@ $girlname breaks herself free but remains in your presence.
 
 &lt;&lt;set $action to 4&gt;&gt;
 &lt;&lt;set $arousal+=1&gt;&gt;
-&lt;&lt;if $arousal lte -1&gt;&gt;&lt;&lt;set $arousal=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,0)&gt;&gt;
 &lt;&lt;set $caressround+=1&gt;&gt;
 &lt;&lt;set $stress-=1&gt;&gt;
 &lt;&lt;set $pain-=1&gt;&gt;
@@ -39272,7 +39269,7 @@ She’s very regretful and feels embarrassed after getting naked in front of you
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $chance gte 1 and $willpower gte 1 and $likesadist lte 39&gt;&gt;
-&lt;&lt;if $descroll lte 2&gt;&gt;You’re not met by any obstructions, just a suggestive smile, when you wiggle her undies away from her ankles. The girl is both nervous and aroused – she’s lingering in a state where you have the possibility to catapult this into something ecstatic, but also botch everything if you make the wrong move. &lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll lte 2&gt;&gt;You’re not met by any obstructions, just a suggestive smile, when you wiggle her undies away from her ankles. The girl is both nervous and aroused – she’s lingering in a state where you have the possibility to catapult this into something ecstatic, but also botch everything if you make the wrong move. &lt;&lt;set $arousal=Math.max($arousal,2)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll is 3&gt;&gt;&lt;&lt;if $scarefactor lte 1 and $masterlove gte 20&gt;&gt;The girl giggles as you pull her undies off and both of you laugh when they become stuck on one of her toes.&lt;&lt;else&gt;&gt;Despite your earlier wrong-doings toward the girl, she’s letting this one slip – probably due to a growing need for sexual satisfaction that she hopes will make things better for both of you.&lt;&lt;/if&gt;&gt; After getting naked, she pulls her legs together like a mermaid, signaling that she’s not quite ready to let you thrust yourself into her pussy.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll gte 4&gt;&gt;The girl doesn’t object as you pull them off, but seems a bit uneasy about it. However, she fails to hide her arousal - you notice a shivering flare running through her face when her pussy becomes exposed. &lt;&lt;/if&gt;&gt;
 
@@ -43484,7 +43481,7 @@ Your &#39;&#39;Bondage skill (+1)&#39;&#39; has increased!
 &lt;&lt;if $likesadist lte 30 and $chance gte 20 and $traitpure lte 74&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist gte 31 and $likesadist lte 45 and $skillroll lte 6&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt; &lt;&lt;if $traitpure gte 50&gt;&gt;&lt;&lt;set $traitpure-=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $arousal+=2&gt;&gt;
-&lt;&lt;if $arousal lt 1&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,1)&gt;&gt;
 &lt;&lt;if $descroll gte 4&gt;&gt;&lt;&lt;set $masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $analhook to true&gt;&gt;
@@ -46265,7 +46262,7 @@ Also, I&#39;m gonna make it so nice for you, now that it&#39;s your birthday and
 What device do you want use for this session?
 
 
-&lt;&lt;if $tempstamina lte 1&gt;&gt;&lt;&lt;set $tempstamina to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -46405,7 +46402,7 @@ You have to command $girlname toward the wooden rack and push her firmly into po
 &lt;&lt;if $descroll2 is 5&gt;&gt;After tying the girl&#39;s wrists together, you pull her upward toward the ceiling. Her body is now ready for whatever you had in mind.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal+=1&gt;&gt;
-&lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,1)&gt;&gt;
 
 
 &lt;&lt;if $descroll2 is 3 and $event1 is true and $descroll lt 6&gt;&gt;
@@ -46675,7 +46672,7 @@ $girlname has lost &#39;&#39;3 Health points!&#39;&#39;
 &lt;&lt;if $descroll2 is 5&gt;&gt;After holding her chin up in a dominant way, you begin to tie her to the stool, leaving her shivering from pain and excitement.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal+=2&gt;&gt;
-&lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,2)&gt;&gt;
 
 &lt;&lt;set $pain+=1&gt;&gt;
 &lt;&lt;set $analwear+=7&gt;&gt;
@@ -47260,7 +47257,7 @@ $girlnames &#39;&#39;Defiance (+2)&#39;&#39; has increased even more!
 &lt;&lt;if $descroll gte 4&gt;&gt;Your sadistic domination turns the girl on and she welcomes your hardon with moaning pleasure and shivers of lust.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal+=2&gt;&gt;
-&lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -81848,17 +81845,15 @@ FREE
 
 
 &lt;&lt;set $pain=Math.min($pain,10)&gt;&gt;
-&lt;&lt;if $pain lte 0&gt;&gt;&lt;&lt;set $pain=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pain=Math.max($pain,0)&gt;&gt;
 
 &lt;&lt;set $stress=Math.min($stress,10)&gt;&gt;
-&lt;&lt;if $stress lte 0&gt;&gt;&lt;&lt;set $stress=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stress=Math.max($stress,0)&gt;&gt;
 
 &lt;&lt;set $humiliation=Math.min($humiliation,15)&gt;&gt;
-&lt;&lt;if $humiliation lte 0&gt;&gt;&lt;&lt;set $humiliation=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $humiliation=Math.max($humiliation,0)&gt;&gt;
 
-&lt;&lt;if $likesadist lte 0&gt;&gt;&lt;&lt;set $likesadist to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set $likesadist=Math.max($likesadist,0)&gt;&gt;
 
 
 &lt;&lt;if _nostats isnot true&gt;&gt;
@@ -83534,8 +83529,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set $awega-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;&lt;&lt;set $a5srr-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $a556 lte 0&gt;&gt;&lt;&lt;set $a556 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $a12g lte 0&gt;&gt;&lt;&lt;set $a12g to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $a556=Math.max($a556,0)&gt;&gt;
+&lt;&lt;set $a12g=Math.max($a12g,0)&gt;&gt;
 
 &lt;&lt;set $position=$pos is 3 ? &quot;close&quot; : &quot;far&quot;&gt;&gt;
 
@@ -83665,8 +83660,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $equipped is &quot;neme&quot;&gt;&gt;&lt;&lt;set $a50srr-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $equipped is &quot;r55&quot;&gt;&gt;&lt;&lt;set $a50-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $a556 lte 0&gt;&gt;&lt;&lt;set $a556 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $a12g lte 0&gt;&gt;&lt;&lt;set $a12g to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $a556=Math.max($a556,0)&gt;&gt;
+&lt;&lt;set $a12g=Math.max($a12g,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -83742,8 +83737,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $equipped is &quot;neme&quot;&gt;&gt;&lt;&lt;set $a50srr-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $equipped is &quot;r55&quot;&gt;&gt;&lt;&lt;set $a50-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $a556 lte 0&gt;&gt;&lt;&lt;set $a556 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $a12g lte 0&gt;&gt;&lt;&lt;set $a12g to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $a556=Math.max($a556,0)&gt;&gt;
+&lt;&lt;set $a12g=Math.max($a12g,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -83821,8 +83816,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $equipped is &quot;neme&quot;&gt;&gt;&lt;&lt;set $a50srr-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $equipped is &quot;r55&quot;&gt;&gt;&lt;&lt;set $a50-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $a556 lte 0&gt;&gt;&lt;&lt;set $a556 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $a12g lte 0&gt;&gt;&lt;&lt;set $a12g to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $a556=Math.max($a556,0)&gt;&gt;
+&lt;&lt;set $a12g=Math.max($a12g,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -83891,9 +83886,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $equipped is &quot;neme&quot;&gt;&gt;&lt;&lt;set $a50srr-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $equipped is &quot;r55&quot;&gt;&gt;&lt;&lt;set $a50-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $a556 lte 0&gt;&gt;&lt;&lt;set $a556 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $a12g lte 0&gt;&gt;&lt;&lt;set $a12g to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $a556=Math.max($a556,0)&gt;&gt;
+&lt;&lt;set $a12g=Math.max($a12g,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -84902,7 +84896,7 @@ REMOVED! USE CapCheck passage instead
 
 &lt;&lt;/if&gt;&gt; /* round gte 7 */
 
-&lt;&lt;if $damage lte 0&gt;&gt;&lt;&lt;set $damage=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $damage=Math.max($damage,0)&gt;&gt;
 
 
 
@@ -88206,7 +88200,7 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;include TellCrew&gt;&gt;
 
-&lt;&lt;if $masterhealth lte 0&gt;&gt;&lt;&lt;set $masterhealth=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.max($masterhealth,1)&gt;&gt;
 
 &lt;&lt;if $combat is 1&gt;&gt;
 
@@ -88738,9 +88732,7 @@ His response is adamant and professional. You&#39;re facing a skilled soldier th
 &lt;&lt;if $combat is 10&gt;&gt;
 
 &lt;&lt;set $a9mm+=12&gt;&gt;
-&lt;&lt;if $masterhealth lte 39&gt;&gt;
-&lt;&lt;set $masterhealth=40&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.max($masterhealth,40)&gt;&gt;
 &lt;&lt;set $masterhealth=Math.min($masterhealth,100)&gt;&gt;
 &lt;&lt;set $specom to 1&gt;&gt;
 &lt;&lt;set $activeweapon to &quot;pistol&quot;&gt;&gt;
@@ -102725,7 +102717,7 @@ You discover several intriguing pieces of evidence in a top-floor office - lists
 &lt;&lt;include Journal&gt;&gt;
 
 /* ELLEN JOB TERMINATION CHECKER */
-&lt;&lt;if $npc.av50.masterlove lt 40&gt;&gt;&lt;&lt;set $npc.av50.masterlove to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $npc.av50.masterlove=Math.max($npc.av50.masterlove,30)&gt;&gt;
 &lt;&lt;set $npc.av50.scarefactor=Math.min($npc.av50.scarefactor,0)&gt;&gt;
 
 &lt;&lt;set $tookellen2 to true&gt;&gt;
@@ -105185,7 +105177,7 @@ You regain a small amount of &#39;&#39;Health (+3)&#39;&#39; and &#39;&#39;Stami
 &lt;&lt;set $cumbuild+=2&gt;&gt;
 &lt;&lt;set $hascummed to false&gt;&gt;
 &lt;&lt;set $arousal+=1&gt;&gt;
-&lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.max($arousal,0)&gt;&gt;
 &lt;&lt;set $humiliation+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -110398,7 +110390,7 @@ The work is tedious and exhausting, causing a drop in &lt;b&gt;Stamina points (-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stampoints=Math.max($stampoints,1)&gt;&gt;
 &lt;&lt;set $action3 to false&gt;&gt;
 
 /*ACTION3 is TRUE ENDS BELOW*/
@@ -148211,7 +148203,7 @@ You supply $girlname with some food that you hastily prepare in your kitchen.
 
 &lt;&lt;passmins 30&gt;&gt;
 &lt;&lt;set $hunger+=35&gt;&gt;
-&lt;&lt;if $hunger lte 35&gt;&gt;&lt;&lt;set $hunger=35&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $hunger=Math.max($hunger,35)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -194027,7 +194019,7 @@ $connect units
 &lt;&lt;set _fightpics to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.tempstamina lt 2&gt;&gt;&lt;&lt;set _npc.tempstamina=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.tempstamina=Math.max(_npc.tempstamina,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -195222,7 +195214,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _npc.dex gte 60&gt;&gt;&lt;&lt;set _opreward-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.meleeweapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set _opreward+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.meleeweapon is &quot;fists&quot; and _opweapon is &quot;Power Katana&quot;&gt;&gt;&lt;&lt;set _opreward+=600&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _opreward lte 50&gt;&gt;&lt;&lt;set _opreward to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _opreward=Math.max(_opreward,50)&gt;&gt;
 
 &lt;&lt;if _npc.melee lte 25&gt;&gt;&lt;&lt;set _opreward2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _opreward2-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -195232,7 +195224,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _npc.dex gte 60&gt;&gt;&lt;&lt;set _opreward2-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.meleeweapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set _opreward2+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.meleeweapon is &quot;fists&quot; and _opweapon2 is &quot;Power Axe&quot;&gt;&gt;&lt;&lt;set _opreward2+=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _opreward2 lte 50&gt;&gt;&lt;&lt;set _opreward2 to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _opreward2=Math.max(_opreward2,50)&gt;&gt;
 
 
 &lt;div class=&quot;row&quot;&gt;
@@ -195473,8 +195465,8 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _mfame gte 1&gt;&gt;&lt;&lt;set _npc.warfame+=_mfame&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.health lte 10&gt;&gt;&lt;&lt;set _npc.health to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.tempstamina lte 10&gt;&gt;&lt;&lt;set _npc.tempstamina to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.health=Math.max(_npc.health,10)&gt;&gt;
+&lt;&lt;set _npc.tempstamina=Math.max(_npc.tempstamina,10)&gt;&gt;
 
 &lt;&lt;if _npc.killed gte 0&gt;&gt;
 &lt;&lt;set _npc.killed+=1&gt;&gt;
@@ -224561,7 +224553,7 @@ units&lt;/center&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _foodprice-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 15&gt;&gt;&lt;&lt;set _foodprice-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _foodprice lte 0&gt;&gt;&lt;&lt;set _foodprice to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _foodprice=Math.max(_foodprice,1)&gt;&gt;
 
 &lt;center&gt;&#39;&#39;OFFERED PRICE: &amp;#36;_foodprice/unit&#39;&#39;&lt;/center&gt;
 &lt;center&gt;&#39;&#39;Owned:&#39;&#39; $foodstuff units&lt;br&gt;
@@ -233792,16 +233784,16 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $faction.ikaanos.control lte 9&gt;&gt;&lt;&lt;set $woodcap-=50&gt;&gt;&lt;&lt;set $steelcap-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.state is 1 and $faction.ikaanos.men lt 200&gt;&gt;&lt;&lt;set $faction.ikaanos.men to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.state is 1&gt;&gt;&lt;&lt;set $faction.ikaanos.men=Math.max($faction.ikaanos.men,200)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.state is 2 and $faction.ikaanos.men lt 150&gt;&gt;&lt;&lt;set $faction.ikaanos.men to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.state is 2&gt;&gt;&lt;&lt;set $faction.ikaanos.men=Math.max($faction.ikaanos.men,150)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $woodcap lt 0&gt;&gt;&lt;&lt;set $woodcap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $steelcap lt 0&gt;&gt;&lt;&lt;set $steelcap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $connectcap lt 0&gt;&gt;&lt;&lt;set $connectcap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $woodcap=Math.max($woodcap,0)&gt;&gt;
+&lt;&lt;set $steelcap=Math.max($steelcap,0)&gt;&gt;
+&lt;&lt;set $connectcap=Math.max($connectcap,0)&gt;&gt;
 
 &lt;&lt;if $knifecap gte 3000&gt;&gt;&lt;&lt;set $knifecap-=random(60, 200)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $swordcap gte 3000&gt;&gt;&lt;&lt;set $swordcap-=random(10, 200)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -233982,7 +233974,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set $plstock-=15&gt;&gt;
 &lt;&lt;set $plstock+=random(10, 25)&gt;&gt;
 &lt;&lt;if $diff is 3&gt;&gt;&lt;&lt;set $plstock-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $plstock lte 0&gt;&gt;&lt;&lt;set $plstock to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $plstock=Math.max($plstock,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -233991,7 +233983,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set $magstock-=15&gt;&gt;
 &lt;&lt;set $magstock+=random(12, 35)&gt;&gt;
 &lt;&lt;if $diff is 3&gt;&gt;&lt;&lt;set $magstock-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $magstock lte 0&gt;&gt;&lt;&lt;set $magstock to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $magstock=Math.max($magstock,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -234473,14 +234465,14 @@ sur: 0,
 
 
 &lt;&lt;if $nurq isnot undefined&gt;&gt;
-&lt;&lt;if $nurq.war lt 0&gt;&gt;&lt;&lt;set $nurq.war to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.phys lt 0&gt;&gt;&lt;&lt;set $nurq.phys to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.cor lt 0&gt;&gt;&lt;&lt;set $nurq.cor to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.will lt 0&gt;&gt;&lt;&lt;set $nurq.will to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.dis lt 0&gt;&gt;&lt;&lt;set $nurq.dis to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.int lt 0&gt;&gt;&lt;&lt;set $nurq.int to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.edu lt 0&gt;&gt;&lt;&lt;set $nurq.edu to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.sur lt 0&gt;&gt;&lt;&lt;set $nurq.sur to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $nurq.war=Math.max($nurq.war,0)&gt;&gt;
+&lt;&lt;set $nurq.phys=Math.max($nurq.phys,0)&gt;&gt;
+&lt;&lt;set $nurq.cor=Math.max($nurq.cor,0)&gt;&gt;
+&lt;&lt;set $nurq.will=Math.max($nurq.will,0)&gt;&gt;
+&lt;&lt;set $nurq.dis=Math.max($nurq.dis,0)&gt;&gt;
+&lt;&lt;set $nurq.int=Math.max($nurq.int,0)&gt;&gt;
+&lt;&lt;set $nurq.edu=Math.max($nurq.edu,0)&gt;&gt;
+&lt;&lt;set $nurq.sur=Math.max($nurq.sur,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -234880,10 +234872,10 @@ sur: 0,
 
 
 &lt;&lt;if $faction isnot undefined&gt;&gt;
-&lt;&lt;if $faction.ikaanos.lib lt 0&gt;&gt;&lt;&lt;set $faction.ikaanos.lib to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.bandit.men lte 100&gt;&gt;&lt;&lt;set $faction.bandit.men to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.christian.men lte 10&gt;&gt;&lt;&lt;set $faction.christian.men to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.viking.men lte 10&gt;&gt;&lt;&lt;set $faction.viking.men to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.ikaanos.lib=Math.max($faction.ikaanos.lib,0)&gt;&gt;
+&lt;&lt;set $faction.bandit.men=Math.max($faction.bandit.men,100)&gt;&gt;
+&lt;&lt;set $faction.christian.men=Math.max($faction.christian.men,10)&gt;&gt;
+&lt;&lt;set $faction.viking.men=Math.max($faction.viking.men,10)&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -235019,7 +235011,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if $chdo is 1 or $chdo is 3 or $chdo is 5 or $chdo is 7 or $chdo is 9 or $chdo is 11&gt;&gt;&lt;&lt;set $chdo+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $faction isnot undefined&gt;&gt;
-&lt;&lt;if $faction.ikaanos.money lte 100&gt;&gt;&lt;&lt;set $faction.ikaanos.money to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.ikaanos.money=Math.max($faction.ikaanos.money,100)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _clothi to true&gt;&gt;
@@ -243419,7 +243411,7 @@ Your session has become too much for _girlname, who ends it by wriggling herself
 
 &lt;&lt;set $noclick to true&gt;&gt;
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;&lt;&lt;set $tempstamina to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $tempstamina=Math.max($tempstamina,1)&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -262702,7 +262694,7 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;if $raidchance gte 1&gt;&gt; &lt;&lt;set $masterhealth-=random(1,25)&gt;&gt; &lt;&lt;else&gt;&gt;&lt;&lt;set $masterhealth-=random(15,25)&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $raiderstr gte 75&gt;&gt;&lt;&lt;set $masterhealth-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterhealth lte 0&gt;&gt;&lt;&lt;set $masterhealth to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.max($masterhealth,1)&gt;&gt;
 
 &lt;&lt;set $raiderattack to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt; /* raiderattack is 1 ends */
@@ -311790,10 +311782,10 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.oralwear=Math.min(_npc.oralwear,150)&gt;&gt;
 &lt;&lt;set _npc.nipplewear=Math.min(_npc.nipplewear,150)&gt;&gt;
 
-&lt;&lt;if _npc.pussywear lt 0&gt;&gt;&lt;&lt;set _npc.pussywear to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.analwear lt 0&gt;&gt;&lt;&lt;set _npc.analwear to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.oralwear lt 0&gt;&gt;&lt;&lt;set _npc.oralwear to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.nipplewear lt 0&gt;&gt;&lt;&lt;set _npc.nipplewear to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.pussywear=Math.max(_npc.pussywear,0)&gt;&gt;
+&lt;&lt;set _npc.analwear=Math.max(_npc.analwear,0)&gt;&gt;
+&lt;&lt;set _npc.oralwear=Math.max(_npc.oralwear,0)&gt;&gt;
+&lt;&lt;set _npc.nipplewear=Math.max(_npc.nipplewear,0)&gt;&gt;
 
 &lt;&lt;if _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hygiene to 60&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -311908,7 +311900,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.devotion+=random(-2, 2)&gt;&gt;
 &lt;&lt;if _npc.willpower lte 4 and _npc.devotion gte 10 and $lossroll lte 2&gt;&gt;&lt;&lt;set _npc.devotion-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.willpower gte 20 and _npc.traitrel is 5 and $lossroll lte 2 and $faction.ikaanos.corruption gte 75 and _npc.likesadist lte 29&gt;&gt;&lt;&lt;set _npc.devotion+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.devotion lt 0&gt;&gt;&lt;&lt;set _npc.devotion to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.devotion=Math.max(_npc.devotion,0)&gt;&gt;
 
 
 /* SIBLING TRAIT */
@@ -312093,8 +312085,8 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if _npc.happiness gte 91&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.happiness gte 93 and _npc.age lte 19&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _npc.happiness=Math.min(_npc.happiness,100)&gt;&gt;
-&lt;&lt;if _npc.happiness lte -16&gt;&gt;&lt;&lt;set _npc.happiness=-15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove lte -16&gt;&gt;&lt;&lt;set _npc.masterlove=-15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.happiness=Math.max(_npc.happiness,-15)&gt;&gt;
+&lt;&lt;set _npc.masterlove=Math.max(_npc.masterlove,-15)&gt;&gt;
 
 
 
@@ -312129,7 +312121,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 
 &lt;&lt;if _ange is 1&gt;&gt;&lt;&lt;set _npc.scarefactor-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.scarefactor lt 0&gt;&gt;&lt;&lt;set _npc.scarefactor=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.scarefactor=Math.max(_npc.scarefactor,0)&gt;&gt;
 
 
 
@@ -312140,7 +312132,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if _npc.bondage is 0&gt;&gt;&lt;&lt;set _npc.afraid-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.bondage is 0 and _npc.traitjaded gte 90&gt;&gt;&lt;&lt;set _npc.afraid-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.willpower gte 70&gt;&gt;&lt;&lt;set _npc.afraid-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.afraid lt 0&gt;&gt;&lt;&lt;set _npc.afraid to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.afraid=Math.max(_npc.afraid,0)&gt;&gt;
 
 
 
@@ -312158,7 +312150,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.likesadist=Math.min(_npc.likesadist,100)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.likesadist lt 0&gt;&gt;&lt;&lt;set _npc.likesadist to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.likesadist=Math.max(_npc.likesadist,0)&gt;&gt;
 
 
 /* Aisha only */
@@ -312816,7 +312808,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 
 /* CAP SETTERS */
 
-&lt;&lt;if _npc.charisma lt 5&gt;&gt;&lt;&lt;set _npc.charisma to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.charisma=Math.max(_npc.charisma,5)&gt;&gt;
 
 
 
@@ -313063,8 +313055,8 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 &lt;&lt;set $eventroll66 to -1&gt;&gt;&lt;&lt;set _event66 to -1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.bondage is 1 and _npc.health lt -30&gt;&gt;
-&lt;&lt;set _npc.health to -30&gt;&gt;
+&lt;&lt;if _npc.bondage is 1&gt;&gt;
+&lt;&lt;set _npc.health=Math.max(_npc.health,-30)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -314753,14 +314745,15 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;set $repairfester=Math.min($repairfester,500)&gt;&gt;
 &lt;&lt;set $freedomfester=Math.min($freedomfester,200)&gt;&gt;
 
-&lt;&lt;if $corfester lt 0&gt;&gt;&lt;&lt;set $corfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $purefester lt 0&gt;&gt;&lt;&lt;set $purefester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hardfester lt 0&gt;&gt;&lt;&lt;set $hardfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workfester lt 0&gt;&gt;&lt;&lt;set $workfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $goodfester lt 0&gt;&gt;&lt;&lt;set $goodfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $badfester lt 0&gt;&gt;&lt;&lt;set $badfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester lt 0&gt;&gt;&lt;&lt;set $repairfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $freedomfester lt 0&gt;&gt;&lt;&lt;set $freedomfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $corfester=Math.max($corfester,0)&gt;&gt;
+&lt;&lt;set $purefester=Math.max($purefester,0)&gt;&gt;
+&lt;&lt;set $hardfester=Math.max($hardfester,0)&gt;&gt;
+&lt;&lt;set $workfester=Math.max($workfester,0)&gt;&gt;
+&lt;&lt;set $goodfester=Math.max($goodfester,0)&gt;&gt;
+&lt;&lt;set $badfester=Math.max($badfester,0)&gt;&gt;
+&lt;&lt;set $repairfester=Math.max($repairfester,0)&gt;&gt;
+&lt;&lt;set $freedomfester=Math.max($freedomfester,0)&gt;&gt;
+
 </tw-passagedata><tw-passagedata pid="454" name="BondRules2" tags="nobr" position="3625,1475" size="100,100">&lt;&lt;set _bondroll to random(1, 6)&gt;&gt;
 &lt;&lt;set _bondroll2 to random(1, 100)&gt;&gt;
 
@@ -315630,7 +315623,7 @@ girlname: _npc.girlname
 &lt;&lt;if $diff lte 2&gt;&gt;&lt;&lt;set _dmg-=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $diff lte 1&gt;&gt;&lt;&lt;set _dmg to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _dmg lte 0&gt;&gt;&lt;&lt;set _dmg to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dmg=Math.max(_dmg,0)&gt;&gt;
 
 
 /* main damage reduction script */
@@ -315802,7 +315795,7 @@ girlname: _npc.girlname
 &lt;&lt;if $diff lte 2&gt;&gt;&lt;&lt;set _dmg-=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $diff lte 1&gt;&gt;&lt;&lt;set _dmg to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _dmg lte 0&gt;&gt;&lt;&lt;set _dmg to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dmg=Math.max(_dmg,0)&gt;&gt;
 
 &lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set _testi to _dmg&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -320069,9 +320062,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.lube to $lube&gt;&gt;
 &lt;&lt;set _npc.domass to $domass&gt;&gt;
 &lt;&lt;set _npc.cloth to $cloth&gt;&gt;
-&lt;&lt;set _npc.toughness to $traittough&gt;&gt;
-
-&lt;&lt;if $traittough lte 24&gt;&gt;&lt;&lt;set _npc.toughness to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.toughness = Math.max($traittough,25)&gt;&gt;
 
 &lt;&lt;set _npc.happiness = $happiness&gt;&gt;
 &lt;&lt;set _npc.str = $av_str&gt;&gt;
@@ -320155,7 +320146,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $age gte 35&gt;&gt;&lt;&lt;set _npc.fertility-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $age gte 45&gt;&gt;&lt;&lt;set _npc.fertility-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.fertility lte 0&gt;&gt;&lt;&lt;set _npc.fertility to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.fertility=Math.max(_npc.fertility,0)&gt;&gt;
 
 &lt;&lt;set _npc.seload to 0&gt;&gt;
 
@@ -327541,7 +327532,7 @@ Clearing _girlname&#39;s convict status &lt;br&gt; costs 1,000 Influence and has
 
 &lt;&lt;include MelCheck&gt;&gt;
 
-&lt;&lt;if $masterstamina lte 3&gt;&gt;&lt;&lt;set $masterstamina to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterstamina=Math.max($masterstamina,3)&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;training &lt;&lt;if $adpos2 gte 1&gt;&gt;(&lt;&lt;if $adpos2 is 1&gt;&gt;Strength&lt;&lt;/if&gt;&gt;&lt;&lt;if $adpos2 is 2&gt;&gt;Stamina&lt;&lt;/if&gt;&gt;&lt;&lt;if $adpos2 is 3&gt;&gt;Dexterity&lt;&lt;/if&gt;&gt;&lt;&lt;if $adpos2 is 4&gt;&gt;Melee&lt;&lt;/if&gt;&gt;&lt;&lt;if $adpos2 is 5&gt;&gt;Ranged&lt;&lt;/if&gt;&gt;&lt;&lt;if $adpos2 is 6&gt;&gt;Philosophy&lt;&lt;/if&gt;&gt;)&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
@@ -330276,7 +330267,7 @@ She turns silent in your presence. There&#39;s no doubt she&#39;s upset about so
 &lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $foodstuff lt 0&gt;&gt;&lt;&lt;set $foodstuff to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $foodstuff=Math.max($foodstuff,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -337068,7 +337059,7 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $defcount lte 0&gt;&gt;&lt;&lt;set $defcount to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $defcount=Math.max($defcount,0)&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -340231,13 +340222,13 @@ OLD IGNORE
 &lt;&lt;set _cboards to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _steel lt 0&gt;&gt;&lt;&lt;set _steel to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _connect lt 0&gt;&gt;&lt;&lt;set _connect to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _dura lt 0&gt;&gt;&lt;&lt;set _dura to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _scrap lt 0&gt;&gt;&lt;&lt;set _scrap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _gold lt 0&gt;&gt;&lt;&lt;set _gold to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cboards lt 0&gt;&gt;&lt;&lt;set _cboards to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cloth lt 0&gt;&gt;&lt;&lt;set _cloth to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _steel=Math.max(_steel,0)&gt;&gt;
+&lt;&lt;set _connect=Math.max(_connect,0)&gt;&gt;
+&lt;&lt;set _dura=Math.max(_dura,0)&gt;&gt;
+&lt;&lt;set _scrap=Math.max(_scrap,0)&gt;&gt;
+&lt;&lt;set _gold=Math.max(_gold,0)&gt;&gt;
+&lt;&lt;set _cboards=Math.max(_cboards,0)&gt;&gt;
+&lt;&lt;set _cloth=Math.max(_cloth,0)&gt;&gt;
 
 
 
@@ -340283,7 +340274,7 @@ OLD IGNORE
 &lt;&lt;/if&gt;&gt;
 
 /* merch negative checker */
-&lt;&lt;if _fact.other1 lt 0&gt;&gt;&lt;&lt;set _fact.other1=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _fact.other1=Math.max(_fact.other1,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -340340,7 +340331,7 @@ OLD IGNORE
 
 &lt;&lt;set _finalass = Math.round(_finalass)&gt;&gt;
 
-&lt;&lt;if _finalass lt 0&gt;&gt;&lt;&lt;set _finalass to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _finalass=Math.max(_finalass,0)&gt;&gt;
 
 
 /* common points are added to workshop pool */
@@ -340364,7 +340355,7 @@ OLD IGNORE
 &lt;&lt;/if&gt;&gt;
 
 /* merch negative checker */
-&lt;&lt;if _fact.other1 lt 0&gt;&gt;&lt;&lt;set _fact.other1=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _fact.other1=Math.max(_fact.other1,0)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -340406,7 +340397,7 @@ OLD IGNORE
 
 
 /* merch negative checker */
-&lt;&lt;if _fact.other1 lt 0&gt;&gt;&lt;&lt;set _fact.other1=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _fact.other1=Math.max(_fact.other1,0)&gt;&gt;
 &lt;&lt;set _fact.other1 = Math.round(_fact.other1)&gt;&gt;
 
 
@@ -341031,8 +341022,7 @@ OLD IGNORE
 &lt;&lt;for _libcheck range $mch&gt;&gt;
 &lt;&lt;if _libcheck.type is 42&gt;&gt;
 &lt;&lt;set _libcount+=1&gt;&gt;
-&lt;&lt;if _libcheck.level2 gte $liblevel&gt;&gt;&lt;&lt;set $liblevel to _libcheck.level2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $liblevel=Math.max($liblevel,_libcheck.level2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
@@ -346615,7 +346605,7 @@ This unlawful act has also negatively affected your &#39;&#39;Influence (-500)&#
 &lt;&lt;set _shrinebonus+=$mch.shrine.level2&gt;&gt;
 &lt;&lt;if $swamploot2 gte 2 and $mcrel.faith is 5&gt;&gt;&lt;&lt;set _shrinebonus+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $masterstamina lte 3&gt;&gt;&lt;&lt;set $masterstamina to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterstamina=Math.max($masterstamina,3)&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;Sermons &amp; lectures&lt;/div&gt;
 
@@ -384047,14 +384037,13 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 
 /* low nursery gives base points */
 
-&lt;&lt;if $pt_war lte 9&gt;&gt;&lt;&lt;set $pt_war to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pt_phys lte 9&gt;&gt;&lt;&lt;set $pt_phys to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pt_will lte 9&gt;&gt;&lt;&lt;set $pt_will to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pt_dis lte 9&gt;&gt;&lt;&lt;set $pt_dis to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pt_int lte 9&gt;&gt;&lt;&lt;set $pt_int to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pt_edu lte 9&gt;&gt;&lt;&lt;set $pt_edu to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pt_sur lte 9&gt;&gt;&lt;&lt;set $pt_sur to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $pt_war=Math.max($pt_war,10)&gt;&gt;
+&lt;&lt;set $pt_phys=Math.max($pt_phys,10)&gt;&gt;
+&lt;&lt;set $pt_will=Math.max($pt_will,10)&gt;&gt;
+&lt;&lt;set $pt_dis=Math.max($pt_dis,10)&gt;&gt;
+&lt;&lt;set $pt_int=Math.max($pt_int,10)&gt;&gt;
+&lt;&lt;set $pt_edu=Math.max($pt_edu,10)&gt;&gt;
+&lt;&lt;set $pt_sur=Math.max($pt_sur,10)&gt;&gt;
 
 &lt;&lt;set $pt_war = Math.round($pt_war)&gt;&gt;
 &lt;&lt;set $pt_phys = Math.round($pt_phys)&gt;&gt;
@@ -384143,7 +384132,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 
 &lt;&lt;set _npc.likesadist to $nurq.cor/2&gt;&gt;
 &lt;&lt;set _npc.likesadist = Math.round(_npc.likesadist)&gt;&gt;
-&lt;&lt;if _npc.likesadist lt 0&gt;&gt;&lt;&lt;set _npc.likesadist to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.likesadist = Math.max(_npc.likesadist,0)&gt;&gt;
 
 
 
@@ -393119,9 +393108,9 @@ You fail to take your dissidence up to The Senate, who&#39;s able to conclude to
 
 /* Removes first wife from salary demands */
 &lt;&lt;if _npc.status is 10 and _npc.actnpc is $firstwife&gt;&gt;
-&lt;&lt;if _happgain lt 0&gt;&gt;&lt;&lt;set _happgain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _happgain=Math.max(_happgain,0)&gt;&gt;
 &lt;&lt;set _angergain=Math.min(_angergain,1)&gt;&gt;
-&lt;&lt;if _affgain lt 0&gt;&gt;&lt;&lt;set _affgain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _affgain=Math.max(_affgain,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -398664,7 +398653,7 @@ I&#39;ve missed you dearly, Master. This is… something I never excepted. I can
 &lt;&lt;set $npc.av11.aw-=5&gt;&gt;
 &lt;&lt;set $npc.av11.dex+=5&gt;&gt;
 &lt;&lt;set $npc.av11.prest+=20&gt;&gt;
-&lt;&lt;if $npc.av11.lesbian lte 29&gt;&gt;&lt;&lt;set $npc.av11.lesbian to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $npc.av11.lesbian=Math.max($npc.av11.lesbian,30)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
