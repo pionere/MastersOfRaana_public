@@ -11196,13 +11196,7 @@ body: 1,
 &lt;&lt;if $catfirst is true and $girlid is 13&gt;&gt;&lt;&lt;set _catsay to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $girlid is 13 and $masterlove gte 60 and $quest_cat lte 3&gt;&gt;&lt;&lt;set $masterlove to 59&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $girlid is 13 and $masterlove gte 75 and $quest_cat gte 4 and $quest_cat lte 23&gt;&gt;&lt;&lt;set $masterlove to 74&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $girlid is 13 and $masterlove gte 90 and $quest_cat is 23&gt;&gt;&lt;&lt;set $masterlove to 89&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if $girlid is 13 and $quest_cat lte 23&gt;&gt;&lt;&lt;set $masterlove=Math.min($masterlove,$quest_cat lte 3 ? 59 : 74)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -23873,7 +23867,7 @@ Her &#39;&#39;WILLPOWER (-1)&#39;&#39; has decreased!
 &lt;&lt;set $likeoral-=1&gt;&gt;
 &lt;&lt;set $masterlove-=1&gt;&gt;
 &lt;&lt;set $humiliation+=2&gt;&gt;
-&lt;&lt;if $sexfeel gt 2&gt;&gt;&lt;&lt;set $sexfeel=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $sexfeel=Math.min($sexfeel,2)&gt;&gt;
 
 &lt;&lt;if $descroll3 lte 1&gt;&gt;The girl expresses both shock and disgust but her obedience makes her totally devoid of complaints or objections. She resorts to clearing her eyes out from the oozing spunk, using slow, meticulous strokes. $girlnames panting heavily, however, trying to regain some form of control after the vicious degradation you thought would be a pleasant end to your act.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 2&gt;&gt;The girl utters a cry of disgust when her eyelids are layered with spunk. And as the oozing jizm streams down to her mouth and over her chin, $girlname is beset by an even worse state of dismay, while desperately trying to get rid of the mess in her face.&lt;&lt;/if&gt;&gt;
@@ -24315,7 +24309,7 @@ Oh… Fuck… (aroused, nervous giggle)… Why am I feeling like this… Mmmh…
 &lt;&lt;set $girlroll2 to random(1, 4)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mcpower lte 150&gt;&gt;&lt;&lt;set $masteradmin to $mcpower&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $masteradmin to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masteradmin=Math.min($mcpower,150)&gt;&gt;
 &lt;&lt;set $masteradmin+=$masterint&gt;&gt;
 &lt;&lt;set $masteradmin+=$aca&gt;&gt;
 &lt;&lt;set $masteradmin+=$tech&gt;&gt;
@@ -35511,7 +35505,7 @@ gemstones: random(300,400),
 &lt;&lt;unset $onlyonce&gt;&gt;
 
 
-&lt;&lt;if $mcrel.devotion gte 131&gt;&gt;&lt;&lt;set $mcrel.devotion to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mcrel.devotion=Math.min($mcrel.devotion,130)&gt;&gt;
 
 
 &lt;&lt;unset $comesfromcity&gt;&gt;
@@ -35625,7 +35619,7 @@ gemstones: random(300,400),
 
 
 
-&lt;&lt;if $stampoints gte $masterstamina&gt;&gt;&lt;&lt;set $stampoints=$masterstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stampoints=Math.min($stampoints,$masterstamina)&gt;&gt;
 
 
 &lt;&lt;if $owncrossbow lte 0 and $activeweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $activeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;set $meleeequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -37062,7 +37056,7 @@ $girlname has a normal and healthy body weight. &lt;br&gt;&lt;br&gt;She might ha
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $masterhealth gte $mastermaxhealth&gt;&gt;&lt;&lt;set $masterhealth=$mastermaxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.min($masterhealth,$mastermaxhealth)&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="Bathroom" tags="no-transition gray" position="400,1300" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;div id=&quot;borderwrap&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
@@ -39372,7 +39366,7 @@ You botch your attempt at enticing $girlname when you bite her nipples way too h
 &lt;&lt;set $refuse7c to true&gt;&gt;
 &lt;&lt;set $arousal-=2&gt;&gt;
 &lt;&lt;set $pain+=1&gt;&gt;
-&lt;&lt;if $arousal gt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $descroll gte 4&gt;&gt;
@@ -43461,7 +43455,7 @@ Your &#39;&#39;Bondage skill (+1)&#39;&#39; has increased!
 &lt;&lt;set $analwear+=3&gt;&gt;
 &lt;&lt;if $analxp lte 7 and $skillroll lte 40&gt;&gt;&lt;&lt;set $analxp+=1&gt;&gt; &lt;br&gt;&lt;br&gt;The girl&#39;s &#39;&#39;Anal proficiency (+1)&#39;&#39; has increased! &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $arousal-=1&gt;&gt;
-&lt;&lt;if $arousal gt 3&gt;&gt;&lt;&lt;set $arousal=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,3)&gt;&gt;
 &lt;&lt;if $likesadist gte 3 and $chance lte 0&gt;&gt;&lt;&lt;set $likesadist-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $analhook to true&gt;&gt;
 &lt;&lt;set _justhooked to true&gt;&gt;
@@ -51913,7 +51907,7 @@ Your cock is very unclean. It smells from sweat, urine, and old body fluids. You
 &lt;&lt;set $refuseoral to true&gt;&gt;
 &lt;&lt;set $pic to 22&gt;&gt;
 &lt;&lt;set $arousal-=3&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;set $action1 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -51936,7 +51930,7 @@ Your cock is very unclean. It smells from sweat, urine, and old body fluids. You
 &lt;&lt;set $refuseoral to true&gt;&gt;
 &lt;&lt;set $arousal-=3&gt;&gt;
 &lt;&lt;set $pic to 22&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -51977,7 +51971,7 @@ Your cock reeks of foulness! It&#39;s visually dirty from dried body fluids, wit
 &lt;&lt;if $descroll is 4&gt;&gt;$girlname grabs your throbbing penis with her mouth wide open, ready to take it deep down her throat at your command. She&#39;s rocked by uncontrollable shivers of disgust, however, signaling that she finds this ordeal both horrible and revolting. &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal-=5&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;if $likesadist lte 39&gt;&gt;&lt;&lt;set $masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -52002,7 +51996,7 @@ Your cock reeks of foulness! It&#39;s visually dirty from dried body fluids, wit
 &lt;&lt;if $likesadist lte 39&gt;&gt;&lt;&lt;set $masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $arousal-=5&gt;&gt;
 &lt;&lt;set $pic to 22&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -52026,7 +52020,7 @@ Your cock reeks of foulness! It&#39;s visually dirty from dried body fluids, wit
 &lt;&lt;set $arousal-=5&gt;&gt;
 &lt;&lt;set $pic to 22&gt;&gt;
 &lt;&lt;set $respect-=1&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -52053,7 +52047,7 @@ Her &#39;&#39;Affection (-3)&#39;&#39; toward you has decreased!
 &lt;&lt;set $arousal-=5&gt;&gt;
 &lt;&lt;set $pic to 22&gt;&gt;
 &lt;&lt;set $respect-=1&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -52094,7 +52088,7 @@ You signal that you want the girl to begin her blowjob.
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal-=2&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $masterfilth gte 25 and $masterfilth lte 49&gt;&gt;
@@ -52104,7 +52098,7 @@ You signal that you want the girl to begin her blowjob.
 &lt;&lt;if $descroll is 4&gt;&gt;$girlname doesn’t react at all when her mouth tastes your sweat-covered cock. She inserts it really deep, like a good &lt;&lt;if $wsex gte 1&gt;&gt;wife&lt;&lt;else&gt;&gt;slave&lt;&lt;/if&gt;&gt; should, and presses her soft tongue against the underside of your shaft while it slowly lodges itself in her throat.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal-=2&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $masterfilth gte 50&gt;&gt;
@@ -52127,7 +52121,7 @@ You signal that you want the girl to begin her blowjob.
 &lt;&lt;if $descroll is 4&gt;&gt;You hear a sigh of disgust as your penis invades $girlnames mouth with a sour vileness. She almost pulls it out but manages to restrain herself and continue with the oral act she agreed to perform.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal-=2&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -52139,7 +52133,7 @@ You signal that you want the girl to begin her blowjob.
 &lt;&lt;if $descroll is 4&gt;&gt; The girl coughs in response to the awful taste that fills her mouth. She’s clearly disgusted and fights hard to maintain your penis inside her, but she intends to proceed with the oral act for now, despite your bad hygiene. &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal-=2&gt;&gt;
-&lt;&lt;if $arousal gte 3&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal=Math.min($arousal,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $masterfilth gte 50 and $willpower gte 1 and $likesadist lte 49&gt;&gt;
@@ -70960,7 +70954,7 @@ You decide to chastise the girl, believing that her guilt will wear down her &lt
 
 &lt;br&gt;&lt;br&gt;
 &lt;b&gt;//Because of your failed skill roll, $girlnames affection for you has waned significantly. //&lt;/b&gt; &lt;&lt;set $masterlove-=5&gt;&gt;
-&lt;&lt;if $masterlove gte 50&gt;&gt;&lt;&lt;set $masterlove to 49&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterlove=Math.min($masterlove,49)&gt;&gt;
 &lt;&lt;set $scarefactor+=2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -76017,9 +76011,9 @@ The girl is unaffected by your words. She’s either too mentally strong or you 
 
 &lt;&lt;set $scarefactor+=2&gt;&gt;
 &lt;&lt;set $masterlove-=8&gt;&gt;
-&lt;&lt;if $masterlove gte 50&gt;&gt;&lt;&lt;set $masterlove=49&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterlove=Math.min($masterlove,49)&gt;&gt;
 &lt;&lt;set $happiness-=$traitjaded lte 49 ? 1 : 5&gt;&gt;
-&lt;&lt;if $happiness gte 50&gt;&gt;&lt;&lt;set $happiness=49&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness=Math.min($happiness,49)&gt;&gt;
 &lt;&lt;set $kind-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -76065,7 +76059,7 @@ Your words manage to affect the girl, who looks both startled and acceptant of h
 &lt;&lt;if $scarefactor lte 1&gt;&gt;&lt;&lt;set $scarefactor+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $masterlove-=2&gt;&gt;
 &lt;&lt;set $happiness-=traitjaded lte 49 ? 7 : 2&gt;&gt;
-&lt;&lt;if $happiness gte 50&gt;&gt;&lt;&lt;set $happiness=49&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness=Math.min($happiness,49)&gt;&gt;
 &lt;&lt;set $kind-=2&gt;&gt;
 &lt;&lt;if $traitsub gte 50&gt;&gt;&lt;&lt;set $willpower-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -80730,8 +80724,8 @@ Having a child with you would somehow fulfill that primal drive and complete the
 
 </tw-passagedata><tw-passagedata pid="122" name="Actives" tags="" position="5275,900" size="100,100">&lt;&lt;nobr&gt;&gt;
 
-&lt;&lt;if $scarefactor gte 30&gt;&gt;&lt;&lt;set $scarefactor to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $afraid gte 100&gt;&gt;&lt;&lt;set $afraid to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $scarefactor=Math.min($scarefactor,30)&gt;&gt;
+&lt;&lt;set $afraid=Math.min($afraid,100)&gt;&gt;
 
 
 /* HAS FULL BATHROOM SCENES */
@@ -81853,13 +81847,13 @@ FREE
 
 
 
-&lt;&lt;if $pain gte 10&gt;&gt;&lt;&lt;set $pain=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pain=Math.min($pain,10)&gt;&gt;
 &lt;&lt;if $pain lte 0&gt;&gt;&lt;&lt;set $pain=0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $stress gte 10&gt;&gt;&lt;&lt;set $stress=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stress=Math.min($stress,10)&gt;&gt;
 &lt;&lt;if $stress lte 0&gt;&gt;&lt;&lt;set $stress=0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $humiliation gte 15&gt;&gt;&lt;&lt;set $humiliation=15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $humiliation=Math.min($humiliation,15)&gt;&gt;
 &lt;&lt;if $humiliation lte 0&gt;&gt;&lt;&lt;set $humiliation=0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $likesadist lte 0&gt;&gt;&lt;&lt;set $likesadist to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -87620,7 +87614,7 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $masterhealth gte 1&gt;&gt;
-&lt;&lt;if $mastermaxhealth lte 150&gt;&gt;&lt;&lt;set _badass0 to $mastermaxhealth&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _badass0 to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _badass0=Math.min($mastermaxhealth,150)&gt;&gt;
 &lt;&lt;set _badass0+=$ranged&gt;&gt;
 &lt;&lt;set _badass0+=$melee&gt;&gt;
 &lt;&lt;set _badass0arm to $armorwear&gt;&gt;
@@ -88747,7 +88741,7 @@ His response is adamant and professional. You&#39;re facing a skilled soldier th
 &lt;&lt;if $masterhealth lte 39&gt;&gt;
 &lt;&lt;set $masterhealth=40&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterhealth gte 101&gt;&gt;&lt;&lt;set $masterhealth to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.min($masterhealth,100)&gt;&gt;
 &lt;&lt;set $specom to 1&gt;&gt;
 &lt;&lt;set $activeweapon to &quot;pistol&quot;&gt;&gt;
 &lt;&lt;set $meleeequip to false&gt;&gt;
@@ -102441,7 +102435,7 @@ You’ve defeated a squad of insurgent soldiers.
 &lt;&lt;if $descroll3 is 4&gt;&gt;You have suffered a permanent -3 penalty to your &#39;&#39;Melee skill&#39;&#39;. &lt;&lt;set $melee-=3&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 gte 5&gt;&gt;You have suffered a permanent penalty to your &lt;b&gt;DEXTERITY (_tmp)&lt;/b&gt;.&lt;&lt;set $masterdex+=_tmp&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $stampoints gte 8&gt;&gt;&lt;&lt;set $stampoints=8&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stampoints=Math.min($stampoints,8)&gt;&gt;
 
 &lt;&lt;if $masterdex lte 9 or $masterstrength lte 9&gt;&gt;You’re permanently crippled and need to focus on physical training before entering combat again!&lt;&lt;/if&gt;&gt;
 
@@ -102732,7 +102726,7 @@ You discover several intriguing pieces of evidence in a top-floor office - lists
 
 /* ELLEN JOB TERMINATION CHECKER */
 &lt;&lt;if $npc.av50.masterlove lt 40&gt;&gt;&lt;&lt;set $npc.av50.masterlove to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npc.av50.scarefactor gte 1&gt;&gt;&lt;&lt;set $npc.av50.scarefactor to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $npc.av50.scarefactor=Math.min($npc.av50.scarefactor,0)&gt;&gt;
 
 &lt;&lt;set $tookellen2 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -160996,7 +160990,7 @@ You&#39;ve regained &#39;&#39;8 Stamina points&#39;&#39; and &#39;&#39;5 Health 
 &lt;&lt;set $stampoints+=8&gt;&gt;
 &lt;&lt;if $stampoints gte $masterstamina&gt;&gt;&lt;&lt;set $stampoints to $masterstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $masterhealth lte 99&gt;&gt;&lt;&lt;set $masterhealth+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterhealth gte $mastermaxhealth&gt;&gt;&lt;&lt;set $masterhealth to $mastermaxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.min($masterhealth,$mastermaxhealth)&gt;&gt;
 &lt;&lt;passmins 30&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -213643,14 +213637,14 @@ Has been added to your household!
 
 &lt;&lt;if $foodstuff lte 0&gt;&gt;&lt;&lt;set $foodstuff to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $corfester gte 200&gt;&gt;&lt;&lt;set $corfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $purefester gte 200&gt;&gt;&lt;&lt;set $purefester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hardfester gte 200&gt;&gt;&lt;&lt;set $hardfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workfester gte 200&gt;&gt;&lt;&lt;set $workfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $goodfester gte 200&gt;&gt;&lt;&lt;set $goodfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $badfester gte 200&gt;&gt;&lt;&lt;set $badfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 500&gt;&gt;&lt;&lt;set $repairfester to 500&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $freedomfester gte 200&gt;&gt;&lt;&lt;set $freedomfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $corfester=Math.min($corfester,200)&gt;&gt;
+&lt;&lt;set $purefester=Math.min($purefester,200)&gt;&gt;
+&lt;&lt;set $hardfester=Math.min($hardfester,200)&gt;&gt;
+&lt;&lt;set $workfester=Math.min($workfester,200)&gt;&gt;
+&lt;&lt;set $goodfester=Math.min($goodfester,200)&gt;&gt;
+&lt;&lt;set $badfester=Math.min($badfester,200)&gt;&gt;
+&lt;&lt;set $repairfester=Math.min($repairfester,500)&gt;&gt;
+&lt;&lt;set $freedomfester=Math.min($freedomfester,200)&gt;&gt;
 
 
 &lt;&lt;if $ver gte 10830&gt;&gt;
@@ -234769,8 +234763,8 @@ sur: 0,
 &lt;&lt;set $wateryen4-=1&gt;&gt;
 &lt;&lt;if $dockpunks gte 1&gt;&gt;&lt;&lt;set $docksen2-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $happiness gte 120&gt;&gt;&lt;&lt;set $happiness to 120&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $avIn_happiness gte 120&gt;&gt;&lt;&lt;set $avIn_happiness to 120&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness=Math.min($happiness,120)&gt;&gt;
+&lt;&lt;set $avIn_happiness=Math.min($avIn_happiness,120)&gt;&gt;
 
 &lt;&lt;unset $talkedslave&gt;&gt;
 &lt;&lt;unset $saidbondlady&gt;&gt;
@@ -235860,7 +235854,7 @@ FOR INCOME CHECK ECONOMY 2
 
 
 &lt;&lt;if $cydikar is true&gt;&gt;
-&lt;&lt;if $masterhealth gt $mastermaxhealth&gt;&gt;&lt;&lt;set $masterhealth to $mastermaxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth=Math.min($masterhealth,$mastermaxhealth)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -291662,9 +291656,7 @@ A transfer also costs $100 in shipping fees.
 
 &lt;&lt;set $mch.yardslot20.other6+=_stab&gt;&gt;
 
-&lt;&lt;if $mch.yardslot20.other6 gt 100&gt;&gt;
-&lt;&lt;set $mch.yardslot20.other6 to 100 &gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mch.yardslot20.other6=Math.min($mch.yardslot20.other6,100)&gt;&gt;
 
 &#39;&#39;Current Stability (Darkmere Farm):&#39;&#39; $mch.yardslot20.other6.
 
@@ -311765,7 +311757,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if _npc.tempstamina lt _npc.maxstamina&gt;&gt;&lt;&lt;set _npc.tempstamina+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.tempstamina gt _npc.maxstamina&gt;&gt;&lt;&lt;set _npc.tempstamina=_npc.maxstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.tempstamina=Math.min(_npc.tempstamina,_npc.maxstamina)&gt;&gt;
 &lt;&lt;if _npc.spankmarks gte 1&gt;&gt;&lt;&lt;set _npc.spankmarks-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.whipmarks gte 1&gt;&gt;&lt;&lt;set _npc.whipmarks-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.spankmarks lt 0&gt;&gt;&lt;&lt;set _npc.spankmarks=0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -311793,10 +311785,10 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.nipplewear-=4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.pussywear gte 150&gt;&gt;&lt;&lt;set _npc.pussywear to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.analwear gte 150&gt;&gt;&lt;&lt;set _npc.analwear to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.oralwear gte 150&gt;&gt;&lt;&lt;set _npc.oralwear to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.nipplewear gte 150&gt;&gt;&lt;&lt;set _npc.nipplewear to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.pussywear=Math.min(_npc.pussywear,150)&gt;&gt;
+&lt;&lt;set _npc.analwear=Math.min(_npc.analwear,150)&gt;&gt;
+&lt;&lt;set _npc.oralwear=Math.min(_npc.oralwear,150)&gt;&gt;
+&lt;&lt;set _npc.nipplewear=Math.min(_npc.nipplewear,150)&gt;&gt;
 
 &lt;&lt;if _npc.pussywear lt 0&gt;&gt;&lt;&lt;set _npc.pussywear to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.analwear lt 0&gt;&gt;&lt;&lt;set _npc.analwear to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -312100,7 +312092,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if _npc.happiness gte 61 and _npc.happiness lte 90&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.happiness gte 91&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.happiness gte 93 and _npc.age lte 19&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.happiness gte 100&gt;&gt;&lt;&lt;set _npc.happiness to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.happiness=Math.min(_npc.happiness,100)&gt;&gt;
 &lt;&lt;if _npc.happiness lte -16&gt;&gt;&lt;&lt;set _npc.happiness=-15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.masterlove lte -16&gt;&gt;&lt;&lt;set _npc.masterlove=-15&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -312128,7 +312120,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if $diff gte 3&gt;&gt;&lt;&lt;set _undy-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.masterlove gte 120 and _undy lte 5&gt;&gt;&lt;&lt;set _npc.masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.masterlove gte 130&gt;&gt;&lt;&lt;set _npc.masterlove to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.masterlove=Math.min(_npc.masterlove,130)&gt;&gt;
 
 
 /* ANGER RECOVERY */
@@ -312158,12 +312150,12 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 
 /* aria SMR special */
 &lt;&lt;if _npc.girlid is 11 and _npc.traitsmr gte 1&gt;&gt;
-&lt;&lt;if _npc.likesadist gt 150&gt;&gt;&lt;&lt;set _npc.likesadist to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.likesadist=Math.min(_npc.likesadist,150)&gt;&gt;
 &lt;&lt;set _blocklike to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.likesadist gt 100 and _blocklike is undefined&gt;&gt;
-&lt;&lt;set _npc.likesadist to 100&gt;&gt;
+&lt;&lt;if _blocklike is undefined&gt;&gt;
+&lt;&lt;set _npc.likesadist=Math.min(_npc.likesadist,100)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.likesadist lt 0&gt;&gt;&lt;&lt;set _npc.likesadist to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -312266,7 +312258,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.ah+=25&gt;&gt;
 &lt;&lt;if _npc.str lte 39&gt;&gt;&lt;&lt;set _npc.str+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.ah gte 175&gt;&gt;&lt;&lt;set _npc.ah to 175&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.ah=Math.min(_npc.ah,175)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* girls */
@@ -312275,7 +312267,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.ah+=15&gt;&gt;
 &lt;&lt;if _npc.str lte 34&gt;&gt;&lt;&lt;set _npc.str+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.ah gte 165&gt;&gt;&lt;&lt;set _npc.ah to 165&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.ah=Math.min(_npc.ah,165)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -313097,7 +313089,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 /* CAPS */
 
 &lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set _tes to _npc.happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.happiness gt 100&gt;&gt;&lt;&lt;set _npc.happiness to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.happiness=Math.min(_npc.happiness,100)&gt;&gt;
 &lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set _tes2 to _npc.happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -313593,7 +313585,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 &lt;&lt;set _prestcap to $credit&gt;&gt;
 &lt;&lt;set _prestcap*=0.01&gt;&gt;
-&lt;&lt;if _prestcap gt 500&gt;&gt;&lt;&lt;set _prestcap to 500&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _prestcap=Math.min(_prestcap,500)&gt;&gt;
 &lt;&lt;if _lossroll lte 2 and _npc.prest lt _prestcap&gt;&gt;&lt;&lt;set _npc.prest+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
@@ -314165,7 +314157,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 &lt;&lt;set _affdown to _npc.hate*0.5&gt;&gt;
 &lt;&lt;set _affdown = Math.round(_affdown)&gt;&gt;
-&lt;&lt;if _affdown gte 6&gt;&gt;&lt;&lt;set _affdown to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _affdown = Math.min(_affdown,6)&gt;&gt;
 
 &lt;&lt;if _affdown gte 1&gt;&gt;&lt;&lt;set _npc.masterlove-=_affdown&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -314200,7 +314192,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;if _libnpc is true and _npc.willpower gte 1 and _npc.likesadist lte 89&gt;&gt;
 
 &lt;&lt;if _npc.likesadist gte 51&gt;&gt;&lt;&lt;set _npc.likesadist-=random(1, 2)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.happiness gte 60 and $corfester gte 100&gt;&gt;&lt;&lt;set _npc.happiness to 60&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $corfester gte 100&gt;&gt;&lt;&lt;set _npc.happiness=Math.min(_npc.happiness,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -314584,7 +314576,7 @@ SEE MID PASSAGE. SIBLINGS EFFECT is TRUE even upon dismiss
 
 &lt;&lt;if _npc.traittrad gte 75&gt;&gt;
 &lt;&lt;set _npc.traittech to 0&gt;&gt;
-&lt;&lt;if _npc.tech gte 51&gt;&gt;&lt;&lt;set _npc.tech to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.tech=Math.min(_npc.tech,50)&gt;&gt;
 
 &lt;&lt;if _npc.happiness gte 31 and ($faction.ikaanos.control lte 14 or $faction.ikaanos.prosp lte 14)&gt;&gt;
 &lt;&lt;set _npc.happiness-=2&gt;&gt;
@@ -314752,14 +314744,14 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* MAX ACC CHECKERS */
 
-&lt;&lt;if $corfester gte 200&gt;&gt;&lt;&lt;set $corfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $purefester gte 200&gt;&gt;&lt;&lt;set $purefester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hardfester gte 200&gt;&gt;&lt;&lt;set $hardfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workfester gte 200&gt;&gt;&lt;&lt;set $workfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $goodfester gte 200&gt;&gt;&lt;&lt;set $goodfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $badfester gte 200&gt;&gt;&lt;&lt;set $badfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 500&gt;&gt;&lt;&lt;set $repairfester to 500&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $freedomfester gte 200&gt;&gt;&lt;&lt;set $freedomfester to 200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $corfester=Math.min($corfester,200)&gt;&gt;
+&lt;&lt;set $purefester=Math.min($purefester,200)&gt;&gt;
+&lt;&lt;set $hardfester=Math.min($hardfester,200)&gt;&gt;
+&lt;&lt;set $workfester=Math.min($workfester,200)&gt;&gt;
+&lt;&lt;set $goodfester=Math.min($goodfester,200)&gt;&gt;
+&lt;&lt;set $badfester=Math.min($badfester,200)&gt;&gt;
+&lt;&lt;set $repairfester=Math.min($repairfester,500)&gt;&gt;
+&lt;&lt;set $freedomfester=Math.min($freedomfester,200)&gt;&gt;
 
 &lt;&lt;if $corfester lt 0&gt;&gt;&lt;&lt;set $corfester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $purefester lt 0&gt;&gt;&lt;&lt;set $purefester to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -317018,8 +317010,8 @@ Dayblock 24: Factory worker 4
 &lt;&lt;set _reqsal = Math.round(_reqsal)&gt;&gt;
 
 /* randies can never ask for more than 150 per day */
-&lt;&lt;if _fixedsal is undefined and _reqsal gte 150&gt;&gt;
-&lt;&lt;set _reqsal to 150&gt;&gt;
+&lt;&lt;if _fixedsal is undefined&gt;&gt;
+&lt;&lt;set _reqsal=Math.min(_reqsal,150)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -318594,8 +318586,8 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _maidreq = Math.round(_maidreq)&gt;&gt;
 &lt;&lt;set _maidpen = Math.round(_maidpen)&gt;&gt;
 
-&lt;&lt;if _maidreq gte 10&gt;&gt;&lt;&lt;set _maidreq to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _maidpen gte 1000&gt;&gt;&lt;&lt;set _maidpen to 1000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _maidreq = Math.min(_maidreq,10)&gt;&gt;
+&lt;&lt;set _maidpen = Math.min(_maidpen,1000)&gt;&gt;
 
 &lt;&lt;if _maids gte 1&gt;&gt;
 &lt;&lt;set _maidpen/=_maids&gt;&gt;
@@ -318920,9 +318912,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;else&gt;&gt;
 /* man harvest */
 
-&lt;&lt;if _chgard is true&gt;&gt;&lt;&lt;set $mch.yardslot9.foodstore+=_farmfood&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mch.yardslot9.foodstore gt 20000&gt;&gt;&lt;&lt;set $mch.yardslot9.foodstore to 20000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _chgard is true&gt;&gt;&lt;&lt;set $mch.yardslot9.foodstore=Math.min($mch.yardslot9.foodstore+_farmfood,20000)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -318963,9 +318953,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;else&gt;&gt;
 /* man harvest */
 
-&lt;&lt;if _chgard is true&gt;&gt;&lt;&lt;set $mch.yardslot20.foodstore+=_farmfood&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mch.yardslot20.foodstore gt 20000&gt;&gt;&lt;&lt;set $mch.yardslot20.foodstore to 20000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _chgard is true&gt;&gt;&lt;&lt;set $mch.yardslot20.foodstore=Math.min($mch.yardslot20.foodstore+_farmfood,20000)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -319153,9 +319141,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if _chgard is true&gt;&gt; /* calculating production at end day */
 
-&lt;&lt;if $mch.yardslot20.lumberav lt 800000&gt;&gt;
-&lt;&lt;set $mch.yardslot20.lumberav+=_woodrecover&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mch.yardslot20.lumberav=Math.min($mch.yardslot20.lumberav+_woodrecover,800000)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -329154,9 +329140,9 @@ $cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;include InjectFollow&gt;&gt;
 
 
-&lt;&lt;if $mctraitstiff gte 75 and $masterdex gt 70&gt;&gt;&lt;&lt;set $masterdex to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mctraitwb gte 75 and $masterstrength gt 70&gt;&gt;&lt;&lt;set $masterstrength to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mctraitww gte 75 and $masterwill gt 70&gt;&gt;&lt;&lt;set $masterwill to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitstiff gte 75&gt;&gt;&lt;&lt;set $masterdex=Math.min($masterdex,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitwb gte 75&gt;&gt;&lt;&lt;set $masterstrength=Math.min($masterstrength,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitww gte 75&gt;&gt;&lt;&lt;set $masterwill=Math.min($masterwill,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="482" name="SerfDoEngine" tags="nobr" position="4400,475" size="200,100">&lt;&lt;if _npc.scarefactor gte 2 or _npc.masterlove lte 14&gt;&gt;  /* MAD DIALOGUE SCRIPT */
 &lt;&lt;unset $serfsay&gt;&gt;
@@ -340160,7 +340146,7 @@ OLD IGNORE
 &lt;&lt;if _fact.level2 gte 2&gt;&gt;&lt;&lt;set _workload*=1.05&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* capped merch calculator */
-&lt;&lt;if _workload gte _fact.other1&gt;&gt;&lt;&lt;set _workload to _fact.other1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _workload=Math.min(_workload,_fact.other1)&gt;&gt;
 
 &lt;&lt;set _dura to _workload&gt;&gt;
 &lt;&lt;set _dura*=0.03&gt;&gt;
@@ -340666,8 +340652,8 @@ OLD IGNORE
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $melboost gte 10&gt;&gt;&lt;&lt;set $melboost to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $trainboost gte 10&gt;&gt;&lt;&lt;set $trainboost to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $melboost=Math.min($melboost,10)&gt;&gt;
+&lt;&lt;set $trainboost=Math.min($trainboost,10)&gt;&gt;
 
 &lt;&lt;if $chdo gte 3&gt;&gt;&lt;&lt;set $melboost+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -349982,18 +349968,18 @@ state: 0,
 &lt;&lt;set _atricapdex to 60&gt;&gt;
 &lt;&lt;set _atricap2dex to 55&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstrength gt 90&gt;&gt;&lt;&lt;set $masterstrength to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterdex gt 90&gt;&gt;&lt;&lt;set $masterdex to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterint gt 90&gt;&gt;&lt;&lt;set $masterint to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterwill gt 90&gt;&gt;&lt;&lt;set $masterwill to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstamina gt 90&gt;&gt;&lt;&lt;set $masterstamina to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $gambling gt 90&gt;&gt;&lt;&lt;set $gambling to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mastercharm gt 90&gt;&gt;&lt;&lt;set $mastercharm to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $manipulate gt 90&gt;&gt;&lt;&lt;set $manipulate to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $fuckskill gt 90&gt;&gt;&lt;&lt;set $fuckskill to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $lickskill gt 90&gt;&gt;&lt;&lt;set $lickskill to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $kisskill gt 90&gt;&gt;&lt;&lt;set $kisskill to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterdex gt 60 and $mctraitmountain gte 100&gt;&gt;&lt;&lt;set $masterdex to 60&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterstrength=Math.min($masterstrength,90)&gt;&gt;
+&lt;&lt;set $masterdex=Math.min($masterdex,90)&gt;&gt;
+&lt;&lt;set $masterint=Math.min($masterint,90)&gt;&gt;
+&lt;&lt;set $masterwill=Math.min($masterwill,90)&gt;&gt;
+&lt;&lt;set $masterstamina=Math.min($masterstamina,90)&gt;&gt;
+&lt;&lt;set $gambling=Math.min($gambling,90)&gt;&gt;
+&lt;&lt;set $mastercharm=Math.min($mastercharm,90)&gt;&gt;
+&lt;&lt;set $manipulate=Math.min($manipulate,90)&gt;&gt;
+&lt;&lt;set $fuckskill=Math.min($fuckskill,90)&gt;&gt;
+&lt;&lt;set $lickskill=Math.min($lickskill,90)&gt;&gt;
+&lt;&lt;set $kisskill=Math.min($kisskill,90)&gt;&gt;
+&lt;&lt;if $mctraitmountain gte 100&gt;&gt;&lt;&lt;set $masterdex=Math.min($masterdex,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _atricap to 130&gt;&gt;
@@ -384198,7 +384184,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;&lt;set _charcap to 50&gt;&gt;
 &lt;&lt;set _intcap to $cccpintcap&gt;&gt;
 &lt;&lt;set _discap to $nurq.dis&gt;&gt;
-&lt;&lt;if _discap gte 80&gt;&gt;&lt;&lt;set _discap to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _discap=Math.min(_discap,80)&gt;&gt;
 /* generic skill cap */
 &lt;&lt;set _skillcap to 60&gt;&gt;
 &lt;&lt;if $mctraitz gte 100&gt;&gt;&lt;&lt;set _skillcap to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -391671,7 +391657,7 @@ TRADE OFFER&lt;br&gt;
 &lt;&lt;set _base = Math.round(_base)&gt;&gt;
 
 /* cheat or pre-08 stat checker */
-&lt;&lt;if _base gte 130&gt;&gt;&lt;&lt;set _base to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _base=Math.min(_base,130)&gt;&gt;
 
 
 /* adjust this number to make propositions harder or easier */
@@ -393134,7 +393120,7 @@ You fail to take your dissidence up to The Senate, who&#39;s able to conclude to
 /* Removes first wife from salary demands */
 &lt;&lt;if _npc.status is 10 and _npc.actnpc is $firstwife&gt;&gt;
 &lt;&lt;if _happgain lt 0&gt;&gt;&lt;&lt;set _happgain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _angergain gt 1&gt;&gt;&lt;&lt;set _angergain to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _angergain=Math.min(_angergain,1)&gt;&gt;
 &lt;&lt;if _affgain lt 0&gt;&gt;&lt;&lt;set _affgain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
