@@ -339924,50 +339924,41 @@ OLD IGNORE
 
 &lt;&lt;if _ecoshow is true&gt;&gt;
 &lt;&lt;set _totsweat to 0&gt;&gt;
-&lt;&lt;set _income to 0&gt;&gt;
-
 
 &lt;&lt;if $mch.yardslot1.type is 3 and $mch.yardslot1.task is 3&gt;&gt;
 &lt;&lt;set _active to $mch.yardslot1&gt;&gt;
 &lt;&lt;include SweatYield2&gt;&gt;
-&lt;&lt;set _checker1 to _totsweat&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mch.yardslot2.type is 3 and $mch.yardslot2.task is 3&gt;&gt;
 &lt;&lt;set _active to $mch.yardslot2&gt;&gt;
 &lt;&lt;include SweatYield2&gt;&gt;
-&lt;&lt;set _checker2 to _totsweat&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mch.yardslot3.type is 3 and $mch.yardslot3.task is 3&gt;&gt;
 &lt;&lt;set _active to $mch.yardslot3&gt;&gt;
 &lt;&lt;include SweatYield2&gt;&gt;
-&lt;&lt;set _checker3 to _totsweat&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mch.yardslot4.type is 3 and $mch.yardslot4.task is 3&gt;&gt;
 &lt;&lt;set _active to $mch.yardslot4&gt;&gt;
 &lt;&lt;include SweatYield2&gt;&gt;
-&lt;&lt;set _checker4 to _totsweat&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mch.yardslot7.type is 3 and $mch.yardslot7.task is 3&gt;&gt;
 &lt;&lt;set _active to $mch.yardslot7&gt;&gt;
 &lt;&lt;include SweatYield2&gt;&gt;
-&lt;&lt;set _checker7 to _totsweat&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mch.yardslot8.type is 3 and $mch.yardslot8.task is 3&gt;&gt;
 &lt;&lt;set _active to $mch.yardslot8&gt;&gt;
 &lt;&lt;include SweatYield2&gt;&gt;
-&lt;&lt;set _checker8 to _totsweat&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set _totsweat = Math.round(_totsweat)&gt;&gt;
 
-&lt;&lt;if _totsweat gte 1&gt;&gt;&lt;&lt;set $cashtot+=_totsweat&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $cashtot+=_totsweat&gt;&gt;
 
 /* ECOSHOW ENDS */
 &lt;&lt;/if&gt;&gt;
