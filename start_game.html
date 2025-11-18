@@ -339909,33 +339909,10 @@ OLD IGNORE
 &lt;&lt;set _income = Math.round(_income)&gt;&gt;
 */
 
+&lt;&lt;set _totsweat to 0&gt;&gt;
 
-&lt;&lt;set _income to _active.other2*10&gt;&gt;
-&lt;&lt;if _active.other1 gte 100&gt;&gt;&lt;&lt;set _income*=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* foreman effects */
-&lt;&lt;if _active.other4 gte 30&gt;&gt;&lt;&lt;set _income*=1.05&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.other4 gte 60&gt;&gt;&lt;&lt;set _income*=1.08&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.other4 gte 90&gt;&gt;&lt;&lt;set _income*=1.1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.other4 gte 120&gt;&gt;&lt;&lt;set _income*=1.12&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _active.level is 1&gt;&gt;&lt;&lt;set _income*=1.26&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.level gte 2&gt;&gt;&lt;&lt;set _income*=1.56&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.level2 is 1&gt;&gt;&lt;&lt;set _income*=1.56&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.level2 is 2&gt;&gt;&lt;&lt;set _income*=2.36&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _active.level2 is 3&gt;&gt;&lt;&lt;set _income*=3.9&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _dic to _active.other5&gt;&gt;
-&lt;&lt;set _dic0 to _active.other2&gt;&gt;
-&lt;&lt;set _dic/=_dic0&gt;&gt;
-
-&lt;&lt;if _dic lte 39&gt;&gt;&lt;&lt;set _income*=0.87&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _dic gte 60 and _dic lte 79&gt;&gt;&lt;&lt;set _income*=1.08&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _dic gte 80&gt;&gt;&lt;&lt;set _income*=1.08&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _income = Math.round(_income)&gt;&gt;
-
-
+&lt;&lt;include SweatYield2&gt;&gt;
+&lt;&lt;set _income = Math.round(_totsweat)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
