@@ -12659,7 +12659,7 @@ How do you deliver your request to $girlname?&lt;br&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if $arousal lte -1&gt;&gt;
+&lt;&lt;if $arousal lt 0&gt;&gt;
 &lt;&lt;if $cumbuild lte 2&gt;&gt;Thankfully, neither $girlname looks like she&#39;s up for anything passionate right now.
 &lt;&lt;elseif $cumbuild lte 6&gt;&gt;$girlname looks disgusted, obviously not interested in anything physical right now.
 &lt;&lt;else&gt;&gt;Unfortunately, $girlname doesn’t seem to share your lustful desire to engage in sex right now. In fact, she looks disgusted and turned-off by everything that reminds her of physical contact.
@@ -14246,7 +14246,7 @@ What position did you have in mind?
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -14305,7 +14305,7 @@ What position did you have in mind?
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $tempstamina lte 0 and $cancelact is false and _readywhip isnot true&gt;&gt;
 
@@ -14513,7 +14513,7 @@ Your choice to continue the act has increased $girlnames &#39;&#39;Fear (+1)&#39
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -14737,7 +14737,7 @@ Your continued abuse has increased $girlnames &#39;&#39;Fear (+1)&#39;&#39;&lt;&
 &lt;&lt;if $stampoints lte 1&gt;&gt;&lt;&lt;set $stampoints=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
@@ -15008,7 +15008,7 @@ Your choice to continue the act has increased $girlnames &#39;&#39;Fear (+1)&#39
 &lt;&lt;if $arousal gte 2 and $sexfeel lte -2&gt;&gt;&lt;&lt;set $sexfeel to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $arousal gte 5 and $sexfeel lte -1&gt;&gt;&lt;&lt;set $sexfeel to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;unset $goingtooff&gt;&gt;
@@ -22802,7 +22802,7 @@ $girlnames &#39;&#39;Corruption (+5)&#39;&#39; has increased! &lt;&lt;set $likes
 &lt;&lt;set $pussyxp+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;
+&lt;&lt;if $tempstamina lt 3&gt;&gt;
 &lt;&lt;set $tempstamina to 3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -23873,7 +23873,7 @@ Her &#39;&#39;WILLPOWER (-1)&#39;&#39; has decreased!
 &lt;&lt;set $likeoral-=1&gt;&gt;
 &lt;&lt;set $masterlove-=1&gt;&gt;
 &lt;&lt;set $humiliation+=2&gt;&gt;
-&lt;&lt;if $sexfeel gte 5&gt;&gt;&lt;&lt;set $sexfeel=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $sexfeel gt 2&gt;&gt;&lt;&lt;set $sexfeel=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $descroll3 lte 1&gt;&gt;The girl expresses both shock and disgust but her obedience makes her totally devoid of complaints or objections. She resorts to clearing her eyes out from the oozing spunk, using slow, meticulous strokes. $girlnames panting heavily, however, trying to regain some form of control after the vicious degradation you thought would be a pleasant end to your act.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 2&gt;&gt;The girl utters a cry of disgust when her eyelids are layered with spunk. And as the oozing jizm streams down to her mouth and over her chin, $girlname is beset by an even worse state of dismay, while desperately trying to get rid of the mess in her face.&lt;&lt;/if&gt;&gt;
@@ -33496,7 +33496,7 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=112&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _price-=112&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _price lte 70&gt;&gt;&lt;&lt;set _price to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _price lt 80&gt;&gt;&lt;&lt;set _price to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;div class=&quot;row&quot;&gt;
@@ -37721,7 +37721,7 @@ Despite $girlnames obvious rejections, you continue to kiss her body with even m
 &lt;&lt;set $refuse10 to false&gt;&gt;
 &lt;&lt;set $arousal+=2&gt;&gt;
 &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;if $arousal lte -1&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal lt 1&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $bodykissround+=1&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -38173,7 +38173,7 @@ You&#39;ve sustained injuries from the unexpected attack &lt;b&gt;
 &lt;&lt;set $arousal+=2&gt;&gt;
 &lt;&lt;set $pain+=1&gt;&gt;
 &lt;&lt;set $humiliation+=1&gt;&gt;
-&lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $skillroll lte 3&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist lte 19&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -39278,7 +39278,7 @@ She’s very regretful and feels embarrassed after getting naked in front of you
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $chance gte 1 and $willpower gte 1 and $likesadist lte 39&gt;&gt;
-&lt;&lt;if $descroll lte 2&gt;&gt;You’re not met by any obstructions, just a suggestive smile, when you wiggle her undies away from her ankles. The girl is both nervous and aroused – she’s lingering in a state where you have the possibility to catapult this into something ecstatic, but also botch everything if you make the wrong move. &lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll lte 2&gt;&gt;You’re not met by any obstructions, just a suggestive smile, when you wiggle her undies away from her ankles. The girl is both nervous and aroused – she’s lingering in a state where you have the possibility to catapult this into something ecstatic, but also botch everything if you make the wrong move. &lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll is 3&gt;&gt;&lt;&lt;if $scarefactor lte 1 and $masterlove gte 20&gt;&gt;The girl giggles as you pull her undies off and both of you laugh when they become stuck on one of her toes.&lt;&lt;else&gt;&gt;Despite your earlier wrong-doings toward the girl, she’s letting this one slip – probably due to a growing need for sexual satisfaction that she hopes will make things better for both of you.&lt;&lt;/if&gt;&gt; After getting naked, she pulls her legs together like a mermaid, signaling that she’s not quite ready to let you thrust yourself into her pussy.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll gte 4&gt;&gt;The girl doesn’t object as you pull them off, but seems a bit uneasy about it. However, she fails to hide her arousal - you notice a shivering flare running through her face when her pussy becomes exposed. &lt;&lt;/if&gt;&gt;
 
@@ -39372,7 +39372,7 @@ You botch your attempt at enticing $girlname when you bite her nipples way too h
 &lt;&lt;set $refuse7c to true&gt;&gt;
 &lt;&lt;set $arousal-=2&gt;&gt;
 &lt;&lt;set $pain+=1&gt;&gt;
-&lt;&lt;if $arousal gte 5&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal gt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $descroll gte 4&gt;&gt;
@@ -43461,7 +43461,7 @@ Your &#39;&#39;Bondage skill (+1)&#39;&#39; has increased!
 &lt;&lt;set $analwear+=3&gt;&gt;
 &lt;&lt;if $analxp lte 7 and $skillroll lte 40&gt;&gt;&lt;&lt;set $analxp+=1&gt;&gt; &lt;br&gt;&lt;br&gt;The girl&#39;s &#39;&#39;Anal proficiency (+1)&#39;&#39; has increased! &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $arousal-=1&gt;&gt;
-&lt;&lt;if $arousal gte 5&gt;&gt;&lt;&lt;set $arousal=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal gt 3&gt;&gt;&lt;&lt;set $arousal=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist gte 3 and $chance lte 0&gt;&gt;&lt;&lt;set $likesadist-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $analhook to true&gt;&gt;
 &lt;&lt;set _justhooked to true&gt;&gt;
@@ -43490,7 +43490,7 @@ Your &#39;&#39;Bondage skill (+1)&#39;&#39; has increased!
 &lt;&lt;if $likesadist lte 30 and $chance gte 20 and $traitpure lte 74&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist gte 31 and $likesadist lte 45 and $skillroll lte 6&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt; &lt;&lt;if $traitpure gte 50&gt;&gt;&lt;&lt;set $traitpure-=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $arousal+=2&gt;&gt;
-&lt;&lt;if $arousal lte -1&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal lt 1&gt;&gt;&lt;&lt;set $arousal=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll gte 4&gt;&gt;&lt;&lt;set $masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $analhook to true&gt;&gt;
@@ -46681,7 +46681,7 @@ $girlname has lost &#39;&#39;3 Health points!&#39;&#39;
 &lt;&lt;if $descroll2 is 5&gt;&gt;After holding her chin up in a dominant way, you begin to tie her to the stool, leaving her shivering from pain and excitement.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal+=2&gt;&gt;
-&lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $pain+=1&gt;&gt;
 &lt;&lt;set $analwear+=7&gt;&gt;
@@ -47266,7 +47266,7 @@ $girlnames &#39;&#39;Defiance (+2)&#39;&#39; has increased even more!
 &lt;&lt;if $descroll gte 4&gt;&gt;Your sadistic domination turns the girl on and she welcomes your hardon with moaning pleasure and shivers of lust.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $arousal+=2&gt;&gt;
-&lt;&lt;if $arousal lte 0&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal lt 2&gt;&gt;&lt;&lt;set $arousal=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -54954,7 +54954,7 @@ You get a lot of attention from the barkeeper - who&#39;s either interested in s
 &lt;&lt;passmins 30&gt;&gt;
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $furry_round is 2&gt;&gt;
@@ -54987,7 +54987,7 @@ You know that you&#39;ve run into her before.
 &lt;&lt;passmins 30&gt;&gt;
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $furryday is 2 and $descroll2 isnot 4&gt;&gt;
@@ -55011,7 +55011,7 @@ You know that you&#39;ve run into her before.
 &lt;&lt;passmins 30&gt;&gt;
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -55640,7 +55640,7 @@ You ask around for a prostitute that you hope could liven up your visit to Furry
 &lt;&lt;if $action6 is true and $action6b is true and $cont isnot 1&gt;&gt;
 &lt;&lt;set $descroll to random(1, 3)&gt;&gt;
 &lt;&lt;set $stampoints-=2&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $descroll4 is 1&gt;&gt;
@@ -55782,7 +55782,7 @@ The following twenty minutes are a divine experience. It&#39;s like having a bla
 
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $event1 to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -55831,7 +55831,7 @@ She has to fight hard not to reveal her feelings about the degrading act you&#39
 
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $event2 to false&gt;&gt;
 &lt;&lt;set $hascummed to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -55858,7 +55858,7 @@ You grab the girl&#39;s legs and start pumping her pussy full with cum – while
 
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $event8 to false&gt;&gt;
 &lt;&lt;set $hascummed to true&gt;&gt;
 &lt;&lt;unset $ridden&gt;&gt;
@@ -55886,7 +55886,7 @@ You grab the girl&#39;s legs and start pumping her pussy full with cum – while
 
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stampoints lt 2&gt;&gt;&lt;&lt;set $stampoints=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $event9 to false&gt;&gt;
 &lt;&lt;set $hascummed to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -102731,7 +102731,7 @@ You discover several intriguing pieces of evidence in a top-floor office - lists
 &lt;&lt;include Journal&gt;&gt;
 
 /* ELLEN JOB TERMINATION CHECKER */
-&lt;&lt;if $npc.av50.masterlove lte 29&gt;&gt;&lt;&lt;set $npc.av50.masterlove to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $npc.av50.masterlove lt 40&gt;&gt;&lt;&lt;set $npc.av50.masterlove to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $npc.av50.scarefactor gte 1&gt;&gt;&lt;&lt;set $npc.av50.scarefactor to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $tookellen2 to true&gt;&gt;
@@ -113557,7 +113557,7 @@ HIT F11 TO ENTER FULLSCREEN MODE
 &lt;&lt;if $background is 106&gt;&gt;
 &lt;&lt;set $credit=100&gt;&gt;
 &lt;&lt;set $cash-=700&gt;&gt;
-&lt;&lt;if $cash lte 100&gt;&gt;&lt;&lt;set $cash to 300&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash lte 300&gt;&gt;&lt;&lt;set $cash to 300&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $masterage=30&gt;&gt;
 &lt;&lt;set $survival=45&gt;&gt;
 &lt;&lt;set $diff to 3&gt;&gt;
@@ -119661,7 +119661,7 @@ The show has made your _callit &#39;&#39;Happier (+2)&#39;&#39; and less stresse
 
  &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll4 is 4&gt;&gt;While sightseeing the century-old buildings, reminding you of a classic English town, &lt;&lt;if $cash gte 50&gt;&gt;someone succeeds in stealing a 50-dollar bill from your pocket! You fail to identify the thief, who&#39;s swallowed by the crowd long before you notice the bill is gone. &lt;&lt;set $cash-=50&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $aca lte 39&gt;&gt;you&#39;re somehow absorbed by the area&#39;s history, and walk around for over an hour marveling at the beauty of lost ages. This deeply nostalgic experience increases your &lt;b&gt;Academic skill&lt;/b&gt; by one!&lt;&lt;set $aca+=1&gt;&gt; &lt;&lt;else&gt;&gt;both you and your _callit feel relaxed and invigorated, causing a drop in stress and an increase in &lt;b&gt;Stamina&lt;/b&gt; and &lt;b&gt;Stamina points!&lt;/b&gt;&lt;&lt;set $tempstamina+=5&gt;&gt;&lt;&lt;set $stampoints+=2&gt;&gt;&lt;&lt;set $stress-=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 5&gt;&gt;&lt;&lt;if $focus isnot 1 and $girlid isnot 2&gt;&gt;Feeling the winds of lost centuries, Ikaanos&#39; history enthralls your _callit, giving &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; an &lt;b&gt;Academic focus&lt;/b&gt; and an urge to learn more about how the city was founded. &lt;&lt;else&gt;&gt;The long walk leaves $girlname tired – &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;&#39;s lost a considerable amount of &lt;b&gt;Stamina&lt;/b&gt; and needs a rest when you return home.&lt;&lt;set $tempstamina-=15&gt;&gt;&lt;&lt;if $tempstamina lte 0&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll4 is 5&gt;&gt;&lt;&lt;if $focus isnot 1 and $girlid isnot 2&gt;&gt;Feeling the winds of lost centuries, Ikaanos&#39; history enthralls your _callit, giving &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; an &lt;b&gt;Academic focus&lt;/b&gt; and an urge to learn more about how the city was founded. &lt;&lt;else&gt;&gt;The long walk leaves $girlname tired – &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;&#39;s lost a considerable amount of &lt;b&gt;Stamina&lt;/b&gt; and needs a rest when you return home.&lt;&lt;set $tempstamina-=15&gt;&gt;&lt;&lt;if $tempstamina lt 5&gt;&gt;&lt;&lt;set $tempstamina=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll4 gte 6&gt;&gt;The air is considerably healthier up here in the hilly regions than it is down at the docks, as you can observe when you return along the way you came down. The view is breathtaking, with the vast Irendorian sea in the background, resulting in a reduction in &lt;b&gt;Stress&lt;/b&gt; and an invigoration that restores &lt;b&gt;Stamina&lt;/b&gt; for both of you. .
 
 &lt;&lt;if $masterlove gte 40 and $happiness gte 15&gt;&gt;
@@ -194033,7 +194033,7 @@ $connect units
 &lt;&lt;set _fightpics to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.tempstamina lte 0&gt;&gt;&lt;&lt;set _npc.tempstamina=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.tempstamina lt 2&gt;&gt;&lt;&lt;set _npc.tempstamina=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -235025,7 +235025,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if $chdo is 1 or $chdo is 3 or $chdo is 5 or $chdo is 7 or $chdo is 9 or $chdo is 11&gt;&gt;&lt;&lt;set $chdo+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $faction isnot undefined&gt;&gt;
-&lt;&lt;if $faction.ikaanos.money lte 10&gt;&gt;&lt;&lt;set $faction.ikaanos.money to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.money lte 100&gt;&gt;&lt;&lt;set $faction.ikaanos.money to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _clothi to true&gt;&gt;
@@ -393134,7 +393134,7 @@ You fail to take your dissidence up to The Senate, who&#39;s able to conclude to
 /* Removes first wife from salary demands */
 &lt;&lt;if _npc.status is 10 and _npc.actnpc is $firstwife&gt;&gt;
 &lt;&lt;if _happgain lt 0&gt;&gt;&lt;&lt;set _happgain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _angergain gt 1&gt;&gt;&lt;&lt;set _angergain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _angergain gt 1&gt;&gt;&lt;&lt;set _angergain to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _affgain lt 0&gt;&gt;&lt;&lt;set _affgain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
