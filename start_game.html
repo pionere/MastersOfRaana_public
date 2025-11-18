@@ -56245,11 +56245,9 @@ You present a &lt;&lt;if $shrooms gte 90&gt;&gt;considerably&lt;&lt;/if&gt;&gt; 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Professor: &#39;&#39;//Excellent. You should know that this is a most important matter. I and a couple of my colleagues are gonna run some mind-altering experiments this weekend and these are essential for what we&#39;re about to undertake. You saved us.//
 
-&lt;&lt;if $shrooms gte 100&gt;&gt;&lt;br&gt;&lt;br&gt;// Oh, and here&#39;s a little bonus for your diligent work. This is a lot more than I expected you&#39;d find.//&lt;&lt;set _more to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _reward=$shrooms*10&gt;&gt;
+&lt;&lt;if $shrooms gte 100&gt;&gt;&lt;br&gt;&lt;br&gt;// Oh, and here&#39;s a little bonus for your diligent work. This is a lot more than I expected you&#39;d find.//&lt;&lt;set _reward+=150&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;set _temp=$shrooms*=10&gt;&gt;
-&lt;&lt;if _more is true&gt;&gt;&lt;&lt;set _temp+=150&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _reward to _temp&gt;&gt;
 &lt;&lt;set _credgain to 5&gt;&gt;
 &lt;&lt;include MissionComp&gt;&gt;
 
@@ -132067,9 +132065,7 @@ You spend an hour carefully collecting as many specimens as you can.
 &lt;&lt;if $stampoints lte 1&gt;&gt;&lt;&lt;set $stampoints to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $take to 1&gt;&gt;
 &lt;&lt;passhours 1&gt;&gt;
-&lt;&lt;set $shrooms=0&gt;&gt;
-&lt;&lt;set $shrooms+=$survival&gt;&gt;
-&lt;&lt;set $shrooms+=$survival&gt;&gt;
+&lt;&lt;set $shrooms=2*$survival&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 You&#39;re able to find a total of $shrooms mushrooms that you&#39;ll be able to sell back to the professor. 
 &lt;br&gt;&lt;br&gt;
