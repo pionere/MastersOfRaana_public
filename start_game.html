@@ -12927,9 +12927,7 @@ SUGGEST_FACTOR = TRANSFERS TO PERSUADE ENGINE. LINGERING FEELING TOWARD HOW YOU 
 &lt;&lt;else&gt;&gt;&lt;&lt;&lt;&lt;set $like to $likechance gt 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $like is true&gt;&gt;&lt;&lt;set $arousal+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $like is false&gt;&gt;&lt;&lt;set $arousal-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal+=$like ? 2 : -1&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Suggest" tags="" position="4990,1009" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $suggestroll to random(1, 7)&gt;&gt;
@@ -18394,8 +18392,7 @@ $girlname has increased her &#39;&#39;Oral Fixation Trait (+1)&#39;&#39;!
 &lt;&lt;else&gt;&gt;&lt;&lt;set $descroll3 to random(12, 20)&gt;&gt;
 &lt;&lt;/if&gt;&gt; 
 
-&lt;&lt;if $skillroll lte 49&gt;&gt;&lt;&lt;set $pic to 32&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $skillroll gte 50&gt;&gt;&lt;&lt;set $pic to 33&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic to ($skillroll lte 49 ? 32 : 33)&gt;&gt;
 &lt;&lt;if $pussyrounds gte 1&gt;&gt;&lt;&lt;set $tempstamina-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $pussyrounds is 1&gt;&gt;
@@ -21152,9 +21149,7 @@ Your foreplay is closing in on two hours! Get on with it!&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $happiness gt 89&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $chance gte 1&gt;&gt;&lt;&lt;set $takevirgin to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $chance lte 0&gt;&gt;&lt;&lt;set $takevirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $takevirgin=$chance gte 1&gt;&gt;
 
 
 &lt;&lt;if $suggestdone is false&gt;&gt;
@@ -21604,8 +21599,7 @@ You pull out your finger from $girlnames tight asshole.
 &lt;&lt;if $happiness gt 89&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $chance gte 1&gt;&gt;&lt;&lt;set $takevirgin to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $chance lte 0&gt;&gt;&lt;&lt;set $takevirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $takevirgin=$chance gte 1&gt;&gt;
 
 
 
@@ -28211,11 +28205,7 @@ $girlname is like a lifeless doll - with her anus totally relaxed. You spray you
 
 &lt;&lt;include GirlCheck&gt;&gt;
 
-&lt;&lt;if $oldone4 isnot 12 and $oldone4 isnot 13 and $oldone4 isnot 14 and $oldone4 isnot 19 and $oldone4 isnot 17&gt;&gt;
-&lt;&lt;set _wolfhere to true&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _wolfaway to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _wolfaway=($oldone4 is 12 or $oldone4 is 13 or $oldone4 is 14 or $oldone4 is 19 or $oldone4 is 17)&gt;&gt;
 
 &lt;&lt;if $comesfromhouse is true&gt;&gt;
 &lt;&lt;include CAuto&gt;&gt;
@@ -36700,11 +36690,7 @@ $girlname has a normal and healthy body weight. &lt;br&gt;&lt;br&gt;She might ha
 &lt;div class=&quot;lighthover&quot;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/tendsmall.png&quot;]]&gt;&gt;
 &lt;&lt;goto `passage()`&gt;&gt;
-&lt;&lt;if $medicine lte 35&gt;&gt;
-&lt;&lt;set $masterhealth+=20&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $masterhealth+=30&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth+=$medicine lte 35 ? 20 : 30&gt;&gt;
 &lt;&lt;set $ownstimb-=1&gt;&gt;
 &lt;&lt;set $stimmed to true&gt;&gt;
 &lt;&lt;set $noclick to true&gt;&gt;
@@ -39583,8 +39569,7 @@ You&#39;re way too sloppy and way too rough, causing the girl more pain than ple
 &lt;&lt;if $likesadist gte 40 or $willpower lte 0&gt;&gt;
 
 &lt;&lt;if $likesadist lte 39&gt;&gt;&lt;&lt;set $humiliation+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $chance gte 1&gt;&gt;&lt;&lt;set $arousal+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $chance lte 0&gt;&gt;&lt;&lt;set $arousal-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal+=$chance gte 1 ? 2 : -2&gt;&gt;
 
 &lt;&lt;if $lickround is 0&gt;&gt;
 &lt;&lt;if $descroll lte 2&gt;&gt;$girlname isn’t making any signs of resisting - you&#39;re fully invited as she spreads her legs wide apart and bends her &lt;&lt;if $naked is true&gt;&gt;naked&lt;&lt;/if&gt;&gt; body into an arch to give you full access. &lt;&lt;/if&gt;&gt;
@@ -42410,12 +42395,7 @@ $girlnames &#39;&#39;Defiance (+4)&#39;&#39; has increased!
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $tempstamina lte 0&gt;&gt;
-&lt;&lt;set $avatarunc to true&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $avatarunc to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $avatarunc=$tempstamina lte 0&gt;&gt;
 
 &lt;&lt;if $avatarunc is true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -43563,10 +43543,10 @@ Your &#39;&#39;Bondage skill (+1)&#39;&#39; has increased!
 
 &lt;&lt;if $likesadist lte 39 and $chance lte 0&gt;&gt;
 &lt;&lt;set $arousal-=2&gt;&gt;
-&lt;&lt;if $punok is undefined&gt;&gt;&lt;&lt;set $masterlove-=3&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterlove-=$punok is undefined ? 3 : 1&gt;&gt;
 &lt;&lt;set $analwear+=2&gt;&gt;
 &lt;&lt;set $scarefactor+=1&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=3&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 3 : 1&gt;&gt;
 &lt;&lt;if $humiliation lte 14&gt;&gt;&lt;&lt;set $humiliation+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $pain+=1&gt;&gt;
 &lt;&lt;set $stress+=1&gt;&gt;
@@ -44008,7 +43988,7 @@ $girlnames &#39;&#39;Corruption (+1)&#39;&#39; has increased!
 &lt;&lt;set $masterlove-=1&gt;&gt;
 &lt;&lt;if $humiliation lte 14&gt;&gt;&lt;&lt;set $humiliation+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $pain+=1&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 2 : 1&gt;&gt;
 &lt;&lt;if $scarefactor lte 2&gt;&gt;&lt;&lt;set $scarefactor+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -44226,7 +44206,7 @@ $girlnames &#39;&#39;Vanilla Trait (-1)&#39;&#39; has decreased!
 &lt;&lt;set $analwear+=3&gt;&gt;
 &lt;&lt;if $likesadist lte 19 or $scarefactor gte 4&gt;&gt;
 &lt;&lt;set $masterlove-=1&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 2 : 1&gt;&gt;
 &lt;&lt;if $humiliation lte 14&gt;&gt;&lt;&lt;set $humiliation+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $skillroll lte 2 and $willpower gte 60&gt;&gt;&lt;&lt;set $willpower-=1&gt;&gt;&lt;&lt;if $traitsub gte 50&gt;&gt;&lt;&lt;set $willpower-=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $pain+=2&gt;&gt;
@@ -44707,7 +44687,7 @@ Your words deeply affect the girl, who&#39;s left noticeably shaken by their res
 &lt;&lt;if $skillroll is 69 and $traitpure lte 74&gt;&gt;&lt;&lt;set $likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist lte 39&gt;&gt;&lt;&lt;set $masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $likesadist lte 29 and $punok is undefined&gt;&gt;&lt;&lt;set $scarefactor-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likesadist lte 19&gt;&gt;&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $likesadist lte 19&gt;&gt;&lt;&lt;set $happiness-=$traitjaded lte 5 ? 2 : 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -67728,8 +67708,7 @@ This trait has a 10% chance of decreasing by one point per day if _girlname is a
 &lt;&lt;if _npc.masterlove lte 29&gt;&gt;&lt;&lt;set _yield-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.masterlove lte 49&gt;&gt;&lt;&lt;set _yield-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.meleeweapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set _yield+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;knife&quot;&gt;&gt;&lt;&lt;set _yield-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _yield+=_npc.meleeweapon is &quot;knife&quot; ? 5 : -10&gt;&gt;
 &lt;&lt;if _npc.weapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _yield-=65&gt;&gt;&lt;&lt;set _rangede to -1&gt;&gt;
 
 &lt;&lt;elseif _npc.weapon is &quot;plasma&quot; or _npc.weapon is &quot;pistol&quot; or _npc.weapon is &quot;r55&quot; or _npc.weapon is &quot;gl&quot; or _npc.weapon is &quot;cybercannon&quot; or _npc.weapon is &quot;revolver&quot; or _npc.weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _yield-=40&gt;&gt;
@@ -76041,7 +76020,7 @@ The girl is unaffected by your words. She’s either too mentally strong or you 
 &lt;&lt;set $scarefactor+=2&gt;&gt;
 &lt;&lt;set $masterlove-=8&gt;&gt;
 &lt;&lt;if $masterlove gte 50&gt;&gt;&lt;&lt;set $masterlove=49&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitjaded lte 49&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 49 ? 1 : 5&gt;&gt;
 &lt;&lt;if $happiness gte 50&gt;&gt;&lt;&lt;set $happiness=49&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $kind-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -76087,7 +76066,7 @@ Your words manage to affect the girl, who looks both startled and acceptant of h
 
 &lt;&lt;if $scarefactor lte 1&gt;&gt;&lt;&lt;set $scarefactor+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $masterlove-=2&gt;&gt;
-&lt;&lt;if $traitjaded lte 49&gt;&gt;&lt;&lt;set $happiness-=7&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=traitjaded lte 49 ? 7 : 2&gt;&gt;
 &lt;&lt;if $happiness gte 50&gt;&gt;&lt;&lt;set $happiness=49&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $kind-=2&gt;&gt;
 &lt;&lt;if $traitsub gte 50&gt;&gt;&lt;&lt;set $willpower-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -80872,11 +80851,7 @@ filename is rackoralgag.jpg and rackdeepgag.jpg
 
 [img[_img + &quot;walktosex.jpg&quot;]]
 
-&lt;&lt;if _respic is 1&gt;&gt;
-&lt;&lt;set _nostats to false&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _nostats to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _nostats=!(_respic is 1)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -83570,8 +83545,7 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $a556 lte 0&gt;&gt;&lt;&lt;set $a556 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $a12g lte 0&gt;&gt;&lt;&lt;set $a12g to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $pos is 3&gt;&gt;&lt;&lt;set $position to &quot;close&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pos lte 2&gt;&gt;&lt;&lt;set $position to &quot;far&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $position=$pos is 3 ? &quot;close&quot; : &quot;far&quot;&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -83663,8 +83637,7 @@ REMOVED! USE CapCheck passage instead
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cs1_pos is 3&gt;&gt;&lt;&lt;set $position to &quot;close&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_pos lte 2&gt;&gt;&lt;&lt;set $position to &quot;far&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $position=$cs1_pos is 3 ? &quot;close&quot; : &quot;far&quot;&gt;&gt;
 
 
 &lt;&lt;if $skillroll lte 4&gt;&gt;
@@ -83741,8 +83714,7 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $cs2_pos is 3&gt;&gt;&lt;&lt;set $position to &quot;close&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_pos lte 2&gt;&gt;&lt;&lt;set $position to &quot;far&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $position=$cs2_pos is 3 ? &quot;close&quot; : &quot;far&quot;&gt;&gt;
 
 
 &lt;&lt;if $skillroll lte 4&gt;&gt;
@@ -83818,8 +83790,7 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $cs3_pos is 3&gt;&gt;&lt;&lt;set $position to &quot;close&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_pos lte 2&gt;&gt;&lt;&lt;set $position to &quot;far&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $position=$cs3_pos is 3 ? &quot;close&quot; : &quot;far&quot;&gt;&gt;
 
 &lt;&lt;if $skillroll lte 4&gt;&gt;
 &lt;&lt;set $chance+=100&gt;&gt;
@@ -83890,8 +83861,7 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;set $strength=$cs4_str&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cs4_pos is 3&gt;&gt;&lt;&lt;set $position to &quot;close&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_pos lte 2&gt;&gt;&lt;&lt;set $position to &quot;far&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $position=$cs4_pos is 3 ? &quot;close&quot; : &quot;far&quot;&gt;&gt;
 
 &lt;&lt;if $skillroll lte 4&gt;&gt;
 &lt;&lt;set $chance+=100&gt;&gt;
@@ -89378,7 +89348,7 @@ You observe a couple of the red-bandana wearing bandits standing idly on a stree
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $redtigers gte 5&gt;&gt;&lt;&lt;set $loot to 60&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $loot to 500&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $loot=$redtigers gte 5 ? 60 : 500&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -90910,11 +90880,7 @@ Taking them out will not be an easy task, however. They look like two brawny oxe
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _pausemusic to true&gt;&gt;
-&lt;&lt;if $stokkechar isnot 2&gt;&gt;
-&lt;&lt;set $loot to 500&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $loot to 800&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $loot=$stokkechar isnot 2 ? 500 : 800&gt;&gt;
 
 
 
@@ -92234,8 +92200,7 @@ You observe a group belonging to &#39;&#39;The Dockyard Punks&#39;&#39;, a worke
 
 
 &lt;&lt;set _pausemusic to true&gt;&gt;
-&lt;&lt;set $loot to 500&gt;&gt;
-&lt;&lt;if $combat is 99&gt;&gt;&lt;&lt;set $loot to 1000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $loot=$combat is 99 ? 1000 : 500&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -92870,12 +92835,12 @@ The Walker family is currently involved in a bitter struggle against the superio
 &lt;&lt;set $enemy1_soak = 14&gt;&gt;
 &lt;&lt;set $enemy1_sex = &quot;him&quot;&gt;&gt;
 
-&lt;&lt;if $walkerinvest is undefined&gt;&gt;&lt;&lt;set $enemy2_type = 10&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $enemy2_type = 12&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy2_type = $walkerinvest is undefined ? 10 : 12&gt;&gt;
 &lt;&lt;set $enemy2_pos = 1&gt;&gt;
 &lt;&lt;set $enemy2_state to 2&gt;&gt;
 &lt;&lt;set $enemy2_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy2 = &quot;CALCOTT&quot;&gt;&gt;
-&lt;&lt;if $walkerinvest is undefined&gt;&gt;&lt;&lt;set $enemy2_weapon = &quot;crossbow&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $enemy2_weapon = &quot;rifle&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy2_weapon = $walkerinvest is undefined ? &quot;crossbow&quot; : &quot;rifle&quot;&gt;&gt;
 &lt;&lt;set $enemy2_health = 90&gt;&gt;
 &lt;&lt;set $enemy2_htype = 90&gt;&gt;
 &lt;&lt;set $enemy2_wpskill = 60&gt;&gt;
@@ -92885,12 +92850,12 @@ The Walker family is currently involved in a bitter struggle against the superio
 &lt;&lt;set $enemy2_sex = &quot;him&quot;&gt;&gt;
 &lt;&lt;set $enemy2_id = 4&gt;&gt;
 
-&lt;&lt;if $walkerinvest is undefined&gt;&gt;&lt;&lt;set $enemy3_type = 10&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $enemy3_type = 95&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy3_type = $walkerinvest is undefined ? 10 : 95&gt;&gt;
 &lt;&lt;set $enemy3_pos = 1&gt;&gt;
 &lt;&lt;set $enemy3_state to 2&gt;&gt;
 &lt;&lt;set $enemy3_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy3 = &quot;SETH&quot;&gt;&gt;
-&lt;&lt;if $walkerinvest is undefined&gt;&gt;&lt;&lt;set $enemy3_weapon = &quot;crossbow&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $enemy3_weapon = &quot;rifle&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy3_weapon = $walkerinvest is undefined ? &quot;crossbow&quot; : &quot;rifle&quot;&gt;&gt;
 &lt;&lt;set $enemy3_health = 95&gt;&gt;
 &lt;&lt;set $enemy3_htype = 95&gt;&gt;
 &lt;&lt;set $enemy3_wpskill = 90&gt;&gt;
@@ -98022,10 +97987,7 @@ You engage the decimated group of assassins!
 
 &lt;&lt;set $enemy1_type =34&gt;&gt;
 &lt;&lt;set $enemy1_pos = 2&gt;&gt;
-&lt;&lt;set $enemy1_state to 2&gt;&gt;
-&lt;&lt;if $quest_clea gte 1&gt;&gt;
-&lt;&lt;set $enemy1_state to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy1_state = $quest_clea gte 1 ? 0 : 2&gt;&gt;
 &lt;&lt;set $enemy1_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy1 = &quot;ASSASSIN ELITE&quot;&gt;&gt;
 &lt;&lt;set $enemy1_weapon = &quot;coil&quot;&gt;&gt;
@@ -98231,11 +98193,7 @@ You engage the group of bandits currently occupying Marston Watch Tower!
 &lt;&lt;set $enemy3_weapon = &quot;automaticrifle&quot;&gt;&gt;
 &lt;&lt;set $enemy3_health = 80&gt;&gt;
 &lt;&lt;set $enemy3_htype = 100&gt;&gt;
-&lt;&lt;if $followers gte 4&gt;&gt;
-&lt;&lt;set $enemy3_wpskill = 80&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $enemy3_wpskill = 20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy3_wpskill = $followers gte 4 ? 80 : 20&gt;&gt;
 &lt;&lt;set $enemy3_dex = 60&gt;&gt;
 &lt;&lt;set $enemy3_armor= &quot;none&quot;&gt;&gt;
 &lt;&lt;set $enemy3_soak = 0&gt;&gt;
@@ -102478,11 +102436,12 @@ You’ve defeated a squad of insurgent soldiers.
 &lt;&lt;if $descroll4 gte 4&gt;&gt;You have a broken arm and several minor cuts and bruises that are painful but not fatal. After stabilizing the arm, you’re able to get on your feet and survey the situation around you.&lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $descroll3 lte 1&gt;&gt;&lt;&lt;if $diff lte 2&gt;&gt;You have suffered a permanent -2 penalty to your &lt;b&gt;STRENGTH&lt;/b&gt;. &lt;&lt;set $masterstrength-=2&gt;&gt; &lt;&lt;else&gt;&gt; You have suffered a permanent -5 penalty to your &lt;b&gt;STRENGTH&lt;/b&gt;. &lt;&lt;set $masterstrength-=5&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=$diff lte 2 ? -2 : -5&gt;&gt;
+&lt;&lt;if $descroll3 lte 1&gt;&gt;You have suffered a permanent penalty to your &lt;b&gt;STRENGTH (_tmp)&lt;/b&gt;.&lt;&lt;set $masterstrength+=_tmp&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 2&gt;&gt;&lt;&lt;if $diff lte 2&gt;&gt;You have suffered a permanent -1 penalty to your &#39;&#39;BEAUTY&#39;&#39;. &lt;&lt;set $masterbeauty-=1&gt;&gt;&lt;&lt;else&gt;&gt;You&#39;ll also leave this fight with a nasty scar, which has decreased your &#39;&#39;BEAUTY (-4)&#39;&#39;. &lt;&lt;set $masterbeauty-=4&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 3&gt;&gt;You have suffered a permanent -3 penalty to your &#39;&#39;STAMINA&#39;&#39;. &lt;&lt;set $masterstamina-=3&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 4&gt;&gt;You have suffered a permanent -3 penalty to your &#39;&#39;Melee skill&#39;&#39;. &lt;&lt;set $melee-=3&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 gte 5&gt;&gt;&lt;&lt;if $diff lte 2&gt;&gt;You have suffered a permanent -2 penalty to your &lt;b&gt;DEXTERITY&lt;/b&gt;. &lt;&lt;set $masterdex-=2&gt;&gt;&lt;&lt;else&gt;&gt;You have suffered a permanent penalty to your &#39;&#39;DEXTERITY (-5)&#39;&#39;. &lt;&lt;set $masterdex-=5&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll3 gte 5&gt;&gt;You have suffered a permanent penalty to your &lt;b&gt;DEXTERITY (_tmp)&lt;/b&gt;.&lt;&lt;set $masterdex+=_tmp&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $stampoints gte 8&gt;&gt;&lt;&lt;set $stampoints=8&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -104806,9 +104765,7 @@ $girlname nods obediently and readies herself.
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 /* ENTER SCENES */
-&lt;&lt;if $bathroom is 1&gt;&gt;&lt;&lt;set $pic to 80&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bathroom is 2&gt;&gt;&lt;&lt;set $pic to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bathroom gte 3&gt;&gt;&lt;&lt;set $pic to 83&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic=$bathroom lte 2 ? 80 : 83&gt;&gt;
 
 
 
@@ -104880,9 +104837,7 @@ $girlname nods obediently and readies herself.
 &lt;&lt;if $chance gte 1 and $willpower gte 1&gt;&gt;
 
 /* ENTER SCENES */
-&lt;&lt;if $bathroom is 1&gt;&gt;&lt;&lt;set $pic to 80&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bathroom is 2&gt;&gt;&lt;&lt;set $pic to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bathroom gte 3&gt;&gt;&lt;&lt;set $pic to 83&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic=$bathroom lte 2 ? 80 : 83&gt;&gt;
 
 &lt;&lt;set $sorry to true&gt;&gt;
 
@@ -105144,7 +105099,7 @@ You have no hurry undressing, as it takes a couple of minutes for the tub to fil
 
 &lt;&lt;if $action1 is true&gt;&gt;
 &lt;&lt;passmins 18&gt;&gt;
-&lt;&lt;if $bathroom lte 2&gt;&gt;&lt;&lt;set $pic to 81&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $pic to 82&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic=$bathroom lte 2 ? 81 : 80&gt;&gt;
 
 &lt;&lt;if $action10 is true&gt;&gt;
 &lt;&lt;if $likesadist lte 29 and $willpower gte 40&gt;&gt;&lt;&lt;set $scarefactor+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -105374,7 +105329,7 @@ You regain a small amount of &#39;&#39;Health (+4)&#39;&#39; and &#39;&#39;Stami
 &lt;&lt;if $action2 is true&gt;&gt;
 &lt;&lt;passmins 18&gt;&gt;
 
-&lt;&lt;if $bathroom lte 2&gt;&gt;&lt;&lt;set $pic to 81&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $pic to 82&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic=$bathroom lte 2 ? 81 : 82&gt;&gt;
 
 
 &lt;&lt;if $action10 is true&gt;&gt;
@@ -105889,7 +105844,7 @@ $girlname is too depressed to give you any response back. She’s borderline cat
 //
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if $chance gte 1&gt;&gt;&lt;&lt;set $pic to 85&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $pic to 81&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic=$chance gte 1 ? 85 : 81&gt;&gt;
 
 &lt;&lt;if $chance gte 1 and $willpower gte 1 and $likesadist lte 29&gt;&gt;
 &lt;&lt;set $action5b to true&gt;&gt;
@@ -106220,7 +106175,7 @@ Her &#39;&#39;Humiliation (+6)&#39;&#39; has increased!
 
 &lt;&lt;set $masterlove-=4&gt;&gt;
 &lt;&lt;set $humiliation+=6&gt;&gt;
-&lt;&lt;if $scarefactor lte 1&gt;&gt;&lt;&lt;set $scarefactor+=2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $scarefactor+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $scarefactor+=$scarefactor lte 1 ? 2 : 1&gt;&gt;
 &lt;&lt;set $refuseshower to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -106291,7 +106246,7 @@ $girlnames &#39;&#39;Oral experience&#39;&#39; has increased!
 &lt;&lt;if $event6 is true&gt;&gt;
 You decide to end the blowjob before ejaculating, saving your load for another occasion.
 
-&lt;&lt;if $bathroom lte 2&gt;&gt;&lt;&lt;set $pic to 81&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $pic to 82&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $pic=$bathroom lte 2 ? 81 : 82&gt;&gt;
 
 &lt;&lt;set $action5 to false&gt;&gt;
 &lt;&lt;set $action5b to false&gt;&gt;
@@ -109544,8 +109499,7 @@ $girlname remains unresponsive. The incident has increased her love for &lt;b&gt
 
 &lt;&lt;set $chance-=30&gt;&gt;
 
-&lt;&lt;if $chance gte 1&gt;&gt;&lt;&lt;set $arousal+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $chance lte 0&gt;&gt;&lt;&lt;set $arousal-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $arousal+= $chance gte 1 ? 1 : -2&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -111155,7 +111109,7 @@ $girlname is now completely naked.
 &lt;&lt;set $humiliation+=3&gt;&gt;
 &lt;&lt;set $masterlove-=4&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=5&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 5 : 2&gt;&gt;
 &lt;&lt;set $scarefactor+=1&gt;&gt;
 &lt;&lt;set $arousal-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -111182,7 +111136,7 @@ $girlname is now completely naked.
 //
 
 &lt;&lt;set $masterlove-=2&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 2 : 1&gt;&gt;
 &lt;&lt;set $scarefactor+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -111319,7 +111273,7 @@ Her &#39;&#39;Affection (-6)&#39;&#39; toward you has significantly decreased!
 &lt;&lt;if $descroll4 gte 4 and $willpower gte 10&gt;&gt;&lt;br&gt;&lt;br&gt;The girl’s &#39;&#39;WILLPOWER&#39;&#39; has decreased!&lt;&lt;set $willpower-=1&gt;&gt;&lt;&lt;if $traitsub gte 50&gt;&gt;&lt;&lt;set $willpower-=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $masterlove-=6&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=3&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 3 : 1&gt;&gt;
 &lt;&lt;set $scarefactor+=1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
 &lt;&lt;set $event to 0&gt;&gt;
@@ -111381,7 +111335,7 @@ You have managed to increase $girlnames &#39;&#39;Fear (+1)&#39;&#39;!
 &lt;&lt;set $humiliation+=4&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
 &lt;&lt;set $masterlove-=3&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=3&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 3 : 1&gt;&gt;
 &lt;&lt;set $scarefactor+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -111409,7 +111363,7 @@ You have managed to increase $girlnames &#39;&#39;Fear (+1)&#39;&#39;!
 &lt;&lt;set $refuse6 to true&gt;&gt;
 &lt;&lt;set $arousal-=3&gt;&gt;
 &lt;&lt;set $masterlove-=6&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=3&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 3 : 1&gt;&gt;
 &lt;&lt;set $scarefactor+=2&gt;&gt;
 &lt;&lt;set $humiliation+=3&gt;&gt;
 &lt;&lt;set $stress+=2&gt;&gt;
@@ -111617,7 +111571,7 @@ You have also increased $girlnames &#39;&#39;Fear (+1)&#39;&#39;!
 &lt;&lt;set $humiliation+=4&gt;&gt;
 &lt;&lt;if $descroll4 is 5 and $willpower gte 20&gt;&gt;&lt;&lt;set $willpower-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $masterlove-=2&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=5&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 5 : 2&gt;&gt;
 &lt;&lt;set $stress+=1&gt;&gt;
 &lt;&lt;set $stampoints-=1&gt;&gt;
 &lt;&lt;set $arousal-=1&gt;&gt;
@@ -111642,7 +111596,7 @@ You have also increased $girlnames &#39;&#39;Fear (+1)&#39;&#39;!
 
 
 &lt;&lt;set $masterlove-=9&gt;&gt;
-&lt;&lt;if $traitjaded lte 5&gt;&gt;&lt;&lt;set $happiness-=3&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $happiness-=$traitjaded lte 5 ? 3 : 1&gt;&gt;
 &lt;&lt;set $scarefactor+=2&gt;&gt;
 &lt;&lt;set $willpower+=1&gt;&gt;
 &lt;&lt;set $humiliation+=1&gt;&gt;
@@ -113614,12 +113568,7 @@ HIT F11 TO ENTER FULLSCREEN MODE
 &lt;div class=&quot;headsign&quot;&gt;CHARACTER REVIEW&lt;/div&gt;
 
 &lt;&lt;if $action555 isnot true&gt;&gt;
-&lt;&lt;if $diff is 3&gt;&gt;
-&lt;&lt;set $cash+=300&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $cash+=1000&gt;&gt;
-&lt;&lt;if $diff is 1&gt;&gt;&lt;&lt;set $cash+=5000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $cash+=$diff is 3 ? 300 : ($diff is 1 ? 6000 : 1000)&gt;&gt;
 &lt;&lt;set $action555 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $action isnot 99&gt;&gt;
@@ -141194,7 +141143,7 @@ This database will display various entries if you have an active quest that enab
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $willpower lte -11&gt;&gt;&lt;&lt;set _will to &quot;Cum-slave&quot;&gt;&gt;
-&lt;&lt;elseif $willpower lte 0&gt;&gt;&lt;&lt;if $happiness lte 34&gt;&gt;&lt;&lt;set _will to &quot;Broken&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _will to &quot;Devoted&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;elseif $willpower lte 0&gt;&gt;&lt;&lt;set _will to $happiness lte 34 ? &quot;Broken&quot; : &quot;Devoted&quot;&gt;&gt;
 &lt;&lt;elseif $willpower lte 9&gt;&gt;&lt;&lt;set _will to &quot;Inferior&quot;&gt;&gt;
 &lt;&lt;elseif $willpower lte 19&gt;&gt;&lt;&lt;set _will to &quot;Poor&quot;&gt;&gt;
 &lt;&lt;elseif $willpower lte 29&gt;&gt;&lt;&lt;set _will to &quot;Weak&quot;&gt;&gt;
@@ -141475,11 +141424,8 @@ $kissingxp&lt;br&gt;
 
 &lt;&lt;if $action2 isnot true and $diff isnot 3&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;if $shownum isnot true&gt;&gt;
-[img[$imgpath + &quot;Butt/changer.png&quot;][Tutor][$shownum to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Butt/changer2.png&quot;][Tutor][$shownum to false]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img = $shownum ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer.png&quot;&gt;&gt;
+[img[$imgpath + _img][Tutor][$shownum to !$shownum]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -144871,11 +144817,11 @@ Seduction and persuasion penalty when interacting with younger females.
 
 /* ENEMY DEATH SOUNDS BEGIN */
 
-&lt;&lt;if $calc is 1 and $enemy1_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy1_type&gt;&gt;&lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _sex to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _sex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $calc is 2 and $enemy2_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy2_type&gt;&gt;&lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _sex to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _sex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $calc is 3 and $enemy3_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy3_type&gt;&gt;&lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _sex to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _sex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $calc is 4  and $enemy4_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy4_type&gt;&gt;&lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _sex to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _sex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $calc is 5 and $enemy5_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy5_type&gt;&gt;&lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _sex to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _sex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $calc is 1 and $enemy1_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy1_type&gt;&gt;&lt;&lt;set _sex to $enemy1_sex is &quot;him&quot; ? 1 : 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $calc is 2 and $enemy2_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy2_type&gt;&gt;&lt;&lt;set _sex to $enemy2_sex is &quot;him&quot; ? 1 : 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $calc is 3 and $enemy3_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy3_type&gt;&gt;&lt;&lt;set _sex to $enemy3_sex is &quot;him&quot; ? 1 : 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $calc is 4 and $enemy4_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy4_type&gt;&gt;&lt;&lt;set _sex to $enemy4_sex is &quot;him&quot; ? 1 : 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $calc is 5 and $enemy5_state lte 0&gt;&gt;&lt;&lt;set _enemytyp to $enemy5_type&gt;&gt;&lt;&lt;set _sex to $enemy5_sex is &quot;him&quot; ? 1 : 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _enemytyp gte 0 and _incombat is true&gt;&gt;
@@ -145998,7 +145944,7 @@ Seduction and persuasion penalty when interacting with younger females.
 &lt;&lt;set $speloot to 0&gt;&gt;
 		&lt;&lt;set $take to 3&gt;&gt;
 		&lt;&lt;set $bhidol to 3&gt;&gt;
-		&lt;&lt;if $ownidol is undefined&gt;&gt;&lt;&lt;set $ownidol to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $ownidol+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+		&lt;&lt;set $ownidol=$ownidol is undefined ? 1 : ($ownidol + 1)&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -153167,15 +153113,10 @@ You&#39;re left alone in your bed, bathing in a cloud of sexual gratification.
 
 &lt;div class=&quot;resholder&quot;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $fav isnot true&gt;&gt;
-&lt;&lt;hovertip &quot;view favorites&quot;&gt;&gt;
-[img[$imgpath + &quot;Butt/changer3.png&quot;][NewCombatSimulator][$fav to true]]
+&lt;&lt;hovertip &quot;view &lt;&lt;if $fav&gt;&gt;all&lt;&lt;else&gt;&gt;favorites&lt;&lt;/if&gt;&gt;&quot;&gt;&gt;
+&lt;&lt;set _img = $fav ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer3.png&quot;&gt;&gt;
+[img[$imgpath + _img][NewCombatSimulator][$fav to !$fav]]
 &lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;hovertip &quot;view all&quot;&gt;&gt;
-[img[$imgpath + &quot;Butt/changer2.png&quot;][NewCombatSimulator][$fav to false]]
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;resholder&quot;&gt;
 
@@ -193209,10 +193150,10 @@ You need at least 2 units of Merchandise to begin!
 &lt;&lt;/for&gt;&gt;
 
 
-&lt;&lt;if _dura gte 30&gt;&gt;&lt;&lt;set _dura to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _dura to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _connector gte 8&gt;&gt;&lt;&lt;set _connector to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _connector to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ciboard is 10&gt;&gt;&lt;&lt;set _ciboard to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _ciboard to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _golde gte 100&gt;&gt;&lt;&lt;set _golde to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _golde to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dura=_dura gte 30 ? 1 : 0&gt;&gt;
+&lt;&lt;set _connector=_connector gte 8 ? 1 : 0&gt;&gt;
+&lt;&lt;set _ciboard=_ciboard is 10 ? 1 : 0&gt;&gt;
+&lt;&lt;set _golde=_golde gte 100 ? 1 : 0&gt;&gt;
 
 Yield: _dura Durasteel, _scrapm Scrap metal, _cloths Cloth, _connector Fasteners, _ciboard C-boards and _golde Gold.
 &lt;br&gt;&lt;br&gt;
@@ -194611,7 +194552,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _npc.melee gte 80&gt;&gt;&lt;&lt;set _liking+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $justfight is 1&gt;&gt;&lt;&lt;set _liking+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _liking lte -2&gt;&gt;&lt;&lt;set _arimg to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _arimg to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _arimg=_liking lte -2 ? 1 : 2&gt;&gt;
 
 
 
@@ -197896,7 +197837,7 @@ You take a closer look at your potential arena adversary.
 &lt;&lt;set $enemy1_state to 2&gt;&gt;
 &lt;&lt;set $enemy1_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy1 = &quot;SPACE MARINE&quot;&gt;&gt;
-&lt;&lt;if $descroll gte 4&gt;&gt;&lt;&lt;set $enemy1_weapon = &quot;automaticrifle&quot;&gt;&gt; &lt;&lt;else&gt;&gt;&lt;&lt;set $enemy1_weapon = &quot;coil&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy1_weapon = $descroll gte 4 ? &quot;automaticrifle&quot; : &quot;coil&quot;&gt;&gt;
 &lt;&lt;set $enemy1_health = 150&gt;&gt;
 &lt;&lt;set $enemy1_htype = 150&gt;&gt;
 &lt;&lt;set $enemy1_wpskill = 90&gt;&gt;
@@ -210081,11 +210022,7 @@ Oral wear: _npc.oralwear.&lt;br&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/tendsmall.png&quot;]]&gt;&gt;
 &lt;&lt;goto `passage()`&gt;&gt;
 &lt;&lt;set $stimcheck2 to _stimcheck&gt;&gt;
-&lt;&lt;if $medicine lte 35&gt;&gt;
-&lt;&lt;set _npc.health+=20&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.health+=30&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.health+=$medicine lte 35 ? 20 : 30&gt;&gt;
 &lt;&lt;set $nodel to true&gt;&gt;
 &lt;&lt;set $ownstimb-=1&gt;&gt;
 &lt;&lt;set $stimmed to true&gt;&gt;
@@ -233348,8 +233285,7 @@ You try to get your bearings again, following the vicious fight.
 
 
 /*DEL ISSIDS */
-&lt;&lt;set $issidact to 4&gt;&gt;
-&lt;&lt;if $masterwill gte 100&gt;&gt;&lt;&lt;set $issidact+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $issidact to $masterwill gte 100 ? 5 : 4&gt;&gt;
 
 /* COURT DAYS */
 
@@ -236568,48 +236504,21 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;&lt;if $mctraitpac is undefined or $mctraitpac lte 49&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _paci to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $activeweapon is &quot;crossbow&quot; and $bolts lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;crossbow&quot; and $bolts gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;pistol&quot; and $a9mm lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot; and $a9mm gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;revolver&quot; and $a45 lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot; and $a45 gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;rifle&quot; and $a306 lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot; and $a306 gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot; and $a556 lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot; and $a556 gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot; and $a12g lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot; and $a12g gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;neme&quot; and $a50srr gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot; and $a50srr lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;prifle&quot; and $a9mm lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot; and $a9mm gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;rifle50&quot; and $a50 lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot; and $a50 gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;coil&quot; and $acoil lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot; and $acoil gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;plasma&quot; and $aenergy lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot; and $aenergy gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;gl&quot; and $agl lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot; and $agl gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot; and $awega lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot; and $awega gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;minigun&quot; and $a556 lte 5&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot; and $a556 gte 6&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $activeweapon is &quot;r55&quot; and $a50 lte 0&gt;&gt;&lt;&lt;set $noammo to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot; and $a50 gte 1&gt;&gt;&lt;&lt;set $noammo to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $noammo=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $noammo=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $noammo=$a45 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $noammo=$a306 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $noammo=$a556 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $noammo=$a12g lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;&lt;&lt;set $noammo=$a50srr lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $noammo=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $noammo=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set $noammo=$acoil lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $noammo=$aenergy lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set $noammo=$agl lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set $noammo= $awega lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set $noammo=$a556 lte 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $noammo=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $noammo is false and _paci is undefined&gt;&gt;
@@ -236646,22 +236555,21 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;&lt;if _csam lte 0 or _noammopack is true&gt;&gt;
 
-&lt;&lt;if _rangedw is &quot;crossbow&quot; and $bolts lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;pistol&quot; and $a9mm lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;revolver&quot; and $a45 lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;rifle&quot; and $a306 lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;automaticrifle&quot; and $a556 lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;shotgun&quot; and $a12g lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;coil&quot; and $acoil lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;plasma&quot; and $aenergy lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;rifle50&quot; and $a50 lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;prifle&quot; and $a9mm lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;gl&quot; and $agl lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;cybercannon&quot; and $awega lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;neme&quot; and $a50srr lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;minigun&quot; and $a556 lte 5&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;minigun&quot; and $a556 gte 6&gt;&gt;&lt;&lt;set _ammoout to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;r55&quot; and $a50 lte 0&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _ammoout=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;revolver&quot;&gt;&gt;&lt;&lt;set _ammoout=$a45 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;rifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a306 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a556 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _ammoout=$a12g lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;coil&quot;&gt;&gt;&lt;&lt;set _ammoout=$acoil lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;plasma&quot;&gt;&gt;&lt;&lt;set _ammoout=$aenergy lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;prifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;gl&quot;&gt;&gt;&lt;&lt;set _ammoout=$agl lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _ammoout=$awega lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;neme&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50srr lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _ammoout=$a556 lte 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;r55&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -240919,8 +240827,7 @@ Your Science skill (+1)&#39;&#39; has increased!
 &lt;&lt;if $strippedsl is true&gt;&gt;
 
 &lt;&lt;if $ver gte 10830&gt;&gt;
-&lt;&lt;if $likesadist gte 40 and _npc.sex is 0&gt;&gt;&lt;&lt;set _likesadistok to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likesadist gte 70 and _npc.sex is 1&gt;&gt;&lt;&lt;set _likesadistok to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _likesadistok=$likesadist gte (_npc.sex is 0 ? 40 : 70)&gt;&gt;
 
 &lt;&lt;set _status to _npc.status&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -260477,12 +260384,7 @@ CLEAR ALL CRITICAL EVENTS&lt;br&gt;BEFORE CONTINUING!
 
 &lt;&lt;set _vempo to random(1, 3)&gt;&gt;
 
-&lt;&lt;if _vempo lte 2&gt;&gt;&lt;&lt;set $rannpc to random(0, 36)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _vempo gte 3&gt;&gt;&lt;&lt;set $rannpc to random(100, 200)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/*
-&lt;&lt;set $rannpc to either(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113)&gt;&gt;
-*/
+&lt;&lt;set $rannpc=_vempo lte 2 ? random(0, 36) : random(100, 200)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -269074,8 +268976,7 @@ The majestic pre-severance skyscraper complex known as the &quot;Riverwood Cente
 &lt;&lt;if $goldprice gte 75&gt;&gt;&lt;&lt;set $randesc+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $goldprice lte -35&gt;&gt;&lt;&lt;set $randesc-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $randesc lte 5&gt;&gt; &lt;&lt;set $goldprice+=5&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc gte 6&gt;&gt;&lt;&lt;set $goldprice-=5&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;set $goldprice+=$randesc lte 5 ? 5 : -5&gt;&gt;
 &lt;&lt;set $pollapp to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -269446,7 +269347,7 @@ Chancellor Mordecai has ordered the imprisonment of an Ikaanian family, citing o
 &lt;&lt;if $pollapp is 1&gt;&gt;&lt;&lt;set $faction.ikaanos.power+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pollapp is 2&gt;&gt;&lt;&lt;set $faction.ikaanos.lib+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pollapp is 3&gt;&gt; &lt;&lt;set $faction.ikaanos.men+=55&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pollapp is 4&gt;&gt;&lt;&lt;if $npc.av11.likesadist gte 70&gt;&gt;&lt;&lt;set $faction.ikaanos.corruption+=1&gt;&gt; &lt;&lt;else&gt;&gt; &lt;&lt;set $faction.ikaanos.corruption-=1&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pollapp is 4&gt;&gt;&lt;&lt;set $faction.ikaanos.corruption+=$npc.av11.likesadist gte 70 ? 1 : -1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pollapp is 5&gt;&gt;&lt;&lt;if $npc.av11.willpower gte 15&gt;&gt;&lt;&lt;set $faction.ikaanos.power+=100&gt;&gt; &lt;&lt;else&gt;&gt; &lt;&lt;set $faction.ikaanos.control-=1&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pollapp is 6&gt;&gt; &lt;&lt;set $faction.ikaanos.money+=100000&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pollapp is 7&gt;&gt;&lt;&lt;if $npc.av11.willpower gte 15&gt;&gt;&lt;&lt;set $faction.ikaanos.power+=100&gt;&gt; &lt;&lt;set $faction.kymanto.power-=100&gt;&gt;&lt;&lt;set $faction.cyker.power-=100&gt;&gt;  &lt;&lt;else&gt;&gt; &lt;&lt;set $faction.ikaanos.power-=150&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -270029,12 +269930,12 @@ Chancellor Aria has made a noticeable reform of The Second Republic&#39;s consti
 &lt;&lt;if $npc.av11.likesadist lte 49 and $npc.av11.willpower gte 20 and $faction.ikaanos.state is 2&gt;&gt;&lt;&lt;set $pollapp+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $faction.ikaanos.state is 1&gt;&gt;
-&lt;&lt;if $pollapp lte 4&gt;&gt;&lt;&lt;set $faction.ikaanos.lib-=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $faction.ikaanos.lib+=1&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.ikaanos.lib+=$pollapp lte 4 ? -1 : 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $faction.ikaanos.state is 2&gt;&gt;
 &lt;&lt;if $npc.av11.willpower lte 14 or $npc.av11.likesadist gte 70&gt;&gt;&lt;&lt;set $pollapp-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pollapp lte 2&gt;&gt; &lt;&lt;set $faction.ikaanos.lib-=1&gt;&gt; &lt;&lt;else&gt;&gt;&lt;&lt;set $faction.ikaanos.lib+=1&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.ikaanos.lib+=$pollapp lte 2 ? -1 : 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -304175,7 +304076,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;/for&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc2.dayoff gte 1&gt;&gt;&lt;&lt;set _dayoff to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;unset _dayoff&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dayoff=_npc2.dayoff gte 1&gt;&gt;
 
 &lt;&lt;if $daycount gte 90 and $daycount lte 155 and $diff gte 3&gt;&gt;
 &lt;&lt;if _day gte 1 and _day isnot 5 and _day isnot 8 and _day isnot 12 and _day isnot 14 and _day isnot 15 and _day isnot 16 and _day isnot 19&gt;&gt;&lt;&lt;set _away to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;unset _away&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -304211,11 +304112,9 @@ Visit Whitehaven Academy to unlock this menu!
 
 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _title is 1 and _sex is 0&gt;&gt;&lt;&lt;set _title to &quot;Head maid&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _title is 1 and _sex is 1&gt;&gt;&lt;&lt;set _title to &quot;butler&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if _title is 1&gt;&gt;&lt;&lt;set _title to _sex is 0 ? &quot;Head maid&quot; : &quot;butler&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _title is 2&gt;&gt;&lt;&lt;set _title to &quot;Pantry girl&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _title is 3&gt;&gt;&lt;&lt;if _npc2.sex is 0&gt;&gt;&lt;&lt;set _title to &quot;Quartermistress&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _title to &quot;Quartermaster&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _title is 3&gt;&gt;&lt;&lt;set _title to _sex is 0 ? &quot;Quartermistress&quot; : &quot;Quartermaster&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _title is 4&gt;&gt;&lt;&lt;set _title to &quot;Nanny&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _title is 5&gt;&gt;&lt;&lt;set _title to &quot;Floor crawler&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _title is 6&gt;&gt;&lt;&lt;set _title to &quot;skulduggerist&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -304638,7 +304537,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;unset _affblock&gt;&gt;
 &lt;&lt;unset _catbusy2&gt;&gt;
 &lt;&lt;if _aff lte 14 and _willy gte 20&gt;&gt;&lt;&lt;set _affblock to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _dayoff gte 1&gt;&gt;&lt;&lt;set _offblocked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _dayoff&gt;&gt;&lt;&lt;set _offblocked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $quest_cat gte 15 and $quest_cat lte 18 and _girlid is 13&gt;&gt;&lt;&lt;set _catbusy2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -304705,7 +304604,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;if _baaaaaa is true&gt;&gt;
 &lt;&lt;hovertip &quot;&lt;center&gt;Interact &lt;br&gt;(&lt;&lt;if _busy is 2&gt;&gt;At Stables&lt;&lt;else&gt;&gt;Away&lt;&lt;/if&gt;&gt; - home after &lt;&lt;if _busy is 2&gt;&gt;8&lt;&lt;else&gt;&gt;4&lt;&lt;/if&gt;&gt;pm!)&lt;/center&gt;&quot;&gt;&gt;&lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;center&gt;Interact &lt;&lt;if _dayoff gte 1&gt;&gt;&lt;br&gt;Unavailable! &lt;br&gt;(Day off)&lt;&lt;/if&gt;&gt;&lt;/center&gt;&quot;&gt;&gt;
+&lt;&lt;hovertip &quot;&lt;center&gt;Interact &lt;&lt;if _dayoff&gt;&gt;&lt;br&gt;Unavailable! &lt;br&gt;(Day off)&lt;&lt;/if&gt;&gt;&lt;/center&gt;&quot;&gt;&gt;
 [img[$imgpath + &quot;Butt/slbutt30.png&quot;][Interact][$nodel to true, $c_npc to _skeys[_actnpc], $activeslot to _call3]]&lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;&lt;/capture&gt;&gt;
@@ -305635,11 +305534,8 @@ MOVED TO INITOP
 
 &lt;&lt;if _noswitch isnot true&gt;&gt;
 &lt;div class=&quot;shownum3 lighthover&quot;&gt;
-&lt;&lt;if $shownum isnot true&gt;&gt;
-[img[$imgpath + &quot;Butt/changer.png&quot;][SMenu2][$shownum to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Butt/changer2.png&quot;][SMenu2][$shownum to false]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img = $shownum ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer.png&quot;&gt;&gt;
+[img[$imgpath + _img][SMenu2][$shownum to !$shownum]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -305651,7 +305547,7 @@ MOVED TO INITOP
 &lt;&lt;if _av_str lte 15&gt;&gt;&lt;&lt;set _str to &quot;Feeble&quot;&gt;&gt;
 &lt;&lt;elseif _av_str lte 29&gt;&gt;&lt;&lt;set _str to &quot;Weak&quot;&gt;&gt;
 &lt;&lt;elseif _av_str lte 49&gt;&gt;&lt;&lt;set _str to &quot;Normal&quot;&gt;&gt;
-&lt;&lt;elseif _av_str lte 69&gt;&gt;&lt;&lt;set _str to &quot;Toned&quot;&gt;&gt;&lt;&lt;if _age gte 50&gt;&gt;&lt;&lt;set _str to &quot;Husky&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;elseif _av_str lte 69&gt;&gt;&lt;&lt;set _str to _age gte 50 ? &quot;Husky&quot; : &quot;Toned&quot;&gt;&gt;
 &lt;&lt;elseif _npc.sex is 0&gt;&gt;&lt;&lt;set _str to &quot;Amazonian&quot;&gt;&gt;
 &lt;&lt;elseif _npc.str lte 89&gt;&gt;&lt;&lt;set _str to &quot;Muscular&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;&lt;&lt;set _str to &quot;Herculean&quot;&gt;&gt;
@@ -305672,8 +305568,8 @@ MOVED TO INITOP
 &lt;&lt;else&gt;&gt;&lt;&lt;set _dex to &quot;Elite&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _willpower lte -11&gt;&gt;&lt;&lt;if _npc.sex is 0&gt;&gt;&lt;&lt;set _will to &quot;Cum-slave&quot;&gt;&gt;&lt;&lt;elseif _npc.sex is 1&gt;&gt;&lt;&lt;set _will to &quot;Drone&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;elseif _willpower lte 0&gt;&gt;&lt;&lt;if $happiness lte 34&gt;&gt;&lt;&lt;set _will to &quot;Broken&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _will to &quot;Devoted&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _willpower lte -11&gt;&gt;&lt;&lt;set _will to _npc.sex is 0 ? &quot;Cum-slave&quot; : &quot;Drone&quot;&gt;&gt;
+&lt;&lt;elseif _willpower lte 0&gt;&gt;&lt;&lt;set _will to $happiness lte 34 ? &quot;Broken&quot; : &quot;Devoted&quot;&gt;&gt;
 &lt;&lt;elseif _willpower lte 9&gt;&gt;&lt;&lt;set _will to &quot;Inferior&quot;&gt;&gt;
 &lt;&lt;elseif _willpower lte 19&gt;&gt;&lt;&lt;set _will to &quot;Poor&quot;&gt;&gt;
 &lt;&lt;elseif _willpower lte 29&gt;&gt;&lt;&lt;set _will to &quot;Weak&quot;&gt;&gt;
@@ -312224,7 +312120,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if _npc.scarefactor gte 6 and _npc.masterlove gte 25&gt;&gt;&lt;&lt;set _npc.masterlove-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _npc.traitmat gte 60&gt;&gt;&lt;&lt;set _allo to 100&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _allo to 400&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _allo=_npc.traitmat gte 60 ? 100 : 400&gt;&gt;
 
 /* MAIN affection deterioration script */
 &lt;&lt;if _npc.masterlove gte 61 and _lossroll lte 2 and _npc.masterlove lte 109 and _grat isnot true&gt;&gt;&lt;&lt;set _npc.masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -312884,11 +312780,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 /* EVELYN UNDYING LOYALTY CHECKER */
 
 &lt;&lt;if _npc.girlid is 47&gt;&gt;
-&lt;&lt;if _npc.willpower gte 60 and _npc.masterlove gte 50&gt;&gt;
-&lt;&lt;set _npc.traitloyal to 100&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.traitloyal to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.traitloyal=(_npc.willpower gte 60 and _npc.masterlove gte 50) ? 100 : 0&gt;&gt;
 
 /* at abbot ROO */
 
@@ -313790,7 +313682,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;if _npc.likeoral lte 79 and _lossroll100 lte 10 and _npc.masterlove gte 60&gt;&gt;&lt;&lt;set _npc.likeoral+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.oralxp gte 30&gt;&gt; /* swallows */
-&lt;&lt;if $load is 3&gt;&gt;&lt;&lt;set _npc.semenswallowed+=70&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _npc.semenswallowed+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.semenswallowed+=$load is 3 ? 70 : 3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;elseif _bstype is 1&gt;&gt; 
 &lt;&lt;set $bedslavesex to 2&gt;&gt;
@@ -315804,8 +315696,7 @@ girlname: _npc.girlname
 &lt;&lt;if _npc.survival gte 110&gt;&gt;&lt;&lt;set _yield+=15&gt;&gt;&lt;&lt;set _surv+=15&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.traitwild gte 1 or _npc.traitjag gte 1&gt;&gt;&lt;&lt;set _yield+=15&gt;&gt;&lt;&lt;set _traits+=15&gt;&gt; &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.meleeweapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set _yield+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;knife&quot;&gt;&gt;&lt;&lt;set _yield-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _yield+=_npc.meleeweapon is &quot;knife&quot; ? 5 : -10&gt;&gt;
 &lt;&lt;if _npc.weapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _yield-=65&gt;&gt;&lt;&lt;set _rangede to -1&gt;&gt;
 &lt;&lt;elseif _npc.weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _yield+=5&gt;&gt;&lt;&lt;set _rangede to 1&gt;&gt;
 &lt;&lt;elseif _npc.weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;&lt;&lt;set _rangede to 2&gt;&gt;
@@ -316782,7 +316673,7 @@ when artifact is processed, set quest_stacey, quest_stacey2 and quest_staceyloc 
 &lt;&lt;if _roll2 is 5 and _npc.aca lte 99&gt;&gt;&lt;&lt;set _npc.aca+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _roll3 lte 10 and _npc.willpower lte 79&gt;&gt;&lt;&lt;set _npc.willpower+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.aca gte 90 and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.prest+=1&gt;&gt;&lt;&lt;if _npc.traittrad gte 75&gt;&gt;&lt;&lt;set _npc.prest+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.aca gte 90 and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.prest+=_npc.traittrad gte 75 ? 2 : 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* science prof */
@@ -317514,11 +317405,7 @@ Most high-demanding issids are excluded by the maxsal checker
     
     /* unrelated monastery checker */
 &lt;&lt;if _testnpc.dayblock is 26 and _testnpc.state gte 1&gt;&gt;
-&lt;&lt;if $faction.christian.standing gte 50 or ($mcrel.faith is 5 and $mcrel.devotion gte 100)&gt;&gt;
-&lt;&lt;set _monacash+=50&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _monacash+=95&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _monacash+=($faction.christian.standing gte 50 or ($mcrel.faith is 5 and $mcrel.devotion gte 100)) ? 50 : 95&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -317547,8 +317434,8 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $wrool gte 6&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;set _slfoodshow+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $foodm is 1&gt;&gt;&lt;&lt;set $foodstuffadd-=1&gt;&gt;&lt;&lt;set $credtot-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 2&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;/if&gt;&gt;    &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=6&gt;&gt;&lt;&lt;set _foodshow+=1&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 2&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;set _foodshow+=1&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $foodm gte 1 and $mctraitmountain gte 51&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;
 &lt;&lt;set _foodshow+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -320142,11 +320029,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _npc.girlid lte 299&gt;&gt;
-&lt;&lt;set _npc.sex to 0&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.sex to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.sex = _npc.girlid lte 299 ? 0 : 1&gt;&gt;
 
 &lt;&lt;if _npc.status is undefined&gt;&gt;
 &lt;&lt;set _npc.status to 2&gt;&gt;
@@ -320191,11 +320074,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;set _npc.mother to $mother&gt;&gt;
 
-&lt;&lt;if $admin is undefined&gt;&gt;
-&lt;&lt;set _npc.admin to 0&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.admin to $admin&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.admin = $admin is undefined ? 0 : $admin&gt;&gt;
 
 &lt;&lt;set _npc.melee = $av_melee&gt;&gt;
 &lt;&lt;set _npc.ranged = $av_ranged&gt;&gt;
@@ -320828,11 +320707,8 @@ _npc.dex
 &lt;div class=&quot;shownumholder lighthover&quot;&gt;
 &lt;center&gt;
 &lt;&lt;if _endok is true&gt;&gt;
-&lt;&lt;if $shownum isnot true&gt;&gt;
-[img[$imgpath + &quot;Butt/changer.png&quot;][RoamAdd][$shownum to true, $showethnu to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Butt/changer2.png&quot;][RoamAdd][$shownum to false, $showethnu to true]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img = $shownum ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer.png&quot;&gt;&gt;
+[img[$imgpath + _img][RoamAdd][$shownum to !$shownum, $showethnu to true]]
 &lt;&lt;/if&gt;&gt;
 &lt;/center&gt;
 &lt;/div&gt;
@@ -330412,8 +330288,8 @@ She turns silent in your presence. There&#39;s no doubt she&#39;s upset about so
 
 
 &lt;&lt;if $foodm is 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $masterhunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 2 and $foodstuff gte 2&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;set $masterhunger to 50&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 3 and $foodstuff gte 4&gt;&gt;&lt;&lt;set $foodstuff-=6&gt;&gt;&lt;&lt;set $masterhunger to 80&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 2 and $foodstuff gte 2&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;set $masterhunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 3 and $foodstuff gte 4&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;set $masterhunger to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mctraitglut gte 75 and $foodm gte 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $foodstuff-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -337550,11 +337426,8 @@ _npc.discipline
 &lt;div class=&quot;shownumholder lighthover&quot;&gt;
 &lt;center&gt;
 &lt;&lt;if _endok is true and _doing isnot true&gt;&gt;
-&lt;&lt;if $shownum isnot true&gt;&gt;
-[img[$imgpath + &quot;Butt/changer.png&quot;][Interact][$shownum to true, $showethnu to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Butt/changer2.png&quot;][Interact][$shownum to false, $showethnu to true]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img = $shownum ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer.png&quot;&gt;&gt;
+[img[$imgpath + _img][Interact][$shownum to !$shownum, $showethnu to true]]
 &lt;&lt;/if&gt;&gt;
 &lt;/center&gt;
 &lt;/div&gt;
@@ -348339,12 +348212,9 @@ $crepoints
 &lt;div class=&quot;signvendor&quot;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;character stats&lt;&lt;else&gt;&gt;Traits&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
 &lt;div class=&quot;shownum3 lighthover&quot;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if $shownum isnot true&gt;&gt;Show traits&lt;&lt;else&gt;&gt;Show skills&lt;&lt;/if&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if $shownum isnot true&gt;&gt;
-[img[$imgpath + &quot;Butt/changer.png&quot;][Ntrait][$shownum to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Butt/changer2.png&quot;][Ntrait][$shownum to false]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;hovertip &quot;Show &lt;&lt;if $shownum&gt;&gt;skills&lt;&lt;else&gt;&gt;traits&lt;&lt;/if&gt;&gt;&quot;&gt;&gt;
+&lt;&lt;set _img = $shownum ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer.png&quot;&gt;&gt;
+[img[$imgpath + _img][Ntrait][$shownum to !$shownum]]
 &lt;&lt;/hovertip&gt;&gt;
 
 &lt;/div&gt;
@@ -348921,7 +348791,7 @@ $whipskill &lt;&lt;if $whipskill_cr gte 1&gt;&gt;&lt;div class=&quot;green&quot;
 
 &lt;/div&gt;
 
-&lt;&lt;if $mctraitbrain gte 100&gt;&gt;&lt;&lt;set _intcap to 55&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _intcap to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _intcap=$mctraitbrain gte 100 ? 55 : 30&gt;&gt;
 
 
 &lt;div class=&quot;ntraitholder ntrait&quot;&gt;
@@ -349026,7 +348896,7 @@ $whipskill &lt;&lt;if $whipskill_cr gte 1&gt;&gt;&lt;div class=&quot;green&quot;
 
 
 
-&lt;&lt;if $mctraittough gte 100&gt;&gt;&lt;&lt;set _stamcap to 35&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _stamcap to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _stamcap=$mctraittough gte 100 ? 35 : 30&gt;&gt;
 
 &lt;div class=&quot;ntraitholder ntrait&quot;&gt;
 &#39;&#39;- STAMINA -&#39;&#39;
@@ -352635,11 +352505,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 
 &lt;&lt;if $timparty gte 1 or $rooparty gte 1&gt;&gt;
 
-&lt;&lt;if $timparty gte 1&gt;&gt;
-&lt;&lt;set _girlname to &quot;Tim Walton&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _girlname to &quot;Abbot Roo&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _girlname to $timparty gte 1 ? &quot;Tim Walton&quot; : &quot;Abbot Roo&quot;&gt;&gt;
 &lt;&lt;set _willpower to 60&gt;&gt;
 &lt;&lt;set _likesadist to 5&gt;&gt;
 &lt;&lt;set _age to 50&gt;&gt;
@@ -361060,8 +360926,7 @@ You launch a final assault against the palace assigned AC-42 crawler. The vehicl
 &lt;&lt;set $enemy2_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy2 = &quot;AC-42 APC&quot;&gt;&gt;
 &lt;&lt;set $enemy2_weapon = &quot;tank100&quot;&gt;&gt;
-&lt;&lt;set $enemy2_health = 700&gt;&gt;
-&lt;&lt;if $diff gte 3&gt;&gt;&lt;&lt;set $enemy2_health = 1000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy2_health = $diff gte 3 ? 1000 : 700&gt;&gt;
 &lt;&lt;set $enemy2_htype = 1000&gt;&gt;
 &lt;&lt;set $enemy2_wpskill = 80&gt;&gt;
 &lt;&lt;set $enemy2_dex = 0&gt;&gt;
@@ -361384,11 +361249,7 @@ A renowned hunter-survivalist, known as The Honorable Ohio Adler, points a fear-
 &lt;&lt;set $enemy5_state to 2&gt;&gt;
 &lt;&lt;set $enemy5_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy5 = &quot;CYBER ELITE&quot;&gt;&gt;
-&lt;&lt;if $diff gte 3&gt;&gt;
-&lt;&lt;set $enemy5_weapon = &quot;cybercannon&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $enemy5_weapon = &quot;plasma&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy5_weapon = $diff gte 3 ? &quot;cybercannon&quot; : &quot;plasma&quot;&gt;&gt;
 &lt;&lt;set $enemy5_health = 220&gt;&gt;
 &lt;&lt;set $enemy5_htype = 220&gt;&gt;
 &lt;&lt;set $enemy5_wpskill = 125&gt;&gt;
@@ -361490,11 +361351,7 @@ You decide to attack Mordecai and his personal guard!
 &lt;&lt;set $enemy5_state to 2&gt;&gt;
 &lt;&lt;set $enemy5_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy5 = &quot;CYBER ELITE&quot;&gt;&gt;
-&lt;&lt;if $diff gte 3&gt;&gt;
-&lt;&lt;set $enemy5_weapon = &quot;cybercannon&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $enemy5_weapon = &quot;plasma&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $enemy5_weapon = $diff gte 3 ? &quot;cybercannon&quot; : &quot;plasma&quot;&gt;&gt;
 &lt;&lt;set $enemy5_health = 220&gt;&gt;
 &lt;&lt;set $enemy5_htype = 220&gt;&gt;
 &lt;&lt;set $enemy5_wpskill = 125&gt;&gt;
@@ -386586,7 +386443,7 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 &lt;&lt;if _beauty gte 60 and _charisma gte 60 and _traitextro gte 25 and (_npc.per gte 70 or _npc.dancing gte 70)&gt;&gt;&lt;&lt;set _okdragon to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* CHECKER FOR EDUCATORS */
-&lt;&lt;if $maxmasters lte 3&gt;&gt;&lt;&lt;set _slavemasterok to true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _slavemasterok to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _slavemasterok to $maxmasters lte 3&gt;&gt;
 
 
 
@@ -386609,10 +386466,7 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 
 &lt;&lt;if _npc.age lte 59 and _npc.age gte 13 and _npc.sex is 0 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _arenaok to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $arenanpcs lt $maxarenanpcs and _arenablock isnot true&gt;&gt;&lt;&lt;set _arenaok to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _arenaok to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _sex is 1 or _age lt 13&gt;&gt;&lt;&lt;set _arenaok to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _arenaok to ($arenanpcs lt $maxarenanpcs and !_arenablock and _npc.sex is 0 and _npc.age gte 13) ? 1 : 2&gt;&gt;
 
 /* blocked from arena */
 &lt;&lt;if _npc.girlid is 39&gt;&gt;&lt;&lt;set _arenaok to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -389219,9 +389073,7 @@ Chancellor
 &lt;&lt;set $cash-=_totalcost&gt;&gt;
 &lt;&lt;if _npc.foods is 1 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $foodlimit[0] gte 1&gt;&gt;&lt;&lt;set $foodlimit[0]-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;if $foodlimit[0] gte 3&gt;&gt;&lt;&lt;set $foodlimit[0]-=3&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true and _npc.body gte 4&gt;&gt;&lt;&lt;set _npc.hunger to 85&gt;&gt;&lt;&lt;if $foodlimit[0] gte 5&gt;&gt;&lt;&lt;set $foodlimit[0]-=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true and _npc.body is 3&gt;&gt;&lt;&lt;set _npc.hunger to 90&gt;&gt;&lt;&lt;if $foodlimit[0] gte 5&gt;&gt;&lt;&lt;set $foodlimit[0]-=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true and _npc.body lte 2&gt;&gt;&lt;&lt;set _npc.hunger to 95&gt;&gt;&lt;&lt;if $foodlimit[0] gte 5&gt;&gt;&lt;&lt;set $foodlimit[0]-=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;if $foodlimit[0] gte 5&gt;&gt;&lt;&lt;set $foodlimit[0]-=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.body gte 8&gt;&gt;&lt;&lt;set _npc.hunger-=17&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -389240,9 +389092,7 @@ Chancellor
 
 &lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0 and _npc.body gte 4&gt;&gt;&lt;&lt;set _npc.hunger to 85&gt;&gt;&lt;&lt;set $foodstuff-=5&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0 and _npc.body lte 3&gt;&gt;&lt;&lt;set _npc.hunger to 90&gt;&gt;&lt;&lt;set $foodstuff-=5&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0 and _npc.body lte 2&gt;&gt;&lt;&lt;set _npc.hunger to 95&gt;&gt;&lt;&lt;set $foodstuff-=5&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.foods gte 1 and $foodstuff lte 0&gt;&gt;&lt;&lt;set $foodlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
