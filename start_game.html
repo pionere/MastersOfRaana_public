@@ -35239,7 +35239,7 @@ sur: 0,
 
 
 
-&lt;&lt;if $occult is undefined or $occult is null&gt;&gt;&lt;&lt;set $occult to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $occult is undefined&gt;&gt;&lt;&lt;set $occult to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $owniceblade is undefined&gt;&gt;
 &lt;&lt;set $owniceblade to 0&gt;&gt;
@@ -35281,7 +35281,7 @@ sur: 0,
 &lt;&lt;set $ownslwega to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ownbreaker is undefined or $ownbreaker is null&gt;&gt;&lt;&lt;set $ownbreaker to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownbreaker is undefined&gt;&gt;&lt;&lt;set $ownbreaker to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mctraitstiff gte 75 and $masterdex gt 70&gt;&gt;&lt;&lt;set $masterdex to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mctraitwb gte 75 and $masterstrength gt 70&gt;&gt;&lt;&lt;set $masterstrength to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -35620,10 +35620,6 @@ gemstones: random(300,400),
 
 
 &lt;&lt;if $upact is undefined&gt;&gt;&lt;&lt;set $upact to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $steelcap is null&gt;&gt;&lt;&lt;set $steelcap to 9580011&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $woodcap is null&gt;&gt;&lt;&lt;set $woodcap to 10950094&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $connectcap is null&gt;&gt;&lt;&lt;set $connectcap to 5544312&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -296750,7 +296746,7 @@ I&#39;m going to be honest with you.
 [[Clear workers|House][$clearcom to true]]
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if _active.swag is undefined or _active.swag is null&gt;&gt;
+&lt;&lt;if _active.swag is undefined&gt;&gt;
 [[Reset workshop|House][_active.swag to 0, _active.swag2 to 0, _active.scrap to 0, _active.scrap2 to 0, _active.cloth to 0, _active.cloth2 to 0, _active.connect to 0, _active.connect2 to 0, _active.steel to 0, _active.steel2 to 0, _active.gold to 0, _active.gold2 to 0, _active.cboards to 0, _active.cboards2 to 0, _active.dura to 0, _active.dura2 to 0, _active.other1 to 100]]
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -307068,7 +307064,7 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.girlid is 39&gt;&gt;
-&lt;&lt;if _npc.traitdistrust is null or _npc.traitdistrust is undefined&gt;&gt;&lt;&lt;set _npc.traitdistrust to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitdistrust is undefined&gt;&gt;&lt;&lt;set _npc.traitdistrust to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -307145,7 +307141,7 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 
 /* SALARYNOW UNDEFINED FIX */
 
-&lt;&lt;if _npc.salarynow is undefined or _npc.salarynow is NaN&gt;&gt;&lt;&lt;set _npc.salarynow to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.salarynow is undefined&gt;&gt;&lt;&lt;set _npc.salarynow to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.killed is undefined&gt;&gt;&lt;&lt;set _npc.killed to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -362976,7 +362972,7 @@ WARNING! DO NOT USE FOR FIXES! ONLY SET IN NEW GAMES.
 
 &lt;&lt;if $budman is undefined&gt;&gt;&lt;&lt;set $budman to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ownbreaker is undefined or $ownbreaker is null&gt;&gt;&lt;&lt;set $ownbreaker to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownbreaker is undefined&gt;&gt;&lt;&lt;set $ownbreaker to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $ownstealth is undefined&gt;&gt;
