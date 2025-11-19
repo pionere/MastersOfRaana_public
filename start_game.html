@@ -318216,35 +318216,26 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* INFLUENSE GAIN FROM DESTI AND HIGH PROSP */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
+&lt;&lt;if $faction isnot undefined and $credtot gt 0&gt;&gt;
 
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;
-&lt;&lt;if $credtot gte 1&gt;&gt;
-&lt;&lt;set $credtot+=$credtot&gt;&gt;
-&lt;&lt;set _prospinf to $credtot&gt;&gt;
-&lt;&lt;set _prospinf/=2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _prospinf=$credtot&gt;&gt;
+&lt;&lt;set $credtot*=2&gt;&gt;
 
 &lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;
-&lt;&lt;if $credtot gte 1&gt;&gt;
-&lt;&lt;set _tempcred to $credtot&gt;&gt;
-&lt;&lt;set _tempcred*=0.25&gt;&gt;
-&lt;&lt;set _tempcred = Math.round(_tempcred)&gt;&gt;
-&lt;&lt;set $credtot+=_tempcred&gt;&gt;
-&lt;&lt;set _prospinf to _tempcred&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;elseif $faction.ikaanos.prosp gte 90 and $credtot gte 2&gt;&gt;
+&lt;&lt;set _prospinf=$credtot&gt;&gt;
+&lt;&lt;set _prospinf=Math.round(_prospinf/4)&gt;&gt;
+&lt;&lt;set $credtot+=_prospinf&gt;&gt;
 
-&lt;&lt;set _prospinf to $credtot&gt;&gt;
-&lt;&lt;set $credtot/=2&gt;&gt;
-&lt;&lt;set _prospinf/=2&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp gte 90 and $credtot gt 1&gt;&gt;
 
-&lt;&lt;set $credtot = Math.round($credtot)&gt;&gt;
+&lt;&lt;set _prospinf=$credtot&gt;&gt;
+&lt;&lt;set _prospinf=Math.round(_prospinf/2)&gt;&gt;
+&lt;&lt;set $credtot=_prospinf&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _prospinf = Math.round(_prospinf)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
