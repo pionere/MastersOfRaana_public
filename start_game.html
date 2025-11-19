@@ -296954,7 +296954,8 @@ _ch%
 &lt;&lt;include FarmYield&gt;&gt;
 
 &#39;&#39;ACCOMMODATIONS&#39;&#39; &lt;br&gt;
-&lt;&lt;if _active.level is 0&gt;&gt;Bad&lt;&lt;elseif _active.level is 1&gt;&gt;Poor&lt;&lt;elseif _active.level is 2&gt;&gt;Average&lt;&lt;else&gt;&gt;Good&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Bad&quot;,&quot;Poor&quot;,&quot;Average&quot;,&quot;Good&quot;]&gt;&gt;
+&lt;&lt;=_tmp[_active.level]&gt;&gt;
 &lt;br&gt;
 
 &lt;div class=&quot;left padd50left&quot;&gt;
@@ -297018,7 +297019,8 @@ Harvest 300R
 /* canco mod2 ends */
 
 &#39;&#39;ACCOMMODATIONS&#39;&#39; &lt;br&gt;
-&lt;&lt;if _active.level is 0&gt;&gt;Bad&lt;&lt;elseif _active.level is 1&gt;&gt;Poor&lt;&lt;elseif _active.level is 2&gt;&gt;Average&lt;&lt;else&gt;&gt;Good&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Bad&quot;,&quot;Poor&quot;,&quot;Average&quot;,&quot;Good&quot;]&gt;&gt;
+&lt;&lt;=_tmp[_active.level]&gt;&gt;
 &lt;br&gt;
 
 &lt;div class=&quot;left padd50left&quot;&gt;
@@ -297075,7 +297077,8 @@ Harvest 100R
 
 
 &#39;&#39;ACCOMMODATIONS&#39;&#39; &lt;br&gt;
-&lt;&lt;if _active.level is 0&gt;&gt;Bad&lt;&lt;elseif _active.level is 1&gt;&gt;Poor&lt;&lt;elseif _active.level is 2&gt;&gt;Average&lt;&lt;else&gt;&gt;Good&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Bad&quot;,&quot;Poor&quot;,&quot;Average&quot;,&quot;Good&quot;]&gt;&gt;
+&lt;&lt;=_tmp[_active.level]&gt;&gt;
 &lt;br&gt;
 
 &lt;div class=&quot;left padd50left&quot;&gt;
@@ -297145,12 +297148,14 @@ Harvest 100R
 
 
 &#39;&#39;ACCOMMODATIONS&#39;&#39; &lt;br&gt;
-&lt;&lt;if _active.level is 0&gt;&gt;Bad&lt;&lt;elseif _active.level is 1&gt;&gt;Poor&lt;&lt;elseif _active.level is 2&gt;&gt;Average&lt;&lt;else&gt;&gt;Good&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Bad&quot;,&quot;Poor&quot;,&quot;Average&quot;,&quot;Good&quot;]&gt;&gt;
+&lt;&lt;=_tmp[_active.level]&gt;&gt;
 &lt;br&gt;
 
 
 &lt;&lt;if _active.setting1 is 1&gt;&gt;
-&#39;&#39;FORESTRY PROGRAM&#39;&#39; &lt;br&gt;&lt;&lt;if _active.other9 is 1&gt;&gt;Ordered&lt;&lt;elseif _active.other9 is 2&gt;&gt;Expansive&lt;&lt;elseif _active.other9 is 3&gt;&gt;Dekka Enhanced&lt;&lt;else&gt;&gt;Minimal&lt;&lt;/if&gt;&gt; (+_woodrecover)
+&lt;&lt;set _tmp=[&quot;Minimal&quot;,&quot;Ordered&quot;,&quot;Expansive&quot;,&quot;Expansive&quot;,&quot;Dekka Enhanced&quot;]&gt;&gt;
+&#39;&#39;FORESTRY PROGRAM&#39;&#39; &lt;br&gt;&lt;&lt;=_tmp[_active.other9]&gt;&gt; (+_woodrecover)
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -297162,9 +297167,10 @@ Harvest 100R
 
 &lt;&lt;if _active.setting1 is 0&gt;&gt;
 
-&lt;li&gt;&#39;&#39;Plot I:&#39;&#39; &lt;&lt;if _active.other1 is 0&gt;&gt;Small&lt;&lt;elseif _active.other1 is 1&gt;&gt;Medium&lt;&lt;elseif _active.other1 is 2&gt;&gt;Expansive&lt;&lt;else&gt;&gt;Dekka Enhanced&lt;&lt;/if&gt;&gt;&lt;/li&gt;
-&lt;li&gt;&#39;&#39;Plot II:&#39;&#39; &lt;&lt;if _active.other2 is 0&gt;&gt;Small&lt;&lt;elseif _active.other2 is 1&gt;&gt;Medium&lt;&lt;elseif _active.other2 is 2&gt;&gt;Expansive&lt;&lt;else&gt;&gt;Dekka Enhanced&lt;&lt;/if&gt;&gt;&lt;/li&gt;
-&lt;li&gt;&#39;&#39;Plot III:&#39;&#39; &lt;&lt;if _active.other3 is 0&gt;&gt;Small&lt;&lt;elseif _active.other3 is 1&gt;&gt;Medium&lt;&lt;elseif _active.other3 is 2&gt;&gt;Expansive&lt;&lt;else&gt;&gt;Dekka Enhanced&lt;&lt;/if&gt;&gt;&lt;/li&gt;
+&lt;&lt;set _tmp=[&quot;Small&quot;,&quot;Medium&quot;,&quot;Expansive&quot;,&quot;Dekka Enhanced&quot;]&gt;&gt;
+&lt;li&gt;&#39;&#39;Plot I:&#39;&#39; &lt;&lt;=_tmp[_active.other1]&gt;&gt;&lt;/li&gt;
+&lt;li&gt;&#39;&#39;Plot II:&#39;&#39; &lt;&lt;=_tmp[_active.other2]&gt;&gt;&lt;/li&gt;
+&lt;li&gt;&#39;&#39;Plot III:&#39;&#39; &lt;&lt;=_tmp[_active.other3]&gt;&gt;&lt;/li&gt;
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;Burner:&#39;&#39; &lt;&lt;if _active.level2 is 0&gt;&gt;No&lt;&lt;else&gt;&gt;&lt;&lt;hovertip &quot;Automatic gunpowder refinement.&quot;&gt;&gt;&lt;div class=&quot;green&quot;&gt;Yes&lt;/div&gt;&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
