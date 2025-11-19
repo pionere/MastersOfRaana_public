@@ -103,6 +103,12 @@ yardstab = function (_npc,_ystab) {
     }
     return Math.round(_stab);
 }
+Date.prototype.toLocaleStringDefault = Date.prototype.toLocaleString;
+Date.prototype.toLocaleString = function () {
+    const lang = navigator.language || navigator.languages[0];
+    const options = { hour12: SugarCube.State.active.variables.clock != 1 };
+    return this.toLocaleStringDefault(lang, options);
+}
 </script>
 <script id="script-libraries" type="text/javascript">
 if(document.head&&document.addEventListener&&document.querySelector&&Object.create&&Object.freeze&&JSON){document.documentElement.setAttribute("data-init", "loading");
