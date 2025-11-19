@@ -384766,6 +384766,13 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 &lt;&lt;if _npc.traitaggro lte 24&gt;&gt;&lt;&lt;set _rangedroll-=20&gt;&gt;&lt;&lt;set _meleeroll-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _meleeroll gte 1&gt;&gt;&lt;&lt;set _slave.melee=adl(_slave.melee,1,Math.min(130,_npc.melee))&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedroll gte 1&gt;&gt;&lt;&lt;set _slave.ranged=adl(_slave.ranged,1,Math.min(130,_npc.ranged))&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* brawler chance */
+&lt;&lt;if _npc.traitbrawler gte 100 and _lossroll lte 2 and _slave.traitaggro gte 25&gt;&gt;&lt;&lt;set _slave.traitbrawler=adl(_slave.traitbrawler,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* warrior chance */
+&lt;&lt;if _npc.traitwarrior gte 100 and _lossroll lte 1 and _slave.traitaggro gte 25&gt;&gt;&lt;&lt;set _slave.traitwarrior=adl(_slave.traitwarrior,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 /* phys */
@@ -384805,18 +384812,6 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 &lt;&lt;if _dexroll gte 1&gt;&gt;&lt;&lt;set _slave.dex=adl(_slave.dex,1,130)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _stamroll gte 1&gt;&gt;&lt;&lt;set _slave.maxstamina=adl(_slave.maxstamina,1,120)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _acroroll gte 1&gt;&gt;&lt;&lt;set _slave.acro=adl(_slave.acro,1,_npc.acro)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* brawler chance */
-&lt;&lt;if _npc.template1 is true&gt;&gt;
-&lt;&lt;if _npc.traitbrawler gte 100 and _lossroll lte 2 and _slave.traitaggro gte 25&gt;&gt;&lt;&lt;set _slave.traitbrawler=adl(_slave.traitbrawler,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-/* warrior chance */
-&lt;&lt;if _npc.template1 is true&gt;&gt;
-&lt;&lt;if _npc.traitwarrior gte 100 and _lossroll lte 1 and _slave.traitaggro gte 25&gt;&gt;&lt;&lt;set _slave.traitwarrior=adl(_slave.traitwarrior,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;/if&gt;&gt; /* template2 ends */
 
