@@ -357747,17 +357747,15 @@ p4: -1,
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $gr1.name to $newcall.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least &lt;br&gt;one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Followers&quot;&gt;&gt;
-        &lt;&lt;unset $changegr1&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _tmp to $newcall.trim()&gt;&gt;
+    &lt;&lt;if _tmp&gt;&gt;
+        &lt;&lt;set $gr1.name to _tmp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;goto &quot;Followers&quot;&gt;&gt;
+    &lt;&lt;unset $changegr1&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -357829,17 +357827,15 @@ p4: -1,
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $gr2.name to $newcall2.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall2 is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least &lt;br&gt;one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Followers&quot;&gt;&gt;
-        &lt;&lt;unset $changegr2&gt;&gt;
-&lt;&lt;unset $newcall2&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _tmp to $newcall.trim()&gt;&gt;
+    &lt;&lt;if _tmp&gt;&gt;
+        &lt;&lt;set $gr2.name to _tmp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;goto &quot;Followers&quot;&gt;&gt;
+    &lt;&lt;unset $changegr2&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -357911,17 +357907,15 @@ p4: -1,
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $gr3.name to $newcall3.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall3 is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least &lt;br&gt;one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Followers&quot;&gt;&gt;
-        &lt;&lt;unset $changegr3&gt;&gt;
-&lt;&lt;unset $newcall3&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _tmp to $newcall.trim()&gt;&gt;
+    &lt;&lt;if _tmp&gt;&gt;
+        &lt;&lt;set $gr3.name to _tmp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;goto &quot;Followers&quot;&gt;&gt;
+    &lt;&lt;unset $changegr3&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -358007,17 +358001,15 @@ p4: -1,
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $gr4.name to $newcall4.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall4 is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least &lt;br&gt;one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Followers&quot;&gt;&gt;
-        &lt;&lt;unset $changegr4&gt;&gt;
-&lt;&lt;unset $newcall4&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _tmp to $newcall.trim()&gt;&gt;
+    &lt;&lt;if _tmp&gt;&gt;
+        &lt;&lt;set $gr4.name to _tmp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;goto &quot;Followers&quot;&gt;&gt;
+    &lt;&lt;unset $changegr4&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -358089,17 +358081,15 @@ p4: -1,
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $gr5.name to $newcall5.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall5 is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least &lt;br&gt;one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Followers&quot;&gt;&gt;
-        &lt;&lt;unset $changegr5&gt;&gt;
-&lt;&lt;unset $newcall5&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _tmp to $newcall.trim()&gt;&gt;
+    &lt;&lt;if _tmp&gt;&gt;
+        &lt;&lt;set $gr5.name to _tmp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;goto &quot;Followers&quot;&gt;&gt;
+    &lt;&lt;unset $changegr5&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -358171,17 +358161,15 @@ p4: -1,
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $gr6.name to $newcall6.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall6 is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least &lt;br&gt;one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Followers&quot;&gt;&gt;
-        &lt;&lt;unset $changegr6&gt;&gt;
-&lt;&lt;unset $newcall6&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _tmp to $newcall.trim()&gt;&gt;
+    &lt;&lt;if _tmp&gt;&gt;
+        &lt;&lt;set $gr6.name to _tmp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;goto &quot;Followers&quot;&gt;&gt;
+    &lt;&lt;unset $changegr6&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
