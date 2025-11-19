@@ -340201,13 +340201,14 @@ home anymore today!&#39;&#39;
 &lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if $repairfester gte 1 and $stampoints gte 5 and $daycount lte 220&gt;&gt;
-[[Repair (-$2)|House2][$repairhouse to true]]
-&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;elseif $daycount gte 221&gt;&gt;
+&lt;&lt;if $repairfester gt 0&gt;&gt;
+&lt;&lt;if $daycount gt 220&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;too late!&lt;/p&gt;
-&lt;&lt;elseif $stampoints lte 4&gt;&gt;
+&lt;&lt;elseif $stampoints lt 5&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;too tired!&lt;/p&gt;
+&lt;&lt;else&gt;&gt;
+[[Repair (-$2)|House2][$repairhouse to true]]
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* GEN HOUSEHOLD ENDS */
