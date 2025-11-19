@@ -314659,7 +314659,7 @@ girlname: _npc.girlname
 &lt;&lt;set _outcome2 = Math.round(_outcome2)&gt;&gt;
 &lt;&lt;set _outcome3 = Math.round(_outcome3)&gt;&gt;
 
-&lt;&lt;if _npc.survival gte 75 and $nomeatco is undefined&gt;&gt;&lt;&lt;set $totfood+=_outcome&gt;&gt;&lt;&lt;set $foodstuff+=_outcome&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.survival gte 75 and $nomeatco is undefined&gt;&gt;&lt;&lt;set $totfood+=2*_outcome&gt;&gt;&lt;&lt;set $foodstuff+=2*_outcome&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.survival gte 75 and $nomeatco is true&gt;&gt;&lt;&lt;set $totmeat+=_outcome&gt;&gt;
 &lt;&lt;set $meat+=_outcome&gt;&gt;&lt;&lt;/if&gt;&gt;
