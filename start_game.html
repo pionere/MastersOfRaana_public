@@ -290923,6 +290923,8 @@ You contemplate on sending _npc.girlname off to work at the remote farm in Zapin
 A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
 
+&lt;&lt;set _workerfull=$mch.yardslot20.other5 gte 75&gt;&gt;
+
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
 
 &lt;&lt;elseif $adpos is 1&gt;&gt;
@@ -322760,11 +322762,7 @@ Hiring this unit will cost you &#39;&#39;75 War Supplies&#39;&#39;!
 /* Zapin transfer */
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and $quest_ave gte 3 and _smraria isnot true and _npc.girlid isnot 11&gt;&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $mch.yardslot9.other5 lte 49&gt;&gt;
 [[Move to Zapin|MScaving][$mscaving to 1004, $adpos to 0]]
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;Zapin (full!)&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -322772,32 +322770,20 @@ Hiring this unit will cost you &#39;&#39;75 War Supplies&#39;&#39;!
 /* kahill transfer */
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and $mch.yardslot10.type is 16 and _smraria isnot true and _npc.girlid isnot 11&gt;&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $mch.yardslot10.other5 lte 74&gt;&gt;
 [[Move to Kahill|MScaving][$mscaving to 1005, $adpos to 0]]
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;Kahill (full!)&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* silfren transfer */
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and $mch.yardslot11.type is 16 and $silfen5 is undefined and _smraria isnot true and _npc.girlid isnot 11&gt;&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $mch.yardslot11.other5 lte 74&gt;&gt;
 [[Move to Silfren|MScaving][$mscaving to 1006, $adpos to 0]]
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;Silfren (full!)&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 /* darkmere transfer */
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and $mch.yardslot20.type is 17 and _smraria isnot true and _npc.girlid isnot 11&gt;&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $mch.yardslot20.other5 lte 74&gt;&gt;
 [[Move to Mill|MScaving][$mscaving to 1007, $adpos to 0]]
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;Mill (full!)&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -322805,11 +322791,7 @@ Hiring this unit will cost you &#39;&#39;75 War Supplies&#39;&#39;!
 /* Darkmere farm transfer */
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and $mch.yardslot20.type is 15 and _smraria isnot true and _npc.girlid isnot 11&gt;&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $mch.yardslot20.other5 lte 49&gt;&gt;
 [[Move to Dark|MScaving][$mscaving to 1008, $adpos to 0]]
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;Dark. (full!)&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -386649,7 +386631,7 @@ Chancellor
 &lt;/div&gt;
 &lt;div class=&quot;ab2 ulsmall&quot;&gt;
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and _tasksok is true&gt;&gt;
-&lt;&lt;if $mch.yardslot10.other5 lte 740&gt;&gt;
+&lt;&lt;if $mch.yardslot10.other5 lte 74&gt;&gt;
 [[send off! (kah)|MScaving][$mscaving to 1005, $adpos to 0]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;kahill (full!)&lt;/p&gt;
@@ -386713,7 +386695,7 @@ Chancellor
 &lt;/div&gt;
 &lt;div class=&quot;ab2 ulsmall&quot;&gt;
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and _tasksok is true&gt;&gt;
-&lt;&lt;if $mch.yardslot11.other5 lte 740&gt;&gt;
+&lt;&lt;if $mch.yardslot11.other5 lte 74&gt;&gt;
 [[send off! (silf)|MScaving][$mscaving to 1006, $adpos to 0]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;silfren (full!)&lt;/p&gt;
@@ -386786,7 +386768,7 @@ Chancellor
 &lt;/div&gt;
 &lt;div class=&quot;ab2 ulsmall&quot;&gt;
 &lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and _tasksok is true&gt;&gt;
-&lt;&lt;if $mch.yardslot20.other5 lte 7400&gt;&gt;
+&lt;&lt;if $mch.yardslot20.other5 lte 74&gt;&gt;
 [[send off! (dar)|MScaving][$mscaving to 1007, $adpos to 0]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;dark (full!)&lt;/p&gt;
