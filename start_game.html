@@ -305135,7 +305135,7 @@ _npc.lesbian&lt;br&gt;
 &lt;div class=&quot;vendorleft&quot;&gt;
 &lt;div class=&quot;signvendor&quot;&gt;Traits&lt;/div&gt;
 
-/* JQ NEW BEGINS 
+/* JQ NEW BEGINS */
 
 &lt;&lt;if $traitspagenpc is undefined&gt;&gt;&lt;&lt;set $traitspagenpc to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -305143,12 +305143,8 @@ _npc.lesbian&lt;br&gt;
 
 &lt;&lt;set _traitList = []&gt;&gt;
 
-*/
 
-&lt;&lt;include AvTraits&gt;&gt;
-
-
-/* JQ NEW 
+/* JQ NEW */
 
 &lt;&lt;include AvTraitsNew&gt;&gt;
 
@@ -305170,11 +305166,11 @@ _npc.lesbian&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _start = ($traitspagenpc - 1) * _traitperpage&gt;&gt;
-&lt;&lt;set _end = Math.min($traitspagenpc * _traitperpage - 1, _traitList.length - 1)&gt;&gt;
+&lt;&lt;set _start = Math.max(($traitspagenpc - 1) * _traitperpage,0)&gt;&gt;
+&lt;&lt;set _end = Math.min(_start + _traitperpage, _traitList.length)&gt;&gt;
 
 &lt;div class=&quot;ulsmall&quot;&gt;
-&lt;&lt;for _i = _start; _i lte _end; _i++&gt;&gt;
+&lt;&lt;for _i = _start; _i lt _end; _i++&gt;&gt;
     &lt;&lt;set _trait = _traitList[_i]&gt;&gt;
     &lt;&lt;capture _trait, $tutorial&gt;&gt;
         &lt;&lt;link _trait.name&gt;&gt;
@@ -305189,19 +305185,12 @@ _npc.lesbian&lt;br&gt;
     &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;/for&gt;&gt;
 
-    &lt;&lt;set _shown = _end - _start + 1&gt;&gt;
-    &lt;&lt;if _shown lt 6&gt;&gt;
-        &lt;&lt;for _j = 0; _j lt (6 - _shown); _j++&gt;&gt;
-            &lt;p class=&quot;ulsmallused&quot;&gt;Vacant slot&lt;/p&gt;
-            &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-        &lt;&lt;/for&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
 
 
-JQ NEW ENDS */
+/* JQ NEW ENDS */
 
 &lt;/div&gt;
 
