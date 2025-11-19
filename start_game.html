@@ -28729,9 +28729,9 @@ A course at the academy must be held between 7am and 12pm.
 &lt;&lt;if $action8 is true and $action8b isnot true and $event isnot 1&gt;&gt;
 
 &lt;&lt;if _wolfaway isnot true&gt;&gt;
-&lt;&lt;if $event isnot 1&gt;&gt;[[Nadarian Wolf|Academy][$event to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Nadarian Wolf&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+[[Nadarian Wolf|Academy][$event to 1]]
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $event isnot 1 and $askedawolf isnot true&gt;&gt;[[Nadarian Wolf|MScaving][$mscaving to 74, $adpos to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Nadarian Wolf&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $askedawolf isnot true&gt;&gt;[[Nadarian Wolf|MScaving][$mscaving to 74, $adpos to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Nadarian Wolf&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event isnot 2&gt;&gt;[[Carl Hemme|Scaving][$scaving to 43, $adpos to 0, $adpos2 to 0, $adpos3 to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Carl Hemme&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -34846,7 +34846,7 @@ The Dengi king Azuk and his army of degenerates have successfully &lt;br&gt;inva
 &lt;&lt;set $mbjid to []&gt;&gt;
 &lt;&lt;unset $mbjgirl&gt;&gt;
 &lt;&lt;for _delmbj range $npc&gt;&gt;
-&lt;&lt;if _delmbj.morningblow is true&gt;&gt;&lt;&lt;set _delmbj.morningblow to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _delmbj.morningblow to false&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -85580,8 +85580,8 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
 
 &lt;&lt;if $chance gte 1&gt;&gt;
 
-&lt;&lt;if $diff is 1 and $damage gte 19&gt;&gt;&lt;&lt;set $damage-=7&gt;&gt;&lt;&lt;if $damage lte 0&gt;&gt;&lt;&lt;set $damage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $diff is 1 and $damage gte 49&gt;&gt;&lt;&lt;set $damage-=7&gt;&gt;&lt;&lt;if $damage lte 0&gt;&gt;&lt;&lt;set $damage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $diff is 1 and $damage gte 19&gt;&gt;&lt;&lt;set $damage-=7&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $diff is 1 and $damage gte 49&gt;&gt;&lt;&lt;set $damage-=7&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $skillroll lte 4 or _critty is true&gt;&gt;/* (CRITICAL HIT) */&lt;&lt;/if&gt;&gt; 
 &lt;&lt;if $round is 7&gt;&gt;&lt;&lt;set _ene to $enemy1&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 8&gt;&gt;&lt;&lt;set _ene to $enemy2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -102386,8 +102386,8 @@ $avIn_girlnames &#39;&#39;Toughness Trait (+1)&#39;&#39; has increased!
 &lt;&lt;/for&gt;&gt;
 
 
-&lt;&lt;if $diff gte 3 and $descroll gte 1&gt;&gt;&lt;&lt;set $descroll-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $diff is 1 and $descroll gte 1&gt;&gt;&lt;&lt;set $descroll+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $diff gte 3&gt;&gt;&lt;&lt;set $descroll-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $diff is 1&gt;&gt;&lt;&lt;set $descroll+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $wploot1 to -1&gt;&gt;
 &lt;&lt;set $wploot2 to -1&gt;&gt;
@@ -234163,9 +234163,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $mch.yardslot1.level gte 2&gt;&gt;
 &lt;&lt;set $goodfester+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot1.level2 gte 1&gt;&gt;
 &lt;&lt;set $goodfester+=$mch.yardslot1.level2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 /* gazebo 1 ends */
 &lt;&lt;/if&gt;&gt;
@@ -234181,9 +234179,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $mch.yardslot2.level gte 2&gt;&gt;
 &lt;&lt;set $goodfester+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot2.level2 gte 1&gt;&gt;
 &lt;&lt;set $goodfester+=$mch.yardslot2.level2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 /* gazebo 2 ends */
 &lt;&lt;/if&gt;&gt;
@@ -234199,9 +234195,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $mch.yardslot5.level gte 2&gt;&gt;
 &lt;&lt;set $goodfester+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot5.level2 gte 1&gt;&gt;
 &lt;&lt;set $goodfester+=$mch.yardslot5.level2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 /* gazebo 5 ends */
 &lt;&lt;/if&gt;&gt;
@@ -234295,14 +234289,14 @@ sur: 0,
 
 /* empty nursery is depleted - note that nurkids needs to be &quot;gte 1&quot; for nannies to fill these values */
 &lt;&lt;if $nurkids is 0 and $nurq isnot undefined&gt;&gt;
-&lt;&lt;if $nurq.war gte 1&gt;&gt;&lt;&lt;set $nurq.war-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.phys gte 1&gt;&gt;&lt;&lt;set $nurq.phys-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.cor gte 1&gt;&gt;&lt;&lt;set $nurq.cor-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.will gte 1&gt;&gt;&lt;&lt;set $nurq.will-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.dis gte 1&gt;&gt;&lt;&lt;set $nurq.dis-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.int gte 1&gt;&gt;&lt;&lt;set $nurq.int-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.edu gte 1&gt;&gt;&lt;&lt;set $nurq.edu-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurq.sur gte 1&gt;&gt;&lt;&lt;set $nurq.sur-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $nurq.war-=1&gt;&gt;
+&lt;&lt;set $nurq.phys-=1&gt;&gt;
+&lt;&lt;set $nurq.cor-=1&gt;&gt;
+&lt;&lt;set $nurq.will-=1&gt;&gt;
+&lt;&lt;set $nurq.dis-=1&gt;&gt;
+&lt;&lt;set $nurq.int-=1&gt;&gt;
+&lt;&lt;set $nurq.edu-=1&gt;&gt;
+&lt;&lt;set $nurq.sur-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -306948,7 +306942,7 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 
 &lt;&lt;if _girlid is 353 or _npc.transformed gte 1&gt;&gt;&lt;&lt;set _blockall to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.traitvestal gte 1 and _npc.virgin isnot true&gt;&gt;
+&lt;&lt;if _npc.virgin isnot true&gt;&gt;
 &lt;&lt;set _npc.traitvestal to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -307909,137 +307903,137 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
     
     
     </tw-passagedata><tw-passagedata pid="438" name="EndExe" tags="nobr" position="3800,1775" size="100,100">/* FEELINGS */
-&lt;&lt;if $masterlove isnot _npc.masterlove and $masterlove gte -100&gt;&gt;&lt;&lt;set _npc.masterlove to $masterlove&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likesadist isnot _npc.likesadist and $likesadist gte -100&gt;&gt;&lt;&lt;set _npc.likesadist to $likesadist&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likeoral isnot _npc.likeoral and $likeoral gte -100&gt;&gt;&lt;&lt;set _npc.likeoral to $likeoral&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likeanal isnot _npc.likeanal and $likeanal gte -100&gt;&gt;&lt;&lt;set _npc.likeanal to $likeanal&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $likepussy isnot _npc.likepussy and $likepussy gte -100&gt;&gt;&lt;&lt;set _npc.likepussy to $likepussy&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $masterlove gte -100&gt;&gt;&lt;&lt;set _npc.masterlove to $masterlove&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $likesadist gte -100&gt;&gt;&lt;&lt;set _npc.likesadist to $likesadist&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $likeoral gte -100&gt;&gt;&lt;&lt;set _npc.likeoral to $likeoral&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $likeanal gte -100&gt;&gt;&lt;&lt;set _npc.likeanal to $likeanal&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $likepussy gte -100&gt;&gt;&lt;&lt;set _npc.likepussy to $likepussy&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $happiness isnot _npc.happiness and $happiness gte -100&gt;&gt;&lt;&lt;set _npc.happiness to $happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $afraid isnot _npc.afraid and $afraid gte -100&gt;&gt;&lt;&lt;set _npc.afraid to $afraid&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $scarefactor isnot _npc.scarefactor and $scarefactor gte -100&gt;&gt;&lt;&lt;set _npc.scarefactor to $scarefactor&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $defcount isnot _npc.defcount and $defcount gte -100&gt;&gt;&lt;&lt;set _npc.defcount to $defcount&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pain isnot _npc.pain and $pain gte -100&gt;&gt;&lt;&lt;set _npc.pain to $pain&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $humiliation isnot _npc.humiliation and $humiliation gte -100&gt;&gt;&lt;&lt;set _npc.humiliation to $humiliation&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hopesmean isnot _npc.hopesmean and $hopesmean gte -100&gt;&gt;&lt;&lt;set _npc.hopesmean to $hopesmean&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hopessaidno isnot _npc.hopessaidno and $hopessaidno gte -100&gt;&gt;&lt;&lt;set _npc.hopessaidno to $hopessaidno&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hunger isnot _npc.hunger and $hunger gte -100&gt;&gt;&lt;&lt;set _npc.hunger to $hunger&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitrel isnot _npc.traitrel and $traitrel gte -100&gt;&gt;&lt;&lt;set _npc.traitrel to $traitrel&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $respect isnot _npc.respect and $respect gte -100&gt;&gt;&lt;&lt;set _npc.respect to $respect&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $stress isnot _npc.stress and $stress gte -100&gt;&gt;&lt;&lt;set _npc.stress to $stress&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $refuseoral isnot _npc.refuseoral and $refuseoral gte -100&gt;&gt;&lt;&lt;set _npc.refuseoral to $refuseoral&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wantgift isnot _npc.wantgift and $wantgift gte -100&gt;&gt;&lt;&lt;set _npc.wantgift to $wantgift&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $happiness gte -100&gt;&gt;&lt;&lt;set _npc.happiness to $happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $afraid gte -100&gt;&gt;&lt;&lt;set _npc.afraid to $afraid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $scarefactor gte -100&gt;&gt;&lt;&lt;set _npc.scarefactor to $scarefactor&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $defcount gte -100&gt;&gt;&lt;&lt;set _npc.defcount to $defcount&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pain gte -100&gt;&gt;&lt;&lt;set _npc.pain to $pain&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $humiliation gte -100&gt;&gt;&lt;&lt;set _npc.humiliation to $humiliation&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hopesmean gte -100&gt;&gt;&lt;&lt;set _npc.hopesmean to $hopesmean&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hopessaidno gte -100&gt;&gt;&lt;&lt;set _npc.hopessaidno to $hopessaidno&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hunger gte -100&gt;&gt;&lt;&lt;set _npc.hunger to $hunger&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitrel gte -100&gt;&gt;&lt;&lt;set _npc.traitrel to $traitrel&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $respect gte -100&gt;&gt;&lt;&lt;set _npc.respect to $respect&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stress gte -100&gt;&gt;&lt;&lt;set _npc.stress to $stress&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $refuseoral gte -100&gt;&gt;&lt;&lt;set _npc.refuseoral to $refuseoral&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wantgift gte -100&gt;&gt;&lt;&lt;set _npc.wantgift to $wantgift&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* ATTRIBUTES */
-&lt;&lt;if $willpower isnot _npc.willpower and $willpower gte -100&gt;&gt;&lt;&lt;set _npc.willpower to $willpower&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_int isnot _npc.int and $av_int gte -100&gt;&gt;&lt;&lt;set _npc.int to $av_int&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_str isnot _npc.str and $av_str gte -100&gt;&gt;&lt;&lt;set _npc.str to $av_str&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_dex isnot _npc.dex and $av_dex gte -100&gt;&gt;&lt;&lt;set _npc.dex to $av_dex&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $beauty isnot _npc.beauty and $beauty gte -100&gt;&gt;&lt;&lt;set _npc.beauty to $beauty&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $charisma isnot _npc.charisma and $charisma gte -100&gt;&gt;&lt;&lt;set _npc.charisma to $charisma&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $health isnot _npc.health and $health gte -100&gt;&gt;&lt;&lt;set _npc.health to $health&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traittough isnot _npc.toughness and $traittough gte -100&gt;&gt;&lt;&lt;set _npc.toughness to $traittough&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $tempstamina isnot _npc.tempstamina and $tempstamina gte -100&gt;&gt;&lt;&lt;set _npc.tempstamina to $tempstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $maxstamina isnot _npc.maxstamina and $maxstamina gte -100&gt;&gt;&lt;&lt;set _npc.maxstamina to $maxstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $willpower gte -100&gt;&gt;&lt;&lt;set _npc.willpower to $willpower&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_int gte -100&gt;&gt;&lt;&lt;set _npc.int to $av_int&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_str gte -100&gt;&gt;&lt;&lt;set _npc.str to $av_str&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_dex gte -100&gt;&gt;&lt;&lt;set _npc.dex to $av_dex&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $beauty gte -100&gt;&gt;&lt;&lt;set _npc.beauty to $beauty&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $charisma gte -100&gt;&gt;&lt;&lt;set _npc.charisma to $charisma&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $health gte -100&gt;&gt;&lt;&lt;set _npc.health to $health&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traittough gte -100&gt;&gt;&lt;&lt;set _npc.toughness to $traittough&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tempstamina gte -100&gt;&gt;&lt;&lt;set _npc.tempstamina to $tempstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $maxstamina gte -100&gt;&gt;&lt;&lt;set _npc.maxstamina to $maxstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $kind isnot _npc.kind and $kind gte -100&gt;&gt;&lt;&lt;set _npc.kind to $kind&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $kind gte -100&gt;&gt;&lt;&lt;set _npc.kind to $kind&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* BONDAGE RELATED */
-&lt;&lt;if $bondage isnot _npc.bondage and $bondage gte -100&gt;&gt;&lt;&lt;set _npc.bondage to $bondage&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $gagged isnot _npc.gagged and $gagged isnot undefined&gt;&gt;&lt;&lt;set _npc.gagged to $gagged&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ballgag isnot _npc.ballgag and $ballgag isnot undefined&gt;&gt;&lt;&lt;set _npc.ballgag to $ballgag&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $oralgag isnot _npc.oralgag and $oralgag isnot undefined&gt;&gt;&lt;&lt;set _npc.oralgag to $oralgag&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $analhook isnot _npc.analhook and $analhook isnot undefined&gt;&gt;&lt;&lt;set _npc.analhook to $analhook&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $clamped isnot _npc.clamped and $clamped isnot undefined&gt;&gt;&lt;&lt;set _npc.clamped to $clamped&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nipplerounds isnot _npc.nipplerounds and $nipplerounds isnot undefined&gt;&gt;&lt;&lt;set _npc.nipplerounds to $nipplerounds&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $refusestool isnot _npc.refusestool and $refusestool isnot undefined&gt;&gt;&lt;&lt;set _npc.refusestool to $refusestool&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $tempsadist isnot _npc.tempsadist and $tempsadist isnot undefined&gt;&gt;&lt;&lt;set _npc.tempsadist to $tempsadist&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $whipmarks isnot _npc.whipmarks and $whipmarks isnot undefined&gt;&gt;&lt;&lt;set _npc.whipmarks to $whipmarks&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $spankmarks isnot _npc.spankmarks and $spankmarks isnot undefined&gt;&gt;&lt;&lt;set _npc.spankmarks to $spankmarks&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $bondage gte -100&gt;&gt;&lt;&lt;set _npc.bondage to $bondage&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $gagged isnot undefined&gt;&gt;&lt;&lt;set _npc.gagged to $gagged&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ballgag isnot undefined&gt;&gt;&lt;&lt;set _npc.ballgag to $ballgag&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $oralgag isnot undefined&gt;&gt;&lt;&lt;set _npc.oralgag to $oralgag&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $analhook isnot undefined&gt;&gt;&lt;&lt;set _npc.analhook to $analhook&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $clamped isnot undefined&gt;&gt;&lt;&lt;set _npc.clamped to $clamped&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $nipplerounds isnot undefined&gt;&gt;&lt;&lt;set _npc.nipplerounds to $nipplerounds&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $refusestool isnot undefined&gt;&gt;&lt;&lt;set _npc.refusestool to $refusestool&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tempsadist isnot undefined&gt;&gt;&lt;&lt;set _npc.tempsadist to $tempsadist&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $whipmarks isnot undefined&gt;&gt;&lt;&lt;set _npc.whipmarks to $whipmarks&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $spankmarks isnot undefined&gt;&gt;&lt;&lt;set _npc.spankmarks to $spankmarks&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
 /* SEX RELATED */
 
-&lt;&lt;if $hygiene isnot _npc.hygiene and $hygiene gte -100&gt;&gt;&lt;&lt;set _npc.hygiene to $hygiene&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arousal isnot _npc.arousal and $arousal gte -100&gt;&gt;&lt;&lt;set _npc.arousal to $arousal&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $semenswallowed isnot _npc.semenswallowed and $semenswallowed isnot undefined&gt;&gt;&lt;&lt;set _npc.semenswallowed to $semenswallowed&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hastasted isnot _npc.hastasted and $hastasted isnot undefined&gt;&gt;&lt;&lt;set _npc.hastasted to $hastasted&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $virgin isnot _npc.virgin and $virgin isnot undefined&gt;&gt;&lt;&lt;set _npc.virgin to $virgin&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $analvirgin isnot _npc.analvirgin and $analvirgin isnot undefined&gt;&gt;&lt;&lt;set _npc.analvirgin to $analvirgin&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $kissingxp isnot _npc.kissingxp and $kissingxp isnot undefined&gt;&gt;&lt;&lt;set _npc.kissingxp to $kissingxp&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pussyxp isnot _npc.pussyxp and $pussyxp isnot undefined&gt;&gt;&lt;&lt;set _npc.pussyxp to $pussyxp&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pussywear isnot _npc.pussywear and $pussywear isnot undefined&gt;&gt;&lt;&lt;set _npc.pussywear to $pussywear&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $analxp isnot _npc.analxp and $analxp isnot undefined&gt;&gt;&lt;&lt;set _npc.analxp to $analxp&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $analwear isnot _npc.analwear and $analwear isnot undefined&gt;&gt;&lt;&lt;set _npc.analwear to $analwear&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $oralxp isnot _npc.oralxp and $oralxp isnot undefined&gt;&gt;&lt;&lt;set _npc.oralxp to $oralxp&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $oralwear isnot _npc.oralwear and $oralwear isnot undefined&gt;&gt;&lt;&lt;set _npc.oralwear to $oralwear&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nipplewear isnot _npc.nipplewear and $nipplewear isnot undefined&gt;&gt;&lt;&lt;set _npc.nipplewear to $nipplewear&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nopussyday isnot _npc.nopussyday and $nopussyday isnot undefined&gt;&gt;&lt;&lt;set _npc.nopussyday to $nopussyday&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $noanalday isnot _npc.noanalday and $noanalday isnot undefined&gt;&gt;&lt;&lt;set _npc.noanalday to $noanalday&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nooralday isnot _npc.nooralday and $nooralday isnot undefined&gt;&gt;&lt;&lt;set _npc.nooralday to $nooralday&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cancelmakeout isnot _npc.cancelmakeout and $cancelmakeout isnot undefined&gt;&gt;&lt;&lt;set _npc.cancelmakeout to $cancelmakeout&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $refusedanalvirgin isnot _npc.refusedanalvirgin and $refusedanalvirgin isnot undefined&gt;&gt;&lt;&lt;set _npc.refusedanalvirgin to $refusedanalvirgin&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $refusedvirgin isnot _npc.refusedvirgin and $refusedvirgin isnot undefined&gt;&gt;&lt;&lt;set _npc.refusedvirgin to $refusedvirgin&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $poutlearn isnot _npc.poutlearn and $poutlearn isnot undefined&gt;&gt;&lt;&lt;set _npc.poutlearn to $poutlearn&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hygiene gte -100&gt;&gt;&lt;&lt;set _npc.hygiene to $hygiene&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal gte -100&gt;&gt;&lt;&lt;set _npc.arousal to $arousal&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $semenswallowed isnot undefined&gt;&gt;&lt;&lt;set _npc.semenswallowed to $semenswallowed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hastasted isnot undefined&gt;&gt;&lt;&lt;set _npc.hastasted to $hastasted&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $virgin isnot undefined&gt;&gt;&lt;&lt;set _npc.virgin to $virgin&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $analvirgin isnot undefined&gt;&gt;&lt;&lt;set _npc.analvirgin to $analvirgin&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $kissingxp isnot undefined&gt;&gt;&lt;&lt;set _npc.kissingxp to $kissingxp&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pussyxp isnot undefined&gt;&gt;&lt;&lt;set _npc.pussyxp to $pussyxp&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pussywear isnot undefined&gt;&gt;&lt;&lt;set _npc.pussywear to $pussywear&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $analxp isnot undefined&gt;&gt;&lt;&lt;set _npc.analxp to $analxp&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $analwear isnot undefined&gt;&gt;&lt;&lt;set _npc.analwear to $analwear&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $oralxp isnot undefined&gt;&gt;&lt;&lt;set _npc.oralxp to $oralxp&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $oralwear isnot undefined&gt;&gt;&lt;&lt;set _npc.oralwear to $oralwear&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $nipplewear isnot undefined&gt;&gt;&lt;&lt;set _npc.nipplewear to $nipplewear&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $nopussyday isnot undefined&gt;&gt;&lt;&lt;set _npc.nopussyday to $nopussyday&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $noanalday isnot undefined&gt;&gt;&lt;&lt;set _npc.noanalday to $noanalday&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $nooralday isnot undefined&gt;&gt;&lt;&lt;set _npc.nooralday to $nooralday&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cancelmakeout isnot undefined&gt;&gt;&lt;&lt;set _npc.cancelmakeout to $cancelmakeout&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $refusedanalvirgin isnot undefined&gt;&gt;&lt;&lt;set _npc.refusedanalvirgin to $refusedanalvirgin&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $refusedvirgin isnot undefined&gt;&gt;&lt;&lt;set _npc.refusedvirgin to $refusedvirgin&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $poutlearn isnot undefined&gt;&gt;&lt;&lt;set _npc.poutlearn to $poutlearn&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $avatarunc isnot _npc.avatarunc and $avatarunc isnot undefined&gt;&gt;&lt;&lt;set _npc.avatarunc to $avatarunc&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $avatarunc isnot undefined&gt;&gt;&lt;&lt;set _npc.avatarunc to $avatarunc&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* SKILLS */
-&lt;&lt;if $av_aca isnot _npc.aca and $av_aca gte -100&gt;&gt;&lt;&lt;set _npc.aca to $av_aca&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_tech isnot _npc.tech and $av_tech gte -100&gt;&gt;&lt;&lt;set _npc.tech to $av_tech&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_acro isnot _npc.acro and $av_acro gte -100&gt;&gt;&lt;&lt;set _npc.acro to $av_acro&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_per isnot _npc.per and $av_per gte -100&gt;&gt;&lt;&lt;set _npc.per to $av_per&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_domestic isnot _npc.domestic and $av_domestic gte -100&gt;&gt;&lt;&lt;set _npc.domestic to $av_domestic&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_dancing isnot _npc.dancing and $av_dancing gte -100&gt;&gt;&lt;&lt;set _npc.dancing to $av_dancing&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $discipline isnot _npc.discipline and $discipline gte -100&gt;&gt;&lt;&lt;set _npc.discipline to $discipline&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_med isnot _npc.med and $av_med gte -100&gt;&gt;&lt;&lt;set _npc.med to $av_med&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_aca gte -100&gt;&gt;&lt;&lt;set _npc.aca to $av_aca&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_tech gte -100&gt;&gt;&lt;&lt;set _npc.tech to $av_tech&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_acro gte -100&gt;&gt;&lt;&lt;set _npc.acro to $av_acro&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_per gte -100&gt;&gt;&lt;&lt;set _npc.per to $av_per&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_domestic gte -100&gt;&gt;&lt;&lt;set _npc.domestic to $av_domestic&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_dancing gte -100&gt;&gt;&lt;&lt;set _npc.dancing to $av_dancing&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $discipline gte -100&gt;&gt;&lt;&lt;set _npc.discipline to $discipline&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_med gte -100&gt;&gt;&lt;&lt;set _npc.med to $av_med&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $focus isnot _npc.focus and $focus gte -100&gt;&gt;&lt;&lt;set _npc.focus to $focus&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $focus gte -100&gt;&gt;&lt;&lt;set _npc.focus to $focus&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* ATTIRES AND EQUIPMENT */
-&lt;&lt;if $av_wear isnot _npc.wear and $av_wear isnot undefined&gt;&gt;&lt;&lt;set _npc.wear to $av_wear&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_armorwear isnot _npc.armorwear and $av_armorwear isnot undefined&gt;&gt;&lt;&lt;set _npc.armorwear to $av_armorwear&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_meleeweapon isnot _npc.meleeweapon and $av_meleeweapon isnot undefined&gt;&gt;&lt;&lt;set _npc.meleeweapon to $av_meleeweapon&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon isnot _npc.weapon and $av_weapon isnot undefined&gt;&gt;&lt;&lt;set _npc.weapon to $av_weapon&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $collared isnot _npc.collared and $collared isnot undefined&gt;&gt;&lt;&lt;set _npc.collared to $collared&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nipir isnot _npc.nipir and $nipir isnot undefined&gt;&gt;&lt;&lt;set _npc.nipir to $nipir&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $clitpir isnot _npc.clitpir and $clitpir isnot undefined&gt;&gt;&lt;&lt;set _npc.clitpir to $clitpir&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nightblock isnot _npc.nightblock and $nightblock isnot undefined&gt;&gt;&lt;&lt;set _npc.nightblock to $nightblock&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_wear isnot undefined&gt;&gt;&lt;&lt;set _npc.wear to $av_wear&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_armorwear isnot undefined&gt;&gt;&lt;&lt;set _npc.armorwear to $av_armorwear&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_meleeweapon isnot undefined&gt;&gt;&lt;&lt;set _npc.meleeweapon to $av_meleeweapon&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $av_weapon isnot undefined&gt;&gt;&lt;&lt;set _npc.weapon to $av_weapon&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $collared isnot undefined&gt;&gt;&lt;&lt;set _npc.collared to $collared&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $nipir isnot undefined&gt;&gt;&lt;&lt;set _npc.nipir to $nipir&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $clitpir isnot undefined&gt;&gt;&lt;&lt;set _npc.clitpir to $clitpir&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $nightblock isnot undefined&gt;&gt;&lt;&lt;set _npc.nightblock to $nightblock&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* JOBS AND ACTIVITIES */
 
-&lt;&lt;if $activityblock isnot _npc.activityblock and $activityblock isnot undefined&gt;&gt;&lt;&lt;set _npc.activityblock to $activityblock&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $stable isnot _npc.stable and $stable isnot undefined&gt;&gt;&lt;&lt;set _npc.stable to $stable&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ownhorse isnot _npc.ownhorse and $ownhorse isnot undefined&gt;&gt;&lt;&lt;set _npc.ownhorse to $ownhorse&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $busy isnot _npc.busy and $busy isnot undefined&gt;&gt;&lt;&lt;set _npc.busy to $busy&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $walk isnot _npc.walk and $walk isnot undefined&gt;&gt;&lt;&lt;set _npc.walk to $walk&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $dinner isnot _npc.dinner and $dinner isnot undefined&gt;&gt;&lt;&lt;set _npc.dinner to $dinner&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $dinnertime isnot _npc.dinnertime and $dinnertime isnot undefined&gt;&gt;&lt;&lt;set _npc.dinnertime to $dinnertime&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $okanswer isnot _npc.okanswer and $okanswer isnot undefined&gt;&gt;&lt;&lt;set _npc.okanswer to $okanswer&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hopesanswer isnot _npc.hopesanswer and $hopesanswer isnot undefined&gt;&gt;&lt;&lt;set _npc.hopesanswer to $hopesanswer&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $talkchores isnot _npc.talkchores and $talkchores isnot undefined&gt;&gt;&lt;&lt;set _npc.talkchores to $talkchores&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $talksex isnot _npc.talksex and $talksex isnot undefined&gt;&gt;&lt;&lt;set _npc.talksex to $talksex&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $compliment isnot _npc.compliment and $compliment isnot undefined&gt;&gt;&lt;&lt;set _npc.compliment to $compliment&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $encour isnot _npc.encour and $encour isnot undefined&gt;&gt;&lt;&lt;set _npc.encour to $encour&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $stargaze isnot _npc.stargaze and $stargaze isnot undefined&gt;&gt;&lt;&lt;set _npc.stargaze to $stargaze&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $spokensex isnot _npc.spokensex and $spokensex isnot undefined&gt;&gt;&lt;&lt;set _npc.spokensex to $spokensex&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $refuseshower isnot _npc.refuseshower and $refuseshower isnot undefined&gt;&gt;&lt;&lt;set _npc.refuseshower to $refuseshower&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $improve isnot _npc.improve and $improve isnot undefined&gt;&gt;&lt;&lt;set _npc.improve to $improve&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $refuseclass isnot _npc.refuseclass and $refuseclass isnot undefined&gt;&gt;&lt;&lt;set _npc.refuseclass to $refuseclass&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $give isnot _npc.give and $give isnot undefined&gt;&gt;&lt;&lt;set _npc.give to $give&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hopessaidno isnot _npc.hopessaidno and $hopessaidno isnot undefined&gt;&gt;&lt;&lt;set _npc.hopessaidno to $hopessaidno&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activityblock isnot undefined&gt;&gt;&lt;&lt;set _npc.activityblock to $activityblock&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stable isnot undefined&gt;&gt;&lt;&lt;set _npc.stable to $stable&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownhorse isnot undefined&gt;&gt;&lt;&lt;set _npc.ownhorse to $ownhorse&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $busy isnot undefined&gt;&gt;&lt;&lt;set _npc.busy to $busy&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $walk isnot undefined&gt;&gt;&lt;&lt;set _npc.walk to $walk&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $dinner isnot undefined&gt;&gt;&lt;&lt;set _npc.dinner to $dinner&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $dinnertime isnot undefined&gt;&gt;&lt;&lt;set _npc.dinnertime to $dinnertime&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $okanswer isnot undefined&gt;&gt;&lt;&lt;set _npc.okanswer to $okanswer&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hopesanswer isnot undefined&gt;&gt;&lt;&lt;set _npc.hopesanswer to $hopesanswer&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $talkchores isnot undefined&gt;&gt;&lt;&lt;set _npc.talkchores to $talkchores&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $talksex isnot undefined&gt;&gt;&lt;&lt;set _npc.talksex to $talksex&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $compliment isnot undefined&gt;&gt;&lt;&lt;set _npc.compliment to $compliment&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $encour isnot undefined&gt;&gt;&lt;&lt;set _npc.encour to $encour&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $stargaze isnot undefined&gt;&gt;&lt;&lt;set _npc.stargaze to $stargaze&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $spokensex isnot undefined&gt;&gt;&lt;&lt;set _npc.spokensex to $spokensex&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $refuseshower isnot undefined&gt;&gt;&lt;&lt;set _npc.refuseshower to $refuseshower&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $improve isnot undefined&gt;&gt;&lt;&lt;set _npc.improve to $improve&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $refuseclass isnot undefined&gt;&gt;&lt;&lt;set _npc.refuseclass to $refuseclass&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $give isnot undefined&gt;&gt;&lt;&lt;set _npc.give to $give&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $hopessaidno isnot undefined&gt;&gt;&lt;&lt;set _npc.hopessaidno to $hopessaidno&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
 
 /*
-&lt;&lt;if $morningblow isnot _npc.morningblow and $morningblow isnot undefined&gt;&gt;&lt;&lt;set _npc.morningblow to $morningblow&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $morningblow isnot undefined&gt;&gt;&lt;&lt;set _npc.morningblow to $morningblow&gt;&gt;&lt;&lt;/if&gt;&gt;
 */
 
 
@@ -308050,27 +308044,27 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 
 &lt;&lt;if _isinarena is true&gt;&gt;
 
-&lt;&lt;if $ar_virgin isnot _npc.virgin and $ar_virgin isnot undefined&gt;&gt;&lt;&lt;set _npc.virgin to $ar_virgin&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_virgin isnot undefined&gt;&gt;&lt;&lt;set _npc.virgin to $ar_virgin&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $ar_willpower isnot _npc.willpower and $ar_willpower gte -100&gt;&gt;&lt;&lt;set _npc.willpower to $ar_willpower&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ar_str isnot _npc.str and $ar_str gte -100&gt;&gt;&lt;&lt;set _npc.str to $ar_str&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ar_dex isnot _npc.dex and $ar_dex gte -100&gt;&gt;&lt;&lt;set _npc.dex to $ar_dex&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ar_melee isnot _npc.melee and $ar_melee gte -100&gt;&gt;&lt;&lt;set _npc.melee to $ar_melee&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_willpower gte -100&gt;&gt;&lt;&lt;set _npc.willpower to $ar_willpower&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_str gte -100&gt;&gt;&lt;&lt;set _npc.str to $ar_str&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_dex gte -100&gt;&gt;&lt;&lt;set _npc.dex to $ar_dex&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_melee gte -100&gt;&gt;&lt;&lt;set _npc.melee to $ar_melee&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ar_traitwarrior isnot _npc.traitwarrior and $ar_traitwarrior gte -100&gt;&gt;&lt;&lt;set _npc.traitwarrior to $ar_traitwarrior&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_traitwarrior gte -100&gt;&gt;&lt;&lt;set _npc.traitwarrior to $ar_traitwarrior&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ar_health isnot _npc.health and $ar_health gte -100&gt;&gt;&lt;&lt;set _npc.health to $ar_health&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ar_tempstamina isnot _npc.tempstamina and $ar_tempstamina gte -100&gt;&gt;&lt;&lt;set _npc.tempstamina to $ar_tempstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_health gte -100&gt;&gt;&lt;&lt;set _npc.health to $ar_health&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_tempstamina gte -100&gt;&gt;&lt;&lt;set _npc.tempstamina to $ar_tempstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ar_meleeweapon isnot _npc.meleeweapon and $ar_meleeweapon isnot undefined&gt;&gt;&lt;&lt;set _npc.meleeweapon to $ar_meleeweapon&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_meleeweapon isnot undefined&gt;&gt;&lt;&lt;set _npc.meleeweapon to $ar_meleeweapon&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ar_encour isnot _npc.arencour and $ar_encour isnot undefined&gt;&gt;&lt;&lt;set _npc.arencour to $ar_encour&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_encour isnot undefined&gt;&gt;&lt;&lt;set _npc.arencour to $ar_encour&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ar_masterlove isnot _npc.masterlove and $ar_masterlove isnot undefined&gt;&gt;&lt;&lt;set _npc.masterlove to $ar_masterlove&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ar_happiness isnot _npc.happiness and $ar_happiness isnot undefined&gt;&gt;&lt;&lt;set _npc.happiness to $ar_happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_masterlove isnot undefined&gt;&gt;&lt;&lt;set _npc.masterlove to $ar_masterlove&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ar_happiness isnot undefined&gt;&gt;&lt;&lt;set _npc.happiness to $ar_happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $justfight isnot _npc.justfight and $justfight isnot undefined&gt;&gt;&lt;&lt;set _npc.justfight to $justfight&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $justfight isnot undefined&gt;&gt;&lt;&lt;set _npc.justfight to $justfight&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -308078,17 +308072,17 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 
 /* TRAITS */
 
-&lt;&lt;if $traitvanilla isnot _npc.traitvanilla and $traitvanilla gte -100&gt;&gt;&lt;&lt;set _npc.traitvanilla to $traitvanilla&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitsize isnot _npc.traitsize and $traitsize gte -100&gt;&gt;&lt;&lt;set _npc.traitsize to $traitvanilla&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitperv isnot _npc.traitperv and $traitperv gte -100&gt;&gt;&lt;&lt;set _npc.traitperv to $traitperv&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitdaddy isnot _npc.traitdaddy and $traitdaddy gte -100&gt;&gt;&lt;&lt;set _npc.traitdaddy to $traitdaddy&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitnymfo isnot _npc.traitnymfo and $traitnymfo gte -100&gt;&gt;&lt;&lt;set _npc.traitnymfo to $traitnymfo&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitoralfix isnot _npc.traitoralfix and $traitoralfix gte -100&gt;&gt;&lt;&lt;set _npc.traitoralfix to $traitoralfix&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitpure isnot _npc.traitpure and $traitpure gte -100&gt;&gt;&lt;&lt;set _npc.traitpure to $traitpure&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitadvoc isnot _npc.traitadvoc and $traitadvoc gte -100&gt;&gt;&lt;&lt;set _npc.traitadvoc to $traitadvoc&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitsub isnot _npc.traitsub and $traitsub gte -100&gt;&gt;&lt;&lt;set _npc.traitsub to $traitsub&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitaggro isnot _npc.traitaggro and $traitaggro gte -100&gt;&gt;&lt;&lt;set _npc.traitaggro to $traitaggro&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $traitfem isnot _npc.traitfem and $traitfem gte -100&gt;&gt;&lt;&lt;set _npc.traitfem to $traitfem&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitvanilla gte -100&gt;&gt;&lt;&lt;set _npc.traitvanilla to $traitvanilla&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitsize gte -100&gt;&gt;&lt;&lt;set _npc.traitsize to $traitvanilla&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitperv gte -100&gt;&gt;&lt;&lt;set _npc.traitperv to $traitperv&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitdaddy gte -100&gt;&gt;&lt;&lt;set _npc.traitdaddy to $traitdaddy&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitnymfo gte -100&gt;&gt;&lt;&lt;set _npc.traitnymfo to $traitnymfo&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitoralfix gte -100&gt;&gt;&lt;&lt;set _npc.traitoralfix to $traitoralfix&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitpure gte -100&gt;&gt;&lt;&lt;set _npc.traitpure to $traitpure&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitadvoc gte -100&gt;&gt;&lt;&lt;set _npc.traitadvoc to $traitadvoc&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitsub gte -100&gt;&gt;&lt;&lt;set _npc.traitsub to $traitsub&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitaggro gte -100&gt;&gt;&lt;&lt;set _npc.traitaggro to $traitaggro&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitfem gte -100&gt;&gt;&lt;&lt;set _npc.traitfem to $traitfem&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -311438,16 +311432,14 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.health=adl(_npc.health,5,_npc.toughness)&gt;&gt;
 &lt;&lt;if _npc.bondage isnot 3 and _npc.bondage isnot 1&gt;&gt;
 
-&lt;&lt;if _npc.tempstamina lt _npc.maxstamina&gt;&gt;
 &lt;&lt;set _npc.tempstamina+=10&gt;&gt;
 &lt;&lt;set _npc.tempstamina+=_npc.maxstamina/3&gt;&gt;
 &lt;&lt;set _npc.tempstamina = Math.round(_npc.tempstamina)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.bondage is 3 or _npc.bondage is 1&gt;&gt;
-&lt;&lt;if _npc.tempstamina lt _npc.maxstamina&gt;&gt;&lt;&lt;set _npc.tempstamina+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.tempstamina+=10&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _npc.tempstamina=Math.min(_npc.tempstamina,_npc.maxstamina)&gt;&gt;
@@ -315312,7 +315304,7 @@ girlname: _npc.girlname
 
 
 /* main damage reduction script */
-&lt;&lt;if _dmg gte 1&gt;&gt;&lt;&lt;set _npc.health-=_dmg&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.health-=_dmg&gt;&gt;
 
 
 /* stat losses on grimdark */
@@ -315480,7 +315472,7 @@ girlname: _npc.girlname
 
 
 /* main damage reduction script */
-&lt;&lt;if _dmg gte 1&gt;&gt;&lt;&lt;set _npc.health-=_dmg&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.health-=_dmg&gt;&gt;
 
 /* stat losses on grimdark */
 &lt;&lt;if $diff gte 3 and _npc.health lte -5 and _dmg gte 5&gt;&gt;
@@ -329733,9 +329725,7 @@ She turns silent in your presence. There&#39;s no doubt she&#39;s upset about so
 
 /* living room */
 
-&lt;&lt;if $mch.liveroom.level gte 0&gt;&gt;
 &lt;&lt;set $goodfester+=$mch.liveroom.level&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mch.liveroom.furn10 gte 3&gt;&gt;
 &lt;&lt;set $goodfester+=1&gt;&gt;
@@ -338553,7 +338543,7 @@ It&#39;s a pretty ordinary night that could have been much worse, however.
 &lt;br&gt;&lt;br&gt;
 Her &#39;&#39;Oral wear (+_ran5)&#39;&#39; has increased!&lt;br&gt;
 Her &#39;&#39;Vaginal wear (+_ran6)&#39;&#39; has increased!&lt;br&gt;
-&lt;&lt;if _ran is 4&gt;&gt; Her &#39;&#39;Anal wear (+_ran5)&#39;&#39; has increased!&lt;br&gt;&lt;&lt;set _apnpc.analwear+=_ran5&gt;&gt;&lt;&lt;set _apnpc.analxp+=1&gt;&gt;&lt;&lt;if _apnpc.analvirgin is true&gt;&gt;&lt;&lt;set _apnpc.analvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ran is 4&gt;&gt; Her &#39;&#39;Anal wear (+_ran5)&#39;&#39; has increased!&lt;br&gt;&lt;&lt;set _apnpc.analwear+=_ran5&gt;&gt;&lt;&lt;set _apnpc.analxp+=1&gt;&gt;&lt;&lt;set _apnpc.analvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _apnpc.likesadist lte 39&gt;&gt;Her &#39;&#39;Happiness (-5)&#39;&#39; and &#39;&#39;Affection (-3)&#39;&#39; toward you have decreased!&lt;&lt;set _apnpc.happiness-=5&gt;&gt;&lt;&lt;set _apnpc.masterlove-=3&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _show to 25*_ran3&gt;&gt;
@@ -338562,7 +338552,7 @@ Her &#39;&#39;Vaginal wear (+_ran6)&#39;&#39; has increased!&lt;br&gt;
 &lt;&lt;set _apnpc.humiliation+=3&gt;&gt;
 &lt;&lt;set _apnpc.oralxp=adl(_apnpc.oralxp,1,100)&gt;&gt;
 &lt;&lt;set _apnpc.pussyxp=adl(_apnpc.pussyxp,1,100)&gt;&gt;
-&lt;&lt;if _apnpc.virgin is true&gt;&gt;&lt;&lt;set _apnpc.virgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _apnpc.virgin to false&gt;&gt;
 &lt;&lt;if _apnpc.prostscore gte 40&gt;&gt;&lt;&lt;set _show+=8&gt;&gt;&lt;&lt;set $totgain+=8&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _apnpc.oralxp gte 70 and _apnpc.pussyxp gte 70 and _apnpc.prostscore lte 30&gt;&gt;&lt;&lt;set _apnpc.prostscore+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -338727,7 +338717,7 @@ Her &#39;&#39;Willpower (-1)&#39;&#39; has also decreased!
 &lt;&lt;set _apnpc.health-=10&gt;&gt;
 &lt;&lt;set _apnpc.oralwear+=5&gt;&gt;
 &lt;&lt;set _apnpc.pussywear+=5&gt;&gt;
-&lt;&lt;if _apnpc.virgin is true&gt;&gt;&lt;&lt;set _apnpc.virgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _apnpc.virgin to false&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -338843,8 +338833,8 @@ Her &#39;&#39;Health (-15)&#39;&#39; has decreased!&lt;br&gt;
 &lt;&lt;set _apnpc.pussywear+=_ran3&gt;&gt;
 &lt;&lt;set _apnpc.analwear+=_ran4&gt;&gt;
 
-&lt;&lt;if _apnpc.virgin is true&gt;&gt;&lt;&lt;set _apnpc.virgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _apnpc.analvirgin is true&gt;&gt;&lt;&lt;set _apnpc.analvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _apnpc.virgin to false&gt;&gt;
+&lt;&lt;set _apnpc.analvirgin to false&gt;&gt;
 &lt;&lt;set _apnpc.health-=15&gt;&gt;
 &lt;&lt;set _apnpc.tempstamina-=15&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -339719,20 +339709,13 @@ OLD IGNORE
 &lt;&lt;set _cboards=Math.max(_cboards,0)&gt;&gt;
 &lt;&lt;set _cloth=Math.max(_cloth,0)&gt;&gt;
 
-
-
-&lt;&lt;if _steel gte 0&gt;&gt;&lt;&lt;set $steel+=_steel&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _dura gte 0&gt;&gt;&lt;&lt;set $durasteel+=_dura&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _connect gte 0&gt;&gt;&lt;&lt;set $connect+=_connect&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _scrap gte 0&gt;&gt;&lt;&lt;set $scrap+=_scrap&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _gold gte 0&gt;&gt;&lt;&lt;set $gold+=_gold&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cboards gte 0&gt;&gt;&lt;&lt;set $cboards+=_cboards&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cloth gte 0&gt;&gt;&lt;&lt;set $cloth+=_cloth&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-
-
+&lt;&lt;set $steel+=_steel&gt;&gt;
+&lt;&lt;set $durasteel+=_dura&gt;&gt;
+&lt;&lt;set $connect+=_connect&gt;&gt;
+&lt;&lt;set $scrap+=_scrap&gt;&gt;
+&lt;&lt;set $gold+=_gold&gt;&gt;
+&lt;&lt;set $cboards+=_cboards&gt;&gt;
+&lt;&lt;set $cloth+=_cloth&gt;&gt;
 
 /* Merch deduct */
 &lt;&lt;set _fact.other1-=_workload&gt;&gt;
@@ -374599,9 +374582,7 @@ And my first goal should be to start preparing for assuming the throne as Mayor 
 
 
 &lt;&lt;set _mineguards*=15&gt;&gt;
-&lt;&lt;if _mineguards gte 1&gt;&gt;
 &lt;&lt;set _minemain+=_mineguards&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set _mineyield*=0.14&gt;&gt; /* use to modify final output */
@@ -380706,7 +380687,7 @@ Her &#39;&#39;Lesbian Devotion (+1)&#39;&#39; has increased!
 &lt;&lt;set _fored2*=0.2&gt;&gt; /* foremans effect */
 &lt;&lt;set _fored2 = Math.round(_fored2)&gt;&gt; /* foremans effect */
 
-&lt;&lt;if _fored2 gte 1&gt;&gt;&lt;&lt;set _woodyield+=_fored2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _woodyield+=_fored2&gt;&gt;
 
 &lt;&lt;set _millmain*=_workers&gt;&gt;
 &lt;&lt;set _woodyield*=_workers&gt;&gt;
@@ -380788,7 +380769,7 @@ Her &#39;&#39;Lesbian Devotion (+1)&#39;&#39; has increased!
 &lt;&lt;set _fored3 to _mill.other7&gt;&gt; /* foremans skill */
 &lt;&lt;set _fored3/=2&gt;&gt;
 &lt;&lt;set _fored3 = Math.round(_fored3)&gt;&gt;
-&lt;&lt;if _fored3 gte 1 and _woodrecover gte 3&gt;&gt;&lt;&lt;set _woodrecover+=_fored3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _woodrecover gte 3&gt;&gt;&lt;&lt;set _woodrecover+=_fored3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _woodrecover gte 3&gt;&gt;
 &lt;&lt;set _woodrecover*=_workers&gt;&gt;
