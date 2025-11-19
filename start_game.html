@@ -25247,7 +25247,6 @@ Remaining withdrawal days: $boosterdays
 &lt;&lt;set $pantry to 0&gt;&gt;
 &lt;&lt;unset $pantryskill&gt;&gt;
 &lt;&lt;set $quarter to 0&gt;&gt;
-&lt;&lt;unset $qtech&gt;&gt;
 &lt;&lt;unset $gardenskill&gt;&gt;
 &lt;&lt;unset $accountskill&gt;&gt;
 &lt;&lt;set $headmaid to 0&gt;&gt;
@@ -251192,7 +251191,7 @@ ENEMY LEVELS
 
 &lt;&lt;if $title is 1&gt;&gt;&lt;&lt;set $headmaid to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $title is 2&gt;&gt;&lt;&lt;set $pantry to 0&gt;&gt;&lt;&lt;unset $pantryskill&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;unset $qtech&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $title is 4&gt;&gt;&lt;&lt;set $nanny to 0&gt;&gt;&lt;&lt;unset $nannyskill&gt;&gt;&lt;&lt;unset $nancor&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $title is 5&gt;&gt;&lt;&lt;unset $crawlskill&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -304053,7 +304052,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;if $titlechange is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to _npc.girlid&gt;&gt;&lt;&lt;set $butlerwill to _npc.willpower&gt;&gt;&lt;&lt;set $butlerdis to _npc.discipline&gt;&gt;&lt;&lt;set $butlerpure to _npc.traitpure&gt;&gt;&lt;&lt;set $butlerkind to _npc.kind&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $titlechange is 2&gt;&gt;&lt;&lt;set $pantryskill to _npc.domestic&gt;&gt;&lt;&lt;set $pantry to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $titlechange is 3&gt;&gt;&lt;&lt;set $qtech to _npc.tech&gt;&gt;&lt;&lt;set $quarter to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $titlechange is 3&gt;&gt;&lt;&lt;set $quarter to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $titlechange is 4&gt;&gt;/*&lt;&lt;set $nancor to _npc.likesadist&gt;&gt;&lt;&lt;set $nanny to _npc.girlid&gt;&gt;*/&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $titlechange is 5&gt;&gt;/*&lt;&lt;set $crawlskill to _npc.likesadist&gt;&gt;&lt;&lt;set $crawlskill+=_npc.oralxp&gt;&gt;&lt;&lt;set $crawlskill/=2&gt;&gt;&lt;&lt;set $crawlskill = Math.round($crawlskill)&gt;&gt;*/&lt;&lt;/if&gt;&gt;
 
@@ -304077,7 +304076,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;if _npc.title is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to 0&gt;&gt;&lt;&lt;unset $butlerwill&gt;&gt;&lt;&lt;unset $butlerdis&gt;&gt;&lt;&lt;unset $butlerpure&gt;&gt;&lt;&lt;unset $butlerkind&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.title is 2&gt;&gt;&lt;&lt;set $pantry to 0&gt;&gt;&lt;&lt;unset $pantryskill&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;unset $qtech&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 4&gt;&gt;/*&lt;&lt;unset $nancor&gt;&gt;&lt;&lt;set $nanny to 0&gt;&gt;*/&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 5&gt;&gt;/*&lt;&lt;unset $crawlskill&gt;&gt;*/&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 7&gt;&gt;&lt;&lt;unset $headchef&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -309872,7 +309871,7 @@ Use this to point to current NPC slot:
 &lt;&lt;if _npc.title is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to 0&gt;&gt;&lt;&lt;unset $butlerwill&gt;&gt;&lt;&lt;unset $butlerdis&gt;&gt;&lt;&lt;unset $butlerpure&gt;&gt;&lt;&lt;unset $butlerkind&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.title is 2&gt;&gt;&lt;&lt;set $pantry to 0&gt;&gt;&lt;&lt;unset $pantryskill&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;unset $qtech&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 7&gt;&gt;&lt;&lt;unset $headchef&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -315202,7 +315201,7 @@ girlname: _npc.girlname
 
 &lt;&lt;if _npc.title is 3 and _npc.med gte 40 and _npc.masterlove gte 25 and _npc.health gte 1&gt;&gt;&lt;&lt;set $masterhealth+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $qtech gte 50 and $ownsmith gte 1 and _npc.title is 3&gt;&gt;
+&lt;&lt;if $ownsmith gte 1 and _npc.title is 3 and _npc.tech gte 50&gt;&gt;
 &lt;&lt;if $ownpadded is true&gt;&gt;&lt;&lt;set $paddedsoak=adl($paddedsoak,1,3)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $ownleather is true&gt;&gt;&lt;&lt;set $leathersoak=adl($leathersoak,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $ownhleather is true&gt;&gt;&lt;&lt;set $hleathersoak=adl($hleathersoak,1,14)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -315210,7 +315209,7 @@ girlname: _npc.girlname
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $qtech gte 80 and _npc.title is 3&gt;&gt;
+&lt;&lt;if _npc.title is 3 and _npc.tech gte 80&gt;&gt;
 
 &lt;&lt;if $ownsmith gte 1&gt;&gt;
 &lt;&lt;if $ownduraplate is true and $durasoak lte 34 and $cash gte 80&gt;&gt;&lt;&lt;set $durasoak+=1&gt;&gt;&lt;&lt;set $cash-=80&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -315654,11 +315653,6 @@ CONTROLLED IN TITLETRAITS (TRAITSKY)
 
 &lt;&lt;if _npc.dayblock is 12 and _npc.state gte 1&gt;&gt;
 &lt;&lt;set $gardenskill to _npc.garden&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.title is 3 and _npc.state gte 1&gt;&gt;
-&lt;&lt;set $qtech to _npc.tech&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
