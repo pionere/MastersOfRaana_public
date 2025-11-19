@@ -302153,44 +302153,32 @@ You&#39;re able to fraternize with the bartender, one of the waitresses and an e
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
+&lt;&lt;set _credgain to 0&gt;&gt;
 &lt;&lt;if $chance gte 1&gt;&gt;
 &lt;&lt;include Success&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 It&#39;s either your fame or charming personality – or a combination of both. In either case, you&#39;re able to make a lasting impression with The Orient&#39;s clientele, which has improved your reputation in the halls of The Palace.
 
-&lt;&lt;set _credgain to 0&gt;&gt;
 &lt;&lt;set _credgain+=1&gt;&gt;
 &lt;&lt;if $chance gte 60&gt;&gt;&lt;&lt;set _credgain+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $chance gte 20&gt;&gt;&lt;&lt;set _credgain+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $palcred+=_credgain&gt;&gt;
 
+&lt;&lt;else&gt;&gt;
+
+&lt;&lt;include Fail&gt;&gt;
+&lt;br&gt;&lt;br&gt;
+Unfortunately, you&#39;re not able to make any lasting impressions on The Orient&#39;s clientele right now.
+
+&lt;&lt;/if&gt;&gt;
+
 &lt;div class=&quot;storybottom&quot;&gt;
 &lt;center&gt;
 &#39;&#39;GAINED PALACE RATING&#39;&#39;&lt;br&gt;
 +_credgain points
 &lt;/center&gt;
-&lt;br&gt;
 &lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $chance lte 0&gt;&gt;
-&lt;&lt;include Fail&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-Unfortunately, you&#39;re not able to make any lasting impressions on The Orient&#39;s clientele right now.
-
-&lt;div class=&quot;storybottom&quot;&gt;
-&lt;center&gt;
-&#39;&#39;GAINED PALACE RATING&#39;&#39;&lt;br&gt;
-+0 points
-&lt;/center&gt;
-&lt;br&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 
 
 /* SOCIALIZE ENDS */
