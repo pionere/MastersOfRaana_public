@@ -276801,7 +276801,7 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 /* HANGING */
 
 &lt;&lt;if $hanger lte 17&gt;&gt;
-&lt;&lt;if _npc.wear is &quot;naked&quot; or _npc.wear is &quot;harness&quot; or _npc.wear is &quot;harness&quot;&gt;&gt;
+&lt;&lt;if _npc.wear is &quot;naked&quot; or _npc.wear is &quot;harness&quot; or _npc.wear is &quot;harness2&quot;&gt;&gt;
 [img[$imgpath + &quot;Av&quot;+_npc.girlid +&quot;/hangout_nude&quot;+&quot;.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;Av&quot;+_npc.girlid +&quot;/hangout&quot;+&quot;.jpg&quot;]]
@@ -282773,7 +282773,7 @@ Dad.
 
 &lt;&lt;if _npc.nightblock gte 2 and _npc.analwear gte 30&gt;&gt;&lt;&lt;set _painplug to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.wear is &quot;naked&quot; or _npc.wear is &quot;harness&quot; or _npc.wear is &quot;harness&quot;&gt;&gt;&lt;&lt;set _hum to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.wear is &quot;naked&quot; or _npc.wear is &quot;harness&quot; or _npc.wear is &quot;harness2&quot;&gt;&gt;&lt;&lt;set _hum to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -335640,7 +335640,7 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 
 &lt;&lt;if _gra.dayblock is 999 and _gra.likesadist lte 39 and _gra.humiliation lte 14 and _gra.armorwear is &quot;none&quot;&gt;&gt;
 
-&lt;&lt;if _gra.wear is &quot;naked&quot; or _gra.wear is &quot;harness&quot; or _gra.wear is &quot;harness&quot;&gt;&gt;
+&lt;&lt;if _gra.wear is &quot;naked&quot; or _gra.wear is &quot;harness&quot; or _gra.wear is &quot;harness2&quot;&gt;&gt;
 &lt;&lt;if _huran lte 2&gt;&gt;&lt;&lt;set _gra.humiliation+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _huran lte 6&gt;&gt;&lt;&lt;set _gra.masterlove=adl(_gra.masterlove,-1,19)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -335649,7 +335649,7 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 
 &lt;&lt;if _gra.dayblock is 999 and _gra.likesadist lte 9 and _gra.humiliation lte 14 and _gra.armorwear is &quot;none&quot;&gt;&gt;
 
-&lt;&lt;if _gra.wear is &quot;naked&quot; or _gra.wear is &quot;harness&quot; or _gra.wear is &quot;harness&quot; or _gra.wear is &quot;string&quot;&gt;&gt;
+&lt;&lt;if _gra.wear is &quot;naked&quot; or _gra.wear is &quot;harness&quot; or _gra.wear is &quot;harness2&quot; or _gra.wear is &quot;string&quot;&gt;&gt;
 &lt;&lt;if _huran lte 5&gt;&gt;&lt;&lt;set _gra.humiliation+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _gra.masterlove=adl(_gra.masterlove,-1,19)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
