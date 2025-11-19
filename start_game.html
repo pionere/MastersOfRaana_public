@@ -208058,42 +208058,35 @@ Do you want to leave your current location?
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if $event gte 1&gt;&gt;
 
 &lt;&lt;if $event is 1&gt;&gt;
 &lt;&lt;set $dest to &quot;LAKE CITY&quot;&gt;&gt;
-&lt;&lt;set $ticket to 250*$crew&gt;&gt;
-&lt;&lt;set $ticket+=250&gt;&gt;
+&lt;&lt;set $ticket=250&gt;&gt;
 &lt;&lt;set _wip to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event is 2&gt;&gt;
 &lt;&lt;set $dest to &quot;NEW TOKYO&quot;&gt;&gt;
-&lt;&lt;set $ticket to 350*$crew&gt;&gt;
-&lt;&lt;set $ticket+=350&gt;&gt;
+&lt;&lt;set $ticket=350&gt;&gt;
 &lt;&lt;set _wip to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event is 3&gt;&gt;
 &lt;&lt;set $dest to &quot;AVONMORE ISLAND&quot;&gt;&gt;
-&lt;&lt;set $ticket to 40*$crew&gt;&gt;
-&lt;&lt;set $ticket+=40&gt;&gt;
+&lt;&lt;set $ticket=40&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $event is 4&gt;&gt;
 &lt;&lt;set $dest to &quot;CORAZON GORGE&quot;&gt;&gt;
-&lt;&lt;set $ticket to 120*$crew&gt;&gt;
-&lt;&lt;set $ticket+=120&gt;&gt;
+&lt;&lt;set $ticket=120&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event is 5&gt;&gt;
 &lt;&lt;set $dest to &quot;NORTH RIVER BASIN&quot;&gt;&gt;
-&lt;&lt;set $ticket to 100*$crew&gt;&gt;
-&lt;&lt;set $ticket+=100&gt;&gt;
+&lt;&lt;set $ticket=100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event gte 1&gt;&gt;
 
 &lt;div class=&quot;vendorpicwalton&quot;&gt;
 &lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&#39;&#39;&lt;div class=&quot;bigtex&quot;&gt;SELECTED DESTINATION: $dest&lt;/div&gt;&#39;&#39;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
@@ -208122,8 +208115,8 @@ Travelling to Avonmore Island from Darkmere takes less than an hour. Price does 
 Travelling to the Corazon Gorge hunting camp takes roughly four hours. Price does not include food.
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _pass to $crew&gt;&gt;
-&lt;&lt;set _pass+=1&gt;&gt;
+&lt;&lt;set _pass=$crew+1&gt;&gt;
+&lt;&lt;set $ticket*=_pass&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Number of passengers:&#39;&#39; _pass
 
