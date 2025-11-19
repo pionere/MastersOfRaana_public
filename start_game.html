@@ -56955,394 +56955,283 @@ Npc2 = gamla värdet
 */
 
 &lt;&lt;for _chs range $npc&gt;&gt;
+&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;set _av1=_chs.actnpc&gt;&gt;
 &lt;&lt;set _av1+=1&gt;&gt;
 
 &lt;&lt;set _av to &quot;av&quot; +_av1&gt;&gt;
 &lt;&lt;set _chs2 to $npc2[_av]&gt;&gt;
-&lt;&lt;set _aff to false&gt;&gt;
 &lt;&lt;set _name to _chs.girlname&gt;&gt;
-&lt;&lt;unset _named&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.health isnot _chs2.health&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;HEALTH:&#39;&#39; &lt;&lt;set _ch to _chs.health&gt;&gt;&lt;&lt;set _ch-=_chs2.health&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;HEALTH:&#39;&#39; &lt;&lt;set _ch=_chs.health-_chs2.health&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.tempstamina isnot _chs2.tempstamina&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;STAM. POINTS:&#39;&#39; &lt;&lt;set _ch to _chs.tempstamina&gt;&gt;&lt;&lt;set _ch-=_chs2.tempstamina&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;STAM. POINTS:&#39;&#39; &lt;&lt;set _ch=_chs.tempstamina-_chs2.tempstamina&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.masterlove isnot _chs2.masterlove&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Affection:&#39;&#39; &lt;&lt;set _ch to _chs.masterlove&gt;&gt;&lt;&lt;set _ch-=_chs2.masterlove&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Affection:&#39;&#39; &lt;&lt;set _ch=_chs.masterlove-_chs2.masterlove&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.scarefactor isnot _chs2.scarefactor and _chs.scarefactor gte 1&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Anger:&#39;&#39; &lt;&lt;set _ch to _chs.scarefactor&gt;&gt;&lt;&lt;set _ch-=_chs2.scarefactor&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Anger:&#39;&#39; &lt;&lt;set _ch=_chs.scarefactor-_chs2.scarefactor&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.respect isnot _chs2.respect&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Respect:&#39;&#39; &lt;&lt;set _ch to _chs.respect&gt;&gt;&lt;&lt;set _ch-=_chs2.respect&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Respect:&#39;&#39; &lt;&lt;set _ch=_chs.respect-_chs2.respect&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.afraid isnot _chs2.afraid&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Fear:&#39;&#39; &lt;&lt;set _ch to _chs.afraid&gt;&gt;&lt;&lt;set _ch-=_chs2.afraid&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Fear:&#39;&#39; &lt;&lt;set _ch=_chs.afraid-_chs2.afraid&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.happiness isnot _chs2.happiness&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Happiness:&#39;&#39; &lt;&lt;set _ch to _chs.happiness&gt;&gt;&lt;&lt;set _ch-=_chs2.happiness&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Happiness:&#39;&#39; &lt;&lt;set _ch=_chs.happiness-_chs2.happiness&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.likesadist isnot _chs2.likesadist&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Corruption:&#39;&#39; &lt;&lt;set _ch to _chs.likesadist&gt;&gt;&lt;&lt;set _ch-=_chs2.likesadist&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Corruption:&#39;&#39; &lt;&lt;set _ch=_chs.likesadist-_chs2.likesadist&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.lesbian isnot _chs2.lesbian&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Lesbian Devotion:&#39;&#39; &lt;&lt;set _ch to _chs.lesbian&gt;&gt;&lt;&lt;set _ch-=_chs2.lesbian&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Lesbian Devotion:&#39;&#39; &lt;&lt;set _ch=_chs.lesbian-_chs2.lesbian&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.aca isnot _chs2.aca&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Academics:&#39;&#39; &lt;&lt;set _ch to _chs.aca&gt;&gt;&lt;&lt;set _ch-=_chs2.aca&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Academics:&#39;&#39; &lt;&lt;set _ch=_chs.aca-_chs2.aca&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.tech isnot _chs2.tech&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Science:&#39;&#39; &lt;&lt;set _ch to _chs.tech&gt;&gt;&lt;&lt;set _ch-=_chs2.tech&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Science:&#39;&#39; &lt;&lt;set _ch=_chs.tech-_chs2.tech&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.admin isnot _chs2.admin&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Administration:&#39;&#39; &lt;&lt;set _ch to _chs.admin&gt;&gt;&lt;&lt;set _ch-=_chs2.admin&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Administration:&#39;&#39; &lt;&lt;set _ch=_chs.admin-_chs2.admin&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.med isnot _chs2.med&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Medicine:&#39;&#39; &lt;&lt;set _ch to _chs.med&gt;&gt;&lt;&lt;set _ch-=_chs2.med&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Medicine:&#39;&#39; &lt;&lt;set _ch=_chs.med-_chs2.med&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.discipline isnot _chs2.discipline&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Discipline:&#39;&#39; &lt;&lt;set _ch to _chs.discipline&gt;&gt;&lt;&lt;set _ch-=_chs2.discipline&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Discipline:&#39;&#39; &lt;&lt;set _ch=_chs.discipline-_chs2.discipline&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.domestic isnot _chs2.domestic&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Domestic:&#39;&#39; &lt;&lt;set _ch to _chs.domestic&gt;&gt;&lt;&lt;set _ch-=_chs2.domestic&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Domestic:&#39;&#39; &lt;&lt;set _ch=_chs.domestic-_chs2.domestic&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.acro isnot _chs2.acro&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Acrobatics:&#39;&#39; &lt;&lt;set _ch to _chs.acro&gt;&gt;&lt;&lt;set _ch-=_chs2.acro&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Acrobatics:&#39;&#39; &lt;&lt;set _ch=_chs.acro-_chs2.acro&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.ranged isnot _chs2.ranged&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Ranged combat:&#39;&#39; &lt;&lt;set _ch to _chs.ranged&gt;&gt;&lt;&lt;set _ch-=_chs2.ranged&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Ranged combat:&#39;&#39; &lt;&lt;set _ch=_chs.ranged-_chs2.ranged&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.melee isnot _chs2.melee&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Melee combat:&#39;&#39; &lt;&lt;set _ch to _chs.melee&gt;&gt;&lt;&lt;set _ch-=_chs2.melee&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Melee combat:&#39;&#39; &lt;&lt;set _ch=_chs.melee-_chs2.melee&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.dancing isnot _chs2.dancing&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Dancing:&#39;&#39; &lt;&lt;set _ch to _chs.dancing&gt;&gt;&lt;&lt;set _ch-=_chs2.dancing&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Dancing:&#39;&#39; &lt;&lt;set _ch=_chs.dancing-_chs2.dancing&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.per isnot _chs2.per&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Performance:&#39;&#39; &lt;&lt;set _ch to _chs.per&gt;&gt;&lt;&lt;set _ch-=_chs2.per&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Performance:&#39;&#39; &lt;&lt;set _ch=_chs.per-_chs2.per&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.garden isnot _chs2.garden&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Gardening:&#39;&#39; &lt;&lt;set _ch to _chs.garden&gt;&gt;&lt;&lt;set _ch-=_chs2.garden&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Gardening:&#39;&#39; &lt;&lt;set _ch=_chs.garden-_chs2.garden&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.survival isnot _chs2.survival&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Survival:&#39;&#39; &lt;&lt;set _ch to _chs.survival&gt;&gt;&lt;&lt;set _ch-=_chs2.survival&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Survival:&#39;&#39; &lt;&lt;set _ch=_chs.survival-_chs2.survival&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.pussyxp isnot _chs2.pussyxp&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;&lt;&lt;if _chs.sex is 0&gt;&gt;Vaginal skill&lt;&lt;else&gt;&gt;Copulation&lt;&lt;/if&gt;&gt;:&#39;&#39; &lt;&lt;set _ch to _chs.pussyxp&gt;&gt;&lt;&lt;set _ch-=_chs2.pussyxp&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;&lt;&lt;if _chs.sex is 0&gt;&gt;Vaginal skill&lt;&lt;else&gt;&gt;Copulation&lt;&lt;/if&gt;&gt;:&#39;&#39; &lt;&lt;set _ch=_chs.pussyxp-_chs2.pussyxp&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.analxp isnot _chs2.analxp&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Anal proficiency:&#39;&#39; &lt;&lt;set _ch to _chs.analxp&gt;&gt;&lt;&lt;set _ch-=_chs2.analxp&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Anal proficiency:&#39;&#39; &lt;&lt;set _ch=_chs.analxp-_chs2.analxp&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.oralxp isnot _chs2.oralxp&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Oral skill:&#39;&#39; &lt;&lt;set _ch to _chs.oralxp&gt;&gt;&lt;&lt;set _ch-=_chs2.oralxp&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Oral skill:&#39;&#39; &lt;&lt;set _ch=_chs.oralxp-_chs2.oralxp&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.kissingxp isnot _chs2.kissingxp&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Kissing skill:&#39;&#39; &lt;&lt;set _ch to _chs.kissingxp&gt;&gt;&lt;&lt;set _ch-=_chs2.kissingxp&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Kissing skill:&#39;&#39; &lt;&lt;set _ch=_chs.kissingxp-_chs2.kissingxp&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.str isnot _chs2.str&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;STRENGTH:&#39;&#39; &lt;&lt;set _ch to _chs.str&gt;&gt;&lt;&lt;set _ch-=_chs2.str&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;STRENGTH:&#39;&#39; &lt;&lt;set _ch=_chs.str-_chs2.str&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.dex isnot _chs2.dex&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;DEXTERITY:&#39;&#39; &lt;&lt;set _ch to _chs.dex&gt;&gt;&lt;&lt;set _ch-=_chs2.dex&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;&lt;if _ow is _chs.actnpc&gt;&gt; (over-weight!)&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;DEXTERITY:&#39;&#39; &lt;&lt;set _ch=_chs.dex-_chs2.dex&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;&lt;if _ow is _chs.actnpc&gt;&gt; (over-weight!)&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.maxstamina isnot _chs2.maxstamina&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;STAMINA:&#39;&#39; &lt;&lt;set _ch to _chs.maxstamina&gt;&gt;&lt;&lt;set _ch-=_chs2.maxstamina&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;STAMINA:&#39;&#39; &lt;&lt;set _ch=_chs.maxstamina-_chs2.maxstamina&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.int isnot _chs2.int&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;INTELLIGENCE:&#39;&#39; &lt;&lt;set _ch to _chs.int&gt;&gt;&lt;&lt;set _ch-=_chs2.int&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;INTELLIGENCE:&#39;&#39; &lt;&lt;set _ch=_chs.int-_chs2.int&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.willpower isnot _chs2.willpower&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;WILLPOWER:&#39;&#39; &lt;&lt;set _ch to _chs.willpower&gt;&gt;&lt;&lt;set _ch-=_chs2.willpower&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;WILLPOWER:&#39;&#39; &lt;&lt;set _ch=_chs.willpower-_chs2.willpower&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.kind isnot _chs2.kind&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;KINDNESS:&#39;&#39; &lt;&lt;set _ch to _chs.kind&gt;&gt;&lt;&lt;set _ch-=_chs2.kind&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;KINDNESS:&#39;&#39; &lt;&lt;set _ch=_chs.kind-_chs2.kind&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.charisma isnot _chs2.charisma&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;CHARISMA:&#39;&#39; &lt;&lt;set _ch to _chs.charisma&gt;&gt;&lt;&lt;set _ch-=_chs2.charisma&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;CHARISMA:&#39;&#39; &lt;&lt;set _ch=_chs.charisma-_chs2.charisma&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.aw isnot _chs2.aw&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
-&#39;&#39;Weight:&#39;&#39; &lt;&lt;set _ch to _chs.aw&gt;&gt;&lt;&lt;set _ch-=_chs2.aw&gt;&gt; &lt;&lt;if _ch gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch kg.&lt;br&gt;&lt;&lt;set _aff to true&gt;&gt;&lt;/li&gt;
+&#39;&#39;Weight:&#39;&#39; &lt;&lt;set _ch=_chs.aw-_chs2.aw&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch kg.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.actnpc is $bedslave&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&#39;&#39;[BED PARTNER]&#39;&#39;
 &lt;&lt;if $bedslavesex is undefined&gt;&gt;_chs.girlname (assigned bed partner) failed to provide you with her services tonight!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $bedslavesex is 1&gt;&gt;Right before bedtime, _chs.girlname provides you with a 20-minute long session of oral sex that ends with you cumming in her mouth. &lt;&lt;if $bedslavetype gte 1&gt;&gt;The session is pretty rough – you deepthroat the girl on several occasions and make sure she gets to taste your cock in all possible ways.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $bedslavesex is 2&gt;&gt;After undressing for the night, you summon _chs.girlname to your bedchamber where you fuck her for a good 20 minutes before spraying your load inside her pussy. &lt;&lt;if $bedslavetype gte 1&gt;&gt;The session is far from //vanilla// – you ram the girl really hard and push your manhood deep inside her with each thrust.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $bedslavesex is 3&gt;&gt;After undressing yourself and _chs.girlname, you start giving her ass a good pounding and thrust your cock in and out of her anus for almost 30 minutes before filling her intestines with your cum. &lt;&lt;if $bedslavetype gte 1&gt;&gt;The session is pretty wild - _chs.girlname will definitely feel this fuck tomorrow.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;set _aff to true&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1 and $demandsal is true&gt;&gt;
-&lt;&lt;if _chs.salarynow lt _chs.salary&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $demandsal is true and _chs.salarynow lt _chs.salary&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&#39;&#39;[SALARY DEMAND]&#39;&#39;
 _chs.girlname &lt;&lt;if _chs.actnpc is $firstwife&gt;&gt;would like&lt;&lt;else&gt;&gt;wants&lt;&lt;/if&gt;&gt; a higher Salary (minimum &amp;#36;_chs.salary)!
-
-&lt;&lt;set _aff to true&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _chs.state gte 1&gt;&gt;
 &lt;&lt;if _chs.notpaid gte 1&gt;&gt;
-&lt;&lt;if _name is _chs.girlname and _named isnot true&gt;&gt;&lt;&lt;set _named to true&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_chs.girlname&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&#39;&#39;[SALARY NOT PAID]&#39;&#39;
 _chs.girlname is not getting paid due to insufficient funds. &lt;&lt;if _chs.sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; Affection and Anger have been modified!
 
-&lt;&lt;set _aff to true&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _name is undefined&gt;&gt;
+/*&lt;&lt;set _picid to _chs.girlid&gt;&gt;&lt;div class=&quot;loghead&quot;&gt;[img[$imgpath + &quot;av&quot; +_picid +&quot;/edu_goodsmall.png&quot;]]&lt;/div&gt;*/
+&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _chs.state gte 1 and _aff is true&gt;&gt;
-/*&lt;&lt;set _picid to _chs.girlid&gt;&gt;&lt;div class=&quot;loghead&quot;&gt;[img[$imgpath + &quot;av&quot; +_picid +&quot;/edu_goodsmall.png&quot;]]&lt;/div&gt;*/
-
-&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/for&gt;&gt;
 
