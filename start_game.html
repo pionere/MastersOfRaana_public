@@ -265947,7 +265947,9 @@ Earlier today, a fierce battle between bandits and republic soldiers took place
 
 &lt;&lt;if $faction.ikaanos.state is 1&gt;&gt;The Republic&lt;&lt;else&gt;&gt;Marshal Ezra Waylen&lt;&lt;/if&gt;&gt; has recruited a group of soldiers from your military encampment in Marston Swamps 
 
-(&lt;&lt;if $randesc is 1&gt;&gt;Echo II company&lt;&lt;/if&gt;&gt;&lt;&lt;if $randesc is 2&gt;&gt;Wargauss company&lt;&lt;/if&gt;&gt;&lt;&lt;if $randesc is 3&gt;&gt;Bravo company&lt;&lt;/if&gt;&gt;&lt;&lt;if $randesc is 4&gt;&gt;Hollow company&lt;&lt;/if&gt;&gt; led by Sergeant &lt;&lt;if $descroll is 1&gt;&gt;Malcolm Haze&lt;&lt;/if&gt;&gt;&lt;&lt;if $descroll is 2&gt;&gt;Williams&lt;&lt;/if&gt;&gt;&lt;&lt;if $descroll is 3&gt;&gt;Richard Danforth&lt;&lt;/if&gt;&gt;&lt;&lt;if $descroll is 4&gt;&gt;Alan Withcroft&lt;&lt;/if&gt;&gt;).
+&lt;&lt;set _comp=[&quot;Echo II company&quot;,&quot;Wargauss company&quot;,&quot;Bravo company,Hollow company&quot;][$randesc-1]&gt;&gt;
+&lt;&lt;set _pres=[&quot;Malcolm Haze&quot;,&quot;Williams&quot;,&quot;Richard Danforth&quot;,&quot;Alan Withcroft&quot;][$randesc-1]&gt;&gt;
+(_comp led by Sergeant _pres).
 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39; &lt;br&gt;
@@ -266201,11 +266203,8 @@ Chancellor Aria has invested in improved defenses and hired more soldiers to gua
 &lt;center&gt;&lt;div class=&quot;tex18px nouppercut&quot;&gt;&#39;&#39;- VOLUNTEERS -&#39;&#39;&lt;/div&gt;&lt;/center&gt;
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-A company of soldiers from
-&lt;&lt;if $randesc is 1&gt;&gt;The Brotherhood&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 2&gt;&gt;The Volkmar Corp.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 3&gt;&gt;Ikaanos Victorae&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 4&gt;&gt;The Crimson Sunlight&lt;&lt;/if&gt;&gt; have joined The Republic army, for the service of mankind.
+&lt;&lt;set _tmp=[&quot;The Brotherhood&quot;,&quot;The Volkmar Corp.&quot;,&quot;Ikaanos Victorae&quot;,&quot;The Crimson Sunlight&quot;][$randesc-1]&gt;&gt;
+A company of soldiers from _tmp have joined The Republic army, for the service of mankind.
 
 
 &lt;br&gt;&lt;br&gt;
@@ -266227,12 +266226,8 @@ A company of soldiers from
 &lt;center&gt;&lt;div class=&quot;tex18px&quot;&gt;&#39;&#39;- GOOD HARVEST -&#39;&#39;&lt;/div&gt;&lt;/center&gt;
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-The recent harvest from
-&lt;&lt;if $randesc is 1&gt;&gt;Lake City district&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 2&gt;&gt;Drifter&#39;s Canyon&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 3&gt;&gt;Feeder&#39;s Canyon&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 4&gt;&gt;The Flatlands&lt;&lt;/if&gt;&gt;
-was way over expectations! The surplus has benefited all classes of The Ikaanian Colony.
+&lt;&lt;set _tmp=[&quot;Lake City district&quot;,&quot;Drifter&quot;,&quot;Feeder&quot;,&quot;The Flatlands&quot;][$randesc-1]&gt;&gt;
+The recent harvest from _tmp was way over expectations! The surplus has benefited all classes of The Ikaanian Colony.
 
 &lt;&lt;if _ika.state is 2&gt;&gt;
 &lt;&lt;if $npc.av11.likesadist lte 79&gt;&gt;
