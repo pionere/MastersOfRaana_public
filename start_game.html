@@ -85101,13 +85101,13 @@ $enemy1 is killed, after taking $damage damage points ($enemy1_soak pts. absorbe
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $enemy1_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $damage gte 1&gt;&gt;
 
-&lt;&lt;if $enemy1_health lte 10 and $enemy1_health gte 1 and $damage gte 1&gt;&gt;&lt;&lt;set $enemy1_state to 1&gt;&gt;/* $enemy1 is mortally wounded by the attack!*/&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $enemy1_health-=$damage&gt;&gt;
+&lt;&lt;if $enemy1_health lte 10 and $enemy1_health gte 1&gt;&gt;&lt;&lt;set $enemy1_state to 1&gt;&gt;/* $enemy1 is mortally wounded by the attack!*/&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy1_health lte 0&gt;&gt;&lt;&lt;set $enemy1_state to 0&gt;&gt;&lt;&lt;set _killeden to _actnpc&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $enemy2_state gte 1 and $enemy2_health gte 10 and _spray gte 1 and $enemy2_pos is $enemy1_pos&gt;&gt;&lt;&lt;set $enemy2_health-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy2_state gte 1 and _spray gte 1 and $enemy2_pos is $enemy1_pos&gt;&gt;&lt;&lt;set $enemy2_health=adl($enemy2_health,-either (2, 5, 5, 12, 8, 6, 8, 9, 26, 30),0)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85195,12 +85195,13 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $enemy2_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $damage gte 1&gt;&gt;
 
-&lt;&lt;if $enemy2_health lte 10 and $enemy2_health gte 1 and $damage gte 1&gt;&gt;&lt;&lt;set $enemy2_state to 1&gt;&gt;/*&lt;br&gt;$enemy2 is mortally wounded by the attack!*/&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $enemy2_health-=$damage&gt;&gt;
+&lt;&lt;if $enemy2_health lte 10 and $enemy2_health gte 1&gt;&gt;&lt;&lt;set $enemy2_state to 1&gt;&gt;/*&lt;br&gt;$enemy2 is mortally wounded by the attack!*/&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy2_health lte 0&gt;&gt;&lt;&lt;set $enemy2_state to 0&gt;&gt;&lt;&lt;set _killeden to _actnpc&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $enemy1_state gte 1 and $enemy1_health gte 20 and _spray gte 1 and $enemy1_pos is $enemy2_pos&gt;&gt;&lt;&lt;set $enemy1_health-=random(1, 10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy3_state gte 1 and $enemy3_health gte 20 and _spray gte 1 and $enemy3_pos is $enemy2_pos&gt;&gt;&lt;&lt;set $enemy3_health-=random(1, 10)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85287,12 +85288,13 @@ $enemy3 is killed, after taking $damage damage points ($enemy3_soak pts. absorbe
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $enemy3_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $damage gte 1&gt;&gt;
 
-&lt;&lt;if $enemy3_health lte 10 and $enemy3_health gte 1 and $damage gte 1&gt;&gt;&lt;&lt;set $enemy3_state to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $enemy3_health-=$damage&gt;&gt;
+&lt;&lt;if $enemy3_health lte 10 and $enemy3_health gte 1&gt;&gt;&lt;&lt;set $enemy3_state to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy3_health lte 0&gt;&gt;&lt;&lt;set $enemy3_state to 0&gt;&gt;&lt;&lt;set _killeden to _actnpc&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $enemy2_state gte 1 and $enemy2_health gte 20 and _spray gte 1 and $enemy2_pos is $enemy3_pos&gt;&gt;&lt;&lt;set $enemy2_health-=random(1, 10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy4_state gte 1 and $enemy4_health gte 20 and _spray gte 1 and $enemy4_pos is $enemy3_pos&gt;&gt;&lt;&lt;set $enemy4_health-=random(1, 10)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85377,12 +85379,13 @@ $enemy4 is killed, after taking $damage damage points ($enemy4_soak pts. absorbe
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $enemy4_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $damage gte 1&gt;&gt;
 
-&lt;&lt;if $enemy4_health lte 10 and $enemy4_health gte 1 and $damage gte 1&gt;&gt;&lt;&lt;set $enemy4_state to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $enemy4_health-=$damage&gt;&gt;
+&lt;&lt;if $enemy4_health lte 10 and $enemy4_health gte 1&gt;&gt;&lt;&lt;set $enemy4_state to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy4_health lte 0&gt;&gt;&lt;&lt;set $enemy4_state to 0&gt;&gt;&lt;&lt;set _killeden to _actnpc&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $enemy3_state gte 1 and $enemy3_health gte 20 and _spray gte 1 and $enemy3_pos is $enemy4_pos&gt;&gt;&lt;&lt;set $enemy3_health-=random(1, 10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy5_state gte 1 and $enemy5_health gte 20 and _spray gte 1 and $enemy5_pos is $enemy4_pos&gt;&gt;&lt;&lt;set $enemy5_health-=random(1, 10)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85470,11 +85473,13 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $enemy5_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $damage gte 1&gt;&gt;
 
-&lt;&lt;if $enemy5_health lte 10 and $enemy5_health gte 1 and $damage gte 1&gt;&gt;&lt;&lt;set $enemy5_state to 1&gt;&gt;&lt;br&gt;$enemy5 is mortally wounded by the attack!&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $enemy5_health-=$damage&gt;&gt;
+&lt;&lt;if $enemy5_health lte 10 and $enemy5_health gte 1&gt;&gt;&lt;&lt;set $enemy5_state to 1&gt;&gt;&lt;br&gt;$enemy5 is mortally wounded by the attack!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $enemy5_health lte 0&gt;&gt;&lt;&lt;set $enemy5_state to 0&gt;&gt;&lt;&lt;set _killeden to _actnpc&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $enemy4_state gte 1 and $equipped is &quot;gl&quot; and $enemy4_pos is $enemy5_pos and $enemy4_health gte 20&gt;&gt;&lt;&lt;set $enemy4_health-=either (1, 5, 5, 12, 5, 6, 8)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
