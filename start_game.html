@@ -314738,9 +314738,8 @@ girlname: _npc.girlname
 &lt;&lt;if _npc.traitscav gte 90&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _swagroll to random(1, 15)&gt;&gt;
-&lt;&lt;set _totswag to 0&gt;&gt;
 &lt;&lt;unset _team&gt;&gt;
-&lt;&lt;set _totswag+=either(1, 2, 1, 2, 2, 0, 1)&gt;&gt;
+&lt;&lt;set _totswag=either(1, 2, 1, 2, 2, 0, 1)&gt;&gt;
 &lt;&lt;if _npc.health lte 9&gt;&gt;&lt;&lt;set _totswag-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.int gte 60&gt;&gt;&lt;&lt;set _totswag+=either(1, 2, 1, 2, 3, 1, 1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.survival gte 60 and _npc.traitperf gte 25&gt;&gt;&lt;&lt;set _totswag+=either(1, 2, 1, 2, 3, 1, 1)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -314748,9 +314747,8 @@ girlname: _npc.girlname
 &lt;&lt;if _npc.traitrel is 6 and _npc.devotion gte 60&gt;&gt;&lt;&lt;set _totswag+=either(1, 2, 1, 2, 3, 1, 2)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.survival lte 19&gt;&gt;&lt;&lt;set _totswag+=either(-1, -2, -1, -2, -2, -1, 0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _totswag+=either(-1, -2, -1, -2, -2, -1, 0)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _totswag+=either(1, 2, 1, 2, 3, 1, 1)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _totswag+=either(2, 3, 2, 3, 4, 2, 2)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.masterlove gte 60&gt;&gt;&lt;&lt;set _totswag+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _totswag+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.status gte 5&gt;&gt;&lt;&lt;set _totswag-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.status lte 2 and _npc.masterlove lte 19&gt;&gt;&lt;&lt;set _totswag-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
