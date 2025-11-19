@@ -232474,15 +232474,7 @@ You spend one hour searching the local area for valuable goods that doesn&#39;t 
 &lt;&lt;include DiceRolls&gt;&gt;
 &lt;&lt;set $chance=$survival&gt;&gt;
 &lt;&lt;set $chance-=$skillroll&gt;&gt;
-
-&lt;&lt;if $cs1_girlid gte 1 and $cs1_survival gte 40&gt;&gt;&lt;&lt;set $chance+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_girlid gte 1 and $cs2_survival gte 40&gt;&gt;&lt;&lt;set $chance+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_girlid gte 1 and $cs3_survival gte 40&gt;&gt;&lt;&lt;set $chance+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_girlid gte 1 and $cs4_survival gte 40&gt;&gt;&lt;&lt;set $chance+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_girlid gte 1 and $cs1_traitscav gte 70&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_girlid gte 1 and $cs2_traitscav gte 70&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_girlid gte 1 and $cs3_traitscav gte 70&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_girlid gte 1 and $cs4_traitscav gte 70&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $chance+=_npchelp&gt;&gt;
 
 &lt;&lt;if $survival gte 80&gt;&gt;&lt;&lt;set _ran2+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _dan isnot true&gt;&gt;&lt;&lt;set $chance-=15&gt;&gt;&lt;&lt;/if&gt;&gt;
