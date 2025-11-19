@@ -314659,16 +314659,19 @@ girlname: _npc.girlname
 &lt;&lt;set _outcome2 = Math.round(_outcome2)&gt;&gt;
 &lt;&lt;set _outcome3 = Math.round(_outcome3)&gt;&gt;
 
-&lt;&lt;if _npc.survival gte 75 and $nomeatco is undefined&gt;&gt;&lt;&lt;set $totfood+=2*_outcome&gt;&gt;&lt;&lt;set $foodstuff+=2*_outcome&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.survival gte 75&gt;&gt;
+&lt;&lt;if $nomeatco&gt;&gt;
+&lt;&lt;set $totmeat+=_outcome&gt;&gt;&lt;&lt;set $meat+=_outcome&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set $totfood+=2*_outcome&gt;&gt;&lt;&lt;set $foodstuff+=2*_outcome&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $totleather+=_outcome2&gt;&gt;&lt;&lt;set $leather+=_outcome2&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set $totmeat+=_outcome&gt;&gt;&lt;&lt;set $meat+=_outcome&gt;&gt;
+&lt;&lt;set $totskin+=_outcome2&gt;&gt;&lt;&lt;set $skins+=_outcome2&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.survival gte 75 and $nomeatco is true&gt;&gt;&lt;&lt;set $totmeat+=_outcome&gt;&gt;
-&lt;&lt;set $meat+=_outcome&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.survival gte 75&gt;&gt;&lt;&lt;set $totleather+=_outcome2&gt;&gt;&lt;&lt;set $leather+=_outcome2&gt;&gt; &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.survival lte 74&gt;&gt;&lt;&lt;set $totmeat+=_outcome&gt;&gt;&lt;&lt;set $totskin+=_outcome2&gt;&gt;&lt;&lt;set $meat+=_outcome&gt;&gt;&lt;&lt;set $skins+=_outcome2&gt;&gt; &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _lossroll lte 2 and _outcome3 gte 1&gt;&gt;&lt;&lt;set $totpelt+=_outcome3&gt;&gt;&lt;&lt;set $pelts+=_outcome3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll lte 2&gt;&gt;&lt;&lt;set $totpelt+=_outcome3&gt;&gt;&lt;&lt;set $pelts+=_outcome3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* depletion of hunting locations */
 
