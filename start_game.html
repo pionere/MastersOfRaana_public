@@ -46,6 +46,39 @@ adl = function(value, delta, limit) {
     }
     return result;
 }
+wloot = function(w) {
+    if (w == 'fists') return -1;
+    if (w == 'whipstick') return -1;
+    if (w == 'knife') return 5;
+    if (w == 'sword') return 6;
+    if (w == 'staff') return 7;
+    if (w == 'sledge') return 8;
+    if (w == 'crossbow') return 1;
+
+    if (w == 'pistol') return 2;
+    if (w == 'rifle') return 4;
+    if (w == 'shotgun') return 3;
+    if (w == 'automaticrifle') return 10;
+    if (w == 'revolver') return 9;
+    if (w == 'coil') return 11;
+    if (w == 'plasma') return 12;
+    if (w == 'powerkatana') return 13;
+    if (w == 'gsword') return 15;
+    if (w == 'prifle') return 14;
+    if (w == 'rifle50') return 18;
+    if (w == 'waki') return 16;
+    if (w == 'spear') return 17;
+    if (w == 'gl') return -1;
+    if (w == 'cybercannon') return -1;
+    if (w == 'minigun') return -1;
+    if (w == 'mal') return -1;
+    if (w == 'neme') return -1;
+    if (w == 'iceblade') return -1;
+    if (w == 'gaxe') return 19;
+    if (w == 'azuk') return -1;
+    if (w == 'r55') return 20;
+    return -1;
+}
 </script>
 <script id="script-libraries" type="text/javascript">
 if(document.head&&document.addEventListener&&document.querySelector&&Object.create&&Object.freeze&&JSON){document.documentElement.setAttribute("data-init", "loading");
@@ -102350,30 +102383,7 @@ $avIn_girlnames &#39;&#39;Toughness Trait (+1)&#39;&#39; has increased!
 &lt;&lt;if $enemy1_state is 0&gt;&gt;
 
 &lt;&lt;if $descroll gte 5&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $wploot1 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $wploot1 to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $wploot1 to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $wploot1 to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set $wploot1 to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $enemy1_weapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set $wploot1 to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;sword&quot;&gt;&gt;&lt;&lt;set $wploot1 to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;staff&quot;&gt;&gt;&lt;&lt;set $wploot1 to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $wploot1 to 8&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $wploot1 to 9&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $wploot1 to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set $wploot1 to 11&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $wploot1 to 12&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $wploot1 to 13&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $wploot1 to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $wploot1 to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;waki&quot;&gt;&gt;&lt;&lt;set $wploot1 to 16&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;spear&quot;&gt;&gt;&lt;&lt;set $wploot1 to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $wploot1 to 18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $wploot1 to 19&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_weapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $wploot1 to 20&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set $wploot1=wloot($enemy1_weapon)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -102381,31 +102391,7 @@ $avIn_girlnames &#39;&#39;Toughness Trait (+1)&#39;&#39; has increased!
 &lt;&lt;if $enemy2_state is 0&gt;&gt;
 
 &lt;&lt;if $descroll gte 9&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $wploot1 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $wploot1 to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $wploot1 to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $wploot1 to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set $wploot1 to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $wploot1 to 9&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $enemy2_weapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set $wploot1 to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;sword&quot;&gt;&gt;&lt;&lt;set $wploot1 to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;staff&quot;&gt;&gt;&lt;&lt;set $wploot1 to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $wploot1 to 8&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $enemy2_weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $wploot1 to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set $wploot1 to 11&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $wploot1 to 12&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $wploot1 to 13&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $wploot1 to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $wploot1 to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;waki&quot;&gt;&gt;&lt;&lt;set $wploot1 to 16&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;spear&quot;&gt;&gt;&lt;&lt;set $wploot1 to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $wploot1 to 18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $wploot1 to 19&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_weapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $wploot1 to 20&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set $wploot1=wloot($enemy2_weapon)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -102413,29 +102399,7 @@ $avIn_girlnames &#39;&#39;Toughness Trait (+1)&#39;&#39; has increased!
 &lt;&lt;if $enemy3_state is 0&gt;&gt;
 
 &lt;&lt;if $descroll is 4 or $descroll is 3 or $descroll gte 9&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $wploot2 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $wploot2 to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $wploot2 to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $wploot2 to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set $wploot2 to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $enemy3_weapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set $wploot2 to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;sword&quot;&gt;&gt;&lt;&lt;set $wploot2 to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;staff&quot;&gt;&gt;&lt;&lt;set $wploot2 to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $wploot2 to 8&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $wploot2 to 9&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $wploot2 to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set $wploot2 to 11&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $wploot2 to 12&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $wploot2 to 13&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $wploot2 to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $wploot2 to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;waki&quot;&gt;&gt;&lt;&lt;set $wploot2 to 16&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;spear&quot;&gt;&gt;&lt;&lt;set $wploot2 to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $wploot2 to 18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $wploot2 to 19&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_weapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $wploot2 to 20&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $wploot2=wloot($enemy3_weapon)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -102443,29 +102407,7 @@ $avIn_girlnames &#39;&#39;Toughness Trait (+1)&#39;&#39; has increased!
 &lt;&lt;if $enemy4_state is 0&gt;&gt;
 
 &lt;&lt;if $descroll is 10&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $wploot2 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $wploot2 to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $wploot2 to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $wploot2 to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set $wploot2 to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $wploot2 to 9&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set $wploot2 to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;sword&quot;&gt;&gt;&lt;&lt;set $wploot2 to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;staff&quot;&gt;&gt;&lt;&lt;set $wploot2 to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $wploot2 to 8&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $wploot2 to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set $wploot2 to 11&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $wploot2 to 12&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $wploot2 to 13&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $wploot2 to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $wploot2 to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;waki&quot;&gt;&gt;&lt;&lt;set $wploot2 to 16&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;spear&quot;&gt;&gt;&lt;&lt;set $wploot2 to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $wploot2 to 18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $wploot2 to 19&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_weapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $wploot2 to 20&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set $wploot2=wloot($enemy4_weapon)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
