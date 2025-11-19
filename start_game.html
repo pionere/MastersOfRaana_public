@@ -234149,10 +234149,11 @@ sur: 0,
 &lt;&lt;set $nurkids to 0&gt;&gt;
 
 /* kids in nursery age */
+&lt;&lt;if $nurq isnot undefined&gt;&gt;
+
 &lt;&lt;for _kiddy range $nursery&gt;&gt;
 
 &lt;&lt;if _kiddy.state gte 1&gt;&gt;
-&lt;&lt;set _kiddy.age+=1&gt;&gt;
 &lt;&lt;set $nurq.war-=1&gt;&gt;
 &lt;&lt;set $nurq.phys-=1&gt;&gt;
 &lt;&lt;set $nurq.cor-=1&gt;&gt;
@@ -234162,14 +234163,13 @@ sur: 0,
 &lt;&lt;set $nurq.edu-=1&gt;&gt;
 &lt;&lt;set $nurq.sur-=1&gt;&gt;
 &lt;&lt;set $nurkids+=1&gt;&gt;
-&lt;&lt;if $nurseage is 10&gt;&gt;&lt;&lt;set _kiddy.age+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nurseage is 100&gt;&gt;&lt;&lt;set _kiddy.age+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _kiddy.age+=$nurseage&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/for&gt;&gt;
 
 /* empty nursery is depleted - note that nurkids needs to be &quot;gte 1&quot; for nannies to fill these values */
-&lt;&lt;if $nurkids is 0 and $nurq isnot undefined&gt;&gt;
+&lt;&lt;if $nurkids is 0&gt;&gt;
 &lt;&lt;set $nurq.war-=1&gt;&gt;
 &lt;&lt;set $nurq.phys-=1&gt;&gt;
 &lt;&lt;set $nurq.cor-=1&gt;&gt;
@@ -234180,8 +234180,6 @@ sur: 0,
 &lt;&lt;set $nurq.sur-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $nurq isnot undefined&gt;&gt;
 &lt;&lt;set $nurq.war=Math.max($nurq.war,0)&gt;&gt;
 &lt;&lt;set $nurq.phys=Math.max($nurq.phys,0)&gt;&gt;
 &lt;&lt;set $nurq.cor=Math.max($nurq.cor,0)&gt;&gt;
@@ -234190,12 +234188,8 @@ sur: 0,
 &lt;&lt;set $nurq.int=Math.max($nurq.int,0)&gt;&gt;
 &lt;&lt;set $nurq.edu=Math.max($nurq.edu,0)&gt;&gt;
 &lt;&lt;set $nurq.sur=Math.max($nurq.sur,0)&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
-
-
-
-
-
 
 
 </tw-passagedata><tw-passagedata pid="348" name="EndRes" tags="" position="2075,50" size="100,100">&lt;&lt;nobr&gt;&gt;
