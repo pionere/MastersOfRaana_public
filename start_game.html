@@ -245095,6 +245095,7 @@ ADOLECENT EVENT MODS
 
 &lt;&lt;if $ammocraft is undefined&gt;&gt;&lt;&lt;set $ammocraft to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;set _pros=[0,35,20,20,15,10,12,7,3,2, 5,25,2,0,0,50,20,20,0,100, 100,100,100,100,100,100,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
 
 &lt;&lt;if $crafta is 1&gt;&gt;
 
@@ -245112,8 +245113,7 @@ ADOLECENT EVENT MODS
 &lt;&lt;if $craftcommand gte 1&gt;&gt;
 
 &lt;&lt;if $craftcommand lte 47&gt;&gt;
-&lt;&lt;set _tmp=[0,35,20,20,15,10,12,7,3,2, 5,25,2,0,0,50,20,20,0,100, 100,100,100,100,100,100,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
-&lt;&lt;set $pro[1]+=_tmp[$craftcommand]&gt;&gt;
+&lt;&lt;set $pro[1]+=_pros[$craftcommand]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $blacksmith gte 75 or $artisan gte 75&gt;&gt;
@@ -245132,14 +245132,8 @@ ADOLECENT EVENT MODS
 &lt;&lt;set $addey to $what&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
 /* PROJECT 1 ENDS */
 &lt;&lt;/if&gt;&gt;
-
-
-
-
 
 
 &lt;&lt;if $crafta is 2&gt;&gt;
@@ -245158,8 +245152,7 @@ ADOLECENT EVENT MODS
 &lt;&lt;if $craftcommand gte 1&gt;&gt;
 
 &lt;&lt;if $craftcommand lte 47&gt;&gt;
-&lt;&lt;set _tmp=[0,35,20,20,15,10,12,10,8,7, 5,25,2,0,0,50,20,20,0,100, 100,100,100,100,100,100,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
-&lt;&lt;set $pro[3]+=_tmp[$craftcommand]&gt;&gt;
+&lt;&lt;set $pro[3]+=_pros[$craftcommand]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $blacksmith gte 75 or $artisan gte 75&gt;&gt;
@@ -245178,16 +245171,8 @@ ADOLECENT EVENT MODS
 &lt;&lt;set $addey to $what&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
 /* PROJECT 2 ENDS */
 &lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
 
 
 &lt;&lt;if $crafta is 3&gt;&gt;
@@ -245206,8 +245191,7 @@ ADOLECENT EVENT MODS
 &lt;&lt;if $craftcommand gte 1&gt;&gt;
 
 &lt;&lt;if $craftcommand lte 47&gt;&gt;
-&lt;&lt;set _tmp=[0,35,20,20,15,10,12,7,10,8, 7,25,2,0,0,50,20,20,0,0, 0,0,0,0,0,0,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
-&lt;&lt;set $pro[5]+=_tmp[$craftcommand]&gt;&gt;
+&lt;&lt;set $pro[5]+=_pros[$craftcommand]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $blacksmith gte 75 or $artisan gte 75&gt;&gt;
@@ -245225,8 +245209,6 @@ ADOLECENT EVENT MODS
 &lt;&lt;set $pro[5] to 0&gt;&gt;
 &lt;&lt;set $addey to $what&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
 
 /* PROJECT 3 ENDS */
 &lt;&lt;/if&gt;&gt;
