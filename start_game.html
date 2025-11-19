@@ -98980,7 +98980,7 @@ SPECOM 1 LOCKS THE CHANGE WEAPON WHEEL.
 &lt;&lt;if _pro.girlid is 353 and _pro.dayblock is 999&gt;&gt;&lt;&lt;set _prow to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
-&lt;&lt;if _prow is true&gt;&gt;&lt;&lt;if $combat lte 94 or $combat gte 101&gt;&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;//The presence of the undead has &lt;&lt;hovertip &quot;&lt;center&gt;All enemies suffer a -25 hit penalty as long as an undead creature is still actively participating in combat.&lt;/center&gt;&quot;&gt;&gt;&lt;div class=&quot;red&quot;&gt;instilled&lt;/div&gt;&lt;&lt;/hovertip&gt;&gt; your enemy with Fear!//&#39;&#39;
+&lt;&lt;if _prow and ($combat lte 94 or $combat gte 101)&gt;&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;//The presence of the undead has &lt;&lt;hovertip &quot;&lt;center&gt;All enemies suffer a -25 hit penalty as long as an undead creature is still actively participating in combat.&lt;/center&gt;&quot;&gt;&gt;&lt;div class=&quot;red&quot;&gt;instilled&lt;/div&gt;&lt;&lt;/hovertip&gt;&gt; your enemy with Fear!//&#39;&#39;
 &lt;br&gt;&lt;br&gt;
 Your affiliation with fringe //characters// has decreased your &#39;&#39;Influence (-15)!&#39;&#39;
 
@@ -98989,7 +98989,7 @@ Your affiliation with fringe //characters// has decreased your &#39;&#39;Influen
 &lt;&lt;set $undeadinf to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 &lt;div class=&quot;pic&quot;&gt;
@@ -233036,7 +233036,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set _huntroll2 to random(1,5)&gt;&gt;
 &lt;&lt;set _huntroll3 to random(1,5)&gt;&gt;
 &lt;&lt;if $diff gte 3&gt;&gt;&lt;&lt;set _huntroll-=1&gt;&gt;&lt;&lt;set _huntroll2-=1&gt;&gt;&lt;&lt;set _huntroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction isnot undefined&gt;&gt;&lt;&lt;if $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _huntroll-=1&gt;&gt;&lt;&lt;set _huntroll2-=1&gt;&gt;&lt;&lt;set _huntroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction isnot undefined and $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _huntroll-=1&gt;&gt;&lt;&lt;set _huntroll2-=1&gt;&gt;&lt;&lt;set _huntroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _huntroll gte 1&gt;&gt;&lt;&lt;set $hunt_imogen=adl($hunt_imogen,1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _huntroll2 gte 1&gt;&gt;&lt;&lt;set $hunt_black=adl($hunt_black,1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -313503,7 +313503,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 /* SHY */
 &lt;&lt;if _npc.traitextro lte 24&gt;&gt;
 
-&lt;&lt;if $mch isnot undefined&gt;&gt;&lt;&lt;if $mch.yardslot1.type is 1&gt;&gt;&lt;&lt;set _grove to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch isnot undefined and $mch.yardslot1.type is 1&gt;&gt;&lt;&lt;set _grove to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npcs gte 20 and $purefester lte 74 and _grove isnot true&gt;&gt;
 &lt;&lt;set _npc.happiness-=1&gt;&gt;
@@ -334485,18 +334485,10 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 &lt;&lt;if _gunpc.rangedpower gte 1&gt;&gt;&lt;&lt;set $guardpool+=_gunpc.rangedpower&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _gunpc.armorpower gte 1&gt;&gt;&lt;&lt;set $guardpool+=_gunpc.armorpower&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _gunpc.rangedpower gte 1&gt;&gt;
-&lt;&lt;if _gunpc.ranged gte 100&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _gunpc.meleepower gte 1&gt;&gt;
-&lt;&lt;if _gunpc.melee gte 100&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _gunpc.rangedpower gte 1&gt;&gt;
-&lt;&lt;if _gunpc.ranged gte 130&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _gunpc.meleepower gte 1&gt;&gt;
-&lt;&lt;if _gunpc.melee gte 130&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _gunpc.rangedpower gte 1 and _gunpc.ranged gte 100&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _gunpc.meleepower gte 1 and _gunpc.melee gte 100&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _gunpc.rangedpower gte 1 and _gunpc.ranged gte 130&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _gunpc.meleepower gte 1 and _gunpc.melee gte 130&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _gunpc.meleepower lte 0 and _gunpc.rangedpower lte 0&gt;&gt;&lt;&lt;set $guardpool-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _gunpc.kind lte 39&gt;&gt;&lt;&lt;set $guardpool+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -334536,18 +334528,10 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 &lt;&lt;if _npc.rangedpower gte 1&gt;&gt;&lt;&lt;set _myguard+=_npc.rangedpower&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _npc.rangedpower gte 1&gt;&gt;
-&lt;&lt;if _npc.ranged gte 100&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleepower gte 1&gt;&gt;
-&lt;&lt;if _npc.melee gte 100&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.rangedpower gte 1&gt;&gt;
-&lt;&lt;if _npc.ranged gte 130&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleepower gte 1&gt;&gt;
-&lt;&lt;if _npc.melee gte 130&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.rangedpower gte 1 and _npc.ranged gte 100&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleepower gte 1 and _npc.melee gte 100&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.rangedpower gte 1 and _npc.ranged gte 130&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleepower gte 1 and _npc.melee gte 130&gt;&gt;&lt;&lt;set _myguard+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _npc.meleepower lte 0 and _npc.rangedpower lte 0&gt;&gt;&lt;&lt;set _myguard-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
