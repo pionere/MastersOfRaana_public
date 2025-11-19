@@ -102300,9 +102300,11 @@ You’ve defeated a squad of insurgent soldiers.
 &lt;&lt;if $descroll4 gte $cash&gt;&gt;&lt;&lt;set $descroll4 to $cash&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll4 is $cash and $cash gte 800&gt;&gt;&lt;&lt;set $descroll4-=500&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $cash-=$descroll4&gt;&gt; 
+&lt;&lt;if $descroll4 gt 0&gt;&gt;
+&lt;&lt;set $cash-=$descroll4&gt;&gt;
+You&#39;re also relieved from some of your money – $descroll4 dollars in total.
+&lt;&lt;/if&gt;&gt;
 
-You&#39;re also relieved from some of your money – $descroll4 dollars in total. 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $masterhealth=2&gt;&gt;
