@@ -87466,144 +87466,129 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="135" name="RandomHit" tags="" position="2300,1775" size="100,100">&lt;&lt;nobr&gt;&gt;
 
 /* BADASS CALC */
-
-&lt;&lt;set _badass0 to 0&gt;&gt;
-&lt;&lt;set _badass1 to 0&gt;&gt;
-&lt;&lt;set _badass2 to 0&gt;&gt;
-&lt;&lt;set _badass3 to 0&gt;&gt;
-&lt;&lt;set _badass4 to 0&gt;&gt;
-
+&lt;&lt;set _badass_max=-100&gt;&gt;
+&lt;&lt;set _badass_idx=1&gt;&gt;
 
 &lt;&lt;if $masterhealth gte 1&gt;&gt;
-&lt;&lt;set _badass0=Math.min($mastermaxhealth,150)&gt;&gt;
-&lt;&lt;set _badass0+=$ranged&gt;&gt;
-&lt;&lt;set _badass0+=$melee&gt;&gt;
-&lt;&lt;set _badass0arm to $armorwear&gt;&gt;
-&lt;&lt;set _badass0wep to $activeweapon&gt;&gt;
+&lt;&lt;set _badass=Math.min($mastermaxhealth,150)+$ranged+$melee&gt;&gt;
 
-&lt;&lt;if $activeweapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _badass0-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set _badass0-=25&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass0-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _badass-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set _badass-=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass0+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass0+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot; or $activeweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass0+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass0+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gsword&quot; or $activeweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass0+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass0+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass0+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;plasma&quot; or $activeweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gsword&quot; or $activeweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _badass0arm isnot &quot;hulc&quot; and _badass0arm isnot &quot;duraplate&quot; and _badass0arm isnot &quot;wega&quot;&gt;&gt;
-&lt;&lt;if _badass0 gte 200&gt;&gt;&lt;&lt;set _badass0+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $armorwear isnot &quot;hulc&quot; and $armorwear isnot &quot;duraplate&quot; and $armorwear isnot &quot;wega&quot;&gt;&gt;
+&lt;&lt;if _badass gte 200&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _badass_max=_badass&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot1 gte 1 and $cs1_health gte 1&gt;&gt;
-&lt;&lt;set _badass1 to $cs1_maxhealth&gt;&gt;
-&lt;&lt;set _badass1+=$cs1_ranged&gt;&gt;
-&lt;&lt;set _badass1+=$cs1_melee&gt;&gt;
-&lt;&lt;set _badass1arm to $cs1_armor&gt;&gt;
-&lt;&lt;set _badass1wep to $cs1_rweapon&gt;&gt;
-&lt;&lt;set _tempwp to $cs1_rweapon&gt;&gt;
-&lt;&lt;if $cs1_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass1-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _badass=$cs1_maxhealth+$cs1_ranged+$cs1_melee&gt;&gt;
 
-&lt;&lt;if $cs1_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass1-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass1-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass1+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass1+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;plasma&quot; or $cs1_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass1+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass1+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass1+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass1+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_mweapon is &quot;gsword&quot; or $cs1_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass1+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _badass1arm isnot &quot;hulc&quot; and _badass1arm isnot &quot;duraplate&quot; and _badass1arm isnot &quot;wega&quot;&gt;&gt;
-&lt;&lt;if _badass1 gte 200&gt;&gt;&lt;&lt;set _badass1+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;plasma&quot; or $cs1_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_mweapon is &quot;gsword&quot; or $cs1_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $cs1_armor isnot &quot;hulc&quot; and $cs1_armor isnot &quot;duraplate&quot; and $cs1_armor isnot &quot;wega&quot;&gt;&gt;
+&lt;&lt;if _badass gte 200&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _badass gt _badass_max&gt;&gt;&lt;&lt;set _badass_max=_badass&gt;&gt;&lt;&lt;set _badass_idx=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot2 gte 1 and $cs2_health gte 1&gt;&gt;
-&lt;&lt;set _badass2 to $cs2_maxhealth&gt;&gt;
-&lt;&lt;set _badass2+=$cs2_ranged&gt;&gt;
-&lt;&lt;set _badass2+=$cs2_melee&gt;&gt;
-&lt;&lt;set _badass2arm to $cs2_armor&gt;&gt;
-&lt;&lt;set _badass2wep to $cs2_rweapon&gt;&gt;
-&lt;&lt;set _tempwp to $cs2_rweapon&gt;&gt;
+&lt;&lt;set _badass to $cs2_maxhealth+$cs2_ranged+$cs2_melee&gt;&gt;
 
-&lt;&lt;if $cs2_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass2-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass2-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass2-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass2+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;plasma&quot; or $cs2_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass2+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass2+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_mweapon is &quot;gsword&quot; or $cs2_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _badass2arm isnot &quot;hulc&quot; and _badass2arm isnot &quot;duraplate&quot; and _badass2arm isnot &quot;wega&quot;&gt;&gt;
-&lt;&lt;if _badass2 gte 200&gt;&gt;&lt;&lt;set _badass2+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;plasma&quot; or $cs2_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_mweapon is &quot;gsword&quot; or $cs2_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $cs2_armor isnot &quot;hulc&quot; and $cs2_armor isnot &quot;duraplate&quot; and $cs2_armor isnot &quot;wega&quot;&gt;&gt;
+&lt;&lt;if _badass gte 200&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _badass gt _badass_max&gt;&gt;&lt;&lt;set _badass_max=_badass&gt;&gt;&lt;&lt;set _badass_idx=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot3 gte 1 and $cs3_health gte 1&gt;&gt;
-&lt;&lt;set _badass3 to $cs3_maxhealth&gt;&gt;
-&lt;&lt;set _badass3+=$cs3_ranged&gt;&gt;
-&lt;&lt;set _badass3+=$cs3_melee&gt;&gt;
-&lt;&lt;set _badass3arm to $cs3_armor&gt;&gt;
-&lt;&lt;set _badass3wep to $cs3_rweapon&gt;&gt;
-&lt;&lt;set _tempwp to $cs3_rweapon&gt;&gt;
+&lt;&lt;set _badass=$cs3_maxhealth+$cs3_ranged+$cs3_melee&gt;&gt;
 
-&lt;&lt;if $cs3_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass3-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass3-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass3-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass3+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass3+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;plasma&quot; or $cs3_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass3+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass3+=90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass3+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass3+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_mweapon is &quot;gsword&quot; or $cs3_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass3+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _badass3arm isnot &quot;hulc&quot; and _badass3arm isnot &quot;duraplate&quot; and _badass3arm isnot &quot;wega&quot;&gt;&gt;
-&lt;&lt;if _badass3 gte 200&gt;&gt;&lt;&lt;set _badass3+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;plasma&quot; or $cs3_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass+=90&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_mweapon is &quot;gsword&quot; or $cs3_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $cs3_armor isnot &quot;hulc&quot; and $cs3_armor isnot &quot;duraplate&quot; and $cs3_armor isnot &quot;wega&quot;&gt;&gt;
+&lt;&lt;if _badass gte 200&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _badass gt _badass_max&gt;&gt;&lt;&lt;set _badass_max=_badass&gt;&gt;&lt;&lt;set _badass_idx=4&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot4 gte 1 and $cs4_health gte 1&gt;&gt;
-&lt;&lt;set _badass4 to $cs4_maxhealth&gt;&gt;
-&lt;&lt;set _badass4+=$cs4_ranged&gt;&gt;
-&lt;&lt;set _badass4+=$cs4_melee&gt;&gt;
-&lt;&lt;set _badass4arm to $cs4_armor&gt;&gt;
-&lt;&lt;set _badass4wep to $cs4_rweapon&gt;&gt;
-&lt;&lt;set _tempwp to $cs4_rweapon&gt;&gt;
+&lt;&lt;set _badass=$cs4_maxhealth+$cs4_ranged+$cs4_melee&gt;&gt;
 
-&lt;&lt;if $cs4_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass4-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass4-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass4-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass4+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass4+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;plasma&quot; or $cs4_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass4+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass4+=90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass4+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass4+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_mweapon is &quot;gsword&quot; or $cs4_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass4+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_traitstealth gte 90&gt;&gt;&lt;&lt;set _badass-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _badass4arm isnot &quot;hulc&quot; and _badass4arm isnot &quot;duraplate&quot; and _badass4arm isnot &quot;wega&quot;&gt;&gt;
-&lt;&lt;if _badass4 gte 200&gt;&gt;&lt;&lt;set _badass4+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _badass-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _badass-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _badass+=70&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;plasma&quot; or $cs4_rweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _badass+=90&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_rweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _badass+=180&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_mweapon is &quot;gsword&quot; or $cs4_mweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set _badass+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $cs4_armor isnot &quot;hulc&quot; and $cs4_armor isnot &quot;duraplate&quot; and $cs4_armor isnot &quot;wega&quot;&gt;&gt;
+&lt;&lt;if _badass gte 200&gt;&gt;&lt;&lt;set _badass+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if _badass gt _badass_max&gt;&gt;&lt;&lt;set _badass_max=_badass&gt;&gt;&lt;&lt;set _badass_idx=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 
 
 
 
-&lt;&lt;set $randomroll to random(1, 5)&gt;&gt;
+&lt;&lt;set _randomroll to random(1, 5)&gt;&gt;
 
 
 
@@ -87628,35 +87613,19 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $combat is 114 or $combat is 14 or $combat gte 200 or $invhold gte 50 or $combat is 133 or _advfight is true or $combat is 146 or $combat is 165&gt;&gt;
 
-&lt;&lt;if _badass0 gte 1 and _badass0 gt _badass1 and _badass0 gt _badass2 and _badass0 gt _badass3 and _badass0 gt _badass4&gt;&gt;&lt;&lt;set $event1 to true&gt;&gt;&lt;&lt;set _stop to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _badass1 gte 1 and _badass1 gt _badass2 and _badass1 gt _badass3 and _badass1 gt _badass4 and _badass1 gt _badass0&gt;&gt;&lt;&lt;set $event2 to true&gt;&gt;&lt;&lt;set _stop to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _badass2 gte 1 and _badass2 gt _badass1 and _badass2 gt _badass3 and _badass2 gt _badass4 and _badass2 gt _badass0&gt;&gt;&lt;&lt;set $event3 to true&gt;&gt;&lt;&lt;set _stop to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _badass3 gte 1 and _badass3 gt _badass1 and _badass3 gt _badass2 and _badass3 gt _badass4 and _badass3 gt _badass0&gt;&gt;&lt;&lt;set $event4 to true&gt;&gt;&lt;&lt;set _stop to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _badass4 gte 1 and _badass4 gt _badass1 and _badass4 gt _badass2 and _badass4 gt _badass3 and _badass4 gt _badass0&gt;&gt;&lt;&lt;set $event5 to true&gt;&gt;&lt;&lt;set _stop to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if $equipped is &quot;knife&quot; or $equipped is &quot;sword&quot; or $equipped is &quot;fists&quot;&gt;&gt;
-&lt;&lt;unset _stop&gt;&gt;
-
-&lt;&lt;set $event1 to false&gt;&gt;
-&lt;&lt;set $event2 to false&gt;&gt;
-&lt;&lt;set $event3 to false&gt;&gt;
-&lt;&lt;set $event4 to false&gt;&gt;
-&lt;&lt;set $event5 to false&gt;&gt;
+&lt;&lt;if !($equipped is &quot;knife&quot; or $equipped is &quot;sword&quot; or $equipped is &quot;fists&quot;)&gt;&gt;
+&lt;&lt;set _randomroll=_badass_idx&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 /* COMBAT AI PARAM ENDS BELOW */
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _stop isnot true&gt;&gt;
-&lt;&lt;if $randomroll is 1&gt;&gt;&lt;&lt;set $event1 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randomroll is 2&gt;&gt;&lt;&lt;set $event2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randomroll is 3&gt;&gt;&lt;&lt;set $event3 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randomroll is 4&gt;&gt;&lt;&lt;set $event4 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randomroll is 5&gt;&gt;&lt;&lt;set $event5 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _randomroll is 1&gt;&gt;&lt;&lt;set $event1 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _randomroll is 2&gt;&gt;&lt;&lt;set $event2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _randomroll is 3&gt;&gt;&lt;&lt;set $event3 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _randomroll is 4&gt;&gt;&lt;&lt;set $event4 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _randomroll is 5&gt;&gt;&lt;&lt;set $event5 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
