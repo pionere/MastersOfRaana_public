@@ -86580,28 +86580,18 @@ $0
 &lt;div class=&quot;zoom&quot;&gt;
 
 &lt;&lt;link [img[$imgpath + &quot;Stuff/Materials/femslave.png&quot;]]&gt;&gt;
-	&lt;&lt;goto LootRoom&gt;&gt;
-    
+    &lt;&lt;goto LootRoom&gt;&gt;
+
+    &lt;&lt;set $take to 2&gt;&gt;
+    &lt;&lt;set $takeeff to true&gt;&gt;
+    &lt;&lt;set $ownrope-=1&gt;&gt;
+    &lt;&lt;set $takeslaves to 1&gt;&gt;
+    &lt;&lt;set $descroll5-=1&gt;&gt;
     &lt;&lt;if $dd is 1&gt;&gt;
-    
-		&lt;&lt;set $take to 2&gt;&gt;
-            &lt;&lt;set $ownrope-=1&gt;&gt;
-                    &lt;&lt;set $takeeff to true&gt;&gt;
-        &lt;&lt;set $takeslaves to 1&gt;&gt;
-	&lt;&lt;set $descroll5-=1&gt;&gt;
-	&lt;&lt;set $capind1=$descroll5&gt;&gt;
-    
-    &lt;&lt;else&gt;&gt;
-    
-	&lt;&lt;set $descroll5 to 0&gt;&gt;
-		&lt;&lt;set $take to 2&gt;&gt;
-            &lt;&lt;set $ownrope-=1&gt;&gt;
-                    &lt;&lt;set $takeeff to true&gt;&gt;
-        &lt;&lt;set $takeslaves to 1&gt;&gt;
-        
-        &lt;&lt;/if&gt;&gt;
-        
-                &lt;&lt;unset $slavecalc&gt;&gt;
+        &lt;&lt;set $capind1=$descroll5&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+    &lt;&lt;unset $slavecalc&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;/div&gt;
@@ -86641,28 +86631,18 @@ $descroll5 slave&lt;&lt;if $descroll5 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll6 gte 1 and $ownrope gte 1 and _okcrew gte 1 and _okcrew1 gte 1&gt;&gt;
 &lt;div class=&quot;zoom&quot;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Stuff/Materials/maleslave.png&quot;]]&gt;&gt;
-	&lt;&lt;goto LootRoom&gt;&gt;
-    
-    &lt;&lt;if $dd is 1&gt;&gt;
-    
+    &lt;&lt;goto LootRoom&gt;&gt;
+
     &lt;&lt;set $take to 2&gt;&gt;
-        &lt;&lt;set $takeeff to true&gt;&gt;
-                    &lt;&lt;set $ownrope-=1&gt;&gt;
-	&lt;&lt;set $takeslaves to 2 &gt;&gt;
-	&lt;&lt;set $descroll6-=1&gt;&gt;
-	&lt;&lt;set $capind2=$descroll6&gt;&gt;
-    
-    &lt;&lt;else&gt;&gt;
-    
-	&lt;&lt;set $descroll6 to 0&gt;&gt;
-		&lt;&lt;set $take to 2&gt;&gt;
-        &lt;&lt;set $takeeff to true&gt;&gt;
-                    &lt;&lt;set $ownrope-=1&gt;&gt;
-        &lt;&lt;set $takeslaves to 2&gt;&gt;
-        
-        &lt;&lt;/if&gt;&gt;
-        
-        &lt;&lt;unset $slavecalc&gt;&gt;
+    &lt;&lt;set $takeeff to true&gt;&gt;
+    &lt;&lt;set $ownrope-=1&gt;&gt;
+    &lt;&lt;set $takeslaves to 2&gt;&gt;
+    &lt;&lt;set $descroll6-=1&gt;&gt;
+    &lt;&lt;if $dd is 1&gt;&gt;
+        &lt;&lt;set $capind2=$descroll6&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+    &lt;&lt;unset $slavecalc&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 
