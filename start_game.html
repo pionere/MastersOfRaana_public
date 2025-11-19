@@ -317252,33 +317252,16 @@ Most high-demanding issids are excluded by the maxsal checker
 
 
 &lt;&lt;if $worldstart gte 1 and $promod isnot undefined&gt;&gt; /* Dying world only */
+&lt;&lt;if _busshow gte 10 and $faction.ikaanos.prosp lte 14&gt;&gt;
 
-&lt;&lt;if _busshow gte 10&gt;&gt;
 &lt;&lt;set _worldpen to _busshow&gt;&gt;
-
-&lt;&lt;if $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _worldpen*=$promod&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/*
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _worldpen*=0.1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 4 and $faction.ikaanos.prosp gte 1&gt;&gt;&lt;&lt;set _worldpen*=0.2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 0&gt;&gt;&lt;&lt;set _worldpen*=0.35&gt;&gt;&lt;&lt;/if&gt;&gt;
-*/
-
-
+&lt;&lt;set _worldpen*=$promod&gt;&gt;
 &lt;&lt;set _worldpen = Math.round(_worldpen)&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 14&gt;&gt;
 &lt;&lt;set _busshow-=_worldpen&gt;&gt;
 &lt;&lt;set $cashtot-=_worldpen&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set $cashtot = Math.round($cashtot)&gt;&gt;
-&lt;&lt;set _busshow = Math.round(_busshow)&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt; /* Dying world checker ends */
 
 
