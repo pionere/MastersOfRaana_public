@@ -245175,115 +245175,12 @@ ADOLECENT EVENT MODS
 &lt;&lt;unset $crafta&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if $craftcommand is 1&gt;&gt;
-&lt;&lt;set $pro[1]+=35&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 2&gt;&gt;
-&lt;&lt;set $pro[1]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 3&gt;&gt;
-&lt;&lt;set $pro[1]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 4&gt;&gt;
-&lt;&lt;set $pro[1]+=15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 5&gt;&gt;
-&lt;&lt;set $pro[1]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 6&gt;&gt;
-&lt;&lt;set $pro[1]+=12&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 7&gt;&gt;
-&lt;&lt;set $pro[1]+=7&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 8&gt;&gt;
-&lt;&lt;set $pro[1]+=3&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 9&gt;&gt;
-&lt;&lt;set $pro[1]+=2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 10&gt;&gt;
-&lt;&lt;set $pro[1]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 11&gt;&gt;
-&lt;&lt;set $pro[1]+=25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 12&gt;&gt;
-&lt;&lt;set $pro[1]+=2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 15&gt;&gt;
-&lt;&lt;set $pro[1]+=50&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 16&gt;&gt;
-&lt;&lt;set $pro[1]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 17&gt;&gt;
-&lt;&lt;set $pro[1]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 19&gt;&gt;
-&lt;&lt;set $pro[1]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand gte 20 and $craftcommand lte 25&gt;&gt;
-&lt;&lt;set $pro[1]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 44&gt;&gt;
-&lt;&lt;set $pro[1]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 26 or $craftcommand is 33&gt;&gt;
-&lt;&lt;set $pro[1]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 27 or $craftcommand is 34&gt;&gt;
-&lt;&lt;set $pro[1]+=15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 28 or $craftcommand is 35&gt;&gt;
-&lt;&lt;set $pro[1]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 29 or $craftcommand is 36&gt;&gt;
-&lt;&lt;set $pro[1]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 30 or $craftcommand is 37 or $craftcommand is 31 or $craftcommand is 43 or $craftcommand is 46 or $craftcommand is 47&gt;&gt;
-&lt;&lt;set $pro[1]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 38&gt;&gt;
-&lt;&lt;set $pro[1]+=25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 39 or $craftcommand is 45&gt;&gt;
-&lt;&lt;set $pro[1]+=50&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 40 or $craftcommand is 41 or $craftcommand is 42&gt;&gt;
-&lt;&lt;set $pro[1]+=27&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $craftcommand gte 1&gt;&gt;
+
+&lt;&lt;if $craftcommand lte 47&gt;&gt;
+&lt;&lt;set _tmp=[0,35,20,20,15,10,12,7,3,2, 5,25,2,0,0,50,20,20,0,100, 100,100,100,100,100,100,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
+&lt;&lt;set $pro[1]+=_tmp[$craftcommand]&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $blacksmith gte 75 or $artisan gte 75&gt;&gt;
 &lt;&lt;set $pro[1]+=5&gt;&gt;
@@ -245324,119 +245221,13 @@ ADOLECENT EVENT MODS
 &lt;&lt;unset $crafta&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if $craftcommand is 1&gt;&gt;
-&lt;&lt;set $pro[3]+=35&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 2&gt;&gt;
-&lt;&lt;set $pro[3]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 3&gt;&gt;
-&lt;&lt;set $pro[3]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 4&gt;&gt;
-&lt;&lt;set $pro[3]+=15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 5&gt;&gt;
-&lt;&lt;set $pro[3]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 6&gt;&gt;
-&lt;&lt;set $pro[3]+=12&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 7&gt;&gt;
-&lt;&lt;set $pro[3]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 8&gt;&gt;
-&lt;&lt;set $pro[3]+=8&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 9&gt;&gt;
-&lt;&lt;set $pro[3]+=7&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 10&gt;&gt;
-&lt;&lt;set $pro[3]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 11&gt;&gt;
-&lt;&lt;set $pro[3]+=25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 12&gt;&gt;
-&lt;&lt;set $pro[3]+=2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 15&gt;&gt;
-&lt;&lt;set $pro[3]+=50&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 16&gt;&gt;
-&lt;&lt;set $pro[3]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 17&gt;&gt;
-&lt;&lt;set $pro[3]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 19&gt;&gt;
-&lt;&lt;set $pro[3]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 26 or $craftcommand is 33&gt;&gt;
-&lt;&lt;set $pro[3]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 27 or $craftcommand is 34&gt;&gt;
-&lt;&lt;set $pro[3]+=15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 28 or $craftcommand is 35&gt;&gt;
-&lt;&lt;set $pro[3]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 29 or $craftcommand is 36 or $craftcommand is 31&gt;&gt;
-&lt;&lt;set $pro[3]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 30 or $craftcommand is 37 or $craftcommand is 43 or $craftcommand is 46 or $craftcommand is 47&gt;&gt;
-&lt;&lt;set $pro[3]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand gte 20 and $craftcommand lte 25&gt;&gt;
-&lt;&lt;set $pro[3]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 44&gt;&gt;
-&lt;&lt;set $pro[3]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 38&gt;&gt;
-&lt;&lt;set $pro[3]+=25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if $craftcommand is 39 or $craftcommand is 45&gt;&gt;
-&lt;&lt;set $pro[3]+=50&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 40 or $craftcommand is 41 or $craftcommand is 42&gt;&gt;
-&lt;&lt;set $pro[3]+=27&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $craftcommand gte 1&gt;&gt;
+
+&lt;&lt;if $craftcommand lte 47&gt;&gt;
+&lt;&lt;set _tmp=[0,35,20,20,15,10,12,10,8,7, 5,25,2,0,0,50,20,20,0,100, 100,100,100,100,100,100,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
+&lt;&lt;set $pro[3]+=_tmp[$craftcommand]&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $blacksmith gte 75 or $artisan gte 75&gt;&gt;
 &lt;&lt;set $pro[3]+=5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -245478,111 +245269,13 @@ ADOLECENT EVENT MODS
 &lt;&lt;unset $crafta&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if $craftcommand is 1&gt;&gt;
-&lt;&lt;set $pro[5]+=35&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 2&gt;&gt;
-&lt;&lt;set $pro[5]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 3&gt;&gt;
-&lt;&lt;set $pro[5]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 4&gt;&gt;
-&lt;&lt;set $pro[5]+=15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 5&gt;&gt;
-&lt;&lt;set $pro[5]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 6&gt;&gt;
-&lt;&lt;set $pro[5]+=12&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 7&gt;&gt;
-&lt;&lt;set $pro[5]+=7&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 8&gt;&gt;
-&lt;&lt;set $pro[5]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 9&gt;&gt;
-&lt;&lt;set $pro[5]+=8&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 10&gt;&gt;
-&lt;&lt;set $pro[5]+=7&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 11&gt;&gt;
-&lt;&lt;set $pro[5]+=25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 12&gt;&gt;
-&lt;&lt;set $pro[5]+=2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 15&gt;&gt;
-&lt;&lt;set $pro[5]+=50&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 16&gt;&gt;
-&lt;&lt;set $pro[5]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 17&gt;&gt;
-&lt;&lt;set $pro[5]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 26 or $craftcommand is 33&gt;&gt;
-&lt;&lt;set $pro[5]+=20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 44&gt;&gt;
-&lt;&lt;set $pro[5]+=100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 27 or $craftcommand is 34&gt;&gt;
-&lt;&lt;set $pro[5]+=15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 28 or $craftcommand is 35&gt;&gt;
-&lt;&lt;set $pro[5]+=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 29 or $craftcommand is 36 or $craftcommand is 31 or $craftcommand is 43 or $craftcommand is 46 or $craftcommand is 47&gt;&gt;
-&lt;&lt;set $pro[5]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 30 or $craftcommand is 37&gt;&gt;
-&lt;&lt;set $pro[5]+=5&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand is 38&gt;&gt;
-&lt;&lt;set $pro[5]+=25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 39 or $craftcommand is 45&gt;&gt;
-&lt;&lt;set $pro[5]+=50&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand is 40 or $craftcommand is 41 or $craftcommand is 42&gt;&gt;
-&lt;&lt;set $pro[5]+=27&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $craftcommand gte 1&gt;&gt;
+
+&lt;&lt;if $craftcommand lte 47&gt;&gt;
+&lt;&lt;set _tmp=[0,35,20,20,15,10,12,7,10,8, 7,25,2,0,0,50,20,20,0,0, 0,0,0,0,0,0,20,15,10,5, 5,5,0,20,15,10,5,5,25,50, 27,27,27,5,100,50,5,5]&gt;&gt;
+&lt;&lt;set $pro[5]+=_tmp[$craftcommand]&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $blacksmith gte 75 or $artisan gte 75&gt;&gt;
 &lt;&lt;set $pro[5]+=5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
