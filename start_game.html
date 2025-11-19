@@ -236275,9 +236275,8 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $noammo=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $noammo is false and _paci is undefined&gt;&gt;
-&lt;&lt;if $rangedequip is true and $pos lte 2&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2, $pos to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $rangedequip is true and $pos is 3&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $noammo is false and _paci is undefined and $rangedequip is true&gt;&gt;
+[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2, $pos to ($pos lte 2 ? 2 : 3)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -236330,14 +236329,13 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;&lt;if $round is 2&gt;&gt;
 
-&lt;&lt;if $cs1_pos lte 2 and _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs1_pos to 2, $curpos=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs1_pos to ($cs1_pos lte 2 ? 2 : 3), $curpos=2]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs1_pos lte 2 and _rangedw is &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ranged weapon equipped!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ammoout is true and _rangedw isnot &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ammo left!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs1_pos is 3&gt;&gt;
-&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2]]&lt;&lt;/if&gt;&gt;
 [[Strike enemy|NewCombatSimulator][$action=1, $curpos=3]]
 &lt;&lt;/if&gt;&gt;
 
@@ -236345,14 +236343,13 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;&lt;if $round is 3&gt;&gt;
 
-&lt;&lt;if $cs2_pos lte 2 and _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs2_pos to 2, $curpos=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs2_pos to ($cs2_pos lte 2 ? 2 : 3), $curpos=2]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs2_pos lte 2 and _rangedw is &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ranged weapon equipped!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ammoout is true and _rangedw isnot &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ammo left!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs2_pos is 3&gt;&gt;
-&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2]]&lt;&lt;/if&gt;&gt;
 [[Strike enemy|NewCombatSimulator][$action=1, $curpos=3]]
 &lt;&lt;/if&gt;&gt;
 
@@ -236360,28 +236357,26 @@ FOR INCOME CHECK ECONOMY 2
 
 
 &lt;&lt;if $round is 4&gt;&gt;
-&lt;&lt;if $cs3_pos lte 2 and _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs3_pos to 2, $curpos=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs3_pos to ($cs3_pos lte 2 ? 2 : 3), $curpos=2]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs3_pos lte 2 and _rangedw is &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ranged weapon equipped!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ammoout is true and _rangedw isnot &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ammo left!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs3_pos is 3&gt;&gt;
-&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2]]&lt;&lt;/if&gt;&gt;
 [[Strike enemy|NewCombatSimulator][$action=1, $curpos=3]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $round is 5&gt;&gt;
-&lt;&lt;if $cs4_pos lte 2 and _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs4_pos to 2, $curpos=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $cs4_pos to ($cs4_pos lte 2 ? 2 : 3), $curpos=2]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs4_pos lte 2 and _rangedw is &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ranged weapon equipped!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ammoout is true and _rangedw isnot &quot;none&quot;&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ammo left!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs4_pos is 3&gt;&gt;
-&lt;&lt;if _rangedw isnot &quot;none&quot; and _ammoout isnot true&gt;&gt;[[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2]]&lt;&lt;/if&gt;&gt;
 [[Strike enemy|NewCombatSimulator][$action=1, $curpos=3]]
 &lt;&lt;/if&gt;&gt;
 
