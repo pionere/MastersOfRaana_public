@@ -279815,7 +279815,7 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 /* mine transfer */
 &lt;&lt;if $mscaving is 1005 or $mscaving is 1006 or $mscaving is 1007&gt;&gt;
 &lt;&lt;if $adpos is 0&gt;&gt;
-&lt;&lt;if _workerfull is undefined&gt;&gt;[[Transfer (worker)!|MScaving][$adpos to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;worker (full!)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if !_workerfull&gt;&gt;[[Transfer (worker)!|MScaving][$adpos to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;worker (full!)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _guard is true&gt;&gt;[[Transfer (guard)!|MScaving][$adpos to 1, $guardsend to true]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -289237,14 +289237,13 @@ You watch as _npc.girlname is led down a dimly lit corridor and out of sight to 
 
 &lt;&lt;set _stab=yardstab(_npc,$mch.yardslot9.other5)&gt;&gt;
 
-&lt;&lt;if $mch.yardslot9.other5 gte 50&gt;&gt;&lt;&lt;set _workerfull to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;if $adpos is 0&gt;&gt;
 You contemplate on sending _npc.girlname off to work at the remote farm in Zapin fields. Doing so will permanently remove &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; from the game!
 &lt;br&gt;&lt;br&gt;
 A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
+
+&lt;&lt;set _workerfull=$mch.yardslot9.other5 gte 50&gt;&gt;
 
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
 
@@ -289260,11 +289259,9 @@ A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
 
-&lt;&lt;set $mch.yardslot9.other6+=_stab&gt;&gt;
+&lt;&lt;set _stab+=$mch.yardslot9.other6&gt;&gt;
 
-&lt;&lt;if $mch.yardslot9.other6 gt 100&gt;&gt;
-&lt;&lt;set $mch.yardslot9.other6 to 100 &gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mch.yardslot9.other6=Math.min(_stab,100)&gt;&gt;
 
 &#39;&#39;Current Stability (Zapin Fields):&#39;&#39; $mch.yardslot9.other6.
 
@@ -289297,15 +289294,12 @@ You contemplate on sending _npc.girlname off to work at the Kahill mine. Doing s
 A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
 
-
 &lt;&lt;if _npc.masterlove gte 50&gt;&gt;
 &lt;&lt;if _npc.ranged gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.melee gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mch.yardslot10.other5 gte 75&gt;&gt;&lt;&lt;set _workerfull to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _workerfull=$mch.yardslot10.other5 gte 75&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if _guard isnot true&gt;&gt;&lt;center&gt;&#39;&#39;Guard assignment prerequisites not met!&#39;&#39; &lt;br&gt;//(Requires Affection Friendly+ and either Melee //or// Ranged weapon skill 40+)!//&lt;/center&gt;&lt;&lt;/if&gt;&gt;
@@ -289356,15 +289350,12 @@ You contemplate on sending _npc.girlname off to work at the Silfren mine. Doing 
 A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
 
-
 &lt;&lt;if _npc.masterlove gte 50&gt;&gt;
 &lt;&lt;if _npc.ranged gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.melee gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mch.yardslot11.other5 gte 75&gt;&gt;&lt;&lt;set _workerfull to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _workerfull=$mch.yardslot11.other5 gte 75&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if _guard isnot true&gt;&gt;&lt;center&gt;&#39;&#39;Guard assignment prerequisites not met!&#39;&#39; &lt;br&gt;//(Requires Affection Friendly+ and either Melee //or// Ranged weapon skill 40+)!//&lt;/center&gt;&lt;&lt;/if&gt;&gt;
@@ -290878,15 +290869,12 @@ You contemplate on sending _npc.girlname off to work at the Darkmere mill. Doing
 A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
 
-
 &lt;&lt;if _npc.masterlove gte 50&gt;&gt;
 &lt;&lt;if _npc.ranged gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.melee gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $mch.yardslot20.other5 gte 75&gt;&gt;&lt;&lt;set _workerfull to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _workerfull=$mch.yardslot20.other5 gte 75&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if _guard isnot true&gt;&gt;&lt;center&gt;&#39;&#39;Guard assignment prerequisites not met!&#39;&#39; &lt;br&gt;//(Requires Affection Friendly+ and either Melee //or// Ranged weapon skill 40+)!//&lt;/center&gt;&lt;&lt;/if&gt;&gt;
@@ -290922,13 +290910,6 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;/if&gt;&gt;
 
 
-
-/* canco mod ends */
-
-
-
-/* canco mod starts */
-
 /* Darkmere2 move*/
 &lt;&lt;if $mscaving is 1008&gt;&gt;
 
@@ -290956,9 +290937,9 @@ A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
 
-&lt;&lt;set $mch.yardslot20.other6+=_stab&gt;&gt;
+&lt;&lt;set _stab+=$mch.yardslot20.other6&gt;&gt;
 
-&lt;&lt;set $mch.yardslot20.other6=Math.min($mch.yardslot20.other6,100)&gt;&gt;
+&lt;&lt;set $mch.yardslot20.other6=Math.min(_stab,100)&gt;&gt;
 
 &#39;&#39;Current Stability (Darkmere Farm):&#39;&#39; $mch.yardslot20.other6.
 
