@@ -290934,34 +290934,13 @@ A transfer also costs $100 in shipping fees.
 
 &lt;&lt;include NewLoad&gt;&gt;
 
+&lt;&lt;set _stab=yardstab(_npc,$mch.yardslot20.other5)&gt;&gt;
+
 &lt;&lt;if $adpos is 0&gt;&gt;
 You contemplate on sending _npc.girlname off to work at the remote farm in Zapin fields. Doing so will permanently remove &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; from the game!
 &lt;br&gt;&lt;br&gt;
 A transfer also costs $100 in shipping fees.
 &lt;br&gt;&lt;br&gt;
-
-&lt;&lt;set _stab to 10&gt;&gt;
-
-&lt;&lt;if _npc.willpower gte 7&gt;&gt;
-&lt;&lt;if _npc.masterlove lte 9&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove lte 19&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 5&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 15&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.masterlove gte 20 and _npc.scarefactor lte 2&gt;&gt;
-&lt;&lt;if _npc.ranged gte 50&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.ranged gte 80&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 80&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove gte 75&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _stab/=$mch.yardslot20.other5&gt;&gt;
-
-&lt;&lt;set _stab = Math.round(_stab)&gt;&gt;
-
 
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
 
@@ -290973,8 +290952,6 @@ A transfer also costs $100 in shipping fees.
 &lt;/center&gt;
 
 &lt;&lt;set $mch.yardslot20.other5+=1&gt;&gt;
-
-&lt;&lt;set _stab=yardstab(_npc,$mch.yardslot20.other5)&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
