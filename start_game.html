@@ -79,6 +79,30 @@ wloot = function(w) {
     if (w == 'r55') return 20;
     return -1;
 }
+yardstab = function (_npc,_ystab) {
+    var _stab = 10;
+    if (_npc.willpower >= 7) {
+        if (_npc.masterlove <= 9) _stab-=10;
+        if (_npc.masterlove <= 19) _stab-=10;
+        if (_npc.scarefactor >= 5) _stab-=10;
+        if (_npc.scarefactor >= 15) _stab-=10;
+        if (_npc.body >= 6 && _npc.masterlove <= 14) _stab-=6;
+        if (_npc.body >= 7 && _npc.masterlove <= 14) _stab-=6;
+        if (_npc.ranged >= 60 && _npc.masterlove <= 14) _stab-=20;
+        if (_npc.melee >= 60 && _npc.masterlove <= 14) _stab-=20;
+    }
+    if (_npc.masterlove >= 20 && _npc.scarefactor <= 2) {
+        if (_npc.ranged >= 50) _stab+=10;
+        if (_npc.ranged >= 80) _stab+=10;
+        if (_npc.melee >= 50) _stab+=10;
+        if (_npc.melee >= 80) _stab+=10;
+        if (_npc.masterlove >= 75) _stab+=10;
+    }
+    if (_ystab != 0) {
+        _stab/=_ystab;
+    }
+    return Math.round(_stab);
+}
 </script>
 <script id="script-libraries" type="text/javascript">
 if(document.head&&document.addEventListener&&document.querySelector&&Object.create&&Object.freeze&&JSON){document.documentElement.setAttribute("data-init", "loading");
@@ -289243,33 +289267,9 @@ You watch as _npc.girlname is led down a dimly lit corridor and out of sight to 
 
 &lt;&lt;include NewLoad&gt;&gt;
 
-
-&lt;&lt;set _stab to 10&gt;&gt;
-
-&lt;&lt;if _npc.willpower gte 7&gt;&gt;
-&lt;&lt;if _npc.masterlove lte 9&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove lte 19&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 5&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 15&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.body gte 6 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.body gte 7 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.ranged gte 60 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 60 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.masterlove gte 20 and _npc.scarefactor lte 2&gt;&gt;
-&lt;&lt;if _npc.ranged gte 50&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.ranged gte 80&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 80&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove gte 75&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot9.other5 gte 1&gt;&gt;&lt;&lt;set _stab/=$mch.yardslot9.other5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _stab=yardstab(_npc,$mch.yardslot9.other5)&gt;&gt;
 
 &lt;&lt;if $mch.yardslot9.other5 gte 50&gt;&gt;&lt;&lt;set _workerfull to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;set _stab = Math.round(_stab)&gt;&gt;
 
 
 &lt;&lt;if $adpos is 0&gt;&gt;
@@ -291006,30 +291006,7 @@ A transfer also costs $100 in shipping fees.
 
 &lt;&lt;set $mch.yardslot20.other5+=1&gt;&gt;
 
-&lt;&lt;set _stab to 10&gt;&gt;
-
-&lt;&lt;if _npc.willpower gte 7&gt;&gt;
-&lt;&lt;if _npc.masterlove lte 9&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove lte 19&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 5&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 15&gt;&gt;&lt;&lt;set _stab-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.body gte 6 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.body gte 7 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.ranged gte 60 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 60 and _npc.masterlove lte 14&gt;&gt;&lt;&lt;set _stab-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.masterlove gte 20 and _npc.scarefactor lte 2&gt;&gt;
-&lt;&lt;if _npc.ranged gte 50&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.ranged gte 80&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 80&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove gte 75&gt;&gt;&lt;&lt;set _stab+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _stab/=$mch.yardslot20.other5&gt;&gt;
-
-&lt;&lt;set _stab = Math.round(_stab)&gt;&gt;
+&lt;&lt;set _stab=yardstab(_npc,$mch.yardslot20.other5)&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Stability modifier:&#39;&#39; &lt;&lt;if _stab gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_stab.&lt;br&gt;
