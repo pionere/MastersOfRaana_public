@@ -84720,103 +84720,45 @@ REMOVED! USE CapCheck passage instead
 
 &lt;&lt;if $calc is 1&gt;&gt;
 &lt;&lt;set $chance-=$enemy1_dex&gt;&gt;
-&lt;&lt;set $chance+=25&gt;&gt;
-&lt;&lt;if _speed is 1&gt;&gt;&lt;&lt;set $chance-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _speed is 3&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $enemy1_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $chance+=18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set $chance+=23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set $chance+=24&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set $chance+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy1_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set $chance+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _enemy_armor=$enemy1_armor&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $calc is 2&gt;&gt;
 &lt;&lt;set $chance-=$enemy2_dex&gt;&gt;
-
-&lt;&lt;if _speed is 1&gt;&gt;&lt;&lt;set $chance-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _speed is 3&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set $chance+=25&gt;&gt;
-
-&lt;&lt;if $enemy2_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $chance+=18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set $chance+=23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set $chance+=24&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set $chance+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy2_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set $chance+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _enemy_armor=$enemy2_armor&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $calc is 3&gt;&gt;
 &lt;&lt;set $chance-=$enemy3_dex&gt;&gt;
-
-&lt;&lt;if _speed is 1&gt;&gt;&lt;&lt;set $chance-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _speed is 3&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set $chance+=25&gt;&gt;
-
-&lt;&lt;if $enemy3_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $chance+=18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set $chance+=23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set $chance+=24&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set $chance+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy3_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set $chance+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _enemy_armor=$enemy3_armor&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $calc is 4&gt;&gt;
 &lt;&lt;set $chance-=$enemy4_dex&gt;&gt;
-
-&lt;&lt;if _speed is 1&gt;&gt;&lt;&lt;set $chance-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _speed is 3&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set $chance+=25&gt;&gt;
-
-&lt;&lt;if $enemy4_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $chance+=18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set $chance+=23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set $chance+=24&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set $chance+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy4_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set $chance+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _enemy_armor=$enemy4_armor&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
 
 &lt;&lt;if $calc is 5&gt;&gt;
 &lt;&lt;set $chance-=$enemy5_dex&gt;&gt;
+&lt;&lt;set _enemy_armor=$enemy5_armor&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
+
+&lt;&lt;if $calc lte 5&gt;&gt;
 &lt;&lt;if _speed is 1&gt;&gt;&lt;&lt;set $chance-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _speed is 3&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $chance+=25&gt;&gt;
 
-&lt;&lt;if $enemy5_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $chance+=18&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set $chance+=23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set $chance+=24&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set $chance+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $enemy5_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set $chance+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if _enemy_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $chance+=18&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set $chance+=23&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set $chance+=24&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set $chance+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _enemy_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set $chance+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
 
 &lt;&lt;/if&gt;&gt;
 
