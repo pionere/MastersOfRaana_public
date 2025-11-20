@@ -203507,86 +203507,49 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 */
 
 
-
-
-&lt;&lt;if _smallcall is true and $ver gte 10830 and _smallcall2 isnot true&gt;&gt;
-
+&lt;&lt;if _callage lte 14&gt;&gt;
+&lt;&lt;set _img to &quot;/edu_goodsmall_kid.png&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _img to &quot;/edu_goodsmall.png&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _smallcall2 is true&gt;&gt;
+&lt;&lt;set _img to _callid+_img&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _img to _callid2+_img&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _callid lte 99&gt;&gt;
+&lt;&lt;set _img to $imgpath+&quot;/Av&quot;+_img&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _img to $imgpath+&quot;AvRan/Av&quot;+_img&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _callid isnot undefined and $ver gte 10830&gt;&gt;
+
+&lt;&lt;if _smallcall is true and _smallcall2 isnot true&gt;&gt;
+
 &lt;&lt;if $wopos is 1 and _nointer isnot true&gt;&gt;
 &lt;&lt;hovertip _calln&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;if _callage lte 14&gt;&gt;
-[img[$imgpath +&quot;/Av&quot;+_callid2+&quot;/edu_goodsmall_kid.png&quot;][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;/Av&quot;+_callid2+&quot;/edu_goodsmall.png&quot;][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
-&lt;&lt;/if&gt;&gt;
+[img[_img][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
 &lt;/div&gt;
 &lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
-&lt;&lt;if _callage lte 14&gt;&gt;
-[img[$imgpath +&quot;/Av&quot;+_callid2+&quot;/edu_goodsmall_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;/Av&quot;+_callid2+&quot;/edu_goodsmall.png&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_img]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if _smallcall2 is true&gt;&gt;
 
-&lt;&lt;if _callid gte 100&gt;&gt;
-&lt;&lt;if $wopos is 1 and _nointer isnot true&gt;&gt;
-&lt;&lt;hovertip _calln&gt;&gt;
-&lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;if _callage lte 14&gt;&gt;
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid2+&quot;/edu_goodsmall_kid.png&quot;][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid2+&quot;/edu_goodsmall.png&quot;][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac&quot;&gt;
-&lt;&lt;if _callage lte 14&gt;&gt;
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid2+&quot;/edu_goodsmall_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid2+&quot;/edu_goodsmall.png&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_img]]
 
-/*
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid2+&quot;/edu_goodsmall.png&quot;]]
-*/
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
 
-
-
-
-
-&lt;&lt;if _smallcall2 is true and $ver gte 10830&gt;&gt;
-&lt;&lt;if _callid lte 99&gt;&gt;
-&lt;&lt;if _callage lte 14&gt;&gt;
-[img[$imgpath +&quot;/Av&quot;+_callid+&quot;/edu_goodsmall_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;/Av&quot;+_callid+&quot;/edu_goodsmall.png&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _callid gte 100&gt;&gt;
-&lt;&lt;if _callage lte 14&gt;&gt;
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid+&quot;/edu_goodsmall_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;AvRan/Av&quot;+_callid+&quot;/edu_goodsmall.png&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="297" name="Party" tags="no-transition gray nobr" position="1025,675" size="100,100">&lt;div id=&quot;borderwrapeco&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;
