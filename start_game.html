@@ -84640,67 +84640,21 @@ REMOVED! USE CapCheck passage instead
 /*Below calculates the amount Stamina absorbs from damage.*/
 
 &lt;&lt;if $round gte 7&gt;&gt;
-&lt;&lt;if $event1 is true&gt;&gt;
 
-&lt;&lt;if $masterstamina gte 40&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstamina gte 50&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstamina gte 60&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $masterstamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event1 is true&gt;&gt;&lt;&lt;set _cstamina=$masterstamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event2 is true&gt;&gt;&lt;&lt;set _cstamina=$cs1_stamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event3 is true&gt;&gt;&lt;&lt;set _cstamina=$cs2_stamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event4 is true&gt;&gt;&lt;&lt;set _cstamina=$cs3_stamina&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event5 is true&gt;&gt;&lt;&lt;set _cstamina=$cs4_stamina&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if _cstamina gte 40&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _cstamina gte 50&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _cstamina gte 60&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _cstamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _cstamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _cstamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mctraittough gte 75&gt;&gt;&lt;&lt;set $damage*=0.92&gt;&gt;&lt;&lt;set $damage = Math.round($damage)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event2 is true&gt;&gt;
-
-&lt;&lt;if $cs1_stamina gte 40&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_stamina gte 50&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_stamina gte 60&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_stamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if $event3 is true&gt;&gt;
-
-&lt;&lt;if $cs2_stamina gte 40&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_stamina gte 50&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_stamina gte 60&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_stamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event4 is true&gt;&gt;
-
-&lt;&lt;if $cs3_stamina gte 40&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_stamina gte 50&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_stamina gte 60&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_stamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event5 is true&gt;&gt;
-
-&lt;&lt;if $cs4_stamina gte 40&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_stamina gte 50&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_stamina gte 60&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_stamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $event1 is true and $mctraittough gte 75&gt;&gt;&lt;&lt;set $damage=Math.round(0.92*$damage)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _combatid is 201&gt;&gt;&lt;&lt;set $damage=adl($damage,-4,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* round gte 7 */
