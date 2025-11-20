@@ -84206,11 +84206,9 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;set _ap to false&gt;&gt;
 &lt;&lt;set _biggun to 3&gt;&gt;
 
-&lt;&lt;if $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10)&gt;&gt;
-&lt;&lt;if $round is 2 and $cs1_girlid is 39 and $cleashot is undefined&gt;&gt;&lt;&lt;set $damage+=30&gt;&gt;&lt;&lt;set $cleashot to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 3 and $cs2_girlid is 39 and $cleashot is undefined&gt;&gt;&lt;&lt;set $damage+=30&gt;&gt;&lt;&lt;set $cleashot to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 4 and $cs3_girlid is 39 and $cleashot is undefined&gt;&gt;&lt;&lt;set $damage+=30&gt;&gt;&lt;&lt;set $cleashot to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 5 and $cs4_girlid is 39 and $cleashot is undefined&gt;&gt;&lt;&lt;set $damage+=30&gt;&gt;&lt;&lt;set $cleashot to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10) and
+           _combatid is 39 and $cleashot is undefined&gt;&gt;
+&lt;&lt;set $damage+=30&gt;&gt;&lt;&lt;set $cleashot to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -84666,9 +84664,6 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $cs1_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs1_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cs1_girlid is 201&gt;&gt;&lt;&lt;set $damage=adl($damage,-4,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -84682,9 +84677,6 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $cs2_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs2_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cs2_girlid is 201&gt;&gt;&lt;&lt;set $damage=adl($damage,-4,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event4 is true&gt;&gt;
@@ -84695,8 +84687,6 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $cs3_stamina gte 70&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs3_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs3_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs3_girlid is 201&gt;&gt;&lt;&lt;set $damage=adl($damage,-4,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -84709,9 +84699,9 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $cs4_stamina gte 80&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs4_stamina gte 90&gt;&gt;&lt;&lt;set $damage-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cs4_girlid is 201&gt;&gt;&lt;&lt;set $damage=adl($damage,-4,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _combatid is 201&gt;&gt;&lt;&lt;set $damage=adl($damage,-4,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* round gte 7 */
 
