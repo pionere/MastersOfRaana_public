@@ -46,6 +46,16 @@ adl = function(value, delta, limit) {
     }
     return result;
 }
+romanize = function(num) {
+    var lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 }, roman = '';
+    for (var i in lookup) {
+        while (num >= lookup[i]) {
+            roman += i;
+            num -= lookup[i];
+        }
+    }
+    return roman;
+}
 wloot = function(w) {
     if (w == 'fists') return -1;
     if (w == 'whipstick') return -1;
@@ -298988,24 +298998,7 @@ You&#39;re overlooking &quot;Speaker&#39;s Square&quot; - a prime building locat
 &lt;&lt;if $npc is undefined&gt;&gt;
 
 &lt;&lt;set $npcpage = {
-number: 1,
-name1: &quot;Page I&quot;,
-name2: &quot;Page II&quot;,
-name3: &quot;Page III&quot;,
-name4: &quot;Page IV&quot;,
-name5: &quot;Page V&quot;,
-name6: &quot;Page VI&quot;,
-name7: &quot;Page VII&quot;,
-name8: &quot;Page VIII&quot;,
-name9: &quot;Page IX&quot;,
-name10: &quot;Page X&quot;,
-name11: &quot;Page XI&quot;,
-name12: &quot;Page XII&quot;,
-name13: &quot;Page XIII&quot;,
-name14: &quot;Page XIV&quot;,
-name15: &quot;Page XV&quot;,
-name16: &quot;Page XVI&quot;,
-name17: &quot;Page XVII&quot;,
+number: 1
 }
 &gt;&gt;
 
@@ -302118,24 +302111,7 @@ IGNORE
 &lt;&lt;set _smallcall to true&gt;&gt;
 &lt;br&gt;
 
-&lt;&lt;if $npcpage.number is 1&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name1 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 2&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name2 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 3&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name3 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 4&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name4 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 5&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name5 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 6&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name6 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 7&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name7 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 8&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name8 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name8&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 9&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name9 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name9&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 10&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name10 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 11&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name11 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name11&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 12&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name12 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name12&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 13&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name13 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name13&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 14&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name14 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 15&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name15 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 16&gt;&gt;&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name16 to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name16&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 17&gt;&gt;&lt;&lt;set _pagename to $npcpage.name17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $npcpage.number is 18&gt;&gt;&lt;&lt;set _pagename to $npcpage.name18&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name[$npcpage.number] to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name[$npcpage.number]&gt;&gt;
 
 &lt;&lt;unset $npcpagetemp&gt;&gt;
 &lt;&lt;unset $changename&gt;&gt;
@@ -306055,516 +306031,52 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 
 &lt;&lt;if $movepage is undefined&gt;&gt;&lt;&lt;set $movepage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $movepage is 1&gt;&gt;
-
+&lt;&lt;for _b = 0; _b lt ($movepage is 1 ? ($bigdorms is true ? 3 : 2) : 1); _b++&gt;&gt;
+&lt;&lt;capture _b&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
-
+&lt;&lt;for _u = 0; _u lt 4; _u++&gt;&gt;
+&lt;&lt;capture _u&gt;&gt;
 &lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name1|SMenu2][$npcpage.number to 1]]&#39;&#39;&lt;/center&gt;
+&lt;&lt;if _u lt 2 or !($movepage is 1 and _b is 2 and !$exhouse)&gt;&gt;
+&lt;center&gt;&#39;&#39;
+&lt;&lt;set _pageidx=($movepage is 1 ? 1 : 13)+_b*4+_u&gt;&gt;
+&lt;&lt;capture _pageidx&gt;&gt;
+&lt;&lt;set _pagelabel=$npcpage.name[_pageidx]&gt;&gt;
+&lt;&lt;capture _pagelabel&gt;&gt;
+        &lt;&lt;link _pagelabel&gt;&gt;
+            &lt;&lt;set $npcpage.number=_pageidx&gt;&gt;
+            &lt;&lt;goto SMenu2&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
+&#39;&#39;&lt;/center&gt;
+&lt;&lt;for _r = 0; _r lt 4; _r++&gt;&gt;
+&lt;&lt;capture _r&gt;&gt;
 &lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[1] is 0&gt;&gt;[[1|SMenu2][$moveslot to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[2] is 0&gt;&gt;[[2|SMenu2][$moveslot to 2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[3] is 0&gt;&gt;[[3|SMenu2][$moveslot to 3]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[4] is 0&gt;&gt;[[4|SMenu2][$moveslot to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[5] is 0&gt;&gt;[[5|SMenu2][$moveslot to 5]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[6] is 0&gt;&gt;[[6|SMenu2][$moveslot to 6]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[7] is 0&gt;&gt;[[7|SMenu2][$moveslot to 7]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[8] is 0&gt;&gt;[[8|SMenu2][$moveslot to 8]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name2|SMenu2][$npcpage.number to 2]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[9] is 0&gt;&gt;[[9|SMenu2][$moveslot to 9]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[10] is 0&gt;&gt;[[10|SMenu2][$moveslot to 10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[11] is 0&gt;&gt;[[11|SMenu2][$moveslot to 11]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[12] is 0&gt;&gt;[[12|SMenu2][$moveslot to 12]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[13] is 0&gt;&gt;[[13|SMenu2][$moveslot to 13]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[14] is 0&gt;&gt;[[14|SMenu2][$moveslot to 14]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[15] is 0&gt;&gt;[[15|SMenu2][$moveslot to 15]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[16] is 0&gt;&gt;[[16|SMenu2][$moveslot to 16]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-
-
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name3|SMenu2][$npcpage.number to 3]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[17] is 0&gt;&gt;[[17|SMenu2][$moveslot to 17]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[18] is 0&gt;&gt;[[18|SMenu2][$moveslot to 18]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[19] is 0&gt;&gt;[[19|SMenu2][$moveslot to 19]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[20] is 0&gt;&gt;[[20|SMenu2][$moveslot to 20]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[21] is 0&gt;&gt;[[21|SMenu2][$moveslot to 21]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[22] is 0&gt;&gt;[[22|SMenu2][$moveslot to 22]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[23] is 0&gt;&gt;[[23|SMenu2][$moveslot to 23]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[24] is 0&gt;&gt;[[24|SMenu2][$moveslot to 24]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name4|SMenu2][$npcpage.number to 4]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[25] is 0&gt;&gt;[[25|SMenu2][$moveslot to 25]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[26] is 0&gt;&gt;[[26|SMenu2][$moveslot to 26]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[27] is 0&gt;&gt;[[27|SMenu2][$moveslot to 27]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[28] is 0&gt;&gt;[[28|SMenu2][$moveslot to 28]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[29] is 0&gt;&gt;[[29|SMenu2][$moveslot to 29]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[30] is 0&gt;&gt;[[30|SMenu2][$moveslot to 30]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[31] is 0&gt;&gt;[[31|SMenu2][$moveslot to 31]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[32] is 0&gt;&gt;[[32|SMenu2][$moveslot to 32]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-/* SECOND ROW BELOW */
-
-
-
-
-
-
-
-
-&lt;div class=&quot;row&quot;&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name5|SMenu2][$npcpage.number to 5]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[33] is 0&gt;&gt;[[33|SMenu2][$moveslot to 33]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[34] is 0&gt;&gt;[[34|SMenu2][$moveslot to 34]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[35] is 0&gt;&gt;[[35|SMenu2][$moveslot to 35]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[36] is 0&gt;&gt;[[36|SMenu2][$moveslot to 36]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[37] is 0&gt;&gt;[[37|SMenu2][$moveslot to 37]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[38] is 0&gt;&gt;[[38|SMenu2][$moveslot to 38]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[39] is 0&gt;&gt;[[39|SMenu2][$moveslot to 39]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[40] is 0&gt;&gt;[[40|SMenu2][$moveslot to 40]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name6|SMenu2][$npcpage.number to 6]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[41] is 0&gt;&gt;[[41|SMenu2][$moveslot to 41]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[42] is 0&gt;&gt;[[42|SMenu2][$moveslot to 42]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[43] is 0&gt;&gt;[[43|SMenu2][$moveslot to 43]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[44] is 0&gt;&gt;[[44|SMenu2][$moveslot to 44]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[45] is 0&gt;&gt;[[45|SMenu2][$moveslot to 45]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[46] is 0&gt;&gt;[[46|SMenu2][$moveslot to 46]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[47] is 0&gt;&gt;[[47|SMenu2][$moveslot to 47]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[48] is 0&gt;&gt;[[48|SMenu2][$moveslot to 48]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-
-
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name7|SMenu2][$npcpage.number to 7]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[49] is 0&gt;&gt;[[49|SMenu2][$moveslot to 49]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[50] is 0&gt;&gt;[[50|SMenu2][$moveslot to 50]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[51] is 0&gt;&gt;[[51|SMenu2][$moveslot to 51]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[52] is 0&gt;&gt;[[52|SMenu2][$moveslot to 52]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[53] is 0&gt;&gt;[[53|SMenu2][$moveslot to 53]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[54] is 0&gt;&gt;[[54|SMenu2][$moveslot to 54]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[55] is 0&gt;&gt;[[55|SMenu2][$moveslot to 55]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[56] is 0&gt;&gt;[[56|SMenu2][$moveslot to 56]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name8|SMenu2][$npcpage.number to 8]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[57] is 0&gt;&gt;[[57|SMenu2][$moveslot to 57]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[58] is 0&gt;&gt;[[58|SMenu2][$moveslot to 58]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[59] is 0&gt;&gt;[[59|SMenu2][$moveslot to 59]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[60] is 0&gt;&gt;[[60|SMenu2][$moveslot to 60]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[61] is 0&gt;&gt;[[61|SMenu2][$moveslot to 61]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[62] is 0&gt;&gt;[[62|SMenu2][$moveslot to 62]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[63] is 0&gt;&gt;[[63|SMenu2][$moveslot to 63]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[64] is 0&gt;&gt;[[64|SMenu2][$moveslot to 64]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-
-/* THIRD ROW BELOW */
-
-
-&lt;&lt;if $bigdorms is true&gt;&gt;
-
-
-&lt;div class=&quot;row&quot;&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name9|SMenu2][$npcpage.number to 9]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[65] is 0&gt;&gt;[[65|SMenu2][$moveslot to 65]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[66] is 0&gt;&gt;[[66|SMenu2][$moveslot to 66]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[67] is 0&gt;&gt;[[67|SMenu2][$moveslot to 67]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[68] is 0&gt;&gt;[[68|SMenu2][$moveslot to 68]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[69] is 0&gt;&gt;[[69|SMenu2][$moveslot to 69]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[70] is 0&gt;&gt;[[70|SMenu2][$moveslot to 70]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[71] is 0&gt;&gt;[[71|SMenu2][$moveslot to 71]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[72] is 0&gt;&gt;[[72|SMenu2][$moveslot to 72]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name10|SMenu2][$npcpage.number to 10]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[73] is 0&gt;&gt;[[73|SMenu2][$moveslot to 73]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[74] is 0&gt;&gt;[[74|SMenu2][$moveslot to 74]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[75] is 0&gt;&gt;[[75|SMenu2][$moveslot to 75]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[76] is 0&gt;&gt;[[76|SMenu2][$moveslot to 76]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[77] is 0&gt;&gt;[[77|SMenu2][$moveslot to 77]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[78] is 0&gt;&gt;[[78|SMenu2][$moveslot to 78]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[79] is 0&gt;&gt;[[79|SMenu2][$moveslot to 79]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[80] is 0&gt;&gt;[[80|SMenu2][$moveslot to 80]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;&lt;if $exhouse is true&gt;&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name11|SMenu2][$npcpage.number to 11]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[81] is 0&gt;&gt;[[81|SMenu2][$moveslot to 81]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[82] is 0&gt;&gt;[[82|SMenu2][$moveslot to 82]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[83] is 0&gt;&gt;[[83|SMenu2][$moveslot to 83]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[84] is 0&gt;&gt;[[84|SMenu2][$moveslot to 84]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[85] is 0&gt;&gt;[[85|SMenu2][$moveslot to 85]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[86] is 0&gt;&gt;[[86|SMenu2][$moveslot to 86]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[87] is 0&gt;&gt;[[87|SMenu2][$moveslot to 87]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[88] is 0&gt;&gt;[[88|SMenu2][$moveslot to 88]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name12|SMenu2][$npcpage.number to 12]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[89] is 0&gt;&gt;[[89|SMenu2][$moveslot to 89]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[90] is 0&gt;&gt;[[90|SMenu2][$moveslot to 90]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[91] is 0&gt;&gt;[[91|SMenu2][$moveslot to 91]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[92] is 0&gt;&gt;[[92|SMenu2][$moveslot to 92]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[93] is 0&gt;&gt;[[93|SMenu2][$moveslot to 93]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[94] is 0&gt;&gt;[[94|SMenu2][$moveslot to 94]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[95] is 0&gt;&gt;[[95|SMenu2][$moveslot to 95]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[96] is 0&gt;&gt;[[96|SMenu2][$moveslot to 96]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;&lt;else&gt;&gt;
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-
-
-&lt;/div&gt;
-
-
-
+&lt;&lt;for _c = 0; _c lt 2; _c++&gt;&gt;
+&lt;&lt;capture _c&gt;&gt;
+&lt;&lt;set _idx=($movepage is 1 ? 1 : 65)+_b*32+_u*8+_r*2+_c&gt;&gt;
+&lt;&lt;capture _idx&gt;&gt;
+&lt;&lt;if $slot[_idx] is 0&gt;&gt;
+&lt;&lt;link &quot;_idx&quot;&gt;&gt;
+    &lt;&lt;set $moveslot=_idx&gt;&gt;
+    &lt;&lt;goto SMenu2&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;/div&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt; /* row ? */
-
-
-/* BIG DORMS and EX HOUSE ENDS */
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt; /* move page 1 ends */
-
-
-/* ANNEX STARTS */
-&lt;&lt;if $movepage is 2&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name13|SMenu2][$npcpage.number to 13]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[97] is 0&gt;&gt;[[97|SMenu2][$moveslot to 97]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[98] is 0&gt;&gt;[[98|SMenu2][$moveslot to 98]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[99] is 0&gt;&gt;[[99|SMenu2][$moveslot to 99]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[100] is 0&gt;&gt;[[100|SMenu2][$moveslot to 100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
 &lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[101] is 0&gt;&gt;[[101|SMenu2][$moveslot to 101]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[102] is 0&gt;&gt;[[102|SMenu2][$moveslot to 102]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[103] is 0&gt;&gt;[[103|SMenu2][$moveslot to 103]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[104] is 0&gt;&gt;[[104|SMenu2][$moveslot to 104]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name14|SMenu2][$npcpage.number to 14]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[105] is 0&gt;&gt;[[105|SMenu2][$moveslot to 105]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[106] is 0&gt;&gt;[[106|SMenu2][$moveslot to 106]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[107] is 0&gt;&gt;[[107|SMenu2][$moveslot to 107]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[108] is 0&gt;&gt;[[108|SMenu2][$moveslot to 108]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[109] is 0&gt;&gt;[[109|SMenu2][$moveslot to 109]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[110] is 0&gt;&gt;[[110|SMenu2][$moveslot to 110]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[111] is 0&gt;&gt;[[111|SMenu2][$moveslot to 111]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[112] is 0&gt;&gt;[[112|SMenu2][$moveslot to 112]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-
-
-
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name15|SMenu2][$npcpage.number to 15]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[113] is 0&gt;&gt;[[113|SMenu2][$moveslot to 113]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[114] is 0&gt;&gt;[[114|SMenu2][$moveslot to 114]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[115] is 0&gt;&gt;[[115|SMenu2][$moveslot to 115]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[116] is 0&gt;&gt;[[116|SMenu2][$moveslot to 116]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[117] is 0&gt;&gt;[[117|SMenu2][$moveslot to 117]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[118] is 0&gt;&gt;[[118|SMenu2][$moveslot to 118]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[119] is 0&gt;&gt;[[119|SMenu2][$moveslot to 119]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[120] is 0&gt;&gt;[[120|SMenu2][$moveslot to 120]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class=&quot;resholdermed&quot;&gt;
-&lt;center&gt;&#39;&#39;[[$npcpage.name16|SMenu2][$npcpage.number to 16]]&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[121] is 0&gt;&gt;[[121|SMenu2][$moveslot to 121]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[122] is 0&gt;&gt;[[122|SMenu2][$moveslot to 122]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[123] is 0&gt;&gt;[[123|SMenu2][$moveslot to 123]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[124] is 0&gt;&gt;[[124|SMenu2][$moveslot to 124]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[125] is 0&gt;&gt;[[125|SMenu2][$moveslot to 125]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[126] is 0&gt;&gt;[[126|SMenu2][$moveslot to 126]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;if $slot[127] is 0&gt;&gt;[[127|SMenu2][$moveslot to 127]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slot[128] is 0&gt;&gt;[[128|SMenu2][$moveslot to 128]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;(F)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;&lt;/if&gt;&gt; /* ANNEX ENDS */
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
 
 /* PADD BELOW */
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="437" name="Loren" tags="nobr" position="3000,3000" size="100,100">
@@ -342435,7 +341947,16 @@ reserved2: 0,
 
 &lt;&lt;/if&gt;&gt;
 
-/* canco mod ends */</tw-passagedata><tw-passagedata pid="515" name="TraitEffe" tags="nobr" position="3875,3225" size="100,100">&lt;&lt;if _npc.traitwork gte 60&gt;&gt;&lt;&lt;set _npc.discipline+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
+/* canco mod ends */
+
+&lt;&lt;if $npcpage.name is undefined&gt;&gt;
+&lt;&lt;set $npcpage.name=[]&gt;&gt;
+&lt;&lt;for _i = 1; _i lte 16; _i++&gt;&gt;
+&lt;&lt;set $npcpage.name[_i]=&quot;Page &quot;+romanize(_i)&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="515" name="TraitEffe" tags="nobr" position="3875,3225" size="100,100">&lt;&lt;if _npc.traitwork gte 60&gt;&gt;&lt;&lt;set _npc.discipline+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.traittech gte 60&gt;&gt;&lt;&lt;set _npc.tech+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.traitperf gte 90&gt;&gt;&lt;&lt;set _npc.discipline+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.traitaggro lte 24&gt;&gt;&lt;&lt;set _npc.kind+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
