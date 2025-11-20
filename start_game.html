@@ -385981,18 +385981,19 @@ Chancellor
 &lt;&lt;if $workchange2 gte 1&gt;&gt;
 &lt;br&gt;
 
+&lt;&lt;if $workchange2 is 21&gt;&gt;&lt;&lt;set _yard to $mch.yardslot1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workchange2 is 22&gt;&gt;&lt;&lt;set _yard to $mch.yardslot2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workchange2 is 23&gt;&gt;&lt;&lt;set _yard to $mch.yardslot3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workchange2 is 24&gt;&gt;&lt;&lt;set _yard to $mch.yardslot4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workchange2 is 27 or $workchange2 is 37&gt;&gt;&lt;&lt;set _yard to $mch.yardslot7&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workchange2 is 28 or $workchange2 is 38&gt;&gt;&lt;&lt;set _yard to $mch.yardslot8&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _checkwork to _yard.other2&gt;&gt;
+&lt;&lt;set _checkforeman to _yard.other3&gt;&gt;
+
 &lt;&lt;if $workchange2 lte 28&gt;&gt;
 
 /* WORKER OR FOREMAN ASSIGNMENT OPTION */
-
-&lt;&lt;if $workchange2 is 21&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot1.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot1.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workchange2 is 22&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot2.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot2.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workchange2 is 23&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot3.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot3.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workchange2 is 24&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot4.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot4.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workchange2 is 27&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot7.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot7.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workchange2 is 28&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot8.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot8.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;if _checkwork lt _wscap&gt;&gt;
@@ -386037,10 +386038,6 @@ Chancellor
 /* WORKER OR BARKEEPER OPTIONS */
 
 &lt;&lt;if $workchange2 gte 37&gt;&gt;
-
-&lt;&lt;if $workchange2 is 37&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot7.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot7.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workchange2 is 38&gt;&gt;&lt;&lt;set _checkwork to $mch.yardslot8.other2&gt;&gt;&lt;&lt;set _checkforeman to $mch.yardslot8.other3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 
 /* TAVERN WORKER */
