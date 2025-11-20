@@ -244011,19 +244011,6 @@ XXX
 
 &lt;div class=&quot;slavesides&quot;&gt;
 
-&lt;div class=&quot;craftinfo lighthover&quot;&gt;
-&lt;div class=&quot;zoom&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/question.png&quot;]]&gt;&gt;
-&lt;&lt;set $tutorial to 206&gt;&gt;
-     &lt;&lt;script&gt;&gt;
-	Dialog.setup(&#39;&#39;);
-	Dialog.wiki(Story.get(&#39;QuestTexts&#39;).processText());
-	Dialog.open();
-	&lt;&lt;/script&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;&lt;if $crafta gte 1 or $newammocraft is true&gt;&gt;
 &lt;&lt;include Res&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -244391,6 +244378,18 @@ XXX
 /* CRAFTA ENDS BELOW */
 &lt;&lt;/if&gt;&gt;
 
+&lt;div class=&quot;craftinfo lighthover&quot;&gt;
+&lt;div class=&quot;zoom&quot;&gt;
+&lt;&lt;link [img[$imgpath + &quot;Butt/question.png&quot;]]&gt;&gt;
+&lt;&lt;set $tutorial to 206&gt;&gt;
+     &lt;&lt;script&gt;&gt;
+	Dialog.setup(&#39;&#39;);
+	Dialog.wiki(Story.get(&#39;QuestTexts&#39;).processText());
+	Dialog.open();
+	&lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;lowbottom2 ulsmall padd20left&quot;&gt;
 &lt;&lt;if $crafta gte 1 and $wopos isnot 125&gt;&gt;
