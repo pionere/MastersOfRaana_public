@@ -19942,24 +19942,7 @@ Special birthday event available!&lt;br&gt;
 
 &lt;&lt;unset _bruteok&gt;&gt;
 
-&lt;&lt;if _npc.likesadist gte 40 and _npc.status lte 4&gt;&gt;
-&lt;&lt;set _bruteok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.likesadist gte 80 and _npc.status gte 5&gt;&gt;
-&lt;&lt;set _bruteok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.status lte 3 and _npc.willpower lte 19&gt;&gt;
-&lt;&lt;set _bruteok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.status lte 2&gt;&gt;
-&lt;&lt;set _bruteok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _bruteok is true&gt;&gt;
+&lt;&lt;if (_npc.status lte 2) or (_npc.status lte 3 and _npc.willpower lte 19) or (_npc.status lte 4 and _npc.likesadist gte 40) or (_npc.likesadist gte 80)&gt;&gt;
 [[Physical|Bondagemaster][$offcloth to 1]]
 &lt;&lt;/if&gt;&gt;
 
@@ -85061,13 +85044,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;set $malelimit to 5&gt;&gt;
 &lt;&lt;set $femalelimit to 5&gt;&gt;
 
-&lt;&lt;if $combat is 191 and $newen is 2&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 191 and $newen is 3&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 191 and ($newen is 4 or $newen is 5)&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 191 and $newen gte 14 and $newen lte 20&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 41 and $quest_head gte 6&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _noc=($combat is 191 and (($newen gte 2 and $newen lte 5) or ($newen gte 14 and $newen lte 20))) or
+                 ($combat is 41 and $quest_head gte 6)&gt;&gt;
 
 &lt;&lt;if $combat gte 200 or $combat is 121 or $combat is 124 or $combat is 126 or $combat is 2 or $combat is 60 or $combat is 61 or $combat is 78 or $combat is 112 or $combat is 119 or $combat is 115 or $combat is 120 or $combat is 145 or $combat is 55 or $combat is 57 or $combat is 148 or $combat is 149 or $combat is 150 or $combat is 151 or $combat is 152 or $combat is 153 or $combat is 155 or $combat is 157 or $combat is 156 or $combat is 159 or $combat is 158 or $combat is 176 or $combat is 177 or $combat is 178 or $combat is 181 or $combat is 182 or $combat is 183 or $combat is 184 or $combat is 187 or $combat is 190 or _noc is true&gt;&gt;&lt;&lt;set $malelimit to 0&gt;&gt;&lt;&lt;set $femalelimit to 0&gt;&gt;&lt;&lt;set _nocaptives to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -87691,81 +87669,30 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 
 
 
-&lt;&lt;if $event1 is true and $masterhealth lte 0&gt;&gt;
+&lt;&lt;if $event1 is true and ($masterhealth lte 0 or $armorwear is &quot;stealth&quot;)&gt;&gt;
 &lt;&lt;set $event1 to false&gt;&gt;
 &lt;&lt;set $event2 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event1 is true and $masterhealth gte 1 and $armorwear is &quot;stealth&quot;&gt;&gt;
-&lt;&lt;set $event1 to false&gt;&gt;
-&lt;&lt;set $event2 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event2 is true and $cs1_state lte 0&gt;&gt;
+&lt;&lt;if $event2 is true and ($cs1_state lte 0 or $cs1_armor is &quot;stealth&quot; or $cs1_armor is &quot;aet&quot; or $cs1_traitstealth gte 90)&gt;&gt;
 &lt;&lt;set $event2 to false&gt;&gt;
 &lt;&lt;set $event3 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event2 is true and $cs1_state gte 1 and ($cs1_armor is &quot;stealth&quot; or $cs1_armor is &quot;aet&quot;)&gt;&gt;
-&lt;&lt;set $event2 to false&gt;&gt;
-&lt;&lt;set $event3 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event2 is true and $cs1_state gte 1 and $cs1_traitstealth gte 90&gt;&gt;
-&lt;&lt;set $event2 to false&gt;&gt;
-&lt;&lt;set $event3 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event3 is true and $cs2_state lte 0&gt;&gt;
+&lt;&lt;if $event3 is true and ($cs2_state lte 0 or $cs2_armor is &quot;stealth&quot; or $cs2_armor is &quot;aet&quot; or $cs2_traitstealth gte 90)&gt;&gt;
 &lt;&lt;set $event3 to false&gt;&gt;
 &lt;&lt;set $event4 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event3 is true and $cs2_state gte 1 and ($cs2_armor is &quot;stealth&quot; or $cs2_armor is &quot;aet&quot;)&gt;&gt;
-&lt;&lt;set $event3 to false&gt;&gt;
-&lt;&lt;set $event4 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event3 is true and $cs2_state gte 1 and $cs2_traitstealth gte 90&gt;&gt;
-&lt;&lt;set $event3 to false&gt;&gt;
-&lt;&lt;set $event4 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event4 is true and $cs3_state lte 0&gt;&gt;
+&lt;&lt;if $event4 is true and ($cs3_state lte 0 or $cs3_armor is &quot;stealth&quot; or $cs3_armor is &quot;aet&quot; or $cs3_traitstealth gte 90)&gt;&gt;
 &lt;&lt;set $event4 to false&gt;&gt;
 &lt;&lt;set $event5 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $event4 is true and $cs3_state gte 1 and ($cs3_armor is &quot;stealth&quot; or $cs3_armor is &quot;aet&quot;)&gt;&gt;
-&lt;&lt;set $event4 to false&gt;&gt;
-&lt;&lt;set $event5 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event4 is true and $cs3_state gte 1 and $cs3_traitstealth gte 90&gt;&gt;
-&lt;&lt;set $event4 to false&gt;&gt;
-&lt;&lt;set $event5 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event5 is true and $cs4_state lte 0&gt;&gt;
+&lt;&lt;if $event5 is true and ($cs4_state lte 0 or $cs4_armor is &quot;stealth&quot; or $cs4_armor is &quot;aet&quot; or $cs4_traitstealth gte 90)&gt;&gt;
 &lt;&lt;set $event5 to false&gt;&gt;
 &lt;&lt;set $event1 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event5 is true and $cs4_state gte 1 and ($cs4_armor is &quot;stealth&quot; or $cs4_armor is &quot;aet&quot;)&gt;&gt;
-&lt;&lt;set $event5 to false&gt;&gt;
-&lt;&lt;set $event1 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event5 is true and $cs4_state gte 1 and $cs4_traitstealth gte 90&gt;&gt;
-&lt;&lt;set $event5 to false&gt;&gt;
-&lt;&lt;set $event1 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $event1 is true and $masterhealth lte 0&gt;&gt;
 &lt;&lt;set $event1 to false&gt;&gt;
@@ -153290,12 +153217,9 @@ PLAYER WEAPON
 &lt;&lt;set $activeweapon to &quot;fists&quot;&gt;&gt;
 &lt;&lt;set $meleeequip to true&gt;&gt;
 &lt;&lt;set $rangedequip to false&gt;&gt;
-&lt;&lt;unset $minus&gt;&gt;
-&lt;&lt;unset $plus&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;unset $minus&gt;&gt;
-&lt;&lt;unset $plus&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;unset $minus&gt;&gt;
+&lt;&lt;unset $plus&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -154069,12 +153993,9 @@ PLAYER WEAPON
 &lt;&lt;set $activeweapon to &quot;fists&quot;&gt;&gt;
 &lt;&lt;set $meleeequip to true&gt;&gt;
 &lt;&lt;set $rangedequip to false&gt;&gt;
-&lt;&lt;unset $minus&gt;&gt;
-&lt;&lt;unset $plus&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;unset $minus&gt;&gt;
-&lt;&lt;unset $plus&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;unset $minus&gt;&gt;
+&lt;&lt;unset $plus&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -165850,16 +165771,8 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;if $ver lt 10830&gt;&gt;
-&lt;&lt;set _okclit to true&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $gonnapir is true&gt;&gt;
-&lt;&lt;if _npc.sex is 0&gt;&gt;&lt;&lt;set _okclit to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _okclit is true&gt;&gt;
+&lt;&lt;if ($ver lt 10830) or ($gonnapir and _npc.sex is 0)&gt;&gt;
 &lt;div class=&quot;resholder&quot;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
 &lt;&lt;link [img[$imgpath + &quot;/Stuff/pir1.png&quot;]]&gt;&gt;
@@ -189960,11 +189873,8 @@ $girlnames &#39;&#39;Fear (+1)&#39;&#39; has increased!
 
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if _sextime2 is true&gt;&gt;
-&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;ORAL (skill)&#39;&#39;&lt;br&gt; $oraltimetotal mins&lt;/div&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;VAGINAL (skill)&#39;&#39;&lt;br&gt; $pussytimetotal mins&lt;/div&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;ANAL (skill)&#39;&#39;&lt;br&gt; $analtimetotal mins&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;ORAL&#39;&#39;&lt;br&gt; $oraltimetotal mins&lt;/div&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;VAGINAL&#39;&#39;&lt;br&gt; $pussytimetotal mins&lt;/div&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;ANAL&#39;&#39;&lt;br&gt; $analtimetotal mins&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=_sextime2 is true ? &quot; (skill)&quot; : &quot;&quot;&gt;&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;ORAL_tmp&#39;&#39;&lt;br&gt; $oraltimetotal mins&lt;/div&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;VAGINAL_tmp&#39;&#39;&lt;br&gt; $pussytimetotal mins&lt;/div&gt;&lt;div class=&quot;resholder&quot;&gt;&#39;&#39;ANAL_tmp&#39;&#39;&lt;br&gt; $analtimetotal mins&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="274" name="Settings1" tags="gray" position="7,1160" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;div id=&quot;borderwrapem&quot;&gt;&lt;div id=&quot;introwrapper&quot;&gt;
@@ -194944,26 +194854,19 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.melee lte 25&gt;&gt;&lt;&lt;set _opreward+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _opreward-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 90&gt;&gt;&lt;&lt;set _opreward-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 110&gt;&gt;&lt;&lt;set _opreward-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.str gte 50&gt;&gt;&lt;&lt;set _opreward-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.dex gte 60&gt;&gt;&lt;&lt;set _opreward-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set _opreward+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;fists&quot; and _opweapon is &quot;Power Katana&quot;&gt;&gt;&lt;&lt;set _opreward+=600&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.melee lte 25&gt;&gt;&lt;&lt;set _opreward+=100&gt;&gt;&lt;&lt;set _opreward2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _opreward-=400&gt;&gt;&lt;&lt;set _opreward2-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.melee gte 90&gt;&gt;&lt;&lt;set _opreward-=400&gt;&gt;&lt;&lt;set _opreward2-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.melee gte 110&gt;&gt;&lt;&lt;set _opreward-=200&gt;&gt;&lt;&lt;set _opreward2-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.str gte 50&gt;&gt;&lt;&lt;set _opreward-=200&gt;&gt;&lt;&lt;set _opreward2-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.dex gte 60&gt;&gt;&lt;&lt;set _opreward-=100&gt;&gt;&lt;&lt;set _opreward2-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon is &quot;fists&quot;&gt;&gt;
+&lt;&lt;set _opreward+=200&gt;&gt;&lt;&lt;set _opreward2+=200&gt;&gt;
+&lt;&lt;if _opweapon is &quot;Power Katana&quot;&gt;&gt;&lt;&lt;set _opreward+=600&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _opweapon2 is &quot;Power Axe&quot;&gt;&gt;&lt;&lt;set _opreward2+=400&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _opreward=Math.max(_opreward,50)&gt;&gt;
-
-&lt;&lt;if _npc.melee lte 25&gt;&gt;&lt;&lt;set _opreward2+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 50&gt;&gt;&lt;&lt;set _opreward2-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 90&gt;&gt;&lt;&lt;set _opreward2-=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.melee gte 110&gt;&gt;&lt;&lt;set _opreward2-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.str gte 50&gt;&gt;&lt;&lt;set _opreward2-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.dex gte 60&gt;&gt;&lt;&lt;set _opreward2-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;fists&quot;&gt;&gt;&lt;&lt;set _opreward2+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;fists&quot; and _opweapon2 is &quot;Power Axe&quot;&gt;&gt;&lt;&lt;set _opreward2+=400&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _opreward2=Math.max(_opreward2,50)&gt;&gt;
-
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;vendorleft&quot;&gt;
@@ -245266,28 +245169,22 @@ ADOLECENT EVENT MODS
 &lt;&lt;passhours 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $craftcommand lte 20 and $craftcommand isnot 15 and $craftcommand isnot 16 and _prog lte 99 and $effect is true&gt;&gt;
+&lt;&lt;if $effect is true&gt;&gt;
+
+&lt;&lt;if (($craftcommand lte 20 or $craftcommand gte 26) and _prog lte 99) or
+           ($craftcommand gte 15 and $craftcommand lte 19)&gt;&gt;
 &lt;&lt;audio &quot;smith&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $craftcommand gte 26 and _prog lte 99 and $effect is true&gt;&gt;
-&lt;&lt;audio &quot;smith&quot; play&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $craftcommand gte 15 and $craftcommand lte 19 and $effect is true&gt;&gt;
-&lt;&lt;audio &quot;smith&quot; play&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $craftcommand gte 1 and _prog gte 100 and $effect is true and $craftcommand isnot 19&gt;&gt;
+&lt;&lt;if $craftcommand gte 1 and _prog gte 100 and $craftcommand isnot 19&gt;&gt;
 &lt;&lt;audio &quot;equip&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $craftcommand is 101 and $effect is true&gt;&gt;
+&lt;&lt;if $craftcommand is 101&gt;&gt;
 &lt;&lt;audio &quot;goodhack&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $noshow to true&gt;&gt;
 &lt;&lt;include WeatherTimeEffect&gt;&gt;
@@ -302727,8 +302624,7 @@ You can manage an NPC&#39;s weapons, armor and applications in his Inventory. Le
 
 /* CUSTOM TRAITS BELOW */
 
-&lt;&lt;if $quest_mai lte 8&gt;&gt;&lt;&lt;set _traitsad to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $quest_mai is undefined&gt;&gt;&lt;&lt;set _traitsad to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_mai is undefined or $quest_mai lte 8&gt;&gt;&lt;&lt;set _traitsad to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $menus is 1 and _blockall isnot true&gt;&gt;
@@ -308486,14 +308382,7 @@ _assigned4/4
 &lt;&lt;if _breakbelow is true&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;signvendor&quot;&gt;Main attraction&lt;/div&gt;
 
-&lt;&lt;set _okmain to false&gt;&gt;
-
-&lt;&lt;if _npc.status isnot 5 and _npc.ostatus isnot 5&gt;&gt;
-&lt;&lt;if $willpower lte 9 or $likesadist gte 50 or _npc.traitnymfo gte 70&gt;&gt;&lt;&lt;set _okmain to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $willpower lte 0 or $likesadist gte 80&gt;&gt;&lt;&lt;set _okmain to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _okmain to (_npc.status isnot 5 and _npc.ostatus isnot 5) ? ($willpower lte 9 or $likesadist gte 50 or _npc.traitnymfo gte 70) : ($willpower lte 0 or $likesadist gte 80)&gt;&gt;
 
 &lt;center&gt;
 &lt;&lt;hovertip &quot;An assigned main attraction will be the centerpiece of all parties and events - if she is not busy, imprisoned or unconscious.&quot;&gt;&gt;
@@ -312941,10 +312830,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* DISTRUST */
 
-&lt;&lt;unset _libnpc&gt;&gt;
-&lt;&lt;if _npc.girlid is 39&gt;&gt;&lt;&lt;set _libnpc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _libnpc is true and _npc.willpower gte 1 and _npc.likesadist lte 89&gt;&gt;
+&lt;&lt;if _npc.girlid is 39 and _npc.willpower gte 1 and _npc.likesadist lte 89&gt;&gt;
 
 &lt;&lt;if _npc.traitdistrust gte 3 or _npc.willpower lte 24 or _npc.likesadist gte 70 or $quest_aria gte 99 or _slavemercs gte 4 or $vallaspris is true&gt;&gt;
 &lt;&lt;set _npc.masterlove=adl(_npc.masterlove,-5,60)&gt;&gt;
@@ -313067,11 +312953,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* LIBERATOR */
 
-&lt;&lt;unset _libnpc&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 39&gt;&gt;&lt;&lt;set _libnpc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _libnpc is true and _npc.willpower gte 1 and _npc.likesadist lte 89&gt;&gt;
+&lt;&lt;if _npc.girlid is 39 and _npc.willpower gte 1 and _npc.likesadist lte 89&gt;&gt;
 
 &lt;&lt;set _npc.likesadist=adl(_npc.likesadist,-random(1, 2),50)&gt;&gt;
 &lt;&lt;if $corfester gte 100&gt;&gt;&lt;&lt;set _npc.happiness=Math.min(_npc.happiness,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -313118,14 +313000,13 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* MATERIALISTIC */
 &lt;&lt;if _npc.traitmat gte 75&gt;&gt;
-
-&lt;&lt;if $lux is 2 and _npc.lossroll lte 3 and _npc.foods gte 2&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $lux is 3 and _npc.foods gte 2&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $lux is 4 and _npc.happiness lte 69 and _npc.masterlove lte 69 and _npc.foods gte 2&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set _npc.masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $lux is 4 and _npc.foods gte 2&gt;&gt;&lt;&lt;set _npc.masterlove=adl(_npc.masterlove,1,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if _npc.foods gte 2&gt;&gt;
+&lt;&lt;if $lux is 2 and _npc.lossroll lte 3&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lux is 3&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lux is 4 and _npc.happiness lte 69 and _npc.masterlove lte 69&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set _npc.masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lux is 4&gt;&gt;&lt;&lt;set _npc.masterlove=adl(_npc.masterlove,1,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.wear is &quot;eden&quot; and _lossroll lte 4&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -313275,13 +313156,8 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 
 /* SHY */
-&lt;&lt;if _npc.traitextro lte 24&gt;&gt;
-
-&lt;&lt;if $mch isnot undefined and $mch.yardslot1.type is 1&gt;&gt;&lt;&lt;set _grove to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npcs gte 20 and $purefester lte 74 and _grove isnot true&gt;&gt;
+&lt;&lt;if _npc.traitextro lte 24 and _npcs gte 20 and $purefester lte 74 and $mch isnot undefined and $mch.yardslot1.type isnot 1&gt;&gt;
 &lt;&lt;set _npc.happiness-=1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -313444,10 +313320,10 @@ SEE MID PASSAGE. SIBLINGS EFFECT is TRUE even upon dismiss
 
 
 /* TECHIE */
-&lt;&lt;if _npc.traittech gte 90 and $techmod is 2 and _lossroll is 1 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.traittech gte 90 and $techmod gte 3 and _lossroll lte 2 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if _npc.traittech gte 90 and _npc.bondage lte 0&gt;&gt;
+&lt;&lt;if $techmod is 2 and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $techmod gte 3 and _lossroll lte 2&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 /* TRADITIONALIST */
@@ -313879,7 +313755,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* QUESTS BELOW - MOVE? */
 
-&lt;&lt;if $quest_cat is 7 or $quest_cat is 8 or $quest_cat is 9&gt;&gt;&lt;&lt;set $quest_cat+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_cat gte 7 and $quest_cat lte 9&gt;&gt;&lt;&lt;set $quest_cat+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_cat is 10 and $ver gte 10830&gt;&gt;&lt;&lt;set $npc.av13.busy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_cat is 11 or $quest_cat is 12&gt;&gt;&lt;&lt;set $quest_cat+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
