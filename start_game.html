@@ -11676,11 +11676,11 @@ body: 1,
 &lt;&lt;include Checker&gt;&gt;
 
 
-/* ARENA TRAVEL TIME */
+/* TRAVEL TIME BACK (ARENA) */
 
-&lt;&lt;if $arenatravel is 2&gt;&gt;
-&lt;&lt;passmins 18&gt;&gt;
-&lt;&lt;unset $arenatravel&gt;&gt;
+&lt;&lt;if $wopos isnot 1&gt;&gt;
+&lt;&lt;passmins 12&gt;&gt;
+&lt;&lt;set $wopos to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -12232,7 +12232,7 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 &lt;&lt;if $busy gte 1 or $avatarunc is true or _nointer is true&gt;&gt;
 
 &lt;&lt;if _dayblock is 25&gt;&gt;
-[[Manage NPC|Arena][$managearslave to true, $action4 to true, $arenaplace to 1, $action to 1, $nodel to true, $arenatravel to 1]]
+[[Manage NPC|Arena][$managearslave to true, $action4 to true, $arenaplace to 1, $action to 1, $nodel to true]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if _hideopaq is undefined&gt;&gt;
 &lt;p class=&quot;usedpass&quot;&gt;sexual options&lt;/p&gt;
@@ -24336,7 +24336,6 @@ Oh… Fuck… (aroused, nervous giggle)… Why am I feeling like this… Mmmh…
 &lt;&lt;unset $noloop&gt;&gt;
 &lt;&lt;unset $wasinw&gt;&gt;
 &lt;&lt;unset $refuse&gt;&gt;
-&lt;&lt;unset $arenatravel&gt;&gt;
 
 &lt;&lt;if $battleship is 1&gt;&gt;&lt;&lt;set $battleship to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -166672,7 +166671,7 @@ This accessory, if equipped, provides a 15% chance of increasing Arousal (+1/rou
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $intalk isnot true and $gonnapir is true&gt;&gt;[[Return home|SMenu2][$wopos to 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $intalk isnot true and $gonnapir is true&gt;&gt;[[Return|SMenu2]]&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 &lt;div class=&quot;alt3&quot;&gt;
@@ -193769,6 +193768,10 @@ $connect units
 
 &lt;&lt;include GirlCheck&gt;&gt;
 
+&lt;&lt;if $wopos is 1&gt;&gt;
+&lt;&lt;passmins 12&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $wopos to 86&gt;&gt;
 &lt;&lt;set $inside to true&gt;&gt;
 &lt;&lt;set $noshow to true&gt;&gt;
@@ -193776,12 +193779,6 @@ $connect units
 
 &lt;&lt;include Checker&gt;&gt;
 &lt;&lt;include WeatherTimeEffect&gt;&gt;
-
-&lt;&lt;if $arenatravel is 1&gt;&gt;
-&lt;&lt;passmins 18&gt;&gt;
-&lt;&lt;set $arenatravel to 2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 
 
@@ -215008,8 +215005,8 @@ You&#39;re contemplating on putting your _callit, &#39;&#39;$girlname&#39;&#39;,
 
 &lt;&lt;if $action is 4 and $round lte 0 and _verok isnot true&gt;&gt;[[Back|SlaveMarket][$action to 0]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $action is 4 and $round lte 0 and _verok is true&gt;&gt;[[Return|SMenu2][$action to 0, $wopos to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action is 4 and $round gte 6 and _verok is true&gt;&gt;[[Return|SMenu2][$action to 0, $wopos to 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $action is 4 and $round lte 0 and _verok is true&gt;&gt;[[Return|SMenu2][$action to 0]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $action is 4 and $round gte 6 and _verok is true&gt;&gt;[[Return|SMenu2][$action to 0]]&lt;&lt;/if&gt;&gt;
 
 
 
@@ -216179,7 +216176,11 @@ The Esterhazy growth accelerators became unimaginably popular in the late 2200s.
 &lt;&lt;include OptionsOther&gt;&gt;
 
 &lt;&lt;if $healpart isnot 1&gt;&gt;
+&lt;&lt;if $gonnamedic&gt;&gt;
+[[Return|SMenu2]]
+&lt;&lt;else&gt;&gt;
 [[Leave|Heights]]
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
@@ -257640,7 +257641,7 @@ DEFEAT!
 
 &lt;&lt;else&gt;&gt;
 
-[[return|SMenu2][$wopos to 1, $intalk to false]]
+[[return|SMenu2][$intalk to false]]
 
 &lt;&lt;/if&gt;&gt;
 
@@ -279736,7 +279737,7 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mscaving is 65&gt;&gt;
-[[Back|Home]]
+[[Return|SMenu2]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -302380,6 +302381,12 @@ IGNORE
 &lt;&lt;/if&gt;&gt;
 
 
+/* TRAVEL TIME BACK */
+
+&lt;&lt;if $wopos isnot 1&gt;&gt;
+/*&lt;&lt;passmins 12&gt;&gt;*/
+&lt;&lt;set $wopos to 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $comesfromcity is true&gt;&gt;
 &lt;&lt;unset $activeslot&gt;&gt;
