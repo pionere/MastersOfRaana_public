@@ -25248,15 +25248,8 @@ Remaining withdrawal days: $boosterdays
 &lt;&lt;unset $gardenskill&gt;&gt;
 &lt;&lt;unset $accountskill&gt;&gt;
 &lt;&lt;set $headmaid to 0&gt;&gt;
-&lt;&lt;unset $headwill&gt;&gt;
-&lt;&lt;unset $headdis&gt;&gt;
-&lt;&lt;unset $headmal&gt;&gt; 
 &lt;&lt;unset $headchef&gt;&gt; 
 &lt;&lt;set $butler to 0&gt;&gt;
-&lt;&lt;unset $butlerwill&gt;&gt;
-&lt;&lt;unset $butlerdis&gt;&gt;
-&lt;&lt;unset $butlerpure&gt;&gt;  
-&lt;&lt;unset $butlerkind&gt;&gt;  
 &lt;&lt;/link&gt;&gt;
 
 &lt;&lt;link &quot;clear all followers&quot;&gt;&gt;
@@ -35051,9 +35044,6 @@ sur: 0,
 &lt;&lt;/for&gt;&gt;
 
 &lt;&lt;set $headmaid to 0&gt;&gt;
-&lt;&lt;unset $headwill&gt;&gt;
-&lt;&lt;unset $headdis&gt;&gt;
-&lt;&lt;unset $headmal&gt;&gt;
 &lt;&lt;set $hmres to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -303450,9 +303440,9 @@ Visit Whitehaven Academy to unlock this menu!
 
 &lt;&lt;if $titlechange gte 1&gt;&gt;
 &lt;&lt;set _npc.title to $titlechange&gt;&gt;
-&lt;&lt;if $titlechange is 1 and _npc.sex is 0&gt;&gt;&lt;&lt;set $headmaid to _npc.girlid&gt;&gt;&lt;&lt;set $headwill to _npc.willpower&gt;&gt;&lt;&lt;set $headdis to _npc.discipline&gt;&gt;&lt;&lt;set $headpure to _npc.traitpure&gt;&gt;&lt;&lt;set $headkind to _npc.kind&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $titlechange is 1 and _npc.sex is 0&gt;&gt;&lt;&lt;set $headmaid to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $titlechange is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to _npc.girlid&gt;&gt;&lt;&lt;set $butlerwill to _npc.willpower&gt;&gt;&lt;&lt;set $butlerdis to _npc.discipline&gt;&gt;&lt;&lt;set $butlerpure to _npc.traitpure&gt;&gt;&lt;&lt;set $butlerkind to _npc.kind&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $titlechange is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $titlechange is 2&gt;&gt;&lt;&lt;set $pantryskill to _npc.domestic&gt;&gt;&lt;&lt;set $pantry to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $titlechange is 3&gt;&gt;&lt;&lt;set $quarter to _npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -303475,8 +303465,8 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $titlechange is 0&gt;&gt;
-&lt;&lt;if _npc.title is 1 and _npc.sex is 0&gt;&gt;&lt;&lt;set $headmaid to 0&gt;&gt;&lt;&lt;unset $headwill&gt;&gt;&lt;&lt;unset $headdis&gt;&gt;&lt;&lt;unset $headpure&gt;&gt;&lt;&lt;unset $headkind&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.title is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to 0&gt;&gt;&lt;&lt;unset $butlerwill&gt;&gt;&lt;&lt;unset $butlerdis&gt;&gt;&lt;&lt;unset $butlerpure&gt;&gt;&lt;&lt;unset $butlerkind&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.title is 1 and _npc.sex is 0&gt;&gt;&lt;&lt;set $headmaid to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.title is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.title is 2&gt;&gt;&lt;&lt;set $pantry to 0&gt;&gt;&lt;&lt;unset $pantryskill&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -308798,9 +308788,9 @@ Use this to point to current NPC slot:
 
 
 
-&lt;&lt;if _npc.title is 1 and _npc.sex is 0&gt;&gt;&lt;&lt;set $headmaid to 0&gt;&gt;&lt;&lt;unset $headwill&gt;&gt;&lt;&lt;unset $headdis&gt;&gt;&lt;&lt;unset $headmal&gt;&gt;&lt;&lt;unset $headpure&gt;&gt;&lt;&lt;unset $headkind&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.title is 1 and _npc.sex is 0&gt;&gt;&lt;&lt;set $headmaid to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.title is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to 0&gt;&gt;&lt;&lt;unset $butlerwill&gt;&gt;&lt;&lt;unset $butlerdis&gt;&gt;&lt;&lt;unset $butlerpure&gt;&gt;&lt;&lt;unset $butlerkind&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.title is 1 and _npc.sex is 1&gt;&gt;&lt;&lt;set $butler to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.title is 2&gt;&gt;&lt;&lt;set $pantry to 0&gt;&gt;&lt;&lt;unset $pantryskill&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set $quarter to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -309591,6 +309581,32 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _paysal to $cash&gt;&gt;
 
 /* &quot;testnpc state&quot; makes sure no dead or permanently removed NPCs are calculated- &quot;state -2&quot; is for sold NPCs that are at Furrys etc and might return later.  */
+&lt;&lt;set $headwill=0&gt;&gt;
+&lt;&lt;set $headdis=0&gt;&gt;
+&lt;&lt;set $headpure=0&gt;&gt;
+&lt;&lt;set $headkind=0&gt;&gt; 
+&lt;&lt;set $butlerwill=0&gt;&gt;
+&lt;&lt;set $butlerdis=0&gt;&gt;
+&lt;&lt;set $butlerpure=0&gt;&gt;
+&lt;&lt;set $butlerkind=0&gt;&gt; 
+&lt;&lt;for _testnpc range $npc&gt;&gt;
+    &lt;&lt;if _testnpc.state gte 1&gt;&gt;
+        /* title update script */
+        &lt;&lt;if _testnpc.title is 1&gt;&gt;
+        &lt;&lt;if _testnpc.sex is 0&gt;&gt;
+        &lt;&lt;set $headwill=_testnpc.willpower&gt;&gt;
+        &lt;&lt;set $headdis =_testnpc.discipline&gt;&gt;
+        &lt;&lt;set $headpure=_testnpc.traitpure&gt;&gt;
+        &lt;&lt;set $headkind=_testnpc.kind&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $butlerwill=_testnpc.willpower&gt;&gt;
+        &lt;&lt;set $butlerdis =_testnpc.discipline&gt;&gt;
+        &lt;&lt;set $butlerpure=_testnpc.traitpure&gt;&gt;
+        &lt;&lt;set $butlerkind=_testnpc.kind&gt;&gt; 
+        &lt;&lt;/if&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;/for&gt;&gt;
 
 &lt;&lt;for _testnpc range $npc&gt;&gt;
     &lt;&lt;if _testnpc.state gte 0 or _testnpc.state is -2&gt;&gt;
@@ -311206,14 +311222,6 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* head maids own perfectionist increase chance */
 &lt;&lt;if _npc.title is 1 and _npc.discipline gte 50 and _npc.happiness gte 50 and _npc.willpower gte 25 and _lossroll lte 3&gt;&gt;&lt;&lt;set _npc.traitperf=adl(_npc.traitperf,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* title update script */
-&lt;&lt;if _npc.title is 1&gt;&gt;
-&lt;&lt;set $headwill to _npc.willpower&gt;&gt;
-&lt;&lt;set $headdis to _npc.discipline&gt;&gt;
-&lt;&lt;set $headpure to _npc.traitpure&gt;&gt;
-&lt;&lt;set $headkind to _npc.kind&gt;&gt; 
-&lt;&lt;/if&gt;&gt;
 
 /* others affected by headmaid */
 
