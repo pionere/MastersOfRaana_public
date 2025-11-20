@@ -196371,7 +196371,11 @@ The man carries a rifle and a leather armor.
 &lt;div class=&quot;tex17px&quot;&gt;&#39;&#39;REWARD:&#39;&#39; &amp;#36;$ar_reward&lt;/div&gt;
 &lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
-[[Inspect|CombatRoom][$inarena to true]]
+&lt;&lt;link Inspect&gt;&gt;
+	&lt;&lt;goto CombatRoom&gt;&gt;
+	&lt;&lt;set $inarena to true&gt;&gt;
+	&lt;&lt;passmins 6&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/center&gt;
@@ -196396,7 +196400,6 @@ The man carries a rifle and a leather armor.
 
 You take a closer look at your potential arena adversary.
 
-&lt;&lt;passmins 6&gt;&gt;
 &lt;&lt;set _pausemusic to true&gt;&gt;
 
 
