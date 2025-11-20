@@ -194127,24 +194127,8 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 
 
-&lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 2&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av2/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 3&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av3/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 4&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av4/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 5&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av5/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 6&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av6/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 7&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av7/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 8&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av8/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 9&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av9/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 10&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av10/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av11/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 12&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av12/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 13&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av13/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 14&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av14/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 15&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av15/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av16/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 17&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av17/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if _npc.girlid gte 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av&quot;+_npc.girlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.girlid gte 18&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -203485,36 +203469,10 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 [img[$imgpath + &quot;AvGen/edu_goodsmall.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $girlids is 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 2&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av2/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 3&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av3/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 4&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av4/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 5&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av5/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 6&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av6/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 7&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av7/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 8&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av8/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 9&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av9/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 10&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av10/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 11&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av11/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 12&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av12/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 13&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av13/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 14&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av14/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 15&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av15/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 16&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av16/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 17&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av17/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 18&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av18/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 19&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av19/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlids is 20&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av20/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $girlids gte 21&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av&quot; +$girlids +&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlids gte 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av&quot;+$girlids+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $girlids gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $girlids gte 100&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+$girlids+&quot;/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlids gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+$girlids+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;unset $girlids&gt;&gt;
 
@@ -214757,29 +214715,6 @@ You&#39;re contemplating on putting your _callit, &#39;&#39;$girlname&#39;&#39;,
 
 &lt;/div&gt;
 &lt;div class=&quot;pic&quot;&gt;
-
-
-&lt;&lt;if $girlid is 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 2&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av2/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 3&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av3/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 4&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av4/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 5&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av5/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 6&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av6/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 7&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av7/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 8&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av8/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 9&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av9/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 10&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av10/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 11&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av11/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 12&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av12/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 13&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av13/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 14&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av14/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 15&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av15/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 16&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av16/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 17&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av17/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 18&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av18/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 19&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av19/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlid is 20&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av20/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 
 &lt;&lt;if $action isnot 4&gt;&gt;
@@ -256368,29 +256303,9 @@ Carefully, you sneak up toward the sleeping &lt;&lt;if $age lte 21&gt;&gt;girl&l
 &lt;/div&gt;
 &lt;div class=&quot;pic&quot;&gt;
 
-&lt;&lt;set _tempgirlid to $girlid&gt;&gt;
+&lt;&lt;if $girlid is 1 or $girlid is 6&gt;&gt;
 
-&lt;&lt;if _tempgirlid is 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 2&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av2/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 3&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av3/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 4&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av4/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 5&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av5/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 6&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av6/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 7&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av7/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 8&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av8/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 9&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av9/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 10&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av10/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 11&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av11/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 12&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av12/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 13&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av13/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 14&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av14/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 15&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av15/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 16&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av16/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid is 17&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av17/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _tempgirlid gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _tempgirlid is 1 or _tempgirlid is 6&gt;&gt;
+&lt;&lt;set _img to &quot;Pics/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
 [img[_img + &quot;sleep1.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;AvGen/sleep1.jpg&quot;]]
