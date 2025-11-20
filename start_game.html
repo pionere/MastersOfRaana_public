@@ -85572,168 +85572,56 @@ Armor destroyed!
 
 &lt;&lt;if $masterhealth lte 0&gt;&gt;&lt;&lt;set _ene3b to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;else&gt;&gt;
+
+&lt;&lt;if _csarmor is &quot;padded&quot;&gt;&gt;&lt;&lt;set _soak to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;leather&quot;&gt;&gt;&lt;&lt;set _soak to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set _soak to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;combat&quot;&gt;&gt;&lt;&lt;set _soak to 21&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;weave&quot;&gt;&gt;&lt;&lt;set _soak to 23&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set _soak to 35&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;stealth&quot;&gt;&gt;&lt;&lt;set _soak to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set _soak to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;wega&quot;&gt;&gt;&lt;&lt;set _soak to 43&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;natural&quot;&gt;&gt;&lt;&lt;set _soak to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _csarmor is &quot;aet&quot;&gt;&gt;&lt;&lt;set _soak to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $equipped is &quot;psi&quot;&gt;&gt;&lt;&lt;set _soak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _ap is true and _soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ap is true and _soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ap is true and _soak gte 25&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ap is true and _soak gte 35&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ap is true and _soak gte 45&gt;&gt;&lt;&lt;set $damage+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _ene3 to $damage&gt;&gt;
+&lt;&lt;set _ene4 to _soak&gt;&gt;
+&lt;&lt;if _soak is undefined&gt;&gt;&lt;&lt;set _ene4 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _soak gte 1&gt;&gt;
+&lt;&lt;set $damage-=_soak&gt;&gt;
+&lt;&lt;set _ene5 to $damage&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event2 is true&gt;&gt;
-
-&lt;&lt;if $cs1_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set _soak to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set _soak to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set _soak to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set _soak to 21&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set _soak to 23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set _soak to 35&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;stealth&quot;&gt;&gt;&lt;&lt;set _soak to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set _soak to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set _soak to 43&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;natural&quot;&gt;&gt;&lt;&lt;set _soak to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs1_armor is &quot;aet&quot;&gt;&gt;&lt;&lt;set _soak to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $equipped is &quot;psi&quot;&gt;&gt;&lt;&lt;set _soak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _ap is true and _soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 25&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 35&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 45&gt;&gt;&lt;&lt;set $damage+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _ene3 to $damage&gt;&gt;
-&lt;&lt;set _ene4 to _soak&gt;&gt;
-&lt;&lt;if _soak is undefined&gt;&gt;&lt;&lt;set _ene4 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _soak gte 1&gt;&gt;
-&lt;&lt;set $damage-=_soak&gt;&gt;
-&lt;&lt;set _ene5 to $damage&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $cs1_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;if $cs1_health lte 0&gt;&gt;&lt;&lt;set $cs1_state to 0&gt;&gt;&lt;&lt;set _ene3b to true&gt;&gt;&lt;&lt;set $shewashit to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $event3 is true&gt;&gt;
-
-&lt;&lt;if $cs2_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set _soak to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set _soak to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set _soak to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set _soak to 21&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set _soak to 23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set _soak to 35&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;stealth&quot;&gt;&gt;&lt;&lt;set _soak to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set _soak to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set _soak to 43&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;natural&quot;&gt;&gt;&lt;&lt;set _soak to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_armor is &quot;aet&quot;&gt;&gt;&lt;&lt;set _soak to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _ap is true and _soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 25&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 35&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 45&gt;&gt;&lt;&lt;set $damage+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $equipped is &quot;psi&quot;&gt;&gt;&lt;&lt;set _soak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _ene3 to $damage&gt;&gt;
-
-&lt;&lt;set _ene4 to _soak&gt;&gt;
-&lt;&lt;if _soak is undefined&gt;&gt;&lt;&lt;set _ene4 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _soak gte 1&gt;&gt;
-&lt;&lt;set $damage-=_soak&gt;&gt;
-&lt;&lt;set _ene5 to $damage&gt;&gt;
-
-&lt;&lt;if $damage lte 0&gt;&gt;/*$cs2_name&#39;s armor soaks all damage!*/&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $damage gte 1&gt;&gt;/*$cs2_name&#39;s armor soaks _soak points, giving a final damage of $damage.*/&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $cs2_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $cs2_health lte 0&gt;&gt;&lt;&lt;set $cs2_state to 0&gt;&gt;&lt;&lt;set _ene3b to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event4 is true&gt;&gt;
-
-&lt;&lt;if $cs3_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set _soak to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set _soak to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set _soak to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set _soak to 21&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set _soak to 23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set _soak to 35&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;stealth&quot;&gt;&gt;&lt;&lt;set _soak to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set _soak to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set _soak to 43&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;natural&quot;&gt;&gt;&lt;&lt;set _soak to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_armor is &quot;aet&quot;&gt;&gt;&lt;&lt;set _soak to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $equipped is &quot;psi&quot;&gt;&gt;&lt;&lt;set _soak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _ap is true and _soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 25&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 35&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 45&gt;&gt;&lt;&lt;set $damage+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _ene3 to $damage&gt;&gt;
-
-&lt;&lt;set _ene4 to _soak&gt;&gt;
-&lt;&lt;if _soak is undefined&gt;&gt;&lt;&lt;set _ene4 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _soak gte 1&gt;&gt;
-&lt;&lt;set $damage-=_soak&gt;&gt;
-&lt;&lt;set _ene5 to $damage&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $cs3_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $cs3_health lte 0&gt;&gt;&lt;&lt;set $cs3_state to 0&gt;&gt;&lt;&lt;set _ene3b to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event5 is true&gt;&gt;
-
-&lt;&lt;if $cs4_armor is &quot;padded&quot;&gt;&gt;&lt;&lt;set _soak to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;leather&quot;&gt;&gt;&lt;&lt;set _soak to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;hleather&quot;&gt;&gt;&lt;&lt;set _soak to 14&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;combat&quot;&gt;&gt;&lt;&lt;set _soak to 21&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;weave&quot;&gt;&gt;&lt;&lt;set _soak to 23&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;duraplate&quot;&gt;&gt;&lt;&lt;set _soak to 35&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;stealth&quot;&gt;&gt;&lt;&lt;set _soak to 17&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;hulc&quot;&gt;&gt;&lt;&lt;set _soak to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;wega&quot;&gt;&gt;&lt;&lt;set _soak to 43&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;natural&quot;&gt;&gt;&lt;&lt;set _soak to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_armor is &quot;aet&quot;&gt;&gt;&lt;&lt;set _soak to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $equipped is &quot;psi&quot;&gt;&gt;&lt;&lt;set _soak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _ap is true and _soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 25&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 35&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ap is true and _soak gte 45&gt;&gt;&lt;&lt;set $damage+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _ene3 to $damage&gt;&gt;
-
-&lt;&lt;set _ene4 to _soak&gt;&gt;
-&lt;&lt;if _soak is undefined&gt;&gt;&lt;&lt;set _ene4 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _soak gte 1&gt;&gt;
-&lt;&lt;set $damage-=_soak&gt;&gt;
-&lt;&lt;set _ene5 to $damage&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $cs4_health-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;if $cs4_health lte 0&gt;&gt;&lt;&lt;set $cs4_state to 0&gt;&gt;&lt;&lt;set _ene3b to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
