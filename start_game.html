@@ -314097,6 +314097,7 @@ Dayblock 409: Ranch master zapin fields
 &lt;&lt;set $bookinvest+=either(5, 10, 2, 1, 6, 7)&gt;&gt;
 &lt;&lt;if _npc.int gte 60&gt;&gt;&lt;&lt;set $bookinvest+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.int gte 60 and _npc.girlid is 4&gt;&gt;&lt;&lt;set $bookinvest+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $bookinvest=Math.min($bookinvest,100)&gt;&gt;
 
 &lt;&lt;if $bookinvest gte 2 and $bookclue1 is undefined&gt;&gt;
 &lt;&lt;set $bookclue1 = {
@@ -314132,7 +314133,6 @@ girlname: _npc.girlname
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $bookinvest gte 100&gt;&gt;&lt;&lt;set $bookinvest to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
