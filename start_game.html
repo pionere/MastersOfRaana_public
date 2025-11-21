@@ -67500,7 +67500,6 @@ This trait has a 10% chance of decreasing by one point per day if _girlname is a
 
 
 &lt;&lt;set _yield to 0&gt;&gt;
-&lt;&lt;set _rangede to 0&gt;&gt;
 &lt;&lt;set _surv to 0&gt;&gt;
 &lt;&lt;set _traits to 0&gt;&gt;
 &lt;&lt;if _npc.survival lte 9&gt;&gt;&lt;&lt;set _yield-=10&gt;&gt; &lt;&lt;set _surv-=10&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -67516,13 +67515,10 @@ This trait has a 10% chance of decreasing by one point per day if _girlname is a
 
 &lt;&lt;set _yield+=_npc.meleeweapon is &quot;knife&quot; ? 5 : -10&gt;&gt;
 &lt;&lt;if _npc.weapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _yield-=65&gt;&gt;&lt;&lt;set _rangede to -1&gt;&gt;
-
-&lt;&lt;elseif _npc.weapon is &quot;plasma&quot; or _npc.weapon is &quot;pistol&quot; or _npc.weapon is &quot;r55&quot; or _npc.weapon is &quot;gl&quot; or _npc.weapon is &quot;cybercannon&quot; or _npc.weapon is &quot;revolver&quot; or _npc.weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _yield-=40&gt;&gt;
-
 &lt;&lt;elseif _npc.weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _yield+=5&gt;&gt;&lt;&lt;set _rangede to 1&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;&lt;&lt;set _rangede to 2&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _yield+=14&gt;&gt;&lt;&lt;set _rangede to 2&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;&lt;&lt;set _rangede to 3&gt;&gt;
+&lt;&lt;elseif _npc.weapon is &quot;rifle&quot; or _npc.weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;&lt;&lt;set _rangede to 2&gt;&gt;
+&lt;&lt;elseif _npc.weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _yield+=14&gt;&gt;&lt;&lt;set _rangede to 3&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set _yield-=40&gt;&gt;&lt;&lt;set _rangede to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -67551,12 +67547,15 @@ The Hunter automatically turns Skins into Leather and Raw meat into Food rations
 &#39;&#39;BASE YIELD VALUE&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Survival skill:&#39;&#39; &lt;&lt;if _surv gte 0&gt;&gt;&lt;div class=&quot;green&quot;&gt;+_surv.&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_surv.&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Traits:&#39;&#39; &lt;&lt;if _traits gte 0&gt;&gt;&lt;div class=&quot;green&quot;&gt;+_traits.&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_traits.&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/li&gt;
-
-&lt;&lt;if _npc.meleeweapon is &quot;knife&quot;&gt;&gt;&lt;li&gt;&#39;&#39;Equipped knife:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5.&lt;/div&gt;&lt;/li&gt; &lt;&lt;else&gt;&gt;&lt;li&gt;&#39;&#39;No equipped knife:&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10.&lt;/div&gt;&lt;/li&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangede is -1&gt;&gt; &lt;li&gt;&#39;&#39;No ranged weapon:&#39;&#39; &lt;div class=&quot;red&quot;&gt;-65.&lt;/div&gt;&lt;/li&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangede is 0&gt;&gt; &lt;li&gt;&#39;&#39;Ranged weapon:&#39;&#39; &lt;div class=&quot;red&quot;&gt;-45.&lt;/div&gt;&lt;/li&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangede is 1&gt;&gt; &lt;li&gt;&#39;&#39;Ranged weapon:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5.&lt;/div&gt;&lt;/li&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangede gte 2&gt;&gt; &lt;li&gt;&#39;&#39;Ranged weapon:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+10.&lt;/div&gt;&lt;/li&gt; &lt;&lt;/if&gt;&gt;
+&lt;li&gt;&lt;&lt;if _npc.meleeweapon is &quot;knife&quot;&gt;&gt;&#39;&#39;Equipped knife:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5.&lt;/div&gt;&lt;&lt;else&gt;&gt;&#39;&#39;No equipped knife:&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10.&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/li&gt;
+&lt;li&gt;&#39;&#39;Ranged weapon:&#39;&#39; 
+&lt;&lt;if _rangede is -1&gt;&gt;&lt;div class=&quot;red&quot;&gt;-65.&lt;/div&gt;
+&lt;&lt;elseif _rangede is 0&gt;&gt;&lt;div class=&quot;red&quot;&gt;-40.&lt;/div&gt;
+&lt;&lt;elseif _rangede is 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;+5.&lt;/div&gt;
+&lt;&lt;elseif _rangede is 2&gt;&gt;&lt;div class=&quot;green&quot;&gt;+10.&lt;/div&gt;
+&lt;&lt;elseif _rangede is 3&gt;&gt;&lt;div class=&quot;green&quot;&gt;+14.&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Total yield modifier:&#39;&#39; &lt;&lt;if _yield gte 0&gt;&gt;&lt;div class=&quot;green&quot;&gt;+_yield.&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_yield.&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/li&gt;
 &lt;br&gt;
 &#39;&#39;RISKS&#39;&#39;&lt;br&gt;
@@ -313008,7 +313007,6 @@ girlname: _npc.girlname
 &lt;&lt;set _totmeat to 0&gt;&gt;
 
 &lt;&lt;set _yield to 0&gt;&gt;
-&lt;&lt;set _rangede to 0&gt;&gt;
 &lt;&lt;set _surv to 0&gt;&gt;
 &lt;&lt;set _traits to 0&gt;&gt;
 &lt;&lt;if _npc.survival lte 9&gt;&gt;&lt;&lt;set _yield-=10&gt;&gt; &lt;&lt;set _surv-=10&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -313020,12 +313018,11 @@ girlname: _npc.girlname
 &lt;&lt;if _npc.traitwild gte 1 or _npc.traitjag gte 1&gt;&gt;&lt;&lt;set _yield+=15&gt;&gt;&lt;&lt;set _traits+=15&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _yield+=_npc.meleeweapon is &quot;knife&quot; ? 5 : -10&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _yield-=65&gt;&gt;&lt;&lt;set _rangede to -1&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _yield+=5&gt;&gt;&lt;&lt;set _rangede to 1&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;&lt;&lt;set _rangede to 2&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _yield+=14&gt;&gt;&lt;&lt;set _rangede to 2&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;&lt;&lt;set _rangede to 3&gt;&gt;
-&lt;&lt;elseif _npc.weapon is &quot;plasma&quot; or _npc.weapon is &quot;pistol&quot; or _npc.weapon is &quot;r55&quot; or _npc.weapon is &quot;gl&quot; or _npc.weapon is &quot;cybercannon&quot; or _npc.weapon is &quot;revolver&quot; or _npc.weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _yield-=40&gt;&gt;
+&lt;&lt;if _npc.weapon is &quot;none&quot;&gt;&gt;&lt;&lt;set _yield-=65&gt;&gt;
+&lt;&lt;elseif _npc.weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _yield+=5&gt;&gt;
+&lt;&lt;elseif _npc.weapon is &quot;rifle&quot; or _npc.weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _yield+=10&gt;&gt;
+&lt;&lt;elseif _npc.weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _yield+=14&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set _yield-=40&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
