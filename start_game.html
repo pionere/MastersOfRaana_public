@@ -312011,17 +312011,17 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 
 
-&lt;&lt;if _isaway is undefined&gt;&gt; /* checks if NPC has an away assignment */
+&lt;&lt;if _isaway is undefined and _npc.bondage lte 0&gt;&gt; /* checks if NPC has an away assignment */
 
 &lt;&lt;if $corfester gte 5 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.likesadist lte 69 and _roll lte $corfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.likesadist+=1&gt;&gt;&lt;&lt;set $corfester-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likesadist lte 69 and _roll lte $corfester&gt;&gt;&lt;&lt;set _npc.likesadist+=1&gt;&gt;&lt;&lt;set $corfester-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
 &lt;&lt;if $duckperv is true&gt;&gt;
-&lt;&lt;if _npc.traitperv lte 99 and _roll lte $corfester and _lossroll is 1 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.traitperv+=1&gt;&gt;&lt;&lt;set $corfester-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.traitnymfo lte 99 and _roll lte $corfester and _lossroll is 1 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.traitnymfo+=1&gt;&gt;&lt;&lt;set $corfester-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitperv lte 99 and _roll lte $corfester and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.traitperv+=1&gt;&gt;&lt;&lt;set $corfester-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitnymfo lte 99 and _roll lte $corfester and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.traitnymfo+=1&gt;&gt;&lt;&lt;set $corfester-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -312031,48 +312031,48 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 &lt;&lt;if $badfester gte 5 and _rannpcroll is 1 and _badblock is undefined&gt;&gt;
 &lt;&lt;set _badroll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.happiness gte 80 and _badroll lte $badfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;set $badfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.happiness gte 50 and _badroll lte $badfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;set $badfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.traitpure gte 50 and _badroll lte $badfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.traitpure-=1&gt;&gt;&lt;&lt;set $badfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.happiness gte 80 and _badroll lte $badfester&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;set $badfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.happiness gte 50 and _badroll lte $badfester&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;set $badfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitpure gte 50 and _badroll lte $badfester&gt;&gt;&lt;&lt;set _npc.traitpure-=1&gt;&gt;&lt;&lt;set $badfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $freedomfester gte 5 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.willpower lte 69 and _roll lte $freedomfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.willpower+=1&gt;&gt;&lt;&lt;set $freedomfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.willpower lte 69 and _roll lte $freedomfester&gt;&gt;&lt;&lt;set _npc.willpower+=1&gt;&gt;&lt;&lt;set $freedomfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $purefester gte 5 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.happiness lte 69 and _roll lte $purefester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set $purefester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.likesadist gte 10 and _roll lte $purefester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.likesadist-=1&gt;&gt;&lt;&lt;set $purefester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.traitpure lte 24 and _roll lte $purefester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.traitpure+=1&gt;&gt;&lt;&lt;set $purefester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.happiness lte 69 and _roll lte $purefester&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set $purefester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likesadist gte 10 and _roll lte $purefester&gt;&gt;&lt;&lt;set _npc.likesadist-=1&gt;&gt;&lt;&lt;set $purefester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitpure lte 24 and _roll lte $purefester&gt;&gt;&lt;&lt;set _npc.traitpure+=1&gt;&gt;&lt;&lt;set $purefester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $workfester gte 5 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.stress lte 4 and _roll lte $workfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.stress+=4&gt;&gt;&lt;&lt;set $workfester-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.discipline lte 59 and _roll lte $workfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.discipline+=1&gt;&gt;&lt;&lt;set $workfester-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.stress lte 4 and _roll lte $workfester&gt;&gt;&lt;&lt;set _npc.stress+=4&gt;&gt;&lt;&lt;set $workfester-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.discipline lte 59 and _roll lte $workfester&gt;&gt;&lt;&lt;set _npc.discipline+=1&gt;&gt;&lt;&lt;set $workfester-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /*
 &lt;&lt;if $workfester gte 25 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 120)&gt;&gt;
-&lt;&lt;if _roll lte $workfester and _npc.bondage lte 0 and _npc.traitwork lte 94&gt;&gt;&lt;&lt;set _npc.traitwork+=1&gt;&gt;&lt;&lt;set $workfester-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _roll lte $workfester and _npc.traitwork lte 94&gt;&gt;&lt;&lt;set _npc.traitwork+=1&gt;&gt;&lt;&lt;set $workfester-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 */
 
 &lt;&lt;if $goodfester gte 5 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.happiness lte 99 and _roll lte $goodfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set $goodfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.scarefactor gte 2 and _roll lte $goodfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.scarefactor-=1&gt;&gt;&lt;&lt;set $goodfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.happiness lte 99 and _roll lte $goodfester&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set $goodfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.scarefactor gte 2 and _roll lte $goodfester&gt;&gt;&lt;&lt;set _npc.scarefactor-=1&gt;&gt;&lt;&lt;set $goodfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $hardfester gte 5 and _rannpcroll is 1 and _npc.status lte 3&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
-&lt;&lt;if _npc.willpower gte 15 and _roll lte $hardfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.willpower-=1&gt;&gt;&lt;&lt;set $hardfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.afraid lte 9 and _roll lte $hardfester and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.afraid+=1&gt;&gt;&lt;&lt;set $hardfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.willpower gte 15 and _roll lte $hardfester&gt;&gt;&lt;&lt;set _npc.willpower-=1&gt;&gt;&lt;&lt;set $hardfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.afraid lte 9 and _roll lte $hardfester&gt;&gt;&lt;&lt;set _npc.afraid+=1&gt;&gt;&lt;&lt;set $hardfester-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
