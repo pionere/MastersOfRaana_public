@@ -11155,17 +11155,6 @@ body: 1,
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 
-&lt;&lt;if $action56 isnot true&gt;&gt;
-&lt;&lt;if $action55 is true&gt;&gt;
-[[Own slaves/7000$|Start][$action56 to true, $cash=7000]]
-&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-[[Skip Cre/15000$|Home][$cash=15000]]
-&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;link &quot;return&quot;&gt;&gt;
-&lt;&lt;goto Start&gt;&gt;
-&lt;&lt;unset $action55&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;else&gt;&gt;
 [[Start!|AbsoFirst][$pic to 1, $epic to true, $noclick to true]]
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
@@ -11177,19 +11166,10 @@ body: 1,
 
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;[[Debug tools|Start][$action55 to true]]
-&lt;&lt;else&gt;&gt;
-
 &lt;span id=&quot;noIcon&quot;&gt;[[WIKI|https://www.mastersofraana.com/wiki/]]&lt;/span&gt;
 
-&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-
-
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;/center&gt;
@@ -14231,11 +14211,6 @@ What position did you have in mind?
 
 &lt;div class=&quot;alt2&quot;&gt;
 &lt;&lt;include OptionsOther&gt;&gt;
-&lt;&lt;if $action12 is true and $action6 is true and $action11 is false and $state is 0&gt;&gt;
-[[Make it rough!|Pussymaster][$action11 to true]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action11 is true and $state is 0&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Make it rough!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 
@@ -24248,8 +24223,6 @@ Oh… Fuck… (aroused, nervous giggle)… Why am I feeling like this… Mmmh…
 &lt;&lt;unset $respro2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $upact to 99&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;unset $traits&gt;&gt;
 &lt;&lt;unset $nicsu&gt;&gt;
 &lt;&lt;unset $nicsu2&gt;&gt;
@@ -24282,8 +24255,6 @@ Oh… Fuck… (aroused, nervous giggle)… Why am I feeling like this… Mmmh…
 
 /* randomizer for annexout */
 &lt;&lt;set $ranan to either(0,1,4,6,11,12,13,16,17,20,27,30,42,128)&gt;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $ranan to 27&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $quest_dengi is 4&gt;&gt;&lt;&lt;set $checkdengihome to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -24671,16 +24642,6 @@ Remaining withdrawal days: $boosterdays
 
 
 
-&lt;&lt;if $state is 0 and $adssa is true&gt;&gt;
-
-&lt;&lt;link &#39;check npcs&#39;&gt;&gt;
-&lt;&lt;goto MScaving&gt;&gt;
-&lt;&lt;set $mscaving to 999&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
 /* QUEST GO BELOW */
 
  /* see rebel progress */
@@ -24885,7 +24846,7 @@ Remaining withdrawal days: $boosterdays
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $gotofac isnot true and $warning isnot true and $gotoother isnot true and $gotoman isnot true and $cheats isnot true and _linemod isnot true&gt;&gt;
+&lt;&lt;if $gotofac isnot true and $warning isnot true and $gotoother isnot true and $gotoman isnot true and _linemod isnot true&gt;&gt;
 &lt;div class=&quot;ul&quot;&gt;
 [[Manage|Home1][$gotoman to true]]
 [[Facilities|Home1][$gotofac to true]]
@@ -25100,8 +25061,6 @@ Remaining withdrawal days: $boosterdays
 &lt;&lt;set $takensl to 0&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
-&lt;&lt;if $ownclea is undefined and $invhold gte 45&gt;&gt;[[clea|RoamAdd][$c_npc to &quot;av39&quot;, $adpos to 0, $ownclea to 1]]&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $postcre is undefined&gt;&gt;[[pick traits|Ntrait][$postcre to 1, $crepage to 3]]&lt;&lt;/if&gt;&gt;
 
 
@@ -25290,7 +25249,7 @@ slot4: -1,
 
 &lt;div class=&quot;alt2&quot;&gt;
 &lt;&lt;include OptionsOther&gt;&gt;
-&lt;&lt;if $gotofac isnot true and $gotoother isnot true and $gotoman isnot true and $cheats isnot true and _linemod isnot true&gt;&gt;
+&lt;&lt;if $gotofac isnot true and $gotoother isnot true and $gotoman isnot true and _linemod isnot true&gt;&gt;
 &lt;&lt;if $stampoints gte 1&gt;&gt;[[Spend time|Home][$addtime to true]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;include Conclude&gt;&gt;
@@ -25298,28 +25257,7 @@ slot4: -1,
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $state is 0 and _linemod isnot true&gt;&gt;
-[[Cash/stuff|Home][$cash+=5000, $ownrevolver+=2, $a45=19, $ownholiday=1, $owngown=1, $moeday to 4, $owndildost to 1, $ownbuttplug to 1, $ownteddy to 1, $ownchoco to 1, $owncandybowl to 1, $ownrope to 1, $owncamp to 1, $ownbackback to 1, $owncuffs to 1, $ownanalhook to 1, $ownfishstick to 1, $ownhandcomp1 to 1, $ownhandcomp2 to 1, $ownsledge to 1, $ownslcombat+=1, $ownhandcomp1 to 1, $tech=79, $complevel to 1, $dice to 2, $ownwhipstick to 1, $owngags to 1, $ownanalhook to 1, $owndildo to 1, $owndildost to 1, $ownslcombat to 23, $meat to 42, $cloth to 16, $skins to 12, $scrap to 22, $cboards to 56, $leather to 55, $textile to 55, $gold to 55, $steel to 46, $ownknife+=200, $credit=9000, $owngown=2, $owngown2=2, $owneden to 5, $ownstring to 44, $ownpowerkatana+=1, $owncoil+=10, $ownplasma+=2, $aenergy to 90, $acoil to 6652, $disp_dv to 1000, $ownslduraplate to 5, $ownslweave to 2, $ownlace to 4, $ownharness to 1, $ownharness2 to 1, $ownslduraplate to 3, $ownpistol to 4, $ownslpadded to 3, $ownslleather to 3, $ownslhleather to 3, $ownslstealth to 4, $ownplasma to 4, $owncoil to 4, $ownpowerkatana to 4, $leathersoak to 4, $durasoak to 32, $cprice to 1, $ownrifle+=100, $ownpentacle=1, $ownbooster to 3, $celior to true,  $cash+=50000, $ownduraplate to true, $a9mm to 4302, $bolts to 2213, $aenergy to 772, $a45 to 20, $ownshotgun to 15, $ownautorifle to 75, $ownsword to 75, $ownpowerkatana to 55, $ownstaff to 55, $ownsledge to 55, $ownweave to true, $ownhleather to true, $ownleather to true, $ownpadded to true, $owncombat to true, $foodstuff to 764, $durasteel to 55, $a12g to 555, $a306 to 553, $ownrevolver to 5, $credit to 20000, $swag to 6434, $wood to 66, $steel to 55, $connect to 55, $nanites to 55, $injectors to 55, $gpow to 55, $owncrossbow to 20, $paddedsoak to 5, $owngridkey to 3, $liveroom to 4, $ownenter to true, $ownstimb to 876, $ownaplug1 to 5, $ownaplug2 to 1, $ownaplug3 to 2, $durasteel to 1000, $connect to 1000, $days to 43, $own50c to 6, $ownprifle to 5, $owngsword to 66, $a50 to 3, $bedroom to 4, $ownnipplechains to 5, $owncollar to 66, $ownointment to 55, $ownbreaker to 5, $meat to 5549, $skins to 5594, $foodstuff+=1000, $ownhulcparts+=5, $pcores+=5, $owngl to 5, $agl to 66, $ownhaze to 55, $ownneura to 55, $bhpoints to 13, $hulcmaxsoak to 50, $ownslhulc to 55, $ownimpflowers to 55, $ownyouth to 50, $disp_dv to 500, $tech to 25, $owntext2 to 1, $leathersoak to 6, $ownhulcparts to 55, $pcores to 55, $ownrrc to 1, $wood to 543, $credit=2000000000, $ownwega to true, $wegasoak to 43, $ownslwega to 55, $ownsofa1 to 4, $ownsofa2 to 4, $ownshelf to 599, $owngchair to 4, $owndinnerset to 5, $ownaeryn to 5, $ownprerug to 5, $ownpredec to 4, $ownart+=66, $ownbed1 to 5, $ownbed2 to 5, $owndesk to 6, $ownartifact3 to 66, $mcpower to 5, $owncrossbow+=1000, $ownstima to 600, $owncyber+=5, $awega+=1, $cash+=10000000, $tech to 70, $ranged to 88, $staart to 1, $ownfelani to 5, $ownkessian to 1, $faction.ikaanos.standing to 65, $faction.ikaanos.lib to 45, $acabook5 to 88, $techbook5 to 98, $manibook5 to 68, $bondbook5 to 70, $medbook5 to 77, $ownminigun to 5, $ownmal to 5, $acabook1 to 1, $acabook2 to 1, $acabook3 to 1, $ownkessian to 100, $ownmal to 1, $wrool to 6, $diamond+=9996, $embryl+=9993, $copper+=155, $emerald+=9992, $gold to 545234324, $silver+=5253, $silverore to 555, $goldore to 44444, $copperore to 22222, $ownprospect to 1, $owngaxe to 4, $ownneme to 4, $a50srr to 532, $owniceblade to 5, $ownnecklace3 to 19, $ownnecklace4 to 19, $ownnecklace5 to 19, $ownriding to 5, $ownazuk to 66, $ownmaid to 5, $tobacco to 55, $ownlesano to 666, $ownr55 to 5]]
-
-[[Skills|Home][$manipulate to 90, $masterwill to 90, $masterint to 90, $ownstimb to 143, $mastercharm to 90, $masterint to 55, $aca to 96, $ranged to 120, $disp_dv to 600, $ownsmith to 1, $ownlab to 1, $ownbrack to 1, $medicine to 90, $masterstamina to 90, $artisan to 102, $blacksmith to 98, $tech to 100, $melee to 120, $masterstrength to 120, $mcrel.devotion to 130, $medicine to 60, $knowunder to true,  $gambling to 55, $whipskill to 120, $augirls to 99, $repairfester+=15, $quest_nic to 9, $mctraitbrain to 100, $mctraitat to 100, $mctraittough to 100, $hroo_disp to 600, $hwalton_disp to 600, $mybattles to 266, $masterhealth-=20, $masterint to 100, $medicine to 100, $med to 111, $ranged to 100, $masterstamina to 100, $quest_skye to 2, $skye_disp to 5, $occult to 85, $occult2 to 100, $occult4 to 100, $occult3 to 100, $occult5 to 100, $occult6 to 100, $ownkessian to 100, $mctraitmountain to 100, $mctraittask to 100, $mctraitpin to 100, $bondskill to 120, $mctraitdefender to 100, $swag+=swa]]
-
-&lt;&lt;include Lui&gt;&gt;
-[[art|RoamAdd][$c_npc to &quot;av51&quot;]]
-
-[[Combat|CombatRoom][$combat to 199]]
-
-[[Aria q|Home][$quest_aria to 99, $faction.ikaanos.state to 2, $ariawarrior to 1, $owniona to 0, $owneve to 0, $quest_aria2 to 0, $terrormonster to 1, $quest_interro2 to 7, $interro_spec to &quot;Charile&quot;]]
-[[rebel go|Home][$faction.rebel.power to 2500, $faction.rebel.men to 2500, $quest_aria to 13, $quest_aria2 to 2, $quest_aria3 to 2, $quest_aria4 to 2, $ariasus to 0, $nwo to 5]]
-
-
-
-[[Conclude cheat|Autosave2][$eventroll66 to 10, $rannpc to 25, $eventroll0 to 41, $eventroll1 to random(91, 91), $pollroll to either(92, 92), $dayend to true, $tired to false, $action to 1, $endtunnel to true, $randesc to random(1, 4), $descroll to random(1, 4), $goweather to 1]]
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $gotofac is true or $gotoother is true or $gotoman is true or $cheats is true or $debugg is true&gt;&gt;
+&lt;&lt;if $gotofac is true or $gotoother is true or $gotoman is true or $debugg is true&gt;&gt;
 
 
 &lt;&lt;if $debugg is true&gt;&gt;
@@ -25372,7 +25310,7 @@ slot4: -1,
 
 
 
-[[Return|Home1][$gotofac to false, $gotoother to false, $gotoman to false, $cheats to false, $debugg to false]]
+[[Return|Home1][$gotofac to false, $gotoother to false, $gotoman to false, $debugg to false]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -51042,7 +50980,6 @@ $girlnames &#39;&#39;Defiance (+1)&#39;&#39; has increased!
 
 
 
-&lt;&lt;unset $eventbbb&gt;&gt;
 &lt;&lt;unset $bondboost&gt;&gt;
 &lt;&lt;set $wopos to 3&gt;&gt;
 &lt;&lt;set $inside to false&gt;&gt;
@@ -51103,7 +51040,6 @@ $girlnames &#39;&#39;Defiance (+1)&#39;&#39; has increased!
 &lt;&lt;set $adpos2 to 0&gt;&gt;
 &lt;&lt;set $adpos3 to 0&gt;&gt;
 &lt;&lt;set $adpos4 to 0&gt;&gt;
-&lt;&lt;set $testing1 to true&gt;&gt;
 &lt;&lt;set _stoppe to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -51114,7 +51050,6 @@ $girlnames &#39;&#39;Defiance (+1)&#39;&#39; has increased!
 &lt;&lt;set $scaving to 54&gt;&gt;
 &lt;&lt;goto Scaving&gt;&gt;
 &lt;&lt;unset $comesfromhouse2&gt;&gt;
-&lt;&lt;set $testing2 to true&gt;&gt;
 &lt;&lt;set _stoppe to true&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -56349,7 +56284,6 @@ Westside raiders
 
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;set $testbug to true&gt;&gt;
 &lt;&lt;set _turnround to true&gt;&gt;
 &lt;&lt;set $action3 to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -75333,8 +75267,6 @@ A successful attempt would set _girlnames &#39;&#39;salary to $0&#39;&#39; and l
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 19&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $chance+=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 /* bribes */
 &lt;&lt;if $adpos2 is 1&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $adpos2 is 2&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85310,11 +85242,9 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
 
 &lt;&lt;if $skillroll lte 4&gt;&gt;
 &lt;br&gt;
-&lt;&lt;set _roundy2 to $curpos&gt;&gt;
 &lt;&lt;if $curpos is 2&gt;&gt;
 &lt;&lt;if $round is 1 and $ranged lte 149&gt;&gt;&lt;br&gt;&lt;br&gt;Your RANGED SKILL has increased!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 2 and $cs1_ranged lte 149&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;$cs1_name&#39;s RANGED SKILL has increased!&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _roundy to $round&gt;&gt;
 &lt;&lt;if $round is 3 and $cs2_ranged lte 149&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;$cs2_name&#39;s RANGED SKILL has increased!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 4 and $cs3_ranged lte 149&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;$cs3_name&#39;s RANGED SKILL has increased!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 5 and $cs4_ranged lte 149&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;$cs4_name&#39;s RANGED SKILL has increased!&lt;&lt;/if&gt;&gt;
@@ -87317,7 +87247,7 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $combat is 114 or $combat is 14 or $combat gte 200 or $invhold gte 50 or $combat is 133 or _advfight is true or $combat is 146 or $combat is 165&gt;&gt;
+&lt;&lt;if $combat is 114 or $combat is 14 or $combat gte 200 or $combat is 133 or _advfight is true or $combat is 146 or $combat is 165&gt;&gt;
 
 &lt;&lt;if !($equipped is &quot;knife&quot; or $equipped is &quot;sword&quot; or $equipped is &quot;fists&quot;)&gt;&gt;
 &lt;&lt;set _randomroll=_badass_idx&gt;&gt;
@@ -87613,9 +87543,7 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $event4 to false&gt;&gt;
 &lt;&lt;set $event5 to false&gt;&gt;
 
-&lt;&lt;if $state gte 1&gt;&gt;
 &lt;&lt;include CAuto&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $ownknife2 gte 1 and $ownknife lte 0&gt;&gt;&lt;&lt;set $ownknife2 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -96220,11 +96148,7 @@ You decide to attack the vagrants of Piker&#39;s Pond!
 &lt;&lt;set $enemy1_poswant = 2&gt;&gt;
 &lt;&lt;set $enemy1 = &quot;HELO&quot;&gt;&gt;
 &lt;&lt;set $enemy1_weapon = &quot;plasma&quot;&gt;&gt;
-&lt;&lt;if $state gte 1&gt;&gt;
 &lt;&lt;set $enemy1_health = 250&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $enemy1_health = 2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy1_htype = 250&gt;&gt;
 &lt;&lt;set $enemy1_wpskill = 100&gt;&gt;
 &lt;&lt;set $enemy1_dex = 110&gt;&gt;
@@ -96235,7 +96159,6 @@ You decide to attack the vagrants of Piker&#39;s Pond!
 &lt;&lt;set $enemy1_level = 11&gt;&gt;
 &lt;&lt;set $enemy1_id = 355&gt;&gt;
 
-&lt;&lt;if $state gte 1&gt;&gt;
 &lt;&lt;set $enemy2_type = 18&gt;&gt;
 &lt;&lt;set $enemy2_pos = 2&gt;&gt;
 &lt;&lt;set $enemy2_state to 2&gt;&gt;
@@ -96299,8 +96222,6 @@ You decide to attack the vagrants of Piker&#39;s Pond!
 &lt;&lt;set $enemy5_soak = 40&gt;&gt;
 &lt;&lt;set $enemy5_sex = &quot;him&quot;&gt;&gt;
 &lt;&lt;set $enemy5_level = 11&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $loot to 4020&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -97877,17 +97798,6 @@ You engage Lt. Masters&#39; crew!
 &lt;&lt;set $enemy5_level = 15&gt;&gt;
 
 
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $enemy1_health = 1&gt;&gt;
-&lt;&lt;set $enemy2_health = 1&gt;&gt;
-&lt;&lt;set $enemy3_health = 1&gt;&gt;
-&lt;&lt;set $enemy4_health = 1&gt;&gt;
-&lt;&lt;set $enemy5_health = 1&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;set $loot to 2000&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -98078,17 +97988,6 @@ After making your way through the large building, you&#39;re confronted by anoth
 
 
 &lt;&lt;/if&gt;&gt;
-
-
-/*
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $enemy1_health = 1&gt;&gt;
-&lt;&lt;set $enemy2_health = 1&gt;&gt;
-&lt;&lt;set $enemy3_health = 1&gt;&gt;
-&lt;&lt;set $enemy4_health = 1&gt;&gt;
-&lt;&lt;set $enemy5_health = 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-*/
 
 &lt;&lt;set $loot to 2000&gt;&gt;
 
@@ -98443,7 +98342,7 @@ SPECOM 1 LOCKS THE CHANGE WEAPON WHEEL.
 
 &lt;&lt;set _ai to 0&gt;&gt;
 
-&lt;&lt;if $combat is 14 or $combat gte 200 or $invhold gte 50 or $combat is 133 or $combat is 146 or $combat is 165&gt;&gt;&lt;&lt;set _ai to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $combat is 14 or $combat gte 200 or $combat is 133 or $combat is 146 or $combat is 165&gt;&gt;&lt;&lt;set _ai to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $combat is 145 and $mobfight gte 6&gt;&gt;&lt;&lt;set _ai to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -98615,13 +98514,6 @@ Your affiliation with fringe //characters// has decreased your &#39;&#39;Influen
 
 
 &lt;/div&gt;
-
-
-&lt;&lt;if _comblook is undefined and $sdsadsa is true&gt;&gt;
-&lt;&lt;set $tutorial to 999&gt;&gt;
-
-&lt;&lt;include QuestTexts&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _comblook is undefined&gt;&gt;
@@ -107627,7 +107519,7 @@ $girlname doesn’t seem to mind the large butt plug that&#39;s currently lodged
 &lt;&lt;/for&gt;&gt;
 
 
-&lt;&lt;if _vallove is true and $health gte 16 and $avarunc isnot true and $bondage lte 0&gt;&gt;
+&lt;&lt;if _vallove is true and $health gte 16 and $bondage lte 0&gt;&gt;
 &lt;&lt;if $girlid is 1 and $lovemom is undefined&gt;&gt;
 &#39;&#39;Lovisa:&#39;&#39; //Oh. By the way… What&#39;s up with mom? I guess… I guess she&#39;s chosen you instead? I never thought this would happen. She used to love dad so much. &lt;&lt;if $masterlove gte 75&gt;&gt;I… I can&#39;t blame her, though. You&#39;re fantastic (smile). Still, it&#39;s a bit of a shock.&lt;&lt;/if&gt;&gt;//
 &lt;br&gt;&lt;br&gt;
@@ -117986,10 +117878,6 @@ mscaving to 31
 
 &lt;div class=&quot;headsign&quot;&gt;EVENTS &amp; ACTIVITIES&lt;/div&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;passmins 6&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if _npc.girlid is 353 or _npc.transformed gte 1&gt;&gt;
 &lt;&lt;set _imprisononly to true&gt;&gt;
 &lt;&lt;set _blockthis to true&gt;&gt;
@@ -118886,7 +118774,6 @@ Your &#39;&#39;Occult (+1)&#39;&#39; skill has increased!
 
 &lt;&lt;set $justexp to 3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $descroll2 to 2&gt;&gt;&lt;&lt;set $descroll to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $descroll2 is 2&gt;&gt; 
 &lt;&lt;set $justexp to 4&gt;&gt;
@@ -120402,8 +120289,6 @@ $girlname quickly changes the subject and tries to talk about other matters, jus
 
 &lt;&lt;if $charmcount is undefined&gt;&gt;&lt;&lt;set $charmcount to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $charmcount+=1&gt;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $charmcount+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $mastercharm lte 109 and $charmcount gte 10&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -139355,7 +139240,6 @@ The census records is a huge, analog database containing all registered inhabita
 &lt;div class=&quot;signvendor&quot;&gt;common bounties&lt;/div&gt;
 &lt;br&gt;
 
-&lt;&lt;if $invhold gte 0&gt;&gt;
 &lt;&lt;include GenBH&gt;&gt;
 
 &lt;&lt;if $bh1 isnot undefined and $onbh isnot 3&gt;&gt;
@@ -139366,8 +139250,6 @@ The census records is a huge, analog database containing all registered inhabita
 &lt;&lt;if $onbh is 3&gt;&gt;
 &lt;br&gt;
 &#39;&#39;//Check back tomorrow!//&#39;&#39;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -142587,8 +142469,6 @@ $avIn_girlnames &#39;&#39;Defiance (+7)&#39;&#39; has increased!
 
 &lt;&lt;if _npc.sex is 1&gt;&gt;&lt;&lt;set _esc1+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _esctest to _esc1&gt;&gt; 
 
 
 &lt;&lt;if _npc.status gte 3 and _npc.hunger lte 0 and _npc.foods lte 1&gt;&gt;&lt;&lt;set _esc1+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -153659,7 +153539,7 @@ PLAYER WEAPON
 &lt;&lt;set $mbjgirl to &quot;av&quot; +_final&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mbjgirl isnot undefined and $mbjid.length gte 1 and $comesfromdream is true and _blocks is undefined and $state gte 0 and _final gte 0&gt;&gt;
+&lt;&lt;if $mbjgirl isnot undefined and $mbjid.length gte 1 and $comesfromdream is true and _blocks is undefined and _final gte 0&gt;&gt;
 &lt;&lt;set _service to true&gt;&gt;
 &lt;&lt;include IniTop&gt;&gt;
 &lt;&lt;set $avatars to 1&gt;&gt;
@@ -156216,7 +156096,6 @@ The end is finally here. Professor Daria sits down with each one of you, while t
 &lt;&lt;set _first to 1&gt;&gt;
 &lt;&lt;set _sec to 2&gt;&gt;
 &lt;&lt;set _third to 1&gt;&gt;
-&lt;&lt;set _stop2 to true&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -157571,8 +157450,6 @@ What do you want to ask Professor Hemme about?
 &lt;&lt;set $music to 1&gt;&gt;
 &lt;&lt;passmins 30&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set $testar to 0&gt;&gt;
 
 &lt;&lt;include GirlCheck&gt;&gt;
 
@@ -162248,7 +162125,7 @@ This effect becomes dormant if &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&g
 &lt;&lt;link &quot;Return&quot;&gt;&gt;
 &lt;&lt;if $comesfromfollow isnot true&gt;&gt;
 &lt;&lt;if $camefrommenu isnot true&gt;&gt;
-&lt;&lt;if $testtroop is undefined&gt;&gt;&lt;&lt;goto Interact&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;goto TestTroop&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;goto Interact&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;goto SMenu2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -166644,12 +166521,6 @@ Nika looks at you apologetically.
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;div class=&quot;reddevil lighthover&quot;&gt;
-[img[$imgpath + &quot;Maps/reddevil.png&quot;][Scaving][$scaving to 39, $adpos to 0, $adpos2 to 0, $pic to 11]]
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $raidmar gte 1&gt;&gt;
 &lt;div class=&quot;reden1 lighthover&quot;&gt;
 [img[$imgpath + &quot;Maps/enemy.png&quot;][CombatRoom][$combat to 1]]
@@ -167010,7 +166881,7 @@ Nika looks at you apologetically.
 
 
 &lt;&lt;if $quest_aim isnot 99&gt;&gt;
-&lt;&lt;if $days gte 3 or $state is 0 or $invhold gte 50&gt;&gt;
+&lt;&lt;if $days gte 3&gt;&gt;
 
 &lt;&lt;if $quest_aim isnot 4&gt;&gt;
 &lt;div class=&quot;aig lighthover&quot;&gt;
@@ -181766,7 +181637,6 @@ Save successfully patched
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;set $testserver to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -194098,17 +193968,10 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if $inspectarena is true&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Inspect $ar_girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $ver lt 10830&gt;&gt;
-&lt;&lt;if $invhold gte 0&gt;&gt;
 
 &lt;&lt;if $arenaplace is 1 and _okadd is true&gt;&gt;[[&quot;Return &quot; + $ar_girlname|Arena][$inarena to 2, $managearslave to false]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $arenaplace is 1 and $avatars gte 2 and $dayblock is 0&gt;&gt;[[Swap active slave|Arena][$arenaswap to true]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $arenaplace is 1 and $avatars lte 1&gt;&gt;[[&quot;Return &quot; + $ar_girlname|Arena][$inarena to 2, $managearslave to false]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $arenaplace is 1 and $avatars gte 2 and $dayblock is 0&gt;&gt;[[Swap active slave|Arena][$arenaswap to true]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -203266,7 +203129,7 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 &lt;&lt;if _house.dayblock is 5 and $invite is 1 and _house.dayblock isnot 999 and $mds is 1&gt;&gt;&lt;&lt;set _maids+=1&gt;&gt;&lt;&lt;set _house.atparty to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* FCs assigned to &quot;all&quot; party */
-&lt;&lt;if _house.title is 5 and $invite gte 2 and $mainactive isnot true and $fcs gte 1&gt;&gt;&lt;&lt;set _fcs+=1&gt;&gt;&lt;&lt;set _house.atparty to 3&gt;&gt;&lt;&lt;set _testi to $mainactive&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _house.title is 5 and $invite gte 2 and $mainactive isnot true and $fcs gte 1&gt;&gt;&lt;&lt;set _fcs+=1&gt;&gt;&lt;&lt;set _house.atparty to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* FCs assigned to &quot;follower&quot; party - follower status overrides fc status */
 &lt;&lt;if _house.title is 5 and $invite is 1 and _house.dayblock isnot 999 and $mainactive isnot true and $fcs gte 1&gt;&gt;&lt;&lt;set _fcs+=1&gt;&gt;&lt;&lt;set _house.atparty to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -203308,10 +203171,6 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 &lt;&lt;if $rooparty is 1&gt;&gt;&lt;&lt;set $guests+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $timparty is 1&gt;&gt;&lt;&lt;set $guests+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set _ay to $npc.av27.atparty&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;div class=&quot;tex12px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -203449,8 +203308,6 @@ You can only arrange an event between &lt;&lt;if $clock is 2&gt;&gt;4 p.m. and 8
 
 &lt;div class=&quot;signvendor&quot;&gt;contacts&lt;/div&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $disp_roos to 21&gt;&gt;&lt;&lt;set $disp_walton to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $disp_roos gte 21 and $event is 2&gt;&gt;
 &lt;&lt;if $rooparty isnot 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Abbot Roo|Party][$rooparty to 1, $guests+=1, $outguests+=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Abbot Roo&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -206702,7 +206559,6 @@ Hey, girls, what do you think about this bracelet? It sure looks eighties. All r
 &lt;&lt;if _ptalk is 40&gt;&gt;
 &lt;&lt;set _ranna to random(1, 6)&gt;&gt;
 
-&lt;&lt;set $tester to _ranna&gt;&gt;
 &lt;&lt;if _ranna is 1 and $merc1party is 2&gt;&gt;&lt;&lt;set _nam to $merc1&gt;&gt;&lt;&lt;set _pt to 1&gt;&gt;&lt;&lt;set _stop2 to true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _ranna to random(2, 6)&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _stop2 isnot true&gt;&gt;
@@ -208959,8 +208815,6 @@ $hunt_black
 &lt;&lt;include WeatherTimeEffect&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;[[Home]]&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $wopos is 73&gt;&gt;
 It&#39;s cold and damp down here. The thick smoke from fireplaces makes it impossible to see further than 20 yards ahead. 
 &lt;&lt;/if&gt;&gt;
@@ -210373,9 +210227,6 @@ You cannot fast travel outside the Ikaanos Metro Area in your current state.
 &lt;&lt;set $traitperf to 100&gt;&gt;
 &lt;&lt;unset $adoraspec&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;set _testingadd2 to $girlname&gt;&gt;
 
 
 /* REMOVE SUBMISSIVE FROM GUYS WHO SHOULDNT HAVE IT */
@@ -216502,11 +216353,6 @@ _name is ready to enter your household!
 [[Start!|SlaveHall][$action1 to true, $event to 0, $augirls-=1]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0 and $justadded isnot true and $babbbba is true&gt;&gt;
-[[Start!|SlaveHall][$action1 to true, $event to 0]]
-[[Add to household|SlaveHall][$event to 5]]
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $event gte 0 and $event lte 2 and $action1 is true and _over isnot true and $addingchild isnot true&gt;&gt;
 [[Continue|SlaveHall][$event+=1]]
 &lt;&lt;/if&gt;&gt;
@@ -219555,7 +219401,6 @@ You&#39;ve regained &#39;&#39;4 Stamina Points&#39;&#39; and &#39;&#39;1 Health!
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="332" name="InHold" tags="nobr" position="425,450" size="100,100">
-&lt;&lt;set $state to 1&gt;&gt;
 &lt;&lt;set $invhold to 0&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="333" name="ProstEngine" tags="no-transition gray" position="3325,2575" size="200,100">&lt;&lt;nobr&gt;&gt;
@@ -237074,25 +236919,13 @@ Dead!
 
 &lt;&lt;link [img[$imgpath + &quot;Butt/troopbutt4.png&quot;]]&gt;&gt;
 
+&lt;&lt;set $comesfromfollow to true&gt;&gt;
 &lt;&lt;if $cslot1 lte 49&gt;&gt;
 &lt;&lt;goto IssidInt&gt;&gt;
 &lt;&lt;set $activeissid to $cslot1&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cslot1 is 51&gt;&gt;
+&lt;&lt;else&gt;&gt;
 &lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $cslot1 gte 52 or $cslot1 is 50&gt;&gt;
-&lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
-&lt;&lt;set $fromfollow to $cslot1&gt;&gt;
-&lt;&lt;set $borrower to $cslot1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;/link&gt;&gt;
 
@@ -237707,10 +237540,7 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 &lt;&lt;link &quot;Return&quot; $return&gt;&gt;&lt;&lt;unset $troopshow&gt;&gt;&lt;&lt;unset $troopshow2&gt;&gt;&lt;&lt;unset $troopshow3&gt;&gt;&lt;&lt;unset $troopshow4&gt;&gt;&lt;&lt;unset $slave2active&gt;&gt;&lt;&lt;set $wasino to true&gt;&gt;&lt;&lt;unset $isinfollow&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;unset $fromfollow&gt;&gt;
-&lt;&lt;unset $stopfromfollow&gt;&gt;
 &lt;&lt;unset $comesfromfollow&gt;&gt;
-&lt;&lt;unset $borrower&gt;&gt;
 
 &lt;/div&gt;
 
@@ -249172,8 +249002,6 @@ Bid increased to &amp;#36;$curprice!
 &lt;&lt;set $aback to random(2, 34)&gt;&gt; /* PARENTS WERE... */
 &lt;&lt;if $wopos is 63&gt;&gt;&lt;&lt;set $aback to random(-2, 18)&gt;&gt;&lt;&lt;/if&gt;&gt; /* PARENTS WATERY... */
 
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $aback to random(2, 46)&gt;&gt;&lt;&lt;/if&gt;&gt; /* PARENTS WERE POST 085... */
-
 &lt;&lt;set $aback1 to random(1, 15)&gt;&gt; /* PARENT STYLE */
 &lt;&lt;set $aback2 to random(1, 15)&gt;&gt; /* CHILDHOOD EVENT 8-13y */
 &lt;&lt;set $aback3 to random(1, 10)&gt;&gt; /* CHAOS NUMBER DONT TOUCH */
@@ -249186,12 +249014,6 @@ Bid increased to &amp;#36;$curprice!
 
 /* AGE SPAN FOR SLAVE MARKET */
 &lt;&lt;set $aage to random(18, 35)&gt;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $adisplay to either (154, 184)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 
 /* TWIN CHECKER */
 &lt;&lt;for _twin range $npc&gt;&gt;
@@ -249339,9 +249161,6 @@ Bid increased to &amp;#36;$curprice!
 &lt;&lt;if _rand is 6&gt;&gt;&lt;&lt;set $avalue+=6&gt;&gt;&lt;&lt;set $ran_kissingxp+=20&gt;&gt;&lt;&lt;set $ran_pussyxp+=random(20, 40)&gt;&gt;&lt;&lt;set $ran_beauty+=random(15, 50)&gt;&gt;&lt;&lt;set $ran_oralxp+=random(20, 60)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _rand is 9&gt;&gt;&lt;&lt;set $avalue+=6&gt;&gt;&lt;&lt;set $ran_str+=20&gt;&gt;&lt;&lt;set $ran_dex+=random(20, 40)&gt;&gt;&lt;&lt;set $ran_melee+=random(15, 50)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $adisplay to 186&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set _randd1 to random(1, 8)&gt;&gt;
@@ -250292,18 +250111,6 @@ ENEMY LEVELS
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* END OF RANDOM MALE SLAVE ENGINE */
-
-
-
-
-
-/* NEW RANDOM NPC GENERATOR */
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;include NewRan&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
 
 
 
@@ -259399,7 +259206,7 @@ MOVED TO CONCLUDE
 &lt;&lt;if $credit lte 1499&gt;&gt;&lt;&lt;set _atch+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cash lte 1999&gt;&gt;&lt;&lt;set _atch+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cash lte 9999&gt;&gt;&lt;&lt;set _atch+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $guardpool gte 10&gt;&gt;&lt;&lt;set _testy to $guardpool/20&gt;&gt;&lt;&lt;set _atch+=$guardpool/20&gt;&gt;&lt;&lt;/if&gt;&gt; 
+&lt;&lt;if $guardpool gte 10&gt;&gt;&lt;&lt;set _atch+=$guardpool/20&gt;&gt;&lt;&lt;/if&gt;&gt; 
 &lt;&lt;if $mcpower lte 99 and $cash gte 1000000&gt;&gt;&lt;&lt;set _atch-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cash gte 50000&gt;&gt;&lt;&lt;set _atch-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cash gte 100000&gt;&gt;&lt;&lt;set _atch-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -259861,9 +259668,6 @@ MOVED TO CONCLUDE
 
 &lt;div class=&quot;eventholderthin2&quot;&gt;
 
-/*
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $nicsu to 2&gt;&gt;&lt;&lt;set $nicsu2 to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-*/
 &lt;div class=&quot;eventholderbodyfull&quot;&gt;
 &#39;&#39;POLITICAL EFFECTS!&#39;&#39;&lt;br&gt;
 //An article in the $newspaper has directly affected our great city.//&lt;br&gt;
@@ -264150,8 +263954,6 @@ REPRIMAND
 &lt;&lt;if $ezraevent gte 1&gt;&gt;
 &lt;&lt;set $pollroll to 199&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $pollroll to 92&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -272467,9 +272269,6 @@ $off.work11
 &lt;&lt;/if&gt;&gt;
 
 
-/* DEV SETTINGS */
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;unset _imogenblock&gt;&gt;&lt;&lt;unset _preachblock&gt;&gt;&lt;&lt;unset _darkblock&gt;&gt;&lt;&lt;unset _hamahblock&gt;&gt;&lt;&lt;unset _kingblock&gt;&gt;&lt;&lt;unset _belablock&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 </tw-passagedata><tw-passagedata pid="392" name="CityEn" tags="nobr" position="1500,350" size="100,100">&lt;&lt;if $action9b isnot true&gt;&gt;
 &lt;&lt;set $randen to random(1, 7)&gt;&gt;
 &lt;&lt;set $action9b to true&gt;&gt;
@@ -273644,8 +273443,6 @@ $hunt_wet
    
    
    
-   
-   &lt;&lt;set _cstest to _csok&gt;&gt;
    
    &lt;&lt;which 83&gt;&gt; /% the S key %/
    
@@ -284605,7 +284402,6 @@ Unfortunately, this area is currently occupied by a band of hostile vagrants.
 &#39;&#39;_genmerc:&#39;&#39; //I&#39;ve heard this place was the backyard of a large mansion that stood here before The Severance.//
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;[[Cheat|MScaving][$scrapplace to 2]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -286830,7 +286626,7 @@ At least ten other rebel fighters have entered the building by now, in addition 
 
 &lt;&lt;set _ariapics to 1&gt;&gt;
 
-&lt;&lt;if $ariasayeth1 is 1 or $state is 0&gt;&gt;
+&lt;&lt;if $ariasayeth1 is 1&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Aria:&#39;&#39; //That&#39;s A LOT of expensive carpets. &lt;&lt;if $npc.av11.status is 10 and $npc.av11.masterlove gte 75&gt;&gt;Maybe something for our home, dear husband? Or… whatever home we&#39;ll end up in after we&#39;re done here.&lt;&lt;/if&gt;&gt;//
 
@@ -286868,7 +286664,7 @@ The Honorary Red Guards&#39; Hall dominates the bottom floor – a &lt;&lt;if $m
 This floor also consists of a large library with some interesting books, several guest chambers containing more valuables and a large but mostly empty dining hall.
 
 
-&lt;&lt;if $ariasayeth2 is 1 or $state is 0&gt;&gt;
+&lt;&lt;if $ariasayeth2 is 1&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 While you and Aria inspect the grand hall, another team of rebels enter The Palace, reinforcing the current occupant force.
 
@@ -290486,43 +290282,6 @@ A transfer also costs $100 in shipping fees.
 
 &lt;&lt;include WeatherTimeEffect&gt;&gt;
 
-&lt;&lt;if $invhold gte 50&gt;&gt;
-&lt;&lt;if $carolevel isnot 2&gt;&gt;
-&lt;&lt;link &quot;kill all lvl1&quot;&gt;&gt;
-&lt;&lt;goto Carozza&gt;&gt;
-&lt;&lt;unset $moben1&gt;&gt;
-&lt;&lt;unset $moben2&gt;&gt;
-&lt;&lt;unset $moben3&gt;&gt;
-&lt;&lt;unset $moben4&gt;&gt;
-&lt;&lt;unset $moben5&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $carolevel is 2 and $moben9 gte 1 and $allde isnot true&gt;&gt;
-&lt;&lt;link &quot;kill all except boss&quot;&gt;&gt;
-&lt;&lt;set $allde to true&gt;&gt;
-&lt;&lt;goto Carozza&gt;&gt;
-&lt;&lt;unset $moben6&gt;&gt;
-&lt;&lt;unset $moben7&gt;&gt;
-&lt;&lt;unset $moben8&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $allde is true&gt;&gt;
-&lt;&lt;link &quot;kill boss no revard&quot;&gt;&gt;
-&lt;&lt;goto Carozza&gt;&gt;
-&lt;&lt;unset $allde&gt;&gt;
-&lt;&lt;unset $moben9&gt;&gt;
-&lt;&lt;set $firstmob to 2&gt;&gt;
-&lt;&lt;set $faction.mob.state to 0&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 &lt;/div&gt;
 
 &lt;div class=&quot;alt4&quot;&gt;
@@ -291135,7 +290894,6 @@ A transfer also costs $100 in shipping fees.
 
 &lt;&lt;if _mssleepy is true and $mspricesl gte 1&gt;&gt;
 &lt;&lt;set $cash-=$mspricesl&gt;&gt;
-&lt;&lt;set _testyy to $mspricesl&gt;&gt;
 &lt;&lt;unset $mspricesl&gt;&gt;
 &lt;&lt;set $comesfromms to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -291351,7 +291109,7 @@ If neither is true, scenes are picked from the AvGen/Body1 archive
 
 &lt;&lt;if $justspanked gte 1 or $action5 is true or _suggopen is true&gt;&gt;
 &lt;&lt;if $tempstamina_l gte 1&gt;&gt;&lt;&lt;set $tempstamina-=$tempstamina_l&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arousal_l gte 1&gt;&gt;&lt;&lt;set $arousal-=$arousal_l&gt;&gt;&lt;&lt;set $lasttest to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arousal_l gte 1&gt;&gt;&lt;&lt;set $arousal-=$arousal_l&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $health_l gte 1&gt;&gt;&lt;&lt;set $health-=$health_l&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $masterlove_l gte 1&gt;&gt;&lt;&lt;set $masterlove-=$masterlove_l&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $scarefactor_l gte 1&gt;&gt;&lt;&lt;set $scarefactor+=$scarefactor_l&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -291488,15 +291246,6 @@ If neither is true, scenes are picked from the AvGen/Body1 archive
 
 &lt;&lt;set $raistate to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-/*
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;unset $raien2&gt;&gt;
-&lt;&lt;unset $raien3&gt;&gt;
-&lt;&lt;unset $raien4&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-*/
-
 
 &lt;&lt;include TellCrew&gt;&gt;
 &lt;&lt;set $interacting to false&gt;&gt;
@@ -295000,12 +294749,6 @@ I&#39;m going to be honest with you.
 [[Unpause|House][_active.setting1 to 0]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;
-[[workers+|House][_active.other5+=1]]
-[[silo+|House][_active.foodstore+=100]]
-
-&lt;&lt;/if&gt;&gt;
-
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -295034,10 +294777,6 @@ I&#39;m going to be honest with you.
 &lt;&lt;/if&gt;&gt;
 
 [[withdraw|House][$withdrawmine to true]]
-
-&lt;&lt;if $state is 0&gt;&gt;
-[[workers+|House][_active.other5+=1, _active.other8+=1]]
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt; /* withdraw */
 
@@ -295217,12 +294956,6 @@ I&#39;m going to be honest with you.
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 /* canco mod ends */
-
-/*
-&lt;&lt;if $state is 0&gt;&gt;
-[[workers+|House][_active.other5+=1, _active.other8+=1]]
-&lt;&lt;/if&gt;&gt;
-*/
 
 &lt;&lt;else&gt;&gt; /* withdraw */
 
@@ -301601,16 +301334,6 @@ IGNORE
 &lt;&lt;/if&gt;&gt;
 */
 
-&lt;&lt;if $clearslotes is undefined&gt;&gt;
-&lt;&lt;for _cleared range $npc&gt;&gt;
-&lt;&lt;if _cleared.actnpc gte 99 and _cleared.state lte 0&gt;&gt;
-&lt;&lt;set _cleared.state to -1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/for&gt;&gt;
-&lt;&lt;set $clearslotes to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;unset $gonnadock&gt;&gt;
 &lt;&lt;unset $gonnahunt&gt;&gt;
 &lt;&lt;unset $gonnapir&gt;&gt;
@@ -301672,12 +301395,6 @@ IGNORE
 &lt;div class=&quot;slavesides&quot;&gt;
 
 
-
-
-
-&lt;&lt;if $menus isnot &quot;gagga&quot;&gt;&gt;
-
-&lt;&lt;unset $tempsleep&gt;&gt;
 
 &lt;&lt;set _smallcall to true&gt;&gt;
 &lt;br&gt;
@@ -301805,18 +301522,6 @@ IGNORE
 &lt;&lt;set $event to 0&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
-/*
-&lt;&lt;if $state is 0&gt;&gt;
-
-&lt;&lt;link &quot;Overview&quot;&gt;&gt;
-&lt;&lt;goto SMenu2&gt;&gt;
-&lt;&lt;set $move2 to true&gt;&gt;
-&lt;&lt;unset $activeslot&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-*/
-
 
 &lt;&lt;/if&gt;&gt;
 
@@ -301850,7 +301555,6 @@ IGNORE
 
 
 /* CHANGENAME ENDS BELOW */
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $inputname is true and $changecall isnot true&gt;&gt;
 
@@ -302215,7 +301919,7 @@ Visit Whitehaven Academy to unlock this menu!
 
 
 
-&lt;&lt;if $menus isnot &quot;gagga&quot; and $changecall isnot true and $changeallow isnot true and $renamenpc isnot true&gt;&gt;
+&lt;&lt;if $changecall isnot true and $changeallow isnot true and $renamenpc isnot true&gt;&gt;
 &lt;div class=&quot;lowbottom3 ulsmall&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
 
@@ -302284,9 +301988,6 @@ Visit Whitehaven Academy to unlock this menu!
 
 
 
-&lt;&lt;unset $stopfromfollow&gt;&gt;
-&lt;&lt;unset $fromfollow&gt;&gt;
-&lt;&lt;unset $stopeth&gt;&gt;
 &lt;&lt;unset $camefrommenu&gt;&gt;
 &lt;/div&gt;
 
@@ -302874,12 +302575,9 @@ Visit Whitehaven Academy to unlock this menu!
 
 &lt;&lt;capture _actnpc _call3 _busy&gt;&gt;
 &lt;div class=&quot;homebutt padd5left lighthover&quot;&gt;
-&lt;&lt;if _baaaaaa is true&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;center&gt;Interact &lt;br&gt;(&lt;&lt;if _busy is 2&gt;&gt;At Stables&lt;&lt;else&gt;&gt;Away&lt;&lt;/if&gt;&gt; - home after &lt;&lt;if _busy is 2&gt;&gt;8&lt;&lt;else&gt;&gt;4&lt;&lt;/if&gt;&gt;pm!)&lt;/center&gt;&quot;&gt;&gt;&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
 &lt;&lt;hovertip &quot;&lt;center&gt;Interact &lt;&lt;if _dayoff&gt;&gt;&lt;br&gt;Unavailable! &lt;br&gt;(Day off)&lt;&lt;/if&gt;&gt;&lt;/center&gt;&quot;&gt;&gt;
 [img[$imgpath + &quot;Butt/slbutt30.png&quot;][Interact][$nodel to true, $c_npc to _skeys[_actnpc], $activeslot to _call3]]&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;&lt;/capture&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
@@ -303043,9 +302741,6 @@ Visit Whitehaven Academy to unlock this menu!
 /* UNSETTING FOLLOWER - CHECKING IF JOB IS STILL AVAILABLE */
 &lt;&lt;if $delfollowcommand isnot undefined&gt;&gt;
 &lt;&lt;set _delfollowcommand2 = $npc[$delfollowcommand]&gt;&gt;
-
-&lt;&lt;set _vaaaasd to _delfollowcommand2.daybef&gt;&gt;
-
 
 &lt;&lt;if $foslots.slot1 is _delfollowcommand2.actnpc&gt;&gt;&lt;&lt;set $foslots.slot1 to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $foslots.slot2 is _delfollowcommand2.actnpc&gt;&gt;&lt;&lt;set $foslots.slot2 to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -303520,9 +303215,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;if _npc.dayblock is 12&gt;&gt;&lt;&lt;unset $gardenskill&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.dayblock is 15&gt;&gt;&lt;&lt;unset $accountskill&gt;&gt;&lt;&lt;unset $accountid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _test2 to _npc.dayblock&gt;&gt;
-
-&lt;&lt;if _npc.dayblock is 17&gt;&gt;&lt;&lt;unset $captainskill&gt;&gt;&lt;&lt;unset $captainname&gt;&gt;&lt;&lt;set _npc.sleep to 0&gt;&gt;&lt;&lt;set _testcap to $captainskill&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.dayblock is 17&gt;&gt;&lt;&lt;unset $captainskill&gt;&gt;&lt;&lt;unset $captainname&gt;&gt;&lt;&lt;set _npc.sleep to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.dayblock is 18&gt;&gt;&lt;&lt;unset $heraldskill&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.dayblock is 19&gt;&gt;&lt;&lt;set $maxmasters-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -303744,9 +303437,7 @@ Dayblock 7: Teacher (Academy)
 &lt;&lt;set _crawlers to 0&gt;&gt;
 &lt;&lt;for _crawl range $npc&gt;&gt;
 &lt;&lt;if _crawl.title is 5&gt;&gt;&lt;&lt;set _crawlers+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-  &lt;&lt;if _crawl1 is undefined&gt;&gt;&lt;&lt;set _crawl1 to _crawl.girlname&gt;&gt;&lt;&lt;set _stope to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-   &lt;&lt;if _crawl2 is undefined and _stope isnot true&gt;&gt;&lt;&lt;set _crawl2 to _crawl.girlname&gt;&gt;&lt;&lt;set _stope to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-   &lt;&lt;if _crawl3 is undefined and _stope isnot true&gt;&gt;&lt;&lt;set _crawl3 to _crawl.girlname&gt;&gt;&lt;&lt;set _stope to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+  &lt;&lt;if _crawl1 is undefined&gt;&gt;&lt;&lt;set _crawl1 to _crawl.girlname&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 
@@ -304505,7 +304196,6 @@ Combat modifier:
 &lt;&lt;set $c_npc to $cprem&gt;&gt;
 &lt;&lt;set $activenpc to $cprem2&gt;&gt;
 /* &lt;&lt;set $activeslot to 0&gt;&gt; */
-&lt;&lt;set $menva to true&gt;&gt;
 &lt;&lt;if $menus lte 0&gt;&gt;&lt;&lt;set $menus to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;unset $cprem&gt;&gt;
 &lt;&lt;unset $cprem2&gt;&gt;
@@ -305196,7 +304886,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _npc.girlid is 202 and (_npc.girlname is &quot;TALIKA&quot; or _npc.girlname is &quot;Talika&quot;)&gt;&gt;
 &lt;&lt;set _npc.girlname to &quot;Talika&quot;&gt;&gt;
 &lt;&lt;set _npc.girlnames to &quot;Talika&#39;s&quot;&gt;&gt;
-&lt;&lt;set _testtal to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;include AllCh&gt;&gt;
@@ -308328,7 +308017,6 @@ Geoffrey Dolme
 &lt;&lt;set _skeys = Object.keys(_loadnpc)&gt;&gt;
 &lt;&lt;set $fonpc to _skeys[$foslots.slot4]&gt;&gt;
 &lt;&lt;set _fo1 to $npc[$fonpc]&gt;&gt;
-&lt;&lt;set $test11 to _fo1.combatid&gt;&gt;
 &lt;&lt;set $cslot4 to _fo1.combatid&gt;&gt;
 &lt;&lt;set $cs4_id to _fo1.combatid&gt;&gt;
 &lt;&lt;set $cs4_girlid to _fo1.girlid&gt;&gt;
@@ -310780,9 +310468,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 
 /* CAPS */
 
-&lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set _tes to _npc.happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _npc.happiness=Math.min(_npc.happiness,100)&gt;&gt;
-&lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set _tes2 to _npc.happiness&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set $onlyonce to true&gt;&gt; /* FOR ONLY ONCE OCCURANCES */
@@ -311076,12 +310762,6 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* qmaster perfectionist increase chance */
 &lt;&lt;if _npc.title is 3 and _npc.discipline gte 50 and _npc.happiness gte 50 and _npc.willpower gte 25 and _lossroll lte 1&gt;&gt;&lt;&lt;set _npc.traitperf=adl(_npc.traitperf,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-/* updating skills */
-&lt;&lt;if _npc.title is 3&gt;&gt;&lt;&lt;set _npc.qtech to _npc.tech&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 
 
@@ -311469,8 +311149,6 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;set _h/=8&gt;&gt;
 &lt;&lt;set _h = Math.round(_h)&gt;&gt;
 
-&lt;&lt;set _tests to _nursepoints&gt;&gt;
-
 &lt;&lt;if $masterhealth lt $mastermaxhealth and $cash gte 5&gt;&gt;
 &lt;&lt;set $masterhealth+=_h&gt;&gt;
 &lt;&lt;set _nursepoints-=1&gt;&gt;
@@ -311480,9 +311158,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;for _heal range $npc&gt;&gt;
 &lt;&lt;if _heal.toughness gt _heal.health or _heal.pussywear gte 20 or _heal.analwear gte 20 or _heal.oralwear gte 20&gt;&gt;
 &lt;&lt;if _nursepoints gte 1 and _heal.state gte 1 and $cash gte 5&gt;&gt;
-/* &lt;&lt;set _hh to _heal.health&gt;&gt; */
 &lt;&lt;if _heal.toughness gt _heal.health&gt;&gt;&lt;&lt;set _heal.health+=_h&gt;&gt;&lt;&lt;/if&gt;&gt;
-/* &lt;&lt;set _hh2 to _heal.health&gt;&gt; */
 &lt;&lt;set _nursepoints-=1&gt;&gt;
 &lt;&lt;set $cash-=5&gt;&gt;
 &lt;&lt;if _heal.pussywear gte 20 and $ownointment gte 1&gt;&gt;&lt;&lt;set _heal.pussywear-=20&gt;&gt;&lt;&lt;set $ownointment-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -311569,7 +311245,6 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* garden beni */
 &lt;&lt;if $byards gte 2&gt;&gt;
-&lt;&lt;set $haaa to true&gt;&gt;
 &lt;&lt;set _npc.masterlove=adl(_npc.masterlove,1,60)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -313292,7 +312967,6 @@ girlname: _npc.girlname
 
 &lt;&lt;set _dmg=Math.max(_dmg,0)&gt;&gt;
 
-
 /* main damage reduction script */
 &lt;&lt;set _npc.health-=_dmg&gt;&gt;
 
@@ -313460,9 +313134,6 @@ girlname: _npc.girlname
 &lt;&lt;if $diff lte 1&gt;&gt;&lt;&lt;set _dmg to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _dmg=Math.max(_dmg,0)&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set _testi to _dmg&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 /* main damage reduction script */
 &lt;&lt;set _npc.health-=_dmg&gt;&gt;
@@ -317639,8 +317310,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.program to $program&gt;&gt;
 &lt;&lt;set _npc.teacher to $teacher&gt;&gt;
 
-&lt;&lt;set _testingadd to $girlname&gt;&gt;
-
 &lt;&lt;set _npc.callname to $callname&gt;&gt;
 &lt;&lt;set _npc.shave to $shave&gt;&gt;
 &lt;&lt;set _npc.morningblow to $morningblow&gt;&gt;
@@ -317670,7 +317339,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.prostdays to $prostdays&gt;&gt;
 
 &lt;&lt;if _cccp isnot true&gt;&gt;
-&lt;&lt;if _patching isnot true&gt;&gt;
 &lt;&lt;set _npc.back to $back[0]&gt;&gt;
 &lt;&lt;set _npc.back1 to $back[1]&gt;&gt;
 &lt;&lt;set _npc.back2 to $back[2]&gt;&gt;
@@ -317678,19 +317346,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.back4 to $back[4]&gt;&gt;
 &lt;&lt;set _npc.back5 to $back[5]&gt;&gt;
 &lt;&lt;set _npc.back6 to $back[6]&gt;&gt;
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $back isnot undefined&gt;&gt;
-&lt;&lt;set _npc.back to $back[0]&gt;&gt;
-&lt;&lt;set _npc.back1 to $back[1]&gt;&gt;
-&lt;&lt;set _npc.back2 to $back[2]&gt;&gt;
-&lt;&lt;set _npc.back3 to $back[3]&gt;&gt;
-&lt;&lt;set _npc.back4 to $back[4]&gt;&gt;
-&lt;&lt;set _npc.back5 to $back[5]&gt;&gt;
-&lt;&lt;set _npc.back6 to $back[6]&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _npc.tied to false&gt;&gt;
@@ -317740,12 +317395,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.traitwild to $traitwild&gt;&gt;
 &lt;&lt;set _npc.traitwork to $traitwork&gt;&gt;
 &lt;&lt;if $traitatt gte 90&gt;&gt;&lt;&lt;set _npc.traitatt to $traitatt&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $testernpc to _npc&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 
 /*
@@ -321625,7 +321274,6 @@ Hiring this unit will cost you &#39;&#39;75 War Supplies&#39;&#39;!
 [[charisma +2|SMenu2][_npc.charisma+=2]]
 [[charisma -2|SMenu2][_npc.charisma-=2]]
 [[domestic +2|SMenu2][_npc.domestic+=2]]
-&lt;&lt;if $state is 0&gt;&gt;[[traitsecret|SMenu2][_npc.traitsecret to 30, _npc.tempstamina to 60, _npc.analxp to 99, _npc.oralxp to 99, _npc.pussyxp to 99, _npc.charisma to 80, _npc.willpower to 0, _npc.acro to 99, _npc.traittech to 100, _npc.traitnerd to 100, _npc.traitmental to 100, _npc.traitsub to 100, _npc.likesadist to 0, _npc.masterlove to 0, _npc.pussywear to 100]]&lt;&lt;/if&gt;&gt;
 [[ranged +2|SMenu2][_npc.ranged+=2]]
 [[melee +2|SMenu2][_npc.melee+=2]]
 [[respect +2|SMenu2][_npc.respect+=2]]
@@ -326635,9 +326283,7 @@ $cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if _crawl.state gte 1 and _crawl.health gte 5 and _crawl.busy is 0 and _crawl.title is 5&gt;&gt;
 
 
-  &lt;&lt;if _crawl1 is undefined&gt;&gt;&lt;&lt;set _crawl1 to _crawl.girlname&gt;&gt;&lt;&lt;set _stope to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-   &lt;&lt;if _crawl2 is undefined and _stope isnot true&gt;&gt;&lt;&lt;set _crawl2 to _crawl.girlname&gt;&gt;&lt;&lt;set _stope to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-   &lt;&lt;if _crawl3 is undefined and _stope isnot true&gt;&gt;&lt;&lt;set _crawl3 to _crawl.girlname&gt;&gt;&lt;&lt;set _stope to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+  &lt;&lt;if _crawl1 is undefined&gt;&gt;&lt;&lt;set _crawl1 to _crawl.girlname&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -328063,7 +327709,6 @@ father: &quot;Someone&quot;,
       
       &lt;&lt;set _testnurse.smart to _npc.int&gt;&gt;
             &lt;&lt;set _testnurse.age to 0&gt;&gt;
-            /* &lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set _testnurse.age to 3200&gt;&gt;&lt;&lt;/if&gt;&gt; */
                         &lt;&lt;set _testnurse.name to &quot;CHILD&quot;&gt;&gt;
             &lt;&lt;set _testnurse.phys to _npc.body&gt;&gt;
                         &lt;&lt;set _testnurse.smart to _npc.int&gt;&gt;
@@ -335774,7 +335419,7 @@ UI.restart();
 &lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $linemod is true&gt;&gt;[[off|OptionsMenu2][$linemod to false]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvsmallselect&quot;&gt;off&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $linemod isnot true&gt;&gt;
-[[On|OptionsMenu2][$linemod to true, $gotofac to false, $gotoother to false, $gotoman to false, $cheats to false, $debugg to false]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvsmallselect&quot;&gt;on&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+[[On|OptionsMenu2][$linemod to true, $gotofac to false, $gotoother to false, $gotoman to false, $debugg to false]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvsmallselect&quot;&gt;on&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 
@@ -337689,7 +337334,6 @@ OLD IGNORE
 
 &lt;&lt;set _dic=_fact.other5&gt;&gt;
 &lt;&lt;set _dicver to _fact.other2&gt;&gt;
-&lt;&lt;set _dictest1 to _dic&gt;&gt;
 
 &lt;&lt;if _dic gte 1 and _dicver gte 1&gt;&gt;
 &lt;&lt;set _dic/=_dicver&gt;&gt;
@@ -338491,7 +338135,6 @@ You spend an hour repairing your household.
 
 
 &lt;&lt;set _ranne to random(1,20)&gt;&gt;
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set _ranne to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ranne is 1 and $artisan lte 59&gt;&gt;
 &lt;&lt;set $artisan+=1&gt;&gt;
 &lt;br&gt;&lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -340910,7 +340553,6 @@ setting1: 0,
 
 /* INTERIOR BELOW */
 
-&lt;&lt;if $state gte 0&gt;&gt;
 &lt;&lt;if $mch.bathroom is undefined&gt;&gt;
 
 
@@ -341291,9 +340933,6 @@ setting1: 0,
 setting2: 0,
 occ: 0,
 }&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -342520,7 +342159,6 @@ You spend over three hours reading about Raanic history – from the century old
 &lt;&lt;if $libtime gte 100&gt;&gt;&lt;&lt;set $libtot+=1&gt;&gt;&lt;&lt;set $libtime to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $spendlibtime to 2&gt;&gt;
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;unset $spendlibtime&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if _active.level lte 0&gt;&gt;
 A newly installed library. The chamber itself is pretty austere but not lacking in functionality. 
@@ -342745,8 +342383,6 @@ PRISON ACT.
 
 &lt;&lt;if _npc.sex is 1 or _lesbsex is true&gt;&gt;&lt;&lt;set _inisex to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _lesbsex is true and _npc.girlid is 2&gt;&gt;&lt;&lt;set _chhh to _npc.girlname&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if _room.setting2 gte 0&gt;&gt;
 
@@ -342766,16 +342402,12 @@ PRISON ACT.
 
 /* bratty npcs suffer - this script is unrelated to room relationships */
 &lt;&lt;if _npc.traitbrat gte 51 and _roomsex.traitbrat gte 1 and _npc.sleep is _roomsex.sleep and _npc.actnpc isnot _roomsex.actnpc&gt;&gt;
-&lt;&lt;set _testy1 to _npc.girlname&gt;&gt;
-&lt;&lt;set _testy2 to _roomsex.girlname&gt;&gt;
 &lt;&lt;set _npc.tempstamina=adl(_npc.tempstamina,-2,3)&gt;&gt;
 &lt;&lt;set _roomsex.tempstamina=adl(_roomsex.tempstamina,-2,3)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* npc initiates relationship */
 &lt;&lt;if _inisex is true and _roomsexok is true and _npc.sleep is _roomsex.sleep and _roomsex.sex is 0 and $useonce is undefined and _roomsex.beauty gte 30 and _room.setting2 is 1 and _npc.actnpc isnot _roomsex.actnpc and _npc.girlname isnot _roomsex.mother and _npc.age gte 18 and _roomsex.age gte 18 and _npc.mother isnot _roomsex.girlname and (_npc.traitrela lte 0 or _npc.traitrela is undefined or _npc.likesadist gte 80) and (_npc.likesadist gte 25 or _roomsex.beauty gte 65 or _npc.traitnymfo gte 51 or _npc.traitperv gte 51)&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 2&gt;&gt;&lt;&lt;set _chhh3 to _roomsex.girlname&gt;&gt;&lt;&lt;/if&gt;&gt; 
 
 
 &lt;&lt;set _sexgo to 0&gt;&gt;
@@ -342874,16 +342506,6 @@ PRISON ACT.
 /* already &quot;relationshipped&quot; */
 
 &lt;&lt;if _roomsex.relonce is true&gt;&gt;&lt;&lt;set _sexgo-=9999&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 31 and _roomsex.girlid is 212&gt;&gt;&lt;&lt;set _kylead to true&gt;&gt;&lt;&lt;set _sexc to _sexgo&gt;&gt;&lt;&lt;set _sexc2 to _roomsex.relonce&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _roomsex.girlid is 35&gt;&gt;&lt;&lt;set _sexc3 to _sexgo&gt;&gt;&lt;&lt;set _sexc4 to _roomsex.relonce&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.girlid is 204 and _roomsex.girlid is 13&gt;&gt;&lt;&lt;set _chhh3 to _sexgo&gt;&gt;&lt;&lt;/if&gt;&gt; 
-
-
-&lt;&lt;if _npc.girlid is 2 and _roomsex.girlname is &quot;Rosita&quot;&gt;&gt;&lt;&lt;set _chhh4 to _sexgo&gt;&gt;&lt;&lt;/if&gt;&gt; 
 
 
 /* roomate accepts relationship */
@@ -345494,8 +345116,6 @@ He stops what he&#39;s doing and looks up at you.
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 
-&lt;&lt;set _test1 to _enhanced&gt;&gt;
-
 &lt;div class=&quot;row&quot;&gt;
 &lt;&lt;set _traitname to &quot;Family man&quot;&gt;&gt;
 &lt;&lt;set _trait to 55&gt;&gt;
@@ -346929,11 +346549,6 @@ state: 0,
 
 
 
-
-&lt;&lt;if $cheatt is true and $state is 0&gt;&gt;
-&lt;&lt;set $crepoints to 2000&gt;&gt;
-&lt;&lt;unset $cheatt&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _lvl1 to 0&gt;&gt;
 &lt;&lt;set _lvl2 to 0&gt;&gt;
@@ -348975,8 +348590,6 @@ DuraPlate armor suit added to Inventory!&lt;br&gt;
 &lt;&lt;set $daunames to $dauname +&quot;&#39;s&quot;&gt;&gt;
 &lt;&lt;set $sonnames to $sonname +&quot;&#39;s&quot;&gt;&gt;
 
-&lt;&lt;set _testadd to $addfam&gt;&gt;
-
 /* wife */
 &lt;&lt;set _outadd to 134&gt;&gt;
 &lt;&lt;include IncludeSlave&gt;&gt;
@@ -349901,16 +349514,6 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 &lt;&lt;set _ran6 to random(1, 4)&gt;&gt;
 &lt;&lt;set _ran7 to random(1, 4)&gt;&gt;
 &lt;&lt;set _ran8 to random(1, 4)&gt;&gt;
-
-
-&lt;&lt;if $state is 0&gt;&gt;
-/* GRIMS DEBUG. IGNORE */
-
-&lt;&lt;set _lor to $npc.av20.atparty&gt;&gt;
-&lt;&lt;set _space to $npc.av25.atparty&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 
 
 /* LESBIAN SCENES */
@@ -352932,8 +352535,6 @@ Unwanted (x0.45).
 &lt;div class=&quot;story&quot;&gt;
 &lt;&lt;set $wopos to 9&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $gambling to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;include GirlCheck&gt;&gt;
 
 &lt;&lt;if $tavactions is undefined&gt;&gt;&lt;&lt;set $tavactions to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -354729,7 +354330,7 @@ You wake up feeling immensely refreshed and spend a good 30 minutes just staring
 &lt;br&gt;&lt;br&gt;
 You&#39;re served a freshly brewed cup of coffee from one of the servants, who also brings in a complimentary breakfast.
 
-&lt;&lt;if $masterwill lte 49 or $state is 0&gt;&gt;
+&lt;&lt;if $masterwill lte 49&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 Staying in one of The Mastersphere&#39;s most luxurious rooms has injected you with an unprecedented boost of self-confidence.
 &lt;br&gt;&lt;br&gt;
@@ -355650,23 +355251,6 @@ Lt. Milou Skye
 [img[$imgpath + &quot;Maps/waysign_upperdeck.png&quot;][MSmap][$msloc to 30]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if $state is 0 and $gagagag is true&gt;&gt;
-
-
-/* after aria done */
-&lt;div class=&quot;uprightmax lighthover&quot;&gt;
-[img[$imgpath + &quot;Maps/waysign_upperdeck.png&quot;][MSmap][$msloc to 30]]
-&lt;/div&gt;
-
-&lt;div class=&quot;kaseyspec1 lighthover&quot;&gt;[img[$imgpath + &quot;Maps/artmodule.png&quot;][MScaving][$mscaving to 999]]&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt; /* state 0 ends */
-
-
-
 
 
 
@@ -358164,8 +357748,6 @@ You launch a final assault against the palace assigned AC-42 crawler. The vehicl
 &lt;&lt;set $enemy1_level = 11&gt;&gt;
 &lt;&lt;set $enemy1_id = 400&gt;&gt;
 
-&lt;&lt;if $state gte 1&gt;&gt;
-
 &lt;&lt;set $enemy2_type = 156&gt;&gt;
 &lt;&lt;set $enemy2_pos = 2&gt;&gt;
 &lt;&lt;set $enemy2_state to 2&gt;&gt;
@@ -358224,9 +357806,6 @@ You launch a final assault against the palace assigned AC-42 crawler. The vehicl
 &lt;&lt;set $enemy5_soak = 35&gt;&gt;
 &lt;&lt;set $enemy5_sex = &quot;him&quot;&gt;&gt;
 &lt;&lt;set $enemy5_level = 16&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set $loot to 400&gt;&gt;
@@ -358729,43 +358308,6 @@ You decide to attack Mordecai and his personal guard!
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;include WeatherTimeEffect&gt;&gt;
-
-&lt;&lt;if $invhold gte 50&gt;&gt;
-&lt;&lt;if $carolevel isnot 2&gt;&gt;
-&lt;&lt;link &quot;kill all lvl1&quot;&gt;&gt;
-&lt;&lt;goto Carozza&gt;&gt;
-&lt;&lt;unset $moben1&gt;&gt;
-&lt;&lt;unset $moben2&gt;&gt;
-&lt;&lt;unset $moben3&gt;&gt;
-&lt;&lt;unset $moben4&gt;&gt;
-&lt;&lt;unset $moben5&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $carolevel is 2 and $moben9 gte 1 and $allde isnot true&gt;&gt;
-&lt;&lt;link &quot;kill all except boss&quot;&gt;&gt;
-&lt;&lt;set $allde to true&gt;&gt;
-&lt;&lt;goto Carozza&gt;&gt;
-&lt;&lt;unset $moben6&gt;&gt;
-&lt;&lt;unset $moben7&gt;&gt;
-&lt;&lt;unset $moben8&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $allde is true&gt;&gt;
-&lt;&lt;link &quot;kill boss no revard&quot;&gt;&gt;
-&lt;&lt;goto Carozza&gt;&gt;
-&lt;&lt;unset $allde&gt;&gt;
-&lt;&lt;unset $moben9&gt;&gt;
-&lt;&lt;set $firstmob to 2&gt;&gt;
-&lt;&lt;set $faction.mob.state to 0&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 
@@ -368129,8 +367671,6 @@ You&#39;re having trouble concentrating as the young woman is standing completel
 /* procoms */
 &lt;&lt;if $quest_staceyloc is 45&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set _ran to 2&gt;&gt;&lt;&lt;set _ran2 to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if _ran is 1&gt;&gt;With the Great Mosque of Ikaanos towering above your heads, you make it into a desolated, sand-covered street that connects the modern Procoms with a half-forgotten world of old Pre-Severance houses, most of which have been abandoned for at least a century. &lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 2&gt;&gt;The eerie calmness of Procoms completely engulfs you as you make your way past the district&#39;s famous water reservoirs and into the crumbling housing areas. Except for occasional prayer calls coming from the minarets of the nearby mosque, Procoms is home to sleepy neighborhoods populated by tired factory workers. &lt;br&gt;&lt;br&gt;After another minute of walking, your party makes it into a narrow alleyway, following the map given to Stacey by a certain Mr. &lt;&lt;include RanMale&gt;&gt; _surname, //the last// clue needed to unearth the whereabouts of $quest_staceyname.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 3&gt;&gt;Following Stacey&#39;s map, your adventure party makes a detour to the north, carefully walking between the oozing water reservoirs that make up a large part of the Procoms district. &lt;br&gt;&lt;br&gt;After a good, 15-minute stretch, you finally arrive at an overgrown park, dotted with strange-looking buildings.&lt;&lt;/if&gt;&gt;
@@ -370801,7 +370341,6 @@ Abbot Roo&#39;s smile fades away, replaced by a serious face that tells you ther
 &lt;&lt;if $mcpower gte 100&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $credit gte 5000&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $credit gte 15000&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $chance+=65&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &#39;&#39;You:&#39;&#39; //I&#39;d never distrust you, Mr, Roo, but I need to know what&#39;s going on in my own neighborhood. &lt;&lt;if $disp_hk gte 1&gt;&gt;Those freebooters could target my household or my associates next time.&lt;&lt;/if&gt;&gt; I implore you to tell me the truth – I have a feeling I&#39;ve only scratched the surface of your so called &quot;dispute&quot; with these men.//
 
@@ -383626,8 +383165,6 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 &lt;&lt;set _wscap to 9&gt;&gt;
 &lt;&lt;if $oldworkshop is undefined&gt;&gt;&lt;&lt;set _wscap to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _test to _dayblock&gt;&gt;
-
 &lt;&lt;if _girlid is 2 and _masterlove gte 50 and $rebbus gte 1&gt;&gt;&lt;&lt;set _rebbusok to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -383679,7 +383216,7 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 
 &lt;&lt;if _npc.age lte 59 and _npc.age gte 13 and _npc.sex is 0 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _arenaok to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _arenaok to ($arenanpcs lt $maxarenanpcs and !_arenablock and _npc.sex is 0 and _npc.age gte 13) ? 1 : 2&gt;&gt;
+&lt;&lt;set _arenaok to ($arenanpcs lt $maxarenanpcs and _npc.sex is 0 and _npc.age gte 13) ? 1 : 2&gt;&gt;
 
 /* blocked from arena */
 &lt;&lt;if _npc.girlid is 39&gt;&gt;&lt;&lt;set _arenaok to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -386186,8 +385723,6 @@ Chancellor
 &lt;&lt;if $foodprice is undefined&gt;&gt;&lt;&lt;set $foodprice to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _rations to 0&gt;&gt;
-
-&lt;&lt;if $onlyonce is undefined&gt;&gt;&lt;&lt;set $testprice to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* over-weight and over-eating effects */
 &lt;&lt;if _npc.hunger gte 85 and _lossroll lte 2&gt;&gt;
@@ -389210,8 +388745,6 @@ TRADE OFFER&lt;br&gt;
 
 &lt;&lt;if $quest_ellen is 2 and $courtxp gte 10&gt;&gt;
 &lt;&lt;set _questprop to &quot;forgers (-)&quot;&gt;&gt;
-
-&lt;&lt;set _stoppeth to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -402647,11 +402180,6 @@ mother: &quot;Cassie&quot;,
 &lt;&lt;set $adisplay to random(100, 199)&gt;&gt; AVATAR PIC 
 */
 
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $aback3 to 6&gt;&gt;
-&lt;&lt;set $aback to -2&gt;&gt;
-&lt;&lt;set $aback2 to 2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 /* URCHIN */
