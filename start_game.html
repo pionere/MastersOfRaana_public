@@ -113,6 +113,9 @@ yardstab = function (_npc,_ystab) {
     }
     return Math.round(_stab);
 }
+isaway = function (_npc) {
+    return _npc.dayblock == 25 || _npc.dayblock == 26 || (_npc.dayblock >= 409 && _npc.dayblock <= 650);
+}
 Date.prototype.toLocaleStringDefault = Date.prototype.toLocaleString;
 Date.prototype.toLocaleString = function () {
     const lang = navigator.language || navigator.languages[0];
@@ -309095,12 +309098,10 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 
 &lt;&lt;if _npc.state gte 1 or _npc.state is -3 and (_npc.girlid isnot 49)&gt;&gt;
 
-&lt;&lt;include GenCheck&gt;&gt;
+&lt;&lt;set _isaway=isaway(_npc)&gt;&gt;
 
 
-&lt;&lt;if _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.dayblock isnot 409&gt;&gt;
 &lt;&lt;include TitleTraits&gt;&gt; 
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;include Jobs&gt;&gt;
@@ -309109,7 +309110,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;include SalScript&gt;&gt;
 &lt;&lt;unset _salcheck&gt;&gt;
 
-&lt;&lt;if _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.dayblock isnot 409 and (_npc.bondage lte 0 or _npc.bondage gte 10)&gt;&gt;
+&lt;&lt;if !_isaway and (_npc.bondage lte 0 or _npc.bondage gte 10)&gt;&gt;
 &lt;&lt;include Rooms&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -311540,7 +311541,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;if _npc.girlid is 39 and _npc.willpower gte 1 and _npc.likesadist lte 89&gt;&gt;
 
 &lt;&lt;set _npc.likesadist=adl(_npc.likesadist,-random(1, 2),50)&gt;&gt;
-&lt;&lt;if $corfester gte 100&gt;&gt;&lt;&lt;set _npc.happiness=Math.min(_npc.happiness,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if !_isaway and $corfester gte 100&gt;&gt;&lt;&lt;set _npc.happiness=Math.min(_npc.happiness,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* LIBERATOR ENDS */
 
@@ -311575,8 +311576,8 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 /* MALEVOLENT */
 &lt;&lt;if _npc.traitpure lte 24&gt;&gt;
 &lt;&lt;if _lossroll is 1 and _npc.happiness gte 40&gt;&gt;&lt;&lt;set _npc.likesadist=adl(_npc.likesadist,1,50)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _lossroll is 2 and _npc.willpower gte 20 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set $badfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _lossroll is 1 and _npc.willpower gte 20 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set $purefester=adl($purefester,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll is 2 and _npc.willpower gte 20 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set $badfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll is 1 and _npc.willpower gte 20 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set $purefester=adl($purefester,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $lossroll is 2 and _npc.kind gte 60 and _npc.traitpure lte 44&gt;&gt;&lt;&lt;set _npc.traitpure+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -311584,7 +311585,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* MATERIALISTIC */
 &lt;&lt;if _npc.traitmat gte 75&gt;&gt;
-&lt;&lt;if _npc.foods gte 2&gt;&gt;
+&lt;&lt;if !_isaway and _npc.foods gte 2&gt;&gt;
 &lt;&lt;if $lux is 2 and _npc.lossroll lte 3&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $lux is 3&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $lux is 4 and _npc.happiness lte 69 and _npc.masterlove lte 69&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;set _npc.masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -311689,7 +311690,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 
 
-&lt;&lt;if _npc.willpower gt _relc.willpower and _relc.state gte 1 and _relc.dayblock isnot 25 and _relc.dayblock isnot 26 and _relc.dayblock isnot 409 and _relc.dayblock isnot 413 and _relc.dayblock isnot 414 and $lossroll is 1 and _relc.traitrela is _npc.girlid&gt;&gt;
+&lt;&lt;if _npc.willpower gt _relc.willpower and _relc.state gte 1 and !isaway(_relc) and $lossroll is 1 and _relc.traitrela is _npc.girlid&gt;&gt;
 
 &lt;&lt;set _relc.likesadist=adl(_relc.likesadist,1,_npc.likesadist)&gt;&gt;
 &lt;&lt;set _relc.likesadist=adl(_relc.likesadist,-1,_npc.likesadist)&gt;&gt;
@@ -311740,7 +311741,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 
 /* SHY */
-&lt;&lt;if _npc.traitextro lte 24 and _npcs gte 20 and $purefester lte 74 and $mch isnot undefined and $mch.yardslot1.type isnot 1&gt;&gt;
+&lt;&lt;if _npc.traitextro lte 24 and (_isaway or (_npcs gte 20 and $purefester lte 74 and $mch isnot undefined and $mch.yardslot1.type isnot 1))&gt;&gt;
 &lt;&lt;set _npc.happiness-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -311897,14 +311898,14 @@ SEE MID PASSAGE. SIBLINGS EFFECT is TRUE even upon dismiss
 &lt;&lt;if _npc.traitsmr gte 1&gt;&gt;
 
 &lt;&lt;if _lossroll lte 2&gt;&gt;&lt;&lt;set _npc.willpower=adl(_npc.willpower,-1,5)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $corfester=adl($corfester,2,200)&gt;&gt;
+&lt;&lt;if !_isaway&gt;&gt;&lt;&lt;set $corfester=adl($corfester,2,200)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 
 
 /* TECHIE */
-&lt;&lt;if _npc.traittech gte 90 and _npc.bondage lte 0&gt;&gt;
+&lt;&lt;if _npc.traittech gte 90 and !_isaway and _npc.bondage lte 0&gt;&gt;
 &lt;&lt;if $techmod is 2 and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $techmod gte 3 and _lossroll lte 2&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -311994,6 +311995,8 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* ACC EFFECTS */
 
+&lt;&lt;if !_isaway and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt; /* checks if NPC has an away assignment */
+
 &lt;&lt;set _numnpcs to 0&gt;&gt;
 
 &lt;&lt;for _testnpc range $npc&gt;&gt;
@@ -312006,12 +312009,10 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 &lt;&lt;if _numnpcs gte 5&gt;&gt;&lt;&lt;set _rannpcroll=adl(_rannpcroll,-2,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _rannpcroll lte 0&gt;&gt;&lt;&lt;set _rannpcroll to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
 
-&lt;&lt;if _isaway is undefined and _npc.bondage lte 0&gt;&gt; /* checks if NPC has an away assignment */
 
 &lt;&lt;if $corfester gte 5 and _rannpcroll is 1&gt;&gt;
 &lt;&lt;set _roll to random(1, 100)&gt;&gt;
@@ -312076,10 +312077,6 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;/if&gt;&gt; /* is away checker ends */
-
-
-
 /* MAX ACC CHECKERS */
 
 &lt;&lt;set $corfester=Math.min($corfester,200)&gt;&gt;
@@ -312099,6 +312096,8 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;set $badfester=Math.max($badfester,0)&gt;&gt;
 &lt;&lt;set $repairfester=Math.max($repairfester,0)&gt;&gt;
 &lt;&lt;set $freedomfester=Math.max($freedomfester,0)&gt;&gt;
+
+&lt;&lt;/if&gt;&gt; /* is away checker ends */
 
 </tw-passagedata><tw-passagedata pid="454" name="BondRules2" tags="nobr" position="3625,1475" size="100,100">&lt;&lt;set _bondroll to random(1, 6)&gt;&gt;
 &lt;&lt;set _bondroll2 to random(1, 100)&gt;&gt;
@@ -342368,7 +342367,7 @@ PRISON ACT.
 
 
 /* affection checker */
-&lt;&lt;if _room.level gte 1 and _npc.status lte 3 and _npc.scarefactor lte 1 and _room.occ lte 4 and _npc.ostatus isnot 5 and _npc.traitnobility isnot 100 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26&gt;&gt;&lt;&lt;set _npc.masterlove=adl(_npc.masterlove,1,50)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _room.level gte 1 and _npc.status lte 3 and _npc.scarefactor lte 1 and _room.occ lte 4 and _npc.ostatus isnot 5 and _npc.traitnobility isnot 100&gt;&gt;&lt;&lt;set _npc.masterlove=adl(_npc.masterlove,1,50)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* SEXUAL RELATIONSHIPS IN PRIVATE ROOMS */
@@ -385709,11 +385708,6 @@ Chancellor
 &#39;&#39;JOURNAL UPDATED!&#39;&#39;
 &lt;/div&gt;
 &lt;/center&gt;
-</tw-passagedata><tw-passagedata pid="612" name="GenCheck" tags="nobr" position="4125,1575" size="100,100">/* THIS PASSAGE TRACKS VARIOUS STATES FOR NPCS. EXECUTES AT TOP OF MID */
-
-&lt;&lt;unset _isaway&gt;&gt;
-
-&lt;&lt;if _npc.dayblock is 25 or _npc.dayblock is 26 or (_npc.dayblock gte 409 and _npc.dayblock lte 650)&gt;&gt;&lt;&lt;set _isaway to true&gt;&gt;&lt;&lt;/if&gt;&gt; 
 </tw-passagedata><tw-passagedata pid="613" name="NPCEat" tags="nobr" position="4025,1475" size="100,100">
 
 /* EATING, WEIGHT, FOOD NOTE! FOR MC SEE &quot;OTHERSTUFF&quot; PASSAGE */
