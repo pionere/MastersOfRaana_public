@@ -30921,7 +30921,7 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $removebutt is false&gt;&gt;
-&lt;&lt;if $cash gte 10&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $15&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($10)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 15&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $15&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($10)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $cash gte 15&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt; [[Purchase|Market][$event2 to true, $cash-=15, $ownnecklace1+=1, $removebutt to true]] &lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -31245,7 +31245,7 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 
 &lt;&lt;if $removebutt is false&gt;&gt;
-&lt;&lt;if $cash gte 200&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $2000&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($2000)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 2000&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $2000&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($2000)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $cash gte 2000&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt; [[Purchase|Market][$event20 to true, $cash-=2000, $durasteel+=4, $removebutt to true]] &lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -102905,7 +102905,7 @@ Cyker Inc. offers two upgrade modules for its famous combat armors. A combat arm
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $ownleather is false and $action15 is false&gt;&gt;
-&lt;&lt;if $cash gte 400&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $400&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($500)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 400&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $400&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($400)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;tex3-5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;ulvendor&quot;&gt;[[View stats|ArmorStore][$action15 to true, $event1 to true]]&lt;/div&gt;
@@ -103186,7 +103186,7 @@ Cyker Inc. offers two upgrade modules for its famous combat armors. A combat arm
 &lt;div class=&quot;tex3-5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;ulvendor&quot;&gt;[[View stats|ArmorStore][$action15 to true, $event7 to true]]&lt;/div&gt;
-&lt;&lt;if $cash gte 350&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt; [[Purchase|ArmorStore][$event7 to true, $cash-=300, $ownslleather+=1, $removebutt to true]] &lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 350&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt; [[Purchase|ArmorStore][$event7 to true, $cash-=350, $ownslleather+=1, $removebutt to true]] &lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -103599,7 +103599,7 @@ Cyker Inc. offers two upgrade modules for its famous combat armors. A combat arm
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $hleathersoak lte 13&gt;&gt;
-&lt;&lt;if $cash gte 50&gt;&gt;&lt;center&gt;&#39;&#39;REPAIR PRICE: $60&#39;&#39;&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds! ($60)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 60&gt;&gt;&lt;center&gt;&#39;&#39;REPAIR PRICE: $60&#39;&#39;&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds! ($60)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;smalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;if $cash gte 60&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt; [[Repair|ArmorStore][$hleathersoak to 14, $action to 3, $cash-=60]] &lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Repair&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -127197,7 +127197,7 @@ While the boutique still offers the same stuffed bookshelves as before, most of 
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $manibook1 lte 0&gt;&gt;
-&lt;&lt;if $cash gte 120&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $200&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($120)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 200&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $200&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($200)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &#39;&#39;Output: 8-10 points&#39;&#39;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $cash gte 200&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt; [[Purchase|Book][$event7 to true, $cash-=200, $manibook1 to 1, $removebutt to true]] &lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
