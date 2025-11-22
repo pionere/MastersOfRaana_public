@@ -337125,31 +337125,22 @@ OLD IGNORE
 
 
 /* foreman INT effects */
-&lt;&lt;if _fact.other4 gte 60 and _fact.other lte 89&gt;&gt;
-&lt;&lt;set _gold*=1.005&gt;&gt;
-&lt;&lt;set _dura*=1.008&gt;&gt;
-&lt;&lt;set _scrap*=1.08&gt;&gt;
-&lt;&lt;set _connect*=1.04&gt;&gt;
-&lt;&lt;set _cloth*=1.05&gt;&gt;
-&lt;&lt;set _cboards*=1.02&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _fact.other4 gte 60&gt;&gt;
 
-&lt;&lt;if _fact.other4 gte 90 and _fact.other lte 119&gt;&gt;
-&lt;&lt;set _gold*=1.015&gt;&gt;
-&lt;&lt;set _dura*=1.015&gt;&gt;
-&lt;&lt;set _scrap*=1.12&gt;&gt;
-&lt;&lt;set _connect*=1.14&gt;&gt;
-&lt;&lt;set _cloth*=1.10&gt;&gt;
-&lt;&lt;set _cboards*=1.05&gt;&gt;
+&lt;&lt;if _fact.other4 lte 89&gt;&gt;
+&lt;&lt;set _tmp=[1.005,1.008,1.08,1.04,1.05,1.02]&gt;&gt;
+&lt;&lt;elseif _fact.other4 lte 119&gt;&gt;
+&lt;&lt;set _tmp=[1.015,1.015,1.12,1.14,1.10,1.05]&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _tmp=[1.02,1.02,1.2,1.2,1.15,1.1]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;set _gold*=_tmp[0]&gt;&gt;
+&lt;&lt;set _dura*=_tmp[1]&gt;&gt;
+&lt;&lt;set _scrap*=_tmp[2]&gt;&gt;
+&lt;&lt;set _connect*=_tmp[3]&gt;&gt;
+&lt;&lt;set _cloth*=_tmp[4]&gt;&gt;
+&lt;&lt;set _cboards*=_tmp[5]&gt;&gt;
 
-&lt;&lt;if _fact.other4 gte 90 and _fact.other lte 119&gt;&gt;
-&lt;&lt;set _gold*=1.02&gt;&gt;
-&lt;&lt;set _dura*=1.02&gt;&gt;
-&lt;&lt;set _scrap*=1.2&gt;&gt;
-&lt;&lt;set _connect*=1.2&gt;&gt;
-&lt;&lt;set _cloth*=1.15&gt;&gt;
-&lt;&lt;set _cboards*=1.1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _dura = Math.round(_dura)&gt;&gt;
