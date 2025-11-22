@@ -275456,6 +275456,11 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 [img[$imgpath + &quot;Exterior/loc_kahill.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
+/* Ichi transfer */
+&lt;&lt;if $mscaving is 1009&gt;&gt;
+[img[$imgpath + &quot;Exterior/loc_rai.jpg&quot;]]
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $mscaving is 22&gt;&gt;
 &lt;&lt;if $event is 0&gt;&gt;
 [img[$imgpath + &quot;Av6/roaming3.jpg&quot;]]
@@ -278807,7 +278812,7 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 
 
 /* mine transfer */
-&lt;&lt;if $mscaving is 1005 or $mscaving is 1006 or $mscaving is 1007&gt;&gt;
+&lt;&lt;if $mscaving is 1005 or $mscaving is 1006 or $mscaving is 1007 or $mscaving is 1009&gt;&gt;
 &lt;&lt;if $adpos is 0&gt;&gt;
 &lt;&lt;if !_workerfull&gt;&gt;[[Transfer (worker)!|MScaving][$adpos to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;worker (full!)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _guard is true&gt;&gt;[[Transfer (guard)!|MScaving][$adpos to 1, $guardsend to true]]&lt;&lt;/if&gt;&gt;
@@ -289953,6 +289958,58 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;/if&gt;&gt;
 
 /* canco mod ends */
+
+/* ichi move*/
+&lt;&lt;if $mscaving is 1009&gt;&gt;
+
+&lt;&lt;include NewLoad&gt;&gt;
+
+&lt;&lt;if $adpos is 0&gt;&gt;
+You contemplate on sending _npc.girlname off to work at the Ichi farm. Doing so will &#39;&#39;permanently remove&#39;&#39; &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; from the game!
+&lt;br&gt;&lt;br&gt;
+A transfer also costs $100 in shipping fees.
+&lt;br&gt;&lt;br&gt;
+
+
+&lt;&lt;if _npc.masterlove gte 50&gt;&gt;
+&lt;&lt;if _npc.ranged gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.melee gte 40&gt;&gt;&lt;&lt;set _guard to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _workerfull to true&gt;&gt;
+
+
+
+&lt;br&gt;&lt;br&gt;
+&lt;&lt;if _guard isnot true&gt;&gt;&lt;center&gt;&#39;&#39;Guard assignment prerequisites not met!&#39;&#39; &lt;br&gt;//(Requires Affection Friendly+ and either Melee //or// Ranged weapon skill 40+)!//&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+
+
+&lt;&lt;elseif $adpos is 1&gt;&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;
+&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;&lt;set $inve.bura.soldiers+=1&gt;&gt;
+
+&lt;&lt;unset $guardsend&gt;&gt;
+
+&lt;&lt;set $cash-=100&gt;&gt;
+&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
+&lt;&lt;set _deathevent to true&gt;&gt;
+&lt;&lt;set _clearslot+=1&gt;&gt;
+&lt;&lt;include ClearSlot&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+
+
+
+
+&lt;&lt;/if&gt;&gt;
+
+
 </tw-passagedata><tw-passagedata pid="404" name="NewCloth" tags="nobr" position="4775,350" size="100,100">&lt;&lt;if $wenttosed isnot true and _checksed is true&gt;&gt;
 
 &lt;&lt;if $av_wear isnot &quot;harness&quot; and $av_wear isnot &quot;harness2&quot; and $av_wear isnot &quot;naked&quot;&gt;&gt;
@@ -321038,6 +321095,11 @@ Hiring this unit will cost you &#39;&#39;75 War Supplies&#39;&#39;!
 [[Move to Dark|MScaving][$mscaving to 1008, $adpos to 0]]
 &lt;&lt;/if&gt;&gt;
 
+/* ichi transfer */
+&lt;&lt;if _npc.status lte 3 and _npc.bondage lte 0 and _npc.girlid isnot 353 and !$raien1 and _smraria isnot true and _npc.girlid isnot 11&gt;&gt;
+&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
+[[Move to Ichi|MScaving][$mscaving to 1009, $adpos to 0]]
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $invhold gte 10 and $permdeb isnot 2&gt;&gt;
 &lt;&lt;set _deb to true&gt;&gt;
