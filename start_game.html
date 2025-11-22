@@ -295302,16 +295302,32 @@ household anymore today!&#39;&#39;
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+&lt;&lt;if _active.task is 1 or _active.task is 3&gt;&gt;
+
+&lt;div class=&quot;tex11px&quot;&gt;&#39;&#39;MERCHANDISE&#39;&#39;&lt;/div&gt;
+&lt;&lt;set _tmp=_active.setting3 is 0 ?100:(_active.setting3 is 1?200:500)&gt;&gt;
+&lt;div class=&quot;row padd80left padd80right&quot;&gt;
+
+&lt;div class=&quot;resholdersmall lighthover&quot;&gt;
+&lt;&lt;set _m2p=Math.min(_active.other1,_tmp)&gt;&gt;
+[img[$imgpath + &quot;Butt/minus.png&quot;][House][$swag+=_m2p, _active.other1-=_m2p]]
+&lt;/div&gt;
+
+&lt;&lt;print setup.formatNumber(_active.other1)&gt;&gt;
+
+&lt;div class=&quot;resholdersmall lighthover&quot;&gt;
+&lt;&lt;set _p2m=Math.min($swag,_tmp)&gt;&gt;
+[img[$imgpath + &quot;Butt/plus.png&quot;][House][$swag-=_p2m, _active.other1+=_p2m]]
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;row ulexsmall padd50left padd50right&quot;&gt;&lt;&lt;if _active.setting3 is 0&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;100&lt;/p&gt;&lt;&lt;else&gt;&gt;[[100|House][_active.setting3 to 0]]&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting3 is 1&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;200&lt;/p&gt;&lt;&lt;else&gt;&gt;[[200|House][_active.setting3 to 1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting3 is 3&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;500&lt;/p&gt;&lt;&lt;else&gt;&gt;[[500|House][_active.setting3 to 3]]&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+
 /* PROCESSING */
 &lt;&lt;if _active.task is 1&gt;&gt;
-&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $swag gte 500&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;
-[[Add 500M|House][$swag-=500, _active.other1+=500]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Add 500M&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
-&lt;div class=&quot;tex10px&quot;&gt;&#39;&#39;MERCHANDISE&#39;&#39;&lt;/div&gt;
-&lt;&lt;print setup.formatNumber(_active.other1)&gt;&gt;
-&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
 &lt;&lt;if _active.setting1 is undefined&gt;&gt;
 &lt;&lt;set _active.setting1 to 0&gt;&gt;
 &lt;&lt;set _active.setting2 to 0&gt;&gt;
@@ -295320,11 +295336,10 @@ household anymore today!&#39;&#39;
 
 &lt;&lt;if _active.level gte 1 and _active.level2 gte 2&gt;&gt;
 &#39;&#39;PROCESS SCRAP IRON&#39;&#39;&lt;br&gt;
-&lt;div class=&quot;row ulexsmall padd50left padd50right&quot;&gt;&lt;&lt;if _active.setting1 is 0&gt;&gt;[[On|House][_active.setting1 to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;On&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting1 is 1&gt;&gt;[[Off|House][_active.setting1 to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;Off&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;row ulexsmall padd50left padd50right&quot;&gt;&lt;&lt;if _active.setting1 is 0&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;Off&lt;/p&gt;&lt;&lt;else&gt;&gt;[[Off|House][_active.setting1 to 0]]&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting1 is 1&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;On&lt;/p&gt;&lt;&lt;else&gt;&gt;[[On|House][_active.setting1 to 1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting1 is 2&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;Add&lt;/p&gt;&lt;&lt;else&gt;&gt;[[Add|House][_active.setting1 to 2]]&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;PROCESS C-BOARDS&#39;&#39;&lt;br&gt;
-&lt;div class=&quot;row ulexsmall padd50left padd50right&quot;&gt;&lt;&lt;if _active.setting2 is 0&gt;&gt;[[On|House][_active.setting2 to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;On&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting2 is 1&gt;&gt;[[Off|House][_active.setting2 to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;Off&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-&lt;&lt;else&gt;&gt;
+&lt;div class=&quot;row ulexsmall padd50left padd50right&quot;&gt;&lt;&lt;if _active.setting2 is 0&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;Off&lt;/p&gt;&lt;&lt;else&gt;&gt;[[Off|House][_active.setting2 to 0]]&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting2 is 1&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;On&lt;/p&gt;&lt;&lt;else&gt;&gt;[[On|House][_active.setting2 to 1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if _active.setting2 is 2&gt;&gt;&lt;p class=&quot;ulexsmallselect&quot;&gt;Add&lt;/p&gt;&lt;&lt;else&gt;&gt;[[Add|House][_active.setting2 to 2]]&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -295333,31 +295348,28 @@ household anymore today!&#39;&#39;
 
 /* MANUFACTURE */
 &lt;&lt;if _active.task is 2&gt;&gt;
-&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 [[Process|House][$withdraw to true]]
 &lt;/div&gt;
 &lt;br&gt;
-/*
-&lt;&lt;if $swag gte 500&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Add 500M|House][$swag-=500, _active.other1+=500]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Add 500M&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;div class=&quot;tex10px&quot;&gt;&#39;&#39;MERCHANDISE&#39;&#39;&lt;/div&gt;
-&lt;&lt;print setup.formatNumber(_active.other1)&gt;&gt;
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-*/
-
-&lt;div class=&quot;tex10px&quot;&gt;&#39;&#39;PRODUCTION POINTS&#39;&#39;&lt;/div&gt; 
-
-&lt;&lt;print setup.formatNumber(_active.other6)&gt;&gt; [img[$imgpath + &quot;Stuff/Materials/prod_s.png&quot;]]
-&lt;br&gt;
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;div class=&quot;tex10px&quot;&gt;&#39;&#39;TECH POINTS&#39;&#39;&lt;/div&gt; 
-&lt;&lt;print setup.formatNumber(_active.other7)&gt;&gt; [img[$imgpath + &quot;Stuff/Materials/aprod_s.png&quot;]]
-
-
-
+&lt;div class=&quot;row ulexsmall padd50left padd50right&quot;&gt;
+&lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;PRODUCTION POINTS&quot;&gt;&gt;
+[img[$imgpath + &quot;Stuff/Materials/prod_s.png&quot;]]
+&lt;&lt;/hovertip&gt;&gt;
+&lt;div class=&quot;tex14px&quot;&gt;
+&lt;&lt;print setup.formatNumber(_active.other6)&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;TECH POINTS&quot;&gt;&gt;
+[img[$imgpath + &quot;Stuff/Materials/aprod_s.png&quot;]]
+&lt;&lt;/hovertip&gt;&gt;
+&lt;div class=&quot;tex14px&quot;&gt;
+&lt;&lt;print setup.formatNumber(_active.other7)&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -295366,12 +295378,6 @@ household anymore today!&#39;&#39;
 
 /* Sweatshop */
 &lt;&lt;if _active.task is 3&gt;&gt;
-&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $swag gte 300&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Add 300M|House][$swag-=300, _active.other1+=300]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Add 300M&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
-&lt;div class=&quot;tex10px&quot;&gt;&#39;&#39;MERCHANDISE&#39;&#39;&lt;/div&gt;
-&lt;&lt;print setup.formatNumber(_active.other1)&gt;&gt;
-&lt;div class=&quot;tex13px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;set _houseshow to true&gt;&gt;
 &lt;&lt;include SweatYield&gt;&gt;
@@ -337153,24 +337159,23 @@ OLD IGNORE
 
 
 /* process into steel */
-&lt;&lt;if _fact.setting1 is 1 and _scrap gte 5&gt;&gt;
-&lt;&lt;set _steel to _scrap&gt;&gt;
-&lt;&lt;set _steel*=0.25&gt;&gt;
+&lt;&lt;if _fact.setting1 gt 0&gt;&gt;
+&lt;&lt;set _steel=Math.trunc((_scrap+(_fact.setting1 is 1?0:Math.min($scrap,3)))/4)&gt;&gt;
+&lt;&lt;if _steel gt 0&gt;&gt;
 &lt;&lt;set $repairfester+=2&gt;&gt;
-
-&lt;&lt;set _steel = Math.round(_steel)&gt;&gt;
-&lt;&lt;set _scrap to 0&gt;&gt;
+&lt;&lt;set _scrap-=_steel*4&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 /* process cboards into gold  */
-&lt;&lt;if _fact.setting2 is 1 and _cboards gte 10&gt;&gt;
-&lt;&lt;set _cboards*=0.1&gt;&gt;
-&lt;&lt;set _gold+=_cboards&gt;&gt;
+&lt;&lt;if _fact.setting2 gt 0&gt;&gt;
+&lt;&lt;set _tmp=Math.trunc((_cboards+(_fact.setting2 is 1?0:Math.min($steel,9)))/10)&gt;&gt;
+&lt;&lt;if _tmp gt 0&gt;&gt;
+&lt;&lt;set _gold+=_tmp&gt;&gt;
 &lt;&lt;set $repairfester+=2&gt;&gt;
-
-&lt;&lt;set _gold = Math.round(_gold)&gt;&gt;
-&lt;&lt;set _cboards to 0&gt;&gt;
+&lt;&lt;set _cboards-=_tmp*10&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _steel=Math.max(_steel,0)&gt;&gt;
