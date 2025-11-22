@@ -82420,9 +82420,15 @@ Is stronger than she looks, and packs an impressive punch, making her adept in &
 &lt;&lt;set _enemy4pic to false&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="SlaveSlot1" tags="" position="2150,1350" size="100,100">&lt;&lt;nobr&gt;&gt;
 
+&lt;&lt;set _ko to $cs1_state is 0&gt;&gt;
+&lt;&lt;set _sloty to $cslot1&gt;&gt;
+&lt;&lt;set _girlid to $cs1_girlid&gt;&gt;
+&lt;&lt;set _age to $cs1_age&gt;&gt;
+&lt;&lt;set _sex to $cs1_sex&gt;&gt;
+&lt;&lt;set _trans to $cs1_transformed&gt;&gt;
+&lt;&lt;set _curhp to $cs1_health&gt;&gt;
 
-&lt;&lt;if $cs1_state gte 1&gt;&gt;
-&lt;&lt;set _ko to false&gt;&gt;
+&lt;&lt;if !_ko&gt;&gt;
 
 &lt;div class=&quot;combattex&quot;&gt;&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
 
@@ -82430,45 +82436,16 @@ Is stronger than she looks, and packs an impressive punch, making her adept in &
 &lt;div class=&quot;cpic&quot;&gt;
 
 &lt;&lt;set _cposi to 1&gt;&gt;
-&lt;&lt;set _sloty to $cslot1&gt;&gt;
-&lt;&lt;set _girlid to $cs1_girlid&gt;&gt;
-&lt;&lt;set _age to $cs1_age&gt;&gt;
-&lt;&lt;set _sex to $cs1_sex&gt;&gt;
 &lt;&lt;set _show0 to $cs1_name&gt;&gt;
 &lt;&lt;set _show to $cs1_rweapon&gt;&gt;
 &lt;&lt;set _show1 to $cs1_mweapon&gt;&gt;
 &lt;&lt;set _show3 to $cs1_armor&gt;&gt;
 &lt;&lt;set _posi to $cs1_pos&gt;&gt;
-&lt;&lt;set _trans to $cs1_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs1_health&gt;&gt;
 
 &lt;&lt;include FoInfo&gt;&gt;
-
 &lt;&lt;include FoPic&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs1_state is 0&gt;&gt;
-&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
-
-
-&lt;div class=&quot;cpic&quot;&gt;
-&lt;&lt;set _ko to true&gt;&gt;
-&lt;&lt;set _sloty to $cslot1&gt;&gt;
-&lt;&lt;set _girlid to $cs1_girlid&gt;&gt;
-&lt;&lt;set _age to $cs1_age&gt;&gt;
-&lt;&lt;set _sex to $cs1_sex&gt;&gt;
-&lt;&lt;set _trans to $cs1_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs1_health&gt;&gt;
-
-&lt;&lt;include FoPic&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $cs1_state gte 1&gt;&gt;
 &lt;div class=&quot;meterdef&quot;&gt;
 
 /*
@@ -82484,60 +82461,44 @@ Is stronger than she looks, and packs an impressive punch, making her adept in &
 &lt;div class=&quot;cnamehold&quot;&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;else&gt;&gt;
+
+&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;div class=&quot;cpic&quot;&gt;
+&lt;&lt;include FoPic&gt;&gt;
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="SlaveSlot2" tags="" position="2250,1350" size="100,100">&lt;&lt;nobr&gt;&gt;
 
+&lt;&lt;set _ko to $cs2_state is 0&gt;&gt;
+&lt;&lt;set _sloty to $cslot2&gt;&gt;
+&lt;&lt;set _girlid to $cs2_girlid&gt;&gt;
+&lt;&lt;set _age to $cs2_age&gt;&gt;
+&lt;&lt;set _sex to $cs2_sex&gt;&gt;
+&lt;&lt;set _trans to $cs2_transformed&gt;&gt;
+&lt;&lt;set _curhp to $cs2_health&gt;&gt;
 
-&lt;&lt;if $cs2_state gte 1&gt;&gt;
-&lt;&lt;set _ko to false&gt;&gt;
+&lt;&lt;if !_ko&gt;&gt;
 
 &lt;div class=&quot;combattex&quot;&gt;&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;cpic&quot;&gt;
 
 &lt;&lt;set _cposi to 2&gt;&gt;
-&lt;&lt;set _sloty to $cslot2&gt;&gt;
-&lt;&lt;set _girlid to $cs2_girlid&gt;&gt;
-&lt;&lt;set _age to $cs2_age&gt;&gt;
-&lt;&lt;set _sex to $cs2_sex&gt;&gt;
 &lt;&lt;set _show0 to $cs2_name&gt;&gt;
 &lt;&lt;set _show to $cs2_rweapon&gt;&gt;
 &lt;&lt;set _show1 to $cs2_mweapon&gt;&gt;
 &lt;&lt;set _show3 to $cs2_armor&gt;&gt;
 &lt;&lt;set _posi to $cs2_pos&gt;&gt;
-&lt;&lt;set _trans to $cs2_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs2_health&gt;&gt;
 
 &lt;&lt;include FoInfo&gt;&gt;
-
-
 &lt;&lt;include FoPic&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs2_state is 0&gt;&gt;
-&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
-
-
-&lt;div class=&quot;cpic&quot;&gt;
-&lt;&lt;set _ko to true&gt;&gt;
-&lt;&lt;set _sloty to $cslot2&gt;&gt;
-&lt;&lt;set _girlid to $cs2_girlid&gt;&gt;
-&lt;&lt;set _age to $cs2_age&gt;&gt;
-&lt;&lt;set _sex to $cs2_sex&gt;&gt;
-&lt;&lt;set _trans to $cs2_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs2_health&gt;&gt;
-
-&lt;&lt;include FoPic&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $cs2_state gte 1&gt;&gt;
 &lt;div class=&quot;meterdef&quot;&gt;
 
 /*
@@ -82552,57 +82513,44 @@ Is stronger than she looks, and packs an impressive punch, making her adept in &
 &lt;/div&gt;
 &lt;div class=&quot;cnamehold&quot;&gt;
 &lt;/div&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;div class=&quot;cpic&quot;&gt;
+&lt;&lt;include FoPic&gt;&gt;
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="Merc1" tags="" position="2150,1450" size="100,100">&lt;&lt;nobr&gt;&gt;
 
+&lt;&lt;set _ko to $cs3_state is 0&gt;&gt;
+&lt;&lt;set _sloty to $cslot3&gt;&gt;
+&lt;&lt;set _girlid to $cs3_girlid&gt;&gt;
+&lt;&lt;set _age to $cs3_age&gt;&gt;
+&lt;&lt;set _sex to $cs3_sex&gt;&gt;
+&lt;&lt;set _trans to $cs3_transformed&gt;&gt;
+&lt;&lt;set _curhp to $cs3_health&gt;&gt;
 
-&lt;&lt;if $cs3_state gte 1&gt;&gt;
-&lt;&lt;set _ko to false&gt;&gt;
+&lt;&lt;if !_ko&gt;&gt;
 
 &lt;div class=&quot;combattex&quot;&gt;&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;cpic&quot;&gt;
 
 &lt;&lt;set _cposi to 3&gt;&gt;
-&lt;&lt;set _sloty to $cslot3&gt;&gt;
-&lt;&lt;set _girlid to $cs3_girlid&gt;&gt;
-&lt;&lt;set _age to $cs3_age&gt;&gt;
-&lt;&lt;set _sex to $cs3_sex&gt;&gt;
 &lt;&lt;set _show0 to $cs3_name&gt;&gt;
 &lt;&lt;set _show to $cs3_rweapon&gt;&gt;
 &lt;&lt;set _show1 to $cs3_mweapon&gt;&gt;
 &lt;&lt;set _show3 to $cs3_armor&gt;&gt;
 &lt;&lt;set _posi to $cs3_pos&gt;&gt;
-&lt;&lt;set _trans to $cs3_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs3_health&gt;&gt;
 
 &lt;&lt;include FoInfo&gt;&gt;
-
 &lt;&lt;include FoPic&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs3_state is 0&gt;&gt;
-&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
-
-
-&lt;div class=&quot;cpic&quot;&gt;
-&lt;&lt;set _ko to true&gt;&gt;
-&lt;&lt;set _sloty to $cslot3&gt;&gt;
-&lt;&lt;set _girlid to $cs3_girlid&gt;&gt;
-&lt;&lt;set _age to $cs3_age&gt;&gt;
-&lt;&lt;set _sex to $cs3_sex&gt;&gt;
-&lt;&lt;set _trans to $cs3_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs3_health&gt;&gt;
-
-&lt;&lt;include FoPic&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs3_state gte 1&gt;&gt;
 &lt;div class=&quot;meterdef&quot;&gt;
 
 /*
@@ -82618,56 +82566,44 @@ Is stronger than she looks, and packs an impressive punch, making her adept in &
 &lt;div class=&quot;cnamehold&quot;&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;div class=&quot;cpic&quot;&gt;
+&lt;&lt;include FoPic&gt;&gt;
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="Merc2" tags="" position="2250,1450" size="100,100">&lt;&lt;nobr&gt;&gt;
 
+&lt;&lt;set _ko to $cs4_state is 0&gt;&gt;
+&lt;&lt;set _sloty to $cslot4&gt;&gt;
+&lt;&lt;set _girlid to $cs4_girlid&gt;&gt;
+&lt;&lt;set _age to $cs4_age&gt;&gt;
+&lt;&lt;set _sex to $cs4_sex&gt;&gt;
+&lt;&lt;set _trans to $cs4_transformed&gt;&gt;
+&lt;&lt;set _curhp to $cs4_health&gt;&gt;
 
-&lt;&lt;if $cs4_state gte 1&gt;&gt;
-&lt;&lt;set _ko to false&gt;&gt;
+&lt;&lt;if !_ko&gt;&gt;
 
 &lt;div class=&quot;combattex&quot;&gt;&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;cpic&quot;&gt;
 
 &lt;&lt;set _cposi to 4&gt;&gt;
-&lt;&lt;set _sloty to $cslot4&gt;&gt;
-&lt;&lt;set _girlid to $cs4_girlid&gt;&gt;
-&lt;&lt;set _age to $cs4_age&gt;&gt;
-&lt;&lt;set _sex to $cs4_sex&gt;&gt;
 &lt;&lt;set _show0 to $cs4_name&gt;&gt;
 &lt;&lt;set _show to $cs4_rweapon&gt;&gt;
 &lt;&lt;set _show1 to $cs4_mweapon&gt;&gt;
 &lt;&lt;set _show3 to $cs4_armor&gt;&gt;
 &lt;&lt;set _posi to $cs4_pos&gt;&gt;
-&lt;&lt;set _trans to $cs4_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs4_health&gt;&gt;
 
 &lt;&lt;include FoInfo&gt;&gt;
 &lt;&lt;include FoPic&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs4_state is 0&gt;&gt;
-&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
-
-
-&lt;div class=&quot;cpic&quot;&gt;
-&lt;&lt;set _ko to true&gt;&gt;
-&lt;&lt;set _sloty to $cslot4&gt;&gt;
-&lt;&lt;set _girlid to $cs4_girlid&gt;&gt;
-&lt;&lt;set _age to $cs4_age&gt;&gt;
-&lt;&lt;set _sex to $cs4_sex&gt;&gt;
-&lt;&lt;set _trans to $cs4_transformed&gt;&gt;
-&lt;&lt;set _curhp to $cs4_health&gt;&gt;
-
-&lt;&lt;include FoPic&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs4_state gte 1&gt;&gt;
 &lt;div class=&quot;meterdef&quot;&gt;
 
 /*
@@ -82683,6 +82619,15 @@ Is stronger than she looks, and packs an impressive punch, making her adept in &
 &lt;div class=&quot;cnamehold&quot;&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;div class=&quot;combattex&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;div class=&quot;cpic&quot;&gt;
+&lt;&lt;include FoPic&gt;&gt;
+&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="CombatEngine" tags="" position="2650,1375" size="200,100">&lt;&lt;nobr&gt;&gt;
@@ -85466,8 +85411,8 @@ and deals &lt;&lt;if $damage gte 50&gt;&gt;a massive&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $descroll3 to random(-4, 3)&gt;&gt;
 &lt;&lt;if $armorwear is &quot;duraplate&quot; or $armorwear is &quot;combat&quot;&gt;&gt;&lt;&lt;set $descroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $armorwear is &quot;weave&quot; or $armorwear is &quot;hulc&quot;&gt;&gt;&lt;&lt;set $descroll3-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 gte 1&gt;&gt;&lt;&lt;set $armorsoak-=$descroll3&gt;&gt;&lt;&lt;set _ene4b to $descroll3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 gte 1&gt;&gt;
+&lt;&lt;set $armorsoak-=$descroll3&gt;&gt;&lt;&lt;set _ene4b to $descroll3&gt;&gt;
 &lt;&lt;if $armorwear is &quot;padded&quot;&gt;&gt;&lt;&lt;set $paddedsoak-=$descroll3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $armorwear is &quot;leather&quot;&gt;&gt;&lt;&lt;set $leathersoak-=$descroll3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $armorwear is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $hleathersoak-=$descroll3&gt;&gt;&lt;&lt;/if&gt;&gt;
