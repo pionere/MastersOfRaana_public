@@ -193,13 +193,11 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 @font-face{
     font-family: Future;  
     src: url("Fonts/Sunflower-Light.ttf");
-     /* src: url("Sunflower-Light.ttf");*/
 }
 
 @font-face{
     font-family: Acme;  
     src: url("Fonts/Acme.ttf");
-    /*src: url("Acme.ttf");*/
 }
 
 
@@ -211,7 +209,6 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 @font-face{
     font-family: Write;  
     src: url("Fonts/write.ttf");
-    /*src: url("write.ttf");*/
 }
 
 @font-face{
@@ -1944,9 +1941,6 @@ margin: auto 0;
  width: 90px;
 }
 
-.paddfuck{
- padding-right: 16px; 
-}
 
 
 .libplacer{
@@ -3427,10 +3421,6 @@ position: absolute;
 
 .higher{
  z-index: 3; 
-}
-
-.paddfuck{
- padding-right: 16px; 
 }
 
 .weaponname{
@@ -5639,7 +5629,6 @@ body.nebu {
   width: 99px;
   height:73px;
   background-image:url('Pics/ch/attriholderthin.png');
-  /*background-image:url('Pics/ch/attriholderthin.png');*/
 background-repeat:no-repeat;
 background-size:cover;
 
@@ -5654,7 +5643,6 @@ background-size:cover;
   width: 119px;
   height:73px;
   background-image:url('Pics/ch/attriholder.png');
-  /*background-image:url('Pics/ch/attriholder.png');*/
 
 background-repeat:no-repeat;
 background-size:cover;
@@ -5887,7 +5875,6 @@ top: 72px;
   font-weight: bold;
   font-size: 13px;
     background-image:url('Pics/ch/armsholder.png');
-  /*background-image:url('Pics/ch/armsholder.png');*/
 
 background-repeat:no-repeat;
 background-size:cover;
@@ -5918,7 +5905,6 @@ background-size:cover;
   text-align: center;
   overflow: hidden;
   background-image:url('Pics/ch/personalsign.png');
-  /*background-image:url('Pics/ch/personalsign.png');*/
 background-repeat:no-repeat;
 background-size:cover;
 }
@@ -5936,7 +5922,6 @@ text-align: center;
  font-size: 15px;
 border: solid 9px #5b0d00;
 background-image:url('Pics/background.jpg');
-/*background-image:url('Pics/background.jpg');*/
 background-repeat:no-repeat;
 background-size:cover;
 padding: 5px;
@@ -6008,7 +5993,6 @@ text-align: right;
 margin: 0 auto;
 text-transform: uppercase;
  background-image:url('Pics/Butt/butt.png');
-/*background-image:url('Pics/Butt/butt.png');*/
 background-repeat:no-repeat;
 }
 
@@ -6024,7 +6008,6 @@ background-repeat:no-repeat;
   top: 20px;
 text-transform: uppercase;
  background-image:url('Pics/Butt/buttnewbig.png');
-/* background-image:url('Pics/Butt/buttnewbig.png');*/
 background-repeat:no-repeat;
 }
 
@@ -10909,7 +10892,6 @@ faithn: &quot;Atheism&quot;,
 &lt;&lt;set $ownhandcomp1 to 0&gt;&gt;
 &lt;&lt;set $ownhandcomp2 to 0&gt;&gt;
 &lt;&lt;set $disp_dv=0&gt;&gt;
-&lt;&lt;set $a45 to 0&gt;&gt;
 &lt;&lt;set $bandits to 15660&gt;&gt;
 &lt;&lt;set $masterint+=5&gt;&gt;
 
@@ -14577,13 +14559,12 @@ Your choice to continue the act has increased $girlnames &#39;&#39;Fear (+1)&#39
 &lt;div class=&quot;headsign&quot;&gt;$girlname&lt;/div&gt;
 &lt;&lt;include Libido&gt;&gt;
 
-
-&lt;&lt;if $analrounds lte 3 and $comesfromchange is false&gt;&gt;
 /*
+&lt;&lt;if $analrounds lte 3 and $comesfromchange is false&gt;&gt;
 &lt;&lt;include SexScene&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-*/
 &lt;&lt;/if&gt;&gt;
+*/
 
 &lt;&lt;if $saidpout is 1 or $saidpout is 7&gt;&gt;
 &lt;&lt;include PoutEngine&gt;&gt;
@@ -19913,22 +19894,7 @@ Special birthday event available!&lt;br&gt;
 &lt;&lt;if $bondage lte 0 and $bondready isnot 1 and $bondready isnot 2&gt;&gt;
 
 
-&lt;&lt;if _npc.status lte 3 or _npc.likesadist gte 60 or _npc.willpower lte 19&gt;&gt;
-&lt;&lt;set _bruteok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.status is 4&gt;&gt;
-&lt;&lt;if _npc.likesadist gte 60 or _npc.willpower lte 0&gt;&gt;
-&lt;&lt;set _bruteok to true&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _bruteok to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 /* SETTERS FOR THE BRUTE FORCE PHYSICAL APPROACH */
-
-&lt;&lt;unset _bruteok&gt;&gt;
 
 &lt;&lt;if (_npc.status lte 2) or (_npc.status lte 3 and _npc.willpower lte 19) or (_npc.status lte 4 and _npc.likesadist gte 40) or (_npc.likesadist gte 80)&gt;&gt;
 [[Physical|Bondagemaster][$offcloth to 1]]
@@ -85213,11 +85179,12 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
 &lt;&lt;if $chance lte 0&gt;&gt;
 
 &lt;&lt;if $curpos is 2&gt;&gt;
+/*
 &lt;&lt;set _ran to random(1, 5)&gt;&gt;
 &lt;&lt;if $chance gte -5&gt;&gt;&lt;&lt;set _ran+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $chance lte -25&gt;&gt;&lt;&lt;set _ran-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $chance lte -35&gt;&gt;&lt;&lt;set _ran-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-/*
+
 &lt;&lt;if $round is 1&gt;&gt;
 &lt;&lt;if _ran lte 0&gt;&gt;You miss the enemy by several yards!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 1&gt;&gt;Your shot goes high above your enemy&#39;s head!&lt;&lt;/if&gt;&gt;
@@ -85428,7 +85395,7 @@ and deals &lt;&lt;if $damage gte 50&gt;&gt;a massive&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $masterhealth-=$damage&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $armorsoak lte 0 and $armorwear isnot &quot;none&quot;&gt;&gt;
+&lt;&lt;if $armorsoak lte 0&gt;&gt;
 &lt;&lt;if $armorwear is &quot;padded&quot;&gt;&gt;&lt;&lt;set $ownpadded to false&gt;&gt;&lt;&lt;set $paddedsoak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $armorwear is &quot;leather&quot;&gt;&gt;&lt;&lt;set $ownleather to false&gt;&gt;&lt;&lt;set $leathersoak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $armorwear is &quot;hleather&quot;&gt;&gt;&lt;&lt;set $ownhleather to false&gt;&gt;&lt;&lt;set $hleathersoak to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85504,17 +85471,15 @@ Armor destroyed!
 
 
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $chance lte 0&gt;&gt;
 /*
+&lt;&lt;if $chance lte 0&gt;&gt;
 &lt;&lt;if $round is 7&gt;&gt;$enemy1 misses!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 8&gt;&gt;$enemy2 misses by an inch!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 9&gt;&gt;$enemy3 makes a very bad miss.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 10&gt;&gt;$enemy4 fumbles and misses the attack.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 11&gt;&gt;$enemy5 fails to hit anything!&lt;&lt;/if&gt;&gt;
-*/
-
 &lt;&lt;/if&gt;&gt;
+*/
 &lt;&lt;/if&gt;&gt;
 
 
@@ -232782,9 +232747,7 @@ You try to get your bearings again, following the vicious fight.
 
 &lt;&lt;unset $nogamble&gt;&gt;
 
-&lt;&lt;if $dakbirth isnot undefined&gt;&gt;
 &lt;&lt;if $dakbirth gte 1&gt;&gt;&lt;&lt;set $dakbirth-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $amirdays gte 1&gt;&gt;&lt;&lt;set $amirdays-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $amirdays is 0&gt;&gt;&lt;&lt;unset $amirdays&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -298062,7 +298025,7 @@ _active.name clings to Marion Hill like a scar in the otherwise lush vegetation 
 &lt;br&gt;&lt;br&gt;
 
 &lt;div class=&quot;serabutt&quot;&gt;
-&lt;div class=&quot;row padd80right padd80right&quot;&gt;
+&lt;div class=&quot;row padd80right&quot;&gt;
 
 &lt;div class=&quot;resholdersmall&quot;&gt;
 &lt;&lt;if $faction.warlord1.men gte 76 and $faction.warlord1.standing gte 100&gt;&gt;&lt;&lt;hovertip &quot;+1 guard (transfer from fort sera).&quot;&gt;&gt; [img[$imgpath+&quot;Butt/soldieradd.png&quot;][House][$faction.warlord1.men-=1, _active.other8+=1]]&lt;&lt;/hovertip&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[$imgpath+&quot;Butt/soldieradd.png&quot;]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;
@@ -301607,7 +301570,6 @@ You can manage an NPC&#39;s weapons, armor and applications in his Inventory. Le
 &lt;&lt;set _npc = $npc&gt;&gt;
 &lt;&lt;set _skeys = Object.keys(_npc)&gt;&gt;
 &lt;&lt;set $c_npc to _skeys[$activenpc]&gt;&gt;
-&lt;&lt;set _npc = $npc[$c_npc]&gt;&gt;
 
 &lt;&lt;include IniTop&gt;&gt;
 
@@ -304503,8 +304465,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set $likeanal = _npc.likeanal&gt;&gt;
 &lt;&lt;set $refuseoral = _npc.refuseoral&gt;&gt;
 
-&lt;&lt;set $dayblock to _npc.dayblock&gt;&gt;
-&lt;&lt;set $activityblock to _npc.activityblock&gt;&gt;
 &lt;&lt;set $bondage = _npc.bondage&gt;&gt;
 &lt;&lt;set $dinner to _npc.dinner&gt;&gt;
 &lt;&lt;set $hopessaidno to _npc.hopessaidno&gt;&gt;
@@ -306629,13 +306589,12 @@ OLD SYSTEM
 
 
 &lt;&lt;if _npc.assigned gte 0 or _npc.status lte 4 or _npc.status gte 9&gt;&gt;&lt;&lt;set _showma to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+/*
 &lt;&lt;if _showma is true and _npc.dayblock isnot 19&gt;&gt;
 
 
 
 
-/*
 
 &#39;&#39;
 &lt;div class=&quot;tutiruler2 tex14px&quot;&gt;
@@ -306681,12 +306640,8 @@ _assigned3/4
 &#39;&#39;
 
 
-*/
-
-
-/* isnot 19 checker ends */
 &lt;&lt;/if&gt;&gt;
-
+*/
 
 &lt;&lt;if _npc.dayblock is 19&gt;&gt;
 &lt;div class=&quot;signvendor&quot;&gt;Assigned npcs&lt;/div&gt;
@@ -317095,13 +317050,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.girlnames = $girlnames&gt;&gt;
 &lt;&lt;set _npc.daysa to $daysa&gt;&gt;
 
-&lt;&lt;if $sex is undefined&gt;&gt;
-&lt;&lt;set _npc.sex to 0&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.sex to $sex&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;set _npc.sex = _npc.girlid lte 299 ? 0 : 1&gt;&gt;
 
 &lt;&lt;if _npc.status is undefined&gt;&gt;
@@ -317135,7 +317083,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;set _npc.agedays to $agedays&gt;&gt;
 &lt;&lt;set _npc.willpower = $willpower&gt;&gt;
-&lt;&lt;set _npc.toughness = $traittough&gt;&gt;
+&lt;&lt;set _npc.toughness = Math.max($traittough,25)&gt;&gt;
 &lt;&lt;set _npc.kind = $kind&gt;&gt;
 &lt;&lt;set _npc.discipline = $discipline&gt;&gt;
 &lt;&lt;set _npc.int = $av_int&gt;&gt;
@@ -317160,7 +317108,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.lube to $lube&gt;&gt;
 &lt;&lt;set _npc.domass to $domass&gt;&gt;
 &lt;&lt;set _npc.cloth to $cloth&gt;&gt;
-&lt;&lt;set _npc.toughness = Math.max($traittough,25)&gt;&gt;
 
 &lt;&lt;set _npc.happiness = $happiness&gt;&gt;
 &lt;&lt;set _npc.str = $av_str&gt;&gt;
@@ -317175,10 +317122,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _npc.likepussy = $likepussy&gt;&gt;
 &lt;&lt;set _npc.likeoral = $likeoral&gt;&gt;
 &lt;&lt;set _npc.likeanal = $likeanal&gt;&gt;
-
-
-&lt;&lt;set _npc.dayblock to $dayblock&gt;&gt;
-&lt;&lt;set _npc.activityblock to $activityblock&gt;&gt;
 &lt;&lt;set _npc.bondage = $bondage&gt;&gt;
 
 
@@ -337367,7 +337310,6 @@ OLD IGNORE
 &lt;&lt;if _fact.level2 is 1&gt;&gt;&lt;&lt;set _income2*=1.56&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _fact.level2 is 2&gt;&gt;&lt;&lt;set _income2*=2.56&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _fact.level2 is 3&gt;&gt;&lt;&lt;set _income2*=3.9&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _fact.level2 gte 4&gt;&gt;&lt;&lt;set _income2*=6.95&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* DEDUCT MERCH */
@@ -337443,7 +337385,7 @@ OLD IGNORE
 
 &lt;&lt;set _totsweat+=_income&gt;&gt;
 
-&lt;&lt;set _income to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="509" name="YardFood" tags="nobr" position="1100,1600" size="100,100">&lt;&lt;set _yardfood to 0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="509" name="YardFood" tags="nobr" position="1100,1600" size="100,100">&lt;&lt;set _yardfood to 0&gt;&gt;
 
 &lt;&lt;set $byards to 0&gt;&gt;
 
@@ -346076,11 +346018,9 @@ Warrior - mercenary
 &lt;&lt;set $lickskill_at = 0&gt;&gt;
 &lt;&lt;set $bondskill_at = 0&gt;&gt;
 &lt;&lt;set $whipskill_at = 0&gt;&gt;
-&lt;&lt;set $blacksmith_at to 0&gt;&gt;
-&lt;&lt;set $artisan_at to 0&gt;&gt;
-&lt;&lt;set $masterstealth_at to 0&gt;&gt;
-&lt;&lt;set $occult_at to 0&gt;&gt;
-&lt;&lt;set $masterbeauty_at to 0&gt;&gt;
+&lt;&lt;set $blacksmith_at = 0&gt;&gt;
+&lt;&lt;set $artisan_at = 0&gt;&gt;
+&lt;&lt;set $masterbeauty_at = 0&gt;&gt;
 
 
 &lt;&lt;set $traits = {
@@ -355875,7 +355815,7 @@ It&#39;s very quiet up here.
 &lt;&lt;if $quest_cat gte 15 and $quest_cat lte 18 and _ass.girlid is 13&gt;&gt;&lt;&lt;set _catbusy2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _ingroup=($groass is 1 ? _ass.group1 is 1 : ($groass is 2 ? _ass.group2 is 1 : ($groass is 3 ? _ass.group3 is 1 : ($groass is 4 ? _ass.group4 is 1 : ($groass is 5 ? _ass.group5 is 1 : ($groass is 6 and _ass.group6 is 1))))))&gt;&gt;
-&lt;&lt;if _ingroup and _ass.bondage lte 0 and _ass.dayblock isnot 25 and _ass.dayblock isnot 26 and _ass.dayblock isnot 409 and _ass.dayblock isnot 410 and _ass.dayblock isnot 411 and _ass.dayblock isnot 412 and _ass.dayblock isnot 413 and _ass.dayblock isnot 414 and _ass.dayblock isnot 415 and _dayblocked isnot true and _ass.dayblock isnot 600 and _ass.dayoff isnot 1 and _catbusy2 isnot true&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;set _followcommand2 = $npc[$followcommand]&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ingroup and _ass.bondage lte 0 and _ass.dayblock isnot 25 and _ass.dayblock isnot 26 and _ass.dayblock isnot 409 and _ass.dayblock isnot 410 and _ass.dayblock isnot 411 and _ass.dayblock isnot 412 and _ass.dayblock isnot 413 and _ass.dayblock isnot 414 and _ass.dayblock isnot 415 and _dayblocked isnot true and _ass.dayblock isnot 600 and _ass.dayoff isnot 1 and _catbusy2 isnot true&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 &lt;&lt;include LoadFollow&gt;&gt;
@@ -383151,12 +383091,6 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 
 
 /* CHECKERS FOR ARENA ASSIGNMENT */
-
-&lt;&lt;set _arenaok to false&gt;&gt;
-
-&lt;&lt;if _npc.age lte 59 and _npc.age gte 13 and _npc.sex is 0 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _arenaok to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.age lte 59 and _npc.age gte 13 and _npc.sex is 0 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _arenaok to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _arenaok to ($arenanpcs lt $maxarenanpcs and _npc.sex is 0 and _npc.age gte 13) ? 1 : 2&gt;&gt;
 
