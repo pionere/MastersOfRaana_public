@@ -312869,9 +312869,8 @@ girlname: _npc.girlname
 /* main damage reduction script */
 &lt;&lt;set _npc.health-=_dmg&gt;&gt;
 
-
 /* stat losses on grimdark */
-&lt;&lt;if $diff gte 3 and _npc.health lte -5 and _dmg gte 5&gt;&gt;
+&lt;&lt;if $diff gte 3 and _npc.health lte -5&gt;&gt;
 
 &lt;&lt;if _swagroll lte 3&gt;&gt;&lt;&lt;set _npc.str=adl(_npc.str,-2,13)&gt;&gt;
 &lt;&lt;elseif _swagroll lte 7&gt;&gt;&lt;&lt;set _npc.dex=adl(_npc.dex,-2,13)&gt;&gt;
@@ -312880,9 +312879,6 @@ girlname: _npc.girlname
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
-/* scavvies are not killed on non-ironman runs */
-&lt;&lt;if $ironman isnot 1 and _npc.health lte -15 and _dmg gte 1&gt;&gt;&lt;&lt;set _npc.health to -15&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* faction lte 29 ends */
 
@@ -313036,7 +313032,7 @@ girlname: _npc.girlname
 &lt;&lt;set _npc.health-=_dmg&gt;&gt;
 
 /* stat losses on grimdark */
-&lt;&lt;if $diff gte 3 and _npc.health lte -5 and _dmg gte 5&gt;&gt;
+&lt;&lt;if $diff gte 3 and _npc.health lte -5&gt;&gt;
 
 &lt;&lt;if _huntroll lte 3&gt;&gt;&lt;&lt;set _npc.str=adl(_npc.str,-2,13)&gt;&gt;
 &lt;&lt;elseif _huntroll lte 7&gt;&gt;&lt;&lt;set _npc.dex=adl(_npc.dex,-2,13)&gt;&gt;
@@ -313045,9 +313041,6 @@ girlname: _npc.girlname
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
-/* hunters are not killed on non-ironman runs */
-&lt;&lt;if $ironman isnot 1 and _npc.health lte -15 and _dmg gte 1&gt;&gt;&lt;&lt;set _npc.health to -15&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
