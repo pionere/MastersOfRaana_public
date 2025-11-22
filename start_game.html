@@ -233586,15 +233586,17 @@ sur: 0,
 
 &lt;&lt;if $inve isnot undefined&gt;&gt;
 
-&lt;&lt;if $inve.bura.soldiers lte 0&gt;&gt;&lt;&lt;set $inve.bura.soldiers to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $inve.bura.storage gte 100 and $lossroll is 1&gt;&gt;&lt;&lt;set $inve.bura.storage-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $inve.bura.storage gte 300 and $lossroll is 2 and $inve.bura.soldiers lte 1&gt;&gt;&lt;&lt;set $inve.bura.storage-=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $inve.bura.storage gte 500 and $lossroll is 3 and $inve.bura.soldiers lte 1&gt;&gt;&lt;&lt;set $inve.bura.storage-=35&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $inve.bura.storage gte 100 and $lossroll is 3 and $inve.bura.soldiers lte 3 and $faction.ikaanos.control lte 9&gt;&gt;&lt;&lt;set $inve.bura.storage-=35&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $lossroll is 4 and $inve.bura.soldiers lte 1 and $faction.ikaanos.control lte 9 and $inve.bura.standing gte 5&gt;&gt;&lt;&lt;set $inve.bura.storage-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $lossroll is 4 and $inve.bura.standing gte 5 and $inve.bura.storage lte -1 and $inve.bura.yield gte 5&gt;&gt;&lt;&lt;set $inve.bura.standing-=1&gt;&gt;&lt;&lt;set $inve.bura.yield-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 1&gt;&gt;&lt;&lt;set $inve.bura.storage=adl($inve.bura.storage,-5,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 2 and $inve.bura.soldiers lte 1&gt;&gt;&lt;&lt;set $inve.bura.storage=adl($inve.bura.storage,-15,300)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 3 and $inve.bura.soldiers lte 1&gt;&gt;&lt;&lt;set $inve.bura.storage=adl($inve.bura.storage,-35,500)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 3 and $inve.bura.soldiers lte 3 and $faction.ikaanos.control lte 9&gt;&gt;&lt;&lt;set $inve.bura.storage=adl($inve.bura.storage,-35,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 4 and $inve.bura.soldiers lte 1 and $faction.ikaanos.control lte 9 and $inve.bura.standing gte 5&gt;&gt;
+&lt;&lt;set $inve.bura.storage=adl($inve.bura.storage,-5,0)&gt;&gt;
+&lt;&lt;if $inve.bura.storage is 0&gt;&gt;
+&lt;&lt;set $inve.bura.standing-=1&gt;&gt;
+&lt;&lt;set $inve.bura.yield-=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -267212,7 +267214,7 @@ today, with massive casualties as a result.
 
 &lt;&lt;if $pollroll is 74&gt;&gt;
 
-&lt;&lt;if $pollapp is undefined&gt;&gt;&lt;&lt;set $pushcash to either(200, 150, 125, 50, 50)&gt;&gt;&lt;&lt;set $randesc to random(1, 3)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pollapp is undefined&gt;&gt;&lt;&lt;set $pushcash=Math.min(either(200, 150, 125, 50, 50),$inve.bura.storage)&gt;&gt;&lt;&lt;set $randesc to random(1, 3)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;center&gt;&lt;div class=&quot;tex18px&quot;&gt;&#39;&#39;- VILLAGE UNDER ATTACK! -&#39;&#39;&lt;/div&gt;&lt;/center&gt;
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
