@@ -35537,7 +35537,9 @@ gemstones: random(300,400),
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $staffcap is undefined&gt;&gt;&lt;&lt;set $staffcap to 15541100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $whipcap is undefined&gt;&gt;&lt;&lt;set $whipcap to 15541100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $gswordcap is undefined&gt;&gt;&lt;&lt;set $gswordcap to 2200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $sledgecap is undefined&gt;&gt;&lt;&lt;set $sledgecap to 5600&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $wegacap is undefined&gt;&gt;&lt;&lt;set $wegacap to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcorescap is undefined&gt;&gt;&lt;&lt;set $pcorescap to random(5000, 6400)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -220915,6 +220917,7 @@ SLEDGEHAMMER
 [img[$imgpath + &quot;Stuff/sledge.png&quot;]]
 
 &lt;&lt;set _off to 80&gt;&gt;
+&lt;&lt;set _cap2 to $sledgecap&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event is 11&gt;&gt;
@@ -220947,6 +220950,7 @@ WHIPPING CANE
 [img[$imgpath + &quot;Stuff/cane.png&quot;]]
 
 &lt;&lt;set _off to 10&gt;&gt;
+&lt;&lt;set _cap2 to $whipcap&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $event is 14&gt;&gt;
@@ -222242,19 +222246,22 @@ units&lt;/center&gt;
 &lt;&lt;if $event is 10&gt;&gt;
 &lt;center&gt;&#39;&#39;OFFERED PRICE: &amp;#36;_off&#39;&#39;&lt;/center&gt;
 &lt;center&gt;&#39;&#39;Owned:&#39;&#39; $ownsledge units&lt;/center&gt;
-&lt;br&gt;
+&lt;center&gt;&lt;&lt;hovertip&quot;&#39;&#39;Demand:&#39;&#39; &lt;&lt;include Demand&gt;&gt;&quot;&gt;&gt;&#39;&#39;Market supply:&#39;&#39; &lt;&lt;/hovertip&gt;&gt; &lt;&lt;print setup.formatNumber($sledgecap)&gt;&gt; units&lt;/center&gt;
+&lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;if $ownsledge gte 1 and _nosledge isnot true&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt; [[Sell|$passa][$cash+=_off, $ownsledge-=1, $removebutt to true]]&lt;/div&gt; 
-&lt;&lt;if $ownsledge gte 10&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[Sell (10)|$passa][$cash+=_off*10, $ownsledge-=10, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell (10)&lt;/div&gt;&lt;&lt;/if&gt;&gt;  
-&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt; [[Sell all|$passa][$cash+=$ownsledge*_off, $ownsledge=0, $removebutt to true]]&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt; [[x1|$passa][$event to _event, $cash+=_off, $ownsledge-=1, $removebutt to true, $sledgecap+=1]]&lt;/div&gt;
+&lt;&lt;if $ownsledge gte 10&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[x10|$passa][$event to _event, $cash+=_off*10, $ownsledge-=10, $removebutt to true, $sledgecap+=10]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x10&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownsledge gte 100&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[x100|$passa][$event to _event, $cash+=_off*100, $ownsledge-=100, $removebutt to true, $sledgecap+=100]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x100&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownsledge gte 500&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[x500|$passa][$event to _event, $cash+=_off*500, $ownsledge-=500, $removebutt to true, $sledgecap+=500]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x500&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell&lt;/div&gt;
-&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell (10)&lt;/div&gt;  
-&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell all&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x1&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x10&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x100&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x500&lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -222324,19 +222331,22 @@ units&lt;/center&gt;
 &lt;&lt;if $event is 13&gt;&gt;
 &lt;center&gt;&#39;&#39;OFFERED PRICE: &amp;#36;_off&#39;&#39;&lt;/center&gt;
 &lt;center&gt;&#39;&#39;Owned:&#39;&#39; $ownwhipstick units&lt;/center&gt;
-&lt;br&gt;
+&lt;center&gt;&lt;&lt;hovertip&quot;&#39;&#39;Demand:&#39;&#39; &lt;&lt;include Demand&gt;&gt;&quot;&gt;&gt;&#39;&#39;Market supply:&#39;&#39; &lt;&lt;/hovertip&gt;&gt; &lt;&lt;print setup.formatNumber($whipcap)&gt;&gt; units&lt;/center&gt;
+&lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;if $ownwhipstick gte 1 and _nowhipstick isnot true&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt; [[Sell|$passa][$cash+=_off, $ownwhipstick-=1, $removebutt to true]]&lt;/div&gt; 
-&lt;&lt;if $ownwhipstick gte 10&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[Sell (10)|$passa][$cash+=_off*10, $ownwhipstick-=10, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell (10)&lt;/div&gt;&lt;&lt;/if&gt;&gt;  
-&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt; [[Sell all|$passa][$cash+=$ownwhipstick*_off, $ownwhipstick=0, $removebutt to true]]&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt; [[x1|$passa][$event to _event, $cash+=_off, $ownwhipstick-=1, $removebutt to true, $whipcap+=1]]&lt;/div&gt;  
+&lt;&lt;if $ownwhipstick gte 10&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[x10|$passa][$event to _event, $cash+=_off*10, $ownwhipstick-=10, $removebutt to true, $whipcap+=10]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x10&lt;/div&gt;&lt;&lt;/if&gt;&gt;  
+&lt;&lt;if $ownwhipstick gte 100&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[x100|$passa][$event to _event, $cash+=_off*100, $ownwhipstick-=100, $removebutt to true, $whipcap+=100]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x100&lt;/div&gt;&lt;&lt;/if&gt;&gt;  
+&lt;&lt;if $ownwhipstick gte 500&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalf&quot;&gt;[[x500|$passa][$event to _event, $cash+=_off*500, $ownwhipstick-=500, $removebutt to true, $whipcap+=500]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x500&lt;/div&gt;&lt;&lt;/if&gt;&gt;  
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell&lt;/div&gt;
-&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell (10)&lt;/div&gt;  
-&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;Sell all&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x1&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x10&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x100&lt;/div&gt;
+&lt;div class=&quot;sellbutt ulvendorhalfown&quot;&gt;x500&lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
