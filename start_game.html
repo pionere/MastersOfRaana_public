@@ -295949,7 +295949,7 @@ Harvest 100R
 
 &#39;&#39;Maintenance:&#39;&#39; -&amp;#36;&lt;&lt;print setup.formatNumber(_millmain)&gt;&gt;&lt;br&gt;
 &lt;&lt;if _active.setting1 is 0&gt;&gt;
-&#39;&#39;Production:&#39;&#39; _woodyield &lt;br&gt;
+&#39;&#39;Production:&#39;&#39; _prod2 / _prod&lt;br&gt;
 &lt;&lt;elseif _active.setting1 is 1&gt;&gt;
 
 &lt;&lt;if $darkdung is undefined&gt;&gt;&lt;&lt;set $darkdung to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -316257,16 +316257,9 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if _chgard is true&gt;&gt; /* calculating production at end day */
 
-/* burner and wood availability checker */
-&lt;&lt;if $mch.yardslot20.level2 gte 1&gt;&gt;
-&lt;&lt;if $mch.yardslot20.lumberav gte 1&gt;&gt;&lt;&lt;set $mch.yardslot20.gunpowder+=_prod&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-/* no burner */
-&lt;&lt;if $mch.yardslot20.lumberav gte 1&gt;&gt;&lt;&lt;set $mch.yardslot20.wood+=_prod2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* wood deducted from mill */
-&lt;&lt;set $mch.yardslot20.lumberav=adl($mch.yardslot20.lumberav,-_prod3,0)&gt;&gt;
-
+&lt;&lt;set $mch.yardslot20.gunpowder+=_prod&gt;&gt;
+&lt;&lt;set $mch.yardslot20.wood+=_prod2&gt;&gt;
+&lt;&lt;set $mch.yardslot20.lumberav=adl($mch.yardslot20.lumberav,-_woodyield,0)&gt;&gt;
 
 &lt;&lt;if _escaroll lte 1&gt;&gt;&lt;&lt;set $mch.yardslot20.other5=adl($mch.yardslot20.other5,-1,4)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -377829,8 +377822,6 @@ Her &#39;&#39;Lesbian Devotion (+1)&#39;&#39; has increased!
 
 &lt;&lt;set _fored to _mill.other7&gt;&gt; /* foremans skill */
 
-&lt;&lt;set _fored = Math.round(_fored)&gt;&gt;
-
 /* maintanence calc */
 &lt;&lt;if _fored gte 15&gt;&gt;&lt;&lt;set _millmain-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _fored gte 25&gt;&gt;&lt;&lt;set _millmain-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -377847,31 +377838,24 @@ Her &#39;&#39;Lesbian Devotion (+1)&#39;&#39; has increased!
 
 
 &lt;&lt;set _millguards*=15&gt;&gt;
-&lt;&lt;if _millguards gte 1&gt;&gt;
 &lt;&lt;set _millmain+=_millguards&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _woodyield*=0.45&gt;&gt; /* use to modify final output */
-&lt;&lt;set _prod to _woodyield&gt;&gt;
-&lt;&lt;if _mill.level2 is 1&gt;&gt;&lt;&lt;set _prod/=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _mill.level2 gte 2&gt;&gt;&lt;&lt;set _prod/=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _mill.lumberav lte 0&gt;&gt;&lt;&lt;set _woodyield to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _prod=(_mill.level2 is 0)?0:(_mill.level2 is 1)?_woodyield/5:_woodyield/2&gt;&gt;
+/* burner adds production penalty and maint. */
 &lt;&lt;set _prod2 to _woodyield&gt;&gt;
-&lt;&lt;set _prod3 to _woodyield&gt;&gt;
+&lt;&lt;if _mill.level2 is 1&gt;&gt;&lt;&lt;set _millmain+=80&gt;&gt;&lt;&lt;set _prod2*=0.8&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _mill.level2 gte 2&gt;&gt;&lt;&lt;set _millmain+=140&gt;&gt;&lt;&lt;set _prod2*=0.6&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _millmain+=20&gt;&gt; /* base main added */
 
-/* burner adds production penalty and maint. */
-&lt;&lt;if _mill.level2 is 1&gt;&gt;&lt;&lt;set _millmain+=80&gt;&gt;&lt;&lt;set _woodyield*=0.8&gt;&gt;&lt;&lt;set _prod2*=0.8&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _mill.level2 gte 2&gt;&gt;&lt;&lt;set _millmain+=140&gt;&gt;&lt;&lt;set _woodyield*=0.6&gt;&gt;&lt;&lt;set _prod2*=0.6&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;set _prod = Math.round(_prod)&gt;&gt;
 &lt;&lt;set _prod2 = Math.round(_prod2)&gt;&gt;
-&lt;&lt;set _prod3 = Math.round(_prod3)&gt;&gt;
 
 &lt;&lt;set _millmain = Math.round(_millmain)&gt;&gt;
 &lt;&lt;set _woodyield = Math.round(_woodyield)&gt;&gt;
-
-&lt;&lt;if _mill.lumberav lte 0&gt;&gt;&lt;&lt;set _woodyield to 0&gt;&gt;&lt;&lt;set _prod to 0&gt;&gt;&lt;&lt;set _prod2 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* ESCAPE */
 
