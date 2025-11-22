@@ -216049,46 +216049,59 @@ _name is ready to enter your household!
 &lt;div class=&quot;tex10px padd10left padd10right&quot;&gt;&lt;hr&gt;&lt;/div&gt;
 
 &lt;div class=&quot;padd20left&quot;&gt;
-
- &lt;&lt;if $ran_beauty &gt; 0&gt;&gt;&#39;&#39;BEAUTY:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_beauty&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_beauty &lt; 0&gt;&gt;&#39;&#39;BEAUTY:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_beauty&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;BEAUTY: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_charisma &gt; 0&gt;&gt;&#39;&#39;CHARISMA:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_charisma&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_charisma &lt; 0&gt;&gt;&#39;&#39;CHARISMA:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_charisma&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;CHARISMA: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_dex &gt; 0&gt;&gt;&#39;&#39;DEXTERITY:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_dex&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_dex &lt; 0&gt;&gt;&#39;&#39;DEXTERITY:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_dex&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;DEXTERITY: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_str &gt; 0&gt;&gt;&#39;&#39;STRENGTH:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_str&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_str &lt; 0&gt;&gt;&#39;&#39;STRENGTH:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_str&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;STRENGTH: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_int &gt; 0&gt;&gt;&#39;&#39;INTELLIGENCE:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_int&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_int &lt; 0&gt;&gt;&#39;&#39;INTELLIGENCE:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_int&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;INTELLIGENCE: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_discipline &gt; 0&gt;&gt;&#39;&#39;DISCIPLINE:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_discipline&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_discipline &lt; 0&gt;&gt;&#39;&#39;DISCIPLINE:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_discipline&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;DISCIPLINE: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_willpower &gt; 0&gt;&gt;&#39;&#39;WILLPOWER:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_willpower&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_willpower &lt; 0&gt;&gt;&#39;&#39;WILLPOWER:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_willpower&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;WILLPOWER: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
- &lt;&lt;if $ran_likesadist &gt; 0&gt;&gt;&#39;&#39;CORRUPTION:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_likesadist&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_likesadist &lt; 0&gt;&gt;&#39;&#39;CORRUPTION:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_likesadist&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;CORRUPTION: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_kind &gt; 0&gt;&gt;&#39;&#39;KINDNESS:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_kind&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_kind &lt; 0&gt;&gt;&#39;&#39;KINDNESS:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_kind&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;KINDNESS: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-
+&#39;&#39;BEAUTY:&#39;&#39;
+&lt;&lt;if $ran_beauty gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_beauty&lt;/span&gt;
+&lt;&lt;elseif $ran_beauty lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_beauty&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;CHARISMA:&#39;&#39;
+&lt;&lt;if $ran_charisma gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_charisma&lt;/span&gt;
+&lt;&lt;elseif $ran_charisma lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_charisma&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;DEXTERITY:&#39;&#39;
+&lt;&lt;if $ran_dex gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_dex&lt;/span&gt;
+&lt;&lt;elseif $ran_dex lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_dex&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;STRENGTH:&#39;&#39;
+&lt;&lt;if $ran_str gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_str&lt;/span&gt;
+&lt;&lt;elseif $ran_str lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_str&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;INTELLIGENCE:&#39;&#39;
+&lt;&lt;if $ran_int gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_int&lt;/span&gt;
+&lt;&lt;elseif $ran_int lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_int&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;DISCIPLINE:&#39;&#39;
+&lt;&lt;if $ran_discipline gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_discipline&lt;/span&gt;
+&lt;&lt;elseif $ran_discipline lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_discipline&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;WILLPOWER:&#39;&#39;
+&lt;&lt;if $ran_willpower gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_willpower&lt;/span&gt;
+&lt;&lt;elseif $ran_willpower lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_willpower&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;CORRUPTION:&#39;&#39;
+&lt;&lt;if $ran_likesadist gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_likesadist&lt;/span&gt;
+&lt;&lt;elseif $ran_likesadist lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_likesadist&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;KINDNESS:&#39;&#39;
+&lt;&lt;if $ran_kind gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_kind&lt;/span&gt;
+&lt;&lt;elseif $ran_kind lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_kind&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt; /* padd20 ends */
 
 &lt;/div&gt;
@@ -216101,67 +216114,67 @@ _name is ready to enter your household!
 &lt;div class=&quot;tex10px padd10left padd10right&quot;&gt;&lt;hr&gt;&lt;/div&gt;
 
 &lt;div class=&quot;padd20left&quot;&gt;
-
-  &lt;&lt;if $ran_melee &gt; 0&gt;&gt;&#39;&#39;Melee:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_melee&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_melee &lt; 0&gt;&gt;&#39;&#39;Melee:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_melee&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Melee: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_ranged &gt; 0&gt;&gt;&#39;&#39;Ranged:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_ranged&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_ranged &lt; 0&gt;&gt;&#39;&#39;Ranged:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_ranged&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Ranged: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_survival &gt; 0&gt;&gt;&#39;&#39;Survival:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_survival&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_survival &lt; 0&gt;&gt;&#39;&#39;Survival:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_survival&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Survival: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_domestic &gt; 0&gt;&gt;&#39;&#39;Domestic:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_domestic&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_domestic &lt; 0&gt;&gt;&#39;&#39;Domestic:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_domestic&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Domestic: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_dancing &gt; 0&gt;&gt;&#39;&#39;Dancing:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_dancing&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_dancing &lt; 0&gt;&gt;&#39;&#39;Dancing:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_dancing&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Dancing: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_per &gt; 0&gt;&gt;&#39;&#39;Performance:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_per&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_per &lt; 0&gt;&gt;&#39;&#39;Performance:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_per&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Performance: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_aca &gt; 0&gt;&gt;&#39;&#39;Academics:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_aca&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_aca &lt; 0&gt;&gt;&#39;&#39;Academics:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_aca&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Academics: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_med &gt; 0&gt;&gt;&#39;&#39;Medicine:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_med&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_med &lt; 0&gt;&gt;&#39;&#39;Medicine:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_med&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Medicine: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_tech &gt; 0&gt;&gt;&#39;&#39;Science:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_tech&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_tech &lt; 0&gt;&gt;&#39;&#39;Science:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_tech&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Science: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-    &lt;&lt;if $ran_garden &gt; 0&gt;&gt;&#39;&#39;Gardening:&#39;&#39; &lt;span class=&quot;green&quot;&gt;+&lt;&lt;print $ran_garden&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;elseif $ran_garden &lt; 0&gt;&gt;&#39;&#39;Gardening:&#39;&#39; &lt;span class=&quot;red&quot;&gt;&lt;&lt;print $ran_garden&gt;&gt;&lt;/span&gt;&lt;br&gt;
-    &lt;&lt;else&gt;&gt;&#39;&#39;Gardening: 0&#39;&#39;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-/*
-
-&lt;&lt;if $ran_melee gte 1&gt;&gt;&#39;&#39;Melee:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_melee&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ran_ranged gte 1 and $adisplay isnot 350&gt;&gt;&#39;&#39;Ranged:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_ranged&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $ran_survival gte 1&gt;&gt;&#39;&#39;Survival:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_survival&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ran_domestic gte 1&gt;&gt;&#39;&#39;Domestic:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_domestic&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ran_dancing gte 1&gt;&gt;&#39;&#39;Dancing:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_dancing&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ran_per gte 1&gt;&gt;&#39;&#39;Performance:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_per&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ran_aca gte 1&gt;&gt;&#39;&#39;Academics:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_aca&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ran_med gte 1 and $avalue isnot 999&gt;&gt;&#39;&#39;Medicine:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_med&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ran_tech gte 1&gt;&gt;&#39;&#39;Science:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_tech&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ran_garden gte 1&gt;&gt;&#39;&#39;Gardening:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$ran_garden&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-*/
-
+&#39;&#39;Melee:&#39;&#39;
+&lt;&lt;if $ran_melee gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_melee&lt;/span&gt;
+&lt;&lt;elseif $ran_melee lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_melee&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Ranged:&#39;&#39;
+&lt;&lt;if $ran_ranged gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_ranged&lt;/span&gt;
+&lt;&lt;elseif $ran_ranged lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_ranged&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Survival:&#39;&#39;
+&lt;&lt;if $ran_survival gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_survival&lt;/span&gt;
+&lt;&lt;elseif $ran_survival lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_survival&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Domestic:&#39;&#39;
+&lt;&lt;if $ran_domestic gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_domestic&lt;/span&gt;
+&lt;&lt;elseif $ran_domestic lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_domestic&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Dancing:&#39;&#39;
+&lt;&lt;if $ran_dancing gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_dancing&lt;/span&gt;
+&lt;&lt;elseif $ran_dancing lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_dancing&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Performance:&#39;&#39;
+&lt;&lt;if $ran_per gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_per&lt;/span&gt;
+&lt;&lt;elseif $ran_per lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_per&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Academics:&#39;&#39;
+&lt;&lt;if $ran_aca gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_aca&lt;/span&gt;
+&lt;&lt;elseif $ran_aca lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_aca&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Medicine:&#39;&#39;
+&lt;&lt;if $ran_med gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_med&lt;/span&gt;
+&lt;&lt;elseif $ran_med lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_med&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Science:&#39;&#39;
+&lt;&lt;if $ran_tech gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_tech&lt;/span&gt;
+&lt;&lt;elseif $ran_tech lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_tech&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
+&#39;&#39;Gardening:&#39;&#39;
+&lt;&lt;if $ran_garden gt 0&gt;&gt;&lt;span class=&quot;green&quot;&gt;+$ran_garden&lt;/span&gt;
+&lt;&lt;elseif $ran_garden lt 0&gt;&gt;&lt;span class=&quot;red&quot;&gt;$ran_garden&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&#39;&#39;0&#39;&#39;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt; /* padd20 ends */
+
 &lt;/div&gt;
 
 &lt;/div&gt;
