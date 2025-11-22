@@ -301329,7 +301329,6 @@ IGNORE
 &lt;&lt;if $comesfromcity is true&gt;&gt;
 &lt;&lt;unset $activeslot&gt;&gt;
 &lt;&lt;unset $activenpc&gt;&gt;
-&lt;&lt;set $menus to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _isinmenu to true&gt;&gt;
@@ -304143,7 +304142,6 @@ Combat modifier:
 &lt;&lt;set $c_npc to $cprem&gt;&gt;
 &lt;&lt;set $activenpc to $cprem2&gt;&gt;
 /* &lt;&lt;set $activeslot to 0&gt;&gt; */
-&lt;&lt;if $menus lte 0&gt;&gt;&lt;&lt;set $menus to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;unset $cprem&gt;&gt;
 &lt;&lt;unset $cprem2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -321397,7 +321395,6 @@ Do you wish to continue?
 &lt;&lt;if _npc.girlid is 11 and _npc.status lte 2 and $quest_aria lte 17&gt;&gt;&lt;&lt;set $credit-=1500&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
 &lt;&lt;set _clearslot+=1&gt;&gt;
-&lt;&lt;set $menus to 0&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $activeslot to 0&gt;&gt;
 &lt;&lt;unset $activenpc&gt;&gt;
@@ -321449,7 +321446,6 @@ Do you want to continue?
 &lt;&lt;if $npc.av1.state gte 0&gt;&gt;&lt;&lt;set $npc.av1.masterlove to 0&gt;&gt;&lt;&lt;set $npc.av1.scarefactor to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $npc.av42.state gte 0&gt;&gt;&lt;&lt;set $npc.av42.masterlove to 0&gt;&gt;&lt;&lt;set $npc.av42.scarefactor to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;set $menus to 0&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;unset $activenpc&gt;&gt;
@@ -321641,7 +321637,6 @@ Do you want to continue?
 &lt;&lt;set _npc.state to -1&gt;&gt;
 &lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
 &lt;&lt;set _clearslot+=1&gt;&gt;
-&lt;&lt;set $menus to 0&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;unset $activenpc&gt;&gt;
 &lt;&lt;unset $activeslot&gt;&gt;
@@ -330017,7 +330012,6 @@ _npc.girlname&#39;s &#39;&#39;Beauty (+1)&#39;&#39; has increased, however!
 &lt;&lt;set _nobutts to true&gt;&gt;
 &lt;&lt;set _nocont to true&gt;&gt;
 &lt;&lt;unset $activeslot&gt;&gt;
-&lt;&lt;unset $menus&gt;&gt;
 
 _domnpc.girlname recently succumbed to &lt;&lt;if _domnpc.sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; injuries and is no longer a part of your household.
 
@@ -330070,7 +330064,7 @@ You give the body a shallow grave somewhere in Marston Swamps.
 &lt;&lt;set _nobutts to true&gt;&gt;
 &lt;&lt;set _nocont to true&gt;&gt;
 &lt;&lt;unset $activeslot&gt;&gt;
-&lt;&lt;unset $menus&gt;&gt;
+
 _domnpc.girlname &lt;&lt;if _domnpc.status lte 2&gt;&gt;tries to flee from the misery in your household&lt;&lt;else&gt;&gt;has left your household&lt;&lt;/if&gt;&gt;!
 
 &lt;br&gt;&lt;br&gt;
