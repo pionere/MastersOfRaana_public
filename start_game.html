@@ -35166,16 +35166,8 @@ sur: 0,
 
 &lt;&lt;if $ownstima is undefined&gt;&gt;&lt;&lt;set $ownstima to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pregage is undefined&gt;&gt;&lt;&lt;set $pregage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $duracap is undefined&gt;&gt;&lt;&lt;set $duracap to random(20000, 34000)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pcorescap is undefined&gt;&gt;&lt;&lt;set $pcorescap to random(2000, 3400)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $newspaper is undefined&gt;&gt;&lt;&lt;set $newspaper to &quot;Redhaven Gazette&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $connectcap is undefined&gt;&gt;
-&lt;&lt;set $connectcap to 5544312&gt;&gt;
-&lt;&lt;set $woodcap to 10950094&gt;&gt;
-&lt;&lt;set $steelcap to 9580011&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $ownwega is undefined&gt;&gt;
 &lt;&lt;set $ownwega to false&gt;&gt;
@@ -35523,7 +35515,37 @@ gemstones: random(300,400),
 
 &lt;&lt;if $upact is undefined&gt;&gt;&lt;&lt;set $upact to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if $hamcap is undefined&gt;&gt;&lt;&lt;set $hamcap = [20, 10]&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if $autoriflecap is undefined&gt;&gt;
+&lt;&lt;set $knifecap to 6502&gt;&gt;
+&lt;&lt;set $swordcap to 5000&gt;&gt;
+&lt;&lt;set $wakicap to 4300&gt;&gt;
+&lt;&lt;set $gswordcap to 2000&gt;&gt;
+&lt;&lt;set $katanacap to 3000&gt;&gt;
+&lt;&lt;set $spearcap to 4000&gt;&gt;
+&lt;&lt;set $crossbowcap to 4000&gt;&gt;
+&lt;&lt;set $pistolcap to 7400&gt;&gt;
+&lt;&lt;set $shotguncap to 6000&gt;&gt;
+&lt;&lt;set $priflecap to 8600&gt;&gt;
+&lt;&lt;set $riflecap to 9800&gt;&gt;
+&lt;&lt;set $autoriflecap to 6050&gt;&gt;
+&lt;&lt;set $coilcap to 3400&gt;&gt;
+&lt;&lt;set $plasmacap to 4600&gt;&gt;
+&lt;&lt;set $rifle50cap to 4700&gt;&gt;
+&lt;&lt;set $glcap to 3000&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $staffcap is undefined&gt;&gt;&lt;&lt;set $staffcap to 15541100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $gswordcap is undefined&gt;&gt;&lt;&lt;set $gswordcap to 2200&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $wegacap is undefined&gt;&gt;&lt;&lt;set $wegacap to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pcorescap is undefined&gt;&gt;&lt;&lt;set $pcorescap to random(5000, 6400)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $duracap is undefined&gt;&gt;&lt;&lt;set $duracap to random(20000, 34000)&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $steelcap is undefined&gt;&gt;&lt;&lt;set $steelcap to 9580011&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $woodcap is undefined&gt;&gt;&lt;&lt;set $woodcap to 10950094&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $connectcap is undefined&gt;&gt;&lt;&lt;set $connectcap to 5544312&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set $stampoints=Math.min($stampoints,$masterstamina)&gt;&gt;
@@ -222188,8 +222210,6 @@ units&lt;/center&gt;
 
 &lt;&lt;if $event is 9&gt;&gt;
 
-&lt;&lt;if $staffcap is undefined&gt;&gt;&lt;&lt;set $staffcap to 15541100&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;center&gt;&#39;&#39;OFFERED PRICE: &amp;#36;_off&#39;&#39;&lt;/center&gt;
 &lt;center&gt;&#39;&#39;Owned:&#39;&#39; $ownstaff units&lt;/center&gt;
 &lt;center&gt;&lt;&lt;hovertip&quot;&#39;&#39;Demand:&#39;&#39; &lt;&lt;include Demand&gt;&gt;&quot;&gt;&gt;&#39;&#39;Market supply:&#39;&#39; &lt;&lt;/hovertip&gt;&gt; &lt;&lt;print setup.formatNumber($staffcap)&gt;&gt; units&lt;/center&gt;
@@ -223955,16 +223975,8 @@ units&lt;/center&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="338" name="GenBuy" tags="" position="1350,2075" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $passa to passage()&gt;&gt;
 
-&lt;&lt;if $duracap lt 0&gt;&gt;&lt;&lt;set $duracap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $woodcap lt 0&gt;&gt;&lt;&lt;set $woodcap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $steelcap lt 0&gt;&gt;&lt;&lt;set $steelcap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $connectcap lt 0&gt;&gt;&lt;&lt;set $connectcap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $stimcontrol is undefined&gt;&gt;&lt;&lt;set $stimcontrol = [250, 0, 0]&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $pcorescap lt 0&gt;&gt;&lt;&lt;set $pcorescap to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $hamcap is undefined&gt;&gt;&lt;&lt;set $hamcap = [20, 10]&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;vendorpic&quot;&gt;
 &lt;&lt;set _nostuff to true&gt;&gt;
@@ -224869,7 +224881,6 @@ units&lt;/center&gt;
 &lt;&lt;if $event is 7&gt;&gt;
 &lt;&lt;set _backev to 7&gt;&gt;
 &lt;&lt;set _price to 450&gt;&gt;
-&lt;&lt;if $duracap is undefined&gt;&gt;&lt;&lt;set $duracap to random(20000, 34000)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $wopos is 72&gt;&gt;
 &lt;&lt;if _aimaff gte 20&gt;&gt;&lt;&lt;set _price-=30&gt;&gt;&lt;&lt;set _okaim to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -224910,8 +224921,6 @@ units&lt;/center&gt;
 &lt;&lt;if $event is 8&gt;&gt;
 &lt;&lt;set _backev to 8&gt;&gt;
 &lt;&lt;set _price to 900&gt;&gt;
-&lt;&lt;if $pcorescap is undefined&gt;&gt;&lt;&lt;set $pcorescap to random(5000, 6400)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -228397,9 +228406,6 @@ Using this weapon with a STRENGTH value below 100 adds a noticeable damage penal
 &lt;&lt;/if&gt;&gt;
 
 
-
-
-&lt;&lt;if $wegacap is undefined&gt;&gt;&lt;&lt;set $wegacap to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $event is 184&gt;&gt;
@@ -232569,13 +232575,6 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $swagcap gte 5000&gt;&gt;&lt;&lt;set $swagcap-=random(1, 112)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $swagcap gte 15000&gt;&gt;&lt;&lt;set $swagcap-=random(25, 300)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $connectcap is undefined&gt;&gt;
-&lt;&lt;set $connectcap to 5544312&gt;&gt;
-&lt;&lt;set $woodcap to 10950094&gt;&gt;
-&lt;&lt;set $steelcap to 9580011&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;if $diff lte 2&gt;&gt;
 &lt;&lt;set $woodcap=adl($woodcap,150,500000)&gt;&gt;
 &lt;&lt;set $steelcap=adl($steelcap,150,500000)&gt;&gt;
@@ -232696,10 +232695,8 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set _bandit = 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $hamcap isnot undefined&gt;&gt;
 &lt;&lt;if $hamcap[0] lte 790&gt;&gt;&lt;&lt;set $hamcap[0]+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $hamcap[1] lte 395&gt;&gt;&lt;&lt;set $hamcap[1]+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _stamdown to random(1, 20)&gt;&gt;
 
@@ -360028,34 +360025,6 @@ p4: -1,
 
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $gswordcap is undefined&gt;&gt;&lt;&lt;set $gswordcap to 2200&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $stimcapb is undefined&gt;&gt;&lt;&lt;set $stimcapb to 42050&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $stimcapa is undefined&gt;&gt;&lt;&lt;set $stimcapa to 22320&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $autoriflecap is undefined&gt;&gt;
-&lt;&lt;set $knifecap to 6502&gt;&gt;
-&lt;&lt;set $swordcap to 5000&gt;&gt;
-&lt;&lt;set $wakicap to 4300&gt;&gt;
-&lt;&lt;set $gswordcap to 2000&gt;&gt;
-&lt;&lt;set $katanacap to 3000&gt;&gt;
-&lt;&lt;set $spearcap to 4000&gt;&gt;
-&lt;&lt;set $crossbowcap to 4000&gt;&gt;
-&lt;&lt;set $pistolcap to 7400&gt;&gt;
-&lt;&lt;set $shotguncap to 6000&gt;&gt;
-&lt;&lt;set $priflecap to 8600&gt;&gt;
-&lt;&lt;set $riflecap to 9800&gt;&gt;
-&lt;&lt;set $autoriflecap to 6050&gt;&gt;
-&lt;&lt;set $coilcap to 3400&gt;&gt;
-&lt;&lt;set $plasmacap to 4600&gt;&gt;
-&lt;&lt;set $rifle50cap to 4700&gt;&gt;
-&lt;&lt;set $glcap to 3000&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-
 &lt;&lt;if $badfester is undefined and $ver gte 10830&gt;&gt;
 &lt;&lt;set $badfester to 0&gt;&gt; /* Decreases Happiness and Pure traits */
 &lt;&lt;set $purefester to 0&gt;&gt; /* Raises Happiness and removes Corruption and malevolent */
@@ -360754,11 +360723,6 @@ soldiers: 0,
 &lt;&lt;if $worldstart is 1&gt;&gt;
 &lt;&lt;set $faction.ikaanos.control to 5&gt;&gt;
 &lt;&lt;set $faction.ikaanos.prosp to 5&gt;&gt;
-&lt;&lt;set $connectcap to 554312&gt;&gt;
-&lt;&lt;set $woodcap to 1095094&gt;&gt;
-&lt;&lt;set $steelcap to 950011&gt;&gt;
-&lt;&lt;set $duracap to 9501&gt;&gt;
-&lt;&lt;set $pcorescap to 950&gt;&gt;
 &lt;&lt;set $remhulc to 3&gt;&gt;
 &lt;&lt;set $remfusion to 4&gt;&gt;
 &lt;&lt;set $plstock to random(600, 1500)&gt;&gt;
