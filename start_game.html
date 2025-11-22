@@ -85230,22 +85230,6 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
 
 &lt;&lt;if $round gte 7 and $round lte 11&gt;&gt;
 
-&lt;&lt;if $event1 is true&gt;&gt;
-&lt;&lt;set _ene2 to &quot;you&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event2 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs1_name&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event3 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs2_name&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event4 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs3_name&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event5 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs4_name&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $chance gte 1&gt;&gt;
 
@@ -85268,7 +85252,6 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
  */
  
 &lt;&lt;if $event1 is true&gt;&gt;
-&lt;&lt;set _ene2 to &quot;you&quot;&gt;&gt;
 
 &lt;&lt;if _ap is true and $armorsoak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $armorsoak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85277,23 +85260,6 @@ $enemy5 is killed, after taking $damage damage points ($enemy5_soak pts. absorbe
 
 &lt;&lt;if $damage gte 1&gt;&gt;&lt;&lt;set $gothit to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event2 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs1_name&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event3 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs2_name&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event4 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs3_name&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event5 is true&gt;&gt;
-&lt;&lt;set _ene2 to $cs4_name&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
- 
 
 /*
 and deals &lt;&lt;if $damage gte 50&gt;&gt;a massive&lt;&lt;/if&gt;&gt; 
@@ -85677,6 +85643,21 @@ Armor destroyed!
 
 
 /* ENEMIES HIT FOLLOWERS BELOW */
+&lt;&lt;if $event1 is true&gt;&gt;
+&lt;&lt;set _ene2 to &quot;you&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event2 is true&gt;&gt;
+&lt;&lt;set _ene2 to $cs1_name&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event3 is true&gt;&gt;
+&lt;&lt;set _ene2 to $cs2_name&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event4 is true&gt;&gt;
+&lt;&lt;set _ene2 to $cs3_name&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event5 is true&gt;&gt;
+&lt;&lt;set _ene2 to $cs4_name&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 /* ENEMY 1 DISPLAY */
 &lt;&lt;if $round is 7 and $enemy1_health gte 1&gt;&gt;
