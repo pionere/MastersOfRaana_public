@@ -308650,6 +308650,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set $butlerdis=0&gt;&gt;
 &lt;&lt;set $butlerpure=0&gt;&gt;
 &lt;&lt;set $butlerkind=0&gt;&gt; 
+&lt;&lt;set _crawlers to 0&gt;&gt;
 &lt;&lt;for _testnpc range $npc&gt;&gt;
     &lt;&lt;if _testnpc.state gte 1&gt;&gt;
         /* title update script */
@@ -308666,6 +308667,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
         &lt;&lt;set $butlerkind=_testnpc.kind&gt;&gt; 
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
+        &lt;&lt;if _testnpc.title is 5&gt;&gt;&lt;&lt;set _crawlers+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
@@ -310407,15 +310409,6 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 
 /* FLOOR CRAWLER SCRIPT */
-
-
-
-&lt;&lt;set _crawlers to 0&gt;&gt;
-&lt;&lt;for _crawl range $npc&gt;&gt;
-&lt;&lt;if _crawl.title is 5&gt;&gt;&lt;&lt;set _crawlers+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-
-
 
 &lt;&lt;if _npc.title is 5 and _npc.bondage lte 0&gt;&gt;
 
