@@ -306526,36 +306526,12 @@ OLD SYSTEM
 &lt;&lt;unset $mbjgirl&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _okblow is true or _npc.morningblow is true&gt;&gt;
-&lt;&lt;if _npc.morningblow is true&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[unassign|SMenu2][_npc.morningblow to false, $delblow to true]]&lt;/div&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $mbjgirl is undefined&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;unassigned&lt;/p&gt;
-
+&lt;div class=&quot;ulsmall&quot;&gt;
+&lt;&lt;if _npc.morningblow&gt;&gt;[[unassign|SMenu2][_npc.morningblow to false, $delblow to true]]
+&lt;&lt;elseif _okblow&gt;&gt;[[assign|SMenu2][_npc.morningblow to true, $addblow to true]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;assign&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mbjgirl isnot undefined&gt;&gt;
-
-
-&lt;&lt;if _npc.morningblow isnot true&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[assign|SMenu2][ _npc.morningblow to true, $addblow to true]]&lt;/div&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallselect&quot;&gt;assigned&lt;/p&gt;
-&lt;&lt;/if&gt;&gt; 
-
-
-&lt;&lt;/if&gt;&gt; 
-&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-&lt;&lt;if $mbjgirl is undefined or _npc.morningblow is true&gt;&gt;
-&lt;&lt;if _npc.morningblow isnot true&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;
-[[assign|SMenu2][_npc.morningblow to true, $addblow to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;assigned&lt;/p&gt;&lt;&lt;/if&gt;&gt; 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
 
 /* canco mod new ends */
 &lt;&lt;else&gt;&gt;
