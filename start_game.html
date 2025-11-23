@@ -333885,13 +333885,7 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 
 &lt;&lt;set _happiness to _npc.happiness&gt;&gt;
 &lt;&lt;set _masterlove to _npc.masterlove&gt;&gt;
-&lt;&lt;set _hygiene to _npc.hygiene&gt;&gt;
-&lt;&lt;set _tempstamina to _npc.tempstamina&gt;&gt;
-&lt;&lt;set _hunger to _npc.hunger&gt;&gt;
-&lt;&lt;set _respect to _npc.respect&gt;&gt;
-&lt;&lt;set _scarefactor to _npc.scarefactor&gt;&gt;
-&lt;&lt;set _defcount to _npc.defcount&gt;&gt;
-&lt;&lt;set _afraid to _npc.afraid&gt;&gt;
+&lt;&lt;set _discipline to _npc.discipline&gt;&gt;
 
 &lt;&lt;if _happiness lte 0&gt;&gt;&lt;&lt;set _hap to &quot;Depressed&quot;&gt;&gt;
 &lt;&lt;elseif _happiness lte 9&gt;&gt;&lt;&lt;set _hap to &quot;Miserable&quot;&gt;&gt;
@@ -333985,134 +333979,82 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;traitholder padd30left&quot;&gt;
-
 &#39;&#39;HEALTH&#39;&#39;&lt;br&gt;
-
 _npc.health/_npc.toughness
-
 &lt;/div&gt;
-
 
 &lt;div class=&quot;traitholder padd30right&quot;&gt;
-
 &#39;&#39;STAMINA &#39;&#39;&lt;br&gt;
-
 _npc.tempstamina/_npc.maxstamina
-
 &lt;/div&gt;
 
-
-
 &lt;/div&gt;
-
-
 
 
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;traitholder padd30left&quot;&gt;
 
+&lt;div class=&quot;traitholder padd30left&quot;&gt;
 &#39;&#39;HAPPINESS&#39;&#39;&lt;br&gt;
-
-&lt;div class=&quot;green&quot;&gt;
-&lt;&lt;if _happiness gte 60&gt;&gt;&lt;&lt;if $shownum is true&gt;&gt;_happiness/100&lt;&lt;else&gt;&gt;_hap&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;if _happiness gte 20 and _happiness lte 59&gt;&gt;&lt;&lt;if $shownum is true&gt;&gt;_happiness/100&lt;&lt;else&gt;&gt;_hap&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;div class=&quot;red&quot;&gt;
-&lt;&lt;if _happiness lte 19&gt;&gt;&lt;&lt;if $shownum is true&gt;&gt;_happiness/100&lt;&lt;else&gt;&gt;_hap&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
+&lt;&lt;set _hap=$shownum ? &quot;_happiness/100&quot; : _hap&gt;&gt;
+&lt;&lt;if _happiness gte 60&gt;&gt;&lt;div class=&quot;green&quot;&gt;_hap&lt;/div&gt;
+&lt;&lt;elseif _happiness gte 20&gt;&gt;_hap
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_hap&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;traitholder padd30right&quot;&gt;
-
 &#39;&#39;AFFECTION &#39;&#39;&lt;br&gt;
-
-
-&lt;div class=&quot;green&quot;&gt;
-&lt;&lt;if _masterlove gte 60&gt;&gt;_aff&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;if _masterlove gte 15 and _masterlove lte 59&gt;&gt;_aff&lt;&lt;/if&gt;&gt;
-
-&lt;div class=&quot;red&quot;&gt;
-&lt;&lt;if _masterlove lte 14&gt;&gt;_aff&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _masterlove gte 60&gt;&gt;&lt;div class=&quot;green&quot;&gt;_aff&lt;/div&gt;
+&lt;&lt;elseif _masterlove gte 15&gt;&gt;_aff
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_aff&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-
-
-/*
-&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-*/
-
 
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;traitholder padd30left&quot;&gt;
-
 &#39;&#39;WILLPOWER&#39;&#39;&lt;br&gt;
-
 _npc.willpower
-
 &lt;/div&gt;
-
 
 &lt;div class=&quot;traitholder padd30right&quot;&gt;
-
 &#39;&#39;CORRUPTION &#39;&#39;&lt;br&gt;
-
-_npc.likesadist/&lt;&lt;if _smraria is true&gt;&gt;150&lt;&lt;else&gt;&gt;100&lt;&lt;/if&gt;&gt;
-
+_npc.likesadist/&lt;&lt;=_smraria ? 150 : 100&gt;&gt;
 &lt;/div&gt;
 
-
-
 &lt;/div&gt;
-
-
-
-/*
-&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-*/
-
-
 
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;traitholder padd30left&quot;&gt;
 &#39;&#39;HYGIENE &#39;&#39;&lt;br&gt;
+&lt;&lt;set _hygiene to _npc.hygiene&gt;&gt;
 &lt;&lt;if _hygiene lte 0&gt;&gt;&lt;div class=&quot;red&quot;&gt;Extremely filthy!&lt;/div&gt;
 &lt;&lt;elseif _hygiene lte 19&gt;&gt;Very dirty
 &lt;&lt;elseif _hygiene lte 39&gt;&gt;Dirty
 &lt;&lt;elseif _hygiene lte 69&gt;&gt;Normal
 &lt;&lt;else&gt;&gt;&lt;div class=&quot;green&quot;&gt;Fantastic!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;br&gt;&lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;traitholder padd30right&quot;&gt;
 
+&lt;div class=&quot;traitholder padd30right&quot;&gt;
 &#39;&#39;DISCIPLINE&#39;&#39;&lt;br&gt;
-&lt;&lt;if $shownum isnot true&gt;&gt;
-_dic
-&lt;&lt;else&gt;&gt;
-_npc.discipline
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;=$shownum ? _discipline : _dic&gt;&gt;
+&lt;/div&gt;
 
 /*
 &#39;&#39;PHYSIQUE&#39;&#39;&lt;br&gt;
 &lt;&lt;if _avatarunc is false and _health gte 16 and _dex gte 10 and _str gte 3&gt;&gt;
-
+&lt;&lt;set _tempstamina to _npc.tempstamina&gt;&gt;
 &lt;&lt;if _tempstamina gte 40&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;&lt;div class=&quot;green&quot;&gt;Rested&lt;/div&gt;&lt;&lt;else&gt;&gt;_tempstamina/_maxstamina&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _tempstamina lte 39 and _tempstamina gte 30&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt; Winded&lt;&lt;else&gt;&gt;_tempstamina/_maxstamina&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _tempstamina lte 29 and _tempstamina gte 15&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Tired&lt;&lt;else&gt;&gt;_tempstamina/_maxstamina&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -334135,17 +334077,13 @@ _npc.discipline
 &lt;&lt;/if&gt;&gt;
 */
 
-
 &lt;/div&gt;
-&lt;/div&gt;
-
-/*
-&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-*/
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;traitholder padd30left&quot;&gt;
 &#39;&#39;HUNGER &#39;&#39;&lt;br&gt;
+&lt;&lt;set _hunger to _npc.hunger&gt;&gt;
 &lt;&lt;if _hunger gte 86&gt;&gt;&lt;div class=&quot;red&quot;&gt;Glutted!&lt;/div&gt;
 &lt;&lt;elseif _hunger gte 70&gt;&gt;&lt;div class=&quot;green&quot;&gt;Stuffed&lt;/div&gt;
 &lt;&lt;elseif _hunger gte 35&gt;&gt;&lt;div class=&quot;green&quot;&gt;Well-fed&lt;/div&gt;
@@ -334153,36 +334091,31 @@ _npc.discipline
 &lt;&lt;elseif _hunger gte 1&gt;&gt;Hungry!
 &lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;Starving!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-
 &lt;/div&gt;
 
 &lt;div class=&quot;traitholder padd30right&quot;&gt;
-
-
 &#39;&#39;RESPECT &#39;&#39;&lt;br&gt;
-&lt;&lt;if _respect lte -10&gt;&gt;&lt;div class=&quot;red&quot;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Very low!&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-&lt;&lt;elseif _respect lte 0&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Low&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;
-&lt;&lt;elseif _respect lte 2&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Normal&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;
-&lt;&lt;elseif _respect lte 9&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Good&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _respect to _npc.respect&gt;&gt;
+&lt;&lt;if _respect lte -10&gt;&gt;&lt;&lt;set _resp to &quot;Very low!&quot;&gt;&gt;
+&lt;&lt;elseif _respect lte 0&gt;&gt;&lt;&lt;set _resp to &quot;Low&quot;&gt;&gt;
+&lt;&lt;elseif _respect lte 2&gt;&gt;&lt;&lt;set _resp to &quot;Normal&quot;&gt;&gt;
+&lt;&lt;elseif _respect lte 9&gt;&gt;&lt;&lt;set _resp to &quot;Good&quot;&gt;&gt;
+&lt;&lt;elseif _respect lte 19&gt;&gt;&lt;&lt;set _resp to &quot;Impressed&quot;&gt;&gt;
+&lt;&lt;elseif _respect lte 29&gt;&gt;&lt;&lt;set _resp to &quot;Very high!&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set _resp to &quot;Praising!&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;div class=&quot;green&quot;&gt;
-&lt;&lt;if _respect gte 30&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Praising!&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;
-&lt;&lt;elseif _respect gte 20&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Very high!&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;
-&lt;&lt;elseif _respect gte 10&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Impressed&lt;&lt;else&gt;&gt;_respect/100&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _resp=$shownum ? &quot;_respect/100&quot; : _resp&gt;&gt;
+&lt;&lt;if _respect lte -10&gt;&gt;&lt;div class=&quot;red&quot;_resp&lt;/div&gt;
+&lt;&lt;elseif _respect lte 9&gt;&gt;_resp
+&lt;&lt;else&gt;&gt;&lt;&lt;&lt;div class=&quot;green&quot;&gt;_resp&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-
 &lt;/div&gt;
-&lt;/div&gt;
-/*
-&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-*/
 
 &lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;traitholder padd30left&quot;&gt;
 
+&lt;div class=&quot;traitholder padd30left&quot;&gt;
 &lt;&lt;if _isinwife is true or _showpreg is true&gt;&gt;
 &#39;&#39;PREGNANT&#39;&#39;&lt;br&gt;
 &lt;&lt;if $pregnant is undefined and _lube is true&gt;&gt;&lt;div class=&quot;padd40left&quot;&gt;&lt;div class=&quot;row&quot;&gt;No 
@@ -334214,87 +334147,77 @@ _npc.discipline
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-&lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
 
 &lt;div class=&quot;traitholder padd30right&quot;&gt;
-
 &#39;&#39;ANGER &#39;&#39;&lt;br&gt;
-
-
-
-&lt;div class=&quot;green&quot;&gt;
-&lt;&lt;if _scarefactor lte 0&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;None&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-&lt;&lt;if _scarefactor is 1&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Annoyed&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _scarefactor is 2&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Upset&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;div class=&quot;red&quot;&gt;
-&lt;&lt;if _scarefactor gte 3 and _scarefactor lte 5&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Displeased&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _scarefactor gte 6 and _scarefactor lte 9&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Resenting&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _scarefactor gte 10 and _scarefactor lte 24&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Enraged!&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _scarefactor gte 25&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Furious!&lt;&lt;else&gt;&gt;_scarefactor/30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
+&lt;&lt;set _scarefactor to _npc.scarefactor&gt;&gt;
+&lt;&lt;if _scarefactor lte 0&gt;&gt;&lt;&lt;set _sca to &quot;None&quot;&gt;&gt;
+&lt;&lt;elseif _scarefactor is 1&gt;&gt;&lt;&lt;set _sca to &quot;Annoyed&quot;&gt;&gt;
+&lt;&lt;elseif _scarefactor is 2&gt;&gt;&lt;&lt;set _sca to &quot;Upset&quot;&gt;&gt;
+&lt;&lt;elseif _scarefactor lte 5&gt;&gt;&lt;&lt;set _sca to &quot;Displeased&quot;&gt;&gt;
+&lt;&lt;elseif _scarefactor lte 9&gt;&gt;&lt;&lt;set _sca to &quot;Resenting&quot;&gt;&gt;
+&lt;&lt;elseif _scarefactor lte 24&gt;&gt;&lt;&lt;set _sca to &quot;Enraged!&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set _sca to &quot;Furious!&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _sca=$shownum ? &quot;_scarefactor/30&quot; : _sca&gt;&gt;
+&lt;&lt;if _scarefactor lte 0&gt;&gt;&lt;div class=&quot;green&quot;&gt;_sca&lt;/div&gt;
+&lt;&lt;elseif _scarefactor lte 2&gt;&gt;_sca
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_sca&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
 
 &lt;/div&gt;
-
-/*
-&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-*/
 
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;traitholder padd30left&quot;&gt;
-
 &#39;&#39;DEFIANCE&#39;&#39;&lt;br&gt;
-&lt;div class=&quot;green&quot;&gt;
 &lt;&lt;set _defcount to _npc.defcount&gt;&gt;
-&lt;&lt;if _defcount lte 0&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;None&lt;&lt;else&gt;&gt;_defcount/50&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _defcount gte 1 and _defcount lte 5&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Low&lt;&lt;else&gt;&gt;_defcount/50&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;if _defcount gte 6 and _defcount lte 9&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Smug&lt;&lt;else&gt;&gt;_defcount/50&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;div class=&quot;red&quot;&gt;
-&lt;&lt;if _defcount gte 10 and _defcount lte 24&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Arrogant!&lt;&lt;else&gt;&gt;_defcount/50&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _defcount gte 25&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Bitchy!&lt;&lt;else&gt;&gt;_defcount/50&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
+&lt;&lt;if _defcount lte 0&gt;&gt;&lt;&lt;set _dec to &quot;None&quot;&gt;&gt;
+&lt;&lt;elseif _defcount lte 5&gt;&gt;&lt;&lt;set _dec to &quot;Low&quot;&gt;&gt;
+&lt;&lt;elseif _defcount lte 9&gt;&gt;&lt;&lt;set _dec to &quot;Smug&quot;&gt;&gt;
+&lt;&lt;elseif _defcount lte 24&gt;&gt;&lt;&lt;set _dec to &quot;Arrogant!&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set _dec to &quot;Bitchy!&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dec=$shownum ? &quot;_defcount/50&quot; : _dec&gt;&gt;
+&lt;&lt;if _defcount lte 5&gt;&gt;&lt;div class=&quot;green&quot;&gt;_dec&lt;/div&gt;
+&lt;&lt;elseif _defcount lte 9&gt;&gt;_dec
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_dec&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;traitholder padd30right&quot;&gt;
-
-
-
 &#39;&#39;FEAR&#39;&#39;&lt;br&gt;
-&lt;div class=&quot;green&quot;&gt;
-&lt;&lt;if $afraid lte 0&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;None&lt;&lt;else&gt;&gt;$afraid/100&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _afraid to _npc.afraid&gt;&gt;
+&lt;&lt;if _afraid lte 0&gt;&gt;&lt;&lt;set _fear to &quot;None&quot;&gt;&gt;
+&lt;&lt;elseif _afraid lte 5&gt;&gt;&lt;&lt;set _fear to &quot;Uneasy&quot;&gt;&gt;
+&lt;&lt;elseif _afraid lte 9&gt;&gt;&lt;&lt;set _fear to &quot;Worried&quot;&gt;&gt;
+&lt;&lt;elseif _afraid lte 24&gt;&gt;&lt;&lt;set _fear to &quot;Scared!&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set _fear to &quot;Petrified!&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _fear=$shownum ? &quot;_afraid/100&quot; : _fear&gt;&gt;
+&lt;&lt;if _afraid lte 0&gt;&gt;&lt;div class=&quot;green&quot;&gt;_fear&lt;/div&gt;
+&lt;&lt;elseif _afraid lte 9&gt;&gt;_fear
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_fear&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;if $afraid gte 1 and $afraid lte 5&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Uneasy&lt;&lt;else&gt;&gt;$afraid/100&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $afraid gte 6 and $afraid lte 9&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Worried&lt;&lt;else&gt;&gt;$afraid/100&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;div class=&quot;red&quot;&gt;
-&lt;&lt;if $afraid gte 10 and $afraid lte 24&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Scared!&lt;&lt;else&gt;&gt;$afraid/100&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $afraid gte 25&gt;&gt;&lt;&lt;if $shownum isnot true&gt;&gt;Petrified!&lt;&lt;else&gt;&gt;$afraid/100&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;/div&gt;
+
 &lt;/div&gt;
 
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-
+&lt;&lt;if _endok is true and _doing isnot true&gt;&gt;
 &lt;div class=&quot;shownumholder lighthover&quot;&gt;
 &lt;center&gt;
-&lt;&lt;if _endok is true and _doing isnot true&gt;&gt;
 &lt;&lt;set _img = $shownum ? &quot;Butt/changer2.png&quot; : &quot;Butt/changer.png&quot;&gt;&gt;
 [img[$imgpath + _img][Interact][$shownum to !$shownum, $showethnu to true]]
-&lt;&lt;/if&gt;&gt;
 &lt;/center&gt;
 &lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="495" name="Mos" tags="gray nobr no-transition" position="1725,2325" size="100,100">&lt;div id=&quot;borderwrap&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;
