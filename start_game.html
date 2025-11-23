@@ -302801,7 +302801,7 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _delfollowcommand2.daybef is 19 and $maxmasters lte 3&gt;&gt;&lt;&lt;set $maxmasters+=1&gt;&gt;&lt;&lt;set _ok to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _delfollowcommand2.daybef is 19 and $maxmasters lt 8&gt;&gt;&lt;&lt;set $maxmasters+=1&gt;&gt;&lt;&lt;set _ok to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _delfollowcommand2.daybef is 20&gt;&gt;&lt;&lt;set _ok to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -306513,304 +306513,67 @@ OLD SYSTEM
 
 &lt;div class=&quot;vendorleft ulsmall&quot;&gt;
 
-&lt;&lt;set _assigned1 to 0&gt;&gt;
-&lt;&lt;set _assigned2 to 0&gt;&gt;
-&lt;&lt;set _assigned3 to 0&gt;&gt;
-&lt;&lt;set _assigned4 to 0&gt;&gt;
+&lt;&lt;if _npc.assigned gte 0 or _npc.status lte 4 or _npc.status gte 9&gt;&gt;
 
+&lt;div class=&quot;signvendor&quot;&gt;avail. educators&lt;/div&gt;
+&#39;&#39;//Assign to//&#39;&#39;
+
+&lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;for _master range $npc&gt;&gt;
-&lt;&lt;unset _stopmas&gt;&gt;
 
 &lt;&lt;if _master.dayblock is 19&gt;&gt;
+&lt;&lt;capture _master&gt;&gt;
 
-&lt;&lt;if _mastname1 is undefined&gt;&gt;
-&lt;&lt;set _mastname1 to _master.girlname&gt;&gt;
-&lt;&lt;set _mast1 to _master.actnpc&gt;&gt;
-&lt;&lt;set _mast1ass to _master.actnpc&gt;&gt;
-&lt;&lt;set _stopmas to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if _mastname2 is undefined and _stopmas isnot true&gt;&gt;
-&lt;&lt;set _mastname2 to _master.girlname&gt;&gt;
-&lt;&lt;set _mast2 to _master.actnpc&gt;&gt;
-&lt;&lt;set _mast2ass to _master.actnpc&gt;&gt;
-&lt;&lt;set _stopmas to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _mastname3 is undefined and _stopmas isnot true&gt;&gt;
-&lt;&lt;set _mastname3 to _master.girlname&gt;&gt;
-&lt;&lt;set _mast3 to _master.actnpc&gt;&gt;
-&lt;&lt;set _mast3ass to _master.actnpc&gt;&gt;
-&lt;&lt;set _stopmas to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _mastname4 is undefined and _stopmas isnot true&gt;&gt;
-&lt;&lt;set _mastname4 to _master.girlname&gt;&gt;
-&lt;&lt;set _mast4 to _master.actnpc&gt;&gt;
-&lt;&lt;set _mast4ass to _master.actnpc&gt;&gt;
-&lt;&lt;set _stopmas to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/for&gt;&gt;
-
-
+&lt;&lt;set _asgns=[]&gt;&gt;
 &lt;&lt;for _ass range $npc&gt;&gt;
-&lt;&lt;if _ass.assigned is _mast1ass and _ass.assigned gte 0&gt;&gt;&lt;&lt;set _assigned1+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ass.assigned is _mast2ass and _ass.assigned gte 0&gt;&gt;&lt;&lt;set _assigned2+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ass.assigned is _mast3ass and _ass.assigned gte 0&gt;&gt;&lt;&lt;set _assigned3+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ass.assigned is _mast4ass and _ass.assigned gte 0&gt;&gt;&lt;&lt;set _assigned4+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if _ass.assigned is _master.actnpc and _ass.assigned gte 0 and _ass.state gte 1&gt;&gt;&lt;&lt;set _asgns.push(_ass)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
-
-
-
-&lt;&lt;if _npc.assigned gte 0 or _npc.status lte 4 or _npc.status gte 9&gt;&gt;&lt;&lt;set _showma to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-/*
-&lt;&lt;if _showma is true and _npc.dayblock isnot 19&gt;&gt;
-
-
-
-
-
+&lt;div class=&quot;abholder&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;ab1 lighthover&quot;&gt;
+&lt;&lt;set _jobb to 9991&gt;&gt;
+&lt;div class=&quot;tex1px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;
-&lt;div class=&quot;tutiruler2 tex14px&quot;&gt;
-&lt;div class=&quot;tuti&quot;&gt;
-&lt;&lt;if _assigned1 gte 1&gt;&gt;
-&lt;&lt;set _pen=-4&gt;&gt;
-&lt;&lt;set _pen+=_assigned1&gt;&gt;
-&lt;&lt;set _pen*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned1 gt 4&gt;&gt;Crowd penalty active (-_pen)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as1 range $npc&gt;&gt;&lt;&lt;if _as1.assigned is _mast1ass and _as1.state gte 1&gt;&gt;- _as1.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned1 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned1/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned1/4&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _asgnnum=_asgns.length&gt;&gt;
+&lt;&lt;if _asgnnum gt 0&gt;&gt;
+&lt;&lt;set _pen=(_asgnnum-4)*2&gt;&gt;
+&lt;&lt;hovertip &quot;&lt;&lt;if _asgnnum gt 4&gt;&gt;Crowd penalty active (-_pen)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as1 range _asgns&gt;&gt;- _as1.girlname&lt;br&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
+&lt;&lt;if _asgnnum gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_asgnnum/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_asgnnum/4&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
-_assigned1/4
+0/4
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tuti&quot;&gt;
-&lt;&lt;if _assigned2 gte 1&gt;&gt;
-&lt;&lt;set _pen2=-4&gt;&gt;
-&lt;&lt;set _pen2+=_assigned2&gt;&gt;
-&lt;&lt;set _pen2*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned2 gt 4&gt;&gt;Crowd penalty active (-_pen2)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as2 range $npc&gt;&gt;&lt;&lt;if _as2.assigned is _mast2ass and _as2.state gte 1&gt;&gt;- _as2.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned2 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned2/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned2/4&lt;&lt;/if&gt;&gt;
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-_assigned2/4
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tuti&quot;&gt;
-&lt;&lt;if _assigned3 gte 1&gt;&gt;
-&lt;&lt;set _pen3=-4&gt;&gt;
-&lt;&lt;set _pen3+=_assigned3&gt;&gt;
-&lt;&lt;set _pen3*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned3 gt 4&gt;&gt;Crowd penalty active (-_pen3)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as3 range $npc&gt;&gt;&lt;&lt;if _as3.assigned is _mast3ass and _as3.state gte 1&gt;&gt;- _as3.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned3 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned3/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned3/4&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-_assigned3/4
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &#39;&#39;
 
+&lt;/div&gt;
+&lt;div class=&quot;ab2 ulsmall&quot;&gt;
 
+&lt;&lt;if _npc is _master&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;_master.girlname&lt;/p&gt;
+&lt;&lt;elseif _npc.assigned isnot _master.actnpc&gt;&gt;[[_master.girlname|SMenu2][_npc.assigned to _master.actnpc]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_master.girlname&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-*/
 
-&lt;&lt;if _npc.dayblock is 19&gt;&gt;
-&lt;div class=&quot;signvendor&quot;&gt;Assigned npcs&lt;/div&gt;
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;div class=&quot;center&quot;&gt;
-&lt;&lt;for _chesl range $npc&gt;&gt;
-&lt;&lt;if _chesl.assigned is _npc.actnpc&gt;&gt;
-&#39;&#39;&lt;&lt;hovertip &quot;&#39;&#39;DISCIPLINE:&#39;&#39; _chesl.discipline&lt;br&gt;
-&#39;&#39;STRENGTH:&#39;&#39; _chesl.str&lt;br&gt;
-&#39;&#39;DEXTERITY:&#39;&#39; _chesl.dex&lt;br&gt;
-&#39;&#39;WILLPOWER:&#39;&#39; _chesl.willpower&lt;br&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ab3&quot;&gt;
+&lt;&lt;set _masttemp to _master.actnpc&gt;&gt;
+&lt;&lt;include JobEX&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt; 
 
-&#39;&#39;CORRUPTION: &#39;&#39;_chesl.likesadist&quot;&gt;&gt;_chesl.girlname _chesl.last&lt;&lt;/hovertip&gt;&gt;&#39;&#39;&lt;br&gt;
+&lt;&lt;/capture&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/for&gt;&gt;
 &lt;/div&gt;
+
+&lt;&lt;if _npc.assigned gte 0&gt;&gt;&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;[[Clear|SMenu2][_npc.assigned to -1]]&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if _showma is true and _npc.dayblock isnot 19&gt;&gt;
-&lt;div class=&quot;signvendor&quot;&gt;avail. educators&lt;/div&gt;
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&#39;&#39;//Assign to//&#39;&#39;&lt;div class=&quot;ulsmall&quot;&gt;
-&lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-
-
-
-/* MASTER ONE */
-
-&lt;div class=&quot;abholder&quot;&gt;
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;ab1 lighthover&quot;&gt;
-&lt;&lt;set _jobb to 9991&gt;&gt;
-&lt;div class=&quot;tex1px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&#39;&#39;
-&lt;&lt;if _assigned1 gte 1&gt;&gt;
-&lt;&lt;set _pen=-4&gt;&gt;
-&lt;&lt;set _pen+=_assigned1&gt;&gt;
-&lt;&lt;set _pen*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned1 gt 4&gt;&gt;Crowd penalty active (-_pen)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as1 range $npc&gt;&gt;&lt;&lt;if _as1.assigned is _mast1ass and _as1.state gte 1&gt;&gt;- _as1.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned1 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned1/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned1/4&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-_assigned1/4
-&lt;&lt;/if&gt;&gt;
-&#39;&#39;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab2 ulsmall&quot;&gt;
-
-&lt;&lt;if _mast1 isnot undefined&gt;&gt;&lt;&lt;if _npc.assigned isnot _mast1&gt;&gt;[[&quot;&quot;+_mastname1|SMenu2][_npc.assigned to _mast1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_mastname1&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Vacant slot&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab3&quot;&gt;
-&lt;&lt;set _masttemp to _mast1&gt;&gt;
-&lt;&lt;include JobEX&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt; 
-/* MASTER ONE ENDS */
-
-&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-
-
-
-/* MASTER TWO */
-
-&lt;div class=&quot;abholder&quot;&gt;
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;ab1 lighthover&quot;&gt;
-&lt;&lt;set _jobb to 9991&gt;&gt;
-&lt;div class=&quot;tex1px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&#39;&#39;
-&lt;&lt;if _assigned2 gte 1&gt;&gt;
-&lt;&lt;set _pen2=-4&gt;&gt;
-&lt;&lt;set _pen2+=_assigned2&gt;&gt;
-&lt;&lt;set _pen2*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned2 gt 4&gt;&gt;Crowd penalty active (-_pen2)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as2 range $npc&gt;&gt;&lt;&lt;if _as2.assigned is _mast2ass and _as2.state gte 1&gt;&gt;- _as2.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned2 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned2/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned2/4&lt;&lt;/if&gt;&gt;
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-_assigned2/4
-&lt;&lt;/if&gt;&gt;
-&#39;&#39;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab2 ulsmall&quot;&gt;
-
-&lt;&lt;if _mast2 isnot undefined&gt;&gt;&lt;&lt;if _npc.assigned isnot _mast2&gt;&gt;[[&quot;&quot;+_mastname2|SMenu2][_npc.assigned to _mast2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_mastname2&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Vacant slot&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab3&quot;&gt;
-&lt;&lt;set _masttemp to _mast2&gt;&gt;
-&lt;&lt;include JobEX&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt; 
-/* MASTER TWO ENDS */
-
-&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-
-/* MASTER THREE */
-
-&lt;div class=&quot;abholder&quot;&gt;
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;ab1 lighthover&quot;&gt;
-&lt;&lt;set _jobb to 9991&gt;&gt;
-&lt;div class=&quot;tex1px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&#39;&#39;
-&lt;&lt;if _assigned3 gte 1&gt;&gt;
-&lt;&lt;set _pen3=-4&gt;&gt;
-&lt;&lt;set _pen3+=_assigned3&gt;&gt;
-&lt;&lt;set _pen3*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned3 gt 4&gt;&gt;Crowd penalty active (-_pen3)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as3 range $npc&gt;&gt;&lt;&lt;if _as3.assigned is _mast3ass and _as3.state gte 1&gt;&gt;- _as3.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned3 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned3/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned3/4&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-_assigned3/4
-&lt;&lt;/if&gt;&gt;
-&#39;&#39;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab2 ulsmall&quot;&gt;
-
-&lt;&lt;if _mast3 isnot undefined&gt;&gt;&lt;&lt;if _npc.assigned isnot _mast3&gt;&gt;[[&quot;&quot;+_mastname3|SMenu2][_npc.assigned to _mast3]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_mastname3&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Vacant slot&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab3&quot;&gt;
-&lt;&lt;set _masttemp to _mast3&gt;&gt;
-&lt;&lt;include JobEX&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt; 
-/* MASTER THREE ENDS */
-
-&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-
-/* MASTER FOUR */
-
-&lt;div class=&quot;abholder&quot;&gt;
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;ab1 lighthover&quot;&gt;
-&lt;&lt;set _jobb to 9991&gt;&gt;
-&lt;div class=&quot;tex1px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&#39;&#39;
-&lt;&lt;if _assigned4 gte 1&gt;&gt;
-&lt;&lt;set _pen4=-4&gt;&gt;
-&lt;&lt;set _pen4+=_assigned4&gt;&gt;
-&lt;&lt;set _pen4*=2&gt;&gt;
-&lt;&lt;hovertip &quot;&lt;&lt;if _assigned4 gt 4&gt;&gt;Crowd penalty active (-_pen4)!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;&#39;&#39;ASSIGNED NPCS:&#39;&#39;&lt;br&gt;&lt;&lt;for _as4 range $npc&gt;&gt;&lt;&lt;if _as4.assigned is _mast4ass and _as4.state gte 1&gt;&gt;- _as4.girlname&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;
-&lt;&lt;if _assigned4 gt 4&gt;&gt;&lt;div class=&quot;red&quot;&gt;_assigned4/4&lt;/div&gt;&lt;&lt;else&gt;&gt;_assigned4/4&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;else&gt;&gt;
-_assigned4/4
-&lt;&lt;/if&gt;&gt;
-&#39;&#39;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab2 ulsmall&quot;&gt;
-
-&lt;&lt;if _mast4 isnot undefined&gt;&gt;&lt;&lt;if _npc.assigned isnot _mast4&gt;&gt;[[&quot;&quot;+_mastname4|SMenu2][_npc.assigned to _mast4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_mastname4&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Vacant slot&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;div class=&quot;ab3&quot;&gt;
-&lt;&lt;set _masttemp to _mast4&gt;&gt;
-&lt;&lt;include JobEX&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt; 
-/* MASTER FOUR ENDS */
-
-
-
-
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;
-&lt;&lt;if _npc.assigned gte 0&gt;&gt;[[Clear|SMenu2][_npc.assigned to -1]]&lt;&lt;/if&gt;&gt;
 
 
 
@@ -306836,7 +306599,6 @@ _assigned4/4
 &lt;&lt;elseif _okmain&gt;&gt;[[assign|SMenu2][_npc.mainatt to 1, $mainatter to _npc.actnpc]]
 &lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;assign&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
 
 &lt;/div&gt; /* mainattholder ends */
 &lt;&lt;/if&gt;&gt;
@@ -382865,7 +382627,7 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 &lt;&lt;if _beauty gte 60 and _charisma gte 60 and _traitextro gte 25 and (_npc.per gte 70 or _npc.dancing gte 70)&gt;&gt;&lt;&lt;set _okdragon to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* CHECKER FOR EDUCATORS */
-&lt;&lt;set _slavemasterok to $maxmasters lte 3&gt;&gt;
+&lt;&lt;set _slavemasterok to $maxmasters lt 8&gt;&gt;
 
 
 
