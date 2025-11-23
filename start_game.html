@@ -34757,7 +34757,6 @@ The Dengi king Azuk and his army of degenerates have successfully &lt;br&gt;inva
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Checker" tags="nobr" position="1475,50" size="100,100">
 /* random MBJ initiator */
-&lt;&lt;set $cancombj to true&gt;&gt;
 &lt;&lt;if $mbjid is undefined&gt;&gt;
 &lt;&lt;set $mbjid to []&gt;&gt;
 &lt;&lt;unset $mbjgirl&gt;&gt;
@@ -153445,7 +153444,7 @@ PLAYER WEAPON
 
 &lt;&lt;if $quest_aria is 18 and $rebpro is undefined&gt;&gt;&lt;&lt;set _blocks to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cancombj is true and $comesfromdream is true&gt;&gt;
+&lt;&lt;if $comesfromdream is true&gt;&gt;
 &lt;&lt;set _final to $mbjid.random()&gt;&gt;
 &lt;&lt;set _final+=1&gt;&gt;
 &lt;&lt;set $mbjgirl to &quot;av&quot; +_final&gt;&gt;
@@ -306412,10 +306411,7 @@ OLD SYSTEM
 
 &lt;&lt;set _yes to false&gt;&gt;
 &lt;&lt;if $likesadist gte 40 or $traitnymfo gte 75 or $traitperv gte 51&gt;&gt;&lt;&lt;set _yes to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $likesadist gte 25 and _npc.sex is 1&gt;&gt;&lt;&lt;set _yes to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;if _age lte 17&gt;&gt;&lt;&lt;set _yes to false&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;center&gt;
@@ -306435,14 +306431,12 @@ OLD SYSTEM
 &lt;/div&gt;
 
 
-
 &lt;&lt;if _blocksex is true or _blockhsex is true or _blocksex2 is true&gt;&gt;&lt;&lt;set _blockmbj to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $c_npc is $mbjgirl&gt;&gt;&lt;&lt;set _blockmbj to false&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _blockmbj isnot true and _mychild isnot true&gt;&gt;
 &lt;div class=&quot;blowholder&quot;&gt;
 
-&lt;&lt;if $cancombj is true&gt;&gt;
 
 &lt;&lt;if $addblow is true&gt;&gt;
 &lt;&lt;set $mbjid.push(_npc.actnpc)&gt;&gt;
@@ -306463,24 +306457,6 @@ OLD SYSTEM
 &lt;&lt;unset $delblow&gt;&gt;
 &lt;&lt;set $mbjid.delete(_npc.actnpc)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-/* canco mbj ends */
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $addblow is true&gt;&gt;
-&lt;&lt;set _final to _npc.actnpc&gt;&gt;
-&lt;&lt;set _final+=1&gt;&gt;
-&lt;&lt;set $mbjgirl to &quot;av&quot; +_final&gt;&gt;
-&lt;&lt;unset $addblow&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $delblow is true&gt;&gt;
-&lt;&lt;unset $mbjgirl&gt;&gt;
-&lt;&lt;unset $delblow&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt; /* canco mbj no checker ends */
 
 &lt;div class=&quot;signvendor&quot;&gt;
 
@@ -306521,15 +306497,6 @@ OLD SYSTEM
 &lt;/center&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if $cancombj is true&gt;&gt;
-
-&lt;&lt;if $mbjidtemp is undefined&gt;&gt;
-&lt;&lt;set $mbjid to []&gt;&gt;
-&lt;&lt;set $mbjidtemp to true&gt;&gt;
-&lt;&lt;set _npc.morningblow to false&gt;&gt;
-&lt;&lt;unset $mbjgirl&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;if _npc.morningblow&gt;&gt;[[unassign|SMenu2][_npc.morningblow to false, $delblow to true]]
 &lt;&lt;elseif _okblow&gt;&gt;[[assign|SMenu2][_npc.morningblow to true, $addblow to true]]
@@ -306537,24 +306504,11 @@ OLD SYSTEM
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-/* canco mod new ends */
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if _npc.morningblow is true&gt;&gt;[[unassign|SMenu2][_npc.morningblow to false, $delblow to true]]&lt;&lt;else&gt;&gt;&lt;&lt;if $mbjgirl is undefined&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;unassigned&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mbjgirl isnot undefined&gt;&gt;&lt;center&gt;//&#39;&#39;Task occupied!&#39;&#39;//&lt;br&gt;&lt;&lt;for _asd2 range $npc&gt;&gt;&lt;&lt;if _asd2.morningblow is true&gt;&gt;//(_asd2.girlname _asd2.last)//&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&lt;/center&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; 
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-&lt;&lt;if $mbjgirl is undefined or _npc.morningblow is true&gt;&gt;
-&lt;&lt;if _npc.morningblow isnot true&gt;&gt;[[assign|SMenu2][_npc.morningblow to true, $addblow to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;assigned&lt;/p&gt;&lt;&lt;/if&gt;&gt; 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt; /* canco mbj ends */
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;/div&gt;
-
 
 
 &lt;div class=&quot;vendorleft ulsmall&quot;&gt;
@@ -308222,19 +308176,10 @@ Use this to point to current NPC slot:
 &lt;&lt;set _npc.reserved1 to 0&gt;&gt;
 
 &lt;&lt;if _npc.morningblow is true&gt;&gt;
-
 &lt;&lt;unset $mbjgirl&gt;&gt;
-
-&lt;&lt;if $cancombj is true&gt;&gt;
-
 &lt;&lt;set $mbjid.delete(_npc.actnpc)&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;set _npc.morningblow to false&gt;&gt;
-
 
 
 &lt;&lt;if _justclear isnot true&gt;&gt;
