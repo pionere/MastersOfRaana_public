@@ -459,11 +459,22 @@ position: relative;
 }
 
 
+.crawlholder{
+ position: absolute;
+ bottom: 289px;
+ left:65px;
+}
+
+.blowholder{
+ position: absolute;
+ bottom: 129px;
+ left:65px;
+}
+
 .mainatholder{
  position: absolute;
-  bottom: 159px;
-
-  right:68px;
+ bottom: 129px;
+ right:65px;
 }
 
 
@@ -306386,12 +306397,9 @@ OLD SYSTEM
 */
 
 
-
-&lt;div class=&quot;tex11px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
+&lt;div class=&quot;crawlholder&quot;&gt;
 
 &lt;div class=&quot;signvendor&quot;&gt;
-
 &lt;&lt;link &quot;Use F. crawlers&quot;&gt;&gt;
 &lt;&lt;set $tutorial to 317&gt;&gt;
      &lt;&lt;script&gt;&gt;
@@ -306400,8 +306408,6 @@ OLD SYSTEM
 	Dialog.open();
 	&lt;&lt;/script&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-
-
 &lt;/div&gt;
 
 &lt;&lt;set _yes to false&gt;&gt;
@@ -306419,24 +306425,22 @@ OLD SYSTEM
 //
 &lt;/center&gt;
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;div class=&quot;ulsmall&quot;&gt;
 
+&lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;if _npc.usecrawl is 1&gt;&gt;[[not allowed|SMenu2][_npc.usecrawl to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;not allowed&lt;/p&gt;&lt;&lt;/if&gt;&gt; 
 &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
 &lt;&lt;if _npc.usecrawl is 0&gt;&gt;[[allowed|SMenu2][_npc.usecrawl to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;allowed&lt;/p&gt;&lt;&lt;/if&gt;&gt; 
+&lt;/div&gt;
 
 &lt;/div&gt;
 
 
-&lt;br&gt;
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;if _blocksex is true or _blockhsex is true or _blocksex2 is true&gt;&gt;&lt;&lt;set _blockmbj to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $c_npc is $mbjgirl&gt;&gt;&lt;&lt;set _blockmbj to false&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _blockmbj isnot true and _mychild isnot true&gt;&gt;
-
+&lt;div class=&quot;blowholder&quot;&gt;
 
 &lt;&lt;if $cancombj is true&gt;&gt;
 
@@ -306545,12 +306549,8 @@ OLD SYSTEM
 
 &lt;&lt;/if&gt;&gt;
 
-
-
+&lt;/div&gt;
 &lt;&lt;/if&gt;&gt; /* canco mbj ends */
-
-
-
 
 
 &lt;/div&gt;
@@ -306691,7 +306691,6 @@ _assigned3/4
 
 
 &lt;&lt;if _showma is true and _npc.dayblock isnot 19&gt;&gt;
-&lt;&lt;set _breakbelow to true&gt;&gt;
 &lt;div class=&quot;signvendor&quot;&gt;avail. educators&lt;/div&gt;
 &lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;//Assign to//&#39;&#39;&lt;div class=&quot;ulsmall&quot;&gt;
@@ -306861,10 +306860,9 @@ _assigned4/4
 
 
 
-
-&lt;div class=&quot;mainatholder&quot;&gt;
 &lt;&lt;if _blocksex isnot true and _sex is 0 and _npc.mychild isnot true&gt;&gt;
-&lt;&lt;if _breakbelow is true&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;mainatholder&quot;&gt;
+
 &lt;div class=&quot;signvendor&quot;&gt;Main attraction&lt;/div&gt;
 
 &lt;&lt;set _okmain to (_npc.status isnot 5 and _npc.ostatus isnot 5) ? ($willpower lte 9 or $likesadist gte 50 or _npc.traitnymfo gte 70) : ($willpower lte 0 or $likesadist gte 80)&gt;&gt;
@@ -306886,11 +306884,8 @@ _assigned4/4
 &lt;&lt;/if&gt;&gt;
 
 
-
-
-&lt;&lt;/if&gt;&gt;
-
 &lt;/div&gt; /* mainattholder ends */
+&lt;&lt;/if&gt;&gt;
 
 
 
