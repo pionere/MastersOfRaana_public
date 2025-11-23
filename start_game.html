@@ -306862,31 +306862,6 @@ _assigned4/4
 
 
 
-
-
-
-
-
-
-
-
-
-&lt;&lt;if $addmain is true&gt;&gt;
-&lt;&lt;set $mainatter to _npc.actnpc&gt;&gt;
-&lt;&lt;unset $addmain&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.mychild is true and _sex is 0 and _npc.mainatt gte 1&gt;&gt;
-&lt;&lt;set _npc.mainatt to 0&gt;&gt;
-&lt;&lt;set $delmain to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $delmain is true&gt;&gt;
-&lt;&lt;unset $mainatter&gt;&gt;
-&lt;&lt;unset $delmain&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;div class=&quot;mainatholder&quot;&gt;
 &lt;&lt;if _blocksex isnot true and _sex is 0 and _npc.mychild isnot true&gt;&gt;
 &lt;&lt;if _breakbelow is true&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
@@ -306902,17 +306877,12 @@ _assigned4/4
 //
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/center&gt;
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if _npc.mainatt is 1&gt;&gt;[[unassign|SMenu2][_npc.mainatt to 0, $delmain to true]]&lt;&lt;else&gt;&gt;&lt;&lt;if $mainatter is undefined&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;unassigned&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mainatter isnot undefined&gt;&gt;&lt;center&gt;//&#39;&#39;Task occupied!&#39;&#39;//&lt;br&gt;&lt;&lt;for _asd range $npc&gt;&gt;&lt;&lt;if _asd.mainatt is 1&gt;&gt;//(_asd.girlname _asd.last)//&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&lt;/center&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; 
-&lt;div class=&quot;tex7px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-
-&lt;&lt;if $mainatter is undefined or _npc.mainatt is 1&gt;&gt;
-&lt;&lt;if _okmain is true&gt;&gt;
-&lt;&lt;if _npc.mainatt isnot 1&gt;&gt;[[assign|SMenu2][_npc.mainatt to 1, $addmain to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;assigned&lt;/p&gt;&lt;&lt;/if&gt;&gt; 
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;assign&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.mainatt is 1&gt;&gt;[[unassign|SMenu2][_npc.mainatt to 0, unset $mainatter]]
+&lt;&lt;elseif $mainatter isnot undefined&gt;&gt;&lt;center&gt;//&#39;&#39;Task occupied!&#39;&#39;//&lt;br&gt;&lt;&lt;for _asd range $npc&gt;&gt;&lt;&lt;if _asd.mainatt is 1&gt;&gt;//(_asd.girlname _asd.last)//&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&lt;/center&gt;
+&lt;&lt;elseif _okmain&gt;&gt;[[assign|SMenu2][_npc.mainatt to 1, $mainatter to _npc.actnpc]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;assign&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
 
 
