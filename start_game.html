@@ -81648,15 +81648,9 @@ FREE
 
 
 
-&lt;&lt;set $pain=Math.min($pain,10)&gt;&gt;
-&lt;&lt;set $pain=Math.max($pain,0)&gt;&gt;
-
-&lt;&lt;set $stress=Math.min($stress,10)&gt;&gt;
-&lt;&lt;set $stress=Math.max($stress,0)&gt;&gt;
-
-&lt;&lt;set $humiliation=Math.min($humiliation,15)&gt;&gt;
-&lt;&lt;set $humiliation=Math.max($humiliation,0)&gt;&gt;
-
+&lt;&lt;set $pain=Math.clamp($pain,0,10)&gt;&gt;
+&lt;&lt;set $stress=Math.clamp($stress,0,10)&gt;&gt;
+&lt;&lt;set $humiliation=Math.clamp($humiliation,0,15)&gt;&gt;
 &lt;&lt;set $likesadist=Math.max($likesadist,0)&gt;&gt;
 
 
@@ -88071,8 +88065,7 @@ His response is adamant and professional. You&#39;re facing a skilled soldier th
 &lt;&lt;if $combat is 10&gt;&gt;
 
 &lt;&lt;set $a9mm+=12&gt;&gt;
-&lt;&lt;set $masterhealth=Math.max($masterhealth,40)&gt;&gt;
-&lt;&lt;set $masterhealth=Math.min($masterhealth,100)&gt;&gt;
+&lt;&lt;set $masterhealth=Math.clamp($masterhealth,40,100)&gt;&gt;
 &lt;&lt;set $specom to 1&gt;&gt;
 &lt;&lt;set $activeweapon to &quot;pistol&quot;&gt;&gt;
 &lt;&lt;set $meleeequip to false&gt;&gt;
@@ -308770,15 +308763,10 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.nipplewear-=4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _npc.pussywear=Math.min(_npc.pussywear,150)&gt;&gt;
-&lt;&lt;set _npc.analwear=Math.min(_npc.analwear,150)&gt;&gt;
-&lt;&lt;set _npc.oralwear=Math.min(_npc.oralwear,150)&gt;&gt;
-&lt;&lt;set _npc.nipplewear=Math.min(_npc.nipplewear,150)&gt;&gt;
-
-&lt;&lt;set _npc.pussywear=Math.max(_npc.pussywear,0)&gt;&gt;
-&lt;&lt;set _npc.analwear=Math.max(_npc.analwear,0)&gt;&gt;
-&lt;&lt;set _npc.oralwear=Math.max(_npc.oralwear,0)&gt;&gt;
-&lt;&lt;set _npc.nipplewear=Math.max(_npc.nipplewear,0)&gt;&gt;
+&lt;&lt;set _npc.pussywear=Math.clamp(_npc.pussywear,0,150)&gt;&gt;
+&lt;&lt;set _npc.analwear=Math.clamp(_npc.analwear,0,150)&gt;&gt;
+&lt;&lt;set _npc.oralwear=Math.clamp(_npc.oralwear,0,150)&gt;&gt;
+&lt;&lt;set _npc.nipplewear=Math.clamp(_npc.nipplewear,0,150)&gt;&gt;
 
 &lt;&lt;if _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hygiene to 60&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -311112,10 +311100,8 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;if _npc.hate gte 2 and _lossroll lte 3&gt;&gt;&lt;&lt;set _npc.scarefactor=adl(_npc.scarefactor,1,7)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _affdown to _npc.hate*0.5&gt;&gt;
-&lt;&lt;set _affdown = Math.round(_affdown)&gt;&gt;
-&lt;&lt;set _affdown = Math.min(_affdown,6)&gt;&gt;
-
-&lt;&lt;if _affdown gte 1&gt;&gt;&lt;&lt;set _npc.masterlove-=_affdown&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _affdown = Math.clamp(Math.round(_affdown),0,6)&gt;&gt;
+&lt;&lt;set _npc.masterlove-=_affdown&gt;&gt;
 
 /* hate deterioration */
 &lt;&lt;if _lossroll lte 1 and $weatherroll gte 6&gt;&gt;&lt;&lt;set _npc.hate=adl(_npc.hate,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -311678,23 +311664,14 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* MAX ACC CHECKERS */
 
-&lt;&lt;set $corfester=Math.min($corfester,200)&gt;&gt;
-&lt;&lt;set $purefester=Math.min($purefester,200)&gt;&gt;
-&lt;&lt;set $hardfester=Math.min($hardfester,200)&gt;&gt;
-&lt;&lt;set $workfester=Math.min($workfester,200)&gt;&gt;
-&lt;&lt;set $goodfester=Math.min($goodfester,200)&gt;&gt;
-&lt;&lt;set $badfester=Math.min($badfester,200)&gt;&gt;
-&lt;&lt;set $repairfester=Math.min($repairfester,500)&gt;&gt;
-&lt;&lt;set $freedomfester=Math.min($freedomfester,200)&gt;&gt;
-
-&lt;&lt;set $corfester=Math.max($corfester,0)&gt;&gt;
-&lt;&lt;set $purefester=Math.max($purefester,0)&gt;&gt;
-&lt;&lt;set $hardfester=Math.max($hardfester,0)&gt;&gt;
-&lt;&lt;set $workfester=Math.max($workfester,0)&gt;&gt;
-&lt;&lt;set $goodfester=Math.max($goodfester,0)&gt;&gt;
-&lt;&lt;set $badfester=Math.max($badfester,0)&gt;&gt;
-&lt;&lt;set $repairfester=Math.max($repairfester,0)&gt;&gt;
-&lt;&lt;set $freedomfester=Math.max($freedomfester,0)&gt;&gt;
+&lt;&lt;set $corfester=Math.clamp($corfester,0,200)&gt;&gt;
+&lt;&lt;set $purefester=Math.clamp($purefester,0,200)&gt;&gt;
+&lt;&lt;set $hardfester=Math.clamp($hardfester,0,200)&gt;&gt;
+&lt;&lt;set $workfester=Math.clamp($workfester,0,200)&gt;&gt;
+&lt;&lt;set $goodfester=Math.clamp($goodfester,0,200)&gt;&gt;
+&lt;&lt;set $badfester=Math.clamp($badfester,0,200)&gt;&gt;
+&lt;&lt;set $repairfester=Math.clamp($repairfester,0,500)&gt;&gt;
+&lt;&lt;set $freedomfester=Math.clamp($freedomfester,0,200)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* is away checker ends */
 
