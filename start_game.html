@@ -34942,7 +34942,7 @@ The Dengi king Azuk and his army of degenerates have successfully &lt;br&gt;inva
 &lt;&lt;set $faction.christian.state to 1&gt;&gt;
 &lt;&lt;set $faction.christian.standing to 0&gt;&gt;
 &lt;&lt;set $faction.christian.money to 572101&gt;&gt;
-&lt;&lt;if $faction.christian.power lte 19&gt;&gt;&lt;&lt;set $faction.christian.power to 20&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.christian.power=Math.max($faction.christian.power,20)&gt;&gt;
 &lt;&lt;if $mctraitgod gte 100&gt;&gt;&lt;&lt;set $faction.christian.standing+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $wine to 0&gt;&gt;
@@ -388960,7 +388960,7 @@ Chancellor
 &lt;&lt;set _feedall to true&gt;&gt;
 
 &lt;&lt;set $cash-=_totalcost&gt;&gt;
-&lt;&lt;if _npc.foods is 1 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;if _npc.hunger lte 19&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 1 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,20)&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-3,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-5,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
