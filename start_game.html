@@ -24618,7 +24618,7 @@ Your household is starving. Enable Auto Buy rations (Economy And Influence&gt;Fo
 
 
 
-&lt;&lt;if $foodlow is true and _stopfoode isnot true&gt;&gt;
+&lt;&lt;if $foodlow and _stopfoode isnot true&gt;&gt;
 
 &lt;br&gt;
 &lt;center&gt;
@@ -24629,34 +24629,10 @@ FOOD SUPPLIES LOW!
 
 &lt;br&gt;
 
-Some NPCs are not getting enough food! 
+Your household is starving.
 &lt;br&gt;//&#39;&#39;Increase your ration stock immediately!&#39;&#39;//
 
 &lt;/center&gt;
-
-
-
-
-/* food warning mod */
-&lt;&lt;if $foodget lte 0 and $foodstuffadd lt 0&gt;&gt;	/* should only shows up if autobuy is disabled, and you consume more rations than you produce */
-&lt;&lt;set _modfood to $foodstuffadd&gt;&gt;
-&lt;&lt;set _modfood*=-1&gt;&gt;
-	/* line break */
-&lt;center&gt;&#39;&#39;/* bold text */
-&lt;&lt;if _modfood gt $foodstuff&gt;&gt; Not enough &lt;div class=&quot;red&quot;&gt;rations ($foodstuffadd/$foodstuff)&lt;/div&gt; for today.
-&lt;&lt;elseif _modfood is $foodstuff&gt;&gt; There&#39;s only enough &lt;div class=&quot;red&quot;&gt;rations ($foodstuffadd/$foodstuff)&lt;/div&gt; for today.
-&lt;&lt;elseif _modfood*2 gt $foodstuff&gt;&gt; Rations will run out in about &lt;div class=&quot;red&quot;&gt;2 days! ($foodstuffadd/$foodstuff)&lt;/div&gt;
-&lt;&lt;elseif _modfood*2 is $foodstuff&gt;&gt; Rations will run out in exactly &lt;div class=&quot;red&quot;&gt;2 days! ($foodstuffadd/$foodstuff)&lt;/div&gt;
-&lt;&lt;elseif _modfood*3 gt $foodstuff&gt;&gt; Rations will run out in about &lt;div class=&quot;red&quot;&gt;3 days! ($foodstuffadd/$foodstuff)&lt;/div&gt;
-&lt;&lt;elseif _modfood*3 is $foodstuff&gt;&gt; Rations will run out in exactly &lt;div class=&quot;red&quot;&gt;3 days! ($foodstuffadd/$foodstuff)&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-&#39;&#39;	/* bold text */
-&lt;/center&gt;
-&lt;br&gt;	/* line break */
-&lt;&lt;/if&gt;&gt;
-/* food warning mod end */
-
-
 
 &lt;&lt;/if&gt;&gt;
 
@@ -214695,10 +214671,8 @@ Has been added to your household!
 &lt;div class=&quot;econr&quot;&gt;
 
 &lt;&lt;if $ver gte 10830&gt;&gt;
-&lt;&lt;set _isfood to _slfoodshow+&quot;R&quot;&gt;&gt;
-&lt;&lt;set _cfood to _captivesfood+&quot;R&quot;&gt;&gt;
-&lt;&lt;if _slfoodshow gte 0&gt;&gt;-&lt;&lt;/if&gt;&gt;_isfood&lt;br&gt;
--_cfood&lt;br&gt;
+_slfoodshow&amp;#82;&lt;br&gt;
+_captivesfood&amp;#82;&lt;br&gt;
 -&amp;#36;&lt;&lt;print setup.formatNumber(_issidpay)&gt;&gt;&lt;br&gt;
 /* -&amp;#36;&lt;&lt;print setup.formatNumber(_npcallow)&gt;&gt;&lt;br&gt; */
 -&amp;#36;&lt;&lt;print setup.formatNumber(_npcarena)&gt;&gt;&lt;br&gt;
@@ -214874,33 +214848,27 @@ added to expenditures!&#39;&#39;&lt;br&gt;&lt;br&gt;
 
 
 &lt;&lt;if $foodm lte 1&gt;&gt;&lt;&lt;set _mcf to $foodm&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 2&gt;&gt;&lt;&lt;set _mcf to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set _mcf to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 2&gt;&gt;&lt;&lt;set _mcf to $pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set _mcf to $pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitglut gte 75 and $foodm gte 1&gt;&gt;&lt;&lt;set _mcf+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1&gt;&gt;&lt;&lt;set _mcf+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _mcfood to _mcf+&quot;R&quot;&gt;&gt;
-
+&lt;&lt;set _yardfood+=_zapin&gt;&gt;
 
 &lt;div class=&quot;ecoscroll future left padd30left&quot;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;set _incg to _yardfood+&quot;R&quot;&gt;&gt;
 &#39;&#39;Stored rations:&#39;&#39; &lt;&lt;print setup.formatNumber($foodstuff)&gt;&gt;&lt;br&gt;
 &#39;&#39;Market buy price:&#39;&#39; &amp;#36;$foodprice/R&lt;br&gt;
-&#39;&#39;Income (garden):&#39;&#39; +_incg&lt;br&gt;
-&#39;&#39;Food (you):&#39;&#39; -_mcfood&lt;br&gt;
-&#39;&#39;Food (NPCs):&#39;&#39; &lt;&lt;set _isfood to _slfoodshow+&quot;R&quot;&gt;&gt;
-&lt;&lt;if _slfoodshow gte 0&gt;&gt;-&lt;&lt;/if&gt;&gt;_isfood&lt;br&gt;
-&#39;&#39;Food (Captives):&#39;&#39; &lt;&lt;set _isfood2 to _captivesfood+&quot;R&quot;&gt;&gt;
--_isfood2&lt;br&gt;
+&#39;&#39;Income (garden):&#39;&#39; +_yardfood&amp;#82;&lt;br&gt;
+&#39;&#39;Food (you):&#39;&#39; -_mcf&amp;#82;&lt;br&gt;
+&#39;&#39;Food (NPCs):&#39;&#39; _slfoodshow&amp;#82;&lt;br&gt;
+&#39;&#39;Food (Captives):&#39;&#39; _captivesfood&amp;#82;&lt;br&gt;
+
+&lt;div class=&quot;totaplace tex16px&quot;&gt;&#39;&#39;change:&#39;&#39;&lt;&lt;if $foodget lte 0&gt;&gt;&lt;&lt;if $foodstuffadd gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;$foodstuffadd&amp;#82;/day&lt;&lt;else&gt;&gt;&lt;&lt;if _yardfood gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_yardfood&amp;#82;/day&lt;br&gt;&lt;div class=&quot;tex12px&quot;&gt;&#39;&#39;//(Auto buy rations enabled)//&#39;&#39;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;&lt;br&gt;
 
 
-&lt;&lt;set _finc1 to $foodstuffadd+&quot;R&quot;&gt;&gt;
-
-&lt;&lt;if _zapin gte 1&gt;&gt;&lt;&lt;set _yardfood+=_zapin&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _finc2 to _yardfood+&quot;R&quot;&gt;&gt;
-
-&lt;div class=&quot;totaplace tex16px&quot;&gt;&#39;&#39;change:&#39;&#39; &lt;&lt;if $foodget lte 0&gt;&gt;&lt;&lt;if $foodstuffadd gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_finc1/day&lt;&lt;else&gt;&gt;&lt;&lt;if _yardfood gte 1&gt;&gt;+&lt;&lt;/if&gt;&gt;_finc2/day&lt;br&gt;&lt;div class=&quot;tex12px&quot;&gt;&#39;&#39;//(Auto buy rations enabled)//&#39;&#39;&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;&lt;br&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 &lt;/div&gt;
@@ -214917,10 +214885,12 @@ added to expenditures!&#39;&#39;&lt;br&gt;&lt;br&gt;
 
 &lt;div class=&quot;signvendor&quot;&gt;Master&#39;s food&lt;/div&gt;
 
-&lt;&lt;set _f1 to 1&gt;&gt;
-&lt;&lt;set _f2 to 3&gt;&gt;
-&lt;&lt;set _f3 to 6&gt;&gt;
-&lt;&lt;if $mctraitmountain gte 51&gt;&gt;&lt;&lt;set _f1+=3&gt;&gt;&lt;&lt;set _f2+=3&gt;&gt;&lt;&lt;set _f3+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _f to 0&gt;&gt;
+&lt;&lt;if $mctraitglut gte 75&gt;&gt;&lt;&lt;set _f+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitmountain gte 51&gt;&gt;&lt;&lt;set _f+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _f1 to _f+1&gt;&gt;
+&lt;&lt;set _f2 to _f+3&gt;&gt;
+&lt;&lt;set _f3 to _f+6&gt;&gt;
 
 &lt;&lt;set _f1s to _f1+&quot;R&quot;&gt;&gt;
 &lt;&lt;set _f2s to _f2+&quot;R&quot;&gt;&gt;
@@ -234208,7 +234178,6 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;unset $bondboost&gt;&gt;
 &lt;&lt;unset $spendlibtime&gt;&gt;
 &lt;&lt;unset $seddown&gt;&gt;
-&lt;&lt;unset $wrooleat&gt;&gt;
 &lt;&lt;unset $regest&gt;&gt;
 &lt;&lt;set $hascummed to false&gt;&gt;
 &lt;&lt;unset $oasiscash&gt;&gt;
@@ -235573,6 +235542,24 @@ sur: 0,
 
 &lt;&lt;/if&gt;&gt;
 
+/* feed the wrool cats */
+&lt;&lt;if $wrool gte 6&gt;&gt;
+
+&lt;&lt;if $foodget gte 1&gt;&gt;
+&lt;&lt;set _totalcost to $foodprice*_rations&gt;&gt;
+&lt;&lt;set $cash=adl($cash,-_totalcost,0)&gt;&gt;
+&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-3,0)&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set $foodstuff-=3&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+
+/* test whether we are running out of food */
+&lt;&lt;if $foodstuff lt 0&gt;&gt;
+&lt;&lt;set $foodstuff=0&gt;&gt;
+&lt;&lt;set $foodlow to true&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="348" name="EndRes" tags="nobr" position="2075,50" size="100,100">
 /* EVERYTHING GENERAL THAT RESETS AFTER PRESSING END DAY */
@@ -312939,18 +312926,6 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 
 
 
-
-
-
-&lt;&lt;if _npc.state is 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt; /* unassigned npcs will not starve */
-
-&lt;&lt;if _npc.state gte 1 and _isaway&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $foodstuff lt 0&gt;&gt;&lt;&lt;set $foodstuff to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
 /* PREGNANCY AND KIDS */
 &lt;&lt;unset _noc&gt;&gt;
 &lt;&lt;if _npc.seload gte 1 and _npc.lube isnot true and _npc.pregnant lte 0&gt;&gt;
@@ -317549,78 +317524,67 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _pnpcs to 1&gt;&gt;
 &lt;&lt;set _slavery to 0&gt;&gt;
 &lt;&lt;set _monacash to 0&gt;&gt;
+&lt;&lt;set _rations=0&gt;&gt;
 
 &lt;&lt;for _testnpc range $npc&gt;&gt;
-
+&lt;&lt;if _testnpc.state gte 1&gt;&gt;
 
 /* unrelated palace rating checkers */
-
-&lt;&lt;if _testnpc.state gte 1 and _testnpc.traitnobi gte 75&gt;&gt;
+&lt;&lt;if _testnpc.traitnobi gte 75&gt;&gt;
 &lt;&lt;set $palcredtot+=3&gt;&gt;
 &lt;&lt;set _statpal+=3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _testnpc.state gte 1 and _testnpc.prest gte 250&gt;&gt;
+&lt;&lt;if _testnpc.prest gte 250&gt;&gt;
 &lt;&lt;set $palcredtot+=1&gt;&gt;
 &lt;&lt;set _prestpal+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _testnpc.state gte 1 and _testnpc.warfame gte 1500&gt;&gt;
+&lt;&lt;if _testnpc.warfame gte 1500&gt;&gt;
 &lt;&lt;set $palcredtot+=1&gt;&gt;
 &lt;&lt;set _prestpal+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-    
-    /* unrelated monastery checker */
-&lt;&lt;if _testnpc.dayblock is 26 and _testnpc.state gte 1&gt;&gt;
+
+/* unrelated monastery checker */
+&lt;&lt;if _testnpc.dayblock is 26&gt;&gt;
 &lt;&lt;set _monacash+=($faction.christian.standing gte 50 or ($mcrel.faith is 5 and $mcrel.devotion gte 100)) ? 50 : 95&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-    &lt;&lt;if _testnpc.state gte 1 and !isaway(_testnpc)&gt;&gt;
-    
+&lt;&lt;if !isaway(_testnpc)&gt;&gt;
     /* unrelated statesman checker */
-        &lt;&lt;if _testnpc.dayblock is 15 and _testnpc.traitstate gte 50 and _testnpc.masterlove gte 30&gt;&gt;&lt;&lt;set _statesmanac to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+    &lt;&lt;if _testnpc.dayblock is 15 and _testnpc.traitstate gte 50 and _testnpc.masterlove gte 30&gt;&gt;&lt;&lt;set _statesmanac to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
     /* unrelated slavery checker */
-&lt;&lt;if _testnpc.state gte 1 and _testnpc.status is 2&gt;&gt;&lt;&lt;set _slavery+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-    
-    
-        &lt;&lt;if _testnpc.foods is 1&gt;&gt;&lt;&lt;set $foodstuffadd-=1&gt;&gt;&lt;&lt;set _slfoodshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-        &lt;&lt;if _testnpc.foods is 2&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;set _slfoodshow+=3&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;set _slfoodshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;    &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-        &lt;&lt;if _testnpc.foods is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=5&gt;&gt;&lt;&lt;set _slfoodshow+=5&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;set _slfoodshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;    &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if _testnpc.status is 2&gt;&gt;&lt;&lt;set _slavery+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+    &lt;&lt;if _testnpc.foods is 1&gt;&gt;&lt;&lt;set _rations+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+    &lt;&lt;if _testnpc.foods is 2&gt;&gt;&lt;&lt;set _rations+=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+    &lt;&lt;if _testnpc.foods is 3&gt;&gt;&lt;&lt;set _rations+=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 
+&lt;&lt;if $wrool gte 6&gt;&gt;&lt;&lt;set _rations+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+/* NURSE EAT - DISPLAY ONLY, GO TO OTHERSTUFF PASSAGE FOR CALCS */
 
-&lt;&lt;if $wrool gte 6&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;set _slfoodshow+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;for _nurseat range $nursery&gt;&gt;
+&lt;&lt;if _nurseat.state gte 1&gt;&gt;
+&lt;&lt;set _rations+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+
+&lt;&lt;set $foodstuffadd-=_rations&gt;&gt;&lt;&lt;set _slfoodshow-=_rations&gt;&gt;
+
 
 &lt;&lt;if $foodm is 1&gt;&gt;&lt;&lt;set $foodstuffadd-=1&gt;&gt;&lt;&lt;set $credtot-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $foodm is 2&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $foodm gte 1 and $mctraitmountain gte 51&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-/* NURSE EAT - DISPLAY ONLY, GO TO OTHERSTUFF PASSAGE FOR CALCS */
-
-&lt;&lt;set _nursefood to 0&gt;&gt;
-&lt;&lt;for _nurseat range $nursery&gt;&gt;
-&lt;&lt;if _nurseat.state gte 1&gt;&gt;
-&lt;&lt;set _nursefood+=1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-
-&lt;&lt;if _nursefood gte 1&gt;&gt;
-&lt;&lt;set $foodstuffadd-=_nursefood&gt;&gt;
-&lt;&lt;set _slfoodshow+=_nursefood&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-
+&lt;&lt;if $mctraitglut gte 75 and $foodm gte 1&gt;&gt;&lt;&lt;set $foodstuffadd-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* display lux only - ignore */
@@ -317689,7 +317653,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if $takensl gte 1&gt;&gt;
 &lt;&lt;set $foodstuffadd-=$takensl&gt;&gt;
-&lt;&lt;set _captivesfood+=$takensl&gt;&gt;
+&lt;&lt;set _captivesfood-=$takensl&gt;&gt;
 &lt;&lt;set _mainshow+=$takensl&gt;&gt;
 &lt;&lt;set $cashtot-=$takensl&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -330331,8 +330295,7 @@ She turns silent in your presence. There&#39;s no doubt she&#39;s upset about so
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;set _foodcost to $foodprice&gt;&gt;
-&lt;&lt;set _totalcost to _foodcost*_rations&gt;&gt;
+&lt;&lt;set _totalcost to $foodprice*_rations&gt;&gt;
 
 &lt;&lt;if $cash gte _totalcost&gt;&gt;
 
@@ -330354,8 +330317,6 @@ She turns silent in your presence. There&#39;s no doubt she&#39;s upset about so
 &lt;&lt;if $mctraitglut gte 75 and $foodm gte 1&gt;&gt;&lt;&lt;set $foodstuff-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;set $foodstuff=Math.max($foodstuff,0)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -330641,18 +330602,15 @@ father: &quot;Someone&quot;,
 
 /* auto buy for nursery */
 &lt;&lt;if $foodget gte 1&gt;&gt;
-&lt;&lt;set _foodcost to $foodprice&gt;&gt;
-&lt;&lt;set _totalcost to _foodcost*_nursefood&gt;&gt;
-&lt;&lt;set $cash-=_totalcost&gt;&gt;
 
+&lt;&lt;set _totalcost to $foodprice*_nursefood&gt;&gt;
+&lt;&lt;set $cash=adl($cash,-_totalcost,0)&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 /* manual nurse eat */
 
-
-&lt;&lt;if $foodstuff gte 1&gt;&gt;
 &lt;&lt;set $foodstuff-=_nursefood&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 
@@ -388814,8 +388772,6 @@ Chancellor
 
 &lt;&lt;if $foodprice is undefined&gt;&gt;&lt;&lt;set $foodprice to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _rations to 0&gt;&gt;
-
 /* over-weight and over-eating effects */
 &lt;&lt;if _npc.hunger gte 85 and _lossroll lte 2&gt;&gt;
 &lt;&lt;set _npc.aw+=1&gt;&gt;
@@ -388873,12 +388829,13 @@ Chancellor
 &lt;&lt;set _npc.hunger=adl(_npc.hunger,_npc.body gte 4 ? -17 : (_npc.body gte 2 ? -15 : -13),0)&gt;&gt;
 
 
+&lt;&lt;if _isaway or _npc.bondage gt 0&gt;&gt;
 
-&lt;&lt;if $foodget gte 1&gt;&gt;
+&lt;&lt;elseif $foodget gte 1&gt;&gt;
 /* AUTO BUY RATIONS BELOW */
 
+&lt;&lt;set _rations to 0&gt;&gt;
 
-&lt;&lt;if _npc.bondage lte 0 and _isaway&gt;&gt;
 &lt;&lt;if _npc.foods is 1&gt;&gt;&lt;&lt;set _rations+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2&gt;&gt;&lt;&lt;set _rations+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 3&gt;&gt;&lt;&lt;set _rations+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -388888,52 +388845,33 @@ Chancellor
 &lt;&lt;if $lux gte 3&gt;&gt;&lt;&lt;set _rations+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 */
 
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set _rations=adl(_rations,-1,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $wrool gte 6 and $wrooleat is undefined&gt;&gt;&lt;&lt;set _rations-=3&gt;&gt;&lt;&lt;set $wrooleat to true&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-3,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _foodcost to $foodprice&gt;&gt;
-&lt;&lt;set _totalcost to _foodcost*_rations&gt;&gt;
+&lt;&lt;set _totalcost to $foodprice*_rations&gt;&gt;
 
 &lt;&lt;if $cash gte _totalcost&gt;&gt;
-&lt;&lt;set _feedall to true&gt;&gt;
-
 &lt;&lt;set $cash-=_totalcost&gt;&gt;
-&lt;&lt;if _npc.foods is 1 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,20)&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 2 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-3,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-5,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.body gte 8&gt;&gt;&lt;&lt;set _npc.hunger-=17&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if _npc.foods is 1 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,20)&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 2 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-3,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 3 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-5,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-
 
 &lt;&lt;else&gt;&gt;
 /* EAT FROM HOUSEHOLD BELOW */
 
+&lt;&lt;if _npc.foods is 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,20)&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 2 and $foodstuff gte 2&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if $wrool gte 6 and $wrooleat is undefined&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;set $wrooleat to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.foods gte 1 and $foodstuff lte 0&gt;&gt;&lt;&lt;set $foodlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.body gte 8&gt;&gt;&lt;&lt;set _npc.hunger-=17&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-
 /* NPC STATE ENDS BELOW */
 &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.state is 0 or _isaway&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+
 </tw-passagedata><tw-passagedata pid="614" name="AllCh" tags="nobr" position="5275,1200" size="100,100">&lt;&lt;if _npc.status is 9&gt;&gt;
 &lt;&lt;set _bld to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="615" name="GenComb" tags="nobr" position="2600,1775" size="100,100">&lt;&lt;set _nervewill to 5&gt;&gt;
