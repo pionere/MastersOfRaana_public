@@ -11015,13 +11015,6 @@ faithn: &quot;Atheism&quot;,
 &lt;&lt;set $docksen2 to 1&gt;&gt;
 &lt;&lt;set $dockpunks to 45&gt;&gt;
 
-&lt;&lt;set $mercpes to 59&gt;&gt;
-&lt;&lt;set $mercsword to 26&gt;&gt;
-&lt;&lt;set $mercrifle to 30&gt;&gt;
-
-
-
-
 &lt;&lt;set $redtigerroll to 0&gt;&gt;
 &lt;&lt;set $redtigers to 56&gt;&gt;
 &lt;&lt;set $ownrope to 1&gt;&gt;
@@ -26771,7 +26764,7 @@ BEAUTY&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;if $ownknife gte 1&gt;&gt;
 &lt;&lt;if $activeweapon isnot &quot;knife&quot; or $newweapons is true&gt;&gt;&lt;div class=&quot;invholder&quot;&gt;COMBAT KNIFE &lt;&lt;if $ownknife gte 2&gt;&gt;x$ownknife&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-&lt;div class=&quot;invitem&quot;&gt;&lt;&lt;link &#39;COMBAT KNIFE &lt;&lt;if $ownknife gte 2&gt;&gt;x$ownknife&lt;&lt;/if&gt;&gt;&#39;&gt;&gt;&lt;&lt;set $activeweapon to &quot;knife&quot;&gt;&gt;&lt;&lt;set $rangedequip to false&gt;&gt;&lt;&lt;set $meleeequip to true&gt;&gt;&lt;&lt;set $take to 1&gt;&gt;&lt;&lt;set $addingwp to 1&gt;&gt;&lt;&lt;script&gt;&gt;Dialog.setup(&#39;&#39;);Dialog.wiki(Story.get(&#39;ChrSheet&#39;).processText());Dialog.open();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;invitem&quot;&gt;&lt;&lt;link &#39;COMBAT KNIFE &lt;&lt;if $ownknife gte 2&gt;&gt;x$ownknife&lt;&lt;/if&gt;&gt;&#39;&gt;&gt;&lt;&lt;set $activeweapon to &quot;knife&quot;&gt;&gt;&lt;&lt;set $rangedequip to false&gt;&gt;&lt;&lt;set $meleeequip to true&gt;&gt;&lt;&lt;set $take to 1&gt;&gt;&lt;&lt;script&gt;&gt;Dialog.setup(&#39;&#39;);Dialog.wiki(Story.get(&#39;ChrSheet&#39;).processText());Dialog.open();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
 &lt;&lt;else&gt;&gt;COMBAT KNIFE &lt;&lt;if $ownknife gte 2&gt;&gt;x$ownknife&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; 
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
@@ -81173,7 +81166,7 @@ filename is rackoralgag.jpg and rackdeepgag.jpg
 
 
 
-&lt;&lt;if $macevid gte 1 or $state is 0&gt;&gt;
+&lt;&lt;if $macevid gte 1&gt;&gt;
 
 &lt;&lt;set _img3 to &quot;Mods/Animations/Pics/&quot;+&quot;Av&quot;+$girlid+&quot;/&quot;&gt;
 
@@ -86438,7 +86431,6 @@ Armor destroyed!
 &lt;&lt;if $round is 9&gt;&gt;&lt;&lt;set $cs1_killedby to $enemy3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 10&gt;&gt;&lt;&lt;set $cs1_killedby to $enemy4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 11&gt;&gt;&lt;&lt;set $cs1_killedby to $enemy5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $shewashit to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -149363,7 +149355,7 @@ $girlnames &#39;&#39;Jaded Trait (-1)&#39;&#39; has decreased!
 
 
 
-&lt;&lt;if $macevid gte 1 or $state is 0&gt;&gt;
+&lt;&lt;if $macevid gte 1&gt;&gt;
 
 &lt;&lt;set _img3 to &quot;Mods/Animations/Pics/&quot;+&quot;Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
 
@@ -214619,7 +214611,6 @@ Has been added to your household!
 &#39;&#39;Other revenues:&#39;&#39;
 &lt;/div&gt;
 &lt;div class=&quot;econr&quot;&gt;
-&lt;&lt;set _showe to _gardenshow+&quot;R&quot;&gt;&gt;
 
 &lt;&lt;set _showe to _yardfood+&quot;R&quot;&gt;&gt;
 
@@ -214897,7 +214888,6 @@ added to expenditures!&#39;&#39;&lt;br&gt;&lt;br&gt;
 
 &lt;div class=&quot;ecoscroll future left padd30left&quot;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;set _incg to _gardenshow+&quot;R&quot;&gt;&gt;
 &lt;&lt;set _incg to _yardfood+&quot;R&quot;&gt;&gt;
 &#39;&#39;Stored rations:&#39;&#39; &lt;&lt;print setup.formatNumber($foodstuff)&gt;&gt;&lt;br&gt;
 &#39;&#39;Market buy price:&#39;&#39; &amp;#36;$foodprice/R&lt;br&gt;
@@ -232433,10 +232423,6 @@ Keypass protocol failed. Please try again.
 
 &lt;&lt;set $masterlove = 30&gt;&gt;
 
-&lt;&lt;set _testnew to $newrandie&gt;&gt;
-&lt;&lt;set _testnew2 to $ran_analxp&gt;&gt;
-&lt;&lt;set _testnew3 to $ran_pussyxp&gt;&gt;
-
 &lt;&lt;if $newrandie isnot true&gt;&gt; /* new 085 virgin setters found in NewSkills */
 &lt;&lt;if $avirgin isnot true&gt;&gt;
 &lt;&lt;set $likeanal to random(1, 50)&gt;&gt;
@@ -234307,8 +234293,6 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $quest_catho6 gte 2 and $faction.christian.ironmen gte 0 and $faction.christian.ironmen lte 79&gt;&gt;
 &lt;&lt;if _ironroll lte 1&gt;&gt;&lt;&lt;set $faction.christian.ironmen+=1&gt;&gt;&lt;&lt;set $faction.christian.power+=30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set _ironroll to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* crusaders call */
 &lt;&lt;if $quest_catho6 gte 9 and $faction.moon.power gte 500&gt;&gt;
@@ -275379,7 +275363,7 @@ After initiating an assault against Carozza mansion, you cannot exit until you&#
 &lt;&lt;set $enemy2_sex = &quot;him&quot;&gt;&gt;
 &lt;&lt;set $enemy2_strength = 125&gt;&gt;
 
-&lt;&lt;if $weatherroll lte 4 or $state is 0&gt;&gt;
+&lt;&lt;if $weatherroll lte 4&gt;&gt;
 &lt;&lt;set $enemy3_type = 200&gt;&gt;
 &lt;&lt;set $enemy3_pos = 3&gt;&gt;
 &lt;&lt;set $enemy3_state to 2&gt;&gt;
@@ -315032,9 +315016,6 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;if $cashtot gte -999999999999&gt;&gt;&lt;&lt;set $cash+=$cashtot&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $credtot gte -999999999999&gt;&gt;&lt;&lt;set $credit+=$credtot&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _pallyt1 to 1&gt;&gt;
-&lt;&lt;set _pallyt2 to $palcred&gt;&gt;
-
 &lt;&lt;if $palcred gte -9999999&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $palcred to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $palcredtot gte -99999999&gt;&gt;&lt;&lt;set $palcred+=$palcredtot&gt;&gt;&lt;&lt;/if&gt;&gt; 
@@ -317312,7 +317293,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _laborshow = 0&gt;&gt;
 &lt;&lt;set _pettyshow = 0&gt;&gt;
 &lt;&lt;set _acashow = 0&gt;&gt;
-&lt;&lt;set _foodshow = 0&gt;&gt;
 &lt;&lt;set _yardfood to 0&gt;&gt;
 &lt;&lt;set _maidshow = 0&gt;&gt;
 &lt;&lt;set _actshow = 0&gt;&gt;
@@ -317320,7 +317300,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _luxshow = 0&gt;&gt;
 &lt;&lt;set _slfoodshow = 0&gt;&gt;
 &lt;&lt;set _slothershow = 0&gt;&gt; /* ALL NPC EXPENDITURES */
-&lt;&lt;set _gardenshow = 0&gt;&gt;
 &lt;&lt;set _othershow = 0&gt;&gt;
 &lt;&lt;set _prostshow = 0&gt;&gt;
 &lt;&lt;set _mercshow to 0&gt;&gt;
@@ -317574,7 +317553,6 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;set _pnpcs to 1&gt;&gt;
 &lt;&lt;set _slavery to 0&gt;&gt;
-&lt;&lt;set _npcnumber to 0&gt;&gt;
 &lt;&lt;set _monacash to 0&gt;&gt;
 
 &lt;&lt;for _testnpc range $npc&gt;&gt;
@@ -317607,18 +317585,14 @@ Most high-demanding issids are excluded by the maxsal checker
     
     /* unrelated statesman checker */
         &lt;&lt;if _testnpc.dayblock is 15 and _testnpc.traitstate gte 50 and _testnpc.masterlove gte 30&gt;&gt;&lt;&lt;set _statesmanac to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-      
-          /* unrelated MAIN NPC counter */
-&lt;&lt;if _testnpc.state gte 1&gt;&gt;&lt;&lt;set _npcnumber+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-    
-    
+
     /* unrelated slavery checker */
 &lt;&lt;if _testnpc.state gte 1 and _testnpc.status is 2&gt;&gt;&lt;&lt;set _slavery+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
     
     
         &lt;&lt;if _testnpc.foods is 1&gt;&gt;&lt;&lt;set $foodstuffadd-=1&gt;&gt;&lt;&lt;set _slfoodshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
         &lt;&lt;if _testnpc.foods is 2&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;set _slfoodshow+=3&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;set _slfoodshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;    &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-        &lt;&lt;if _testnpc.foods is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=5&gt;&gt;&lt;&lt;set _slfoodshow+=5&gt;&gt;&lt;&lt;set _foodshow+=1&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;set _slfoodshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;    &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if _testnpc.foods is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=5&gt;&gt;&lt;&lt;set _slfoodshow+=5&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuffadd+=1&gt;&gt;&lt;&lt;set _slfoodshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;    &lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
@@ -317629,10 +317603,9 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if $foodm is 1&gt;&gt;&lt;&lt;set $foodstuffadd-=1&gt;&gt;&lt;&lt;set $credtot-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $foodm is 2&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;set _foodshow+=1&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm is 3&gt;&gt;&lt;&lt;set $foodstuffadd-=$pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;set _pnpcs+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $foodm gte 1 and $mctraitmountain gte 51&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;
-&lt;&lt;set _foodshow+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodm gte 1 and $mctraitmountain gte 51&gt;&gt;&lt;&lt;set $foodstuffadd-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -317701,8 +317674,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $lux gte 1 and _luxd4 gte 1&gt;&gt;
 
 &lt;&lt;set _luxd4 = Math.round(_luxd4)&gt;&gt;
-
-&lt;&lt;set _menva to _luxd4&gt;&gt;
 
 &lt;&lt;set $cashtot-=_luxd4&gt;&gt;
 &lt;&lt;set _drainshow+=_luxd4&gt;&gt;
@@ -319847,12 +319818,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $winvest gte -100&gt;&gt;&lt;&lt;set _totin+=$winvest&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _totin = Math.round(_totin)&gt;&gt;
-
-
-
-&lt;&lt;set _menva4 to $credtot&gt;&gt;
-
-
 
 </tw-passagedata><tw-passagedata pid="458" name="NewLoad" tags="nobr" position="3625,1375" size="100,100">&lt;&lt;if $ver gte 10830&gt;&gt;
 /*
@@ -337033,12 +336998,6 @@ _domnpc.girlname&#39;s &#39;&#39;WILLPOWER (-1)&#39;&#39; and &#39;&#39;Affectio
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;set _testoral to $ran_oralxp&gt;&gt;
-
-
-
-
-
 
 /* NEW RANDIE EFFECTS */
 
@@ -340632,7 +340591,6 @@ OLD IGNORE
 
 
 &lt;&lt;set _yardfood = Math.round(_yardfood)&gt;&gt;
-&lt;&lt;set _finalyard to _yardfood&gt;&gt;
 &lt;&lt;set $foodstuffadd+=_yardfood&gt;&gt;
 </tw-passagedata><tw-passagedata pid="510" name="FoodEf" tags="nobr" position="1200,1600" size="100,100">/* SIZE UPGRADE */
 
@@ -404596,7 +404554,6 @@ After making your way through a desolated loading facility, you follow Father De
 &#39;&#39;_genmerc:&#39;&#39; //We&#39;ve got to be underground by now. Damn - it feels like we&#39;ve been walking forever.//
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $gpow+=565&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 1&gt;&gt;
@@ -407966,7 +407923,7 @@ The _noc variable is sufficient to enable this in DarkDantes mod
 
 /* PROWLER FIGHT CHECKERS */
 
-&lt;&lt;if $combat is 58 or $combat is 105 or $combat is 113 or $neen is 16 or $state is 0&gt;&gt;
+&lt;&lt;if $combat is 58 or $combat is 105 or $combat is 113 or $neen is 16&gt;&gt;
 &lt;&lt;set _prowlerhere to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -411378,17 +411335,6 @@ This is done in NewRanSetters
 !!!  NOTE! FINAL Setters are done in the bottom of NEWSKILLS passage  !!!
 
 */
-
-&lt;&lt;set _testback to $aback4&gt;&gt;
-
-/* dev mode - ignore */
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $aback to -1&gt;&gt;
-&lt;&lt;set $aback1 to 1&gt;&gt; /* parents */
-&lt;&lt;set $aback2 to 1&gt;&gt; /* big event */
-&lt;&lt;set $aback3 to 6&gt;&gt; /* background chaos number */
-&lt;&lt;set $aback8 to 5&gt;&gt; /* special interest */
-&lt;&lt;/if&gt;&gt;
 
 /* red tide special background */
 &lt;&lt;if _redtider is true&gt;&gt;
@@ -415437,16 +415383,6 @@ The next three hours stretch into a rather tedious rundown of corporate achievem
 
 HERE EXECUTES NEWRANSETTERS
 
-/* dev mode - ignore */
-&lt;&lt;if $state is 0&gt;&gt;
-&lt;&lt;set $aback to -1&gt;&gt;
-&lt;&lt;set $aback2 to 4&gt;&gt;
-&lt;&lt;set $aback4 to 39&gt;&gt;
-&lt;&lt;set $weatherroll to 2&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
 
 &lt;&lt;if $aback4 is 36 or $aback is 41&gt;&gt;&lt;&lt;set _formermaster to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $aback4 is 39&gt;&gt;&lt;&lt;set _formermistress to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -415472,9 +415408,6 @@ HERE EXECUTES NEWRANSETTERS
 
 /* urchin allowed avatars */
 &lt;&lt;set $adisplay to either(100,101,102,103,104,105,106,108,109,187)&gt;&gt;
-
-&lt;&lt;if $state is 0&gt;&gt;&lt;&lt;set $adisplay to 187&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
  /* age span for urchins */
 &lt;&lt;set $aage to random(18,22)&gt;&gt;
