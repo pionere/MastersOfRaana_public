@@ -194739,21 +194739,20 @@ You don&#39;t meet the minimum requirements for fighting at the arena!&lt;br&gt;
 
 &lt;center&gt;
 &#39;&#39;NEW NAME&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$dmname&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; $dmname&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $dmname to $dmname.trim()&gt;&gt;
-	&lt;&lt;if $dmname is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Arena&quot;&gt;&gt;
-				&lt;&lt;set $action2 to false&gt;&gt;
-				&lt;&lt;set $action1 to true&gt;&gt;
-
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $dmname to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;set $action2 to false&gt;&gt;
+    &lt;&lt;set $action1 to true&gt;&gt;
+    &lt;&lt;goto &quot;Arena&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 &lt;/center&gt;
 
@@ -221472,19 +221471,19 @@ You&#39;ve regained &#39;&#39;4 Stamina Points&#39;&#39; and &#39;&#39;1 Health!
 &lt;center&gt;
 &#39;&#39;WHAT SHOULD YOUR REDLIGHT EMPIRE BE KNOWN AS?&#39;&#39;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &#39;&#39;NEW NAME&#39;&#39;&lt;br&gt;&lt;br&gt;
-&lt;&lt;textbox &quot;$prosti[10]&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; $prosti[10]&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $prosti[10] to $prosti[10].trim()&gt;&gt;
-&lt;&lt;unset $inputname&gt;&gt;
-	&lt;&lt;if $prosti[10] is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;ProstEngine&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $prosti[10] to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $inputname&gt;&gt;
+    &lt;&lt;goto &quot;ProstEngine&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -277307,19 +277306,19 @@ Bud&#39;s &#39;&#39;Happiness (+4)&#39;&#39; has increased!
 &lt;&lt;if $action10 is true&gt;&gt;
 &lt;center&gt;
 &#39;&#39;NEW NAME&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$serafort&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; $serafort&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $serafort to $serafort.trim()&gt;&gt;
-&lt;&lt;set $action10 to false&gt;&gt;
-	&lt;&lt;if $serafort is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Sera&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $serafort to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;set $action10 to false&gt;&gt;
+    &lt;&lt;goto &quot;Sera&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -301155,19 +301154,19 @@ You&#39;re overlooking &quot;Speaker&#39;s Square&quot; - a prime building locat
 &lt;&lt;if $inputname is true&gt;&gt;
 &lt;center&gt;
 &#39;&#39;NEW NAME&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;_active.name&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; _active.name&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set _active.name to _active.name.trim()&gt;&gt;
-&lt;&lt;unset $inputname&gt;&gt;
-	&lt;&lt;if _active.name is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;House&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+   	&lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set _active.name to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $inputname&gt;&gt;
+    &lt;&lt;goto &quot;House&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 &lt;/center&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -304245,12 +304244,11 @@ IGNORE
 &lt;&lt;set _smallcall to true&gt;&gt;
 &lt;br&gt;
 
-&lt;&lt;if $changename is true&gt;&gt;&lt;&lt;set $npcpage.name[$npcpage.number] to $npcpagetemp&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _pagename to $npcpage.name[$npcpage.number]&gt;&gt;
 
-&lt;&lt;unset $npcpagetemp&gt;&gt;
-&lt;&lt;unset $changename&gt;&gt;
 
-&lt;&lt;if $inputname isnot true and $changeallow isnot true and $renamenpc isnot true&gt;&gt;
+&lt;&lt;set _pagename to $npcpage.name[$npcpage.number]&gt;&gt;
+
+&lt;&lt;if $changecall isnot true and $inputname isnot true and $changeallow isnot true and $renamenpc isnot true&gt;&gt;
 
 &lt;&lt;set _nor to 7&gt;&gt;
 &lt;&lt;if $bigdorms is true&gt;&gt;&lt;&lt;set _nor to 9&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -304404,24 +304402,21 @@ IGNORE
 
 &lt;&lt;if $inputname is true and $changecall isnot true&gt;&gt;
 
-&lt;&lt;set $npcpagetemp to _pagename&gt;&gt;
-
 &lt;center&gt;
 &#39;&#39;RENAME PAGE&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$npcpagetemp&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$npcpagetemp&quot; _pagename&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $npcpagetemp to $npcpagetemp.trim()&gt;&gt;
-&lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;set $changename to true&gt;&gt;
-	&lt;&lt;if $npcpagetemp is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $npcpagetemp to $npcpagetemp.trim()&gt;&gt;
+    &lt;&lt;if $npcpagetemp isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $npcpage.name[$npcpage.number] to $npcpagetemp&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $npcpagetemp&gt;&gt;
+    &lt;&lt;unset $inputname&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -304594,18 +304589,15 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set _npc.callname to $newcall.trim()&gt;&gt;
-
-	&lt;&lt;if $newcall is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $changecall&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newcall to $newcall.trim()&gt;&gt;
+    &lt;&lt;if $newcall isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set _npc.callname to $newcall&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $changecall&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -304624,48 +304616,43 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;link &quot;Master&quot;&gt;&gt;
-	&lt;&lt;set _npc.callname to &quot;Master&quot;&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $changecall&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;set _npc.callname to &quot;Master&quot;&gt;&gt;
+    &lt;&lt;unset $changecall&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;link &quot;Commander&quot;&gt;&gt;
-	&lt;&lt;set _npc.callname to &quot;Commander&quot;&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $changecall&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;set _npc.callname to &quot;Commander&quot;&gt;&gt;
+    &lt;&lt;unset $changecall&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;link &quot;Sir&quot;&gt;&gt;
-	&lt;&lt;set _npc.callname to &quot;Sir&quot;&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $changecall&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;set _npc.callname to &quot;Sir&quot;&gt;&gt;
+    &lt;&lt;unset $changecall&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;link &quot;Sensei&quot;&gt;&gt;
-	&lt;&lt;set _npc.callname to &quot;Sensei&quot;&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $changecall&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;set _npc.callname to &quot;Sensei&quot;&gt;&gt;
+    &lt;&lt;unset $changecall&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;&lt;if $aca_work gte 1&gt;&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;link &quot;Professor&quot;&gt;&gt;
-	&lt;&lt;set _npc.callname to &quot;Professor&quot;&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $changecall&gt;&gt;
-&lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;set _npc.callname to &quot;Professor&quot;&gt;&gt;
+    &lt;&lt;unset $changecall&gt;&gt;
+    &lt;&lt;unset $newcall&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -304689,16 +304676,14 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
     &lt;&lt;set $newallow to Number($newallow)&gt;&gt;
-&lt;&lt;if !Number.isInteger($newallow)&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter a number!&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-    &lt;&lt;unset $inputname&gt;&gt;
-    	&lt;&lt;set _npc.allow to $newallow&gt;&gt;
-&lt;&lt;unset $changeallow&gt;&gt;
-		&lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;if Number.isInteger($newallow)&gt;&gt;
+        &lt;&lt;set _npc.allow to $newallow&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newallow&gt;&gt;
+    &lt;&lt;unset $changeallow&gt;&gt;
+    &lt;&lt;goto &quot;SMenu2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -309122,7 +309107,7 @@ Bed full!
 &lt;center&gt;&quot;&#39;&#39;_npc.callname&#39;&#39;&quot;&lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
-[[Change|SMenu2][$changecall to true, $inputname to true]]
+[[Change|SMenu2][$changecall to true]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -331219,22 +331204,19 @@ You spend roughly two hours &lt;br&gt;educating the &lt;&lt;if _kids gte 2&gt;&g
 &lt;div class=&quot;tex18px&quot;&gt;
 &#39;&#39;Enter new name&#39;&#39;&lt;br&gt;
 &lt;/div&gt;
-&lt;&lt;textbox &quot;$newname&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; _temp.name&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set _temp.name to $newname.trim()&gt;&gt;
-
-	&lt;&lt;if $newname is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Nursery2&quot;&gt;&gt;
-        &lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $namechild&gt;&gt;
-&lt;&lt;unset $newname&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set _temp.name to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $namechild&gt;&gt;
+    &lt;&lt;goto &quot;Nursery2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 /* INPUT ENDS BELOW*/
 &lt;/center&gt;
@@ -343051,19 +343033,19 @@ Basement
 &lt;&lt;if $nopage is undefined&gt;&gt;
 
 &#39;&#39;WHAT SHALL YOUR HOUSE BE CALLED?&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$mchouse&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; $mchouse&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $mchouse to $mchouse.trim()&gt;&gt;
-&lt;&lt;unset $inputname2&gt;&gt;
-	&lt;&lt;if $mchouse is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;House2&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $mchouse to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $inputname2&gt;&gt;
+    &lt;&lt;goto &quot;House2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -343071,20 +343053,20 @@ Basement
 &lt;&lt;if $nopage is 1&gt;&gt;
 
 &#39;&#39;CHANGE NAME (NICOLE&#39;S NEWS PAPER)&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$nicpaper&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; $nicpaper&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $nicpaper to $nicpaper.trim()&gt;&gt;
-&lt;&lt;unset $inputname&gt;&gt;
-&lt;&lt;unset $nopage&gt;&gt;
-	&lt;&lt;if $nicpaper is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;House2&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $nicpaper to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $inputname&gt;&gt;
+    &lt;&lt;unset $nopage&gt;&gt;
+    &lt;&lt;goto &quot;House2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -345297,19 +345279,19 @@ PRISON ACT.
 &lt;&lt;if $inputname is true&gt;&gt;
 &lt;center&gt;
 &#39;&#39;NEW NAME&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;_active.name&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; _active.name&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-    &lt;&lt;set _active.name to _active.name.trim()&gt;&gt;
-&lt;&lt;unset $inputname&gt;&gt;
-    &lt;&lt;if _active.name is &quot;&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;else&gt;&gt;
-        &lt;&lt;goto &quot;House2&quot;&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set _active.name to $newname&gt;&gt;
     &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $inputname&gt;&gt;
+    &lt;&lt;goto &quot;House2&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 &lt;/center&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -347482,7 +347464,6 @@ Yes, how can I help you?&lt;&lt;/if&gt;&gt;//
 &lt;&lt;set $pcFirstName to _name&gt;&gt;
 &lt;&lt;set $pcLastName to _surname&gt;&gt;
 
-&lt;&lt;unset $changename&gt;&gt;
 &lt;&lt;unset $ranna&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -350111,19 +350092,19 @@ state: 0,
 
 &lt;center&gt;
 &#39;&#39;NEW NAME (BOOK)&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$bookname&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$newname&quot; $bookname&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulvendor&quot;&gt;
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
-	&lt;&lt;set $bookname to $bookname.trim()&gt;&gt;
-&lt;&lt;unset $changebookname&gt;&gt;
-	&lt;&lt;if $bookname is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Enter at least one character.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Ntrait&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set $newname to $newname.trim()&gt;&gt;
+    &lt;&lt;if $newname isnot &quot;&quot;&gt;&gt;
+        &lt;&lt;set $bookname to $newname&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;unset $newname&gt;&gt;
+    &lt;&lt;unset $changebookname&gt;&gt;
+    &lt;&lt;goto &quot;Ntrait&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;@@#input-error;@@
+&lt;/div&gt;
 &lt;/center&gt;
 
 &lt;&lt;/if&gt;&gt;
