@@ -261363,7 +261363,7 @@ MOVED TO CONCLUDE
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;for _testnpc range $npc&gt;&gt;
-    &lt;&lt;if _testnpc.state gte 1 and _testnpc.bondage lte 0 and _testnpc.avatarunc isnot true and _testnpc.actnpc is $rannpc and _testnpc.girlid isnot 353 and _testnpc.dayblock isnot 25 and _testnpc.dayblock isnot 26 and (_testnpc.dayblock lte 400 or _testnpc.dayblock is 999)&gt;&gt;
+    &lt;&lt;if _testnpc.state gte 1 and _testnpc.bondage lte 0 and _testnpc.avatarunc isnot true and _testnpc.actnpc is $rannpc and _testnpc.girlid isnot 353 and !isaway(_testnpc)&gt;&gt;
 &lt;&lt;set _domnpc to _testnpc&gt;&gt;
 &lt;&lt;set $stopcheck to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -300510,7 +300510,7 @@ You decide to throw an intimate pool party for your followers!
 
 /* jester trait checker */
 &lt;&lt;for _partj range $npc&gt;&gt;
-&lt;&lt;if _partj.traitjester gte 51 and _partj.bondage lte 0 and _partj.health gte 5 and _partj.state gte 1 and _partj.busy is 0 and _partj.dayblock isnot 25 and _partj.dayblock isnot 26 and _partj.dayblock isnot 409 and _partj.dayblock isnot 410 and _partj.dayblock isnot 413 and _partj.dayblock isnot 414 and _partj.dayblock isnot 415&gt;&gt;&lt;&lt;set _happjester+=2&gt;&gt;&lt;&lt;set _angerjester+=1&gt;&gt;&lt;&lt;if _partj.masterlove gte 60&gt;&gt;&lt;&lt;set _affjester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _partj.traitjester gte 51 and _partj.bondage lte 0 and _partj.health gte 5 and _partj.state gte 1 and _partj.busy is 0 and !isaway(_partj)&gt;&gt;&lt;&lt;set _happjester+=2&gt;&gt;&lt;&lt;set _angerjester+=1&gt;&gt;&lt;&lt;if _partj.masterlove gte 60&gt;&gt;&lt;&lt;set _affjester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 
@@ -300522,7 +300522,7 @@ You decide to throw an intimate pool party for your followers!
 &lt;&lt;set _happ+=_happjester&gt;&gt;
 
 &lt;&lt;for _part range $npc&gt;&gt;
-&lt;&lt;if _part.bondage lte 0 and _part.health gte 5 and _part.state gte 1 and _part.busy is 0 and _part.dayblock isnot 25 and _part.dayblock isnot 26 and _part.dayblock isnot 409 and _part.dayblock isnot 410 and _part.dayblock isnot 413 and _part.dayblock isnot 414 and _part.dayblock isnot 415&gt;&gt;
+&lt;&lt;if _part.bondage lte 0 and _part.health gte 5 and _part.state gte 1 and _part.busy is 0 and !isaway(_part)&gt;&gt;
 &lt;&lt;set _parti+=1&gt;&gt;
 
 
@@ -307677,7 +307677,7 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 
 /* GREAT BUSY ENGINE */
 
-&lt;&lt;if _npc.busy isnot 5 and _npc.busy isnot 55 and _npc.busy isnot 56 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.dayblock isnot 409 and _npc.dayblock isnot 410 and _npc.dayblock isnot 411 and _npc.dayblock isnot 412&gt;&gt;
+&lt;&lt;if _npc.busy isnot 5 and _npc.busy isnot 55 and _npc.busy isnot 56 and !isaway(_npc)&gt;&gt;
 
 
 &lt;&lt;if $daycount gte 65 and $daycount lte 88&gt;&gt;
@@ -312803,7 +312803,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 
 /* THE HELM FAMILY SCRIPT */
 
-&lt;&lt;if $quest_tori gte 11 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.dayblock isnot 409 and _npc.dayblock isnot 413 and _npc.dayblock isnot 414&gt;&gt;
+&lt;&lt;if $quest_tori gte 11 and !_isaway&gt;&gt;
 
 
 /* parents worried about kids */
@@ -312944,7 +312944,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 
 &lt;&lt;if _npc.state is 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt; /* unassigned npcs will not starve */
 
-&lt;&lt;if _npc.state gte 1 and (_npc.dayblock is 25 or _npc.dayblock is 26)&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt; /* extra ARENA eat checker */
+&lt;&lt;if _npc.state gte 1 and _isaway&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $foodstuff lt 0&gt;&gt;&lt;&lt;set $foodstuff to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -313038,7 +313038,7 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 &lt;&lt;set _npc.health to -30&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.health lte -30 and _npc.state gte 1 and _npc.bondage isnot 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and (_npc.dayblock lte 400 or _npc.dayblock is 999)&gt;&gt;
+&lt;&lt;if _npc.health lte -30 and _npc.state gte 1 and _npc.bondage isnot 1 and !_isaway&gt;&gt;
 &lt;&lt;set $deathevent to _npc.actnpc&gt;&gt;
 &lt;&lt;set $eventroll66 to -1&gt;&gt;&lt;&lt;set _event66 to -1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -313289,7 +313289,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* others affected by headmaid */
 
-&lt;&lt;if $headmaid gte 1 and $headwill gte 0 and _npc.title isnot 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.sex is 0 and (_npc.status lte 2 or _npc.maid is true)&gt;&gt;
+&lt;&lt;if $headmaid gte 1 and $headwill gte 0 and _npc.title isnot 1 and !_isaway and _npc.sex is 0 and (_npc.status lte 2 or _npc.maid is true)&gt;&gt;
 
 &lt;&lt;if _npc.willpower lt $headwill and _lossroll lte 1 and $headpure lte 24&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,14)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -313333,7 +313333,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 /* others affected by butler */
 
-&lt;&lt;if $butler gte 1 and $butlerwill gte 0 and _npc.title isnot 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.sex is 1 and (_npc.status lte 2 or _npc.maid is true)&gt;&gt;
+&lt;&lt;if $butler gte 1 and $butlerwill gte 0 and _npc.title isnot 1 and !_isaway and _npc.sex is 1 and (_npc.status lte 2 or _npc.maid is true)&gt;&gt;
 
 &lt;&lt;if _npc.willpower lt $butlerwill and _lossroll lte 1 and $headpure lte 24&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,14)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -313680,7 +313680,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 
 /* HEAD CHEF SCRIPT */
-&lt;&lt;if _npc.title is 7 and _npc.bondage lte 0 and _npc.happiness gte 10 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.health gte 1&gt;&gt;
+&lt;&lt;if _npc.title is 7 and _npc.bondage lte 0 and _npc.happiness gte 10 and !_isaway and _npc.health gte 1&gt;&gt;
 
 &lt;&lt;set _happgain to 0&gt;&gt;
 &lt;&lt;set _flair to 0&gt;&gt;
@@ -313713,7 +313713,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 &lt;&lt;set _happgain = Math.round(_happgain)&gt;&gt;
 
 &lt;&lt;for _eat range $npc&gt;&gt;
-&lt;&lt;if _eat.foods gte 2 and _eat.state is 1 and _eat.bondage is 0 and _eat.health gte 1 and _eat.dayblock isnot 25 and _eat.dayblock isnot 26&gt;&gt;
+&lt;&lt;if _eat.foods gte 2 and _eat.state is 1 and _eat.bondage is 0 and _eat.health gte 1 and !isaway(_eat)&gt;&gt;
 &lt;&lt;set _eat.happiness+=_happgain&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
@@ -313734,7 +313734,7 @@ _girlname &lt;&lt;if _masterlove lte 24&gt;&gt;has endured&lt;&lt;/if&gt;&gt;&lt
 
 
 /* NURSE SCRIPT */
-&lt;&lt;if _npc.title is 8 and _npc.bondage lte 0 and _npc.happiness gte 10 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.health gte 1 and _npc.med gte 25&gt;&gt;
+&lt;&lt;if _npc.title is 8 and _npc.bondage lte 0 and _npc.happiness gte 10 and !_isaway and _npc.health gte 1 and _npc.med gte 25&gt;&gt;
 
 &lt;&lt;set _nursepoints to _npc.discipline&gt;&gt;
 &lt;&lt;set _nursepoints/=10&gt;&gt;
@@ -316074,7 +316074,7 @@ Calculate range weapon yield and ammo usage in one block*/
 &lt;&lt;for _mana range $npc&gt;&gt;
 &lt;&lt;set _ranman to random(1,100)&gt;&gt;
 
-&lt;&lt;if _mana.traitextro gte 25 and _mana.bondage lte 0 and _mana.state is 1 and _mana.willpower gte 10 and _mana.per lt _npc.per and _mana.sex is 0 and _mana.dayblock isnot 25 and _mana.dayblock isnot 26&gt;&gt;
+&lt;&lt;if _mana.traitextro gte 25 and _mana.bondage lte 0 and _mana.state is 1 and _mana.willpower gte 10 and _mana.per lt _npc.per and _mana.sex is 0 and !isaway(_mana)&gt;&gt;
 &lt;&lt;if _npc.salarynow gte 50&gt;&gt;&lt;&lt;set _ranman-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.salarynow gte 300&gt;&gt;&lt;&lt;set _ranman-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.salarynow gte 500&gt;&gt;&lt;&lt;set _ranman-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -317576,7 +317576,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;/if&gt;&gt;
 
 
-    &lt;&lt;if _testnpc.state gte 1 and _testnpc.dayblock isnot 25 and _testnpc.dayblock isnot 26&gt;&gt;
+    &lt;&lt;if _testnpc.state gte 1 and !isaway(_testnpc)&gt;&gt;
     
     /* unrelated statesman checker */
         &lt;&lt;if _testnpc.dayblock is 15 and _testnpc.traitstate gte 50 and _testnpc.masterlove gte 30&gt;&gt;&lt;&lt;set _statesmanac to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -324505,7 +324505,7 @@ Do you want to continue?
 
 &lt;&lt;for _fear range $npc&gt;&gt;
 
-&lt;&lt;if _fear.state gte 1 and _fear.dayblock isnot 25 and _fear.status lte 3 and _fear.traitpure gte 25&gt;&gt;
+&lt;&lt;if _fear.state gte 1 and !isaway(_fear) and _fear.status lte 3 and _fear.traitpure gte 25&gt;&gt;
 &lt;&lt;set _fear.afraid+=5&gt;&gt;
 &lt;&lt;set _fear.masterlove-=5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -359039,7 +359039,7 @@ It&#39;s very quiet up here.
 &lt;&lt;if $quest_cat gte 15 and $quest_cat lte 18 and _ass.girlid is 13&gt;&gt;&lt;&lt;set _catbusy2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _ingroup=($groass is 1 ? _ass.group1 is 1 : ($groass is 2 ? _ass.group2 is 1 : ($groass is 3 ? _ass.group3 is 1 : ($groass is 4 ? _ass.group4 is 1 : ($groass is 5 ? _ass.group5 is 1 : ($groass is 6 and _ass.group6 is 1))))))&gt;&gt;
-&lt;&lt;if _ingroup and _ass.bondage lte 0 and _ass.dayblock isnot 25 and _ass.dayblock isnot 26 and _ass.dayblock isnot 409 and _ass.dayblock isnot 410 and _ass.dayblock isnot 411 and _ass.dayblock isnot 412 and _ass.dayblock isnot 413 and _ass.dayblock isnot 414 and _ass.dayblock isnot 415 and _dayblocked isnot true and _ass.dayblock isnot 600 and _ass.dayoff isnot 1 and _catbusy2 isnot true and _ass.health gte 1&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ingroup and _ass.bondage lte 0 and !isaway(_ass) and _dayblocked isnot true and _ass.dayoff isnot 1 and _catbusy2 isnot true and _ass.health gte 1&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 &lt;&lt;include LoadFollow&gt;&gt;
@@ -383838,7 +383838,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 
 &lt;&lt;for _checkbusy range $npc&gt;&gt;
 
-&lt;&lt;if _checkbusy.busy isnot 55 and _checkbusy.busy isnot 56 and _checkbusy.dayblock isnot 25 and _checkbusy.dayblock isnot 26 and _checkbusy.dayblock lte 408 or (_checkbusy.dayblock is 999)&gt;&gt;
+&lt;&lt;if _checkbusy.busy isnot 55 and _checkbusy.busy isnot 56 and !isaway(_checkbusy)&gt;&gt;
 
 /* just woke up */
 &lt;&lt;if $daycount gte 65 and $daycount lte 88&gt;&gt;
@@ -385790,7 +385790,7 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 &lt;&lt;for _slave range $npc&gt;&gt;
 
 /* assigned NPCs checker */
-&lt;&lt;if _slave.assigned is _npc.actnpc and _slave.bondage lte 0 and _slave.health gte 1 and _slave.dayblock isnot 25 and _slave.dayblock isnot 26 and _slave.state gte 1 and _slave.girlid isnot 353 and _slave.busy isnot 5&gt;&gt;
+&lt;&lt;if _slave.assigned is _npc.actnpc and _slave.bondage lte 0 and _slave.health gte 1 and !isaway(_slave) and _slave.state gte 1 and _slave.girlid isnot 353 and _slave.busy isnot 5&gt;&gt;
 
 &lt;&lt;set _assigned+=2&gt;&gt;
 
@@ -388878,7 +388878,7 @@ Chancellor
 /* AUTO BUY RATIONS BELOW */
 
 
-&lt;&lt;if _npc.bondage lte 0 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26&gt;&gt;
+&lt;&lt;if _npc.bondage lte 0 and _isaway&gt;&gt;
 &lt;&lt;if _npc.foods is 1&gt;&gt;&lt;&lt;set _rations+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2&gt;&gt;&lt;&lt;set _rations+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 3&gt;&gt;&lt;&lt;set _rations+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -388920,9 +388920,9 @@ Chancellor
 
 &lt;&lt;if $wrool gte 6 and $wrooleat is undefined&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;set $wrooleat to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and !_isaway and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.foods gte 1 and $foodstuff lte 0&gt;&gt;&lt;&lt;set $foodlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
