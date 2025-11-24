@@ -26303,48 +26303,46 @@ Back
 &lt;div class=&quot;armsholder&quot;&gt;
 
 /* NEW WEAPON SLOT SYSTEM */
-&lt;&lt;if $newweapons is true&gt;&gt;
 &lt;&lt;if $invshow isnot 2&gt;&gt;
+&lt;&lt;if $newweapons is true&gt;&gt;
 &lt;&lt;include WpSlots&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;armsname22&quot;&gt;
 &lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;padd10left&quot;&gt;
-&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;Crossbow&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;9mm Pistol&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;.30-06 Rifle&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;Shotgun&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;Automatic Rifle&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;.45 Revolver&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;Coilgun&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;Plasma Rifle&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;Pipe Gun&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;.50 cal Rifle&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;G. launcher&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;Cyber Cannon&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;Minigun&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;Nemesis SR-C&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;R-55 Revolver&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;Crossbow&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;9mm Pistol&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;.30-06 Rifle&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;Shotgun&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;Automatic Rifle&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;.45 Revolver&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;Coilgun&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;Plasma Rifle&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;Pipe Gun&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;.50 cal Rifle&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;G. launcher&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;Cyber Cannon&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;Minigun&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;Nemesis SR-C&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;R-55 Revolver&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;Unarmed&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;Whipping Cane&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;Combat knife&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;Sword&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;Combat staff&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;Sledgehammer&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;Power katana&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;Great sword&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;Wakizashi&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;Spear&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;Sacred Mallet&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;Ice Dragon&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;Great axe&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;Sword of Azuk&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;Unarmed&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;Whipping Cane&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;Combat knife&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;Sword&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;Combat staff&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;Sledgehammer&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;Power katana&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;Great sword&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;Wakizashi&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;Spear&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;Sacred Mallet&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;Ice Dragon&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;Great axe&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;Sword of Azuk&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -26352,37 +26350,37 @@ Back
 &lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 DAMAGE&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;tex15px&quot;&gt;
-&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;11/15&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;15/18&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;30/20&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;12/26&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;38&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;20/32&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;45&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;60&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;63&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;25/15&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;45/30&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;62*&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;96&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;85*&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;35/45&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;11/15&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;15/18&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;30/20&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;12/26&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;38&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;20/32&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;45&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;60&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;63&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;25/15&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;45/30&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;62*&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;96&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;85*&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;35/45&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;2&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;5&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;7&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;13&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;9&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;15&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;28&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;38&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;50&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;40&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;30&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;12&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;11&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;&lt;&lt;if $mcrel.faith is 5 and $mcrel.devotion gte 100&gt;&gt;50&lt;&lt;else&gt;&gt;30&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;2&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;5&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;7&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;13&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;9&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;15&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;28&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;38&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;50&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;40&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;30&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;12&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;11&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;&lt;&lt;if $mcrel.faith is 5 and $mcrel.devotion gte 100&gt;&gt;50&lt;&lt;else&gt;&gt;30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -26428,13 +26426,9 @@ DAMAGE&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt; /* checker for new weapon slots ends */
+&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _showarm to true&gt;&gt;
-
-&lt;&lt;if $newweapons is true&gt;&gt;&lt;&lt;unset _showarm&gt;&gt;&lt;&lt;if $invshow is 2&gt;&gt;&lt;&lt;set _showarm to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _showarm is true&gt;&gt;
+&lt;&lt;if !$newweapons or $invshow is 2&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;armsname22&quot;&gt;
@@ -26493,7 +26487,7 @@ DEXTERITY&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-
+&lt;&lt;if $invshow is 2&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;armsname22&quot;&gt;
@@ -26579,6 +26573,7 @@ BEAUTY&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
