@@ -66194,7 +66194,7 @@ If Skyguard numbers drop below 250, Ikaanos is destroyed and the &#39;&#39;game 
 &lt;div id=&quot;wrapper2&quot;&gt;
 &lt;center&gt;&lt;h3&gt;- DENGI INVASION -&lt;/h3&gt;&lt;/center&gt;
 &lt;hr&gt;
-If this setting is &#39;&#39;ON&#39;&#39;, Ikaanos will be the target of a catastrophic Dengi marauder invasion after &lt;&lt;link &#39;&lt;&lt;print setup.formatNumber($dengi_days)&gt;&gt;&#39;&gt;&gt; &lt;&lt;if $dengi_days is 500&gt;&gt;500&lt;&lt;else&gt;&gt;1,000&lt;&lt;/if&gt;&gt; &lt;&lt;set $tutorial to 301&gt;&gt;&lt;&lt;if $dengi_days is 500&gt;&gt; &lt;&lt;set $dengi_days to 1000&gt;&gt; &lt;&lt;else&gt;&gt;&lt;&lt;set $dengi_days to 500&gt;&gt; &lt;&lt;/if&gt;&gt;
+If this setting is &#39;&#39;ON&#39;&#39;, Ikaanos will be the target of a catastrophic Dengi marauder invasion after &lt;&lt;link &#39;&lt;&lt;print setup.formatNumber($dengi_days)&gt;&gt;&#39;&gt;&gt; &lt;&lt;if $dengi_days is 500&gt;&gt;500&lt;&lt;else&gt;&gt;1,000&lt;&lt;/if&gt;&gt; &lt;&lt;set $tutorial to 301&gt;&gt;&lt;&lt;set $dengi_days=$dengi_days is 500 ? 1000 : 500&gt;&gt;
 &lt;&lt;script&gt;&gt;Dialog.setup(&#39;&#39;);Dialog.wiki(Story.get(&#39;QuestTexts&#39;).processText());Dialog.open();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt; days (20% chance per day).
 &lt;br&gt;&lt;br&gt;
 Note that the game &#39;&#39;will end&#39;&#39; if the marauders successfully defeat the city&#39;s defenses!
@@ -146521,7 +146521,7 @@ Seduction and persuasion penalty when interacting with younger females.
 	&lt;&lt;goto LootRoom&gt;&gt;
 &lt;&lt;set $speloot to 0&gt;&gt;
 		&lt;&lt;set $take to 3&gt;&gt;
-        &lt;&lt;if $mctraitpin gte 100&gt;&gt;&lt;&lt;set $cash+=3000&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $cash+=50000&gt;&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;set $cash+=$mctraitpin gte 100 ? 3000 : 5000&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -195208,11 +195208,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;else&gt;&gt;
 
 &lt;&lt;if $videos is 1&gt;&gt;
-&lt;&lt;if $weatherroll lte 5&gt;&gt;
-[img[_imgvid + &quot;arena2.gif&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[_imgvid + &quot;arena1.gif&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_imgvid + $weatherroll lte 5 ? &quot;arena2.gif&quot; : &quot;arena1.gif&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
@@ -195225,11 +195221,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if $slaveround is 2 or _showafterpic is true&gt;&gt;
 
 &lt;&lt;if _picok is true&gt;&gt;
-&lt;&lt;if $chance gte 1&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+&quot;/arenavic.jpg&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+&quot;/arenadef.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_img +&quot;Av&quot;+_npc.girlid+($chance gte 1 ? &quot;/arenavic.jpg&quot; : &quot;/arenadef.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
@@ -195241,11 +195233,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if _showfinal is true&gt;&gt;
 &lt;&lt;if _npc.girlid is 11888&gt;&gt;
-&lt;&lt;if $chance gte 1&gt;&gt;
-[img[$imgpath + &quot;Av11/arenavic.jpg&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Av11/arenafight.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + $chance gte 1 ? &quot;Av11/arenavic.jpg&quot; : &quot;Av11/arenafight.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -195270,13 +195258,8 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _arimg is 1 or _arimg is 2&gt;&gt;
 
 &lt;&lt;if $talk3 isnot true and $slavefighting isnot true and $talk2 is true&gt;&gt;
-&lt;&lt;if _arimg is 1&gt;&gt;
-[img[_img + &quot;arenabad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_img + _arimg is 1 ? &quot;arenabad.jpg&quot; : &quot;arenaok.jpg&quot;]]
 
-&lt;&lt;if _arimg is 2&gt;&gt;
-[img[_img + &quot;arenaok.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
@@ -195312,11 +195295,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _showafterpic is true&gt;&gt;
 
 &lt;&lt;if _picok is true&gt;&gt;
-&lt;&lt;if $chance gte 1&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+&quot;/arenavic.jpg&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+&quot;/arenadef.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_img +&quot;Av&quot;+_npc.girlid+($chance gte 1 ? &quot;/arenavic.jpg&quot; : &quot;/arenadef.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
 
 [img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
@@ -195339,11 +195318,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if _showfinal isnot true&gt;&gt;
 &lt;&lt;if $winpic isnot true&gt;&gt;
-&lt;&lt;if $daycount gte 190 or $daycount lte 40&gt;&gt;
-[img[$imgpath + &quot;Exterior/arena.jpg&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Exterior/arenaday.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + ($daycount gte 190 or $daycount lte 40) ? &quot;Exterior/arena.jpg&quot; : &quot;Exterior/arenaday.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;Exterior/arenachamp.jpg&quot;]]
 &lt;&lt;unset $winpic&gt;&gt;
@@ -312590,11 +312565,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 /* GENERIC BELOW */
 
 &lt;&lt;if _npc.analxp lte 89 and _npc.likesadist lte 39 and _ranp gte 10 and _lossroll lte 2&gt;&gt;
-&lt;&lt;if _npc.nightblock is 4&gt;&gt;
-&lt;&lt;set _npc.willpower-=random(0,1)&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.willpower-=1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.willpower-=_npc.nightblock is 4 ? random(0,1) : 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ranp gte 12&gt;&gt;&lt;&lt;set _npc.pain+=1&gt;&gt;&lt;&lt;set _npc.analwear+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -315176,7 +315147,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
     &lt;&lt;if _npccheck.busy isnot 5 and _npccheck.busy isnot 10&gt;&gt;
 &lt;&lt;if _npccheck.program gte 1 and _npccheck.program lte 3&gt;&gt;&lt;&lt;set _npccheck.tempstamina-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npccheck.program is 4&gt;&gt;&lt;&lt;if _npccheck.dex gte 70 or _npccheck.acro gte 60&gt;&gt;&lt;&lt;set _npccheck.tempstamina-=16&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _npccheck.tempstamina-=25&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npccheck.program is 4&gt;&gt;&lt;&lt;set _npccheck.tempstamina-=_npccheck.dex gte 70 or _npccheck.acro gte 60 ? 16 : 25&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npccheck.tempstamina lte 8&gt;&gt;&lt;&lt;set _npccheck.tempstamina=8&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
     
@@ -333763,7 +333734,7 @@ _domnpc.girlname&#39;s &#39;&#39;Health (&lt;&lt;if _guardt is true&gt;&gt;-30&l
 
 &lt;&lt;if $event66done isnot 1&gt;&gt;
 &lt;&lt;set $event66done to 1&gt;&gt;
-&lt;&lt;if _guardt is true&gt;&gt;&lt;&lt;set _domnpc.health-=30&gt;&gt; &lt;&lt;else&gt;&gt; &lt;&lt;set _domnpc.health-=25&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;set _domnpc.health-=_guardt ? 30 : 25&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -389009,7 +388980,7 @@ Chancellor
 &lt;&lt;if $wrool gte 6 and $wrooleat is undefined&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;set $wrooleat to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;if $pantryskill gte 80&gt;&gt;&lt;&lt;set $foodstuff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.foods gte 1 and $foodstuff lte 0&gt;&gt;&lt;&lt;set $foodlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;
