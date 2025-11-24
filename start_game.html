@@ -104975,7 +104975,7 @@ Bathing in this bathroom will give you a &#39;&#39;Stamina point&#39;&#39; bonus
 
 
 &lt;&lt;if $bathroom is 1&gt;&gt;
-&lt;&lt;if $descroll is 1&gt;&gt;You&#39;re forced to endure a cold shower today as the water takes too long to get warm. It’s over in less than three minutes and leaves you feeling at least somewhat refreshed. &lt;br&gt;&lt;br&gt;The unpleasant experience costs one &lt;b&gt;Stamina point!&lt;/b&gt; &lt;&lt;set $masterfilth=40&gt;&gt;&lt;&lt;set $stampoints-=1&gt;&gt;&lt;&lt;if $stampoints lte 0&gt;&gt;&lt;&lt;set $stampoints=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll is 1&gt;&gt;You&#39;re forced to endure a cold shower today as the water takes too long to get warm. It’s over in less than three minutes and leaves you feeling at least somewhat refreshed. &lt;br&gt;&lt;br&gt;The unpleasant experience costs one &lt;b&gt;Stamina point!&lt;/b&gt; &lt;&lt;set $masterfilth=40&gt;&gt;&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll is 2&gt;&gt; The water refuses to turn clear, forcing you to wash in the rusty slur that your century-old pipes have collected during its lifetime. You’re clean-ish, but a faint smell of metal will surround you for the rest of the day. &lt;&lt;set $masterfilth=33&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll is 3&gt;&gt; You take a quick shower that leaves a refreshing feeling of cleanliness. Another minute under the nozzle would have made it even better, but the surrounding dilapidation forces you to leave the room as soon as possible. &lt;&lt;set $masterfilth=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -169417,8 +169417,8 @@ a daily &#39;&#39;Influence (+12)&#39;&#39; boost!
 &lt;&lt;if $donatecom is true&gt;&gt;
 &lt;&lt;if $wopos is 62&gt;&gt;
 &lt;&lt;set $mcrel.devotion+=5&gt;&gt;
-&lt;&lt;if $faction.viking.power lte 150&gt;&gt;&lt;&lt;set $faction.viking.power+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.viking.standing lte 29&gt;&gt;&lt;&lt;set $faction.viking.standing+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.viking.power=adl($faction.viking.power,1,151)&gt;&gt;
+&lt;&lt;set $faction.viking.standing=adl($faction.viking.standing,1,30)&gt;&gt;
 &lt;&lt;if $faction.viking.standing gte 30&gt;&gt;&lt;&lt;set $faction.viking.standfill+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $takensl-=1&gt;&gt;
@@ -169434,7 +169434,7 @@ a daily &#39;&#39;Influence (+12)&#39;&#39; boost!
 &lt;&lt;set $take to 1&gt;&gt;
 
 &lt;&lt;set $faction.rebel.standfill+=5&gt;&gt;
-&lt;&lt;if $faction.rebel.power lte 1999&gt;&gt;&lt;&lt;set $faction.rebel.power+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.rebel.power=adl($faction.rebel.power,1,2000)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -169442,7 +169442,7 @@ a daily &#39;&#39;Influence (+12)&#39;&#39; boost!
 
 &lt;&lt;if $wopos is 55 or $wopos is 57&gt;&gt;
 &lt;&lt;set $faction.warlord1.men+=1&gt;&gt;
-&lt;&lt;if $faction.warlord1.power lte 99&gt;&gt;&lt;&lt;set $faction.warlord1.power+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.warlord1.power=adl($faction.warlord1.power,1,100)&gt;&gt;
 &lt;&lt;if $faction.warlord1.power gte 100&gt;&gt;&lt;&lt;set $faction.warlord1.standfill+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $donatepower gte 5 and $donatepower lte 15&gt;&gt;&lt;&lt;set $faction.warlord1.power+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -234323,12 +234323,12 @@ You try to get your bearings again, following the vicious fight.
 
 /* depravity */
 
-&lt;&lt;if $faction.christian.depravity lte 14 and $faction.ikaanos.corruption gte 90 and $lossroll is 1 and $weatherroll lte 2&gt;&gt;
-&lt;&lt;set $faction.christian.depravity+=1&gt;&gt;
+&lt;&lt;if $faction.ikaanos.corruption gte 90 and $lossroll is 1 and $weatherroll lte 2&gt;&gt;
+&lt;&lt;set $faction.christian.depravity=adl($faction.christian.depravity,1,15)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.christian.depravity gte 5 and $faction.ikaanos.corruption lte 19 and $lossroll is 1 and $weatherroll lte 2&gt;&gt;
-&lt;&lt;set $faction.christian.depravity-=1&gt;&gt;
+&lt;&lt;if $faction.ikaanos.corruption lte 19 and $lossroll is 1 and $weatherroll lte 2&gt;&gt;
+&lt;&lt;set $faction.christian.depravity=adl($faction.christian.depravity,-1,4)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -234359,27 +234359,24 @@ You try to get your bearings again, following the vicious fight.
 /* various catholic quest checkers */
 
 /* next order meeting */
-&lt;&lt;if $quest_catho6 gte 3 and $quest_catho6 lte 6&gt;&gt;
-&lt;&lt;set $quest_catho6+=1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_catho6 gte 3&gt;&gt;&lt;&lt;set $quest_catho6=adl($quest_catho6,1,7)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* crusader trait */
-&lt;&lt;if $ironcrusades gte 5 and $mcrel.faith is 5 and $mcrel.devotion lte 128&gt;&gt;&lt;&lt;set $mcrel.devotion+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ironcrusades gte 5 and $mcrel.faith is 5&gt;&gt;&lt;&lt;set $mcrel.devotion=adl($mcrel.devotion,2,130)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* post-seed quest countdown */
 &lt;&lt;if $quest_catho10 is undefined&gt;&gt;&lt;&lt;set $quest_catho10 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $quest_catho5 gte 6 and $quest_catho10 lte 1&gt;&gt;&lt;&lt;set $quest_catho10+=1&gt;&gt;&lt;&lt;/if&gt;&gt; /* the seed checker */
+&lt;&lt;if $quest_catho5 gte 6&gt;&gt;&lt;&lt;set $quest_catho10=adl($quest_catho10,1,2)&gt;&gt;&lt;&lt;/if&gt;&gt; /* the seed checker */
 
 
 /* dance of the holy maiden effects */
 &lt;&lt;if $rheadance gte 1&gt;&gt;
-&lt;&lt;if $weatherroll lte 1 and $lossroll lte 1 and $faction.christian.depravity lte 14&gt;&gt;&lt;&lt;set $faction.christian.depravity+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $weatherroll lte 1 and $lossroll lte 1&gt;&gt;&lt;&lt;set $faction.christian.depravity=adl($faction.christian.depravity,1,15)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* siren&#39;s grimore effects */
 &lt;&lt;if $sirenbook gte 2&gt;&gt;
-&lt;&lt;if $weatherroll is 2 and $lossroll is 3 and $faction.christian.depravity lte 19&gt;&gt;
-&lt;&lt;if $faction.christian.influence gte 4&gt;&gt;&lt;&lt;set $faction.christian.depravity+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $weatherroll is 2 and $lossroll is 3 and $faction.christian.influence gte 4&gt;&gt;&lt;&lt;set $faction.christian.depravity=adl($faction.christian.depravity,1,20)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -234816,8 +234813,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if _dengiroll lte 25&gt;&gt;&lt;&lt;set $faction.ikaanos.prosp-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _dengiroll gte 80 and $faction.ikaanos.power gte 900&gt;&gt;&lt;&lt;set $faction.ikaanos.power-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _dengiroll lte 50 and $hunt_imogen gte 1&gt;&gt;&lt;&lt;set $hunt_imogen-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hunt_imogen lt 0&gt;&gt;&lt;&lt;set $hunt_imogen to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _dengiroll lte 50&gt;&gt;&lt;&lt;set $hunt_imogen=adl($hunt_imogen,-2,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* enemy POI RESPAWN */
 
@@ -235025,8 +235021,8 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set _bandit = 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $hamcap[0] lte 790&gt;&gt;&lt;&lt;set $hamcap[0]+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $hamcap[1] lte 395&gt;&gt;&lt;&lt;set $hamcap[1]+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $hamcap[0]=adl($hamcap[0],10,800)&gt;&gt;
+&lt;&lt;set $hamcap[1]=adl($hamcap[1],5,400)&gt;&gt;
 
 &lt;&lt;set _stamdown to random(1, 20)&gt;&gt;
 
@@ -235356,8 +235352,8 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $quest_aria gte 9 and $quest_aria lte 11&gt;&gt;
 &lt;&lt;if $npc.av11.state is 0 and $faction.rebel.state gte 1&gt;&gt;
 
-&lt;&lt;if $faction.rebel.power lte 2997&gt;&gt;&lt;&lt;set $faction.rebel.power+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.rebel.men lte 1998&gt;&gt;&lt;&lt;set $faction.rebel.men+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.rebel.power=adl($faction.rebel.power,3,3000)&gt;&gt;
+&lt;&lt;set $faction.rebel.men=adl($faction.rebel.men,2,2000)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -238338,23 +238334,19 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot1 gte 0 and $cs1_health lt $cs1_maxhealth and $cs1_armor is &quot;wega&quot; and $cs1_health gte 1&gt;&gt;
-&lt;&lt;set $cs1_health+=5&gt;&gt;
-&lt;&lt;if $cs1_health gt $cs1_maxhealth&gt;&gt;&lt;&lt;set $cs1_health to $cs1_maxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $cs1_health=adl($cs1_health,5,$cs1_maxhealth)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot2 gte 0 and $cs2_health lt $cs2_maxhealth and $cs2_armor is &quot;wega&quot; and $cs2_health gte 1&gt;&gt;
-&lt;&lt;set $cs2_health+=5&gt;&gt;
-&lt;&lt;if $cs2_health gt $cs2_maxhealth&gt;&gt;&lt;&lt;set $cs2_health to $cs2_maxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $cs2_health=adl($cs2_health,5,$cs2_maxhealth)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot3 gte 0 and $cs3_health lt $cs3_maxhealth and $cs3_armor is &quot;wega&quot; and $cs3_health gte 1&gt;&gt;
-&lt;&lt;set $cs3_health+=5&gt;&gt;
-&lt;&lt;if $cs3_health gt $cs3_maxhealth&gt;&gt;&lt;&lt;set $cs3_health to $cs3_maxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $cs3_health=adl($cs3_health,5,$cs3_maxhealth)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cslot4 gte 0 and $cs4_health lt $cs4_maxhealth and $cs4_armor is &quot;wega&quot; and $cs4_health gte 1&gt;&gt;
-&lt;&lt;set $cs4_health+=5&gt;&gt;
-&lt;&lt;if $cs4_health gt $cs4_maxhealth&gt;&gt;&lt;&lt;set $cs4_health to $cs4_maxhealth&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $cs4_health=adl($cs4_health,5,$cs4_maxhealth)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -265018,7 +265010,7 @@ Earlier today, $girlname spent a noticeable amount of time out in the shed, negl
 &lt;&lt;if $event2roll is 3&gt;&gt;&lt;&lt;set $av_aca+=1&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $event2roll is 4&gt;&gt;&lt;&lt;set $av_acro+=1&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $event2roll is 5&gt;&gt; &lt;&lt;set $av_dancing+=1&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event2roll is 6&gt;&gt;&lt;&lt;set $cash-=5&gt;&gt;&lt;&lt;set $defcount+=1&gt;&gt; &lt;&lt;if $av_dex gte 50&gt;&gt;&lt;&lt;set $av_dex-=1&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event2roll is 6&gt;&gt;&lt;&lt;set $cash-=5&gt;&gt;&lt;&lt;set $defcount+=1&gt;&gt;&lt;&lt;set $av_dex=adl($av_dex,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -267253,7 +267245,7 @@ A local drought in the Red River basin has caused a shortage of food. Prices are
 &lt;&lt;set _ika.prosp-=2&gt;&gt;
 &lt;&lt;set $pollapp to 1&gt;&gt;
 
-&lt;&lt;if $mch.yardslot9.type is 15 and $quest_ave gte 3&gt;&gt; &lt;&lt;if $mch.yardslot9.type is 15 and $mch.yardslot9.other2 gte 1&gt;&gt;&lt;&lt;set $mch.yardslot9.other2-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot9.type is 15 and $quest_ave gte 3&gt;&gt;&lt;&lt;set $mch.yardslot9.other2=adl($mch.yardslot9.other2,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -311790,9 +311782,9 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 
 &lt;&lt;if _prowler is true&gt;&gt;
 &lt;&lt;if _npc.willpower lte 39&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-_prows*2,50)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.fear lte 9 and _npc.willpower lte 79&gt;&gt;&lt;&lt;set _npc.fear+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.fear lte 9 and _prows gte 4&gt;&gt;&lt;&lt;set _npc.fear+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.fear lte 9 and _prows gte 8&gt;&gt;&lt;&lt;set _npc.fear+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.willpower lte 79&gt;&gt;&lt;&lt;set _npc.fear=adl(_npc.fear,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _prows gte 4&gt;&gt;&lt;&lt;set _npc.fear=adl(_npc.fear,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _prows gte 8&gt;&gt;&lt;&lt;set _npc.fear=adl(_npc.fear,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _taintroll to random(1, 100)&gt;&gt;
@@ -312582,7 +312574,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;if _npc.masterlove lte 59 and _npc.likesadist gte 60&gt;&gt;&lt;&lt;set _npc.masterlove+=1&gt;&gt;&lt;&lt;set _npc.arousal+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.likesadist lte 69 and _lossroll lte 2&gt;&gt;&lt;&lt;set _npc.likesadist+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll lte 2&gt;&gt;&lt;&lt;set _npc.likesadist=adl(_npc.likesadist,1,70)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -315412,8 +315404,8 @@ Dayblock 409: Ranch master zapin fields
 
 /* evelyn */
 &lt;&lt;if _npc.girlid is 47&gt;&gt;
-&lt;&lt;if _npc.happiness gte 22&gt;&gt;&lt;&lt;set _npc.happiness-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.masterlove gte 31&gt;&gt;&lt;&lt;set _npc.masterlove-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.happiness=adl(_npc.happiness,-2,20)&gt;&gt;
+&lt;&lt;set _npc.masterlove=adl(_npc.masterlove,-1,30)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -315426,7 +315418,7 @@ Dayblock 409: Ranch master zapin fields
 &lt;&lt;set $daysat_book+=1&gt;&gt;
 &lt;&lt;if _lossroll is 1&gt;&gt;&lt;&lt;set _npc.willpower+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _lossroll is 2&gt;&gt;&lt;&lt;set _npc.happiness+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _lossroll is 3 and _npc.traitfem lte 99&gt;&gt;&lt;&lt;set _npc.traitfem+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll is 3&gt;&gt;&lt;&lt;set _npc.traitfem=adl(_npc.traitfem,1,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _lossroll is 4&gt;&gt;&lt;&lt;set _npc.likesadist=adl(_npc.likesadist,1,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* clues */
@@ -373324,7 +373316,7 @@ You do however notice an abundance of wild tobacco plants grooving close to the 
 You continue for another two merciless hours, spending most of that time trying to find a smaller path that supposedly leads to the waterhole mentioned by Mr. Decker.
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if $spaceclue1 is 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;Clue activated!&lt;/div&gt; Due to a lead found in Hamah Bay, you avoid taking any noticeable Stamina losses. &lt;&lt;else&gt;&gt;The trek is unusually painful, causing an extra &#39;&#39;Stamina Points (-4)&#39;&#39; drop for you and your Followers. &lt;&lt;set $stampoints-=4&gt;&gt; &lt;&lt;for _st range $npc&gt;&gt; &lt;&lt;if _st.tempstamina gte 10 and _st.dayblock is 999&gt;&gt;&lt;&lt;set _st.tempstamina-=4&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/for&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $spaceclue1 is 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;Clue activated!&lt;/div&gt; Due to a lead found in Hamah Bay, you avoid taking any noticeable Stamina losses. &lt;&lt;else&gt;&gt;The trek is unusually painful, causing an extra &#39;&#39;Stamina Points (-4)&#39;&#39; drop for you and your Followers. &lt;&lt;set $stampoints-=4&gt;&gt; &lt;&lt;for _st range $npc&gt;&gt; &lt;&lt;if _st.dayblock is 999&gt;&gt;&lt;&lt;set _st.tempstamina=adl(_st.tempstamina,-4,6)&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/for&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 After making your way over a steep ridge, you suddenly see a small camp next to a waterhole about 100 yards further down the north side of the hill. 
 &lt;br&gt;&lt;br&gt;
@@ -386031,7 +386023,7 @@ Female educators &#39;&#39;will not&#39;&#39; use female pupils sexually unless 
 
 &lt;&lt;if _slaveroll lte 6 and _slave.traitpure gte 51&gt;&gt;&lt;&lt;set _slave.traitpure-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _slaveroll2 lte 25 and _slave.happiness gte 21 and _npc.willpower gt _slave.willpower and (_slave.traitpure gte 51 or _npc.kind lte 39 or _slave.likesadist lte 39)&gt;&gt;&lt;&lt;set _slave.happiness-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _slaveroll2 lte 25 and _npc.willpower gt _slave.willpower and (_slave.traitpure gte 51 or _npc.kind lte 39 or _slave.likesadist lte 39)&gt;&gt;&lt;&lt;set _slave.happiness=adl(_slave.happiness,-2,19)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; 
 /* dominate ends */
@@ -388960,7 +388952,7 @@ Chancellor
 &lt;&lt;set _feedall to true&gt;&gt;
 
 &lt;&lt;set $cash-=_totalcost&gt;&gt;
-&lt;&lt;if _npc.foods is 1 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,20)&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 1 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,20)&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-3,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 3 and _npc.bondage lte 0 and _npc.avatarunc isnot true&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodlimit[0]=adl($foodlimit[0],-5,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -388979,7 +388971,7 @@ Chancellor
 
 &lt;&lt;if $wrool gte 6 and $wrooleat is undefined&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;set $wrooleat to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;if _npc.happiness gte 50&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.foods is 1 and $foodstuff gte 1 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 2 and $foodstuff gte 2 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.foods is 3 and $foodstuff gte 4 and _npc.dayblock isnot 25 and _npc.dayblock isnot 26 and _npc.bondage lte 0&gt;&gt;&lt;&lt;set _npc.hunger to _npc.body gte 4 ? 85 : (_npc.body is 3 ? 90 : 95)&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 4 : 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -403635,7 +403627,7 @@ Mr. Drake pours himself another jug of ale before responding:
 
 &lt;&lt;if $adpos is 5&gt;&gt;
 &lt;&lt;passmins 6&gt;&gt;
-&lt;&lt;if $stampoints gte 5&gt;&gt;&lt;&lt;set $stampoints-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $stampoints=adl($stampoints,-1,4)&gt;&gt;
 &lt;&lt;include DiceRolls&gt;&gt;
 &lt;&lt;set $chance to $mastercharm&gt;&gt;
 &lt;&lt;set _charm to true&gt;&gt;
@@ -414151,7 +414143,7 @@ Marinelli studies the book with a troubled look before responding:
 
 &lt;&lt;set $pic to 0&gt;&gt;
 
-&lt;&lt;if $weatherroll lte 3 and $masterfilth lte 20&gt;&gt;&lt;&lt;set $masterfilth+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $weatherroll lte 3&gt;&gt;&lt;&lt;set $masterfilth=adl($masterfilth,1,21)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $wasino isnot true&gt;&gt;
 &lt;&lt;passmins 18&gt;&gt;
