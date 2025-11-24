@@ -317732,10 +317732,8 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* MONASTERY ADDER */
 
-&lt;&lt;if _monacash gte 1&gt;&gt;
 &lt;&lt;set $cashtot-=_monacash&gt;&gt;
 &lt;&lt;set _drainshow+=_monacash&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -330393,8 +330391,8 @@ She turns silent in your presence. There&#39;s no doubt she&#39;s upset about so
 &lt;&lt;if $foodm is 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $masterhunger to 20&gt;&gt;&lt;&lt;set $foodstuff-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $foodm is 2 and $foodstuff gte 2&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 2 : 3&gt;&gt;&lt;&lt;set $masterhunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $foodm is 3 and $foodstuff gte 4&gt;&gt;&lt;&lt;set $foodstuff-=$pantryskill gte 80 ? 5 : 6&gt;&gt;&lt;&lt;set $masterhunger to 80&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mctraitglut gte 75 and $foodm gte 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $foodstuff-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1 and $foodstuff gte 1&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitglut gte 75 and $foodm gte 1&gt;&gt;&lt;&lt;set $foodstuff-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mctraitmountain gte 51 and $foodm gte 1&gt;&gt;&lt;&lt;set $foodstuff-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set $foodstuff=Math.max($foodstuff,0)&gt;&gt;
@@ -330685,16 +330683,14 @@ father: &quot;Someone&quot;,
 &lt;&lt;if $foodget gte 1&gt;&gt;
 &lt;&lt;set _foodcost to $foodprice&gt;&gt;
 &lt;&lt;set _totalcost to _foodcost*_nursefood&gt;&gt;
-&lt;&lt;if $cash gte _totalcost&gt;&gt;
 &lt;&lt;set $cash-=_totalcost&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;else&gt;&gt;
 /* manual nurse eat */
 
 
-&lt;&lt;if _nursefood gte 1 and $foodstuff gte 1&gt;&gt;
+&lt;&lt;if $foodstuff gte 1&gt;&gt;
 &lt;&lt;set $foodstuff-=_nursefood&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
