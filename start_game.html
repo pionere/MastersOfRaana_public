@@ -10556,15 +10556,14 @@ Macro.add('first', {
 
 
 
-&lt;&lt;if $foodlimit is undefined&gt;&gt;&lt;&lt;set $foodlimit = [4000, 1000, 1000, 5000]&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $foodlimit = [4000, 1000, 1000, 5000]&gt;&gt;
 
-&lt;&lt;if $mcrel is undefined&gt;&gt;
 &lt;&lt;set $mcrel = {
 faith: 0,
 devotion: 20,
 extra: 0,
 faithn: &quot;Atheism&quot;,
-}&gt;&gt;&lt;&lt;/if&gt;&gt;
+}&gt;&gt;
 
 
 
@@ -11086,9 +11085,7 @@ faithn: &quot;Atheism&quot;,
 &lt;&lt;set $noacaslave to 1&gt;&gt;
 &lt;&lt;set $linemod to true&gt;&gt;
 
-&lt;&lt;if $foodget is undefined&gt;&gt;
 &lt;&lt;set $foodget to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set $plimp = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
@@ -11096,8 +11093,6 @@ faithn: &quot;Atheism&quot;,
 &lt;&lt;set $nanny to 0&gt;&gt;
 
 
-
-&lt;&lt;if $taken is undefined&gt;&gt;
 
 &lt;&lt;set $taken = {
 
@@ -11162,8 +11157,6 @@ body: 1,
 }
 }&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;set $pcFirstName to &quot;Michael&quot;&gt;&gt;
 &lt;&lt;set $pcLastName to &quot;Courtenay&quot;&gt;&gt;
@@ -11181,13 +11174,11 @@ body: 1,
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;introtextleft&quot;&gt;
-
 &#39;&#39;
+
 &lt;center&gt;
 &lt;div class=&quot;padd40left&quot;&gt;Support Masters of Raana on&lt;/div&gt;
-
 &lt;span id=&quot;noIcon&quot;&gt;[img[$imgpath + &quot;ch/ssa.png&quot;][https://subscribestar.adult/grimdark]]&lt;/span&gt;
-
 &lt;/center&gt;
 
 &lt;div class=&quot;padd40left constant&quot;&gt;
@@ -11199,12 +11190,9 @@ body: 1,
 &lt;/div&gt;
 
 &#39;&#39;
-&lt;&lt;set $dayend to true&gt;&gt;
-&lt;&lt;set $noshow to true&gt;&gt;
-&lt;&lt;include WeatherTimeEffect&gt;&gt;
 &lt;/div&gt;
-&lt;div class=&quot;introtextright&quot;&gt;
 
+&lt;div class=&quot;introtextright&quot;&gt;
 
 &lt;center&gt;
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -11226,31 +11214,17 @@ body: 1,
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;/div&gt;
-
 &lt;/center&gt;
 
-
-
-
-
-
-
 &lt;div class=&quot;gameversion&quot;&gt;&#39;&#39;Version: 0.8.4.8 (&lt;&lt;if $invhold is 5&gt;&gt;Tier2+&lt;&lt;elseif $invhold is 10&gt;&gt;Tier3&lt;&lt;elseif $invhold is 25&gt;&gt;Tier4+&lt;&lt;elseif $invhold is 0&gt;&gt;Public&lt;&lt;/if&gt;&gt;)&#39;&#39;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&quot;buttbottomtext&quot;&gt;
 
 &lt;/div&gt;
 
-
-&lt;&lt;set $weatherroll to 6&gt;&gt;
-
+&lt;/div&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="2" name="Interact" tags="nobr gray no-transition" position="4825,675" size="100,100">&lt;div id=&quot;borderwrapwborder&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;story&quot;&gt;
@@ -301164,7 +301138,6 @@ You&#39;re overlooking &quot;Speaker&#39;s Square&quot; - a prime building locat
 /* TEXTS IS TRUE ENDS BELOW */
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="422" name="ObjectSlave" tags="nobr" position="3125,2050" size="100,100">
-&lt;&lt;if $npc is undefined&gt;&gt;
 
 &lt;&lt;set $npcpage = {
 number: 1
@@ -302190,13 +302163,9 @@ slot4: -1,
    
 &lt;&lt;set $slot = Array(129).fill(0)&gt;&gt;
    
-&lt;&lt;/if&gt;&gt;
-
     
 
 
-
-&lt;br&gt;
 
 &lt;&lt;set _npc = $npc&gt;&gt;
 &lt;&lt;set _skeys = Object.keys(_npc)&gt;&gt;
