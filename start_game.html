@@ -11251,8 +11251,6 @@ body: 1,
 &lt;&lt;set $avatarunc to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.health gt _npc.toughness&gt;&gt;&lt;&lt;set _npc.health to _npc.toughness&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;set _onlychange to true&gt;&gt;
 
 &lt;&lt;if $avatarunc is true and _npc.tempstamina gte 1 and _npc.health gte 1&gt;&gt;&lt;&lt;set $avatarunc to false&gt;&gt;&lt;&lt;set _npc.avatarunc to false&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -191429,8 +191427,6 @@ Most skill rolls will end in the 30-70 range. Surprises are very rare. More succ
 
 &lt;&lt;include FacEn&gt;&gt;
 
-&lt;&lt;if $hunt_imogen lt 0&gt;&gt;&lt;&lt;set $hunt_imogen to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;div class=&quot;hunting1_number&quot;&gt;
 $hunt_imogen
 &lt;/div&gt;
@@ -192297,7 +192293,7 @@ Imogen&#39;s Barrow is a perfect hunting ground for larger game that is not nati
 &#39;&#39;//_ran4 Raw Meat added to Inventory!&lt;br&gt;
 _ran5 Skins added to Inventory!//&#39;&#39;
 
-&lt;&lt;set $hunt_imogen-=1&gt;&gt;
+&lt;&lt;set $hunt_imogen=adl($hunt_imogen,-1,0)&gt;&gt;
 &lt;&lt;set $meat+=_ran4&gt;&gt;
 &lt;&lt;set $skins+=_ran5&gt;&gt;
 
@@ -299332,9 +299328,6 @@ Harvest 100R
 &lt;&lt;print setup.formatNumber(_active.steel)&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;GOLD&#39;&#39;&lt;br&gt;
-
-&lt;&lt;if _active.gold lte 0&gt;&gt;&lt;&lt;set _active.gold to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;print setup.formatNumber(_active.gold)&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;C-BOARDS&#39;&#39;&lt;br&gt;
@@ -305973,8 +305966,6 @@ Dayblock 7: Teacher (Academy)
 &lt;&lt;include GuardPool&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="434" name="SlaveValues3" tags="nobr" position="3950,2125" size="100,100">
-
-&lt;&lt;if _npc.health gt _npc.toughness&gt;&gt;&lt;&lt;set _npc.health to _npc.toughness&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;include EscCalc&gt;&gt;
 
@@ -315495,8 +315486,8 @@ Calculate range weapon yield and ammo usage in one block*/
     &lt;&lt;/for&gt;&gt;
     &lt;&lt;set _hunterreset to false&gt;&gt;
  &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _lossroll lte 4 and $hunt_imogen gte 1&gt;&gt;&lt;&lt;set _hunt to either(1,2)&gt;&gt;&lt;&lt;set $hunt_imogen-=_hunt&gt;&gt;&lt;&lt;set $huntinggrounds[0][2]+=_hunt&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _lossroll gte 5 and $hunt_wet gte 1&gt;&gt;&lt;&lt;set _hunt to either(1,2)&gt;&gt;&lt;&lt;set $hunt_wet-=_hunt&gt;&gt;&lt;&lt;set $huntinggrounds[1][2]+=_hunt&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll lte 4 and $hunt_imogen gte 1&gt;&gt;&lt;&lt;set _hunt to either(1,2)&gt;&gt;&lt;&lt;set $hunt_imogen=adl($hunt_imogen,-_hunt,0)&gt;&gt;&lt;&lt;set $huntinggrounds[0][2]+=_hunt&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll gte 5 and $hunt_wet gte 1&gt;&gt;&lt;&lt;set _hunt to either(1,2)&gt;&gt;&lt;&lt;set $hunt_wet=adl($hunt_wet,-_hunt,0)&gt;&gt;&lt;&lt;set $huntinggrounds[1][2]+=_hunt&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 
