@@ -348626,20 +348626,9 @@ $whipskill &lt;&lt;if $whipskill_cr gte 1&gt;&gt;&lt;div class=&quot;green&quot;
 
 &lt;&lt;if $changename is true&gt;&gt;
 &lt;div class=&quot;contholder&quot;&gt;
-//&#39;&#39;ENTER YOUR NAME TO CONTINUE!&#39;&#39;//
+//&#39;&#39;SET YOUR NAME TO CONTINUE!&#39;&#39;//
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-
-/*
-&lt;&lt;if $saycont is undefined&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;div class=&quot;contholder&quot;&gt;
-&#39;&#39;ENTER YOUR NAME TO CONTINUE!&#39;&#39;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $saycont to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-*/
 
 &lt;&lt;include NewSounds&gt;&gt;
 
@@ -350399,24 +350388,24 @@ state: 0,
 
 &lt;center&gt;
 &#39;&#39;FIRST NAME&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$pcFirstName&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$pcFirstName&quot; $pcFirstName&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;LAST NAME&#39;&#39;&lt;br&gt;
-&lt;&lt;textbox &quot;$pcLastName&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;$pcLastName&quot; $pcLastName&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;link &quot;set name!&quot;&gt;&gt;
-	&lt;&lt;set $pcFirstName to $pcFirstName.trim()&gt;&gt;
-	&lt;&lt;set $pcLastName  to $pcLastName.trim()&gt;&gt;
+    &lt;&lt;set $pcFirstName to $pcFirstName.trim()&gt;&gt;
+    &lt;&lt;set $pcLastName  to $pcLastName.trim()&gt;&gt;
 
-	&lt;&lt;if $pcFirstName is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter a first name.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;elseif $pcLastName is &quot;&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter a last name.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;goto &quot;Ntrait&quot;&gt;&gt;
+    &lt;&lt;if $pcFirstName is &quot;&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter a first name.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $pcLastName is &quot;&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#input-error&quot;&gt;&gt;&lt;center&gt;Please enter a last name.&lt;/center&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;goto &quot;Ntrait&quot;&gt;&gt;
         &lt;&lt;unset $changename&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/div&gt;@@#input-error;@@
 
