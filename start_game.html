@@ -51297,7 +51297,7 @@ $girlnames &#39;&#39;Defiance (+1)&#39;&#39; has increased!
 [img[$imgpath + &quot;Maps/empty.png&quot;][Home][$comesfromout to true]]
 &lt;div class=&quot;mchname&quot;&gt;
 &lt;div class=&quot;white2&quot;&gt;
-[[&quot;&quot;+$mchouse|Home][$comesfromout to true]]
+[[$mchouse|Home][$comesfromout to true]]
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -99638,9 +99638,9 @@ _level
 &lt;&lt;if $cs1_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs1_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs1_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs1_posb isnot 3 and _cs1upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs1_posb to 3]]&lt;&lt;/if&gt;&gt;
@@ -99664,9 +99664,9 @@ _level
 
 
 &lt;&lt;if $cs2_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs2_posb isnot 3 and _cs2upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs2_posb to 3]]&lt;&lt;/if&gt;&gt;
@@ -99688,9 +99688,9 @@ _level
 &lt;&lt;if $cs3_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs3_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs3_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs3_posb isnot 3 and _cs3upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs3_posb to 3]]&lt;&lt;/if&gt;&gt;
@@ -99712,9 +99712,9 @@ _level
 &lt;&lt;if $cs4_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs4_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs4_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs4_posb isnot 3 and _cs4upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs4_posb to 3]]&lt;&lt;/if&gt;&gt;
@@ -119210,9 +119210,9 @@ What type of activity did you have in mind?
 
 &lt;&lt;if $action is 14&gt;&gt;
 
-&lt;&lt;if $mch.room10.type is 45 and $mch.room10.occ lte 0&gt;&gt;[[&quot;&quot;+$mch.room10.name|Interact][$bondage to 10, $action to 0, $mch.room10.occ to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.room11.type is 45 and $mch.room11.occ lte 0&gt;&gt;[[&quot;&quot;+$mch.room11.name|Interact][$bondage to 11, $action to 0, $mch.room11.occ to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.room12.type is 45 and $mch.room12.occ lte 0&gt;&gt;[[&quot;&quot;+$mch.room12.name|Interact][$bondage to 12, $action to 0, $mch.room12.occ to 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.room10.type is 45 and $mch.room10.occ lte 0&gt;&gt;[[$mch.room10.name|Interact][$bondage to 10, $action to 0, $mch.room10.occ to 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.room11.type is 45 and $mch.room11.occ lte 0&gt;&gt;[[$mch.room11.name|Interact][$bondage to 11, $action to 0, $mch.room11.occ to 1]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.room12.type is 45 and $mch.room12.occ lte 0&gt;&gt;[[$mch.room12.name|Interact][$bondage to 12, $action to 0, $mch.room12.occ to 1]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;link &quot;Cancel&quot;&gt;&gt;
 &lt;&lt;goto EventEngine&gt;&gt;
 &lt;&lt;unset $prisact&gt;&gt;
@@ -140408,7 +140408,7 @@ The census records is a huge, analog database containing all registered inhabita
 &lt;&lt;include GenBH&gt;&gt;
 
 &lt;&lt;if $bh1 isnot undefined and $onbh isnot 3&gt;&gt;
-[[&quot;&quot;+$bh1[0] +&quot; &quot;+$bh1[1]|TownHall][$event to 1, $bolook to 10]]
+[[$bh1[0]+&quot; &quot;+$bh1[1]|TownHall][$event to 1, $bolook to 10]]
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163586,7 +163586,7 @@ This effect becomes dormant if &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&g
 &lt;&lt;if _unique is true or $av_wear is &quot;unique&quot;&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_wear is &quot;unique&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[&quot;&quot;+_uniquename|SlaveInventory][$av_before=$av_wear, $av_wear=&quot;unique&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;+2&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;+2&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[_uniquename|SlaveInventory][$av_before=$av_wear, $av_wear=&quot;unique&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;+2&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;+2&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -166630,9 +166630,9 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 
 &lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $hwife gte 1&gt;&gt;&lt;&lt;if $piercho isnot 1&gt;&gt;[[Your wife|Nikas][$piercho to 1, $execommand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Your wife&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Your wife&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $avatars gte 1&gt;&gt;&lt;&lt;if $piercho isnot 2&gt;&gt;[[&quot;&quot; +$girlname|Nikas][$piercho to 2, $execommand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;$girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;First slave&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $avatars gte 1&gt;&gt;&lt;&lt;if $piercho isnot 2&gt;&gt;[[$girlname|Nikas][$piercho to 2, $execommand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;$girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;First slave&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $avatars gte 2&gt;&gt;&lt;&lt;if $piercho isnot 3&gt;&gt;[[&quot;&quot; +$avIn_girlname|Nikas][$piercho to 3, $execommand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;$avIn_girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Second slave&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $avatars gte 2&gt;&gt;&lt;&lt;if $piercho isnot 3&gt;&gt;[[$avIn_girlname|Nikas][$piercho to 3, $execommand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;$avIn_girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Second slave&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
@@ -195723,7 +195723,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;vendorleft&quot;&gt;
-[img[$imgpath +&quot;&quot; +_imgname]]
+[img[$imgpath + _imgname]]
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;introchofilled lefttex&quot;&gt;
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -195741,7 +195741,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;/div&gt;
 &lt;div class=&quot;vendorleft&quot;&gt;
-[img[$imgpath +&quot;&quot; +_imgname2]]
+[img[$imgpath + _imgname2]]
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;introchofilled lefttex&quot;&gt;
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -200947,7 +200947,7 @@ You step into the opulent halls of The Golden Dragon, one of Crystal Hills&#39; 
 &lt;div class=&quot;vendorleft ulvendor&quot;&gt;
 &lt;&lt;if $avatars gte 1 and $busy lte 0 and $bondage lte 0 and $avatarunc isnot true&gt;&gt;
 
-&lt;&lt;if $slave1state isnot 1&gt;&gt;[[&quot;&quot;+$girlname|Golden][$slave1state to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;$girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&lt;&lt;if $slave1state isnot 1&gt;&gt;[[$girlname|Golden][$slave1state to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;$girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
 &lt;center&gt;&#39;&#39;DRESS:&#39;&#39; &lt;&lt;if _ok1 isnot true&gt;&gt;&lt;div class=&quot;red&quot;&gt;Unacceptable!&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;green&quot;&gt;Adequate!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/center&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulvendorown&quot;&gt;UNAVAILABLE&lt;/p&gt;
@@ -200957,7 +200957,7 @@ You step into the opulent halls of The Golden Dragon, one of Crystal Hills&#39; 
 
 &lt;&lt;if $avatars gte 2 and $avIn_busy lte 0 and $avIn_bondage lte 0 and $avIn_avatarunc isnot true&gt;&gt;
 
-&lt;&lt;if $slave2state isnot 1&gt;&gt;[[&quot;&quot;+$avIn_girlname|Golden][$slave2state to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;$avIn_girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&lt;&lt;if $slave2state isnot 1&gt;&gt;[[$avIn_girlname|Golden][$slave2state to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;$avIn_girlname&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
 &lt;center&gt;&#39;&#39;DRESS:&#39;&#39; &lt;&lt;if _ok2 isnot true&gt;&gt;&lt;div class=&quot;red&quot;&gt;Unacceptable!&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;green&quot;&gt;Adequate!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/center&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulvendorown&quot;&gt;UNAVAILABLE&lt;/p&gt;
@@ -239041,9 +239041,9 @@ Dead!
 &lt;&lt;if $cs1_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs1_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $cs1_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -239207,9 +239207,9 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cs2_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -239371,9 +239371,9 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cs3_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -239523,9 +239523,9 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cs4_age lte 14&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -275568,7 +275568,7 @@ After initiating an assault against Carozza mansion, you cannot exit until you&#
 [img[$imgpath + &quot;Maps/empty.png&quot;][Sera][$adpos to 0]]
 &lt;div class=&quot;mchname&quot;&gt;
 &lt;div class=&quot;white2&quot;&gt;
-[[&quot;&quot;+$serafort|Sera][$adpos to 0]]
+[[$serafort|Sera][$adpos to 0]]
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -308789,7 +308789,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 11&gt;&gt;
 &lt;&lt;if $mch.room1.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room1.name|SMenu2][_npc.sleep to 11]]
+[[$mch.room1.name|SMenu2][_npc.sleep to 11]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308820,7 +308820,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 12&gt;&gt;
 &lt;&lt;if $mch.room2.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room2.name|SMenu2][_npc.sleep to 12]]
+[[$mch.room2.name|SMenu2][_npc.sleep to 12]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308848,7 +308848,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 13&gt;&gt;
 &lt;&lt;if $mch.room3.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room3.name|SMenu2][_npc.sleep to 13]]
+[[$mch.room3.name|SMenu2][_npc.sleep to 13]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308877,7 +308877,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 14&gt;&gt;
 &lt;&lt;if $mch.room4.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room4.name|SMenu2][_npc.sleep to 14]]
+[[$mch.room4.name|SMenu2][_npc.sleep to 14]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308906,7 +308906,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 15&gt;&gt;
 &lt;&lt;if $mch.room5.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room5.name|SMenu2][_npc.sleep to 15]]
+[[$mch.room5.name|SMenu2][_npc.sleep to 15]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308935,7 +308935,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 16&gt;&gt;
 &lt;&lt;if $mch.room6.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room6.name|SMenu2][_npc.sleep to 16]]
+[[$mch.room6.name|SMenu2][_npc.sleep to 16]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308964,7 +308964,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 17&gt;&gt;
 &lt;&lt;if $mch.room7.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room7.name|SMenu2][_npc.sleep to 17]]
+[[$mch.room7.name|SMenu2][_npc.sleep to 17]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -308993,7 +308993,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 18&gt;&gt;
 &lt;&lt;if $mch.room8.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room8.name|SMenu2][_npc.sleep to 18]]
+[[$mch.room8.name|SMenu2][_npc.sleep to 18]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -309022,7 +309022,7 @@ Bed full!
 
 &lt;&lt;if _npc.sleep isnot 19&gt;&gt;
 &lt;&lt;if $mch.room9.occ gt _occ&gt;&gt;
-[[&quot;&quot;+$mch.room9.name|SMenu2][_npc.sleep to 19]]
+[[$mch.room9.name|SMenu2][_npc.sleep to 19]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Room full!&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
@@ -359100,7 +359100,7 @@ p4: -1,
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[&quot;&quot;+$gr1.name|Followers][$changegr1 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[$gr1.name|Followers][$changegr1 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
 &lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;for _gr1 range $npc&gt;&gt;
@@ -359180,7 +359180,7 @@ p4: -1,
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[&quot;&quot;+$gr2.name|Followers][$changegr2 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[$gr2.name|Followers][$changegr2 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
 &lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;for _gr2 range $npc&gt;&gt;
@@ -359260,7 +359260,7 @@ p4: -1,
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[&quot;&quot;+$gr3.name|Followers][$changegr3 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[$gr3.name|Followers][$changegr3 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
 &lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;for _gr3 range $npc&gt;&gt;
@@ -359354,7 +359354,7 @@ p4: -1,
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[&quot;&quot;+$gr4.name|Followers][$changegr4 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[$gr4.name|Followers][$changegr4 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
 &lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;for _gr4 range $npc&gt;&gt;
@@ -359434,7 +359434,7 @@ p4: -1,
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[&quot;&quot;+$gr5.name|Followers][$changegr5 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[$gr5.name|Followers][$changegr5 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
 &lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;for _gr5 range $npc&gt;&gt;
@@ -359514,7 +359514,7 @@ p4: -1,
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[&quot;&quot;+$gr6.name|Followers][$changegr6 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;tex19px uppernocut&quot;&gt;&lt;&lt;hovertip &quot;rename group&quot;&gt;&gt;- [[$gr6.name|Followers][$changegr6 to true]] -&lt;&lt;/hovertip&gt;&gt;&lt;/div&gt;
 &lt;/center&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;for _gr6 range $npc&gt;&gt;
@@ -384539,7 +384539,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;&lt;set _dir to &quot;Av&quot; +_npc.girlid&gt;&gt;
 &lt;&lt;if _npc.girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+_npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-[img[$imgpath + &quot;&quot;+_dir+&quot;/troop_kid.png&quot;]]
+[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;/div&gt;
 
 
@@ -391762,7 +391762,7 @@ You need at least &#39;&#39;40,000 Influence points&#39;&#39; and a &#39;&#39;Pa
 &lt;div class=&quot;row ulsmall&quot;&gt;
 &lt;&lt;if $adpos2 isnot 13&gt;&gt;[[Pro CTM|Court2][$adpos2 to 13]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;pro ctm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $adpos2 isnot 14&gt;&gt;[[anti ctm|Court2][$adpos2 to 14]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;anti ctm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $adpos2 isnot 15 and _questprop isnot &quot;unavailable&quot;&gt;&gt;[[&quot;&quot;+_questprop|Court2][$adpos2 to 15]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_questprop&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $adpos2 isnot 15 and _questprop isnot &quot;unavailable&quot;&gt;&gt;[[_questprop|Court2][$adpos2 to 15]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;_questprop&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $adpos2 isnot 16 and _gagga is true&gt;&gt;[[dissidence|Court2][$adpos2 to 16]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;unavailable&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
