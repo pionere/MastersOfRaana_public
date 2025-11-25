@@ -132055,8 +132055,6 @@ You shove the startled girl toward the brute, who grabs her and starts pulling h
 &lt;&lt;set _npc to $npc.av6&gt;&gt;
 
 &lt;&lt;set _selling to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;include InjectFollow&gt;&gt;
@@ -177948,8 +177946,6 @@ Use Hounds
 
 
 &lt;&lt;if $slesc is 3&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -215922,8 +215918,6 @@ You&#39;re contemplating on putting your _callit, &#39;&#39;$girlname&#39;&#39;,
 &lt;&lt;if $round is 6 and $ver lt 10830&gt;&gt;&lt;&lt;include SlaveDel&gt;&gt;&lt;&lt;include CAuto&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $round is 6 and $ver gte 10830&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;include CAuto&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -238362,8 +238356,6 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _death.actnpc is $cs1_actnpc&gt;&gt;
 &lt;&lt;set _npc to _death&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $fallen+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -238385,8 +238377,6 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _death.actnpc is $cs2_actnpc&gt;&gt;
 &lt;&lt;set _npc to _death&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $fallen+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -238408,8 +238398,6 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _death.actnpc is $cs3_actnpc&gt;&gt;
 &lt;&lt;set _npc to _death&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $fallen+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -238430,8 +238418,6 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _death.actnpc is $cs4_actnpc&gt;&gt;
 &lt;&lt;set _npc to _death&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $fallen+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -258150,8 +258136,6 @@ talking to one of his guards.
 &lt;&lt;if $ver gte 10830&gt;&gt;
 &lt;&lt;if _npc.masterlove gte 75&gt;&gt;&lt;&lt;set _npc.happiness+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $justsold to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;include SlaveDel&gt;&gt;
@@ -287492,8 +287476,6 @@ She also seems to lack the willingness to service the men she&#39;ll be bound to
 &lt;&lt;set $quest_aria to 99&gt;&gt;
 
 &lt;&lt;set _npc to $npc.av11&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -290682,8 +290664,6 @@ The nobles are released back into Emerald City after Aria&#39;s speech is over a
 &#39;&#39;Aria:&#39;&#39; //I have tons of work to do here.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set _npc to $npc.av11&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;center&gt;&lt;div class=&quot;tex19px blink_me&quot;&gt;&#39;&#39;ARIA BIANCHI HAS LEFT YOUR HOUSEHOLD!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
@@ -290762,8 +290742,6 @@ Iona smiles and take the pouch of gold dollars.
 &lt;&lt;set $missiontake to true&gt;&gt;
 
 &lt;&lt;set _npc to $npc.av44&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;center&gt;
 &lt;div class=&quot;tex18px&quot;&gt;&#39;&#39;IONA FARLEY HAS LEFT YOUR HOUSEHOLD!&#39;&#39;&lt;/div&gt;
@@ -290853,8 +290831,6 @@ You watch as _npc.girlname is led away by Sgt. Williams.
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set $faction.warlord1.men+=1&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -290888,8 +290864,6 @@ You watch as _npc.girlname is led down a dimly lit corridor and out of sight to 
 &lt;&lt;if $faction.viking.power lte 150&gt;&gt;&lt;&lt;set $faction.viking.power+=1&gt;&gt; &#39;&#39;Power (Aesir Tribe)&#39;&#39;: +1&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -290936,8 +290910,6 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;set $cash-=100&gt;&gt;
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -290992,8 +290964,6 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;set $cash-=100&gt;&gt;
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -291049,8 +291019,6 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;set $cash-=100&gt;&gt;
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -291182,8 +291150,6 @@ Second class Floor Crawler.
 &lt;&lt;set $cash+=_selli&gt;&gt;
 &lt;&lt;set $removebutt to true&gt;&gt;
 
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -292569,8 +292535,6 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set $cash-=100&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -292619,8 +292583,6 @@ A transfer also costs $100 in shipping fees.
 
 &lt;&lt;set $cash-=100&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -292672,8 +292634,6 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;set $cash-=100&gt;&gt;
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -292713,8 +292673,6 @@ You watch as _npc.girlname is led out from your yard and walks away towards a ne
 &lt;&lt;set $quest_catho3 to 6&gt;&gt;
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -292777,8 +292735,6 @@ You contemplate on sending _npc.girlname _npc.last away to become a full member 
 
 &lt;&lt;set _donateevent to true&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -295827,8 +295783,6 @@ Anyway. To get to the point (long silence). In these troublesome times, there&#3
 
 &lt;&lt;if $ver gte 10830&gt;&gt;
 &lt;&lt;if _npc.masterlove gte 75&gt;&gt;&lt;&lt;set _npc.happiness+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;include SlaveDel&gt;&gt;
@@ -310639,21 +310593,15 @@ Geoffrey Dolme
 &lt;&lt;if _girlid is 51&gt;&gt;&lt;&lt;set _race to &quot;Old American&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _girlid is 128 or _girlid is 102 or _girlid is 107 or _girlid is 154&gt;&gt;&lt;&lt;set _race to &quot;Scandinavian&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="447" name="ClearSlot" tags="nobr" position="4300,2450" size="100,100">/*
-
+&lt;&lt;if _girlid is 128 or _girlid is 102 or _girlid is 107 or _girlid is 154&gt;&gt;&lt;&lt;set _race to &quot;Scandinavian&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="447" name="ClearSlot" tags="nobr" position="4300,2450" size="100,100">
+/*
 THIS PASSAGE CLEARS AN NPC FROM YOUR HOUSEHOLD. 
 
 ALSO USED FOR DEATH.
-
-
-
-Use this to point to current NPC slot:
-
+*/
 &lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
 &lt;&lt;set _clearslot+=1&gt;&gt;
-*/
-
-
 
 &lt;&lt;if _justclear isnot true&gt;&gt;
 &lt;&lt;for _i = 1; _i lt $slot.length; _i++&gt;&gt;
@@ -311670,8 +311618,6 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.willpower to -25&gt;&gt;
 &lt;&lt;set _npc.transformed to 1&gt;&gt;
 &lt;&lt;set _justclear to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -324263,8 +324209,6 @@ Do you wish to continue?
 &lt;&lt;unset $execommand&gt;&gt;
 &lt;&lt;if _npc.masterlove gte 75 and _caitclin is undefined&gt;&gt;&lt;&lt;set _npc.happiness+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.girlid is 11 and _npc.status lte 2 and $quest_aria lte 17&gt;&gt;&lt;&lt;set $credit-=1500&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
@@ -324311,8 +324255,6 @@ Do you want to continue?
 &lt;&lt;if $npc.av42.state gte 0&gt;&gt;&lt;&lt;set $npc.av42.masterlove to 0&gt;&gt;&lt;&lt;set $npc.av42.scarefactor to 30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 &lt;&lt;if _npc.girlid isnot 353&gt;&gt;
@@ -324498,8 +324440,6 @@ Do you want to continue?
 &lt;&lt;if _career is 9&gt;&gt;&lt;&lt;if _npc.sex lte 0&gt;&gt;&lt;&lt;set $off.work9+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $off.work10+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;unset $execommand&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 
 
@@ -332911,8 +332851,6 @@ You give _domnpc.girlname a proper burial at a local temple dedicated to &lt;&lt
 &lt;&lt;unset $deathevent&gt;&gt;
 &lt;&lt;set _npc to _domnpc&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $event1b to true&gt;&gt;
 &lt;&lt;unset _deathevent&gt;&gt;
@@ -332927,8 +332865,6 @@ You give the body a shallow grave somewhere in Marston Swamps.
 &lt;&lt;unset $deathevent&gt;&gt;
 &lt;&lt;set _npc to _domnpc&gt;&gt;
 &lt;&lt;set _deathevent to true&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $event1b to true&gt;&gt;
 &lt;&lt;unset _deathevent&gt;&gt;
@@ -332981,8 +332917,6 @@ _domnpc.girlname &lt;&lt;if _domnpc.status lte 2&gt;&gt;tries to flee from the m
 &lt;&lt;unset $escapeevent&gt;&gt;
 &lt;&lt;unset $esc1&gt;&gt;
 &lt;&lt;set _npc to _domnpc&gt;&gt;
-&lt;&lt;set _clearslot to _npc.actnpc&gt;&gt;
-&lt;&lt;set _clearslot+=1&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;set $event1b to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
