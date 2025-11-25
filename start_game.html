@@ -234236,9 +234236,9 @@ You try to get your bearings again, following the vicious fight.
 
 &lt;&lt;if $faction.moon.power gte 1500&gt;&gt;
 
-&lt;&lt;if $faction.christian.influence gt 10&gt;&gt;&lt;&lt;set $faction.christian.influence to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.christian.influence=Math.min($faction.christian.influence,10)&gt;&gt;
 
-&lt;&lt;if $faction.christian.power gt 750&gt;&gt;&lt;&lt;set $faction.christian.power to 750&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.christian.power=Math.min($faction.christian.power,750)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
