@@ -4948,6 +4948,11 @@ a:hover{
  padding-left: 5px; 
 }
 
+.padd16side{
+ padding-left: 16px;
+ padding-right: 16px;
+}
+
 .padd20side{
   padding-left: 10px;
     padding-right: 10px;
@@ -4959,6 +4964,11 @@ a:hover{
 
 .computer{
  font-family: Computer; 
+}
+
+.padd25side{
+ padding-left: 25px;
+ padding-right: 25px;
 }
 
 .padd30side{
@@ -298979,48 +298989,32 @@ Harvest 100R
 &lt;&lt;if $withdrawpage is 1&gt;&gt;
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/knifebutt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
 
-&lt;&lt;set _steel to 200&gt;&gt;
-&lt;&lt;set _wood to 100&gt;&gt;
-&lt;&lt;set _prod to 1000&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:200,wood:100,prod:1000,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if $wood gte 100 and $steel gte 200 and _active.other6 gte 1000&gt;&gt;[[x100 knives|House][_active.other6-=1000, $ownknife+=100, $take to 1, $noclick to true, $withdraw to true, $steel-=200, $wood-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 knives&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 1000 and $steel gte 200 and $wood gte 100&gt;&gt;[[x100 knives|House][_active.other6-=1000, $ownknife+=100, $take to 1, $noclick to true, $withdraw to true, $steel-=200, $wood-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 knives&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/swordbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _steel to 500&gt;&gt;
-&lt;&lt;set _wood to 100&gt;&gt;
-&lt;&lt;set _prod to 3500&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:500,wood:100,prod:3500,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
 &lt;&lt;if _active.other6 gte 3500 and $steel gte 500 and $wood gte 100&gt;&gt;[[x100 swords|House][_active.other6-=3500, $ownsword+=100, $take to 1, $noclick to true, $withdraw to true, $steel-=500, $wood-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 swords&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/crossbowbutt.png&quot;]]
 
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 200&gt;&gt;
-&lt;&lt;set _steel to 500&gt;&gt;
-&lt;&lt;set _wood to 200&gt;&gt;
-&lt;&lt;set _prod to 5000&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:500,wood:200,connect:200,prod:5000,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
@@ -299029,25 +299023,14 @@ Harvest 100R
 
 
 &lt;/div&gt;
-
-
-&lt;br&gt;&lt;br&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
+&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/pistolbutt.png&quot;]]
 
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 500&gt;&gt;
-&lt;&lt;set _steel to 400&gt;&gt;
-&lt;&lt;set _wood to 0&gt;&gt;
-&lt;&lt;set _prod to 7000&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:400,connect:500,prod:7000,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
@@ -299055,98 +299038,58 @@ Harvest 100R
 &lt;/div&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/riflebutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 300&gt;&gt;
-&lt;&lt;set _steel to 300&gt;&gt;
-&lt;&lt;set _wood to 100&gt;&gt;
-&lt;&lt;set _prod to 4500&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:300,wood:100,connect:300,prod:4500,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 4500 and $steel gte 300 and $wood gte 100 and $connect gte 300&gt;&gt;[[x50 rifles|House][_active.other6-=4500, $ownrifle+=50, $take to 1, $noclick to true, $withdraw to true, $steel-=300, $connect-=300, $wood-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x50 rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 4500 and $steel gte 300 and $wood gte 100 and $connect gte 300&gt;&gt;[[x50 rifles|House][_active.other6-=4500, $ownrifle+=50, $take to 1, $noclick to true, $withdraw to true, $steel-=300, $wood-=100, $connect-=300]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x50 rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/autobutt.png&quot;]]
 
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 150&gt;&gt;
-&lt;&lt;set _steel to 150&gt;&gt;
-&lt;&lt;set _durasteel to 25&gt;&gt;
-&lt;&lt;set _prod to 5000&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
-&lt;&lt;set _stopwood to true&gt;&gt;
+&lt;&lt;set _res={steel:150,durasteel:25,connect:150,prod:5000,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;set _stopwood to false&gt;&gt;
-
-
-&lt;&lt;if _active.other6 gte 5000 and $steel gte 150 and $durasteel gte 25 and $connect gte 150&gt;&gt;[[x25 a. rifle|House][_active.other6-=5000, $ownautorifle+=25, $take to 1, $noclick to true, $withdraw to true, $steel-=150, $connect-=150, $durasteel-=25]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x25 a. rifle&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 5000 and $steel gte 150 and $durasteel gte 25 and $connect gte 150&gt;&gt;[[x25 a. rifles|House][_active.other6-=5000, $ownautorifle+=25, $take to 1, $noclick to true, $withdraw to true, $steel-=150, $durasteel-=25, $connect-=150]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x25 a. rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
 &lt;/div&gt;
-
-
-&lt;br&gt;&lt;br&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-
+&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/shotgunbutt.png&quot;]]
 
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 50&gt;&gt;
-&lt;&lt;set _steel to 50&gt;&gt;
-&lt;&lt;set _wood to 20&gt;&gt;
-&lt;&lt;set _prod to 850&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:50,wood:20,connect:50,prod:850,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 850 and $steel gte 50 and $connect gte 50 and $wood gte 20&gt;&gt;[[x10 shotguns|House][_active.other6-=850, $ownshotgun+=10, $take to 1, $noclick to true, $withdraw to true, $steel-=50, $connect-=50, $wood-=20]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 shotguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 850 and $steel gte 50 and $wood gte 20 and $connect gte 50&gt;&gt;[[x10 shotguns|House][_active.other6-=850, $ownshotgun+=10, $take to 1, $noclick to true, $withdraw to true, $steel-=50, $wood-=20, $connect-=50]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 shotguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/priflebutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 90&gt;&gt;
-&lt;&lt;set _steel to 50&gt;&gt;
-&lt;&lt;set _wood to 10&gt;&gt;
-&lt;&lt;set _prod to 300&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:50,wood:10,connect:90,prod:300,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 300 and $steel gte 50 and $wood gte 10 and $connect gte 90&gt;&gt;[[x10 pipeguns|House][_active.other6-=300, $ownprifle+=10, $take to 1, $noclick to true, $withdraw to true, $steel-=50, $connect-=90, $wood-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 pipeguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 300 and $steel gte 50 and $wood gte 10 and $connect gte 90&gt;&gt;[[x10 pipeguns|House][_active.other6-=300, $ownprifle+=10, $take to 1, $noclick to true, $withdraw to true, $steel-=50, $wood-=10, $connect-=90]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 pipeguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/spearbutt.png&quot;]]
 
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _wood to 300&gt;&gt;
-&lt;&lt;set _steel to 100&gt;&gt;
-&lt;&lt;set _prod to 1000&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:100,wood:300,prod:1000,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
@@ -299166,178 +299109,109 @@ Harvest 100R
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/9mmbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 250&gt;&gt;
-&lt;&lt;set _gpow to 250&gt;&gt;
-&lt;&lt;set _prod to 150&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={connect:250,gpow:250,prod:150,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 150 and $gpow gte 250 and $connect gte 250&gt;&gt;[[x250 9mm|House][_active.other6-=150, $a9mm+=250, $take to 1, $noclick to true, $withdraw to true, $gpow-=250, $connect-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 9mm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 150 and $connect gte 250 and $gpow gte 250&gt;&gt;[[x250 9mm|House][_active.other6-=150, $a9mm+=250, $take to 1, $noclick to true, $withdraw to true, $connect-=250, $gpow-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 9mm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/306butt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
 
-&lt;&lt;set _connect to 250&gt;&gt;
-&lt;&lt;set _gpow to 250&gt;&gt;
-&lt;&lt;set _prod to 250&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={connect:250,gpow:250,prod:250,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 250 and $gpow gte 250 and $connect gte 250&gt;&gt;[[x250 30-06|House][_active.other6-=150, $a306+=250, $take to 1, $noclick to true, $withdraw to true, $gpow-=250, $connect-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 30-06&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 250 and $connect gte 250 and $gpow gte 250&gt;&gt;[[x250 30-06|House][_active.other6-=150, $a306+=250, $take to 1, $noclick to true, $withdraw to true, $connect-=250, $gpow-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 30-06&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/762butt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
 
-&lt;&lt;set _connect to 250&gt;&gt;
-&lt;&lt;set _gpow to 250&gt;&gt;
-&lt;&lt;set _prod to 290&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={connect:250,gpow:250,prod:290,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 290 and $gpow gte 250 and $connect gte 250&gt;&gt;[[x250 7.62|House][_active.other6-=290, $a556+=250, $take to 1, $noclick to true, $withdraw to true, $gpow-=250, $connect-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 7.62&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 290 and $connect gte 250 and $gpow gte 250&gt;&gt;[[x250 7.62|House][_active.other6-=290, $a556+=250, $take to 1, $noclick to true, $withdraw to true, $connect-=250, $gpow-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 7.62&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 
-
-
-
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;br&gt;&lt;br&gt;
+&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/boltbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _steel to 150&gt;&gt;
-&lt;&lt;set _wood to 150&gt;&gt;
-&lt;&lt;set _prod to 80&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={steel:150,wood:150,prod:80,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 80 and $steel gte 150 and $wood gte 150&gt;&gt;[[x250 bolts|House][_active.other6-=80, $bolts+=250, $take to 1, $noclick to true, $withdraw to true, $wood-=150, $steel-=150]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x200 bolts&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 80 and $steel gte 150 and $wood gte 150&gt;&gt;[[x250 bolts|House][_active.other6-=80, $bolts+=250, $take to 1, $noclick to true, $withdraw to true, $steel-=150, $wood-=150]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x200 bolts&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/shellsbutt.png&quot;]]
 
-
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _steel to 250&gt;&gt;
-&lt;&lt;set _gpow to 250&gt;&gt;
-&lt;&lt;set _prod to 200&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
-
+&lt;&lt;set _res={steel:250,gpow:250,prod:200,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
-
 
 &lt;&lt;if _active.other6 gte 200 and $steel gte 250 and $gpow gte 250&gt;&gt;[[x250 shells|House][_active.other6-=200, $a12g+=250, $take to 1, $noclick to true, $withdraw to true, $steel-=250, $gpow-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 shells&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/grenadesbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _steel to 100&gt;&gt;
-&lt;&lt;set _connect to 100&gt;&gt;
-&lt;&lt;set _gpow to 400&gt;&gt;
-&lt;&lt;set _prod to 500&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
+&lt;&lt;set _res={steel:100,connect:100,gpow:400,prod:500,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-
-&lt;&lt;if _active.other6 gte 500 and $gpow gte 400 and $connect gte 100 and $steel gte 100&gt;&gt;[[x100 grenades|House][_active.other6-=500, $agl+=100, $take to 1, $noclick to true, $withdraw to true, $steel-=100, $connect-=100, $gpow-=400]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 grenades&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 500 and $steel gte 100 and $connect gte 100 and $gpow gte 400&gt;&gt;[[x100 grenades|House][_active.other6-=500, $agl+=100, $take to 1, $noclick to true, $withdraw to true, $steel-=100, $connect-=100, $gpow-=400]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 grenades&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
 
 &lt;/div&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;br&gt;&lt;br&gt;
-
+&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/45butt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
 
-&lt;&lt;set _connect to 250&gt;&gt;
-&lt;&lt;set _gpow to 320&gt;&gt;
-&lt;&lt;set _prod to 400&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={connect:250,gpow:320,prod:400,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 400 and $gpow gte 320 and $connect gte 250&gt;&gt;[[x250 .45 cal|House][_active.other6-=400, $a45+=250, $take to 1, $noclick to true, $withdraw to true, $gpow-=320, $connect-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 .45 cal&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 400 and $connect gte 250 and $gpow gte 320&gt;&gt;[[x250 .45 cal|House][_active.other6-=400, $a45+=250, $take to 1, $noclick to true, $withdraw to true, $connect-=250, $gpow-=320]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x250 .45 cal&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-
-
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/50butt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
 
-&lt;&lt;set _connect to 350&gt;&gt;
-&lt;&lt;set _gpow to 450&gt;&gt;
-&lt;&lt;set _prod to 500&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
+&lt;&lt;set _res={connect:450,gpow:350,prod:500,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 290 and $gpow gte 450 and $connect gte 350&gt;&gt;[[x200 .50 cal|House][_active.other6-=500, $a50+=200, $take to 1, $noclick to true, $withdraw to true, $gpow-=450, $connect-=350]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x200 .50 cal&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 500 and $connect gte 450 and $gpow gte 350&gt;&gt;[[x200 .50 cal|House][_active.other6-=500, $a50+=200, $take to 1, $noclick to true, $withdraw to true, $connect-=450, $gpow-=350]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x200 .50 cal&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/magbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 50&gt;&gt;
-&lt;&lt;set _durasteel to 5&gt;&gt;
-&lt;&lt;set _prod to 500&gt;&gt;
-&lt;&lt;set _aprod to 50&gt;&gt;
+&lt;&lt;set _res={durasteel:5,connect:50,prod:500,aprod:50}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-
-&lt;&lt;if _active.other6 gte 500 and $connect gte 50 and $durasteel gte 5 and _active.other7 gte 50&gt;&gt;[[x100 MAG|House][_active.other6-=500, $acoil+=100, $take to 1, $noclick to true, $withdraw to true, $connect-=50, $durasteel-=5, _active.other7-=50]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 MAG&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 500 and $durasteel gte 5 and $connect gte 50 and _active.other7 gte 50&gt;&gt;[[x100 MAG|House][_active.other6-=500, $acoil+=100, $take to 1, $noclick to true, $withdraw to true, $durasteel-=5, $connect-=50, _active.other7-=50]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 MAG&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-
-
-
-
 
 &lt;/div&gt;
 
@@ -299350,122 +299224,79 @@ Harvest 100R
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Stuff/injectorbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 500&gt;&gt;
-&lt;&lt;set _scrap to 1000&gt;&gt;
-&lt;&lt;set _prod to 500&gt;&gt;
-&lt;&lt;set _aprod to 0&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
+&lt;&lt;set _res={scrap:1000,connect:500,prod:500,aprod:0}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 500 and $connect gte 500 and $scrap gte 1000&gt;&gt;[[x500 injectors|House][_active.other6-=500, $take to 1, $noclick to true, $withdraw to true, $injectors+=500, $scrap-=1000, $connect-=500]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x500 injectors&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 500 and $scrap gte 1000 and $connect gte 500&gt;&gt;[[x500 injectors|House][_active.other6-=500, $take to 1, $noclick to true, $withdraw to true, $injectors+=500, $scrap-=1000, $connect-=500]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x500 injectors&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
-
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Stuff/tendstimbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 100&gt;&gt;
-&lt;&lt;set _nanites to 100&gt;&gt;
-&lt;&lt;set _injectors to 100&gt;&gt;
-&lt;&lt;set _prod to 500&gt;&gt;
-&lt;&lt;set _aprod to 75&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
+&lt;&lt;set _res={connect:100,injectors:100,nanites:100,prod:500,aprod:75}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 500 and _active.other7 gte 75 and $connect gte 100 and $nanites gte 100 and $injectors gte 100&gt;&gt;[[x100 tendstims|House][_active.other6-=500, _active.other7-=75, $take to 1, $noclick to true, $withdraw to true, $ownstimb+=100, $nanites-=100, $injectors-=100, $connect-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 tendstims&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 500 and _active.other7 gte 75 and $connect gte 100 and $injectors gte 100 and $nanites gte 100&gt;&gt;[[x100 tendstims|House][_active.other6-=500, _active.other7-=75, $take to 1, $noclick to true, $withdraw to true, $ownstimb+=100, $connect-=100, $injectors-=100, $nanites-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 tendstims&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Stuff/doctorsbutt.png&quot;]]
 
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _connect to 300&gt;&gt;
-&lt;&lt;set _nanites to 200&gt;&gt;
-&lt;&lt;set _steel to 200&gt;&gt;
-&lt;&lt;set _tendstims to 200&gt;&gt;
-&lt;&lt;set _prod to 1000&gt;&gt;
-&lt;&lt;set _aprod to 250&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
+&lt;&lt;set _res={steel:200,connect:300,tendstims:200,nanites:200,prod:1000,aprod:250}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 1000 and _active.other7 gte 250 and $connect gte 300 and $nanites gte 200 and $ownstimb gte 200 and $steel gte 200&gt;&gt;[[x100 d. kits|House][_active.other6-=1000, _active.other7-=250, $take to 1, $noclick to true, $withdraw to true, $ownstimb-=200, $nanites-=200, $steel-=200, $connect-=300, $owndoctor+=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 d. kits&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if _active.other6 gte 1000 and _active.other7 gte 250 and $steel gte 200 and $connect gte 300 and $ownstimb gte 200 and $nanites gte 200&gt;&gt;[[x100 d. kits|House][_active.other6-=1000, _active.other7-=250, $take to 1, $noclick to true, $withdraw to true, $steel-=200, $connect-=300, $ownstimb-=200, $nanites-=200, $owndoctor+=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x100 d. kits&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-
-&lt;br&gt;&lt;br&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/coilbutt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
-&lt;&lt;set _pcores to 10&gt;&gt;&lt;&lt;set _connect to 80&gt;&gt;&lt;&lt;set _durasteel to 40&gt;&gt;&lt;&lt;set _steel to 90&gt;&gt;&lt;&lt;set _prod to 5000&gt;&gt;&lt;&lt;set _aprod to 500&gt;&gt;
 
-&lt;&lt;set _stopwood to true&gt;&gt;
-
+&lt;&lt;set _res={steel:90,durasteel:40,pcores:10,connect:80,prod:5000,aprod:500}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-
-&lt;&lt;if _active.other6 gte 5000 and _active.other7 gte 500 and $pcores gte 10 and $connect gte 80 and $durasteel gte 40 and $steel gte 90&gt;&gt;[[x10 coilguns|House][_active.other6-=5000, _active.other7-=500, $take to 1, $noclick to true, $withdraw to true, $owncoil+=10, $durasteel-=40, $steel-=90, $connect-=80, $pcores-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 coilguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 5000 and _active.other7 gte 500 and $steel gte 90 and $durasteel gte 40 and $pcores gte 10 and $connect gte 80&gt;&gt;[[x10 coilguns|House][_active.other6-=5000, _active.other7-=500, $take to 1, $noclick to true, $withdraw to true, $owncoil+=10, $steel-=90, $durasteel-=40, $pcores-=10, $connect-=80]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 coilguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/plasmabutt.png&quot;]]
-&lt;&lt;include ResNull&gt;&gt;
 
-&lt;&lt;set _pcores to 10&gt;&gt;&lt;&lt;set _connect to 80&gt;&gt;&lt;&lt;set _durasteel to 50&gt;&gt;&lt;&lt;set _steel to 60&gt;&gt;&lt;&lt;set _prod to 6000&gt;&gt;&lt;&lt;set _aprod to 900&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
-
+&lt;&lt;set _res={steel:60,durasteel:50,pcores:10,connect:80,prod:6000,aprod:900}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 6000 and _active.other7 gte 900 and $durasteel gte 50 and $steel gte 60 and $pcores gte 10 and $connect gte 80&gt;&gt;[[x10 plasmas|House][_active.other6-=6000, _active.other7-=900, $take to 1, $noclick to true, $withdraw to true, $ownplasma+=10, $durasteel-=50, $steel-=60, $connect-=80, $pcores-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 plasmas&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 6000 and _active.other7 gte 900 and $steel gte 60 and $durasteel gte 50 and $pcores gte 10 and $connect gte 80&gt;&gt;[[x10 plasmas|House][_active.other6-=6000, _active.other7-=900, $take to 1, $noclick to true, $withdraw to true, $ownplasma+=10, $steel-=60, $durasteel-=50, $pcores-=10, $connect-=80]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 plasmas&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
-
-&lt;div class=&quot;resholderbig center&quot;&gt;
+&lt;div class=&quot;center&quot;&gt;
 [img[$imgpath + &quot;Weapons/katanabutt.png&quot;]]
 
-
-&lt;&lt;include ResNull&gt;&gt;
-
-&lt;&lt;set _aenergy to 10&gt;&gt;&lt;&lt;set _connect to 20&gt;&gt;&lt;&lt;set _durasteel to 20&gt;&gt;&lt;&lt;set _steel to 20&gt;&gt;&lt;&lt;set _prod to 2000&gt;&gt;&lt;&lt;set _aprod to 500&gt;&gt;
-
-&lt;&lt;set _stopwood to true&gt;&gt;
+&lt;&lt;set _res={steel:20,durasteel:20,connect:20,aenergy:10,prod:2000,aprod:500}&gt;&gt;
 
 &lt;&lt;include ResMan&gt;&gt;
 
-&lt;&lt;if _active.other6 gte 2000 and _active.other7 gte 500 and $aenergy gte 10 and $connect gte 20 and $durasteel gte 20 and $steel gte 20&gt;&gt;[[x10 p. katanas|House][_active.other6-=2000, _active.other7-=500, $take to 1, $noclick to true, $withdraw to true, $ownpowerkatana+=10, $steel-=20, $durasteel-=20, $connect-=20, $aenergy-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 p. katanas&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _active.other6 gte 2000 and _active.other7 gte 500 and $steel gte 20 and $durasteel gte 20 and $connect gte 20 and $aenergy gte 10&gt;&gt;[[x10 p. katanas|House][_active.other6-=2000, _active.other7-=500, $take to 1, $noclick to true, $withdraw to true, $ownpowerkatana+=10, $steel-=20, $durasteel-=20, $connect-=20, $aenergy-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;x10 p. katanas&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 
-/* END OF PAGE 2 */
+/* END OF PAGE 3 */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -339685,161 +339516,185 @@ _crawlers
 
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="503" name="ResMan" tags="nobr" position="1000,1500" size="100,100">&lt;div class=&quot;resholdt&quot;&gt;
-&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;div class=&quot;row future&quot;&gt;
+</tw-passagedata><tw-passagedata pid="503" name="ResManRow" tags="nobr" position="1000,1500" size="100,100">
 
-&lt;&lt;if _steel gte 1&gt;&gt;
+&lt;&lt;if _res.steel gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Steel: $steel&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/steel_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _steel lte $steel&gt;&gt;&lt;div class=&quot;green&quot;&gt;_steel&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_steel&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.steel lte $steel&gt;&gt;_res.steel&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.steel&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _wood gte 0 and _stopwood isnot true&gt;&gt;
+&lt;&lt;if _res.wood gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Wood: $wood&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/wood_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _wood lte $wood&gt;&gt;&lt;div class=&quot;green&quot;&gt;_wood&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_wood&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.wood lte $wood&gt;&gt;_res.wood&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.wood&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if _durasteel gte 1&gt;&gt;
+&lt;&lt;if _res.durasteel gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Durasteel: $durasteel&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/durasteel_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _durasteel lte $durasteel&gt;&gt;&lt;div class=&quot;green&quot;&gt;_durasteel&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_durasteel&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.durasteel lte $durasteel&gt;&gt;_res.durasteel&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.durasteel&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _pcores gte 1&gt;&gt;
+&lt;&lt;if _res.pcores gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Power cores: $pcores&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/pcores_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _pcores lte $pcores&gt;&gt;&lt;div class=&quot;green&quot;&gt;_pcores&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_pcores&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.pcores lte $pcores&gt;&gt;_res.pcores&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.pcores&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _connect gte 0 and _nocon isnot true&gt;&gt;
+&lt;&lt;if _res.connect gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Fasteners: $connect&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/connect_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _connect lte $connect&gt;&gt;&lt;div class=&quot;green&quot;&gt;_connect&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_connect&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.connect lte $connect&gt;&gt;_res.connect&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.connect&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _scrap gte 1&gt;&gt;
+&lt;&lt;if _res.scrap gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Scrap metal: $scrap&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/scrap_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _scrap lte $scrap&gt;&gt;&lt;div class=&quot;green&quot;&gt;_scrap&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_scrap&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.scrap lte $scrap&gt;&gt;_res.scrap&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.scrap&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _gpow gte 1&gt;&gt;
+&lt;&lt;if _res.gpow gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Gunpowder: $gpow&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/gpow_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _gpow lte $gpow&gt;&gt;&lt;div class=&quot;green&quot;&gt;_gpow&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_gpow&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.gpow lte $gpow&gt;&gt;_res.gpow&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.gpow&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _tendstims gte 1&gt;&gt;
+&lt;&lt;if _res.tendstims gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Tendstims: $ownstimb&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/tendstims_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _tendstims lte $ownstimb&gt;&gt;&lt;div class=&quot;green&quot;&gt;_tendstims&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_tendstims&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.tendstims lte $ownstimb&gt;&gt;_res.tendstims&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.tendstims&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _injectors gte 1&gt;&gt;
+&lt;&lt;if _res.injectors gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Injectors: $injectors&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/injectors_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _injectors lte $injectors&gt;&gt;&lt;div class=&quot;green&quot;&gt;_injectors&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_injectors&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.injectors lte $injectors&gt;&gt;_res.injectors&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.injectors&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _nanites gte 1&gt;&gt;
+&lt;&lt;if _res.nanites gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Nanites: $nanites&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/nanites_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _nanites lte $nanites&gt;&gt;&lt;div class=&quot;green&quot;&gt;_nanites&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_nanites&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.nanites lte $nanites&gt;&gt;_res.nanites&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.nanites&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _aenergy gte 1&gt;&gt;
+&lt;&lt;if _res.aenergy gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
+&lt;&lt;hovertip &quot;Energy cells: $aenergy&quot;&gt;&gt;
 [img[$imgpath + &quot;Stuff/Materials/aenergy_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _aenergy lte $aenergy&gt;&gt;&lt;div class=&quot;green&quot;&gt;_aenergy&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_aenergy&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.aenergy lte $aenergy&gt;&gt;_res.aenergy&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_res.aenergy&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;/div&gt;
-
-&lt;/div&gt;
-
+</tw-passagedata><tw-passagedata pid="503" name="ResManWork" tags="nobr" position="1000,1500" size="100,100">
 
 &lt;div class=&quot;resholdt&quot;&gt;
-&lt;div class=&quot;row padd30left padd30right&quot;&gt;
+&lt;div class=&quot;row padd25side&quot;&gt;
 
-
-&lt;&lt;if _prod gte 1&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
 [img[$imgpath + &quot;Stuff/Materials/prod_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _prod lte _active.other6&gt;&gt;&lt;div class=&quot;green&quot;&gt;&lt;&lt;print setup.formatNumber(_prod)&gt;&gt;&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;&lt;&lt;print setup.formatNumber(_prod)&gt;&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.prod lte _active.other6&gt;&gt;&lt;&lt;=setup.formatNumber(_res.prod)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;&lt;&lt;=setup.formatNumber(_res.prod)&gt;&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _aprod gte 0&gt;&gt;
 &lt;div class=&quot;resholder2&quot;&gt;
 [img[$imgpath + &quot;Stuff/Materials/aprod_s.png&quot;]]
 &lt;div class=&quot;tex12px&quot;&gt;
-&lt;&lt;if _aprod lte _active.other7&gt;&gt;&lt;div class=&quot;green&quot;&gt;&lt;&lt;print setup.formatNumber(_aprod)&gt;&gt;&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;&lt;&lt;print setup.formatNumber(_aprod)&gt;&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _res.aprod lte _active.other7&gt;&gt;&lt;&lt;=setup.formatNumber(_res.aprod)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;&lt;&lt;=setup.formatNumber(_res.aprod)&gt;&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="503" name="ResMan" tags="nobr" position="1000,1500" size="100,100">
+
+&lt;div class=&quot;resholdt&quot;&gt;
+&lt;div class=&quot;tex2px&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;&lt;set _tmp=Object.keys(_res).length&gt;&gt;
+&lt;&lt;if _tmp lt 5&gt;&gt;
+
+&lt;div class=&quot;row padd25side&quot;&gt;
+&lt;&lt;include ResManRow&gt;&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif _tmp lt 6&gt;&gt;
+
+&lt;div class=&quot;row padd16side&quot;&gt;
+&lt;&lt;include ResManRow&gt;&gt;
+&lt;/div&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;div class=&quot;row padd10side&quot;&gt;
+&lt;&lt;include ResManRow&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-
-
 &lt;/div&gt;
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="504" name="ResNull" tags="nobr" position="1100,1500" size="100,100">&lt;&lt;set _durasteel to 0&gt;&gt;
-&lt;&lt;set _connect to 0&gt;&gt;
-&lt;&lt;set _pcores to 0&gt;&gt;
-&lt;&lt;set _leather to 0&gt;&gt;
-&lt;&lt;set _steel to 0&gt;&gt;
-&lt;&lt;set _leather to 0&gt;&gt;
-&lt;&lt;set _gpow to 0&gt;&gt;
-&lt;&lt;set _injector to 0&gt;&gt;
-&lt;&lt;set _wood to 0&gt;&gt;
-&lt;&lt;set _injectors to 0&gt;&gt;
-&lt;&lt;set _nanites to 0&gt;&gt;
-&lt;&lt;set _tendstims to 0&gt;&gt;
-&lt;&lt;set _scrap to 0&gt;&gt;
+
+&lt;&lt;include ResManWork&gt;&gt;
+
 </tw-passagedata><tw-passagedata pid="505" name="SweatYield" tags="nobr" position="1200,1500" size="100,100">/* houseshow is for yard display only - must match ecoshow */
 
 &lt;&lt;if _houseshow is true&gt;&gt;
