@@ -31938,11 +31938,7 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.christian.state lte 0&gt;&gt;&lt;&lt;set _virginclosed2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _virginclosed is true or _virginclosed2 is true&gt;&gt;
 &lt;div class=&quot;holyvirgin&quot;&gt;
@@ -191303,7 +191299,6 @@ Most skill rolls will end in the 30-70 range. Surprises are very rare. More succ
 &lt;&lt;/if&gt;&gt;
 
 /* FROM FACTIONS */
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;set _facpower to 0&gt;&gt;
 &lt;&lt;set _facpower2 to 0&gt;&gt; /* new faction adder - use for overhauled factions */
 
@@ -191355,8 +191350,6 @@ Most skill rolls will end in the 30-70 range. Surprises are very rare. More succ
 &lt;&lt;set $faction.mc.civil to _civ&gt;&gt;
 &lt;&lt;set $faction.mc.money to $cash&gt;&gt;
 &lt;&lt;set $faction.mc.businf to _buspow&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="278" name="Barrow" tags="nobr out" position="675,3700" size="200,100">&lt;div id=&quot;borderwrapex&quot;&gt;&lt;div id=&quot;explorewrapper&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
@@ -221929,8 +221922,6 @@ $avAp6_prostscore&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-
 &lt;&lt;if $faction.ikaanos.prosp lte -10&gt;&gt;&lt;&lt;set $foodprice+=7&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set $foodprice+=7&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 24&gt;&gt;&lt;&lt;set $foodprice+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -221947,8 +221938,6 @@ $avAp6_prostscore&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set $foodprice-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90 and $faction.ikaanos.prosp gte 70&gt;&gt;&lt;&lt;set $foodprice-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $remfusion lte 2 and $remfusion gte 1&gt;&gt;&lt;&lt;set $foodprice*=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $remfusion lte 0&gt;&gt;&lt;&lt;set $foodprice*=3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -221964,7 +221953,6 @@ $avAp6_prostscore&lt;br&gt;
 
 /* REDHAVEN MARKET FOOD SUPPLIES */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 10&gt;&gt;
 
 &lt;&lt;if $foodlimit[0] gte 5001&gt;&gt;
@@ -221998,8 +221986,6 @@ $avAp6_prostscore&lt;br&gt;
 
 &lt;&lt;set $foodlimit[0]-=130&gt;&gt;
 &lt;&lt;set $foodlimit[0]-=_skillroll2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -234164,9 +234150,6 @@ You try to get your bearings again, following the vicious fight.
 
 
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-
-
 /* VARIOUS CATHOLIC FACTION COUNTERS */
 
 &lt;&lt;if $faction.christian.state gte 1&gt;&gt; /* alive faction checker */
@@ -234308,11 +234291,6 @@ You try to get your bearings again, following the vicious fight.
 
 
 
-&lt;&lt;/if&gt;&gt; /* END OF FACTION CHECKER */
-
-
-
-
 /* GYMNASIUM COMP */
 
 &lt;&lt;if $gymfixer is undefined and $gym1 gte 0&gt;&gt;
@@ -234349,7 +234327,7 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set _huntroll2 to random(1,5)&gt;&gt;
 &lt;&lt;set _huntroll3 to random(1,5)&gt;&gt;
 &lt;&lt;if $diff gte 3&gt;&gt;&lt;&lt;set _huntroll-=1&gt;&gt;&lt;&lt;set _huntroll2-=1&gt;&gt;&lt;&lt;set _huntroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction isnot undefined and $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _huntroll-=1&gt;&gt;&lt;&lt;set _huntroll2-=1&gt;&gt;&lt;&lt;set _huntroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _huntroll-=1&gt;&gt;&lt;&lt;set _huntroll2-=1&gt;&gt;&lt;&lt;set _huntroll3-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _huntroll gte 1&gt;&gt;&lt;&lt;set $hunt_imogen=adl($hunt_imogen,1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _huntroll2 gte 1&gt;&gt;&lt;&lt;set $hunt_black=adl($hunt_black,1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -234581,7 +234559,6 @@ You try to get your bearings again, following the vicious fight.
 
 /* IKAANIAN INCOME TAX CALC */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;set _tax to random(450,600)&gt;&gt;
 
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _tax-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -234637,10 +234614,6 @@ You try to get your bearings again, following the vicious fight.
 
 
 &lt;&lt;if _tax gte 1&gt;&gt;&lt;&lt;set $faction.ikaanos.money+=_tax&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
 
 
 /* IC PAYS MC&#39;S AMMO PACK */
@@ -234827,13 +234800,10 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set $woodcap=adl($woodcap,150,500000)&gt;&gt;
 &lt;&lt;set $steelcap=adl($steelcap,150,500000)&gt;&gt;
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set $woodcap+=50&gt;&gt;&lt;&lt;set $steelcap+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 19&gt;&gt;&lt;&lt;set $woodcap-=50&gt;&gt;&lt;&lt;set $steelcap-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 9&gt;&gt;&lt;&lt;set $woodcap-=50&gt;&gt;&lt;&lt;set $steelcap-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -234842,8 +234812,6 @@ You try to get your bearings again, following the vicious fight.
 
 &lt;&lt;if $faction.ikaanos.state is 2&gt;&gt;&lt;&lt;set $faction.ikaanos.men=Math.max($faction.ikaanos.men,150)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $woodcap=Math.max($woodcap,0)&gt;&gt;
 &lt;&lt;set $steelcap=Math.max($steelcap,0)&gt;&gt;
@@ -234869,7 +234837,6 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set $plasmacap=adl($plasmacap,-random(5, 25),5000)&gt;&gt;
 &lt;&lt;set $coilcap=adl($coilcap,-random(10, 50),5000)&gt;&gt;
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 9&gt;&gt;
 &lt;&lt;set $staffcap=adl($staffcap,-random(10, 100),1000)&gt;&gt;
 &lt;&lt;set $whipcap=adl($whipcap,-random(10, 100),4000)&gt;&gt;
@@ -234890,7 +234857,6 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;set $glcap=adl($glcap,-random(1, 10),2000)&gt;&gt;
 &lt;&lt;set $plasmacap=adl($plasmacap,-random(10, 20),2000)&gt;&gt;
 &lt;&lt;set $coilcap=adl($coilcap,-random(10, 20),2000)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -234913,13 +234879,9 @@ You try to get your bearings again, following the vicious fight.
 /* GREAT FACTION DESTROYER */
 
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-
 &lt;&lt;if $faction.christian.men lte 0 or $faction.christian.power lte 0&gt;&gt;
 
 &lt;&lt;set $faction.christian.state to -1&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -235157,7 +235119,6 @@ You try to get your bearings again, following the vicious fight.
 
 /* CITY EFFECTS - CORRUPTION PROSPERTY AND CONTROL */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;set _cityroll to random(1, 20)&gt;&gt;
 
 
@@ -235257,9 +235218,6 @@ You try to get your bearings again, following the vicious fight.
 
 
 
-
-/* END OF FACTION UNDEFINED */
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -235623,7 +235581,6 @@ sur: 0,
 
 /* PIRATE SPAWN */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 39 or $quest_dengi is 4 or ($lakewar gte 2 and $lakewar lte 7)&gt;&gt;
 &lt;&lt;set _spawn to random(1,60)&gt;&gt;
 
@@ -235648,7 +235605,6 @@ sur: 0,
 &lt;&lt;if _spawn lte 10 and $pirate4 is undefined&gt;&gt;&lt;&lt;set $pirate4 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 /* end of pirate spawn */
 
@@ -235691,9 +235647,7 @@ sur: 0,
 /* TERROR FROM THE DEEP SKYGUARD KILL CHANCE */
 &lt;&lt;set _roa to random(1, 30)&gt;&gt;
 &lt;&lt;if $diff is 3&gt;&gt;&lt;&lt;set _roa to random(1, 60)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 75&gt;&gt;&lt;&lt;set _roa-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 /* killed by SG */
 &lt;&lt;if $terrormonster is 1 and _roa lte 1&gt;&gt;&lt;&lt;set $terrormonster to 3&gt;&gt;&lt;&lt;set $terrorkilledsg to true&gt;&gt; /* prints an event */&lt;&lt;/if&gt;&gt;
@@ -235944,14 +235898,10 @@ sur: 0,
 
 
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;set $faction.ikaanos.lib=Math.max($faction.ikaanos.lib,0)&gt;&gt;
 &lt;&lt;set $faction.bandit.men=Math.max($faction.bandit.men,100)&gt;&gt;
 &lt;&lt;set $faction.christian.men=Math.max($faction.christian.men,10)&gt;&gt;
 &lt;&lt;set $faction.viking.men=Math.max($faction.viking.men,10)&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
 
 /* RELIGION STUFF */
 
@@ -236083,9 +236033,7 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;&lt;if $chdo is 1 or $chdo is 3 or $chdo is 5 or $chdo is 7 or $chdo is 9 or $chdo is 11&gt;&gt;&lt;&lt;set $chdo+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;set $faction.ikaanos.money=Math.max($faction.ikaanos.money,100)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _clothi to true&gt;&gt;
 &lt;&lt;include ClothCheck&gt;&gt;
@@ -318027,11 +317975,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-
-
-
-
 /* ISLAM BELOW */
 
 
@@ -318146,7 +318089,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $rebbus2 gte 1&gt;&gt;&lt;&lt;set $cashtot+=$faction.mob.standing&gt;&gt;&lt;&lt;set _busshow+=$faction.mob.standing&gt;&gt;&lt;&lt;set _carozzabus+=$faction.mob.standing&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -318225,8 +318167,6 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* THE GRAND PEACE ANARCHY and STANDING INVEST MOD */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-
 &lt;&lt;if $faction.ikaanos.control gte 20 and _busshow gte 50 and $mctraitpin isnot 100&gt;&gt;
 &lt;&lt;set _standbus=_busshow&gt;&gt;
 &lt;&lt;if _carozzabus gte 1 and $faction.mob.state gte 1&gt;&gt;&lt;&lt;set _standbus-=_carozzabus&gt;&gt;&lt;&lt;/if&gt;&gt; /* carroza penalty */
@@ -318301,19 +318241,8 @@ Most high-demanding issids are excluded by the maxsal checker
 
 
 
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-
 
 /* CASH AND INFLUENCE FROM FACTIONS NOT POWER */
-
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-
 
 
 
@@ -318436,7 +318365,6 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;set $credtot+=_facinf&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -318523,16 +318451,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _issidpay+=_testnpc.salarynow&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
-
-/*
-&lt;&lt;if $faction isnot undefined&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;
-&lt;&lt;if _issidpay gte 10&gt;&gt;&lt;&lt;set _issidpay*=0.75&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _issidpay = Math.round(_issidpay)&gt;&gt;
-&lt;&lt;set _lowprosp to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-*/
 
 &lt;&lt;set $cashtot-=_issidpay&gt;&gt;
 &lt;&lt;set _drainshow+=_issidpay&gt;&gt;
@@ -319450,7 +319368,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* INFLUENSE GAIN FROM DESTI AND HIGH PROSP */
 
-&lt;&lt;if $faction isnot undefined and $credtot gt 0&gt;&gt;
+&lt;&lt;if $credtot gt 0&gt;&gt;
 
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;
 
@@ -319479,7 +319397,6 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* SLAVERY LIBERTY PENALTIES */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.lib gte 75&gt;&gt;
 &lt;&lt;set _slaverypen to _slavery&gt;&gt;
 
@@ -319493,8 +319410,6 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _crimeinfshow+=_slaverypen&gt;&gt;
 &lt;&lt;set _wa to _crimeinfshow&gt;&gt;
 &lt;&lt;set $credtot-=_slaverypen&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -319577,9 +319492,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* PALACE RATING RELATED SCRIPTS */
 
-&lt;&lt;if $faction isnot undefined&gt;&gt;
 &lt;&lt;if $faction.ikaanos.standing gte 5&gt;&gt;&lt;&lt;set $palcredtot+=$faction.ikaanos.standing&gt;&gt;&lt;&lt;set _republicpal+=$faction.ikaanos.standing&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $quest_aria gte 25 and $quest_aria lte 98&gt;&gt;&lt;&lt;set $palcredtot+=50&gt;&gt;&lt;&lt;set _questpal+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_aria gte 99&gt;&gt;&lt;&lt;set $palcredtot+=5&gt;&gt;&lt;&lt;set _questpal+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
