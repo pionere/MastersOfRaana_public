@@ -404,11 +404,19 @@ left: 322px;
 }
 
 .wpboxnr{
- width: 60px;
-  height: 20px;
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
+ width: 50px;
+ height: 20px;
+ position: relative;
+ margin: 0 auto;
+ text-align: center;
+}
+
+.wpboxnr1{
+ width: 30px;
+ height: 20px;
+ position: relative;
+ margin: 0 auto;
+ text-align: center;
 }
 
 .removewp{
@@ -406422,7 +406430,9 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 
 &lt;div class=&quot;wpboxnr&quot;&gt;&#39;&#39;DAMAGE&#39;&#39;&lt;/div&gt;
 
-&lt;div class=&quot;wpboxnr&quot;&gt;&#39;&#39;AP&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;wpboxnr1&quot;&gt;&#39;&#39;SP&#39;&#39;&lt;/div&gt;
+
+&lt;div class=&quot;wpboxnr1&quot;&gt;&#39;&#39;AP&#39;&#39;&lt;/div&gt;
 
 &lt;div class=&quot;removewp&quot;&gt;&lt;/div&gt;
 
@@ -406588,7 +406598,9 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 
 &lt;div class=&quot;wpboxnr&quot;&gt;&lt;&lt;if _damage isnot undefined&gt;&gt;_damage&lt;&lt;else&gt;&gt;-&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;wpboxnr&quot;&gt;&lt;&lt;=wap(_slot) ? &quot;Y&quot; : &quot;-&quot;&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;wpboxnr1&quot;&gt;&lt;&lt;=wspeedstr(wspeed(_slot))&gt;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;wpboxnr1&quot;&gt;&lt;&lt;=wap(_slot) ? &quot;Y&quot; : &quot;-&quot;&gt;&gt;&lt;/div&gt;
 
 &lt;div class=&quot;removewp&quot;&gt;&lt;&lt;if _name isnot undefined&gt;&gt;
 
