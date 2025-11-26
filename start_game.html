@@ -237504,29 +237504,29 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;&lt;if $mctraitpac is undefined or $mctraitpac lte 49&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _paci to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _noammo=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _noammo=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set _noammo=$a45 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set _noammo=$a306 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _noammo=$a556 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _noammo=$a12g lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;&lt;&lt;set _noammo=$a50srr lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set _noammo=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _noammo=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _noammo=$acoil lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set _noammo=$aenergy lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _noammo=$agl lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _noammo= $awega lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _noammo=$a556 lte 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set _noammo=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _ammoout=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set _ammoout=$a45 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a306 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a556 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set _ammoout=$a12g lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50srr lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set _ammoout=$acoil lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set _ammoout=$aenergy lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _ammoout=$agl lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _ammoout= $awega lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _ammoout=$a556 lte 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _noammo is false and _paci is undefined and $rangedequip is true&gt;&gt;
+&lt;&lt;if _ammoout is false and _paci is undefined and $rangedequip is true&gt;&gt;
 [[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2, $pos to ($pos lte 2 ? 2 : 3)]]
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _noammo is true and $rangedequip is true&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ammo left!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ammoout is true and $rangedequip is true&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;No ammo left!&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $pos lte 2 and $meleeequip is true&gt;&gt;&lt;p class=&quot;combatno&quot;&gt;Too far away&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
@@ -275727,7 +275727,7 @@ $hunt_wet
 </tw-passagedata><tw-passagedata pid="394" name="KeyComb" tags="nobr" position="3025,1300" size="100,100">
 &lt;&lt;if $action is 0&gt;&gt;
 
-&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _pos to $pos&gt;&gt;&lt;&lt;set _rangedequip to $rangedequip&gt;&gt;&lt;&lt;if $masterhealth gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mctraitpac gte 75&gt;&gt;&lt;&lt;set _csok to false&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _noammo is true&gt;&gt;&lt;&lt;set _ammoout to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _pos to $pos&gt;&gt;&lt;&lt;set _rangedequip to $rangedequip&gt;&gt;&lt;&lt;if $masterhealth gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mctraitpac gte 75&gt;&gt;&lt;&lt;set _csok to false&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _pos to $cs1_pos&gt;&gt;&lt;&lt;if $cs1_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs1_health gte 1 and $cslot1 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _pos to $cs2_pos&gt;&gt;&lt;&lt;if $cs2_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs2_health gte 1 and $cslot2 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _pos to $cs3_pos&gt;&gt;&lt;&lt;if $cs3_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs3_health gte 1 and $cslot3 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
