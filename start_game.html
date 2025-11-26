@@ -172,6 +172,9 @@ wap = function (w) {
            w == 'machine40' || w == 'tank100' || w == 'psi' || w == 'gl' ||
            w == 'gsword' || w == 'spear' || w == 'powerkatana' || w == 'azuk' || w == 'iceblade';
 }
+wmelee = function (w) {
+    return w != 'crossbow' && w != 'pistol' && w != 'revolver' && w != 'shotgun' && w != 'rifle' && w != 'automaticrifle' && w != 'coil' && w != 'plasma' && w != 'prifle' && w != 'rifle50' && w != 'gl' && w != 'cybercannon' && w != 'machine40' && w != 'tank100' && w != 'minigun' && w != 'psi' && w != 'neme' && w != 'r55';
+}
 yardstab = function (_npc,_ystab) {
     var _stab = 10;
     if (_npc.willpower >= 7) {
@@ -84672,7 +84675,7 @@ REMOVED! USE CapCheck passage instead
 
 &lt;&lt;set $damage to random(1, 20)&gt;&gt;
 
-&lt;&lt;if $equipped isnot &quot;crossbow&quot; and $equipped isnot &quot;pistol&quot; and $equipped isnot &quot;revolver&quot; and $equipped isnot &quot;shotgun&quot; and $equipped isnot &quot;rifle&quot; and $equipped isnot &quot;automaticrifle&quot; and $equipped isnot &quot;coil&quot; and $equipped isnot &quot;plasma&quot; and $equipped isnot &quot;prifle&quot; and $equipped isnot &quot;rifle50&quot; and $equipped isnot &quot;gl&quot; and $equipped isnot &quot;cybercannon&quot; and $equipped isnot &quot;machine40&quot; and $equipped isnot &quot;tank100&quot; and $equipped isnot &quot;minigun&quot; and $equipped isnot &quot;psi&quot; and $equipped isnot &quot;neme&quot; and $equipped isnot &quot;r55&quot;&gt;&gt;&lt;&lt;set _inmelee to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _inmelee=wmelee($equipped)&gt;&gt;
 
 &lt;&lt;if $curpos is 3 and $round lte 5 and _inmelee is true&gt;&gt;
 
@@ -406583,8 +406586,9 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 */
 
 &lt;&lt;if $round is 1&gt;&gt;
-&lt;&lt;if $equipped isnot &quot;crossbow&quot; and $equipped isnot &quot;pistol&quot; and $equipped isnot &quot;revolver&quot; and $equipped isnot &quot;shotgun&quot; and $equipped isnot &quot;rifle&quot; and $equipped isnot &quot;automaticrifle&quot; and $equipped isnot &quot;coil&quot; and $equipped isnot &quot;plasma&quot; and $equipped isnot &quot;prifle&quot; and $equipped isnot &quot;rifle50&quot; and $equipped isnot &quot;gl&quot; and $equipped isnot &quot;cybercannon&quot; and $equipped isnot &quot;machine40&quot; and $equipped isnot &quot;tank100&quot; and $equipped isnot &quot;minigun&quot; and $equipped isnot &quot;psi&quot; and $equipped isnot &quot;neme&quot; and $equipped isnot &quot;r55&quot;&gt;&gt;&lt;&lt;set $meleeequip to true&gt;&gt;&lt;&lt;set $rangedequip to false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $rangedequip to true&gt;&gt;&lt;&lt;set $meleeequip to false&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;set $meleeequip=wmelee($equipped)&gt;&gt;
+&lt;&lt;set $rangedequip=!$meleeequip&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="632" name="DispWp" tags="nobr" position="800,275" size="100,100">
