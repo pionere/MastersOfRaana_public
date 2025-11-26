@@ -89,6 +89,89 @@ wloot = function(w) {
     if (w == 'r55') return 20;
     return -1;
 }
+wspeed = function (w) {
+    if (w == 'fists' || w == 'natural' || w == 'whipstick' || w == 'knife' || w == 'waki' || w == 'iceblade') return 3;
+    if (w == 'sword' || w == 'staff' || w == 'powerkatana' || w == 'spear') return 2;
+    if (w == 'sledge' || w == 'gaxe' || w == 'mal' || w == 'gsword' || w == 'azuk') return 1;
+    return 0;
+}
+wspeedstr = function (ws) {
+    return ws == 1 ? 'Slow' : (ws == 2 ? 'Med.' : (ws == 3 ? 'Fast' : '-'));
+}
+wname = function(w) {
+    if (w == 'crossbow') return 'Crossbow';
+    if (w == 'rifle') return '.30-06 Rifle';
+    if (w == 'pistol') return '9mm Pistol';
+    if (w == 'revolver') return '.45 Revolver';
+    if (w == 'r55') return 'R-55 Revolver';
+    if (w == 'prifle') return 'Pipe Gun';
+    if (w == 'shotgun') return 'Shotgun';
+    if (w == 'automaticrifle') return 'Automatic Rifle';
+    if (w == 'rifle50') return '.50 cal Rifle';
+    if (w == 'coil') return 'Coilgun';
+    if (w == 'plasma') return 'Plasma Rifle';
+    if (w == 'gl') return 'G. Launcher';
+    if (w == 'minigun') return 'Minigun';
+    if (w == 'cybercannon') return 'Cyber Cannon';
+    if (w == 'neme') return 'Nemesis SR-C';
+    if (w == 'whipstick') return 'Whipping Cane';
+    if (w == 'staff') return 'Combat Staff';
+    if (w == 'knife') return 'Combat Knife';
+    if (w == 'sword') return 'Sword';
+    if (w == 'waki') return 'Wakizashi';
+    if (w == 'spear') return 'Spear';
+    if (w == 'sledge') return 'Sledgehammer';
+    if (w == 'mal') return 'Sacred Mallet';
+    if (w == 'powerkatana') return 'Power Katana';
+    if (w == 'gsword') return 'Great Sword';
+    if (w == 'gaxe') return 'Great Axe';
+    if (w == 'azuk') return 'Sword of Azuk';
+    if (w == 'iceblade') return 'Ice Dragon';
+    if (w == 'fists') return 'Unarmed';
+    return undefined;
+}
+wdam = function(w, mcrel) {
+    if (w == 'crossbow') return { f:11,c:15 };
+    if (w == 'rifle') return { f:30,c:20 };
+    if (w == 'pistol') return { f:15,c:18 };
+    if (w == 'revolver') return { f:20,c:32 };
+    if (w == 'r55') return { f:35,c:45 };
+    if (w == 'prifle') return { f:25,c:15 };
+    if (w == 'shotgun') return { f:12,c:26 };
+    if (w == 'automaticrifle') return { f:38,c:38 };
+    if (w == 'rifle50') return { f:45,c:30 };
+    if (w == 'coil') return { f:45,c:45 };
+    if (w == 'plasma') return { f:60,c:60 };
+    if (w == 'gl') return { f:62,c:62,x:1 };
+    if (w == 'minigun') return { f:85,c:85,x:1 };
+    if (w == 'cybercannon') return { f:96,c:96 };
+    if (w == 'neme') return { f:63,c:63 };
+    if (w == 'whipstick') return { c:5 };
+    if (w == 'staff') return { c:9 };
+    if (w == 'knife') return { c:7 };
+    if (w == 'sword') return { c:13 };
+    if (w == 'waki') return { c:12 };
+    if (w == 'spear') return { c:11 };
+    if (w == 'sledge') return { c:15 };
+    if (w == 'mal') return (mcrel.faith == 5 && mcrel.devotion >= 100) ? { c:50 } : { c:30 };
+    if (w == 'powerkatana') return { c:28 };
+    if (w == 'gsword') return { c:38 };
+    if (w == 'gaxe') return { c:40 };
+    if (w == 'azuk') return { c:50 };
+    if (w == 'iceblade') return { c:30 };
+    return { c:2 };
+}
+wdamstr = function (_dmg) {
+    if (_dmg.x) return _dmg.c+'*';
+    if (!_dmg.f || _dmg.f == _dmg.c) return _dmg.c;
+    return _dmg.f+'/'+_dmg.c;
+}
+wap = function (w) {
+    return w == 'rifle' || w == 'pistol' || w == 'revolver' || w == 'r55' ||
+           w == 'automaticrifle' || w == 'rifle50' || w == 'coil' || w == 'minigun' || w == 'cybercannon' ||
+           w == 'machine40' || w == 'tank100' || w == 'psi' || w == 'gl' ||
+           w == 'gsword' || w == 'spear' || w == 'powerkatana' || w == 'azuk' || w == 'iceblade';
+}
 yardstab = function (_npc,_ystab) {
     var _stab = 10;
     if (_npc.willpower >= 7) {
@@ -26269,37 +26352,8 @@ Back
 &lt;div class=&quot;armsname22&quot;&gt;
 &lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;padd10left&quot;&gt;
-&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;Crossbow&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;9mm Pistol&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;.30-06 Rifle&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;Shotgun&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;Automatic Rifle&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;.45 Revolver&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;Coilgun&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;Plasma Rifle&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;Pipe Gun&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;.50 cal Rifle&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;G. launcher&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;Cyber Cannon&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;Minigun&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;Nemesis SR-C&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;R-55 Revolver&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;Unarmed&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;Whipping Cane&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;Combat knife&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;Sword&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;Combat staff&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;Sledgehammer&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;Power katana&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;Great sword&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;Wakizashi&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;Spear&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;Sacred Mallet&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;Ice Dragon&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;Great axe&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;Sword of Azuk&lt;&lt;/if&gt;&gt;
+&lt;&lt;=wname($activeweapon)&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -26307,37 +26361,8 @@ Back
 &lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 DAMAGE&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;tex15px&quot;&gt;
-&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;11/15&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;15/18&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;30/20&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;12/26&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;38&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;20/32&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;45&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;60&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;63&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;25/15&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;45/30&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;62*&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;96&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;85*&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;35/45&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;2&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;5&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;7&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;13&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;9&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;15&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;28&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;38&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;50&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;40&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;30&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;12&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;11&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;&lt;&lt;if $mcrel.faith is 5 and $mcrel.devotion gte 100&gt;&gt;50&lt;&lt;else&gt;&gt;30&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;=wdamstr(wdam($activeweapon,$mcrel))&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -26346,37 +26371,12 @@ DAMAGE&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;if $rangedequip is true&gt;&gt;A. P.&lt;&lt;/if&gt;&gt;&lt;&lt;if $meleeequip is true&gt;&gt;Speed&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;tex15px&quot;&gt;
-&lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;No&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;shotgun&quot;&gt;&gt;No&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;revolver&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;coil&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;plasma&quot;&gt;&gt;No&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;prifle&quot;&gt;&gt;No&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;rifle50&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;No&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;cybercannon&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;neme&quot;&gt;&gt;No&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;Yes&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $activeweapon is &quot;fists&quot;&gt;&gt;Fast&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;whipstick&quot;&gt;&gt;Fast&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;Fast&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sword&quot;&gt;&gt;Med.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;staff&quot;&gt;&gt;Med.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sledge&quot;&gt;&gt;Slow&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;powerkatana&quot;&gt;&gt;Med.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gsword&quot;&gt;&gt;Slow&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;gaxe&quot;&gt;&gt;Slow&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;iceblade&quot;&gt;&gt;Fast&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;waki&quot;&gt;&gt;Fast&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;spear&quot;&gt;&gt;Med.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;mal&quot;&gt;&gt;Slow&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;azuk&quot;&gt;&gt;Slow&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $rangedequip&gt;&gt;
+&lt;&lt;=wap($activeweapon) ? &quot;Yes&quot; : &quot;No&quot;&gt;&gt;
+&lt;&lt;elseif $meleeequip is true&gt;&gt;
+&lt;&lt;=wspeedstr(wspeed($activeweapon))&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -406577,193 +406577,10 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 
 
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="632" name="DispWp" tags="nobr" position="800,275" size="100,100">&lt;&lt;unset _damage&gt;&gt;
-&lt;&lt;unset _ap&gt;&gt;
-&lt;&lt;unset _name&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="632" name="DispWp" tags="nobr" position="800,275" size="100,100">
 
-&lt;&lt;if  _slot is &quot;crossbow&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;11/15&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Crossbow&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;rifle&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;30/20&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;.30-06 Rifle&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;pistol&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;15/18&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;9mm Pistol&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;revolver&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;20/32&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;.45 Revolver&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;r55&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;35/45&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;R-55 Revolver&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;prifle&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;25/15&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Pipe Gun&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;shotgun&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;12/26&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Shotgun&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;automaticrifle&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;38&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Automatic Rifle&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;rifle50&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;45/30&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;.50 cal Rifle&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;coil&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;45&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Coilgun&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;plasma&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;60&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Plasma Rifle&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;gl&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;62*&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;G. Launcher&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;minigun&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;85*&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Minigun&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;cybercannon&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;96&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Cyber Cannon&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;neme&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;63&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Nemesis SR-C&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;whipstick&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;5&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Whipping Cane&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;staff&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;9&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Combat Staff&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;knife&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;7&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Combat Knife&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;sword&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;13&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Sword&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;waki&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;12&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Wakizashi&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;spear&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;11&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Spear&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;sledge&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;15&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Sledgehammer&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;mal&quot;&gt;&gt;
-&lt;&lt;if $mcrel.faith is 5 and $mcrel.devotion gte 100&gt;&gt;&lt;&lt;set _damage to &quot;50&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _damage to &quot;30&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Sacred Mallet&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if  _slot is &quot;powerkatana&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;28&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Power Katana&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;gsword&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;38&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Great Sword&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;gaxe&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;40&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Great Axe&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;azuk&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;50&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Sword of Azuk&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;iceblade&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;30&quot;&gt;&gt;
-&lt;&lt;set _ap to true&gt;&gt;
-&lt;&lt;set _name to &quot;Ice Dragon&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if  _slot is &quot;fists&quot;&gt;&gt;
-&lt;&lt;set _damage to &quot;0&quot;&gt;&gt;
-&lt;&lt;set _ap to false&gt;&gt;
-&lt;&lt;set _name to &quot;Fists&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _name=wname(_slot)&gt;&gt;
+&lt;&lt;set _damage=wdamstr(wdam(_slot,$mcrel))&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 
@@ -406771,7 +406588,7 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 
 &lt;div class=&quot;wpboxnr&quot;&gt;&lt;&lt;if _damage isnot undefined&gt;&gt;_damage&lt;&lt;else&gt;&gt;-&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;wpboxnr&quot;&gt;&lt;&lt;if _ap is true&gt;&gt;YES&lt;&lt;else&gt;&gt;-&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;wpboxnr&quot;&gt;&lt;&lt;=wap(_slot) ? &quot;Y&quot; : &quot;-&quot;&gt;&gt;&lt;/div&gt;
 
 &lt;div class=&quot;removewp&quot;&gt;&lt;&lt;if _name isnot undefined&gt;&gt;
 
