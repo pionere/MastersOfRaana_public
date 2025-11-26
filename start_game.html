@@ -339792,11 +339792,7 @@ OLD IGNORE
 &lt;&lt;set _steel to 0&gt;&gt;
 
 /* how many merchs proccessed */
-&lt;&lt;set _workload to _fact.other2&gt;&gt;
-
-&lt;&lt;set _dics=_fact.other5&gt;&gt;
-&lt;&lt;if _dics gte 1&gt;&gt;&lt;&lt;set _dics/=_fact.other2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _workload*=_dics&gt;&gt;
+&lt;&lt;set _workload to _fact.other5&gt;&gt;
 
 &lt;&lt;if _fact.other4 gte 50&gt;&gt;&lt;&lt;set _workload*=1.1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _fact.level gte 2&gt;&gt;&lt;&lt;set _workload*=1.05&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -339936,16 +339932,7 @@ OLD IGNORE
 /* standard ass points */
 &lt;&lt;if _fact.focus is 0&gt;&gt;
 
-&lt;&lt;set _finalass=2*_fact.other2&gt;&gt;
-
-&lt;&lt;set _dic=_fact.other5&gt;&gt;
-&lt;&lt;set _dicver to _fact.other2&gt;&gt;
-
-&lt;&lt;if _dic gte 1 and _dicver gte 1&gt;&gt;
-&lt;&lt;set _dic/=_dicver&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _finalass*=_dic&gt;&gt;
+&lt;&lt;set _finalass=2*_fact.other5&gt;&gt;
 
 
 /* hall effects */
