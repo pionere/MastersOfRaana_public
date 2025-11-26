@@ -275727,20 +275727,20 @@ $hunt_wet
 </tw-passagedata><tw-passagedata pid="394" name="KeyComb" tags="nobr" position="3025,1300" size="100,100">
 &lt;&lt;if $action is 0&gt;&gt;
 
-&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _pos to $pos&gt;&gt;&lt;&lt;set _rangedequip to $rangedequip&gt;&gt;&lt;&lt;if $masterhealth gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mctraitpac gte 75&gt;&gt;&lt;&lt;set _csok to false&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _pos to $cs1_pos&gt;&gt;&lt;&lt;if $cs1_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs1_health gte 1 and $cslot1 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _pos to $cs2_pos&gt;&gt;&lt;&lt;if $cs2_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs2_health gte 1 and $cslot2 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _pos to $cs3_pos&gt;&gt;&lt;&lt;if $cs3_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs3_health gte 1 and $cslot3 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _pos to $cs4_pos&gt;&gt;&lt;&lt;if $cs4_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _rangedequip to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $cs4_health gte 1 and $cslot4 gte 1&gt;&gt;&lt;&lt;set _csok to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _pos to $pos&gt;&gt;&lt;&lt;set _rangedequip to $rangedequip&gt;&gt;&lt;&lt;set _csok to $masterhealth gte 1 and $mctraitpac lt 75&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _pos to $cs1_pos&gt;&gt;&lt;&lt;set _rangedequip to $cs1_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _csok to $cs1_health gte 1 and $cslot1 gte 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _pos to $cs2_pos&gt;&gt;&lt;&lt;set _rangedequip to $cs2_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _csok to $cs2_health gte 1 and $cslot2 gte 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _pos to $cs3_pos&gt;&gt;&lt;&lt;set _rangedequip to $cs3_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _csok to $cs3_health gte 1 and $cslot3 gte 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _pos to $cs4_pos&gt;&gt;&lt;&lt;set _rangedequip to $cs4_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _csok to $cs4_health gte 1 and $cslot4 gte 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
    &lt;&lt;if $round is 1 and $meleeequip isnot true&gt;&gt;&lt;&lt;set _nostrike to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 
 &lt;&lt;which 70&gt;&gt; /% the F key %/
-&lt;&lt;if $round lte 5 and _csok is true and _ammoout isnot true and $stoploop isnot true and $isincomb is true&gt;&gt;
+&lt;&lt;if $round lte 5 and _csok and _ammoout isnot true and $stoploop isnot true and $isincomb is true&gt;&gt;
 
-&lt;&lt;if _rangedequip is true and _pos lte 2&gt;&gt;
+&lt;&lt;if _rangedequip and _pos lte 2&gt;&gt;
     &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
         &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
 &lt;&lt;set $action to 1&gt;&gt;
@@ -275755,7 +275755,7 @@ $hunt_wet
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _rangedequip is true and _pos is 3 and $isincomb is true&gt;&gt;
+&lt;&lt;if _rangedequip and _pos is 3 and $isincomb is true&gt;&gt;
     &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
         &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
 &lt;&lt;set $action to 1&gt;&gt;
@@ -275776,7 +275776,7 @@ $hunt_wet
    &lt;&lt;which 83&gt;&gt; /% the S key %/
    
     &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
-    &lt;&lt;if $round lte 5 and _csok is true and _pos is 3 and $stoploop isnot true and $isincomb is true and _nostrike is undefined&gt;&gt;
+    &lt;&lt;if $round lte 5 and _csok and _pos is 3 and $stoploop isnot true and $isincomb is true and _nostrike is undefined&gt;&gt;
 
      &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
 &lt;&lt;set $action to 1&gt;&gt;
@@ -275920,7 +275920,7 @@ $hunt_wet
 
 &lt;&lt;which 67&gt;&gt; /% the C key %/
     &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
-&lt;&lt;if _pos isnot 3 and $stoploop isnot true and _csok is true and $isincomb is true&gt;&gt;
+&lt;&lt;if _pos isnot 3 and $stoploop isnot true and _csok and $isincomb is true&gt;&gt;
 &lt;&lt;set $action to 3&gt;&gt;
 &lt;&lt;set $move to true&gt;&gt;
 &lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set $pos to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
