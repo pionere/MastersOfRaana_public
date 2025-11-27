@@ -11195,71 +11195,8 @@ faithn: &quot;Atheism&quot;,
 &lt;&lt;set $addkids to 0&gt;&gt;
 &lt;&lt;set $nanny to 0&gt;&gt;
 
-
-
-&lt;&lt;set $taken = {
-
-slot1:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot2:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot3:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot4:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot5:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot6:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-}&gt;&gt;
-
+&lt;&lt;set _slot = { state: 0, name: &quot;Lovisa&quot;, age: 18, will: 50, comb: 45, wear: 5, body: 1 }&gt;&gt;
+&lt;&lt;set $taken = { slot1:_slot, slot2:_slot, slot3:_slot, slot4:_slot, slot5:_slot, slot6:_slot }&gt;&gt;
 
 &lt;&lt;set $pcFirstName to &quot;Michael&quot;&gt;&gt;
 &lt;&lt;set $pcLastName to &quot;Courtenay&quot;&gt;&gt;
@@ -269970,77 +269907,11 @@ $faction.cyker.men
 &lt;/div&gt;
 
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="387" name="TakenSl" tags="nobr" position="2275,3850" size="100,100">&lt;&lt;if $taken is undefined&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="387" name="TakenSl" tags="nobr" position="2275,3850" size="100,100">
 
-&lt;&lt;set $taken = {
-
-slot1:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-id: 1,
-}
-,
-slot2:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-id: 1,
-}
-,
-slot3:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-id: 1,
-}
-,
-slot4:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-id: 1,
-}
-,
-slot5:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-id: 1,
-}
-,
-slot6:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-id: 1,
-}
-}&gt;&gt;
-
+&lt;&lt;if $taken is undefined&gt;&gt;
+&lt;&lt;set _slot = { state: 0, name: &quot;Lovisa&quot;, age: 18, will: 50, comb: 45, wear: 5, body: 1 }&gt;&gt;
+&lt;&lt;set $taken = { slot1:_slot, slot2:_slot, slot3:_slot, slot4:_slot, slot5:_slot, slot6:_slot }&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -359642,70 +359513,8 @@ gold: 213,
 
 
 &lt;&lt;if $taken is undefined&gt;&gt;
-
-&lt;&lt;set $taken = {
-
-slot1:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot2:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot3:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot4:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot5:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-,
-slot6:{
-state: 0,
-name: &quot;Lovisa&quot;,
-age: 18,
-will: 50,
-comb: 45,
-wear: 5,
-body: 1,
-}
-}&gt;&gt;
-
+&lt;&lt;set _slot = { state: 0, name: &quot;Lovisa&quot;, age: 18, will: 50, comb: 45, wear: 5, body: 1 }&gt;&gt;
+&lt;&lt;set $taken = { slot1:_slot, slot2:_slot, slot3:_slot, slot4:_slot, slot5:_slot, slot6:_slot }&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
