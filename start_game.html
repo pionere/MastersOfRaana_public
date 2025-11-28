@@ -273395,7 +273395,6 @@ $hunt_wet
 &lt;/div&gt;
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="394" name="KeyComb" tags="nobr" position="3025,1300" size="100,100">
-&lt;&lt;if $action is 0&gt;&gt;
 
 &lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _pos to $pos&gt;&gt;&lt;&lt;set _rangedequip to $rangedequip&gt;&gt;&lt;&lt;set _csok to $masterhealth gte 1 and $mctraitpac lt 75&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _pos to $cs1_pos&gt;&gt;&lt;&lt;set _rangedequip to $cs1_rweapon isnot &quot;none&quot;&gt;&gt;&lt;&lt;set _csok to $cs1_health gte 1 and $cslot1 gte 1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -273407,7 +273406,7 @@ $hunt_wet
 
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 70&gt;&gt; /% the F key %/
-&lt;&lt;if $round lte 5 and _csok and _ammoout isnot true and $stoploop isnot true and $isincomb is true&gt;&gt;
+&lt;&lt;if $round lte 5 and _csok and $action is 0 and _ammoout isnot true and $stoploop isnot true and $isincomb is true&gt;&gt;
  &lt;&lt;if _rangedequip and _pos lte 2&gt;&gt;
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
@@ -273433,7 +273432,7 @@ $hunt_wet
 
 &lt;&lt;which 83&gt;&gt; /% the S key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round lte 5 and _csok and _pos is 3 and $stoploop isnot true and $isincomb is true and _nostrike is undefined&gt;&gt;
+ &lt;&lt;if $round lte 5 and _csok and $action is 0 and _pos is 3 and $stoploop isnot true and $isincomb is true and _nostrike is undefined&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $action to 1&gt;&gt;
   &lt;&lt;set $curpos to 3&gt;&gt;
@@ -273441,9 +273440,6 @@ $hunt_wet
  &lt;&lt;/if&gt;&gt;
  &lt;&lt;/if&gt;&gt;
 &lt;&lt;/on&gt;&gt;
-
-/* ACTION 0 ENDS BELOW */
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -273518,7 +273514,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 32&gt;&gt; /% the SPACE key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round is 12 and $stoploop isnot true and $action lte 98 and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round is 12 and $action is 0 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $round to 1&gt;&gt;&lt;&lt;set $action to 0&gt;&gt;
   &lt;&lt;set $stoploop to true&gt;&gt;
@@ -273530,7 +273526,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 32&gt;&gt; /% the SPACE key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round is 6 and $stoploop isnot true and $action lte 98 and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round is 6 and $action is 0 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $round to 7&gt;&gt;&lt;&lt;set $calc to 0&gt;&gt;&lt;&lt;set $enemyhits to true&gt;&gt;
   &lt;&lt;set $stoploop to true&gt;&gt;
@@ -273543,7 +273539,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 67&gt;&gt; /% the C key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if _pos isnot 3 and $stoploop isnot true and _csok and $isincomb is true&gt;&gt;
+ &lt;&lt;if _pos isnot 3 and $action is 0 and $stoploop isnot true and _csok and $isincomb is true&gt;&gt;
   &lt;&lt;set $action to 3&gt;&gt;
   &lt;&lt;set $move to true&gt;&gt;
   &lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set $pos to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -273562,7 +273558,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 32&gt;&gt; /% the SPACE key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round lte 5 and $stoploop isnot true and $action lte 98 and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round lte 5 and $action is 0 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $round+=1&gt;&gt;
   &lt;&lt;set $stoploop to true&gt;&gt;
@@ -273574,7 +273570,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 81&gt;&gt; /% the Q - AIM key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round lte 5 and _cs_se.aim is 0 and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round lte 5 and $action is 0 and _cs_se.aim is 0 and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set _cs_se.aim to 1&gt;&gt;
   &lt;&lt;set _cs_se.pattack to 0&gt;&gt;
@@ -273588,7 +273584,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 69&gt;&gt; /% the E (power strike) key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round lte 5 and _cs_se.pattack is 0 and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round lte 5 and $action is 0 and _cs_se.pattack is 0 and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set _cs_se.pattack to 1&gt;&gt;
   &lt;&lt;set _cs_se.aim to 0&gt;&gt;
@@ -273604,7 +273600,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 65&gt;&gt; /% the A (change left) key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round is 1 and $wheel gte 2 and $specom isnot 1 and $action isnot 2 and $action isnot 99 and $action isnot 100 and $action isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round is 1 and $action is 0 and $wheel gte 2 and $specom isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $wheel-=1&gt;&gt;
   &lt;&lt;set $minus to true&gt;&gt;
@@ -273616,7 +273612,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 68&gt;&gt; /% the D (change right) key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round is 1 and _rightend isnot true and $specom isnot 1 and $action isnot 2 and $action isnot 99 and $action isnot 100 and $action isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round is 1 and $action is 0 and _rightend isnot true and $specom isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $wheel+=1&gt;&gt;
   &lt;&lt;set $plus to true&gt;&gt;
@@ -273634,7 +273630,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 68&gt;&gt; /% the D (change weapon top right down) key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round is 1 and $specom isnot 1 and $action isnot 2 and $action isnot 99 and $action isnot 100 and $action isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round is 1 and $action is 0 and $specom isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
   &lt;&lt;set $wheelnw1+=1&gt;&gt;
   &lt;&lt;if $wheelnw1 is 1&gt;&gt;&lt;&lt;set $activeweapon to $mcwpslot1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -273651,7 +273647,7 @@ $hunt_wet
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 65&gt;&gt; /% the A (bottom left up to right) key %/
  &lt;&lt;if not tags().includes(&#39;menu&#39;)&gt;&gt; /% avoid menu loop %/
- &lt;&lt;if $round is 1 and $specom isnot 1 and $action isnot 2 and $action isnot 99 and $action isnot 100 and $action isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
+ &lt;&lt;if $round is 1 and $action is 0 and $specom isnot 1 and $stoploop isnot true and $isincomb is true&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
 
   &lt;&lt;set $wheelnw1-=1&gt;&gt;
