@@ -165850,13 +165850,11 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 &lt;/div&gt;
 
 
-&lt;&lt;if $gonnapir is true&gt;&gt;
-&lt;&lt;if _npc.status gte 4 and _npc.likesadist lte 39 and _npc.masterlove lte 79&gt;&gt;
+&lt;&lt;if $gonnapir is true and _npc.status gte 4 and _npc.likesadist lte 39 and _npc.masterlove lte 79&gt;&gt;
 &lt;&lt;set _okpir to false&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set _serfdia to 102&gt;&gt;
 &lt;&lt;include SerfSay&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -200467,7 +200465,7 @@ $avIn_girlname adds to the conversation by saying:
 &lt;&lt;if _spec is 13&gt;&gt;&lt;&lt;if $avIn_willpower gte 10 and $avIn_masterlove lte 49&gt;&gt;You think so? Well, maybe. Who knows (awkward smile). I… I guess so…&lt;&lt;else&gt;&gt;Yes, of course. He&#39;s the best! We all love $avIn_callname. (Smile)&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;if _spec is 14&gt;&gt;&lt;&lt;if $avIn_willpower gte 10 and $avIn_masterlove lte 49&gt;&gt;Yes. One could say that we are very fortunate girls, after all.&lt;&lt;else&gt;&gt;Well, we have a very good Master. We should thank him for his generosity.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _spec is 15&gt;&gt;&lt;&lt;if $avIn_girlid is 1&gt;&gt;Yeah, I get that feeling too, sometimes, when I&#39;m in special places. Like… The history and past events almost… impregnate me. &lt;&lt;else&gt;&gt;Ehm, okay… That felt super weird…&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
- &lt;&lt;if _spec is 16&gt;&gt;&lt;&lt;if $avIn_girlid is 2&gt;&gt;Oh, I hear you, sister. I completely agree. We should burn this place to the ground. &lt;&lt;if $avIn_willpower lte 9&gt;&gt;No offence, $avIn_callname. Thanks for taking us here.&lt;&lt;/if&gt;&gt; &lt;&lt;else&gt;&gt;Ehm (Whisper) Talk about spoiling the mood. Well, Mr. $pcLastName, I&#39;m happy to be here. &lt;&lt;if $avIn_willpower gte 10&gt;&gt;&lt;&lt;if $avIn_scarefactor gte 2 or $avIn_masterlove lte 9&gt;&gt;Even if I don’t like your behavior in general.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
+ &lt;&lt;if _spec is 16&gt;&gt;&lt;&lt;if $avIn_girlid is 2&gt;&gt;Oh, I hear you, sister. I completely agree. We should burn this place to the ground. &lt;&lt;if $avIn_willpower lte 9&gt;&gt;No offence, $avIn_callname. Thanks for taking us here.&lt;&lt;/if&gt;&gt; &lt;&lt;else&gt;&gt;Ehm (Whisper) Talk about spoiling the mood. Well, Mr. $pcLastName, I&#39;m happy to be here. &lt;&lt;if $avIn_willpower gte 10 and ($avIn_scarefactor gte 2 or $avIn_masterlove lte 9)&gt;&gt;Even if I don’t like your behavior in general.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _spec is 17&gt;&gt;&lt;&lt;if $avIn_girlid is 1&gt;&gt;&lt;&lt;if _wrool is true&gt;&gt;Haha, you&#39;re so funny, Mai.&lt;&lt;/if&gt;&gt; Wow, yeah, those trees are super-fancy. I think my old Master, Mr. Robert, bought some trees from you too. He allowed us girls to play with them. With our dolls. &lt;&lt;set _dolls to true&gt;&gt;&lt;&lt;else&gt;&gt;They must be really expensive. Looks that way…&lt;&lt;/if&gt;&gt; &lt;&lt;/if&gt;&gt;
 
