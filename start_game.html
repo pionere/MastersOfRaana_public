@@ -235355,9 +235355,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;div class=&quot;smalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;if $action is 0&gt;&gt;
 
-&lt;&lt;if $round is 1 and _paci is undefined&gt;&gt;
-
-&lt;&lt;if $mctraitpac is undefined or $mctraitpac lte 49&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _paci to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 1 and !_paci&gt;&gt;
 
 &lt;&lt;if $activeweapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _ammoout=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $activeweapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -235376,7 +235374,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if $activeweapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _ammoout is false and _paci is undefined&gt;&gt;
+&lt;&lt;if _ammoout is false&gt;&gt;
 [[Fire at enemy|NewCombatSimulator][$action=1, $curpos=2, $pos to ($pos lte 2 ? 2 : 3)]]
 &lt;&lt;/if&gt;&gt;
 
@@ -235488,7 +235486,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if $action lte 98&gt;&gt;
 
 &lt;&lt;if $action is 1&gt;&gt;
-[[Back|NewCombatSimulator][$action=0, $curpos=2]]
+[[Back|NewCombatSimulator][$action=0, $curpos=2, _cs_se.pattack=0]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $action gte 2 and $round lte 5&gt;&gt;
@@ -235615,43 +235613,27 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;div class=&quot;row&quot;&gt;
 
-/* old */
-
 &lt;&lt;if $round lte 5 and $action is 0&gt;&gt;
 
 &lt;div class=&quot;resholdersmall&quot;&gt;
-&lt;&lt;if _cs_se.aim is 0 and $action lte 0 and _paci is undefined&gt;&gt;
-&lt;&lt;if _cs_se.pattack is 0&gt;&gt;
+&lt;&lt;if $action is 0 and !_paci&gt;&gt;
+&lt;&lt;if _cs_se.aim is 0 and _cs_se.pattack is 0&gt;&gt;
 &lt;&lt;hovertip &quot;aim&quot;&gt;&gt;
 [img[$imgpath + &quot;Butt/aim.png&quot;][NewCombatSimulator][_cs_se.aim to 1, $round+=1, _cs_se.pattack to 0]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/aim.png&quot;]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if _cs_se.aim is 1&gt;&gt;
-&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/aim.png&quot;]]&lt;/div&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;resholdersmall&quot;&gt;
-&lt;&lt;if _cs_se.pattack is 0 and _pos is 3 and $action is 0&gt;&gt;
+&lt;&lt;if _cs_se.pattack is 0 and _pos is 3 and $action is 0 and (_ammoout is undefined or $round isnot 1)&gt;&gt;
 &lt;&lt;hovertip &quot;power strike&quot;&gt;&gt;
-[img[$imgpath + &quot;Butt/powerstrike.png&quot;][NewCombatSimulator][_cs_se.pattack to 1, _cs_se.aim to 0]]
+[img[$imgpath + &quot;Butt/powerstrike.png&quot;][NewCombatSimulator][_cs_se.pattack to 1, $action=1, $curpos=3, _cs_se.aim to 0]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set _lasty to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _cs_se.pattack is 1 and _pos is 3 and _lasty isnot true&gt;&gt;
-&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/powerstrike.png&quot;]]&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _lasty is true&gt;&gt;
-&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/powerstrike.png&quot;]]&lt;/div&gt;
+&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/powerstrike.png&quot;][NewCombatSimulator][_cs_se.pattack to 0]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
@@ -273541,8 +273523,10 @@ $hunt_wet
 
 &lt;&lt;on &#39;keyup&#39;&gt;&gt;
 &lt;&lt;which 69&gt;&gt; /% the E (power strike) key %/
- &lt;&lt;if $round lte 5 and $action is 0&gt;&gt;
+ &lt;&lt;if $round lte 5 and $action is 0 and _pos is 3 and _nostrike is undefined&gt;&gt;
   &lt;&lt;goto &quot;NewCombatSimulator&quot;&gt;&gt;
+  &lt;&lt;set $action=1&gt;&gt;
+  &lt;&lt;set $curpos=3&gt;&gt;
   &lt;&lt;set _cs_se.pattack to 1&gt;&gt;
   &lt;&lt;set _cs_se.aim to 0&gt;&gt;
  &lt;&lt;/if&gt;&gt;
