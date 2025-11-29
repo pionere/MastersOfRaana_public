@@ -307036,36 +307036,8 @@ ALSO USED FOR DEATH.
 /* REGAIN EQUIPMENT */
 &lt;&lt;if _deathevent is true or _selling is true&gt;&gt;
 
-&lt;&lt;if _npc.meleeweapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set $ownknife+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;staff&quot;&gt;&gt;&lt;&lt;set $ownstaff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;sword&quot;&gt;&gt;&lt;&lt;set $ownsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;whipstick&quot;&gt;&gt;&lt;&lt;set $ownwhipstick+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $ownpowerkatana+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $owngsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $ownsledge+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;mal&quot;&gt;&gt;&lt;&lt;set $ownmal+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $owngaxe+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;iceblade&quot;&gt;&gt;&lt;&lt;set $owniceblade+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;azuk&quot;&gt;&gt;&lt;&lt;set $ownazuk+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;waki&quot;&gt;&gt;&lt;&lt;set $ownwaki+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.meleeweapon is &quot;spear&quot;&gt;&gt;&lt;&lt;set $ownspear+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.weapon is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $ownpistol+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $owncrossbow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $ownrifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $ownshotgun+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $ownautorifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $ownplasma+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $ownrevolver+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $own50c+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $ownprifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;coil&quot;&gt;&gt;&lt;&lt;set $owncoil+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set $owngl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set $owncyber+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set $ownminigun+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set $ownr55+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.weapon is &quot;neme&quot;&gt;&gt;&lt;&lt;set $ownneme+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;run wchg(_npc.meleeweapon,1)&gt;&gt;
+&lt;&lt;run wchg(_npc.weapon,1)&gt;&gt;
 
 &lt;&lt;if $diff gte 3 and _postcombat is true&gt;&gt;&lt;&lt;set _armordestroy to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
