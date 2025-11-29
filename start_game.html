@@ -193914,11 +193914,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if $wpchange is true&gt;&gt;
 
-&lt;&lt;if $wpbefore is &quot;staff&quot;&gt;&gt;&lt;&lt;set $ownstaff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wpbefore is &quot;knife&quot;&gt;&gt;&lt;&lt;set $ownknife+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wpbefore is &quot;sword&quot;&gt;&gt;&lt;&lt;set $ownsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wpbefore is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $ownsledge+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wpbefore is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $ownpowerkatana+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;run wchg($wpbefore,1)&gt;&gt;
 
 &lt;&lt;unset $wpchange&gt;&gt;
 &lt;&lt;unset $wpbefore&gt;&gt;
