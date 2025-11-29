@@ -176,7 +176,8 @@ wap = function (w) {
   w == 'gsword' || w == 'spear' || w == 'powerkatana' || w == 'azuk' || w == 'iceblade';
 }
 wmelee = function (w) {
- return w != 'crossbow' && w != 'pistol' && w != 'revolver' && w != 'shotgun' && w != 'rifle' && w != 'automaticrifle' && w != 'coil' && w != 'plasma' && w != 'prifle' && w != 'rifle50' && w != 'gl' && w != 'cybercannon' && w != 'machine40' && w != 'tank100' && w != 'minigun' && w != 'psi' && w != 'neme' && w != 'r55';
+ return w != 'crossbow' && w != 'pistol' && w != 'revolver' && w != 'shotgun' && w != 'rifle' && w != 'automaticrifle' && w != 'coil' && w != 'plasma' && w != 'prifle' && w != 'rifle50' && w != 'gl' &&
+  w != 'cybercannon' && w != 'machine40' && w != 'tank100' && w != 'minigun' && w != 'psi' && w != 'neme' && w != 'r55' && w != 'none';
 }
 wchg = function (w, a) {
  var _fld;
@@ -143802,7 +143803,7 @@ Masters of Raana is © GrimDark Studios.
 
 </tw-passagedata><tw-passagedata pid="213" name="PassageReady" tags="nobr" position="600,50" size="200,100">
 
-&lt;&lt;if $noclick isnot true and $break isnot true and $removebutt isnot true and $effect is true and $wpchange isnot true and $craftcommand is undefined&gt;&gt;
+&lt;&lt;if $noclick isnot true and $break isnot true and $removebutt isnot true and $effect is true and !$wpchange and $craftcommand is undefined&gt;&gt;
 &lt;&lt;audio &quot;click&quot; volume 0.8 play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -161947,27 +161948,27 @@ _npc.girlname will not accept wearing anything revealing unless her WILLPOWER dr
 
 
 
-&lt;&lt;if $wpchange is true&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;automaticrifle&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;rifle&quot; and $av_ranged lte 39&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;shotgun&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;revolver&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;automaticrifle&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;coil&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;rifle50&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_weapon is &quot;minigun&quot; and $av_str lte 99&gt;&gt;&lt;&lt;set _heavy to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange&gt;&gt;
 
-&lt;&lt;if $av_meleeweapon is &quot;gsword&quot; and $av_str lte 74&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using an equipped Great Sword. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 75 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;automaticrifle&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;rifle&quot; and $av_ranged lte 39&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;shotgun&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;revolver&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;automaticrifle&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;coil&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;rifle50&quot; and $av_ranged lte 69&gt;&gt;&lt;&lt;set _rec to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;minigun&quot; and $av_str lte 99&gt;&gt;&lt;&lt;set _heavy to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $av_meleeweapon is &quot;gaxe&quot; and $av_str lte 99&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using an equipped Great Axe. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 100 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;gsword&quot; and $av_str lte 74&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using an equipped Great Sword. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 75 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $av_meleeweapon is &quot;mal&quot; and $av_str lte 99&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using the Sacred Mallet. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 100 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;gaxe&quot; and $av_str lte 99&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using an equipped Great Axe. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 100 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $wpchange is &quot;mal&quot; and $av_str lte 99&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using the Sacred Mallet. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 100 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $av_meleeweapon is &quot;azuk&quot; and $av_str lte 189&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using The Sword of Azuk. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 190 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wpchange is &quot;azuk&quot; and $av_str lte 189&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Damage penalty while using The Sword of Azuk. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 190 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $av_weapon is &quot;minigun&quot; and $av_str lte 99&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Combat chance penalty while using a Minigun. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 100 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $wpchange is &quot;minigun&quot; and $av_str lte 99&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;$girlname suffers a Combat chance penalty while using a Minigun. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; STRENGTH needs to be 100 or higher to fully utilize this weapon!&#39;&#39;//&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _rec is true and _norec isnot true&gt;&gt;
@@ -162028,14 +162029,19 @@ This effect becomes dormant if &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&g
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $wpchange is true&gt;&gt;
+&lt;&lt;if $wpchange&gt;&gt;
 
 &lt;&lt;set $gunready to true&gt;&gt;
 
-&lt;&lt;run wchg($av_wpbefore,1)&gt;&gt;
-
+&lt;&lt;if wmelee($wpchange)&gt;&gt;
+&lt;&lt;run wchg($av_meleeweapon,1)&gt;&gt;
+&lt;&lt;set $av_meleeweapon=$wpchange&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;run wchg($av_weapon,1)&gt;&gt;
+&lt;&lt;set $av_weapon=$wpchange&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;run wchg($wpchange,-1)&gt;&gt;
 &lt;&lt;unset $wpchange&gt;&gt;
-&lt;&lt;unset $av_wpbefore&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;invbutt&quot;&gt;
@@ -163363,7 +163369,7 @@ Embryl butt plug
 &lt;&lt;if $owncrossbow gte 1 or $av_weapon is &quot;crossbow&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;crossbow&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;
-[[Crossbow|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;crossbow&quot;, $owncrossbow-=1, $wpchange to true]]
+[[Crossbow|SlaveInventory][$wpchange=&quot;crossbow&quot;]]
 &lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;11/15&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -163371,7 +163377,7 @@ Embryl butt plug
 &lt;&lt;if _pistolok is true&gt;&gt;
 &lt;&lt;if $ownpistol gte 1 or $av_weapon is &quot;pistol&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;pistol&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Pistol|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;pistol&quot;, $ownpistol-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;15/18&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Pistol|SlaveInventory][$wpchange=&quot;pistol&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;15/18&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163379,56 +163385,56 @@ Embryl butt plug
 &lt;&lt;if _revolverok is true&gt;&gt;
 &lt;&lt;if $ownrevolver gte 1 or $av_weapon is &quot;revolver&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;revolver&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[.45 Revolver|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;revolver&quot;, $ownrevolver-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;20/32&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[.45 Revolver|SlaveInventory][$wpchange=&quot;revolver&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;20/32&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _r55ok is true&gt;&gt;
 &lt;&lt;if $ownr55 gte 1 or $av_weapon is &quot;r55&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;r55&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[R-55 Revolver|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;r55&quot;, $ownr55-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;35/45&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[R-55 Revolver|SlaveInventory][$wpchange=&quot;r55&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;35/45&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _prifleok is true&gt;&gt;
 &lt;&lt;if $ownprifle gte 1 or $av_weapon is &quot;prifle&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;prifle&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Pipe gun|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;prifle&quot;, $ownprifle-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;25/15&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Pipe gun|SlaveInventory][$wpchange=&quot;prifle&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;25/15&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _rifleok is true&gt;&gt;
 &lt;&lt;if $ownrifle gte 1 or $av_weapon is &quot;rifle&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;rifle&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Rifle|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;rifle&quot;, $ownrifle-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30/20&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Rifle|SlaveInventory][$wpchange=&quot;rifle&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30/20&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _shotgunok is true&gt;&gt;
 &lt;&lt;if $ownshotgun gte 1 or $av_weapon is &quot;shotgun&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;shotgun&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Shotgun|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;shotgun&quot;, $ownshotgun-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;12/26&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Shotgun|SlaveInventory][$wpchange=&quot;shotgun&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;12/26&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _nemeok is true&gt;&gt;
 &lt;&lt;if $ownneme gte 1 or $av_weapon is &quot;neme&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;neme&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Nemesis SR-C|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;neme&quot;, $ownneme-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Nemesis SR-C|SlaveInventory][$wpchange=&quot;neme&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _autook is true&gt;&gt;
 &lt;&lt;if $ownautorifle gte 1 or $av_weapon is &quot;automaticrifle&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;automaticrifle&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Automatic rifle|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;automaticrifle&quot;, $ownautorifle-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Automatic rifle|SlaveInventory][$wpchange=&quot;automaticrifle&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _glok is true&gt;&gt;
 &lt;&lt;if $owngl gte 1 or $av_weapon is &quot;gl&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;gl&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Grenade launcher|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;gl&quot;, $owngl-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;62*&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Grenade launcher|SlaveInventory][$wpchange=&quot;gl&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;62*&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163436,14 +163442,14 @@ Embryl butt plug
 &lt;&lt;if _rifle50ok is true&gt;&gt;
 &lt;&lt;if $own50c gte 1 or $av_weapon is &quot;rifle50&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;rifle50&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[.50 cal Rifle|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;rifle50&quot;, $own50c-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;45/30&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[.50 cal Rifle|SlaveInventory][$wpchange=&quot;rifle50&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;45/30&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _coilok is true&gt;&gt;
 &lt;&lt;if $owncoil gte 1 or $av_weapon is &quot;coil&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;coil&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Coilgun|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;coil&quot;, $owncoil-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Coilgun|SlaveInventory][$wpchange=&quot;coil&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163451,7 +163457,7 @@ Embryl butt plug
 &lt;&lt;if _plasmaok is true&gt;&gt;
 &lt;&lt;if $ownplasma gte 1 or $av_weapon is &quot;plasma&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;plasma&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Plasma rifle|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;plasma&quot;, $ownplasma-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;60&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Plasma rifle|SlaveInventory][$wpchange=&quot;plasma&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;60&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163459,7 +163465,7 @@ Embryl butt plug
 &lt;&lt;if _cyberok is true&gt;&gt;
 &lt;&lt;if $owncyber gte 1 or $av_weapon is &quot;cybercannon&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;cybercannon&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Cyber cannon|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;cybercannon&quot;, $owncyber-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;96&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Cyber cannon|SlaveInventory][$wpchange=&quot;cybercannon&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;96&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163467,7 +163473,7 @@ Embryl butt plug
 &lt;&lt;if _minigunok is true&gt;&gt;
 &lt;&lt;if $ownminigun gte 1 or $av_weapon is &quot;minigun&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;minigun&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Minigun|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;minigun&quot;, $ownminigun-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;85*&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Minigun|SlaveInventory][$wpchange=&quot;minigun&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;85*&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Yes&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163475,7 +163481,7 @@ Embryl butt plug
 
 
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_weapon is &quot;none&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Unarmed|SlaveInventory][$av_wpbefore=$av_weapon, $av_weapon=&quot;none&quot;, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Unarmed|SlaveInventory][$wpchange=&quot;none&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;No&lt;/div&gt;&lt;/div&gt;
 
 
 /* AYDEN AND OTHER NPCS CHECKER ENDS */
@@ -163585,35 +163591,35 @@ Embryl butt plug
 &lt;&lt;if _girlid is 39&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;iceblade&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Ice Dragon|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;iceblade&quot;, $owniceblade-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Ice Dragon|SlaveInventory][$wpchange=&quot;iceblade&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;else&gt;&gt;
 
 &lt;&lt;if _knifeok is true&gt;&gt;
 &lt;&lt;if $ownknife gte 1 or $av_meleeweapon is &quot;knife&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;knife&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Combat knife|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;knife&quot;, $ownknife-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Combat knife|SlaveInventory][$wpchange=&quot;knife&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _swordok is true&gt;&gt;
 &lt;&lt;if $ownsword gte 1 or $av_meleeweapon is &quot;sword&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;sword&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sword|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;sword&quot;, $ownsword-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sword|SlaveInventory][$wpchange=&quot;sword&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _gswordok is true&gt;&gt;
 &lt;&lt;if $owngsword gte 1 or $av_meleeweapon is &quot;gsword&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;gsword&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Great sword|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;gsword&quot;, $owngsword-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Great sword|SlaveInventory][$wpchange=&quot;gsword&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _azukok is true&gt;&gt;
 &lt;&lt;if $ownazuk gte 1 or $av_meleeweapon is &quot;azuk&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;azuk&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sword of Azuk|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;azuk&quot;, $ownazuk-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sword of Azuk|SlaveInventory][$wpchange=&quot;azuk&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163621,28 +163627,28 @@ Embryl butt plug
 &lt;&lt;if _gaxeok is true&gt;&gt;
 &lt;&lt;if $owngaxe gte 1 or $av_meleeweapon is &quot;gaxe&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;gaxe&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Great axe|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;gaxe&quot;, $owngaxe-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Great axe|SlaveInventory][$wpchange=&quot;gaxe&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _icebladeok is true&gt;&gt;
 &lt;&lt;if $owniceblade gte 1 or $av_meleeweapon is &quot;iceblade&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;iceblade&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Ice Dragon|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;iceblade&quot;, $owniceblade-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Ice Dragon|SlaveInventory][$wpchange=&quot;iceblade&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _staffok is true&gt;&gt;
 &lt;&lt;if $ownstaff gte 1 or $av_meleeweapon is &quot;staff&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;staff&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Combat staff|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;staff&quot;, $ownstaff-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Combat staff|SlaveInventory][$wpchange=&quot;staff&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _sledgeok is true&gt;&gt;
 &lt;&lt;if $ownsledge gte 1 or $av_meleeweapon is &quot;sledge&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;sledge&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sledgehammer|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;sledge&quot;, $ownsledge-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sledgehammer|SlaveInventory][$wpchange=&quot;sledge&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163650,14 +163656,14 @@ Embryl butt plug
 &lt;&lt;if _malok is true&gt;&gt;
 &lt;&lt;if $ownmal gte 1 or $av_meleeweapon is &quot;mal&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;mal&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sacred Mallet|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;mal&quot;, $ownmal-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30/50&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Sacred Mallet|SlaveInventory][$wpchange=&quot;mal&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;30/50&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Slow&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _spearok is true&gt;&gt;
 &lt;&lt;if $ownspear gte 1 or $av_meleeweapon is &quot;spear&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;spear&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Spear|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;spear&quot;, $ownspear-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Spear|SlaveInventory][$wpchange=&quot;spear&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163665,27 +163671,27 @@ Embryl butt plug
 &lt;&lt;if _whipstickok is true&gt;&gt;
 &lt;&lt;if $ownwhipstick gte 1 or $av_meleeweapon is &quot;whipstick&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;whipstick&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Whipping cane|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;whipstick&quot;, $ownwhipstick-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Whipping cane|SlaveInventory][$wpchange=&quot;whipstick&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _powerkatanaok is true&gt;&gt;
 &lt;&lt;if $ownpowerkatana gte 1 or $av_meleeweapon is &quot;powerkatana&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;powerkatana&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Power katana|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;powerkatana&quot;, $ownpowerkatana-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Power katana|SlaveInventory][$wpchange=&quot;powerkatana&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Med.&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _wakiok is true&gt;&gt;
 &lt;&lt;if $ownwaki gte 1 or $av_meleeweapon is &quot;waki&quot;&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;waki&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Wakizashi|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;waki&quot;, $ownwaki-=1, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Wakizashi|SlaveInventory][$wpchange=&quot;waki&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;invvalue&quot;&gt;&lt;&lt;if $av_meleeweapon is &quot;fists&quot;&gt;&gt;[img[$imgpath + &quot;Butt/cloth.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Fists|SlaveInventory][$av_wpbefore=$av_meleeweapon, $av_meleeweapon=&quot;fists&quot;, $wpchange to true]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;invnames&quot;&gt;[[Fists|SlaveInventory][$wpchange=&quot;fists&quot;]]&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;invvalue&quot;&gt;Fast&lt;/div&gt;&lt;/div&gt;
 
 
 &lt;&lt;/if&gt;&gt; /* UNIQUE NPC CHECKER ENDS */
@@ -193912,12 +193918,13 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if $slaveround is 0&gt;&gt;
 
 
-&lt;&lt;if $wpchange is true&gt;&gt;
+&lt;&lt;if $wpchange&gt;&gt;
 
-&lt;&lt;run wchg($wpbefore,1)&gt;&gt;
+&lt;&lt;run wchg(_npc.meleeweapon,1)&gt;&gt;
+&lt;&lt;run wchg($wpchange,-1)&gt;&gt;
+&lt;&lt;set _npc.meleeweapon=$wpchange&gt;&gt;
 
 &lt;&lt;unset $wpchange&gt;&gt;
-&lt;&lt;unset $wpbefore&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -193953,13 +193960,13 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;br&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;fists&quot;&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Fists|Arena][$wpchange to true, $wpbefore=_npc.meleeweapon, _npc.meleeweapon to &quot;fists&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Fists&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon isnot &quot;fists&quot;&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Fists|Arena][$wpchange=&quot;fists&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Fists&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;knife&quot; and $ownknife gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[knife|Arena][$wpchange to true, $wpbefore=_npc.meleeweapon, _npc.meleeweapon to &quot;knife&quot;, $ownknife-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;knife&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon isnot &quot;knife&quot; and $ownknife gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[knife|Arena][$wpchange=&quot;knife&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;knife&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;staff&quot; and $ownstaff gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[staff|Arena][$wpchange to true, $wpbefore=_npc.meleeweapon, _npc.meleeweapon to &quot;staff&quot;, $ownstaff-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;staff&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon isnot &quot;staff&quot; and $ownstaff gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[staff|Arena][$wpchange=&quot;staff&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;staff&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -193968,13 +193975,13 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;sword&quot; and $ownsword gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[sword|Arena][$wpchange to true, $wpbefore=_npc.meleeweapon, _npc.meleeweapon to &quot;sword&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;sword&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon isnot &quot;sword&quot; and $ownsword gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[sword|Arena][$wpchange=&quot;sword&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;sword&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;powerkatana&quot; and $ownpowerkatana gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[power katana|Arena][$wpchange to true, $wpbefore=_npc.meleeweapon, _npc.meleeweapon to &quot;powerkatana&quot;, $ownpowerkatana-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;power katana&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon isnot &quot;powerkatana&quot; and $ownpowerkatana gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[power katana|Arena][$wpchange=&quot;powerkatana&quot;, $ownpowerkatana-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;power katana&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;if _npc.meleeweapon isnot &quot;sledge&quot; and $ownsledge gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[sledgehammer|Arena][$wpchange to true, $wpbefore=_npc.meleeweapon, _npc.meleeweapon to &quot;sledge&quot;, $ownsledge-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;sledgehammer&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.meleeweapon isnot &quot;sledge&quot; and $ownsledge gte 1&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[sledgehammer|Arena][$wpchange=&quot;sledge&quot;]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;sledgehammer&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
