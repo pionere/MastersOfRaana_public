@@ -178,6 +178,39 @@ wap = function (w) {
 wmelee = function (w) {
  return w != 'crossbow' && w != 'pistol' && w != 'revolver' && w != 'shotgun' && w != 'rifle' && w != 'automaticrifle' && w != 'coil' && w != 'plasma' && w != 'prifle' && w != 'rifle50' && w != 'gl' && w != 'cybercannon' && w != 'machine40' && w != 'tank100' && w != 'minigun' && w != 'psi' && w != 'neme' && w != 'r55';
 }
+wchg = function (w, a) {
+ var _fld;
+ if (w == 'knife') _fld = 'ownknife';
+ if (w == 'staff') _fld = 'ownstaff';
+ if (w == 'sword') _fld = 'ownsword';
+ if (w == 'whipstick') _fld = 'ownwhipstick';
+ if (w == 'powerkatana') _fld = 'ownpowerkatana';
+ if (w == 'gsword') _fld = 'owngsword';
+ if (w == 'sledge') _fld = 'ownsledge';
+ if (w == 'mal') _fld = 'ownmal';
+ if (w == 'gaxe') _fld = 'owngaxe';
+ if (w == 'iceblade') _fld = 'owniceblade';
+ if (w == 'azuk') _fld = 'ownazuk';
+ if (w == 'waki') _fld = 'ownwaki';
+ if (w == 'spear') _fld = 'ownspear';
+
+ if (w == 'pistol') _fld = 'ownpistol';
+ if (w == 'crossbow') _fld = 'owncrossbow';
+ if (w == 'rifle') _fld = 'ownrifle';
+ if (w == 'shotgun') _fld = 'ownshotgun';
+ if (w == 'automaticrifle') _fld = 'ownautorifle';
+ if (w == 'plasma') _fld = 'ownplasma';
+ if (w == 'revolver') _fld = 'ownrevolver';
+ if (w == 'rifle50') _fld = 'own50c';
+ if (w == 'prifle') _fld = 'ownprifle';
+ if (w == 'neme') _fld = 'ownneme';
+ if (w == 'coil') _fld = 'owncoil';
+ if (w == 'gl') _fld = 'owngl';
+ if (w == 'cybercannon') _fld = 'owncyber';
+ if (w == 'minigun') _fld = 'ownminigun';
+ if (w == 'r55') _fld = 'ownr55';
+ if (_fld) SugarCube.State.active.variables[_fld] += a;
+}
 yardstab = function (_npc,_ystab) {
  var _stab = 10;
  if (_npc.willpower >= 7) {
@@ -161999,36 +162032,7 @@ This effect becomes dormant if &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&g
 
 &lt;&lt;set $gunready to true&gt;&gt;
 
-&lt;&lt;if $av_wpbefore is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $owncrossbow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $ownpistol+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $ownrifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $ownshotgun+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $ownautorifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $ownrevolver+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;coil&quot;&gt;&gt;&lt;&lt;set $owncoil+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $ownplasma+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $own50c+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $ownprifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;gl&quot;&gt;&gt;&lt;&lt;set $owngl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set $owncyber+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;minigun&quot;&gt;&gt;&lt;&lt;set $ownminigun+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;neme&quot;&gt;&gt;&lt;&lt;set $ownneme+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;r55&quot;&gt;&gt;&lt;&lt;set $ownr55+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $av_wpbefore is &quot;knife&quot;&gt;&gt;&lt;&lt;set $ownknife+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;sword&quot;&gt;&gt;&lt;&lt;set $ownsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;staff&quot;&gt;&gt;&lt;&lt;set $ownstaff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $ownsledge+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $ownpowerkatana+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;whipstick&quot;&gt;&gt;&lt;&lt;set $ownwhipstick+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $owngsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;waki&quot;&gt;&gt;&lt;&lt;set $ownwaki+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;spear&quot;&gt;&gt;&lt;&lt;set $ownspear+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;mal&quot;&gt;&gt;&lt;&lt;set $ownmal+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;iceblade&quot;&gt;&gt;&lt;&lt;set $owniceblade+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $owngaxe+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_wpbefore is &quot;azuk&quot;&gt;&gt;&lt;&lt;set $ownazuk+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;run wchg($av_wpbefore,1)&gt;&gt;
 
 &lt;&lt;unset $wpchange&gt;&gt;
 &lt;&lt;unset $av_wpbefore&gt;&gt;
@@ -402162,36 +402166,8 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 &lt;&lt;if $mcwpslot4 is 0 and $mcwpslot1 isnot $activeweapon and $mcwpslot2 isnot $activeweapon and $mcwpslot3 isnot $activeweapon and $mcwpslot4 isnot $activeweapon and $weaponadd isnot undefined&gt;&gt;&lt;&lt;set $mcwpslot4 to $weaponadd&gt;&gt;&lt;&lt;set _adder to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _adder is true&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;whipstick&quot;&gt;&gt;&lt;&lt;set $ownwhipstick-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;knife&quot;&gt;&gt;&lt;&lt;set $ownknife-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;staff&quot;&gt;&gt;&lt;&lt;set $ownstaff-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $ownsledge-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;spear&quot;&gt;&gt;&lt;&lt;set $ownspear-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;waki&quot;&gt;&gt;&lt;&lt;set $ownwaki-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;sword&quot;&gt;&gt;&lt;&lt;set $ownsword-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $ownpowerkatana-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $owngaxe-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $owngsword-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;azuk&quot;&gt;&gt;&lt;&lt;set $ownazuk-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;mal&quot;&gt;&gt;&lt;&lt;set $ownmal-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;iceblade&quot;&gt;&gt;&lt;&lt;set $owniceblade-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $weaponadd is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $ownpistol-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $owncrossbow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $ownprifle-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $ownrifle-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $ownshotgun-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $ownrevolver-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $ownautorifle-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $own50c-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;r55&quot;&gt;&gt;&lt;&lt;set $ownr55-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;gl&quot;&gt;&gt;&lt;&lt;set $owngl-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;minigun&quot;&gt;&gt;&lt;&lt;set $ownminigun-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $ownplasma-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;coil&quot;&gt;&gt;&lt;&lt;set $owncoil-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;neme&quot;&gt;&gt;&lt;&lt;set $ownneme-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $weaponadd is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set $owncyber-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;run wchg($weaponadd,-1)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -402242,35 +402218,7 @@ Rare artifacts (x3) added to Inventory!&lt;br&gt;
 &lt;&lt;include DispWp&gt;&gt;
 &lt;&lt;/capture&gt;&gt;
 
-&lt;&lt;if _addback is &quot;whipstick&quot;&gt;&gt;&lt;&lt;set $ownwhipstick+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;knife&quot;&gt;&gt;&lt;&lt;set $ownknife+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;staff&quot;&gt;&gt;&lt;&lt;set $ownstaff+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;sledge&quot;&gt;&gt;&lt;&lt;set $ownsledge+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;spear&quot;&gt;&gt;&lt;&lt;set $ownspear+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;waki&quot;&gt;&gt;&lt;&lt;set $ownwaki+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;sword&quot;&gt;&gt;&lt;&lt;set $ownsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;powerkatana&quot;&gt;&gt;&lt;&lt;set $ownpowerkatana+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $owngaxe+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $owngsword+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;azuk&quot;&gt;&gt;&lt;&lt;set $ownazuk+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;mal&quot;&gt;&gt;&lt;&lt;set $ownmal+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;iceblade&quot;&gt;&gt;&lt;&lt;set $owniceblade+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _addback is &quot;pistol&quot;&gt;&gt;&lt;&lt;set $ownpistol+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set $owncrossbow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;prifle&quot;&gt;&gt;&lt;&lt;set $ownprifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;rifle&quot;&gt;&gt;&lt;&lt;set $ownrifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;shotgun&quot;&gt;&gt;&lt;&lt;set $ownshotgun+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;revolver&quot;&gt;&gt;&lt;&lt;set $ownrevolver+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;automaticrifle&quot;&gt;&gt;&lt;&lt;set $ownautorifle+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set $own50c+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;r55&quot;&gt;&gt;&lt;&lt;set $ownr55+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;gl&quot;&gt;&gt;&lt;&lt;set $owngl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;minigun&quot;&gt;&gt;&lt;&lt;set $ownminigun+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;plasma&quot;&gt;&gt;&lt;&lt;set $ownplasma+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;coil&quot;&gt;&gt;&lt;&lt;set $owncoil+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;neme&quot;&gt;&gt;&lt;&lt;set $ownneme+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _addback is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set $owncyber+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;run wchg(_addback,1)&gt;&gt;
 
 &lt;&lt;unset _addback&gt;&gt;</tw-passagedata><tw-passagedata pid="630" name="NewWeapon" tags="nobr" position="2675,1075" size="100,100">&lt;div class=&quot;wppadder&quot;&gt;
 &lt;div class=&quot;nwmelee&quot;&gt;&lt;&lt;if $activeweapon isnot &quot;fists&quot;&gt;&gt;&lt;&lt;hovertip &quot;unarmed combat&quot;&gt;&gt;[img[$imgpath + &quot;Weapons/nwmelee.png&quot;][NewCombatSimulator][$activeweapon to &quot;fists&quot;, $equipped to &quot;fists&quot;]]&lt;&lt;/hovertip&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Weapons/nwmelee.png&quot;]]&lt;/div&gt;
