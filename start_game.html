@@ -193935,24 +193935,13 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 
 
-&lt;&lt;set _show2=_npc.meleeweapon&gt;&gt;
-
-
-
-
 &lt;&lt;if _side is 1&gt;&gt;
 &lt;center&gt;
 &#39;&#39;Choose _npc.girlnames opponent in the right window.&#39;&#39;
 &lt;br&gt;&lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &#39;&#39;WEAPON&#39;&#39;&lt;br&gt;
-&lt;&lt;if _show2 is &quot;fists&quot;&gt;&gt;Fists&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _show2 is &quot;knife&quot;&gt;&gt;Combat knife&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _show2 is &quot;sword&quot;&gt;&gt;Sword&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _show2 is &quot;staff&quot;&gt;&gt;Combat staff&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _show2 is &quot;sledge&quot;&gt;&gt;Sledgehammer&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _show2 is &quot;powerkatana&quot;&gt;&gt;Power Katana&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;=wname(_npc.meleeweapon)&gt;&gt;
 &lt;br&gt;
 &#39;&#39;ARMOR&#39;&#39;&lt;br&gt;Gladiatrix Combat Armor&lt;br&gt;
 
