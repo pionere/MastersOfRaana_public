@@ -193917,6 +193917,10 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if $slaveround is 0&gt;&gt;
 
+&lt;&lt;set _tmp=_npc.meleeweapon&gt;&gt;
+&lt;&lt;if !(_tmp is &quot;fists&quot; or _tmp is &quot;knife&quot; or _tmp is &quot;sword&quot; or _tmp is &quot;staff&quot; or _tmp is &quot;sledge&quot; or _tmp is &quot;powerkatana&quot;)&gt;&gt;
+&lt;&lt;set $wpchange=&quot;fists&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $wpchange&gt;&gt;
 
@@ -301934,19 +301938,6 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;if $workchange is 19&gt;&gt;
 &lt;&lt;set $maxmasters+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $workchange is 25&gt;&gt;
-&lt;&lt;if $av_meleeweapon is &quot;whipstick&quot;&gt;&gt;&lt;&lt;set $ownwhipstick+=1&gt;&gt;&lt;&lt;set _npc.meleeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_meleeweapon is &quot;spear&quot;&gt;&gt;&lt;&lt;set $ownspear+=1&gt;&gt;&lt;&lt;set _npc.meleeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_meleeweapon is &quot;gsword&quot;&gt;&gt;&lt;&lt;set $owngsword+=1&gt;&gt;&lt;&lt;set _npc.meleeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_meleeweapon is &quot;waki&quot;&gt;&gt;&lt;&lt;set $ownwaki+=1&gt;&gt;&lt;&lt;set _npc.meleeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_meleeweapon is &quot;gaxe&quot;&gt;&gt;&lt;&lt;set $owngaxe+=1&gt;&gt;&lt;&lt;set _npc.meleeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_meleeweapon is &quot;azuk&quot;&gt;&gt;&lt;&lt;set $ownazuk+=1&gt;&gt;&lt;&lt;set _npc.meleeweapon to &quot;fists&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $workchange is 21&gt;&gt;
