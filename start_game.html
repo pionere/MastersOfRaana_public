@@ -268812,17 +268812,9 @@ The Oracle of The Red Tide has determined it&#39;s time for the crimson warriors
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _ika.prosp gt 100&gt;&gt;&lt;&lt;set _ika.prosp to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ika.control gt 100&gt;&gt;&lt;&lt;set _ika.control to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ika.corruption gt 100&gt;&gt;&lt;&lt;set _ika.corruption to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _ika.prosp lt 0&gt;&gt;&lt;&lt;set _ika.prosp to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ika.control lt 0&gt;&gt;&lt;&lt;set _ika.control to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ika.corruption lt 0&gt;&gt;&lt;&lt;set _ika.corruption to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
+&lt;&lt;set _ika.prosp=Math.clamp(_ika.prosp,0,100)&gt;&gt;
+&lt;&lt;set _ika.control=Math.clamp(_ika.control,0,100)&gt;&gt;
+&lt;&lt;set _ika.corruption=Math.clamp(_ika.corruption,0,100)&gt;&gt;
 
 
 &lt;&lt;if $ikapage is undefined&gt;&gt;&lt;&lt;set $ikapage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
