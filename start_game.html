@@ -193574,7 +193574,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;else&gt;&gt;
 
 &lt;&lt;if $videos is 1&gt;&gt;
-[img[_imgvid + $weatherroll lte 5 ? &quot;arena2.gif&quot; : &quot;arena1.gif&quot;]]
+[img[_imgvid+($weatherroll lte 5 ? &quot;arena2.gif&quot; : &quot;arena1.gif&quot;)]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
@@ -193599,7 +193599,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if _showfinal is true&gt;&gt;
 &lt;&lt;if _npc.girlid is 11888&gt;&gt;
-[img[$imgpath + $chance gte 1 ? &quot;Av11/arenavic.jpg&quot; : &quot;Av11/arenafight.jpg&quot;]]
+[img[$imgpath+($chance gte 1 ? &quot;Av11/arenavic.jpg&quot; : &quot;Av11/arenafight.jpg&quot;)]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -193624,7 +193624,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _arimg is 1 or _arimg is 2&gt;&gt;
 
 &lt;&lt;if $talk3 isnot true and $slavefighting isnot true and $talk2 is true&gt;&gt;
-[img[_img + _arimg is 1 ? &quot;arenabad.jpg&quot; : &quot;arenaok.jpg&quot;]]
+[img[_img+(_arimg is 1 ? &quot;arenabad.jpg&quot; : &quot;arenaok.jpg&quot;)]]
 
 &lt;&lt;/if&gt;&gt;
 
@@ -193683,7 +193683,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if _showfinal isnot true&gt;&gt;
 &lt;&lt;if $winpic isnot true&gt;&gt;
-[img[$imgpath + ($daycount gte 190 or $daycount lte 40) ? &quot;Exterior/arena.jpg&quot; : &quot;Exterior/arenaday.jpg&quot;]]
+[img[$imgpath+($daycount gte 190 or $daycount lte 40 ? &quot;Exterior/arena.jpg&quot; : &quot;Exterior/arenaday.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;Exterior/arenachamp.jpg&quot;]]
 &lt;&lt;unset $winpic&gt;&gt;
