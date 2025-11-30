@@ -70742,7 +70742,7 @@ You inquire about $girlnames aspirations and plans for the future.
 //There&#39;s one thing I&#39;d like to help you with, however, as long as you continue fucking me, Master.//
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if $rebbus === undefined&gt;&gt;
+&lt;&lt;if $rebbus is undefined&gt;&gt;
 Rebecca has offered her knowledge if you’d wish to indulge yourself in the business of trading. If you accept, her participation will greatly increase the profits from any trades or businesses you choose to invest in. It will not take up any work or activity slots from her current schedule.
 &lt;br&gt;&lt;br&gt;
 
@@ -88088,7 +88088,7 @@ You know he lives in this area of Redhaven, which he roams daily looking for tro
 
 &lt;&lt;set $loot to 10&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cre is 2 or $cre is 4 or $cre === undefined&gt;&gt;You&#39;re observing a true Redhaven menace. &#39;&#39;Roderick Hallse&#39;&#39;. A fucked-up Crystal Hills&#39; wannabe who recently got away after killing one of the street urchins that lives in this area.
+&lt;&lt;if $cre is 2 or $cre is 4 or $cre is undefined&gt;&gt;You&#39;re observing a true Redhaven menace. &#39;&#39;Roderick Hallse&#39;&#39;. A fucked-up Crystal Hills&#39; wannabe who recently got away after killing one of the street urchins that lives in this area.
 
 
 
@@ -160877,7 +160877,7 @@ You overheard something interesting while carousing with a middle-aged female du
 You overheard an interesting rumor while talking to an old guy at the bar:
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Local: &#39;&#39;//There&#39;s an abandoned warehouse down on Aisle Street here in Watery. It was opened by a pair of freebooters a couple o&#39; days ago but it had one of them doors that needs a passy. Not even a 7.62 bullet can fire through that door. No Sir! Heard it was pre-severance even!//
-&lt;&lt;if $wateryspec3 === undefined&gt;&gt;&lt;&lt;set $wateryspec3 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wateryspec3 is undefined&gt;&gt;&lt;&lt;set $wateryspec3 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $action8 to false&gt;&gt;
 &lt;&lt;set $action3 to false&gt;&gt;
 
@@ -160891,7 +160891,7 @@ There&#39;s an interesting rumor circulating that you took special notice of. Es
 &lt;br&gt;&lt;br&gt;
 But ye better watch out. These&#39;a freebooters are cyber punks. They carry those implants and coil weapons that aint’ worth meddlin&#39; with.
 //
-&lt;&lt;if $wateryspec4 === undefined&gt;&gt;&lt;&lt;set $wateryspec4 to 1&gt;&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wateryspec4 is undefined&gt;&gt;&lt;&lt;set $wateryspec4 to 1&gt;&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $action9 to false&gt;&gt;
 &lt;&lt;set $action3 to false&gt;&gt;
 &lt;&lt;set $heardcyber to true&gt;&gt;
@@ -165060,7 +165060,7 @@ You&#39;re standing inside Nika&#39;s clothing store.
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $action is 0 and $intalk is false&gt;&gt;
-&lt;&lt;if $disp_nika === undefined&gt;&gt;&lt;&lt;set $disp_nika to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $disp_nika is undefined&gt;&gt;&lt;&lt;set $disp_nika to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 After walking on the shop-infested Loovar street for a couple of minutes, you suddenly turn right and enter Nika&#39;s clothing store.
 &lt;br&gt;&lt;br&gt;
@@ -167218,7 +167218,7 @@ You&#39;re inside Sloppy Moe&#39;s Bar, one of the few remaining taverns south o
 After knocking on a reinforced wooden door, you&#39;re allowed inside the dimly lit hall by one of Moe&#39;s leather-clad guards.
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $moeday is 1&gt;&gt;It&#39;s a rather quiet day today. There are some conversations going on here and there, and a couple of locals huddle over a tankard of ale at the bar.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $moeday is 2&gt;&gt;A travelling minstrel has occupied the scene next to the fire place, where he&#39;s playing a beautiful tune on his guitar. &lt;&lt;if $stampoints lte 25 and $mogive === undefined&gt;&gt;You&#39;re affected by the soothing atmosphere and recover three &#39;&#39;Stamina points&#39;&#39; after listening to his music.&lt;&lt;set $stampoints+=3&gt;&gt;&lt;&lt;set $mogive to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $moeday is 2&gt;&gt;A travelling minstrel has occupied the scene next to the fire place, where he&#39;s playing a beautiful tune on his guitar. &lt;&lt;if $stampoints lte 25 and $mogive is undefined&gt;&gt;You&#39;re affected by the soothing atmosphere and recover &#39;&#39;Stamina points (+3)&#39;&#39; after listening to his music.&lt;&lt;set $stampoints+=3&gt;&gt;&lt;&lt;set $mogive to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 /*
 &lt;&lt;if $moeday is 3&gt;&gt;You instantly spot two young females standing at the bar. Their eyes are all over the place and they greet you with a welcoming smile as you enter the main hall. There&#39;s bo doubt that they&#39;ll be willing to offer you a warm bed - if you can pay for it.
 &lt;&lt;if $cumbuild lte 0 or $hascummed is true&gt;&gt;
@@ -167476,7 +167476,7 @@ She does it, however, either out of determination or sheer hunger, and looks lik
 You leave a whole copper shim to the girl, hoping she&#39;ll appreciate the gesture.
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $marsspec1 === undefined&gt;&gt;&lt;&lt;set $marsspec1 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $marsspec1 is undefined&gt;&gt;&lt;&lt;set $marsspec1 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $marsspec1 is 1&gt;&gt;
 &#39;&#39;&lt;&lt;if $action3 is true&gt;&gt;Belinda&lt;&lt;else&gt;&gt;Avril&lt;&lt;/if&gt;&gt;: &#39;&#39; //Thanks, this here&#39;s I gonna keep for myself.//
@@ -167651,7 +167651,7 @@ The other guy, Erik, throws you a glass bottle with a brownish liquid inside. It
 
 &lt;&lt;if $invest is 3&gt;&gt;
 
-&lt;&lt;if $dockpunkspay === undefined&gt;&gt;
+&lt;&lt;if $dockpunkspay is undefined&gt;&gt;
 You can pay of the Dockyard Punks with a one-time fee&lt;&lt;if $mctraitlaw gte 100&gt;&gt; &lt;div class=&quot;red&quot;&gt;Disabled!&lt;/div&gt; (trait effect)&lt;&lt;/if&gt;&gt;. That&#39;ll make them leave all your shipments alone - IF you have struck any deals, made investments, or started a business of your own. The Dockyard Punks will not disturb mercenary ventures or any other affairs involving excessive amounts of soldiers.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Punk leader: &#39;&#39;//So yer&#39; havin&#39; some trouble, hey? Let us help you with that.//
@@ -311632,7 +311632,7 @@ girlname: _npc.girlname
 &lt;&lt;if $totmeat is undefined&gt;&gt;&lt;&lt;set $totmeat to 0&gt;&gt;&lt;&lt;set $totpelt to 0&gt;&gt;&lt;&lt;set $totskin to 0&gt;&gt;&lt;&lt;set $totfood to 0&gt;&gt;&lt;&lt;set $totleather to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $nathen is true&gt;&gt;
-&lt;&lt;if _npc.actnpc === 1 and $hunterweapon and $huntinggrounds&gt;&gt;&lt;&lt;set _hunterreset to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.actnpc is 1 and $hunterweapon and $huntinggrounds&gt;&gt;&lt;&lt;set _hunterreset to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 /*NATHEN CODE ENDS*/
 
@@ -409503,11 +409503,11 @@ Marinelli studies the book with a troubled look before responding:
     &lt;&lt;set _title to _relation[3]&gt;&gt;
     &lt;&lt;if _relation[2] is &quot;assigned&quot;&gt;&gt;
      &lt;&lt;for _current_npc range $npc&gt;&gt;
-     &lt;&lt;if _current_npc[_relation[2]] === $report_npc.actnpc&gt;&gt;&lt;&lt;run _report.push(_current_npc)&gt;&gt;&lt;&lt;/if&gt;&gt;
+     &lt;&lt;if _current_npc[_relation[2]] is $report_npc.actnpc&gt;&gt;&lt;&lt;run _report.push(_current_npc)&gt;&gt;&lt;&lt;/if&gt;&gt;
      &lt;&lt;/for&gt;&gt;
     &lt;&lt;else&gt;&gt;
      &lt;&lt;for _current_npc range $npc&gt;&gt;
-     &lt;&lt;if _current_npc.dayblock === _relation[2] and _current_npc.actnpc !== _report_npc.actnpc&gt;&gt;&lt;&lt;run _report.push(_current_npc)&gt;&gt;&lt;&lt;/if&gt;&gt;
+     &lt;&lt;if _current_npc.dayblock is _relation[2] and _current_npc.actnpc !== _report_npc.actnpc&gt;&gt;&lt;&lt;run _report.push(_current_npc)&gt;&gt;&lt;&lt;/if&gt;&gt;
      &lt;&lt;/for&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;break&gt;&gt;
