@@ -193073,13 +193073,15 @@ A group of //Body Runners// pull you back into the undercroft of the arena, wher
 &lt;&lt;if $descroll3 gte 6&gt;&gt;&lt;&lt;set $descroll3 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll4 gte 6&gt;&gt;&lt;&lt;set $descroll4 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _inf to 10&gt;&gt;
-&lt;&lt;if _ran lte 2&gt;&gt;&lt;&lt;set $arenascore=adl($arenascore,1,96)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ran lte 2&gt;&gt;&lt;&lt;set $arenascore=adl($arenascore,1,$ar_tier2 lte 8 ? 96 : 100)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $combat is 200&gt;&gt;&lt;&lt;set _inf+=50&gt;&gt;&lt;&lt;set $arenascore+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $combat is 201&gt;&gt;&lt;&lt;set _inf+=100&gt;&gt;&lt;&lt;set $arenascore+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 208&gt;&gt;&lt;&lt;set _inf+=600&gt;&gt;&lt;&lt;set $arenascore=adl($arenascore,5,100)&gt;&gt;&lt;&lt;set $winpic to true&gt;&gt;&lt;&lt;set $complete to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $combat is 208&gt;&gt;&lt;&lt;set _inf+=600&gt;&gt;&lt;&lt;set $arenascore+=5&gt;&gt;&lt;&lt;set $winpic to true&gt;&gt;&lt;&lt;set $complete to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $combat is 218&gt;&gt;&lt;&lt;set _inf+=200&gt;&gt;&lt;&lt;set $arenascore+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set $arenascore=Math.min($arenascore,100)&gt;&gt;
 
 &lt;center&gt;
 &lt;div class=&quot;green blink_me&quot;&gt;VICTORY!&lt;/div&gt;
