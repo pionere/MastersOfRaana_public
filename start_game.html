@@ -192857,12 +192857,6 @@ $connect units
 &lt;&lt;set _isinarena to true&gt;&gt;
 &lt;&lt;include IniTop&gt;&gt;
 
-/* HAS FIGHT PICS */
-
-&lt;&lt;if _npc.girlid is 50 or _npc.girlid is 215 or _npc.girlid is 205&gt;&gt;
-&lt;&lt;set _fightpics to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;set _npc.tempstamina=Math.max(_npc.tempstamina,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -193352,90 +193346,47 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 
 
-
-
-
-&lt;&lt;if _npc.girlid gte 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av&quot;+_npc.girlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid gte 18&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $videos gte 1&gt;&gt;
-&lt;&lt;set _imgvid to &quot;Mods/Videos/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $slavefighting is true or _showafterpic is true&gt;&gt;
-&lt;&lt;if _npc.girlid lte 99&gt;&gt;
-&lt;&lt;if $sandman gte 1&gt;&gt;
-&lt;&lt;set _img to &quot;Mods/Sandman/Pics/&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid gte 100&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/AvRan/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _img=$imgpath+(_npc.girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+_npc.girlid+&quot;/&quot;&gt;&gt;
+&lt;&lt;if $slavefighting or _showafterpic&gt;&gt;
 /* has fight pics below */
-&lt;&lt;if _npc.girlid lte 22 or _npc.girlid is 28 or _npc.girlid is 36 or _npc.girlid is 207 or _npc.girlid is 32 or _npc.girlid is 42 or _npc.girlid is 128 or _npc.girlid is 202 or _npc.girlid is 206 or _npc.girlid is 209 or _npc.girlid is 213 or _npc.girlid is 40 or _fightpics is true&gt;&gt;
-&lt;&lt;set _picok to true&gt;&gt;
+&lt;&lt;set _tmp=[28,32,36,40,42,50,52,128,202,205,206,207,209,213,215]&gt;&gt;
+&lt;&lt;set _picok=_npc.age gte 18 and (_npc.girlid lte 22 or _tmp.contains(_npc.girlid))&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _picok=_npc.girlid lt 18&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.girlid is 18 and $npc.av18.age lte 17&gt;&gt;&lt;&lt;set _picok to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if !_picok&gt;&gt;
+&lt;&lt;set _img=$imgpath+&quot;AvGen/&quot;&gt;&gt;
+&lt;&lt;elseif $sandman gte 1&gt;&gt;
+&lt;&lt;set _img=&quot;Mods/Sandman/&quot;+_img&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
+&lt;&lt;if $slavefighting&gt;&gt;
+&lt;&lt;if $slaveround is 0&gt;&gt;
 
-
-
-&lt;&lt;if $slavefighting is true&gt;&gt;
-
-
-&lt;&lt;if $slaveround isnot 1 and $slaveround isnot 2&gt;&gt;
 &lt;&lt;set _side to 2&gt;&gt;
 &lt;&lt;include ArenaFight&gt;&gt;
+
+&lt;&lt;elseif $slaveround is 1&gt;&gt;
+
+&lt;&lt;if _picok or $videos isnot 1&gt;&gt;
+[img[_img+&quot;arenafight.jpg&quot;]]
+&lt;&lt;else&gt;&gt;
+[img[&quot;Mods/Videos/&quot;+($weatherroll lte 5 ? &quot;arena2.gif&quot; : &quot;arena1.gif&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $slaveround is 1&gt;&gt;
-
-&lt;&lt;if _picok is true&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+&quot;/arenafight.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 
-&lt;&lt;if $videos is 1&gt;&gt;
-[img[_imgvid+($weatherroll lte 5 ? &quot;arena2.gif&quot; : &quot;arena1.gif&quot;)]]
+&lt;&lt;if _picok&gt;&gt;
+[img[_img+($chance gte 1 ? &quot;/arenavic.jpg&quot; : &quot;/arenadef.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
+[img[_img+&quot;arenafight.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $slaveround is 2 or _showafterpic is true&gt;&gt;
-
-&lt;&lt;if _picok is true&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+($chance gte 1 ? &quot;/arenavic.jpg&quot; : &quot;/arenadef.jpg&quot;)]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _showfinal is true&gt;&gt;
-&lt;&lt;if _npc.girlid is 11888&gt;&gt;
-[img[$imgpath+($chance gte 1 ? &quot;Av11/arenavic.jpg&quot; : &quot;Av11/arenafight.jpg&quot;)]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $inspectarena is true&gt;&gt;
 &lt;br&gt;
@@ -193444,67 +193395,30 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 
-
-&lt;&lt;if $slavefighting isnot true and _showafterpic isnot true&gt;&gt;
-&lt;&lt;if _npc.girlid lte 99&gt;&gt;
-&lt;&lt;if $sandman gte 1&gt;&gt;
-&lt;&lt;set _img to &quot;Mods/Sandman/Pics/Av&quot;+_npc.girlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/Av&quot;+_npc.girlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _arimg is 1 or _arimg is 2&gt;&gt;
-
-&lt;&lt;if $talk3 isnot true and $slavefighting isnot true and $talk2 is true&gt;&gt;
+&lt;&lt;if $talk1 or $talk2&gt;&gt;
 [img[_img+(_arimg is 1 ? &quot;arenabad.jpg&quot; : &quot;arenaok.jpg&quot;)]]
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $talk3 is true&gt;&gt;
-
-
+&lt;&lt;if $talk3&gt;&gt;
 
 &lt;&lt;if $arsexround lte 1&gt;&gt;
-
-&lt;&lt;if _arimg is 1&gt;&gt;
-[img[_img + &quot;arenabad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _arimg is 2&gt;&gt;
-[img[_img + &quot;arenaok.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[_img+(_arimg is 1 ? &quot;arenabad.jpg&quot; : &quot;arenaok.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
 [img[_img + &quot;arenasex.jpg&quot;]]
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;/if&gt;&gt;
 
-
-
-
-
-&lt;&lt;if _showafterpic is true&gt;&gt;
-
-&lt;&lt;if _picok is true&gt;&gt;
-[img[_img +&quot;Av&quot;+_npc.girlid+($chance gte 1 ? &quot;/arenavic.jpg&quot; : &quot;/arenadef.jpg&quot;)]]
+&lt;&lt;if _showafterpic&gt;&gt;
+&lt;&lt;if _picok&gt;&gt;
+[img[_img+($chance gte 1 ? &quot;arenavic.jpg&quot; : &quot;arenadef.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
-
-[img[$imgpath + &quot;AvGen/arenafight.jpg&quot;]]
-
-
-
+[img[_img+&quot;arenafight.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
-
-
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -193513,34 +193427,16 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 
 
-&lt;&lt;if $slavefighting isnot true and $talk3 isnot true and $talk2 isnot true and $inspectarena isnot true and $talk1 isnot true and $event lte 0&gt;&gt;
+&lt;&lt;if !$slavefighting and !_showafterpic and !$talk1 and !$talk2 and !$talk3 and !$inspectarena and $event lte 0&gt;&gt;
 
-&lt;&lt;if _showfinal isnot true&gt;&gt;
 &lt;&lt;if $winpic isnot true&gt;&gt;
 [img[$imgpath+($daycount gte 190 or $daycount lte 40 ? &quot;Exterior/arena.jpg&quot; : &quot;Exterior/arenaday.jpg&quot;)]]
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;Exterior/arenachamp.jpg&quot;]]
 &lt;&lt;unset $winpic&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $talk1 is true&gt;&gt;
-
-&lt;&lt;if _arimg is 1&gt;&gt;
-[img[_img + &quot;arenabad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _arimg is 2&gt;&gt;
-[img[_img + &quot;arenaok.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
 
 
 &lt;&lt;if $event gte 1 and _incombat isnot true&gt;&gt;
@@ -194274,8 +194170,6 @@ _npc.girlname has lost the fight!
 &lt;/center&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;set _showfinal to true&gt;&gt;
 
 &lt;&lt;set $slavefought to 1&gt;&gt;
 &lt;&lt;unset $slavefighting&gt;&gt;
