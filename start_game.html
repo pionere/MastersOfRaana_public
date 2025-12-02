@@ -28981,14 +28981,6 @@ You cannot apply for factory work unless your &#39;&#39;Stamina points, Health, 
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $history is 21&gt;&gt;
-&lt;center&gt;&lt;h2&gt;- OPTIONS -&lt;/h2&gt;&lt;/center&gt;
-&lt;hr&gt;
-&lt;center&gt;&#39;&#39;OPTION MENU ONLY AVAILABLE AT YOUR HOME OR WHILE OUTSIDE!&#39;&#39;&lt;/center&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
 
 &lt;&lt;if $history is 22&gt;&gt;
 &lt;center&gt;&lt;h2&gt;- THE BROTHERHOOD OF RYZAAN -&lt;/h2&gt;&lt;/center&gt;
@@ -35973,16 +35965,15 @@ $girlname has a normal and healthy body weight.&lt;br&gt;&lt;br&gt;She might hav
 
 
 &lt;&lt;hovertip &quot;Options&quot;&gt;&gt;
-&lt;div class=&quot;homebutt lighthover&quot;&gt;
 &lt;&lt;if $wopos is 1 or $inside is false&gt;&gt;
+&lt;div class=&quot;homebutt lighthover&quot;&gt;
 [img[$imgpath + &quot;Butt/opt.png&quot;][OptionsMenu2]]
-&lt;&lt;else&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/opt.png&quot;]]&gt;&gt;
-&lt;&lt;set $history to 21&gt;&gt;
-&lt;&lt;popup &#39;History&#39;&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;else&gt;&gt;
+&lt;div class=&quot;homebutt opac&quot;&gt;
+[img[$imgpath + &quot;Butt/opt.png&quot;]]
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/hovertip&gt;&gt;
 
 
