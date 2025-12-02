@@ -160642,7 +160642,6 @@ You
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;states&quot;&gt;
-&lt;&lt;if $plimp isnot undefined&gt;&gt;
 &lt;&lt;if $plimp[0] gte 1&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/healimp.png&quot;]]&gt;&gt;
@@ -160650,11 +160649,6 @@ You
 &lt;&lt;popup &#39;QuestTexts&#39;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac&quot;&gt;
-[img[$imgpath + &quot;Butt/buttsmall.png&quot;]]
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
 [img[$imgpath + &quot;Butt/buttsmall.png&quot;]]
@@ -160684,7 +160678,6 @@ You
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;states&quot;&gt;
-&lt;&lt;if $plimp isnot undefined&gt;&gt;
 &lt;&lt;if $plimp[1] gte 1&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/healthimp.png&quot;]]&gt;&gt;
@@ -160692,11 +160685,6 @@ You
 &lt;&lt;popup &#39;QuestTexts&#39;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac&quot;&gt;
-[img[$imgpath + &quot;Butt/buttsmall.png&quot;]]
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
 [img[$imgpath + &quot;Butt/buttsmall.png&quot;]]
@@ -160823,21 +160811,11 @@ You
 &lt;&lt;if $tut isnot 1 and $tut isnot 2&gt;&gt;
 &lt;div class=&quot;lighthover highest&quot;&gt;
 
-&lt;&lt;if $mch.stables is 1&gt;&gt;
 &lt;&lt;hovertip &quot;Character sheet&quot;&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/chr2.png&quot;]]&gt;&gt;
+&lt;&lt;link [img[$imgpath + ($mch.stables is 1 ? &quot;Butt/chr2.png&quot; : &quot;Butt/chr.png&quot;)]]&gt;&gt;
 &lt;&lt;popup &#39;ChrSheet&#39; _refresh&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;/hovertip&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;&lt;hovertip &quot;Character sheet&quot;&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/chr.png&quot;]]&gt;&gt;
-&lt;&lt;popup &#39;ChrSheet&#39; _refresh&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/hovertip&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -160883,9 +160861,9 @@ You
 &lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;Throbbing!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &#39;&#39;//
-/*[[H|Home]]*/
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="252" name="SlaveInventory" tags="nobr no-transition gray menu" position="1250,1825" size="200,100">
