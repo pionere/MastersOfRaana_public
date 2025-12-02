@@ -268911,21 +268911,21 @@ $mcrel.devotion/130
 &lt;&lt;set $checkedpower to true&gt;&gt;
 
 &lt;&lt;set $noclick to true&gt;&gt;
-&lt;&lt;set _dona to 0&gt;&gt;
+&lt;&lt;set _dona=0&gt;&gt;
 &lt;&lt;set _cap=150&gt;&gt;
 
 &lt;&lt;if $activefac is 1&gt;&gt;
 
 &lt;&lt;set _fac to $faction.viking&gt;&gt;
 &lt;&lt;set _facname to &quot;AESIR TRIBE&quot;&gt;&gt;
-&lt;&lt;if $mcrel.faith is 4&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dona=$mcrel.faith is 4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 2&gt;&gt;
 
 &lt;&lt;set _fac to $faction.kymanto&gt;&gt;
 &lt;&lt;set _facname to &quot;THE KYMANTO SYNDICATE&quot;&gt;&gt;
-&lt;&lt;set _dona to 1&gt;&gt;
+&lt;&lt;set _dona=1&gt;&gt;
 &lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -268953,8 +268953,7 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.preacher&gt;&gt;
 &lt;&lt;set _facname to &quot;PREACHER&#39;S HALL&quot;&gt;&gt;
-
-&lt;&lt;if $quest_miche gte 14&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dona=$quest_miche gte 14&gt;&gt;
 &lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -268962,29 +268961,24 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.bandit&gt;&gt;
 &lt;&lt;set _facname to &quot;BANDIT FACTION&quot;&gt;&gt;
-
-&lt;&lt;set _dona to 1&gt;&gt;
+&lt;&lt;set _dona=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 8&gt;&gt;
 
 &lt;&lt;set _fac to $faction.ikaanos&gt;&gt;
 &lt;&lt;set _facname to &quot;THE REPUBLIC&quot;&gt;&gt;
-
+&lt;&lt;set _dona=1&gt;&gt;
 &lt;&lt;set _fortmenok=$quest_aria gte 20 and $faction.ikaanos.state is 2&gt;&gt;
 &lt;&lt;set _cap=_fortmenok ? 80 : 70&gt;&gt;
-
-&lt;&lt;set _dona to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 9&gt;&gt;
 
 &lt;&lt;set _fac to $faction.rebel&gt;&gt;
 &lt;&lt;set _facname to &quot;THE FREEDOM ALLIANCE&quot;&gt;&gt;
-
+&lt;&lt;set _dona=1&gt;&gt;
 &lt;&lt;set _cap=90&gt;&gt;
-
-&lt;&lt;set _dona to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 10&gt;&gt;
@@ -268998,10 +268992,7 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.moon&gt;&gt;
 &lt;&lt;set _facname to &quot;THE CHURCH OF THE TWO MOONS&quot;&gt;&gt;
-&lt;&lt;set _dona to 1&gt;&gt;
-
-&lt;&lt;if $mcrel.faith is 6&gt;&gt;&lt;&lt;set _dona to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _dona=$mcrel.faith isnot 6&gt;&gt;
 &lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -269031,9 +269022,7 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.his&gt;&gt;
 &lt;&lt;set _facname to &quot;WHITEHAVEN ACADEMY&quot;&gt;&gt;
-
-&lt;&lt;if _fac.standing gte 10&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _dona=_fac.standing gte 10&gt;&gt;
 &lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -269041,12 +269030,9 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.warlord1&gt;&gt;
 &lt;&lt;set _facname to &quot;$serafort&quot;&gt;&gt;
-&lt;&lt;set _donawep to 0&gt;&gt;
-&lt;&lt;set _donamoney to 0&gt;&gt;
-
-&lt;&lt;if $quest_sera gte 3&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $quest_sera gte 4&gt;&gt;&lt;&lt;set _donawep to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $quest_sera gte 5&gt;&gt;&lt;&lt;set _donamoney to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dona=$quest_sera gte 3&gt;&gt;
+&lt;&lt;set _donawep=$quest_sera gte 4&gt;&gt;
+&lt;&lt;set _donamoney=$quest_sera gte 5&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -269057,12 +269043,8 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.mob&gt;&gt;
 &lt;&lt;set _facname to &quot;HOUSE CAROZZA&quot;&gt;&gt;
-
-&lt;&lt;if $credit gte 20000&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dona=$credit gte 20000 and !$mctraitlaw&gt;&gt;
 &lt;&lt;set _cap=70&gt;&gt;
-
-&lt;&lt;if $mctraitlaw gte 1&gt;&gt;&lt;&lt;unset _dona&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 17&gt;&gt;
@@ -269074,8 +269056,7 @@ $mcrel.devotion/130
 &lt;&lt;set _level to &quot;Class III&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mcpower gte 15&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _dona=$mcpower gte 15&gt;&gt;
 &lt;&lt;set _fortmenok=$faction.warlord1.men gte 100 and $quest_sera gte 6 and $faction.ikaanos.men lte 9999 and ($mcpower gte 25 or $credit gte 15000)&gt;&gt;
 &lt;&lt;set _cap=$quest_aria gte 20 and $faction.ikaanos.state is 2 ? 80 : 70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -269086,8 +269067,7 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.muslim&gt;&gt;
 &lt;&lt;set _facname to &quot;THE CALIPHATE&quot;&gt;&gt;
-&lt;&lt;set _dona to 1&gt;&gt;
-
+&lt;&lt;set _dona=1&gt;&gt;
 &lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -269096,8 +269076,6 @@ $mcrel.devotion/130
 
 &lt;&lt;set _fac to $faction.red&gt;&gt;
 &lt;&lt;set _facname to &quot;REDHAVEN DISTRICT&quot;&gt;&gt;
-&lt;&lt;set _dona to 0&gt;&gt;
-
 &lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -269339,33 +269317,33 @@ $mcrel.devotion/130
 /* BELOW STARTS ALL FACTIONS */
 
 &lt;div class=&quot;tex18px center&quot;&gt;&#39;&#39;- &lt;&lt;if _fac.standing lte 99&gt;&gt;DONATE&lt;&lt;else&gt;&gt;ENHANCE&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/div&gt;
-&lt;&lt;if _dona is 0&gt;&gt;&lt;center&gt;&#39;&#39;//(Disabled!)//&#39;&#39;&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if !_dona&gt;&gt;&lt;center&gt;&#39;&#39;//(Disabled!)//&#39;&#39;&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 /*&lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;*/
 
 /* FIRST ROW */
 &lt;div class=&quot;row ulvendor&quot;&gt;
-&lt;&lt;if $activefac is 15 and _donamoney is 0&gt;&gt;&lt;&lt;set _dona to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activefac is 15 and !_donamoney&gt;&gt;&lt;&lt;set _dona=0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $activefac isnot 17 and $activefac isnot 12&gt;&gt;
-&lt;&lt;if $cash gte 1000 and _dona gte 1 and $activefac isnot 8&gt;&gt;[[$1,000|Factions][_fac.money+=1000, $standing to 1, $cash-=1000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$1,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cash gte 10000 and _dona gte 1 and $activefac isnot 8&gt;&gt;[[$10,000|Factions][_fac.money+=10000, $standing to 2, $cash-=10000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$10,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cash gte 100000 and _dona gte 1&gt;&gt;[[$100,000|Factions][_fac.money+=100000, $standing to 3, $cash-=100000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$100,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 1000 and _dona and $activefac isnot 8&gt;&gt;[[$1,000|Factions][_fac.money+=1000, $standing to 1, $cash-=1000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$1,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 10000 and _dona and $activefac isnot 8&gt;&gt;[[$10,000|Factions][_fac.money+=10000, $standing to 2, $cash-=10000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$10,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 100000 and _dona&gt;&gt;[[$100,000|Factions][_fac.money+=100000, $standing to 3, $cash-=100000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$100,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $activefac is 12&gt;&gt;
-&lt;&lt;if $ownnecklace3 gte 10 and _dona gte 1&gt;&gt;[[x10 g. necklace|Factions][_fac.money+=10000, $standing to 2, $ownnecklace3-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x10 g. necklace&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cash gte 10000 and _dona gte 1&gt;&gt;[[$10,000|Factions][_fac.money+=10000, $standing to 2, $cash-=10000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$10,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cash gte 100000 and _dona gte 1&gt;&gt;[[$100,000|Factions][_fac.money+=100000, $standing to 3, $cash-=100000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$100,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownnecklace3 gte 10 and _dona&gt;&gt;[[x10 g. necklace|Factions][_fac.money+=10000, $standing to 2, $ownnecklace3-=10]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x10 g. necklace&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 10000 and _dona&gt;&gt;[[$10,000|Factions][_fac.money+=10000, $standing to 2, $cash-=10000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$10,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 100000 and _dona&gt;&gt;[[$100,000|Factions][_fac.money+=100000, $standing to 3, $cash-=100000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;$100,000&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $activefac is 17&gt;&gt;
-&lt;&lt;if $ownpistol gte 100 and _dona gte 1&gt;&gt;[[x100 pistols|Factions][$standing to 2, $ownpistol-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x100 pistols&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ownknife gte 250 and _dona gte 1&gt;&gt;[[x250 knives|Factions][$standing to 2, $ownknife-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x250 knives&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $a9mm gte 1000 and _dona gte 1&gt;&gt;[[x1,000 9mm|Factions][$standing to 2, $a9mm-=1000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1,000 9mm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownpistol gte 100 and _dona&gt;&gt;[[x100 pistols|Factions][$standing to 2, $ownpistol-=100]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x100 pistols&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownknife gte 250 and _dona&gt;&gt;[[x250 knives|Factions][$standing to 2, $ownknife-=250]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x250 knives&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $a9mm gte 1000 and _dona&gt;&gt;[[x1,000 9mm|Factions][$standing to 2, $a9mm-=1000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1,000 9mm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -269379,26 +269357,26 @@ $mcrel.devotion/130
 &lt;div class=&quot;row ulvendor&quot;&gt;
 &lt;&lt;if $activefac isnot 14 and $activefac isnot 17 and $activefac isnot 12 and $activefac isnot 18&gt;&gt;
 
-&lt;&lt;if $activefac is 15 and _donawep is 0&gt;&gt;&lt;&lt;set _dona to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activefac is 15 and _fac.standing gte 15&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activefac is 15 and !_donawep&gt;&gt;&lt;&lt;set _dona=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activefac is 15 and _fac.standing gte 15&gt;&gt;&lt;&lt;set _dona=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ownsword gte 20 and _dona gte 1&gt;&gt;[[x20 swords|Factions][_fac.power+=1, $ownsword-=20, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x20 swords&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownsword gte 20 and _dona&gt;&gt;[[x20 swords|Factions][_fac.power+=1, $ownsword-=20, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x20 swords&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac isnot 15 and $activefac isnot 7&gt;&gt;
-&lt;&lt;if $ownrifle gte 10 and _dona gte 1&gt;&gt;[[x10 rifles|Factions][_fac.power+=1, $ownrifle-=10, $standing to 5]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x10 rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownrifle gte 10 and _dona&gt;&gt;[[x10 rifles|Factions][_fac.power+=1, $ownrifle-=10, $standing to 5]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x10 rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $ownautorifle gte 25 and _dona gte 1&gt;&gt;[[x25 auto rifles|Factions][_fac.power+=1, $ownautorifle-=25, $standing to 7]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x25 auto rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownautorifle gte 25 and _dona&gt;&gt;[[x25 auto rifles|Factions][_fac.power+=1, $ownautorifle-=25, $standing to 7]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x25 auto rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac isnot 1 and $activefac isnot 15 and $activefac isnot 17 and $activefac isnot 12&gt;&gt;
 
-&lt;&lt;if $owncoil gte 10 and _dona gte 1&gt;&gt;[[x10 coilguns|Factions][_fac.power+=2, $owncoil-=10, $standing to 6]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x10 coilguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $owncoil gte 10 and _dona&gt;&gt;[[x10 coilguns|Factions][_fac.power+=2, $owncoil-=10, $standing to 6]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x10 coilguns&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $activefac isnot 17&gt;&gt;
-&lt;&lt;if $activefac is 15&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $activefac is 15&gt;&gt;&lt;&lt;set _dona=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $takensl gte 1 and _dona gte 1&gt;&gt;[[captured slaves|BusinessEngine][$scaving to 57, $comesfromfaction to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;captured slaves&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $takensl gte 1 and _dona&gt;&gt;[[captured slaves|BusinessEngine][$scaving to 57, $comesfromfaction to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;captured slaves&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -269406,9 +269384,9 @@ $mcrel.devotion/130
 
 
 &lt;&lt;if $activefac is 12&gt;&gt;
-&lt;&lt;if $ownartifact3 gte 1 and _dona gte 1&gt;&gt;[[x1 Artifact (Rare)|Factions][$ownartifact3-=1, $standing to 8]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1 Artifact (Rare)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $foodstuff gte 750 and _dona gte 1&gt;&gt;[[x750R|Factions][_fac.power+=1, $foodstuff-=750, $standing to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x750R&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $swag gte 250 and _dona gte 1&gt;&gt;[[x250 Merch|Factions][_fac.power+=1, $swag-=250, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x250 Merch&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownartifact3 gte 1 and _dona&gt;&gt;[[x1 Artifact (Rare)|Factions][$ownartifact3-=1, $standing to 8]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1 Artifact (Rare)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $foodstuff gte 750 and _dona&gt;&gt;[[x750R|Factions][_fac.power+=1, $foodstuff-=750, $standing to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x750R&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $swag gte 250 and _dona&gt;&gt;[[x250 Merch|Factions][_fac.power+=1, $swag-=250, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x250 Merch&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -269416,17 +269394,17 @@ $mcrel.devotion/130
 
 
 &lt;&lt;if $activefac is 17&gt;&gt;
-&lt;&lt;if $ownsword gte 100 and _dona gte 1&gt;&gt;[[x100 swords|Factions][_fac.power+=1, $ownsword-=100, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x100 swords&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ownrifle gte 100 and _dona gte 1&gt;&gt;[[x100 rifles|Factions][_fac.power+=1, $ownrifle-=100, $standing to 5]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x100 rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ownautorifle gte 50 and _dona gte 1&gt;&gt;[[x50 auto rifles|Factions][_fac.power+=1, $ownautorifle-=50, $standing to 7]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x50 auto rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownsword gte 100 and _dona&gt;&gt;[[x100 swords|Factions][_fac.power+=1, $ownsword-=100, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x100 swords&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownrifle gte 100 and _dona&gt;&gt;[[x100 rifles|Factions][_fac.power+=1, $ownrifle-=100, $standing to 5]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x100 rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownautorifle gte 50 and _dona&gt;&gt;[[x50 auto rifles|Factions][_fac.power+=1, $ownautorifle-=50, $standing to 7]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x50 auto rifles&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 
 &lt;&lt;if $activefac is 14 or $activefac is 18&gt;&gt;
-&lt;&lt;if $ownartifact3 gte 1 and _dona gte 1&gt;&gt;[[x1 Artifact (Rare)|Factions][$ownartifact3-=1, $standing to 8]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1 Artifact (Rare)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ownart gte 1 and _dona gte 1&gt;&gt;[[x1 Art|Factions][_fac.power+=1, $ownart-=1, $standing to 2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1 Art&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $swag gte 200 and _dona gte 1&gt;&gt;[[x200 Merch|Factions][_fac.power+=1, $swag-=200, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x200 Merch&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownartifact3 gte 1 and _dona&gt;&gt;[[x1 Artifact (Rare)|Factions][$ownartifact3-=1, $standing to 8]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1 Artifact (Rare)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownart gte 1 and _dona&gt;&gt;[[x1 Art|Factions][_fac.power+=1, $ownart-=1, $standing to 2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x1 Art&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $swag gte 200 and _dona&gt;&gt;[[x200 Merch|Factions][_fac.power+=1, $swag-=200, $standing to 4]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;x200 Merch&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
