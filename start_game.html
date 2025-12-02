@@ -11996,14 +11996,8 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _genevent is 11&gt;&gt;
-&lt;&lt;link &quot;comfort&quot;&gt;&gt;
-&lt;&lt;goto Interact&gt;&gt;
-&lt;&lt;set $dengihome to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;link &quot;ignore&quot;&gt;&gt;
-&lt;&lt;goto Interact&gt;&gt;
-&lt;&lt;set $dengihome to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[comfort|Interact][$dengihome to 2]]
+[[ignore|Interact][$dengihome to 3]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -29219,37 +29213,21 @@ Timmy&#39;s troubled nephew, &#39;&#39;Bud Walton&#39;&#39;, is currently employ
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/crossbowbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event5 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/crossbowbutt.png&quot;][Walton][$event5 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/pistolbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event1 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/pistolbutt.png&quot;][Walton][$event1 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/riflebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event to 38&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/riflebutt.png&quot;][Walton][$event to 38, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/shotgunbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event to 37&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/shotgunbutt.png&quot;][Walton][$event to 37, $action to 22]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -29257,21 +29235,13 @@ Timmy&#39;s troubled nephew, &#39;&#39;Bud Walton&#39;&#39;, is currently employ
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/autobutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event to 34&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/autobutt.png&quot;][Walton][$event to 34, $action to 22]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/priflebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event to 31&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/priflebutt.png&quot;][Walton][$event to 31, $action to 22]]
 &lt;/div&gt;
 
 
@@ -29281,11 +29251,7 @@ Timmy&#39;s troubled nephew, &#39;&#39;Bud Walton&#39;&#39;, is currently employ
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/gpowbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event to 196&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/gpowbutt.png&quot;][Walton][$event to 196, $action to 22]]
 &lt;/div&gt;
 
 
@@ -29312,36 +29278,20 @@ Timmy&#39;s troubled nephew, &#39;&#39;Bud Walton&#39;&#39;, is currently employ
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/knifebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event8 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/knifebutt.png&quot;][Walton][$event8 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/staffbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event9 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/staffbutt.png&quot;][Walton][$event9 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/swordbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event7 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/swordbutt.png&quot;][Walton][$event7 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/spearbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Walton&gt;&gt;
- &lt;&lt;set $event to 36&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/spearbutt.png&quot;][Walton][$event to 36, $action to 22]]
 &lt;/div&gt;
 
 
@@ -30242,39 +30192,23 @@ The scouting ship from the second wave of settlers stands as a historic monument
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/ropebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 13&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/ropebutt.png&quot;][Market][$event to 13, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/necklace1butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event2 to true&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/necklace1butt.png&quot;][Market][$event2 to true, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/fishingbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event4 to true&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/fishingbutt.png&quot;][Market][$event4 to true, $action to 3]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/foodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 1&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/foodbutt.png&quot;][Market][$event to 1, $action to 3]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -30285,29 +30219,17 @@ The scouting ship from the second wave of settlers stands as a historic monument
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/candybutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event3 to true&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/candybutt.png&quot;][Market][$event3 to true, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/chocobutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event11 to true&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/chocobutt.png&quot;][Market][$event11 to true, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/candyboxbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event13 to true&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/candyboxbutt.png&quot;][Market][$event13 to true, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -30343,37 +30265,21 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/woodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 6&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/woodbutt.png&quot;][Market][$event to 6, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/steelbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 4&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/steelbutt.png&quot;][Market][$event to 4, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/connectbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 5&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/connectbutt.png&quot;][Market][$event to 5, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/durasteelbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 7&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/durasteelbutt.png&quot;][Market][$event to 7, $action to 3]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -30386,37 +30292,21 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/leathersbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 197&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/leathersbutt.png&quot;][Market][$event to 197, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/skinbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 198&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/skinbutt.png&quot;][Market][$event to 198, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/swagbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 199&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/swagbutt.png&quot;][Market][$event to 199, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/goldbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Market&gt;&gt;
- &lt;&lt;set $event to 202&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/goldbutt.png&quot;][Market][$event to 202, $action to 3]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -32478,35 +32368,19 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/knifebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event8 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/knifebutt.png&quot;][Roos][$event8 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/prospectbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event to 182&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/prospectbutt.png&quot;][Roos][$event to 182, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/sledgebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event10 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/sledgebutt.png&quot;][Roos][$event10 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/earthbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event11 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/earthbutt.png&quot;][Roos][$event11 to true, $action to 1]]
 &lt;/div&gt;
 
 
@@ -32517,40 +32391,23 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/tendstimbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event to 10&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/tendstimbutt.png&quot;][Roos][$event to 10, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/tendcratebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event to 11&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/tendcratebutt.png&quot;][Roos][$event to 11, $action to 1]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/ointment10butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event to 14&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
- &lt;&lt;set $tenoint to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/ointment10butt.png&quot;][Roos][$event to 14, $action to 1]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/foodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event to 1&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/foodbutt.png&quot;][Roos][$event to 1, $action to 1]]
 &lt;/div&gt;
 
 
@@ -32562,35 +32419,19 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/comp1butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event15 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/comp1butt.png&quot;][Roos][$event15 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/comp2butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event16 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/comp2butt.png&quot;][Roos][$event16 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/backpackbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event3 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/backpackbutt.png&quot;][Roos][$event3 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/canebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Roos&gt;&gt;
- &lt;&lt;set $event6 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/canebutt.png&quot;][Roos][$event6 to true, $action to 1]]
 &lt;/div&gt;
 
 
@@ -33592,111 +33433,52 @@ You can freely tweak your selected class by switching around character creation 
 &lt;div class=&quot;lowbottom6 ulvendor&quot;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;hovertip &quot;&lt;center&gt;A veteran of war with good ranged weapon skills, a powerful trait, an automatic rifle and a set of combat armor. Lacking in social, crafting and academic skills, however.&lt;/center&gt;&quot;&gt;&gt;
-
-&lt;&lt;link &quot;The veteran&quot;&gt;&gt;
-&lt;&lt;goto Ntrait&gt;&gt;
-
-&lt;&lt;set $creastart to 1&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;
-
-
+[[The survivalist|Ntrait][$creastart to 1]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
-
 
 
 &lt;div class=&quot;resholderbig&quot;&gt;
-
 &lt;&lt;hovertip &quot;&lt;center&gt;A combat-hunter hybrid with decent ranged weapon skills, a 30-06 rifle and great Survival skills. The classic adventurer.&lt;/center&gt;&quot;&gt;&gt;
-
-&lt;&lt;link &quot;The survivalist&quot;&gt;&gt;
-&lt;&lt;goto Ntrait&gt;&gt;
-&lt;&lt;set $creastart to 2&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;
-
-
+[[The survivalist|Ntrait][$creastart to 2]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
-
 
 
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;hovertip &quot;&lt;center&gt;This class offers a broad intermediate base in almost every skill and attribute. A good pick if you can&#39;t decide what type of character you want to play. Starts with a lot of cash.&lt;/center&gt;&quot;&gt;&gt;
-
-&lt;&lt;link &quot;The decent guy&quot;&gt;&gt;
-&lt;&lt;goto Ntrait&gt;&gt;
-
-&lt;&lt;set $creastart to 3&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;
-
-
+[[The decent guy|Ntrait][$creastart to 3]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
-
-
-
-
-
 
 &lt;/div&gt; /* FIRST ROW */
 
 
 
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;hovertip &quot;&lt;center&gt;A well-educated professor with an active assignment at the academy and the author of a famous book. He is not a combatant but does own an old Remington rifle to wield of any Raanic horrors that might come his way.&lt;/center&gt;&quot;&gt;&gt;
-
-&lt;&lt;link &quot;The professor&quot;&gt;&gt;
-&lt;&lt;goto Ntrait&gt;&gt;
-
-&lt;&lt;set $creastart to 4&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;
-
-
+[[The professor|Ntrait][$creastart to 4]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 
 
-
 &lt;div class=&quot;resholderbig&quot;&gt;
-
 &lt;&lt;hovertip &quot;&lt;center&gt;A skilled crafter and businessman who has a great foundation to set up a thriving merchant empire in Ikaanos. Not a combatant and survivalist in any way, though. Relatively well-educated, at least in the science faculty. &lt;/center&gt;&quot;&gt;&gt;
-
-&lt;&lt;link &quot;The crafter&quot;&gt;&gt;
-&lt;&lt;goto Ntrait&gt;&gt;
-&lt;&lt;set $creastart to 5&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;
-
-
+[[The crafter|Ntrait][$creastart to 5]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;hovertip &quot;&lt;center&gt;A skilled manipulator who knows how to push slaves and servants into obedience. He&#39;s also a great lecturer and has some basic combat skills. This class starts the game with Adora Sanor at his side, a custom scripted slave.&lt;/center&gt;&quot;&gt;&gt;
-
-&lt;&lt;link &quot;the slaver&quot;&gt;&gt;
-&lt;&lt;goto Ntrait&gt;&gt;
-
-&lt;&lt;set $creastart to 6&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;
-
-
+[[The slaver|Ntrait][$creastart to 6]]
 &lt;&lt;/hovertip&gt;&gt;
 &lt;/div&gt;
-
-
-
-
-
 
 &lt;/div&gt; /* second ROW */
 
@@ -36202,9 +35984,7 @@ $girlname has a normal and healthy body weight.&lt;br&gt;&lt;br&gt;She might hav
 &lt;&lt;hovertip &quot;Options&quot;&gt;&gt;
 &lt;div class=&quot;homebutt lighthover&quot;&gt;
 &lt;&lt;if $wopos is 1 or $inside is false&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/opt.png&quot;]]&gt;&gt;
-&lt;&lt;goto OptionsMenu2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Butt/opt.png&quot;][OptionsMenu2]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/opt.png&quot;]]&gt;&gt;
 &lt;&lt;set $history to 21&gt;&gt;
@@ -86194,13 +85974,7 @@ Armor destroyed!
 &lt;&lt;if $descroll3 gte 1&gt;&gt;
 
 &lt;div class=&quot;zoom&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/Materials/swag.png]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $swag+=$descroll3&gt;&gt;
- &lt;&lt;set $descroll3 to 0&gt;&gt;
- &lt;&lt;set $take to 4&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/Materials/swag.png][LootRoom][$swag+=$descroll3, $descroll3 to 0, $take to 4]]
 &lt;/div&gt;
 
 
@@ -86231,13 +86005,7 @@ $descroll3 units
 &lt;&lt;if $descroll4 gte 1&gt;&gt;
 
 &lt;div class=&quot;zoom&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/Materials/foodration.png]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $foodstuff+=$descroll4&gt;&gt;
- &lt;&lt;set $descroll4 to 0&gt;&gt;
- &lt;&lt;set $take to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/Materials/foodration.png][LootRoom][$foodstuff+=$descroll4, $descroll4 to 0, $take to 2]]
 &lt;/div&gt;
 
 
@@ -86269,13 +86037,7 @@ $descroll4 units
 &lt;&lt;if $descroll2 gte 1&gt;&gt;
 
 &lt;div class=&quot;zoom&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/Materials/cash.png]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $cash+=$descroll2&gt;&gt;
- &lt;&lt;set $descroll2 to 0&gt;&gt;
- &lt;&lt;set $take to 5&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/Materials/cash.png][LootRoom][$cash+=$descroll2, $descroll2 to 0, $take to 5]]
 &lt;/div&gt;
 
 
@@ -102871,37 +102633,21 @@ The ground floor contains several rows of mannequins dressed in a wide range of 
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/paddedbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 143&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/paddedbutt.png&quot;][ArmorStore][$event to 143, $action to 99]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/leatherbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 142&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/leatherbutt.png&quot;][ArmorStore][$event to 142, $action to 99]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/hleatherbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 141&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/hleatherbutt.png&quot;][ArmorStore][$event to 141, $action to 99]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/combatbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 140&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/combatbutt.png&quot;][ArmorStore][$event to 140, $action to 99]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -102909,36 +102655,20 @@ The ground floor contains several rows of mannequins dressed in a wide range of 
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/slpadded.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 153&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/slpadded.png&quot;][ArmorStore][$event to 153, $action to 99]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/leatherbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 152&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/leatherbutt.png&quot;][ArmorStore][$event to 152, $action to 99]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/slhleather.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 151&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/slhleather.png&quot;][ArmorStore][$event to 151, $action to 99]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/slcombat.png&quot;]]&gt;&gt;
- &lt;&lt;goto ArmorStore&gt;&gt;
- &lt;&lt;set $event to 150&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/slcombat.png&quot;][ArmorStore][$event to 150, $action to 99]]
 &lt;/div&gt;
 
 
@@ -124789,36 +124519,20 @@ You&#39;re standing inside //Devious Tools//. Neatly arranged shelves in an east
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/dildobutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event2 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/dildobutt.png&quot;][Devious][$event2 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/aplug1butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event to 20&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/aplug1butt.png&quot;][Devious][$event to 20, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/aplug2butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event to 21&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/aplug2butt.png&quot;][Devious][$event to 21, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/aplug3butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event to 22&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/aplug3butt.png&quot;][Devious][$event to 22, $action to 1]]
 &lt;/div&gt;
 
 
@@ -124829,46 +124543,26 @@ You&#39;re standing inside //Devious Tools//. Neatly arranged shelves in an east
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/harnessbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event5 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/harnessbutt.png&quot;][Devious][$event5 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/canebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event6 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/canebutt.png&quot;][Devious][$event6 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/buttgags.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event8 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/buttgags.png&quot;][Devious][$event8 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/analhookbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event4 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/analhookbutt.png&quot;][Devious][$event4 to true, $action to 1]]
 &lt;/div&gt;
 
 /*
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/cuffsbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event9 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/cuffsbutt.png&quot;][Devious][$event9 to true, $action to 1]]
 &lt;/div&gt;
 
 */
@@ -124886,29 +124580,17 @@ You&#39;re standing inside //Devious Tools//. Neatly arranged shelves in an east
 /*THIRD ROW*/
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/collarbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event to 23&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/collarbutt.png&quot;][Devious][$event to 23, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/karadabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event12 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/karadabutt.png&quot;][Devious][$event12 to true, $action to 1]]
 &lt;/div&gt;
 
 /*
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/stoolbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event1 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/stoolbutt.png&quot;][Devious][$event1 to true, $action to 1]]
 &lt;/div&gt;
 */
 
@@ -124917,11 +124599,7 @@ You&#39;re standing inside //Devious Tools//. Neatly arranged shelves in an east
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/nipplechainsbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Devious&gt;&gt;
- &lt;&lt;set $event15 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/nipplechainsbutt.png&quot;][Devious][$event15 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -126993,11 +126671,7 @@ While the boutique still offers the same stuffed bookshelves as before, most of 
 &lt;div class=&quot;storybox&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/necklace3butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Book&gt;&gt;
- &lt;&lt;set $event10 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/necklace3butt.png&quot;][Book][$event10 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -145069,396 +144743,204 @@ Seduction and persuasion penalty when interacting with younger females.
 
 
 &lt;&lt;if $speloot is 1&gt;&gt;
-
 &lt;div class=&quot;lighthover&quot;&gt;
-
-&lt;&lt;link [img[Pics/qpics/gunstocks.png]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $owngs=1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/qpics/gunstocks.png][LootRoom][$owngs=1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $speloot is 2&gt;&gt;
-
 &lt;div class=&quot;lighthover&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/teddy.png]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $ownteddy+=1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/Stuff/teddy.png][AdLoot][$ownteddy+=1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $speloot is 3&gt;&gt;
-
 &lt;div class=&quot;lighthover&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/key.png]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $ownkey to true&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/Stuff/key.png][AdLoot][$ownkey to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $speloot is 4&gt;&gt;
-
 &lt;div class=&quot;lighthover&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/pent.png]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $ownpentacle to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/Stuff/pent.png][LootRoom][$ownpentacle to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $speloot is 5&gt;&gt;
-
 &lt;div class=&quot;lighthover&quot;&gt;
-
-&lt;&lt;link [img[Pics/qpics/stuff/guardpaper.png]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $ownpaper to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/qpics/stuff/guardpaper.png][LootRoom][$ownpaper to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $speloot is 6&gt;&gt;
-
 &lt;div class=&quot;lighthover&quot;&gt;
-
-&lt;&lt;link [img[Pics/qpics/stuff/ledger.png]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $ownledger to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/qpics/stuff/ledger.png][AdLoot][$ownledger to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
-
 
 
 &lt;&lt;if $speloot is 7&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/nikacloth.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $ownclothing to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/nikacloth.png&quot;][AdLoot][$ownclothing to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 8&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $acabook4 to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][AdLoot][$acabook4 to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 9&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/guardpaper.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $wateryspec3 to 2&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/guardpaper.png&quot;][AdLoot][$wateryspec3 to 2, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-
 
 
 &lt;&lt;if $speloot is 10&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $wateryspec4 to 2&gt;&gt;
- &lt;&lt;set $foundbook to true&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][LootRoom][$wateryspec4 to 2, $foundbook to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-
 &lt;&lt;if $speloot is 11&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $ownbrobook2 to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][AdLoot][$ownbrobook2 to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 12&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $quest_yid to 3&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][AdLoot][$quest_yid to 3, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 13&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/breakerbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $ownbreaker+=1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/breakerbutt.png&quot;][AdLoot][$ownbreaker+=1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-
 &lt;&lt;if $speloot is 14&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $oldone3 to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][AdLoot][$oldone3 to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 15&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/anires.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $lootingmonster to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/anires.png&quot;][LootRoom][$lootingmonster to 1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 16&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/holibutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $ownholicron to 1&gt;&gt;
- &lt;&lt;set $quest_amel to 7&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][LootRoom][$ownholicron to 1, $quest_amel to 7, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
+
 &lt;&lt;if $speloot is 17&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/idolbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $bhidol to 3&gt;&gt;
- &lt;&lt;set $ownidol=$ownidol is undefined ? 1 : ($ownidol + 1)&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/idolbutt.png&quot;][LootRoom][$bhidol to 3, $ownidol=$ownidol is undefined ? 1 : ($ownidol+1), $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 18&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/hulcparts.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $ownhulcparts+=3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/hulcparts.png&quot;][LootRoom][$ownhulcparts+=3, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
+
 &lt;&lt;if $speloot is 19&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/hulcparts.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $ownhulcparts+=2&gt;&gt;
- &lt;&lt;set $loothulc-=1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/hulcparts.png&quot;][LootRoom][$ownhulcparts+=2, $loothulc-=1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 20&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/minigunbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $ownminigun+=1&gt;&gt;
- &lt;&lt;set $a556+=102&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/minigunbutt.png&quot;][LootRoom][$ownminigun+=1, $a556+=102, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 21&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/azukbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $ownazuk to 1&gt;&gt;
- &lt;&lt;set $tookazuk to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/azukbutt.png&quot;][LootRoom][$ownazuk to 1, $tookazuk to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
+
 &lt;&lt;if $speloot is 22 and $dengibook2 is undefined&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $dengibook2 to 1&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][LootRoom][$dengibook2 to 1, $speloot to 0]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 23&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/peltbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $tookpelt to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/peltbutt.png&quot;][LootRoom][$tookpelt to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-
 &lt;&lt;if $speloot is 24&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/documentbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $quest_book3 to 2&gt;&gt;
- &lt;&lt;set $tooksbook to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/documentbutt.png&quot;][LootRoom][$quest_book3 to 2, $tooksbook to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 25&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/mastersbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $quest_armand to 13&gt;&gt;
- &lt;&lt;set $tookmasters to true&gt;&gt;
- &lt;&lt;set $tookmasters2 to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/mastersbutt.png&quot;][LootRoom][$quest_armand to 13, $tookmasters to true, $tookmasters2 to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-
-
 &lt;&lt;if $speloot is 26&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/ledger.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $quest_ellen to 6&gt;&gt;
- &lt;&lt;set $tookellen to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/ledger.png&quot;][LootRoom][$quest_ellen to 6, $tookellen to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 28&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;qpics/stuff/letter.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $tooksnake to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;qpics/stuff/letter.png&quot;][LootRoom][$tooksnake to true, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 29&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/cybercannonbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $owncyber+=1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/cybercannonbutt.png&quot;][LootRoom][$owncyber+=1, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $speloot is 30&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/money.png&quot;]]&gt;&gt;
- &lt;&lt;goto LootRoom&gt;&gt;
- &lt;&lt;set $speloot to 0&gt;&gt;
- &lt;&lt;set $take to 3&gt;&gt;
- &lt;&lt;set $cash+=$mctraitpin gte 100 ? 3000 : 5000&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/money.png&quot;][LootRoom][$cash+=$mctraitpin gte 100 ? 3000 : 5000, $speloot to 0, $take to 3]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -145840,13 +145322,7 @@ There&#39;s particulary one book of interest that reads &quot;Diary of Joseph Wi
 &lt;&lt;if $descroll3 gte 1&gt;&gt;
 
 &lt;div class=&quot;zoom&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/Materials/swag.png]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $swag+=$descroll3&gt;&gt;
- &lt;&lt;set $descroll3 to 0&gt;&gt;
- &lt;&lt;set $take to 4&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/Materials/swag.png][AdLoot][$swag+=$descroll3, $descroll3 to 0, $take to 4]]
 &lt;/div&gt;
 
 
@@ -145877,13 +145353,7 @@ $descroll3 units
 &lt;&lt;if $descroll4 gte 1&gt;&gt;
 
 &lt;div class=&quot;zoom&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/Materials/foodration.png]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $foodstuff+=$descroll4&gt;&gt;
- &lt;&lt;set $descroll4 to 0&gt;&gt;
- &lt;&lt;set $take to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/Materials/foodration.png][AdLoot][$foodstuff+=$descroll4, $descroll4 to 0, $take to 2]]
 &lt;/div&gt;
 
 
@@ -145915,13 +145385,7 @@ $descroll4 units
 &lt;&lt;if $descroll2 gte 1&gt;&gt;
 
 &lt;div class=&quot;zoom&quot;&gt;
-
-&lt;&lt;link [img[Pics/Stuff/Materials/cash.png]]&gt;&gt;
- &lt;&lt;goto AdLoot&gt;&gt;
- &lt;&lt;set $cash+=$descroll2&gt;&gt;
- &lt;&lt;set $descroll2 to 0&gt;&gt;
- &lt;&lt;set $take to 5&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/Materials/cash.png][AdLoot][$cash+=$descroll2, $descroll2 to 0, $take to 5]]
 &lt;/div&gt;
 
 
@@ -163727,10 +163191,7 @@ Now, I&#39;m gonna get my gold and ammo back! Can I count on you?
 //
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;div class=&quot;row center&quot;&gt;[[Hell yeah!|SlaveInventory][$quest_tut to 5, $lastansel to true]]
-&lt;&lt;link &quot;cancel&quot;&gt;&gt;
-&lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $quest_tut to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[cancel|SlaveInventory][$quest_tut to 99]]
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -165205,20 +164666,12 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/per1butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event10 to true&gt;&gt;
- &lt;&lt;set $action to 10&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/per1butt.png][Nikas][$event10 to true, $action to 10]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/per2butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event11 to true&gt;&gt;
- &lt;&lt;set $action to 10&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/per2butt.png][Nikas][$event11 to true, $action to 10]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -165238,20 +164691,11 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/textilebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event to 50&gt;&gt;
- &lt;&lt;set $action to 999&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[Pics/Stuff/textilebutt.png][Nikas][$event to 50, $action to 999]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/clothbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event to 51&gt;&gt;
- &lt;&lt;set $action to 999&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[Pics/Stuff/clothbutt.png][Nikas][$event to 51, $action to 999]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -165271,27 +164715,15 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/necklace3butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event to 188&gt;&gt;
- &lt;&lt;set $action to 999&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/necklace3butt.png&quot;][Nikas][$event to 188, $action to 999]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/necklace4butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event to 189&gt;&gt;
- &lt;&lt;set $action to 999&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/necklace4butt.png&quot;][Nikas][$event to 189, $action to 999]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/necklace5butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event to 190&gt;&gt;
- &lt;&lt;set $action to 999&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/necklace5butt.png&quot;][Nikas][$event to 190, $action to 999]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -165325,21 +164757,13 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/pir2.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event12 to true&gt;&gt;
- &lt;&lt;set $action to 10&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/pir2.png&quot;][Nikas][$event12 to true, $action to 10]]
 &lt;/div&gt;
 
 
 &lt;&lt;if $gonnapir and _npc.sex is 0&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/pir1.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event13 to true&gt;&gt;
- &lt;&lt;set $action to 10&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/pir1.png&quot;][Nikas][$event13 to true, $action to 10]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -165348,11 +164772,7 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
 &lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/pir3.png&quot;]]&gt;&gt;
- &lt;&lt;goto Nikas&gt;&gt;
- &lt;&lt;set $event3 to true&gt;&gt;
- &lt;&lt;set $action to 10&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/pir3.png&quot;][Nikas][$event3 to true, $action to 10]]
 &lt;/div&gt;
 
 
@@ -171295,26 +170715,17 @@ Pushed up against the mighty stone structure of Hamah tower lies a medievalesque
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/foodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/foodbutt.png&quot;][ScavOut][$event to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/peltbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/peltbutt.png&quot;][ScavOut][$event to 2]]
 &lt;/div&gt;
 
 &lt;&lt;if _spacehere is true and $quest_space is 1 and $ownspartanhelmet isnot 1&gt;&gt;
 &lt;div class=&quot;resholder lightholder&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/spartanbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 203&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/spartanbutt.png&quot;][ScavOut][$event to 203]]
 &lt;/div&gt;
 
 &lt;&lt;else&gt;&gt;
@@ -172884,31 +172295,19 @@ Wait! Ansel, is that you? Haha, you&#39;re not as pale as last time I saw you. T
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/gpowbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/gpowbutt.png&quot;][Scaving][$event to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/steelbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 4&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/steelbutt.png&quot;][Scaving][$event to 4]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/connectbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 5&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/connectbutt.png&quot;][Scaving][$event to 5]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/woodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 6&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/woodbutt.png&quot;][Scaving][$event to 6]]
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -176325,28 +175724,16 @@ Hello again! So, got any artifacts to sell?
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/commonartbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 45&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/commonartbutt.png&quot;][Scaving][$event to 45, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/uncommonartbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 46&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/uncommonartbutt.png&quot;][Scaving][$event to 46, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/rareartbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Scaving&gt;&gt;
- &lt;&lt;set $event to 47&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/rareartbutt.png&quot;][Scaving][$event to 47, $action to 1]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -177119,31 +176506,19 @@ Luke&#39;s Empire is also an important hub for the trade between Prometheus and 
 &lt;div class=&quot;storybox&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lightholder&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/tendstimbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 10&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/tendstimbutt.png&quot;][ScavOut][$event to 10]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/ropebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 13&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/ropebutt.png&quot;][ScavOut][$event to 13]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/50cbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 32&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/50cbutt.png&quot;][ScavOut][$event to 32]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/spearbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto ScavOut&gt;&gt;
- &lt;&lt;set $event to 36&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/spearbutt.png&quot;][ScavOut][$event to 36]]
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -196779,37 +196154,21 @@ You enter the large hall of the Imperial Arms, that feels more like a mansion th
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/crossbowbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event5 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/crossbowbutt.png&quot;][Imperial][$event5 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/pistolbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event1 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/pistolbutt.png&quot;][Imperial][$event1 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/riflebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event2 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/riflebutt.png&quot;][Imperial][$event2 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/shotgunbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 37&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/shotgunbutt.png&quot;][Imperial][$event to 37, $action to 22]]
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -196817,38 +196176,22 @@ You enter the large hall of the Imperial Arms, that feels more like a mansion th
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/coilbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 39&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/coilbutt.png&quot;][Imperial][$event to 39, $action to 22]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/glbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 112&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/glbutt.png&quot;][Imperial][$event to 112, $action to 22]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/50cbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 32&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/50cbutt.png&quot;][Imperial][$event to 32, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/r55butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 204&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/r55butt.png&quot;][Imperial][$event to 204, $action to 22]]
 &lt;/div&gt;
 
 
@@ -196874,36 +196217,20 @@ You enter the large hall of the Imperial Arms, that feels more like a mansion th
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/knifebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event8 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/knifebutt.png&quot;][Imperial][$event8 to true, $action to 1]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/staffbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event9 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/staffbutt.png&quot;][Imperial][$event9 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/swordbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event7 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/swordbutt.png&quot;][Imperial][$event7 to true, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/katanabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event12 to true&gt;&gt;
- &lt;&lt;set $action to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/katanabutt.png&quot;][Imperial][$event12 to true, $action to 1]]
 &lt;/div&gt;
 
 
@@ -196914,20 +196241,12 @@ You enter the large hall of the Imperial Arms, that feels more like a mansion th
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/gswordbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 30&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/gswordbutt.png&quot;][Imperial][$event to 30, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/gaxebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 183&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/gaxebutt.png&quot;][Imperial][$event to 183, $action to 22]]
 &lt;/div&gt;
 
 
@@ -196978,20 +196297,12 @@ You enter the large hall of the Imperial Arms, that feels more like a mansion th
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/weavebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 144&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/weavebutt.png&quot;][Imperial][$event to 144, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/durabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 145&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/durabutt.png&quot;][Imperial][$event to 145, $action to 22]]
 &lt;/div&gt;
 
 
@@ -197010,29 +196321,17 @@ You enter the large hall of the Imperial Arms, that feels more like a mansion th
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/slweave.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 154&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/slweave.png&quot;][Imperial][$event to 154, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/slduraplate.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 155&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/slduraplate.png&quot;][Imperial][$event to 155, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/stealthbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Imperial&gt;&gt;
- &lt;&lt;set $event to 156&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/stealthbutt.png&quot;][Imperial][$event to 156, $action to 22]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -202731,10 +202030,7 @@ You can only arrange an event between &lt;&lt;if $clock is 2&gt;&gt;4 p.m. and 8
 &lt;div class=&quot;padd20left padd20right&quot;&gt;
 &lt;&lt;if $fcs isnot 1&gt;&gt;
 &lt;div class=&quot;row ulexsmall&quot;&gt;
-&lt;&lt;link &quot;on&quot;&gt;&gt;
-&lt;&lt;goto Party&gt;&gt;
-&lt;&lt;set $fcs to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[on|Party][$fcs to 1]]
 
 
 &lt;&lt;if $mainatter is undefined&gt;&gt;
@@ -202816,10 +202112,7 @@ You can only arrange an event between &lt;&lt;if $clock is 2&gt;&gt;4 p.m. and 8
 &lt;&lt;if $mds is 1&gt;&gt;
 &lt;p class=&quot;ulexsmallselect&quot;&gt;on&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;link &quot;on&quot;&gt;&gt;
-&lt;&lt;goto Party&gt;&gt;
-&lt;&lt;set $mds to 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[on|Party][$mds to 1]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;hovertip &quot;&lt;&lt;for _f range $npc&gt;&gt;&lt;&lt;if $invite is 1 and _f.dayblock is 5 and _f.dayblock is 999&gt;&gt;&lt;&lt;set _foo to true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _foo to false&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _f.dayblock is 5 and _f.state is 1 and _f.health gte 5 and _f.busy is 0 and _foo isnot true&gt;&gt;&lt;li&gt;_f.girlname _f.last&lt;/li&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/for&gt;&gt;&quot;&gt;&gt;&lt;&lt;if $mds is 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;(_maids)&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;(_maids)&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/hovertip&gt;&gt;
@@ -213662,28 +212955,16 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 
 &lt;&lt;if $plimp[0] is 0&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/healing1butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event1 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/healing1butt.png&quot;][Doctors][$event1 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $plimp[0] is 1&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/healing2butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event2 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/healing2butt.png&quot;][Doctors][$event2 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $plimp[0] is 2&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/healing3butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event3 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/healing3butt.png&quot;][Doctors][$event3 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -213699,19 +212980,11 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 
 &lt;&lt;if $plimp[1] is 0&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/health1butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event4 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/health1butt.png&quot;][Doctors][$event4 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $plimp[1] is 1&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/health2butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event5 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/health2butt.png&quot;][Doctors][$event5 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $plimp[1] is 2&gt;&gt;
@@ -213723,20 +212996,12 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/evercockbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event6 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/evercockbutt.png&quot;][Doctors][$event6 to true, $action to 2]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/sureshotbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event7 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/sureshotbutt.png&quot;][Doctors][$event7 to true, $action to 2]]
 &lt;/div&gt;
 
 
@@ -213745,21 +213010,13 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/5htpbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event16 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/5htpbutt.png&quot;][Doctors][$event16 to true, $action to 2]]
 &lt;/div&gt;
 
 
 &lt;&lt;if $cock lte 2&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/buttcock.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event17 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/buttcock.png&quot;][Doctors][$event17 to true, $action to 2]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -213788,22 +213045,14 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/charmbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event10 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/charmbutt.png&quot;][Doctors][$event10 to true, $action to 2]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 &lt;&lt;if $gonnamedic is true&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/charmbuttsl.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event11 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/charmbuttsl.png&quot;][Doctors][$event11 to true, $action to 2]]
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
 [img[$imgpath + &quot;/Weapons/buttempty.png&quot;]]
@@ -213815,19 +213064,11 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;&lt;if $gonnamedic is true&gt;&gt;
 
 &lt;&lt;if _npc.himp is 0&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/health1buttb.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event40 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/health1buttb.png&quot;][Doctors][$event40 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.himp is 1&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/health2buttb.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event50 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/health2buttb.png&quot;][Doctors][$event50 to true, $action to 2]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.himp is 2&gt;&gt;
@@ -213874,38 +213115,22 @@ Doctor&#39;s Hall, formally known as Crystal Height&#39;s Hospital or Hunt Resea
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/doctorsbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event14 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/doctorsbutt.png&quot;][Doctors][$event14 to true, $action to 2]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/injectorbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event9 to true&gt;&gt;
- &lt;&lt;set $action to 2&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/injectorbutt.png&quot;][Doctors][$event9 to true, $action to 2]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/pcorebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event to 8&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/pcorebutt.png&quot;][Doctors][$event to 8, $action to 99]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/nanitebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Doctors&gt;&gt;
- &lt;&lt;set $event to 187&gt;&gt;
- &lt;&lt;set $action to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/nanitebutt.png&quot;][Doctors][$event to 187, $action to 99]]
 &lt;/div&gt;
 
 
@@ -236092,17 +235317,9 @@ Dead!
 
 &lt;&lt;set _temp to $cs1_actnpc&gt;&gt;
 &lt;&lt;set _temp+=1&gt;&gt;
-
-&lt;&lt;link [img[$imgpath + &quot;Butt/troopbutt2.png&quot;]]&gt;&gt;
-&lt;&lt;set $c_npc to &quot;av&quot; +_temp&gt;&gt;
-&lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-
+[img[$imgpath + &quot;Butt/troopbutt2.png&quot;][SlaveInventory][$c_npc to &quot;av&quot; +_temp, $comesfromfollow to true]]
 
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -236233,14 +235450,9 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 &lt;&lt;set _temp2 to $cs2_actnpc&gt;&gt;
 &lt;&lt;set _temp2+=1&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/troopbutt2.png&quot;]]&gt;&gt;
-&lt;&lt;set $c_npc to &quot;av&quot; +_temp2&gt;&gt;
-&lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Butt/troopbutt2.png&quot;][SlaveInventory][$c_npc to &quot;av&quot; +_temp2, $comesfromfollow to true]]
 
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -236384,16 +235596,9 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 &lt;&lt;set _temp3 to $cs3_actnpc&gt;&gt;
 &lt;&lt;set _temp3+=1&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/troopbutt2.png&quot;]]&gt;&gt;
-&lt;&lt;set $c_npc to &quot;av&quot; +_temp3&gt;&gt;
-&lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-
+[img[$imgpath + &quot;Butt/troopbutt2.png&quot;][SlaveInventory][$c_npc to &quot;av&quot; +_temp3, $comesfromfollow to true]]
 
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -236519,15 +235724,9 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 &lt;&lt;set _temp4 to $cs4_actnpc&gt;&gt;
 &lt;&lt;set _temp4+=1&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/troopbutt2.png&quot;]]&gt;&gt;
-&lt;&lt;set $c_npc to &quot;av&quot; +_temp4&gt;&gt;
-&lt;&lt;goto SlaveInventory&gt;&gt;
-&lt;&lt;set $comesfromfollow to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
+[img[$imgpath + &quot;Butt/troopbutt2.png&quot;][SlaveInventory][$c_npc to &quot;av&quot; +_temp4, $comesfromfollow to true]]
 
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -246713,9 +245912,7 @@ $ownhulcparts units
 &lt;/div&gt;
 
 &lt;div class=&quot;lowbottom2 ulvendor&quot;&gt;
-&lt;&lt;link &quot;Return&quot;&gt;&gt;
-&lt;&lt;goto Crafting&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[Return|Crafting]]
 &lt;/div&gt;
 
 
@@ -254357,33 +253554,21 @@ The grown woman sighs and looks up at you.
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/steelbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 4&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/steelbutt.png&quot;][Aig][$event to 4]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/connectbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 5&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/connectbutt.png&quot;][Aig][$event to 5]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/woodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 6&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/woodbutt.png&quot;][Aig][$event to 6]]
 &lt;/div&gt;
 
 
 &lt;&lt;if _merclevel gte 3&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/durasteelbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 7&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/durasteelbutt.png&quot;][Aig][$event to 7]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -254401,10 +253586,7 @@ The grown woman sighs and looks up at you.
 
 &lt;&lt;if _merclevel gte 2&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/9mmbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 90&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/9mmbutt.png&quot;][Aig][$event to 90]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -254415,10 +253597,7 @@ The grown woman sighs and looks up at you.
 
 &lt;&lt;if _merclevel gte 2&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/306butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 91&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/306butt.png&quot;][Aig][$event to 91]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -254449,10 +253628,7 @@ The grown woman sighs and looks up at you.
 
 &lt;&lt;if _craftlevel gte 4&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/tendcratebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 11&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/tendcratebutt.png&quot;][Aig][$event to 11]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -254463,10 +253639,7 @@ The grown woman sighs and looks up at you.
 
 &lt;&lt;if _craftlevel gte 4&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/doctorsbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Aig&gt;&gt;
- &lt;&lt;set $event to 12&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/doctorsbutt.png&quot;][Aig][$event to 12]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -269635,16 +268808,7 @@ Infidel! Becoming a Kafir will also decrease your Standing (-12) with Islamic co
 
 &lt;&lt;if $convert is undefined&gt;&gt;
 &lt;div class=&quot;lowbottom&quot;&gt;
-
-&lt;center&gt;&lt;div class=&quot;ulsmall&quot;&gt;
-
-
-&lt;&lt;link &quot;Return&quot;&gt;&gt;
-&lt;&lt;goto Home&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;center&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Return|Home]]&lt;/div&gt;&lt;/center&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -290965,20 +290129,12 @@ This girl, Elin, now lives as a simple whore at Divine Juices. In Watery Eyes. I
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/priflebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Haruki&gt;&gt;
- &lt;&lt;set $event to 31&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/priflebutt.png&quot;][Haruki][$event to 31, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/wakibutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Haruki&gt;&gt;
- &lt;&lt;set $event to 35&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/wakibutt.png&quot;][Haruki][$event to 35, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -290998,38 +290154,22 @@ This girl, Elin, now lives as a simple whore at Divine Juices. In Watery Eyes. I
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/buttflower.png&quot;]]&gt;&gt;
- &lt;&lt;goto Haruki&gt;&gt;
- &lt;&lt;set $event to 15&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/buttflower.png&quot;][Haruki][$event to 15, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/advocbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Haruki&gt;&gt;
- &lt;&lt;set $event to 16&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/advocbutt.png&quot;][Haruki][$event to 16, $action to 3]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/galebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Haruki&gt;&gt;
- &lt;&lt;set $event to 17&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/galebutt.png&quot;][Haruki][$event to 17, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/gpowbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Haruki&gt;&gt;
- &lt;&lt;set $event to 3&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/gpowbutt.png&quot;][Haruki][$event to 3, $action to 3]]
 &lt;/div&gt;
 
 
@@ -291970,11 +291110,7 @@ You present a large batch of dung to Mr. Oshiro, who looks childishly thrilled o
 
 &lt;&lt;if $impflowers_toshi gte 1&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/buttflower.png&quot;]]&gt;&gt;
- &lt;&lt;goto Toshi&gt;&gt;
- &lt;&lt;set $impflowers_toshi-=1&gt;&gt;
- &lt;&lt;set $ownimpflowers+=1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/buttflower.png&quot;][Toshi][$impflowers_toshi-=1, $ownimpflowers+=1]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -291984,11 +291120,7 @@ You present a large batch of dung to Mr. Oshiro, who looks childishly thrilled o
 
 &lt;&lt;if $gale_toshi gte 1&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/galebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Toshi&gt;&gt;
- &lt;&lt;set $gale_toshi-=1&gt;&gt;
- &lt;&lt;set $owngale+=1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/galebutt.png&quot;][Toshi][$gale_toshi-=1, $owngale+=1]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -292318,10 +291450,7 @@ Anyway. To get to the point (long silence). In these troublesome times, there&#3
 
 &lt;&lt;if $ownikoria is undefined&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/ikoriabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Hunt&gt;&gt;
- &lt;&lt;set $event to 92&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/ikoriabutt.png&quot;][Hunt][$event to 92]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -292331,10 +291460,7 @@ Anyway. To get to the point (long silence). In these troublesome times, there&#3
 
 &lt;&lt;if $owndanugah is undefined&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/danugahbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Hunt&gt;&gt;
- &lt;&lt;set $event to 93&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/danugahbutt.png&quot;][Hunt][$event to 93]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -292345,10 +291471,7 @@ Anyway. To get to the point (long silence). In these troublesome times, there&#3
 
 &lt;&lt;if $ownletric is undefined&gt;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/lectricbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Hunt&gt;&gt;
- &lt;&lt;set $event to 94&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/lectricbutt.png&quot;][Hunt][$event to 94]]
 &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -298102,18 +297225,12 @@ It&#39;s possible for a person of great influence to acquire items stored at thi
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/hazebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 123&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/hazebutt.png&quot;][Transit][$event to 123]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/documentbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 180&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/documentbutt.png&quot;][Transit][$event to 180]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -298133,33 +297250,21 @@ It&#39;s possible for a person of great influence to acquire items stored at thi
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/neurabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 120&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/neurabutt.png&quot;][Transit][$event to 120]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/breakerbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 121&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/breakerbutt.png&quot;][Transit][$event to 121]]
 &lt;/div&gt;
 
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/gateartbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 122&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/gateartbutt.png&quot;][Transit][$event to 122]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/youthbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 18&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/youthbutt.png&quot;][Transit][$event to 18]]
 &lt;/div&gt;
 
 
@@ -298185,32 +297290,20 @@ It&#39;s possible for a person of great influence to acquire items stored at thi
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/hulcbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 110&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/hulcbutt.png&quot;][Transit][$event to 110]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/hulcbuttsl.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 111&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/hulcbuttsl.png&quot;][Transit][$event to 111]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Weapons/plasmabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 113&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Weapons/plasmabutt.png&quot;][Transit][$event to 113]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/hulcparts.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 124&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/hulcparts.png&quot;][Transit][$event to 124]]
 &lt;/div&gt;
 
 
@@ -298222,18 +297315,12 @@ It&#39;s possible for a person of great influence to acquire items stored at thi
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/wegabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 184&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/wegabutt.png&quot;][Transit][$event to 184]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/wegabuttnpc.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 185&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/wegabuttnpc.png&quot;][Transit][$event to 185]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -298242,10 +297329,7 @@ It&#39;s possible for a person of great influence to acquire items stored at thi
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/gpowbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Transit&gt;&gt;
- &lt;&lt;set $event to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/gpowbutt.png&quot;][Transit][$event to 3]]
 &lt;/div&gt;
 
 
@@ -298572,7 +297656,7 @@ Unfortunately, Aria Bianchi&#39;s made sure you don&#39;t have access to his off
 &lt;&lt;if $mctraitrepublic gte 1&gt;&gt;
 &lt;div class=&quot;storybottom&quot;&gt;
 &lt;center&gt;
-&lt;div class=&quot;ulvendor&quot;&gt;&lt;&lt;link &quot;clear honorary title&quot;&gt;&gt;&lt;&lt;goto Court&gt;&gt;&lt;&lt;set $mctraitrepublic to -5&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;ulvendor&quot;&gt;[[clear honorary title|Court][$mctraitrepublic to -5]]&lt;/div&gt;
 &lt;/center&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -315960,11 +315044,7 @@ _npc.dex
 &lt;&lt;if _npc.girlid is 26 and $quest_tut gte 1&gt;&gt;
 &lt;&lt;if $quest_tut is 1&gt;&gt;
 [[I could use some help|RoamAdd][$quest_tut to 2, $pic to 0]]
-&lt;&lt;link &quot;cancel tutorial&quot;&gt;&gt;
-&lt;&lt;goto RoamAdd&gt;&gt;
-&lt;&lt;set $quest_tut to 99&gt;&gt;
-&lt;&lt;set $pic to 0&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[cancel tutorial|RoamAdd][$quest_tut to 99, $pic to 0]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -316008,19 +315088,12 @@ _npc.dex
 &lt;&lt;if $activeissid is 9 and $quest_tut gte 1&gt;&gt;
 &lt;&lt;if $quest_tut is 1&gt;&gt;
 [[I could use some help|IssidInt][$quest_tut to 2, $pic to 0]]
-&lt;&lt;link &quot;cancel tutorial&quot;&gt;&gt;
-&lt;&lt;goto IssidInt&gt;&gt;
-&lt;&lt;set $quest_tut to 99&gt;&gt;
-&lt;&lt;set $pic to 0&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[cancel tutorial|IssidInt][$quest_tut to 99, $pic to 0]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _anselask is true&gt;&gt;
 [[Hell yeah!|IssidInt][$quest_tut to 4]]
-&lt;&lt;link &quot;cancel tutorial&quot;&gt;&gt;
-&lt;&lt;goto IssidInt&gt;&gt;
-&lt;&lt;set $quest_tut to 99&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[[cancel tutorial|IssidInt][$quest_tut to 99]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -332420,11 +331493,7 @@ You enter the small general store called &quot;Kira&#39;s Merch&quot; - an incen
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/woodbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Kira&gt;&gt;
- &lt;&lt;set $event to 6&gt;&gt;
- &lt;&lt;set $action1 to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/woodbutt.png&quot;][Kira][$event to 6, $action1 to true]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -332432,19 +331501,11 @@ You enter the small general store called &quot;Kira&#39;s Merch&quot; - an incen
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/ropebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Kira&gt;&gt;
- &lt;&lt;set $event to 13&gt;&gt;
- &lt;&lt;set $action1 to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/ropebutt.png&quot;][Kira][$event to 13, $action1 to true]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/spearbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Kira&gt;&gt;
- &lt;&lt;set $event to 36&gt;&gt;
- &lt;&lt;set $action1 to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/spearbutt.png&quot;][Kira][$event to 36, $action1 to true]]
 &lt;/div&gt;
 
 
@@ -342040,36 +341101,20 @@ The smell of fresh haal wood hangs like a cloud of incense in here.
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/armchairbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 165&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/armchairbutt.png&quot;][Carp][$event to 165, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/sofabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 166&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/sofabutt.png&quot;][Carp][$event to 166, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/luxsofabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 167&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/luxsofabutt.png&quot;][Carp][$event to 167, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/bookshelfbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 168&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/bookshelfbutt.png&quot;][Carp][$event to 168, $action to 3]]
 &lt;/div&gt;
 
 /* first row ends */
@@ -342082,36 +341127,20 @@ The smell of fresh haal wood hangs like a cloud of incense in here.
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/bedsinglebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 169&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/bedsinglebutt.png&quot;][Carp][$event to 169, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/beddoublebutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 170&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/beddoublebutt.png&quot;][Carp][$event to 170, $action to 3]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/dinnersetbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 171&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/dinnersetbutt.png&quot;][Carp][$event to 171, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/deskbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 172&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/deskbutt.png&quot;][Carp][$event to 172, $action to 3]]
 &lt;/div&gt;
 
 
@@ -342127,11 +341156,7 @@ The smell of fresh haal wood hangs like a cloud of incense in here.
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Stuff/bedmegabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto Carp&gt;&gt;
- &lt;&lt;set $event to 193&gt;&gt;
- &lt;&lt;set $action to 3&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Stuff/bedmegabutt.png&quot;][Carp][$event to 193, $action to 3]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder opac&quot;&gt;
@@ -352073,11 +351098,7 @@ This facility offers various forms of legendary tech, treatments and implants to
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 &lt;&lt;if $plimp[1] is 2&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/health3butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto MS&gt;&gt;
- &lt;&lt;set $event to 100&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/health3butt.png&quot;][MS][$event to 100, $action to 22]]
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
 [img[$imgpath + &quot;/Stuff/health3butt.png&quot;]]
@@ -352088,11 +351109,7 @@ This facility offers various forms of legendary tech, treatments and implants to
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 &lt;&lt;if $s3 is undefined&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/strykerbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto MS&gt;&gt;
- &lt;&lt;set $event to 101&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/strykerbutt.png&quot;][MS][$event to 101, $action to 22]]
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
 [img[$imgpath + &quot;/Stuff/strykerbutt.png&quot;]]
@@ -352101,20 +351118,12 @@ This facility offers various forms of legendary tech, treatments and implants to
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/tendstimabutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto MS&gt;&gt;
- &lt;&lt;set $event to 9&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/tendstimabutt.png&quot;][MS][$event to 9, $action to 22]]
 &lt;/div&gt;
 
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Stuff/comp3butt.png&quot;]]&gt;&gt;
- &lt;&lt;goto MS&gt;&gt;
- &lt;&lt;set $event to 53&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Stuff/comp3butt.png&quot;][MS][$event to 53, $action to 22]]
 &lt;/div&gt;
 
 
@@ -352330,11 +351339,7 @@ This facility offers unique weaponry and ammo to whomever can afford them.
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 &lt;&lt;if $owndefiler is undefined&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;/Weapons/minigunbutt.png&quot;]]&gt;&gt;
- &lt;&lt;goto MS&gt;&gt;
- &lt;&lt;set $event to 205&gt;&gt;
- &lt;&lt;set $action to 22&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;/Weapons/minigunbutt.png&quot;][MS][$event to 205, $action to 22]]
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
 [img[$imgpath + &quot;/Weapons/minigunbutt.png&quot;]]
@@ -379092,15 +378097,15 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;div class=&quot;row&quot;&gt;
 
 &lt;div class=&quot;resholderbig&quot;&gt;
-&lt;div class=&quot;ulsmall&quot;&gt;&lt;&lt;if $nurserystat gte 2&gt;&gt;&lt;&lt;link &quot;+1 (stats)&quot;&gt;&gt;&lt;&lt;goto CCCP&gt;&gt;&lt;&lt;set $nurserystat to 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;+1 (stats)&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;ulsmall&quot;&gt;&lt;&lt;if $nurserystat gte 2&gt;&gt;[[+1 (stats)|CCCP][$nurserystat to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;+1 (stats)&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;resholderbig&quot;&gt;
-&lt;div class=&quot;ulsmall&quot;&gt;&lt;&lt;link &quot;next page&quot;&gt;&gt;&lt;&lt;goto CCCP&gt;&gt;&lt;&lt;if $cccpskillpage is 1&gt;&gt;&lt;&lt;set $cccpskillpage to 2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $cccpskillpage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;ulsmall&quot;&gt;[[next page|CCCP][$cccpskillpage to 3 - $cccpskillpage]]&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;resholderbig&quot;&gt;
-&lt;div class=&quot;ulsmall&quot;&gt;&lt;&lt;if $nurserystat lte 1&gt;&gt;&lt;&lt;link &quot;+5 (stats)&quot;&gt;&gt;&lt;&lt;goto CCCP&gt;&gt;&lt;&lt;set $nurserystat to 5&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;+5 (stats)&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;ulsmall&quot;&gt;&lt;&lt;if $nurserystat lte 1&gt;&gt;[[+5 (stats)|CCCP][$nurserystat to 5]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;+5 (stats)&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -379147,7 +378152,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;nudge30right&quot;&gt;
 
-&lt;div class=&quot;signvendor&quot;&gt;&lt;&lt;hovertip &quot;next page&quot;&gt;&gt;&lt;&lt;link &quot;available traits&quot;&gt;&gt;&lt;&lt;goto CCCP&gt;&gt;&lt;&lt;if $cccptraitpage is 1&gt;&gt;&lt;&lt;set $cccptraitpage to 2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $cccptraitpage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/hovertip&gt;&gt;&lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt; $avatraits/6&lt;/div&gt;
+&lt;div class=&quot;signvendor&quot;&gt;&lt;&lt;hovertip &quot;next page&quot;&gt;&gt;[[available traits]|CCCP][$cccptraitpage to 3 - $cccptraitpage]]&lt;&lt;/hovertip&gt;&gt;&lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt; $avatraits/6&lt;/div&gt;
 &lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;if $cccptraitpage is 1&gt;&gt;
@@ -379205,9 +378210,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 
 &lt;/div&gt; /* nudge ends */
 
-&lt;div class=&quot;bottomsmall ulsmall&quot;&gt;
-&lt;&lt;link &quot;next page&quot;&gt;&gt;&lt;&lt;goto CCCP&gt;&gt;&lt;&lt;if $cccptraitpage is 1&gt;&gt;&lt;&lt;set $cccptraitpage to 2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $cccptraitpage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;
+&lt;div class=&quot;bottomsmall ulsmall&quot;&gt;[[next page|CCCP][$cccptraitpage to 3 - $cccptraitpage]]&lt;/div&gt;
 
 
 
@@ -381336,10 +380339,7 @@ Chancellor
 
 &lt;&lt;hovertip &quot;&lt;&lt;if _npc.age lte 17&gt;&gt;&lt;center&gt;Assignment unavailable!&lt;br&gt;(Required age 18+)&lt;/center&gt;&lt;&lt;else&gt;&gt;enter educator menu&lt;&lt;/if&gt;&gt;&quot;&gt;&gt;
 &lt;&lt;if _npc.age gte 18&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/info.png&quot;]]&gt;&gt;
-&lt;&lt;goto SMenu2&gt;&gt;
-&lt;&lt;set $eduset to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+[img[$imgpath + &quot;Butt/info.png&quot;][SMenu2][$eduset to true]]
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/info.png&quot;]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
