@@ -268971,9 +268971,8 @@ $mcrel.devotion/130
 &lt;&lt;set _fac to $faction.ikaanos&gt;&gt;
 &lt;&lt;set _facname to &quot;THE REPUBLIC&quot;&gt;&gt;
 
-&lt;&lt;set _ariarep=$quest_aria gte 20 and $faction.ikaanos.state is 2&gt;&gt;
-&lt;&lt;set _cap=_ariarep ? 80 : 70&gt;&gt;
-
+&lt;&lt;set _fortmenok=$quest_aria gte 20 and $faction.ikaanos.state is 2&gt;&gt;
+&lt;&lt;set _cap=_fortmenok ? 80 : 70&gt;&gt;
 
 &lt;&lt;set _dona to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -269077,10 +269076,7 @@ $mcrel.devotion/130
 
 &lt;&lt;if $mcpower gte 15&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.warlord1.men gte 100 and $quest_sera gte 6 and $faction.ikaanos.men lte 9999 and ($mcpower gte 25 or $credit gte 15000)&gt;&gt;
-&lt;&lt;set _fortmenok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _fortmenok=$faction.warlord1.men gte 100 and $quest_sera gte 6 and $faction.ikaanos.men lte 9999 and ($mcpower gte 25 or $credit gte 15000)&gt;&gt;
 &lt;&lt;set _cap=$quest_aria gte 20 and $faction.ikaanos.state is 2 ? 80 : 70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -269437,7 +269433,7 @@ $mcrel.devotion/130
 
 
 
-&lt;&lt;if $activefac is 9 or _ariarep is true or _fortmenok is true&gt;&gt;
+&lt;&lt;if $activefac is 9 or _fortmenok&gt;&gt;
 &lt;div class=&quot;tex8px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 /* Third ROW */
