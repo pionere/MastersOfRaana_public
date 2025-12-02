@@ -268912,6 +268912,7 @@ $mcrel.devotion/130
 
 &lt;&lt;set $noclick to true&gt;&gt;
 &lt;&lt;set _dona to 0&gt;&gt;
+&lt;&lt;set _cap=150&gt;&gt;
 
 &lt;&lt;if $activefac is 1&gt;&gt;
 
@@ -268925,17 +268926,14 @@ $mcrel.devotion/130
 &lt;&lt;set _fac to $faction.kymanto&gt;&gt;
 &lt;&lt;set _facname to &quot;THE KYMANTO SYNDICATE&quot;&gt;&gt;
 &lt;&lt;set _dona to 1&gt;&gt;
-
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 3&gt;&gt;
 
 &lt;&lt;set _fac to $faction.cyker&gt;&gt;
 &lt;&lt;set _facname to &quot;HOUSE CYKER&quot;&gt;&gt;
-
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 4&gt;&gt;
@@ -268957,8 +268955,7 @@ $mcrel.devotion/130
 &lt;&lt;set _facname to &quot;PREACHER&#39;S HALL&quot;&gt;&gt;
 
 &lt;&lt;if $quest_miche gte 14&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 7&gt;&gt;
@@ -268974,18 +268971,9 @@ $mcrel.devotion/130
 &lt;&lt;set _fac to $faction.ikaanos&gt;&gt;
 &lt;&lt;set _facname to &quot;THE REPUBLIC&quot;&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.state is 1&gt;&gt;
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _ariarep=$quest_aria gte 20 and $faction.ikaanos.state is 2&gt;&gt;
+&lt;&lt;set _cap=_ariarep ? 80 : 70&gt;&gt;
 
-&lt;&lt;if $quest_aria gte 20 and $faction.ikaanos.state is 2&gt;&gt;
-&lt;&lt;if _fac.standing gte 80&gt;&gt;
-&lt;&lt;set _fac.standing to 80&gt;&gt;
-&lt;&lt;set _capr to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _ariarep to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _dona to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -268995,8 +268983,7 @@ $mcrel.devotion/130
 &lt;&lt;set _fac to $faction.rebel&gt;&gt;
 &lt;&lt;set _facname to &quot;THE FREEDOM ALLIANCE&quot;&gt;&gt;
 
-&lt;&lt;if _fac.standing gte 90&gt;&gt;&lt;&lt;set _fac.standing to 90&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _cap=90&gt;&gt;
 
 &lt;&lt;set _dona to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -269016,9 +269003,7 @@ $mcrel.devotion/130
 
 &lt;&lt;if $mcrel.faith is 6&gt;&gt;&lt;&lt;set _dona to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -269050,9 +269035,7 @@ $mcrel.devotion/130
 
 &lt;&lt;if _fac.standing gte 10&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $activefac is 15&gt;&gt;
@@ -269077,7 +269060,7 @@ $mcrel.devotion/130
 &lt;&lt;set _facname to &quot;HOUSE CAROZZA&quot;&gt;&gt;
 
 &lt;&lt;if $credit gte 20000&gt;&gt;&lt;&lt;set _dona to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _cap=70&gt;&gt;
 
 &lt;&lt;if $mctraitlaw gte 1&gt;&gt;&lt;&lt;unset _dona&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -269098,19 +269081,7 @@ $mcrel.devotion/130
 &lt;&lt;set _fortmenok to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.state is 1&gt;&gt;
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $quest_aria gte 20 and $faction.ikaanos.state is 2&gt;&gt;
-&lt;&lt;if _fac.standing gte 80&gt;&gt;
-&lt;&lt;set _fac.standing to 80&gt;&gt;
-&lt;&lt;set _capr to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
+&lt;&lt;set _cap=$quest_aria gte 20 and $faction.ikaanos.state is 2 ? 80 : 70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -269121,8 +269092,7 @@ $mcrel.devotion/130
 &lt;&lt;set _facname to &quot;THE CALIPHATE&quot;&gt;&gt;
 &lt;&lt;set _dona to 1&gt;&gt;
 
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -269132,8 +269102,7 @@ $mcrel.devotion/130
 &lt;&lt;set _facname to &quot;REDHAVEN DISTRICT&quot;&gt;&gt;
 &lt;&lt;set _dona to 0&gt;&gt;
 
-&lt;&lt;if _fac.standing gte 70&gt;&gt;&lt;&lt;set _fac.standing to 70&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _cap=70&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -269177,7 +269146,7 @@ $mcrel.devotion/130
 &lt;&lt;if $standing is 7&gt;&gt;&lt;&lt;set _fac.standfill+=700&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $standing is 8&gt;&gt;&lt;&lt;set _fac.standfill+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $activefac gte 1 and _fac.standing gte 150&gt;&gt;&lt;&lt;set _capr to true&gt;&gt;&lt;&lt;set _fac.standing to 150&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _fac.standing=Math.min(_fac.standing,_cap)&gt;&gt;
 
 &lt;&lt;if $standing lte 3&gt;&gt;&lt;&lt;set $take to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $standing gte 4&gt;&gt;&lt;&lt;set $take to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -269350,7 +269319,7 @@ $mcrel.devotion/130
 &lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
 &lt;div class=&quot;tex18px padd5top&quot;&gt;
 
-&lt;&lt;if _capr is true&gt;&gt;
+&lt;&lt;if _fac.standing is _cap&gt;&gt;
 &lt;&lt;hovertip &quot;Max standing reached!&quot;&gt;&gt;&lt;div class=&quot;red&quot;&gt;&#39;&#39;_fac.standing&#39;&#39;&lt;/div&gt;&lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &#39;&#39;_fac.standing&#39;&#39;
