@@ -9785,7 +9785,11 @@ Macro.add('dialog', {
 Macro.add('popup', {
  handler : function () {
   Dialog.setup();
-  Dialog.wiki(Story.get(this.args[0]).processText()).open();
+  Dialog.wiki(Story.get(this.args[0]).processText());
+  var cfn = this.args[1] ? function () {
+   Engine.play(passage(), true);
+  } : null;
+  Dialog.open(null, cfn);
  }
 });
 
@@ -31025,6 +31029,7 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;/div&gt;
 
 &lt;div class=&quot;alt4&quot;&gt;
+&lt;&lt;set _refresh=1&gt;&gt;
 &lt;&lt;include OptionsETC&gt;&gt;
 &lt;/div&gt;
 
@@ -160992,14 +160997,14 @@ You
 &lt;&lt;if $mch.stables is 1&gt;&gt;
 &lt;&lt;hovertip &quot;Character sheet&quot;&gt;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/chr2.png&quot;]]&gt;&gt;
-&lt;&lt;popup &#39;ChrSheet&#39;&gt;&gt;
+&lt;&lt;popup &#39;ChrSheet&#39; _refresh&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;/hovertip&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;hovertip &quot;Character sheet&quot;&gt;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/chr.png&quot;]]&gt;&gt;
-&lt;&lt;popup &#39;ChrSheet&#39;&gt;&gt;
+&lt;&lt;popup &#39;ChrSheet&#39; _refresh&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;/if&gt;&gt;
