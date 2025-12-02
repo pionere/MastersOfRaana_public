@@ -25449,20 +25449,16 @@ $kisskill&lt;br&gt;
 &lt;&lt;include MCTraits&gt;&gt;
 
 &lt;&lt;set _traitsPerPage to 23&gt;&gt;
-&lt;&lt;set _totalTraitPages to Math.ceil($traitsList.length / _traitsPerPage)&gt;&gt;
 &lt;&lt;set _currentPage to $chpagez - 2&gt;&gt;
-
-&lt;&lt;set _startIndex to _currentPage * _traitsPerPage&gt;&gt;
-&lt;&lt;set _endIndex to _startIndex + _traitsPerPage&gt;&gt;
-&lt;&lt;set _pageTraits to $traitsList.slice(_startIndex, _endIndex)&gt;&gt;
-
-
+&lt;&lt;set _start = _currentPage*_traitsPerPage&gt;&gt;
+&lt;&lt;set _end = Math.min(_start+_traitsPerPage,$traitsList.length)&gt;&gt;
 
 &lt;div class=&quot;left padd40left text16px&quot;&gt;
  &#39;&#39;
   &lt;div class=&quot;padd10left&quot;&gt;
-   &lt;&lt;for _trait range _pageTraits&gt;&gt;
-    &lt;&lt;if _trait.tip&gt;&gt;&lt;&lt;hovertip _trait.tip&gt;&gt; _trait.name &lt;&lt;/hovertip&gt;&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;_trait.name&lt;br&gt;&lt;&lt;/if&gt;&gt;
+   &lt;&lt;for _i = _start; _i lt _end; _i++&gt;&gt;
+    &lt;&lt;set _trait = $traitsList[_i]&gt;&gt;
+    &lt;&lt;if _trait.tip&gt;&gt;&lt;&lt;hovertip _trait.tip&gt;&gt;_trait.name&lt;&lt;/hovertip&gt;&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;_trait.name&lt;br&gt;&lt;&lt;/if&gt;&gt;
    &lt;&lt;/for&gt;&gt;
   &lt;/div&gt;
  &#39;&#39;
@@ -25488,17 +25484,7 @@ $kisskill&lt;br&gt;
 
 &lt;div class=&quot;traitsel lighthover&quot;&gt;
 &lt;&lt;link [img[$imgpath + &quot;Butt/traitsel.png&quot;]]&gt;&gt;
- &lt;&lt;if $chpagez is 1&gt;&gt;
-  &lt;&lt;set $chpagez to 2&gt;&gt;
- &lt;&lt;else&gt;&gt;
-  &lt;&lt;set _totalTraitPages to Math.ceil($traitsList.length / _traitsPerPage)&gt;&gt;
-  &lt;&lt;set $chpagez to $chpagez + 1&gt;&gt;
-
-  &lt;&lt;if $chpagez &gt; _totalTraitPages + 1&gt;&gt;
-   &lt;&lt;set $chpagez to 1&gt;&gt;
-  &lt;&lt;/if&gt;&gt;
- &lt;&lt;/if&gt;&gt;
-
+ &lt;&lt;set $chpagez=($chpagez is 1 or _end lt $traitsList.length) ? ($chpagez + 1) : 1&gt;&gt;
  &lt;&lt;popup &#39;ChrSheet&#39;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
@@ -301245,7 +301231,7 @@ _npc.lesbian&lt;br&gt;
 
 /* JQ NEW BEGINS */
 
-&lt;&lt;if $traitspagenpc is undefined&gt;&gt;&lt;&lt;set $traitspagenpc to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitspagenpc is undefined&gt;&gt;&lt;&lt;set $traitspagenpc to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _traitperpage = 13&gt;&gt;
 
@@ -301259,23 +301245,20 @@ _npc.lesbian&lt;br&gt;
 
 &lt;&lt;set _totalPages = Math.ceil(_traitList.length / _traitperpage)&gt;&gt;
 
-&lt;&lt;if $traitspagenpc gt _totalPages&gt;&gt;&lt;&lt;set $traitspagenpc to _totalPages&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $traitspagenpc gte _totalPages&gt;&gt;&lt;&lt;set $traitspagenpc to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _start = $traitspagenpc*_traitperpage&gt;&gt;
+&lt;&lt;set _end = Math.min(_start+_traitperpage,_traitList.length)&gt;&gt;
 
-&lt;&lt;if _isinmenu is true&gt;&gt;
 &lt;&lt;if _totalPages gt 1&gt;&gt;
 &lt;div class=&quot;traitholdernpc&quot;&gt;
 &lt;div class=&quot;row scale70 padd20right&quot;&gt;
-&lt;div class=&quot;resholder right padd20right&quot;&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;&lt;if $traitspagenpc gt 1&gt;&gt;&lt;div class=&quot;lighthover&quot;&gt;[img[$imgpath + &quot;Butt/carrowleft.png&quot;][SMenu2][$traitspagenpc-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/carrowleft.png&quot;]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;resholder right padd20right&quot;&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;&lt;if _start gt 0&gt;&gt;&lt;div class=&quot;lighthover&quot;&gt;[img[$imgpath + &quot;Butt/carrowleft.png&quot;][SMenu2][$traitspagenpc-=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/carrowleft.png&quot;]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;div class=&quot;resholder left&quot;&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;&lt;if $traitspagenpc lt _totalPages&gt;&gt;&lt;div class=&quot;lighthover&quot;&gt;[img[$imgpath + &quot;Butt/carrowright.png&quot;][SMenu2][$traitspagenpc+=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/carrowright.png&quot;]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;resholder left&quot;&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;&lt;if $traitspagenpc lt _totalPages-1&gt;&gt;&lt;div class=&quot;lighthover&quot;&gt;[img[$imgpath + &quot;Butt/carrowright.png&quot;][SMenu2][$traitspagenpc+=1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/carrowright.png&quot;]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _start = Math.max(($traitspagenpc - 1) * _traitperpage,0)&gt;&gt;
-&lt;&lt;set _end = Math.min(_start + _traitperpage, _traitList.length)&gt;&gt;
 
 &lt;div class=&quot;ulsmall&quot;&gt;
 &lt;&lt;for _i = _start; _i lt _end; _i++&gt;&gt;
@@ -301288,7 +301271,6 @@ _npc.lesbian&lt;br&gt;
  &lt;&lt;/capture&gt;&gt;
  &lt;div class=&quot;tex3px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;/for&gt;&gt;
-
 &lt;/div&gt;
 
 
