@@ -17022,7 +17022,7 @@ Her &#39;&#39;WILLPOWER (+1)&#39;&#39; has &lt;&lt;if $masterlove lte 75&gt;&gt;
 &lt;&lt;set $chance-=$skillroll&gt;&gt;
 
 &lt;&lt;if $ownstatue is true and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $incense gte 1 and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $incense is 1 and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $masterlove gte 50&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $masterlove gte 75&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -121859,7 +121859,7 @@ SET NPC NOT UNDEFINED IF SO!!!!
 &lt;&lt;if $masterfilth lte 9&gt;&gt;&lt;&lt;set $chance-=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $ownstatue is true and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $incense gte 1 and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $incense is 1 and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $aca_daria gte 7 and $masterint gte 70 and $av_int lte 49&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -124218,7 +124218,7 @@ $girlnames &lt;b&gt;WILLPOWER&lt;/b&gt; and affection for you have decreased!
 
 &lt;&lt;if $ownstatue2 is true and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $ownstatue is true and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $incense gte 1 and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $incense is 1 and $wopos is 1&gt;&gt;&lt;&lt;set $chance+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set $chance+=$afraid&gt;&gt;
@@ -231369,6 +231369,7 @@ You try to get your bearings again, following the vicious fight.
 
 &lt;&lt;set _actcont to 0&gt;&gt;
 &lt;&lt;if $incense is 1&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $incense to 0&gt;&gt;
 &lt;&lt;if $mch.stats.wood gte 2&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -231474,8 +231475,6 @@ sur: 0,
 
 </tw-passagedata><tw-passagedata pid="348" name="EndRes" tags="nobr" position="2075,50" size="100,100">
 /* EVERYTHING GENERAL THAT RESETS AFTER PRESSING END DAY */
-
-&lt;&lt;if $incense gte 1&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $upgrade2 to false&gt;&gt;
 &lt;&lt;set $furryday to random(1, 5)&gt;&gt;
@@ -231704,7 +231703,6 @@ sur: 0,
 &lt;&lt;unset $dakwait&gt;&gt;
 
 
-&lt;&lt;set $incense to 0&gt;&gt;
 &lt;&lt;set $talkedslave to false&gt;&gt;
 &lt;&lt;set $fish_catch to 0&gt;&gt;
 &lt;&lt;set $furry_cred to 0&gt;&gt;
