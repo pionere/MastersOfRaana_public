@@ -312135,16 +312135,16 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;set _maidpen to 0&gt;&gt;
 
 /* MAID EFFECTS - INFLUENCE BOOST */
+&lt;&lt;set _tmp=0&gt;&gt;
 &lt;&lt;for _testnpc range $npc&gt;&gt;
 &lt;&lt;if _testnpc.state gte 1 and _testnpc.maid is true&gt;&gt;
 &lt;&lt;set _maids+=1&gt;&gt;
-&lt;&lt;if _testnpc.traitperf gte 25&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;set _maidshow+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.girlid is 5 and _testnpc.domestic gte 70 and _testnpc.masterlove gte 60&gt;&gt;&lt;&lt;set $credtot+=3&gt;&gt;&lt;&lt;set _maidshow+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.wear is &quot;maid&quot; and _testnpc.traitperf gte 25&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;set _maidshow+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if _testnpc.traitperf gte 25&gt;&gt;&lt;&lt;set _tmp+=_testnpc.wear is &quot;maid&quot; ? 4 : 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.girlid is 5 and _testnpc.domestic gte 70 and _testnpc.masterlove gte 60&gt;&gt;&lt;&lt;set _tmp+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
+&lt;&lt;set $credtot+=_tmp&gt;&gt;&lt;&lt;set _maidshow+=_tmp&gt;&gt;
 
 
 
@@ -312268,12 +312268,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* ARENA COSTS BELOW */
 
-&lt;&lt;if $arenanpcs gte 1&gt;&gt;&lt;&lt;set $cashtot-=125&gt;&gt;&lt;&lt;set _npcarena+=125&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arenanpcs gte 2&gt;&gt;&lt;&lt;set $cashtot-=125&gt;&gt;&lt;&lt;set _npcarena+=125&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arenanpcs gte 3&gt;&gt;&lt;&lt;set $cashtot-=125&gt;&gt;&lt;&lt;set _npcarena+=125&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arenanpcs gte 4&gt;&gt;&lt;&lt;set $cashtot-=125&gt;&gt;&lt;&lt;set _npcarena+=125&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arenanpcs gte 5&gt;&gt;&lt;&lt;set $cashtot-=125&gt;&gt;&lt;&lt;set _npcarena+=125&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $arenanpcs gte 6&gt;&gt;&lt;&lt;set $cashtot-=125&gt;&gt;&lt;&lt;set _npcarena+=125&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $arenanpcs gte 1&gt;&gt;&lt;&lt;set $cashtot-=125 * $arenanpcs&gt;&gt;&lt;&lt;set _npcarena+=125 * $arenanpcs&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _drainshow+=_npcarena&gt;&gt;
 
@@ -312327,23 +312322,24 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* CASH FROM NON-ACADEMICAL WORK BELOW */
 
+&lt;&lt;set _nikaclosed=$facen.e9 gte 1 and $faction.ikaanos.control lte 19&gt;&gt;
+&lt;&lt;set _tmpl=0&gt;&gt;&lt;&lt;set _tmpw=0&gt;&gt;
 &lt;&lt;for _testnpc range $npc&gt;&gt;
 &lt;&lt;if _testnpc.state gte 1 and _testnpc.dayblock gte 1 and _testnpc.dayoff isnot 1 and _testnpc.dayoff isnot 2&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 1&gt;&gt;&lt;&lt;set $cashtot+=25&gt;&gt;&lt;&lt;set _laborshow+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 2&gt;&gt;&lt;&lt;set $cashtot+=50&gt;&gt;&lt;&lt;set _laborshow+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 3&gt;&gt;&lt;&lt;set $cashtot+=25&gt;&gt;&lt;&lt;set _laborshow+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 4&gt;&gt;&lt;&lt;set $cashtot+=15&gt;&gt;&lt;&lt;set _laborshow+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e9 gte 1 and $faction.ikaanos.control lte 19&gt;&gt;&lt;&lt;set _nikaclosed to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 9 and _nikaclosed isnot true&gt;&gt;&lt;&lt;set $cashtot+=30&gt;&gt;&lt;&lt;set _laborshow+=30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 10&gt;&gt;&lt;&lt;set $cashtot+=150&gt;&gt;&lt;&lt;set _laborshow+=150&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;set _actshow+=2&gt;&gt;&lt;&lt;if _testnpc.traitextro gte 51&gt;&gt;&lt;&lt;set $cashtot+=30&gt;&gt;&lt;&lt;set _laborshow+=30&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _testnpc.actnpc is $firstwife and $credit gte 10000&gt;&gt;&lt;&lt;set $cashtot+=50&gt;&gt;&lt;&lt;set _laborshow+=50&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _testnpc.dayblock is 30&gt;&gt;&lt;&lt;set $cashtot+=40&gt;&gt;&lt;&lt;set _laborshow+=40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 1&gt;&gt;&lt;&lt;set _tmpl+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 2&gt;&gt;&lt;&lt;set _tmpl+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 3&gt;&gt;&lt;&lt;set _tmpl+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 4&gt;&gt;&lt;&lt;set _tmpl+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 9 and !_nikaclosed&gt;&gt;&lt;&lt;set _tmpl+=30&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 10&gt;&gt;&lt;&lt;set _tmpl+=150&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;set _actshow+=2&gt;&gt;&lt;&lt;if _testnpc.traitextro gte 51&gt;&gt;&lt;&lt;set _tmpl+=30&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _testnpc.actnpc is $firstwife and $credit gte 10000&gt;&gt;&lt;&lt;set _tmpl+=50&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _testnpc.dayblock is 30&gt;&gt;&lt;&lt;set _tmpl+=40&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* GOLD WALKER BELOW */
 
 &lt;&lt;if _testnpc.dayblock is 11 and _testnpc.prostloc gte 1&gt;&gt;
 &lt;&lt;set _totgold to 30&gt;&gt;
-&lt;&lt;set _famgold=$mcpower gte 10 ? Math.round($mcpower/4) : 0&gt;&gt;
+&lt;&lt;set _famgold=$mcpower gte 10 ? $mcpower/4 : 0&gt;&gt;
 
 &lt;&lt;if _testnpc.prostloc gte 2&gt;&gt;&lt;&lt;set _totgold+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _testnpc.prostloc is 4&gt;&gt;&lt;&lt;set _totgold+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -312356,17 +312352,15 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if $faction.ikaanos.corruption gte 75&gt;&gt;&lt;&lt;set _totgold*=$faction.ikaanos.corruption gte 90 ? 1.5 : 1.25&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _totgold = Math.round(_totgold)&gt;&gt;
-
-
-&lt;&lt;set _whoreshow+=_totgold&gt;&gt;
-&lt;&lt;set $cashtot+=_totgold&gt;&gt;
+&lt;&lt;set _tmpw+=Math.round(_totgold)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
+&lt;&lt;set $cashtot+=_tmpl+_tmpw&gt;&gt;
+&lt;&lt;set _laborshow=_tmpl&gt;&gt;&lt;&lt;set _whoreshow=_tmpw&gt;&gt;
 
 
 
@@ -312384,47 +312378,37 @@ Most high-demanding issids are excluded by the maxsal checker
 
 /* INFLUENCE FROM HOUSE AND MODULES */
 
-
-
+&lt;&lt;set _tmp=0&gt;&gt;
 &lt;&lt;if $mch isnot undefined&gt;&gt;
-
-&lt;&lt;if $mch.liveroom.level is 0&gt;&gt;&lt;&lt;set $credtot-=2&gt;&gt;&lt;&lt;set _houseshow-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.liveroom.level gte 2&gt;&gt;&lt;&lt;set $credtot+=1&gt;&gt;&lt;&lt;set _houseshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.kitchen.level is 0&gt;&gt;&lt;&lt;set $credtot-=1&gt;&gt;&lt;&lt;set _houseshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mch.kitchen.level gte 2&gt;&gt;&lt;&lt;set $credtot+=1&gt;&gt;&lt;&lt;set _houseshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mch.kitchen.level2 gte 2&gt;&gt;&lt;&lt;set $credtot+=1&gt;&gt;&lt;&lt;set _houseshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.kitchen.level2 gte 3&gt;&gt;&lt;&lt;set $credtot+=1&gt;&gt;&lt;&lt;set _houseshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.bathroom.level is 0&gt;&gt;&lt;&lt;set $credtot-=1&gt;&gt;&lt;&lt;set _houseshow-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.bathroom.level2 gte 3&gt;&gt;&lt;&lt;set $credtot+=1&gt;&gt;&lt;&lt;set _houseshow+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if $mch.liveroom.level is 0&gt;&gt;&lt;&lt;set _tmp-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.liveroom.level gte 2&gt;&gt;&lt;&lt;set _tmp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.kitchen.level is 0&gt;&gt;&lt;&lt;set _tmp-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.kitchen.level gte 2&gt;&gt;&lt;&lt;set _tmp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.kitchen.level2 gte 2&gt;&gt;&lt;&lt;set _tmp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.kitchen.level2 gte 3&gt;&gt;&lt;&lt;set _tmp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.bathroom.level is 0&gt;&gt;&lt;&lt;set _tmp-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.bathroom.level2 gte 3&gt;&gt;&lt;&lt;set _tmp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ownfusion is 1&gt;&gt;&lt;&lt;set _houseshow+=25&gt;&gt;&lt;&lt;set $credtot+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownfusion is 1&gt;&gt;&lt;&lt;set _tmp+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;set $credtot+=_tmp&gt;&gt;&lt;&lt;set _houseshow=_tmp&gt;&gt;
 
 
 
 /* DISREPAIR EFFECTS */
-&lt;&lt;set _disrepshow to 0&gt;&gt;
-&lt;&lt;if $repairfester gte 40&gt;&gt;&lt;&lt;set _disrepshow+=1&gt;&gt;&lt;&lt;set $credtot-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 60&gt;&gt;&lt;&lt;set _disrepshow+=4&gt;&gt;&lt;&lt;set $credtot-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 80&gt;&gt;&lt;&lt;set _disrepshow+=4&gt;&gt;&lt;&lt;set $credtot-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 120&gt;&gt;&lt;&lt;set _disrepshow+=4&gt;&gt;&lt;&lt;set $credtot-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 175&gt;&gt;&lt;&lt;set _disrepshow+=4&gt;&gt;&lt;&lt;set $credtot-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 250&gt;&gt;&lt;&lt;set _disrepshow+=3&gt;&gt;&lt;&lt;set $credtot-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 500&gt;&gt;&lt;&lt;set _disrepshow+=4&gt;&gt;&lt;&lt;set $credtot-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 100 and $credit gte 20000&gt;&gt;&lt;&lt;set _disrepshow+=100&gt;&gt;&lt;&lt;set $credtot-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $repairfester gte 100 and $credit gte 50000&gt;&gt;&lt;&lt;set _disrepshow+=250&gt;&gt;&lt;&lt;set $credtot-=250&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp to 0&gt;&gt;
+&lt;&lt;if $repairfester gte 40&gt;&gt;&lt;&lt;set _tmp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 60&gt;&gt;&lt;&lt;set _tmp+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 80&gt;&gt;&lt;&lt;set _tmp+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 120&gt;&gt;&lt;&lt;set _tmp+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 175&gt;&gt;&lt;&lt;set _tmp+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 250&gt;&gt;&lt;&lt;set _tmp+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 500&gt;&gt;&lt;&lt;set _tmp+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 100 and $credit gte 20000&gt;&gt;&lt;&lt;set _tmp+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $repairfester gte 100 and $credit gte 50000&gt;&gt;&lt;&lt;set _tmp+=250&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $credit lte 500&gt;&gt;&lt;&lt;set _disrepshow to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-
-
+&lt;&lt;set $credtot-=_tmp&gt;&gt;&lt;&lt;set _disrepshow=$credit lte 500 ? 0 : _tmp&gt;&gt;
 
 
 
