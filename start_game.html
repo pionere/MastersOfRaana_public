@@ -161972,7 +161972,7 @@ Embryl butt plug
 
 &lt;&lt;if $tooklesano is true&gt;&gt;
 &lt;&lt;set _npc.taint=adl(_npc.taint,8,73)&gt;&gt;
-&lt;&lt;if _npc.likesadist gte 90 or $likesadist gte 90&gt;&gt;&lt;&lt;set _npc.likesadist to 90&gt;&gt;&lt;&lt;set $likesadist to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.likesadist=Math.min(_npc.likesadist,90)&gt;&gt;&lt;&lt;set $likesadist=Math.min($likesadist,90)&gt;&gt;
 &lt;&lt;unset $tooklesano&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -228966,12 +228966,11 @@ Keypass protocol failed. Please try again.
 
 &lt;&lt;set $discipline=Math.max($discipline,10)&gt;&gt;
 
-
-&lt;&lt;if $av_str gte 50&gt;&gt;&lt;&lt;set $av_str to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_dex gte 90&gt;&gt;&lt;&lt;set $av_dex to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_aca gte 70&gt;&gt;&lt;&lt;set $av_aca to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_tech gte 70&gt;&gt;&lt;&lt;set $av_tech to 70&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_int gte 90&gt;&gt;&lt;&lt;set $av_int to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $av_str=Math.min($av_str,50)&gt;&gt;
+&lt;&lt;set $av_dex=Math.min($av_dex,90)&gt;&gt;
+&lt;&lt;set $av_aca=Math.min($av_aca,70)&gt;&gt;
+&lt;&lt;set $av_tech=Math.min($av_tech,70)&gt;&gt;
+&lt;&lt;set $av_int=Math.min($av_int,90)&gt;&gt;
 
 /* ADDING CHILD ENDS BELOW */
 
@@ -254775,7 +254774,7 @@ DEFEAT!
 &lt;&lt;set _disp_mam to $velve[0]&gt;&gt;
 
 /* affection cap */
-&lt;&lt;if $velve[0] gt 100&gt;&gt;&lt;&lt;set $velve[0] to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $velve[0]=Math.min($velve[0],100)&gt;&gt;
 
 &lt;&lt;set _quest to $velve[15]&gt;&gt;
 
@@ -308739,7 +308738,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;if $palcredtot gte -99999999&gt;&gt;&lt;&lt;set $palcred+=$palcredtot&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $credit=Math.max($credit,0)&gt;&gt;
-&lt;&lt;if $palcred gt 10000&gt;&gt;&lt;&lt;set $palcred=10000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $palcred=Math.min($palcred,10000)&gt;&gt;
 
 
 /* Aria allow to state */
