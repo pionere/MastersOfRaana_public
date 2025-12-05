@@ -34686,10 +34686,6 @@ sur: 0,
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $nomcap is undefined&gt;&gt;
-&lt;&lt;set $dd to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $mctraitmountain is undefined&gt;&gt;&lt;&lt;set $mctraitmountain to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $autoshower is undefined&gt;&gt;&lt;&lt;set $autoshower to false&gt;&gt;&lt;&lt;set $vol to 5&gt;&gt;&lt;&lt;set $nurseage to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -34962,12 +34958,10 @@ gemstones: random(300,400),
 &lt;&lt;unset $mother&gt;&gt;
 &lt;&lt;unset $addingchild&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $capnamefemale to []&gt;&gt;
 &lt;&lt;set $capnamemale to []&gt;&gt;
 &lt;&lt;set $capmaleid to []&gt;&gt;
 &lt;&lt;set $capfemaleid to []&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;unset $amb&gt;&gt;
 &lt;&lt;unset $offslave&gt;&gt;
@@ -84625,8 +84619,6 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;if $equipped is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _spray to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;set $malelimit to 5&gt;&gt;
 &lt;&lt;set $femalelimit to 5&gt;&gt;
 
@@ -84634,21 +84626,6 @@ REMOVED! USE CapCheck passage instead
                  ($combat is 41 and $quest_head gte 6)&gt;&gt;
 
 &lt;&lt;if $combat gte 200 or $combat is 121 or $combat is 124 or $combat is 126 or $combat is 2 or $combat is 60 or $combat is 61 or $combat is 78 or $combat is 112 or $combat is 119 or $combat is 115 or $combat is 120 or $combat is 145 or $combat is 55 or $combat is 57 or $combat is 148 or $combat is 149 or $combat is 150 or $combat is 151 or $combat is 152 or $combat is 153 or $combat is 155 or $combat is 157 or $combat is 156 or $combat is 159 or $combat is 158 or $combat is 176 or $combat is 177 or $combat is 178 or $combat is 181 or $combat is 182 or $combat is 183 or $combat is 184 or $combat is 187 or $combat is 190 or _noc is true&gt;&gt;&lt;&lt;set $malelimit to 0&gt;&gt;&lt;&lt;set $femalelimit to 0&gt;&gt;&lt;&lt;set _nocaptives to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-/* NO-CAPTURE COMBATS OLD SYSTEM IGNORE */
-&lt;&lt;if $combat is 194&gt;&gt;&lt;&lt;set _slavechance-=999&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-
-
 
 &lt;&lt;if $calc is 1&gt;&gt;
 &lt;&lt;set _okslave to false&gt;&gt;
@@ -84659,13 +84636,8 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;if $nuslmale isnot $malelimit and $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nuslgirl isnot $femalelimit and $enemy1_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $nuslmale isnot 1 and $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot 1 and $enemy1_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy1_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy1_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84702,19 +84674,9 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;div class=&quot;green&quot;&gt;/* $enemy1 has been incapacitated! */&lt;&lt;set _fo6 to true&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy1)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy1_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy1)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy1_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy1_taken to 1&gt;&gt;
 &lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale=1&gt;&gt;&lt;&lt;set $capnamemale to $enemy1&gt;&gt;&lt;&lt;set $capmaleid to $enemy1_id&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl=1&gt;&gt;&lt;&lt;set $capnamefemale to $enemy1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $enemy1_taken to 1&gt;&gt;
-&lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt; /* dd ends */
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _fo7 to true&gt;&gt;
@@ -84748,17 +84710,8 @@ $enemy1 is killed, after taking $damage damage points ($enemy1_soak pts. absorbe
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $nuslmale isnot $malelimit and $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nuslgirl isnot $femalelimit and $enemy2_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot 1 and $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot 1 and $enemy2_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy2_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy2_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84794,19 +84747,9 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 /*&lt;div class=&quot;green&quot;&gt;$enemy2 has been incapacitated!&lt;/div&gt;*/
 &lt;&lt;set _fo6 to true&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy2)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy2_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy2)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy2_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy2_taken to 1&gt;&gt;
 &lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale=1&gt;&gt;&lt;&lt;set $capnamemale to $enemy2&gt;&gt;&lt;&lt;set $capmaleid to $enemy2_id&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl=1&gt;&gt;&lt;&lt;set $capnamefemale to $enemy2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $enemy2_taken to 1&gt;&gt;
-&lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 
@@ -84845,17 +84788,8 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $nuslmale isnot $malelimit and $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nuslgirl isnot $femalelimit and $enemy3_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot 1 and $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot 1 and $enemy3_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy3_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy3_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84887,19 +84821,9 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
 &lt;div class=&quot;green&quot;&gt;/* $enemy3 has been incapacitated! */&lt;&lt;set _fo6 to true&gt;&gt;&lt;/div&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy3)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy3_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy3)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy3_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy3_taken to 1&gt;&gt;
 &lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale=1&gt;&gt;&lt;&lt;set $capnamemale to $enemy3&gt;&gt;&lt;&lt;set $capmaleid to $enemy3_id&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl=1&gt;&gt;&lt;&lt;set $capnamefemale to $enemy3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $enemy3_taken to 1&gt;&gt;
-&lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _fo7 to true&gt;&gt;
@@ -84937,17 +84861,8 @@ $enemy3 is killed, after taking $damage damage points ($enemy3_soak pts. absorbe
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $nuslmale isnot $malelimit and $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nuslgirl isnot $femalelimit and $enemy4_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot 1 and $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot 1 and $enemy4_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy4_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy4_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84978,18 +84893,9 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
 &lt;div class=&quot;green&quot;&gt;/* $enemy4 has been incapacitated! */&lt;&lt;set _fo6 to true&gt;&gt;&lt;/div&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy4)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy4_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy4)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy4_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy4_taken to 1&gt;&gt;
 &lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale=1&gt;&gt;&lt;&lt;set $capnamemale to $enemy4&gt;&gt;&lt;&lt;set $capmaleid to $enemy4_id&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl=1&gt;&gt;&lt;&lt;set $capnamefemale to $enemy4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $enemy4_taken to 1&gt;&gt;
-&lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _fo7 to true&gt;&gt;
@@ -85030,17 +84936,8 @@ $enemy4 is killed, after taking $damage damage points ($enemy4_soak pts. absorbe
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $nuslmale isnot $malelimit and $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nuslgirl isnot $femalelimit and $enemy5_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot 1 and $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot 1 and $enemy5_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy5_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy5_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -85072,19 +84969,9 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
 /*&lt;div class=&quot;green&quot;&gt;$enemy5 has been incapacitated!&lt;/div&gt;*/&lt;&lt;set _fo6 to true&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy5)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy5_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy5)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy5_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy5_taken to 1&gt;&gt;
 &lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale=1&gt;&gt;&lt;&lt;set $capnamemale to $enemy5&gt;&gt;&lt;&lt;set $capmaleid to $enemy5_id&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl=1&gt;&gt;&lt;&lt;set $capnamefemale to $enemy5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $enemy5_taken to 1&gt;&gt;
-&lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _fo7 to true&gt;&gt;
@@ -86046,8 +85933,6 @@ $0
 
 
 
-&lt;&lt;if $dd is 1&gt;&gt;
-
 &lt;&lt;set _okcrew to $crew+1&gt;&gt; /*not sure if this one is still needed*/
 &lt;&lt;set _okcrew1 to 0&gt;&gt;
 &lt;&lt;if $taken.slot1.state is 0&gt;&gt;&lt;&lt;set _okcrew1+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -86061,14 +85946,6 @@ $0
 &lt;&lt;if $taken.slot7.state is 0&gt;&gt;&lt;&lt;set _okcrew1+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $taken.slot8.state is 0&gt;&gt;&lt;&lt;set _okcrew1+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $taken.slot9.state is 0&gt;&gt;&lt;&lt;set _okcrew1+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;set _okcrew to $crew&gt;&gt;
-&lt;&lt;set _okcrew+=2&gt;&gt;
-&lt;&lt;set _okcrew-=$takensl&gt;&gt;
-&lt;&lt;set _okcrew1 to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -86085,7 +85962,7 @@ $0
  &lt;&lt;set $ownrope-=1&gt;&gt;
  &lt;&lt;set $takeslaves to 1&gt;&gt;
  &lt;&lt;set $descroll5-=1&gt;&gt;
- &lt;&lt;if $dd is 1&gt;&gt;&lt;&lt;set $capind1=$descroll5&gt;&gt;&lt;&lt;/if&gt;&gt;
+ &lt;&lt;set $capind1=$descroll5&gt;&gt;
  &lt;&lt;unset $slavecalc&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
@@ -86132,7 +86009,7 @@ $descroll5 slave&lt;&lt;if $descroll5 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
  &lt;&lt;set $ownrope-=1&gt;&gt;
  &lt;&lt;set $takeslaves to 2&gt;&gt;
  &lt;&lt;set $descroll6-=1&gt;&gt;
- &lt;&lt;if $dd is 1&gt;&gt;&lt;&lt;set $capind2=$descroll6&gt;&gt;&lt;&lt;/if&gt;&gt;
+ &lt;&lt;set $capind2=$descroll6&gt;&gt;
  &lt;&lt;unset $slavecalc&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
@@ -87361,13 +87238,9 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $move to false&gt;&gt;
 &lt;&lt;set $pos to 1&gt;&gt;
 &lt;&lt;set $round to 1&gt;&gt;
-&lt;&lt;unset $nuslmale&gt;&gt;
-&lt;&lt;unset $nuslgirl&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $nuslmale to 0&gt;&gt;
 &lt;&lt;set $nuslgirl to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $descroll5 to 0&gt;&gt;
 &lt;&lt;set $descroll6 to 0&gt;&gt;
@@ -92317,9 +92190,8 @@ They instantly jump up on their feet and ready their swords as you approach them
 &lt;&lt;set $enemy2_armor= &quot;leather&quot;&gt;&gt;
 &lt;&lt;set $enemy2_soak = 10&gt;&gt;
 &lt;&lt;set $enemy2_sex = &quot;her&quot;&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy2_id = 202&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set _pausemusic to true&gt;&gt;
 &lt;&lt;set $loot to 100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -93924,9 +93796,8 @@ Losing a fight //seldom// means GAME OVER. In fact, suffering defeat might steer
 &lt;&lt;set $enemy3_armor= &quot;none&quot;&gt;&gt;
 &lt;&lt;set $enemy3_soak = 0&gt;&gt;
 &lt;&lt;set $enemy3_sex = &quot;her&quot;&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy3_id = 138&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set _pausemusic to true&gt;&gt;
 &lt;&lt;set $loot to 150&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -94389,9 +94260,8 @@ While walking the desolate streets of Marston Avenue, you stumble upon three rai
 &lt;&lt;set $enemy3_armor= &quot;padded&quot;&gt;&gt;
 &lt;&lt;set $enemy3_soak = 3&gt;&gt;
 &lt;&lt;set $enemy3_sex = &quot;her&quot;&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy3_id = 128&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $loot to 500&gt;&gt;
 &lt;&lt;set _pausemusic to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -94422,9 +94292,7 @@ While walking the desolated industrial districts of Stokke Hills, a lonely bandi
 &lt;&lt;set $enemy1_armor= &quot;hleather&quot;&gt;&gt;
 &lt;&lt;set $enemy1_soak = 14&gt;&gt;
 &lt;&lt;set $enemy1_sex = &quot;her&quot;&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy1_id to 137&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $loot to 50&gt;&gt;
 &lt;&lt;set _pausemusic to true&gt;&gt;
@@ -95130,9 +94998,7 @@ You decide to engage The Black Scorpions of Raikan!
 &lt;&lt;set $enemy2_soak = 5&gt;&gt;
 &lt;&lt;set $enemy2_sex = &quot;her&quot;&gt;&gt;
 &lt;&lt;set $enemy2_strength = 200&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy2_id = 206&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $enemy3_type = 11&gt;&gt;
 &lt;&lt;set $enemy3_pos = 3&gt;&gt;
@@ -95449,9 +95315,8 @@ You&#39;re observing a surprisingly musclar female sitting on the porch of an ab
 &lt;&lt;set $enemy2_soak = 25&gt;&gt;
 &lt;&lt;set $enemy2_sex = &quot;her&quot;&gt;&gt;
 &lt;&lt;set $enemy2_strength = 100&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy2_id = 207&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $loot to 25&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -95953,9 +95818,8 @@ You spot three crossbow-armed youths at the top of Red River Hill. They&#39;ve s
 &lt;&lt;set $enemy2_soak = 5&gt;&gt;
 &lt;&lt;set $enemy2_sex = &quot;her&quot;&gt;&gt;
 &lt;&lt;set $enemy2_strength = 50&gt;&gt;
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set $enemy2_id = 211&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $enemy3_type =10&gt;&gt;
 &lt;&lt;set $enemy3_pos = 2&gt;&gt;
 &lt;&lt;set $enemy3_state to 2&gt;&gt;
@@ -267663,9 +267527,7 @@ $faction.cyker.men
 
 
 
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;if $capfemaleid[$capind1] gte 1&gt;&gt;&lt;&lt;set $takeid to $capfemaleid[$capind1]&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 /*GENERIC MALE CAPTIVES GO HERE*/
 
@@ -267673,13 +267535,8 @@ $faction.cyker.men
 
 &lt;&lt;if $takeslaves gte 2&gt;&gt;
 
-&lt;&lt;if $dd is 1&gt;&gt;
 &lt;&lt;set _name to $capnamemale[$capind2]&gt;&gt;
 &lt;&lt;set $takeid to $capmaleid[$capind2]&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _name to $capnamemale&gt;&gt;
-&lt;&lt;set $takeid to $capmaleid&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $takebody to 6&gt;&gt;
 &lt;&lt;set $avalue to 5&gt;&gt;
@@ -267712,10 +267569,6 @@ $faction.cyker.men
 &lt;&lt;/if&gt;&gt;
 
 
-
-
-
-&lt;&lt;if $dd is 1&gt;&gt;
 
 
 
@@ -267818,106 +267671,6 @@ $faction.cyker.men
 
 
 &lt;&lt;/if&gt;&gt; /* dd take slaves ends */
-
-
-
-
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;if $combat is 99 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set _name to &quot;Akari Ito&quot;&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 203&gt;&gt;
-&lt;&lt;set $takecomb to 80&gt;&gt;
-&lt;&lt;set $takewill to 80&gt;&gt;
-&lt;&lt;set $takeage to 25&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $combat is 102 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set $takewear to 50&gt;&gt;
-&lt;&lt;set $takewill to 0&gt;&gt;
-&lt;&lt;set $takecomb to 15&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 131 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set _name to &quot;Mae&quot;&gt;&gt;
-&lt;&lt;set $takewear to 40&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 109 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set _name to &quot;Talika&quot;&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 202&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 136 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set _name to &quot;VALKYRIA&quot;&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takecomb to 55&gt;&gt;
-&lt;&lt;set $takebody to 3&gt;&gt;
-&lt;&lt;set $takewill to random(40, 60)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 137 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set $takewill to random(40, 60)&gt;&gt;
-&lt;&lt;set $takecomb to 30&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 137&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 141 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set $takewill to random(40, 60)&gt;&gt;
-&lt;&lt;set $takecomb to 27&gt;&gt;
-&lt;&lt;set $takewear to 50&gt;&gt;
-&lt;&lt;set $takebody to 2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $combat is 147 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set _name to &quot;Zenobia&quot;&gt;&gt;
-&lt;&lt;set $takewill to random(40, 60)&gt;&gt;
-&lt;&lt;set $takecomb to 60&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 206&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $combat is 163 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set _name to &quot;Little&quot;&gt;&gt;
-&lt;&lt;set $takewill to random(70, 80)&gt;&gt;
-&lt;&lt;set $takecomb to 60&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 211&gt;&gt;
-&lt;&lt;set $takebody to 2&gt;&gt;
-&lt;&lt;set $takeage to 21&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $combat is 154 and $takeslaves is 1&gt;&gt;
-&lt;&lt;set $takewill to random(60, 70)&gt;&gt;
-&lt;&lt;set $takecomb to 90&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 207&gt;&gt;
-&lt;&lt;set $takebody to 4&gt;&gt;
-&lt;&lt;set $takeage to 27&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* hemmel */
-&lt;&lt;if $combat is 90&gt;&gt;
-&lt;&lt;set _name to &quot;Mr. Hemmel&quot;&gt;&gt;
-&lt;&lt;set $takewill to random(70, 80)&gt;&gt;
-&lt;&lt;set $takecomb to 60&gt;&gt;
-&lt;&lt;set $takewear to 0&gt;&gt;
-&lt;&lt;set $takeid to 456&gt;&gt;
-&lt;&lt;set $takebody to 7&gt;&gt;
-&lt;&lt;set $takeage to 41&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt; /* dd ends */
-
-
 
 
 /* LOOTING ONE SLAVE */
