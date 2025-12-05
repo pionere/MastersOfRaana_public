@@ -34404,22 +34404,6 @@ The Dengi king Azuk and his army of degenerates have successfully&lt;br&gt;invad
 &lt;&lt;set $workdevi to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-/* TRANSFORMED BUG FIXER */
-
-&lt;&lt;if $transsy is undefined&gt;&gt;
-
-&lt;&lt;for _transsy range $npc&gt;&gt;
-&lt;&lt;if _transsy.transformed gte 1 and _transsy.state lte -1 and _transsy.girlid gte 100&gt;&gt;
-&lt;&lt;set _transsy.transformed to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-
-&lt;&lt;set $transsy to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 /* falth business */
 
 &lt;&lt;if $wateryen3 is 2 and $falthday is undefined&gt;&gt;
@@ -304657,7 +304641,7 @@ ALSO USED FOR DEATH.
 &lt;&lt;set _npc.traitdaddy to 0&gt;&gt;
 
 &lt;&lt;set _npc.warfame to 0&gt;&gt;
-&lt;&lt;if _npc.transformed gte 1&gt;&gt;&lt;&lt;set _transformed to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.transformed to 0&gt;&gt;
 
 
 &lt;&lt;set _checkstats to false&gt;&gt;
