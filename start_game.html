@@ -258732,14 +258732,12 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;set $raiderloot*=either(0.5, 0.18,0.6,0.2,0.25,0.15,0.5,0.65, 0.8)&gt;&gt;
 &lt;&lt;if $raiderstr gte 100&gt;&gt;&lt;&lt;set $raiderloot*=1.18&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $raiderloot = Math.round($raiderloot)&gt;&gt;
-&lt;&lt;if $raiderloot gte 28000&gt;&gt;&lt;&lt;set $raiderloot to random(22101,28000)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $raiderloot gte 28000&gt;&gt;&lt;&lt;set $raiderloot-=random(0,5899)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $cash-=$raiderloot&gt;&gt;
-&lt;&lt;set $raidedgold to 0&gt;&gt;
-&lt;&lt;set $raidedsilver to 0&gt;&gt;
-&lt;&lt;if $gold gte 50&gt;&gt;&lt;&lt;set $raidedgold to $gold/10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $silver gte 50&gt;&gt;&lt;&lt;set $raidedsilver to $silver/10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $raidedgold = Math.round($raidedgold)&gt;&gt;
-&lt;&lt;set $raidedsilver = Math.round($raidedsilver)&gt;&gt;
+&lt;&lt;set $raidedgold=$gold gte 50 ? Math.round(($gold/10) : 0&gt;&gt;
+&lt;&lt;set $gold-=$raidedgold&gt;&gt;
+&lt;&lt;set $raidedsilver=$silver gte 50 ? Math.round(($silver/10) : 0&gt;&gt;
+&lt;&lt;set $silver-=$raidedsilver&gt;&gt;
 &lt;&lt;set $raidrepair to random(15,30)&gt;&gt;
 &lt;&lt;set $repairfester+=$raidrepair&gt;&gt;
 
@@ -258767,17 +258765,7 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 /* cash added to bandit faction ends */
 
 /* gold and silver added to bandit faction */
-&lt;&lt;set _banditgold to 0&gt;&gt;
-
-&lt;&lt;set _banditgold+=$raidedgold*200&gt;&gt;
-&lt;&lt;set _banditgold+=$raidedsilver*20&gt;&gt;
-
-&lt;&lt;set $faction.bandit.money+=_banditgold&gt;&gt;
-
-/* gold and silver added ends */
-
-&lt;&lt;set $gold-=$raidedgold&gt;&gt;
-&lt;&lt;set $silver-=$raidedsilver&gt;&gt;
+&lt;&lt;set $faction.bandit.money+=$raidedgold*200 + $raidedsilver*20&gt;&gt;
 
 
 
@@ -258854,34 +258842,24 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;/if&gt;&gt; /* end of chance checker */
 
 &lt;&lt;for _guardxp range $npc&gt;&gt;
-&lt;&lt;set _xpc to random(1, 10)&gt;&gt;
-
-/* xp gain guards */
-&lt;&lt;if _xpc lte 5 and _guardxp.health gte 1 and (_guardxp.dayblock is 16 or _guardxp.dayblock is 17)&gt;&gt;
-&lt;&lt;set _guardxp.ranged+=adl(_guardxp.ranged, 1,100)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* health loss guards */
 &lt;&lt;if _guardxp.health gte 1 and (_guardxp.dayblock is 16 or _guardxp.dayblock is 17)&gt;&gt;
+
 &lt;&lt;set _guardxp.battles+=1&gt;&gt;
-&lt;&lt;if $raidchance gte 1&gt;&gt;
-&lt;&lt;set _guardxp.health-=random(1,25)&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _guardxp.health-=random(15,25)&gt;&gt;
-&lt;&lt;if $raiderstr gte 75 and $diff gte 3&gt;&gt;&lt;&lt;set _guardxp.health-=random(15,25)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+/* xp gain guards */
+&lt;&lt;set _guardxp.ranged=adl(_guardxp.ranged, random(0, 1) is 0 ? 1 : 0,100)&gt;&gt;
+/* health loss guards */
+&lt;&lt;set _guardxp.health-=$raidchance gte 1 ? random(1,25) : random(15,25)&gt;&gt;
 &lt;&lt;if $raiderstr gte 75&gt;&gt;&lt;&lt;set _guardxp.health-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $raidchance gte 1 and $raiderstr gte 75 and $diff gte 3&gt;&gt;&lt;&lt;set _guardxp.health-=random(15,25)&gt;&gt;&lt;&lt;/if&gt;&gt;
 /* no killed guards */
 &lt;&lt;if $diff lte 2&gt;&gt;&lt;&lt;set _guardxp.health=Math.max(_guardxp.health,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 /* health loss MC */
 
-&lt;&lt;if $raidchance gte 1&gt;&gt;&lt;&lt;set $masterhealth-=random(1,25)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $masterhealth-=random(15,25)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterhealth-=$raidchance gte 1 ? random(1,25) : random(15,25)&gt;&gt;
 
 &lt;&lt;if $raiderstr gte 75&gt;&gt;&lt;&lt;set $masterhealth-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $masterhealth=Math.max($masterhealth,1)&gt;&gt;
