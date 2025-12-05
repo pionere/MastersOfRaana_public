@@ -231817,11 +231817,8 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $nicpower gte 1000&gt;&gt;
-&lt;&lt;set _popen to $nicpower&gt;&gt;
-&lt;&lt;set _popen*=0.20&gt;&gt;
+&lt;&lt;set _pochance-=$nicpower/5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _popen gte 1&gt;&gt;&lt;&lt;set _pochance-=_popen&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _pochance-=_powerroll&gt;&gt;
 
