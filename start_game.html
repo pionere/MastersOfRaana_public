@@ -35348,11 +35348,8 @@ $girlname has a normal and healthy body weight.&lt;br&gt;&lt;br&gt;She might hav
 &lt;&lt;if _npc.wear is &quot;naked&quot;&gt;&gt;&lt;&lt;set $edunaked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;set _img to $imgpath +&quot;Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
+&lt;&lt;set _img=$imgpath + ($girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$girlid+&quot;/&quot;&gt;&gt;
 
-&lt;&lt;if $girlid gte 100&gt;&gt;
-&lt;&lt;set _img to $imgpath +&quot;AvRan/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 /* onetrain means no training pics */
 &lt;&lt;if $girlid lte 90 and $girlid gte 17&gt;&gt;&lt;&lt;set _onetrain to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -98473,7 +98470,7 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot1 gte 0&gt;&gt;
 &lt;&lt;if $cs1_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs1_posb to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _dir=($cs1_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs1_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs1_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs1_girlid&gt;&gt;
 
 [img[$imgpath + _dir+($cs1_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
@@ -98492,8 +98489,7 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot2 gte 0&gt;&gt;
 &lt;&lt;if $cs2_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs2_posb to 1]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _dir=($cs2_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs2_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs2_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs2_girlid&gt;&gt;
 
 [img[$imgpath + _dir+($cs2_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
@@ -98511,8 +98507,7 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot3 gte 0&gt;&gt;
 &lt;&lt;if $cs3_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs3_posb to 1]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _dir=($cs3_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs3_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs3_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs3_girlid&gt;&gt;
 
 [img[$imgpath + _dir+($cs3_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
@@ -98530,8 +98525,7 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot4 gte 0&gt;&gt;
 &lt;&lt;if $cs4_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs4_posb to 1]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _dir=($cs4_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs4_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs4_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs4_girlid&gt;&gt;
 
 [img[$imgpath + _dir+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
@@ -234919,7 +234913,7 @@ Dead!
 &lt;&lt;if $troopshow4 isnot 1 and $troopshow4 isnot 2&gt;&gt;
 
 &lt;&lt;if $cslot1 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs1_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs1_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs1_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs1_girlid&gt;&gt;
 [img[$imgpath + _dir+($cs1_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
@@ -235040,7 +235034,7 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cslot2 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs2_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs2_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs2_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs2_girlid&gt;&gt;
 [img[$imgpath + _dir+($cs2_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
@@ -235180,7 +235174,7 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cslot3 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs3_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs3_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs3_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs3_girlid&gt;&gt;
 [img[$imgpath + _dir+($cs3_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
@@ -235300,7 +235294,7 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cslot4 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs4_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs4_girlid&gt;&gt;
+&lt;&lt;set _dir=($cs4_girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+$cs4_girlid&gt;&gt;
 [img[$imgpath + _dir+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
@@ -370556,13 +370550,7 @@ Her &#39;&#39;Acrobatics (+1)&#39;&#39; skill has increased!
 /* has gym pics */
 &lt;&lt;if _gymgo is true&gt;&gt;
 
-&lt;&lt;if _npc.girlid gte 100&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+_npc.girlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/Av&quot;+_npc.girlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _img=(_npc.girlid lte 99 ? &quot;Pics/AvRan/Av&quot; : &quot;Pics/Av&quot;)+_npc.girlid+&quot;/&quot;&gt;&gt;
 [img[_img + &quot;gym.jpg&quot;]]
 
 &lt;&lt;else&gt;&gt;
@@ -377620,8 +377608,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;div class=&quot;vendorleft&quot;&gt;
 
 &lt;div class=&quot;boxholder&quot;&gt;
-&lt;&lt;set _dir=(_npc.girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+_npc.girlid&gt;&gt;
-
+&lt;&lt;set _dir=(_npc.girlid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+_npc.girlid&gt;&gt;
 [img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;/div&gt;
 
