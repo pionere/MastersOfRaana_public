@@ -231345,9 +231345,6 @@ You try to get your bearings again, following the vicious fight.
 
 
 
-&lt;&lt;if $ownfusion is undefined&gt;&gt;
-&lt;&lt;set $mch.stats.wood=adl($mch.stats.wood,-4,0)&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 
@@ -231367,10 +231364,15 @@ You try to get your bearings again, following the vicious fight.
 &lt;&lt;if $mch.bathroom.level2 gte 2&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mch.bathroom.level2 gte 3&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _actcont to 0&gt;&gt;
 &lt;&lt;if $incense is 1&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $incense to 0&gt;&gt;
+
+&lt;&lt;if $ownfusion is 1&gt;&gt;
+&lt;&lt;set $goodfester+=2&gt;&gt;
+&lt;&lt;else&gt;&gt;
 &lt;&lt;if $mch.stats.wood gte 2&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mch.stats.wood=adl($mch.stats.wood,-4,0)&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 
@@ -312735,7 +312737,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $ownfusion gte 1&gt;&gt;&lt;&lt;set _houseshow+=25&gt;&gt;&lt;&lt;set $credtot+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownfusion is 1&gt;&gt;&lt;&lt;set _houseshow+=25&gt;&gt;&lt;&lt;set $credtot+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -333747,7 +333749,7 @@ OLD IGNORE
 &lt;&lt;if _fact.other4 gte 120&gt;&gt;&lt;&lt;set _finalass*=1.07&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* fusion reactor effect */
-&lt;&lt;if $ownfusion gte 1 and _finalass gte 100&gt;&gt;
+&lt;&lt;if $ownfusion is 1 and _finalass gte 100&gt;&gt;
 &lt;&lt;set _finalass*=1.15&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -335612,8 +335614,9 @@ home anymore today!&#39;&#39;
 
 &lt;&lt;set _actcont to 0&gt;&gt;
 &lt;&lt;if $incense is 1&gt;&gt;&lt;&lt;set _actcont+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.stats.wood gte 2 and $ownfusion isnot 1&gt;&gt;&lt;&lt;set _actcont+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ownfusion gte 1&gt;&gt;&lt;&lt;set _actcont+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ownfusion is 1&gt;&gt;&lt;&lt;set _actcont+=2&gt;&gt;
+&lt;&lt;elseif $mch.stats.wood gte 2&gt;&gt;&lt;&lt;set _actcont+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;
 &#39;&#39;FROM ROOMS&#39;&#39;&lt;br&gt;
