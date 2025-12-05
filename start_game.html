@@ -101994,8 +101994,8 @@ $anta1.gold units of Gold added to Inventory!&lt;br&gt;
 
 &lt;&lt;if $faction.ikaanos.prosp lte 9&gt;&gt;
 &lt;&lt;set $descroll2 to random(15, 50)&gt;&gt;
-&lt;&lt;set $descroll3 to random(0, 0)&gt;&gt;
-&lt;&lt;set $descroll4 to random(0, 0)&gt;&gt;
+&lt;&lt;set $descroll3 to 0&gt;&gt;
+&lt;&lt;set $descroll4 to 0&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $descroll2 to random(15, $diff is 3 ? 55 : 100)&gt;&gt;
 &lt;&lt;set $descroll3 to random(0, 2)&gt;&gt;
@@ -404120,7 +404120,7 @@ This is done in NewRanSetters
 &lt;&lt;if $aback2 is 20&gt;&gt;
 &lt;&lt;set $ran_kind+=random(2,10)&gt;&gt;
 &lt;&lt;set $ran_survival+=random(5,10)&gt;&gt;
-&lt;&lt;set $ran_discipline+=random(10,10)&gt;&gt;
+&lt;&lt;set $ran_discipline+=10&gt;&gt;
 &lt;&lt;set $ran_garden+=random(1,10)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -404128,7 +404128,7 @@ This is done in NewRanSetters
 /* was responsible for a garden */
 &lt;&lt;if $aback2 is 21&gt;&gt;
 &lt;&lt;set $ran_traitwork+=random(5,20)&gt;&gt;
-&lt;&lt;set $ran_discipline+=random(10,10)&gt;&gt;
+&lt;&lt;set $ran_discipline+=10&gt;&gt;
 &lt;&lt;set $ran_garden+=random(15,40)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -404139,7 +404139,7 @@ This is done in NewRanSetters
 &lt;&lt;set $ran_aca+=random(10,30)&gt;&gt;
 &lt;&lt;set $ran_tech+=random(5,10)&gt;&gt;
 &lt;&lt;set $ran_int+=random(5,10)&gt;&gt;
-&lt;&lt;set $ran_discipline+=random(10,10)&gt;&gt;
+&lt;&lt;set $ran_discipline+=10&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $aback2 to 23&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -404687,7 +404687,7 @@ This is done in NewRanSetters
 &lt;&lt;elseif $weatherroll is 7&gt;&gt; /* hard disci */
 &lt;&lt;set $ran_discipline+=random(15,40)&gt;&gt;
 &lt;&lt;set $ran_willpower-=random(15,25)&gt;&gt;
-&lt;&lt;set $ran_domestic+=random(15,15)&gt;&gt;
+&lt;&lt;set $ran_domestic+=15&gt;&gt;
 &lt;&lt;set $ran_kind-=random(5,15)&gt;&gt;
 &lt;&lt;set $ran_traitsub+=random(10,90)&gt;&gt;
 &lt;&lt;set $ran_admin+=random(1,6)&gt;&gt;
