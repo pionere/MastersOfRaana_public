@@ -210782,7 +210782,7 @@ Has been added to your household!
 
 &lt;&lt;unset $arenaplace&gt;&gt;&lt;&lt;set $avatars to 0&gt;&gt;
 
-&lt;&lt;if $foodstuff lte 0&gt;&gt;&lt;&lt;set $foodstuff to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $foodstuff=Math.max($foodstuff,0)&gt;&gt;
 
 &lt;&lt;set $corfester=Math.min($corfester,200)&gt;&gt;
 &lt;&lt;set $purefester=Math.min($purefester,200)&gt;&gt;
@@ -219620,7 +219620,7 @@ MERCHANDISE&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $swagcap lte 1&gt;&gt;&lt;&lt;set _swagp+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _swagp lt 1&gt;&gt;&lt;&lt;set _swagp to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _swagp=Math.max(_swagp,1)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219675,7 +219675,7 @@ TENDSTIM&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 70&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _off lte 10&gt;&gt;&lt;&lt;set _off to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _off=Math.max(_off,10)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219953,7 +219953,7 @@ WOOD&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $mch.yardslot20.lumberav lte 99999&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mch.yardslot20.lumberav lte 99&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _off lte 0&gt;&gt;&lt;&lt;set _off to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _off=Math.max(_off,1)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -228958,13 +228958,13 @@ Keypass protocol failed. Please try again.
 
 &lt;&lt;set $body=$sex is 0 ? 1 : 2&gt;&gt;
 
-&lt;&lt;if $av_str lte 9&gt;&gt;&lt;&lt;set $av_str to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_dex lte 9&gt;&gt;&lt;&lt;set $av_dex to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_kind lte 9&gt;&gt;&lt;&lt;set $av_kind to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_aca lte 0&gt;&gt;&lt;&lt;set $av_aca to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $av_tech lte 0&gt;&gt;&lt;&lt;set $av_tech to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $av_str=Math.max($av_str,10)&gt;&gt;
+&lt;&lt;set $av_dex=Math.max($av_dex,10)&gt;&gt;
+&lt;&lt;set $av_kind=Math.max($av_kind,10)&gt;&gt;
+&lt;&lt;set $av_aca=Math.max($av_aca,0)&gt;&gt;
+&lt;&lt;set $av_tech=Math.max($av_tech,0)&gt;&gt;
 
-&lt;&lt;if $discipline lte 9&gt;&gt;&lt;&lt;set $discipline to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $discipline=Math.max($discipline,10)&gt;&gt;
 
 
 &lt;&lt;if $av_str gte 50&gt;&gt;&lt;&lt;set $av_str to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -258898,7 +258898,7 @@ Earlier today, a group of forest raiders made an unsuccessful attack against one
 &lt;&lt;if $days gte 1000&gt;&gt;&lt;&lt;set $raiderstr+=either(15,20,20,20,10,10,50,45,20,20,10,10,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $raiderstr lte 4&gt;&gt;&lt;&lt;set $raiderstr to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $raiderstr=Math.max($raiderstr,5)&gt;&gt;
 
 &lt;&lt;set $event0done to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -259091,7 +259091,7 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;if $raiderstr gte 75&gt;&gt;&lt;&lt;set _guardxp.health-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* no killed guards */
-&lt;&lt;if _guardxp.health lte 0 and $diff lte 2&gt;&gt;&lt;&lt;set _guardxp.health to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $diff lte 2&gt;&gt;&lt;&lt;set _guardxp.health=Math.max(_guardxp.health,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/for&gt;&gt;
@@ -305756,7 +305756,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.pain=adl(_npc.pain,-3,0)&gt;&gt;
 &lt;&lt;set _npc.stress=adl(_npc.stress,-3,0)&gt;&gt;
 
-&lt;&lt;if _npc.willpower lt -15&gt;&gt;&lt;&lt;set _npc.willpower to -15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.willpower=Math.max(_npc.willpower,-15)&gt;&gt;
 &lt;&lt;if _lossroll is 1&gt;&gt;&lt;&lt;set _npc.willpower=adl(_npc.willpower,1,-10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.happiness lte 90&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -308738,7 +308738,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 &lt;&lt;if $palcredtot gte -99999999&gt;&gt;&lt;&lt;set $palcred+=$palcredtot&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $credit lte 0&gt;&gt;&lt;&lt;set $credit=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $credit=Math.max($credit,0)&gt;&gt;
 &lt;&lt;if $palcred gt 10000&gt;&gt;&lt;&lt;set $palcred=10000&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -308838,7 +308838,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
   &lt;&lt;if _npccheck.busy isnot 5 and _npccheck.busy isnot 10&gt;&gt;
    &lt;&lt;if _npccheck.program gte 1 and _npccheck.program lte 3&gt;&gt;&lt;&lt;set _npccheck.tempstamina-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
    &lt;&lt;if _npccheck.program is 4&gt;&gt;&lt;&lt;set _npccheck.tempstamina-=_npccheck.dex gte 70 or _npccheck.acro gte 60 ? 16 : 25&gt;&gt;&lt;&lt;/if&gt;&gt;
-   &lt;&lt;if _npccheck.tempstamina lte 8&gt;&gt;&lt;&lt;set _npccheck.tempstamina=8&gt;&gt;&lt;&lt;/if&gt;&gt;
+   &lt;&lt;set _npccheck.tempstamina=Math.max(_npccheck.tempstamina,8)&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   &lt;&lt;if _npccheck.busy is 5&gt;&gt;&lt;&lt;set _npccheck.tempstamina+=5&gt;&gt;&lt;&lt;set _npccheck.health+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
  &lt;&lt;/if&gt;&gt;
@@ -312993,7 +312993,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $holidays gte 1&gt;&gt;&lt;&lt;set _newsincome*=1.25&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $npc.av7.warfame gte 100&gt;&gt;&lt;&lt;set _newsincome*=1.10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _newsincome lt 0&gt;&gt;&lt;&lt;set _newsincome to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _newsincome=Math.max(_newsincome,0)&gt;&gt;
 &lt;&lt;set _newsincome = Math.round(_newsincome)&gt;&gt;
 
 &lt;&lt;set $cashtot+=_newsincome&gt;&gt;
