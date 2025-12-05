@@ -313145,7 +313145,15 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if $mch isnot undefined and _activeblock isnot true&gt;&gt;
 &lt;&lt;set _ecoshow to true&gt;&gt;
 &lt;&lt;include SweatYield&gt;&gt;
+
+&lt;&lt;if $mch.yardslot1.type is 5&gt;&gt;
+&lt;&lt;set _stable to $mch.yardslot1&gt;&gt;
 &lt;&lt;include StableEf&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot2.type is 5&gt;&gt;
+&lt;&lt;set _stable to $mch.yardslot2&gt;&gt;
+&lt;&lt;include StableEf&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $mch.yardslot5.type is 11&gt;&gt;
@@ -333645,7 +333653,8 @@ OLD IGNORE
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="507" name="StableEf" tags="nobr" position="3425,1375" size="100,100">&lt;&lt;if _ecoshow isnot true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="507" name="StableEf" tags="nobr" position="3425,1375" size="100,100">
+&lt;&lt;if _ecoshow isnot true&gt;&gt;
 
 /* horses */
 &lt;&lt;if _stable.level2 gte 1&gt;&gt;&lt;&lt;set $goodfester+=1&gt;&gt;&lt;&lt;set $workfester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -333654,27 +333663,15 @@ OLD IGNORE
 &lt;&lt;set $repairfester+=1&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
+
 /* wagon */
+&lt;&lt;if _stable.level gte 1&gt;&gt;&lt;&lt;set _ownstableinf+=2&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _stable.level gte 2&gt;&gt;&lt;&lt;set _ownstableinf+=4&gt;&gt;&lt;&lt;set $credtot+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _stable.level2 gte 1&gt;&gt;&lt;&lt;set _ownstableinf+=2&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _stable.level2 gte 3&gt;&gt;&lt;&lt;set _ownstableinf+=4&gt;&gt;&lt;&lt;set $credtot+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $mch.yardslot1.type is 5&gt;&gt;
-
-&lt;&lt;if $mch.yardslot1.level gte 1&gt;&gt;&lt;&lt;set _ownstableinf+=2&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot1.level gte 2&gt;&gt;&lt;&lt;set _ownstableinf+=4&gt;&gt;&lt;&lt;set $credtot+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot1.level2 gte 1&gt;&gt;&lt;&lt;set _ownstableinf+=2&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot1.level2 gte 3&gt;&gt;&lt;&lt;set _ownstableinf+=4&gt;&gt;&lt;&lt;set $credtot+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mch.yardslot2.type is 5&gt;&gt;
-
-&lt;&lt;if $mch.yardslot2.level gte 1&gt;&gt;&lt;&lt;set _ownstableinf+=2&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot2.level gte 2&gt;&gt;&lt;&lt;set _ownstableinf+=4&gt;&gt;&lt;&lt;set $credtot+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot2.level2 gte 1&gt;&gt;&lt;&lt;set _ownstableinf+=2&gt;&gt;&lt;&lt;set $credtot+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot2.level2 gte 3&gt;&gt;&lt;&lt;set _ownstableinf+=4&gt;&gt;&lt;&lt;set $credtot+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="508" name="SweatYield2" tags="nobr" position="1000,1600" size="100,100">
+</tw-passagedata><tw-passagedata pid="508" name="SweatYield2" tags="nobr" position="1000,1600" size="100,100">
 &lt;&lt;set _income to _active.other2*10&gt;&gt;
 &lt;&lt;if _active.other1 gte 100&gt;&gt;&lt;&lt;set _income*=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
