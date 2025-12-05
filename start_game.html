@@ -317780,22 +317780,21 @@ Dismissing _girlname from &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if _npc.masterlove gte 75 and _caitclin is undefined&gt;&gt;
+&lt;&lt;set _hapgo=_npc.masterlove gte 75 and _caitclin is undefined&gt;&gt;
+&lt;&lt;set _arigo=_npc.girlid is 11&gt;&gt;
+
+&lt;&lt;if _hapgo or _arigo&gt;&gt;
 &lt;div class=&quot;left padd80left&quot;&gt;
 Effects:&lt;br&gt;
+&lt;&lt;if _hapgo&gt;&gt;
 &lt;li&gt;Happiness (-5)&lt;/li&gt;
-&lt;/div&gt;
-&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.girlid is 11&gt;&gt;
-&lt;div class=&quot;left padd80left&quot;&gt;
-Effects:&lt;br&gt;
-&lt;&lt;if _npc.status lte 2 and $quest_aria lte 18&gt;&gt;&lt;li&gt;Influence (-1,500)&lt;/li&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _arigo&gt;&gt;
+&lt;&lt;set _arigo=_npc.status lte 2 and $quest_aria lte 18&gt;&gt;
+&lt;&lt;if _arigo&gt;&gt;&lt;li&gt;Influence (-1,500)&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_aria is 9 or $quest_aria is 10&gt;&gt;&lt;li&gt;Rebel faction boost&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_aria gte 20&gt;&gt;&lt;li&gt;Republic faction boost&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
@@ -317808,8 +317807,8 @@ Do you wish to continue?
 &lt;&lt;link &quot;dismiss!&quot;&gt;&gt;
 &lt;&lt;goto SMenu2&gt;&gt;
 &lt;&lt;unset $execommand&gt;&gt;
-&lt;&lt;if _npc.masterlove gte 75 and _caitclin is undefined&gt;&gt;&lt;&lt;set _npc.happiness+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 11 and _npc.status lte 2 and $quest_aria lte 17&gt;&gt;&lt;&lt;set $credit-=1500&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _hapgo&gt;&gt;&lt;&lt;set _npc.happiness-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _arigo&gt;&gt;&lt;&lt;set $credit-=1500&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
 &lt;&lt;unset $activeslot&gt;&gt;
 &lt;&lt;/link&gt;&gt;
