@@ -335277,17 +335277,18 @@ home anymore today!&#39;&#39;
 
 &lt;br&gt;&lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;HEATING&#39;&#39;&lt;br&gt;
+&lt;&lt;if $ownfusion is 1&gt;&gt;
 //
-&lt;&lt;if $ownfusion is undefined&gt;&gt;
+&lt;div class=&quot;green&quot;&gt;Fusion-powered&lt;/div&gt;
+//
+&lt;&lt;else&gt;&gt;
+//
 Wood-burning stove&lt;br&gt;
 (&lt;&lt;print setup.formatNumber($mch.stats.wood)&gt;&gt; units)
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;green&quot;&gt;Fusion-powered&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 //
-
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;&lt;if $ownfusion is undefined&gt;&gt;&lt;&lt;if $wood gte 10&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Add 10w|House2][$wood-=10, $mch.stats.wood+=10]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Add 10w&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wood gte 10&gt;&gt;&lt;div class=&quot;ulsmall&quot;&gt;[[Add 10w|House2][$wood-=10, $mch.stats.wood+=10]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Add 10w&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
