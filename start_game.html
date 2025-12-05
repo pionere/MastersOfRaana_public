@@ -167191,19 +167191,25 @@ a daily &#39;&#39;Influence (+12)&#39;&#39; boost!
 
 
 &lt;&lt;include GirlCheck&gt;&gt;
+
+&lt;&lt;for _r=0;_r lt 2;_r++&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
-
+&lt;&lt;for _c=0;_c lt 3;_c++&gt;&gt;
+&lt;&lt;set _idx=_r*3+_c+1&gt;&gt;
+&lt;&lt;set _slot=$taken[&quot;slot&quot;+_idx]&gt;&gt;
 &lt;div class=&quot;resholderbig2 ulsmall&quot;&gt;
-&lt;center&gt;&#39;&#39;- &lt;&lt;if $taken.slot1.state is 1&gt;&gt;$taken.slot1.name&lt;&lt;else&gt;&gt;SLOT I&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
+&lt;center&gt;&#39;&#39;- &lt;&lt;if _slot.state is 1&gt;&gt;_slot.name&lt;&lt;else&gt;&gt;SLOT &lt;&lt;=romanize(_idx)&gt;&gt;&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
 &lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;&lt;if $taken.slot1.state is 1&gt;&gt;
+&lt;&lt;if _slot.state is 1&gt;&gt;
 &lt;div class=&quot;padd30left&quot;&gt;
-&#39;&#39;Frame:&#39;&#39; &lt;&lt;if $taken.slot1.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot1.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot1.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot1.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot1.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot1.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Age:&#39;&#39; $taken.slot1.age&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if $taken.slot1.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&#39;&#39;Frame:&#39;&#39; &lt;&lt;if _slot.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if _slot.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if _slot.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if _slot.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if _slot.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if _slot.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&#39;&#39;Age:&#39;&#39; _slot.age&lt;br&gt;
+&#39;&#39;Sex:&#39;&#39; &lt;&lt;if _slot.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;if _okpro is true&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to 1, $tookbody to $taken.slot1.body]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _grant is true&gt;&gt;[[Donate|BusinessEngine][$taken.slot1.state to 0, $donatecom to true, $donatepower to $taken.slot1.id]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;capture _idx, _slot&gt;&gt;
+&lt;&lt;if _okpro&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to _idx, $tookbody to _slot.body]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _grant&gt;&gt;[[Donate|BusinessEngine][_slot.state to 0, $donatecom to true, $donatepower to _slot.id]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac center&quot;&gt;
 &lt;br&gt;
@@ -167211,121 +167217,10 @@ UNOCCUPIED
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-
-
-&lt;div class=&quot;resholderbig2 ulsmall&quot;&gt;
-&lt;center&gt;&#39;&#39;- &lt;&lt;if $taken.slot2.state is 1&gt;&gt;$taken.slot2.name&lt;&lt;else&gt;&gt;SLOT II&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;&lt;if $taken.slot2.state is 1&gt;&gt;
-&lt;div class=&quot;padd30left&quot;&gt;
-&#39;&#39;Frame:&#39;&#39; &lt;&lt;if $taken.slot2.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot2.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot2.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot2.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot2.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot2.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Age:&#39;&#39; $taken.slot2.age&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if $taken.slot2.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/for&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;if _okpro is true&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to 2, $tookbody to $taken.slot2.body]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _grant is true&gt;&gt;[[Donate|BusinessEngine][$taken.slot2.state to 0, $donatecom to true, $donatepower to $taken.slot2.id]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac center&quot;&gt;
 &lt;br&gt;
-UNOCCUPIED
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholderbig2 ulsmall&quot;&gt;
-&lt;center&gt;&#39;&#39;- &lt;&lt;if $taken.slot3.state is 1&gt;&gt;$taken.slot3.name&lt;&lt;else&gt;&gt;SLOT III&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;&lt;if $taken.slot3.state is 1&gt;&gt;
-&lt;div class=&quot;padd30left&quot;&gt;
-&#39;&#39;Frame:&#39;&#39; &lt;&lt;if $taken.slot3.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot3.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot3.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot3.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot3.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot3.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Age:&#39;&#39; $taken.slot3.age&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if $taken.slot3.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;if _okpro is true&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to 3, $tookbody to $taken.slot3.body]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _grant is true&gt;&gt;[[Donate|BusinessEngine][$taken.slot3.state to 0, $donatecom to true, $donatepower to $taken.slot3.id]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac center&quot;&gt;
-&lt;br&gt;
-UNOCCUPIED
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-&lt;br&gt;
-
-
-&lt;div class=&quot;row&quot;&gt;
-
-&lt;div class=&quot;resholderbig2 ulsmall&quot;&gt;
-&lt;center&gt;&#39;&#39;- &lt;&lt;if $taken.slot4.state is 1&gt;&gt;$taken.slot4.name&lt;&lt;else&gt;&gt;SLOT IV&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;&lt;if $taken.slot4.state is 1&gt;&gt;
-&lt;div class=&quot;padd30left&quot;&gt;
-&#39;&#39;Frame:&#39;&#39; &lt;&lt;if $taken.slot4.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot4.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot4.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot4.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot4.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot4.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Age:&#39;&#39; $taken.slot4.age&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if $taken.slot4.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;if _okpro is true&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to 4, $tookbody to $taken.slot4.body]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _grant is true&gt;&gt;[[Donate|BusinessEngine][$taken.slot4.state to 0, $donatecom to true, $donatepower to $taken.slot4.id]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac center&quot;&gt;
-&lt;br&gt;
-UNOCCUPIED
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholderbig2 ulsmall&quot;&gt;
-&lt;center&gt;&#39;&#39;- &lt;&lt;if $taken.slot5.state is 1&gt;&gt;$taken.slot5.name&lt;&lt;else&gt;&gt;SLOT V&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;&lt;if $taken.slot5.state is 1&gt;&gt;
-&lt;div class=&quot;padd30left&quot;&gt;
-&#39;&#39;Frame:&#39;&#39; &lt;&lt;if $taken.slot5.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot5.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot5.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot5.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot5.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot5.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Age:&#39;&#39; $taken.slot5.age&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if $taken.slot5.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;if _okpro is true&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to 5, $tookbody to $taken.slot5.body]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _grant is true&gt;&gt;[[Donate|BusinessEngine][$taken.slot5.state to 0, $donatecom to true, $donatepower to $taken.slot5.id]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac center&quot;&gt;
-&lt;br&gt;
-UNOCCUPIED
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholderbig2 ulsmall&quot;&gt;
-&lt;center&gt;&#39;&#39;- &lt;&lt;if $taken.slot6.state is 1&gt;&gt;$taken.slot6.name&lt;&lt;else&gt;&gt;SLOT VI&lt;&lt;/if&gt;&gt; -&#39;&#39;&lt;/center&gt;
-&lt;div class=&quot;tex5px padd10side&quot;&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;&lt;if $taken.slot6.state is 1&gt;&gt;
-&lt;div class=&quot;padd30left&quot;&gt;
-&#39;&#39;Frame:&#39;&#39; &lt;&lt;if $taken.slot6.body is 1&gt;&gt;Very petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot6.body is 2&gt;&gt;Petite&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot6.body is 3&gt;&gt;Normal&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot6.body is 4&gt;&gt;Busty&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot6.body is 5&gt;&gt;Plump&lt;&lt;/if&gt;&gt;&lt;&lt;if $taken.slot6.body gte 6&gt;&gt;Masculine&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Age:&#39;&#39; $taken.slot6.age&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if $taken.slot6.body gte 6&gt;&gt;Male&lt;&lt;set _malesl+=1&gt;&gt;&lt;&lt;else&gt;&gt;Female&lt;&lt;set _femsl+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;if _okpro is true&gt;&gt;[[Process|SlaveHall][$event to 4, $action to 3, $action1 to true, $takeslot to 6, $tookbody to $taken.slot6.body]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _grant is true&gt;&gt;[[Donate|BusinessEngine][$taken.slot6.state to 0, $donatecom to true, $donatepower to $taken.slot6.id]]&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;div class=&quot;opac center&quot;&gt;
-&lt;br&gt;
-UNOCCUPIED
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
+&lt;&lt;/for&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
