@@ -234718,94 +234718,20 @@ Dead!
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="353" name="FoPic" tags="nobr" position="2150,1550" size="100,100">
 
-
-
-&lt;&lt;if _sloty gte -10&gt;&gt;
 &lt;&lt;set _dir to &quot;av&quot;+_girlid&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av&quot;+_girlid+&quot;ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if _girlid is 100&gt;&gt;
-&lt;&lt;set _dir to &quot;av100&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av100ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid gte 101&gt;&gt;
+&lt;&lt;set _tmp=[128,179,202,203,207,211,213,350,353,354,356,359]&gt;&gt;
+&lt;&lt;if _girlid gte 101 and !_tmp.contains(_girlid)&gt;&gt;
 &lt;&lt;set _dir to &quot;av101&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av101ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _girlid is 128&gt;&gt;
-&lt;&lt;set _dir to &quot;av128&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av128ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 179&gt;&gt;
-&lt;&lt;set _dir to &quot;av179&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av179ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 202&gt;&gt;
-&lt;&lt;set _dir to &quot;av202&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av202ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 203&gt;&gt;
-&lt;&lt;set _dir to &quot;av203&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av203ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 207&gt;&gt;
-&lt;&lt;set _dir to &quot;av207&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av207ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 211&gt;&gt;
-&lt;&lt;set _dir to &quot;av211&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av211ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 213&gt;&gt;
-&lt;&lt;set _dir to &quot;av213&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av213ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _girlid gte 300&gt;&gt;
+&lt;&lt;if _girlid gte 300 and !_tmp.contains(_girlid)&gt;&gt;
 &lt;&lt;set _dir to &quot;av300&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av300ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _girlid is 350&gt;&gt;
-&lt;&lt;set _dir to &quot;av350&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av350ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _girlid is 354&gt;&gt;
-&lt;&lt;set _dir to &quot;av354&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av354ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if _girlid is 356&gt;&gt;
-&lt;&lt;set _dir to &quot;av356&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av356ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 353 or _trans gte 1&gt;&gt;
+&lt;&lt;if _trans gte 1&gt;&gt;
 &lt;&lt;set _dir to &quot;av353&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av353ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 359&gt;&gt;
-&lt;&lt;set _dir to &quot;av359&quot;&gt;&gt;
-&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir to &quot;av359ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if _ko isnot true and (_show3 is &quot;hulc&quot; or _show3 is &quot;wega&quot;)&gt;&gt;
 &lt;&lt;if _show3 is &quot;wega&quot;&gt;&gt;
@@ -234814,10 +234740,11 @@ Dead!
 &lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;Combat/wega&quot;+_cposi+&quot;.png&quot;]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;elseif _show3 is &quot;hulc&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
 [img[$imgpath + &quot;Combat/hulc&quot;+_cposi+&quot;.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
+&lt;&lt;if _ko is true&gt;&gt;&lt;&lt;set _dir+=&quot;ko&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _curhp lte -15 and $ironman gte 1&gt;&gt;
 &lt;div class=&quot;baw&quot;&gt;
 [img[$imgpath + &quot;Combat/&quot;+_dir+&quot;.png&quot;]]
