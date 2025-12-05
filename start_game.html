@@ -56144,15 +56144,66 @@ But her pleads are futile. After you’ve shown $girlname that she must obey her
 </tw-passagedata><tw-passagedata pid="112" name="QuestTexts" tags="nobr" position="3100,175" size="100,100">
 &lt;&lt;if $tutorial is 1&gt;&gt;
 &lt;div id=&quot;wrapper2&quot;&gt;
-&lt;center&gt;&lt;h2&gt;LOG&lt;/h2&gt;&lt;/center&gt;
+&lt;div class=&quot;headsign&quot;&gt;
+LOG
+&lt;div class=&quot;lighthover&quot;&gt;
+&lt;&lt;link [img[$imgpath + ($showfilters ? &quot;Butt/minus.png&quot; : &quot;Butt/plus.png&quot;)]]&gt;&gt;
+&lt;&lt;set $showfilters to !$showfilters&gt;&gt;
+&lt;&lt;set $tutorial to 1&gt;&gt;
+&lt;&lt;popup &#39;QuestTexts&#39;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;hr&gt;
-&lt;&lt;set _checklog to true&gt;&gt;
 
-/*
-Ch = nya värdet
-Npc2 = gamla värdet
+&lt;&lt;if $hidens is undefined or $hidens.length lt 4&gt;&gt;
+&lt;&lt;set $hidens=[
+[&quot;STRENGTH&quot;,&quot;DEXTERITY&quot;,&quot;INTELLIGENCE&quot;,&quot;WILLPOWER&quot;],
+[&quot;HEALTH&quot;,&quot;STAM.POINTS&quot;,&quot;CHARISMA&quot;,&quot;BEAUTY&quot;],
+[&quot;Discipline&quot;,&quot;Kindness&quot;,&quot;Happiness&quot;,&quot;Affection&quot;],
+[&quot;Corruption&quot;,&quot;Fear&quot;,&quot;Anger&quot;,&quot;Respect&quot;],
+[&quot;Domestic&quot;,&quot;Acrobatics&quot;,&quot;Dancing&quot;,&quot;Performance&quot;],
+]&gt;&gt;
+&lt;&lt;set $hidevs=[[],[],[],[],[]]&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
-*/
+&lt;&lt;if $showfilters&gt;&gt;
+&lt;&lt;for _i = 0; _i lt $hidens.length; _i++&gt;&gt;
+&lt;&lt;capture _i&gt;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;for _j = 0; _j lt $hidens[_i].length; _j++&gt;&gt;
+&lt;&lt;capture _j&gt;&gt;
+&lt;div class=&quot;skillname&quot;&gt;
+$hidens[_i][_j]:&nbsp;
+&lt;/div&gt;
+&lt;div class=&quot;lighthover&quot;&gt;
+&lt;&lt;link [img[$imgpath+($hidevs[_i][_j] ? &quot;Butt/minus.png&quot; : &quot;Butt/plus.png&quot;)]]&gt;&gt;
+&lt;&lt;set $hidevs[_i][_j] to !$hidevs[_i][_j]&gt;&gt;
+&lt;&lt;set $tutorial to 1&gt;&gt;
+&lt;&lt;popup &#39;QuestTexts&#39;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/div&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;/div&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+
+&lt;div class=&quot;row lighthover resholdersmall padd10top&quot;&gt;
+Filter:&nbsp;
+&lt;&lt;link [img[$imgpath+($showall ? &quot;Butt/minus.png&quot; : &quot;Butt/plus.png&quot;)]]&gt;&gt;
+&lt;&lt;for _j = 0; _j lt $hidens[_i].length; _j++&gt;&gt;
+&lt;&lt;set $hidevs[_i][_j] to 0&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;&lt;/for&gt;&gt;*/
+&lt;&lt;set $showall to !$showall&gt;&gt;
+&lt;&lt;set $tutorial to 1&gt;&gt;
+&lt;&lt;popup &#39;QuestTexts&#39;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;for _chs range $npc&gt;&gt;
 &lt;&lt;if _chs.state gte 1&gt;&gt;
@@ -56163,56 +56214,56 @@ Npc2 = gamla värdet
 &lt;&lt;set _chs2 to $npc2[_av]&gt;&gt;
 &lt;&lt;set _name to _chs.girlname&gt;&gt;
 
-&lt;&lt;if _chs.health isnot _chs2.health&gt;&gt;
+&lt;&lt;if _chs.health isnot _chs2.health and ($showall or !$hidevs[1][0])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;HEALTH:&#39;&#39; &lt;&lt;set _ch=_chs.health-_chs2.health&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.tempstamina isnot _chs2.tempstamina&gt;&gt;
+&lt;&lt;if _chs.tempstamina isnot _chs2.tempstamina and ($showall or !$hidevs[1][1])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;STAM. POINTS:&#39;&#39; &lt;&lt;set _ch=_chs.tempstamina-_chs2.tempstamina&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.masterlove isnot _chs2.masterlove&gt;&gt;
+&lt;&lt;if _chs.masterlove isnot _chs2.masterlove and ($showall or !$hidevs[2][3])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Affection:&#39;&#39; &lt;&lt;set _ch=_chs.masterlove-_chs2.masterlove&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.scarefactor isnot _chs2.scarefactor&gt;&gt;
+&lt;&lt;if _chs.scarefactor isnot _chs2.scarefactor and ($showall or !$hidevs[3][2])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Anger:&#39;&#39; &lt;&lt;set _ch=_chs.scarefactor-_chs2.scarefactor&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.respect isnot _chs2.respect&gt;&gt;
+&lt;&lt;if _chs.respect isnot _chs2.respect and ($showall or !$hidevs[3][3])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Respect:&#39;&#39; &lt;&lt;set _ch=_chs.respect-_chs2.respect&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.afraid isnot _chs2.afraid&gt;&gt;
+&lt;&lt;if _chs.afraid isnot _chs2.afraid and ($showall or !$hidevs[3][1])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Fear:&#39;&#39; &lt;&lt;set _ch=_chs.afraid-_chs2.afraid&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.happiness isnot _chs2.happiness&gt;&gt;
+&lt;&lt;if _chs.happiness isnot _chs2.happiness and ($showall or !$hidevs[2][2])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Happiness:&#39;&#39; &lt;&lt;set _ch=_chs.happiness-_chs2.happiness&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.likesadist isnot _chs2.likesadist&gt;&gt;
+&lt;&lt;if _chs.likesadist isnot _chs2.likesadist and ($showall or !$hidevs[3][0])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Corruption:&#39;&#39; &lt;&lt;set _ch=_chs.likesadist-_chs2.likesadist&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
@@ -56254,21 +56305,21 @@ Npc2 = gamla värdet
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.discipline isnot _chs2.discipline&gt;&gt;
+&lt;&lt;if _chs.discipline isnot _chs2.discipline and ($showall or !$hidevs[2][0])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Discipline:&#39;&#39; &lt;&lt;set _ch=_chs.discipline-_chs2.discipline&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.domestic isnot _chs2.domestic&gt;&gt;
+&lt;&lt;if _chs.domestic isnot _chs2.domestic and ($showall or !$hidevs[4][0])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Domestic:&#39;&#39; &lt;&lt;set _ch=_chs.domestic-_chs2.domestic&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.acro isnot _chs2.acro&gt;&gt;
+&lt;&lt;if _chs.acro isnot _chs2.acro and ($showall or !$hidevs[4][1])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Acrobatics:&#39;&#39; &lt;&lt;set _ch=_chs.acro-_chs2.acro&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
@@ -56289,14 +56340,14 @@ Npc2 = gamla värdet
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.dancing isnot _chs2.dancing&gt;&gt;
+&lt;&lt;if _chs.dancing isnot _chs2.dancing and ($showall or !$hidevs[4][2])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Dancing:&#39;&#39; &lt;&lt;set _ch=_chs.dancing-_chs2.dancing&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.per isnot _chs2.per&gt;&gt;
+&lt;&lt;if _chs.per isnot _chs2.per and ($showall or !$hidevs[4][3])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;Performance:&#39;&#39; &lt;&lt;set _ch=_chs.per-_chs2.per&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
@@ -56366,28 +56417,28 @@ Npc2 = gamla värdet
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.int isnot _chs2.int&gt;&gt;
+&lt;&lt;if _chs.int isnot _chs2.int and ($showall or !$hidevs[0][2])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;INTELLIGENCE:&#39;&#39; &lt;&lt;set _ch=_chs.int-_chs2.int&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.willpower isnot _chs2.willpower&gt;&gt;
+&lt;&lt;if _chs.willpower isnot _chs2.willpower and ($showall or !$hidevs[0][3])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;WILLPOWER:&#39;&#39; &lt;&lt;set _ch=_chs.willpower-_chs2.willpower&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.kind isnot _chs2.kind&gt;&gt;
+&lt;&lt;if _chs.kind isnot _chs2.kind and ($showall or !$hidevs[2][1])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;KINDNESS:&#39;&#39; &lt;&lt;set _ch=_chs.kind-_chs2.kind&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _chs.charisma isnot _chs2.charisma&gt;&gt;
+&lt;&lt;if _chs.charisma isnot _chs2.charisma and ($showall or !$hidevs[1][2])&gt;&gt;
 &lt;&lt;if _name is _chs.girlname&gt;&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_name&#39;&#39;&lt;/div&gt;&lt;br&gt;&lt;&lt;unset _name&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;padd20left&quot;&gt;&lt;li&gt;
 &#39;&#39;CHARISMA:&#39;&#39; &lt;&lt;set _ch=_chs.charisma-_chs2.charisma&gt;&gt;&lt;&lt;if _ch gt 0&gt;&gt;+&lt;&lt;/if&gt;&gt;_ch.&lt;br&gt;&lt;/li&gt;
