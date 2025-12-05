@@ -85721,10 +85721,8 @@ Armor destroyed!
 
 &lt;&lt;if $combat is 60 and $ownpaper isnot 1&gt;&gt;&lt;&lt;set $speloot to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $combat is 115 and $lootingmonster isnot 1&gt;&gt;&lt;&lt;set $speloot to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if ($combat is 115 or $combat is 120 or $combat is 121) and $lootingmonster isnot 1&gt;&gt;&lt;&lt;set $speloot to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $combat is 120 and $lootingmonster isnot 1&gt;&gt;&lt;&lt;set $speloot to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 121 and $lootingmonster isnot 1&gt;&gt;&lt;&lt;set $speloot to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $combat is 133 and $bhidol is 1&gt;&gt;&lt;&lt;set $speloot to 17&gt;&gt;&lt;&lt;set $bhidol to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* must loot documents from strange woman - secret garden quest */
@@ -117923,15 +117921,7 @@ What type of activity did you have in mind?
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _horseok to false&gt;&gt;
-
-&lt;&lt;if _npc.status lte 3 or _npc.status gte 9&gt;&gt;
-&lt;&lt;set _horseok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.sex is 1 or _chancellor is true&gt;&gt;
-&lt;&lt;set _horseok to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _horseok=(_npc.status lte 3 or _npc.status gte 9) and _npc.sex is 0 and !_chancellor&gt;&gt;
 
 &lt;&lt;if _horseok is true and _blockthis isnot true&gt;&gt;
 [[Horse riding|HorseRiding]]
@@ -312403,10 +312393,10 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;set _maidpen = Math.round(_maidpen)&gt;&gt;
 
-&lt;&lt;if _maids gte _maidreq&gt;&gt;&lt;&lt;set _maidpen to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if _maids lt _maidreq&gt;&gt;
 &lt;&lt;set $credtot-=_maidpen&gt;&gt;&lt;&lt;set _nomaids+=_maidpen&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _maidpen to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
