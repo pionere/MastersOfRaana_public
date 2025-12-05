@@ -149395,7 +149395,7 @@ An amazing 25 minutes then passes, with two diligent girls doing their duties de
 &lt;&lt;if $descroll is 1&gt;&gt;$girlname nods. Her sister follows her lead and both get to their assignment immediately with surprising diligence. They try to make the best of the situation, laughing and snickering quietly between themselves, while working your manhood in a way that&#39;s very pleasing.
 &lt;br&gt;&lt;br&gt;
 The threesome actually has a rather nice time together, and you&#39;re catapulted between various stages of ecstasy during the 20 minutes it takes for you to deem your slaves finished with their cleaning duties.
-&lt;&lt;if $scarefactor gte 1 or $avIn_scarefactor gte 2&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;The scene has slightly improved the somewhat lackluster situation between you and at least one of your slaves.&#39;&#39;//&lt;&lt;if $scarefactor gte 1&gt;&gt;&lt;&lt;set $scarefactor-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $avIn_scarefactor gte 1&gt;&gt;&lt;&lt;set $avIn_scarefactor-=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $scarefactor gte 1 or $avIn_scarefactor gte 2&gt;&gt;&lt;br&gt;&lt;br&gt;//&#39;&#39;The scene has slightly improved the somewhat lackluster situation between you and at least one of your slaves.&#39;&#39;//&lt;&lt;set $scarefactor=adl($scarefactor,-1,0)&gt;&gt;&lt;&lt;set $avIn_scarefactor=adl($avIn_scarefactor,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll is 2&gt;&gt;The girls nod obediently like two eager puppies, and then move down to your groin, which they begin to satiate in a highly gratifying way. $girlname works wonders with her tongue around your ball-sack, while $avIn_girlname does what she can with your cock&#39;s under- and overside.
 &lt;br&gt;&lt;br&gt;
@@ -161971,7 +161971,7 @@ Embryl butt plug
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $tooklesano is true&gt;&gt;
-&lt;&lt;if _npc.taint lte 65&gt;&gt;&lt;&lt;set _npc.taint+=8&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.taint=adl(_npc.taint,8,73)&gt;&gt;
 &lt;&lt;if _npc.likesadist gte 90 or $likesadist gte 90&gt;&gt;&lt;&lt;set _npc.likesadist to 90&gt;&gt;&lt;&lt;set $likesadist to 90&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;unset $tooklesano&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -181278,7 +181278,7 @@ $string4b
 &lt;&lt;if _liking lte -2&gt;&gt;
 &lt;&lt;set _arimg to 1&gt;&gt;
 /*HATES IT*/
-&lt;&lt;if _npc.happiness gte 20&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,19)&gt;&gt;
 _npc.girlname looks at you with anger and says:
 &lt;br&gt;&lt;br&gt;
 //
@@ -181315,7 +181315,7 @@ _npc.girlname looks at you with indifference:
 
 &lt;&lt;if _liking lte -2&gt;&gt;
 &lt;&lt;set _arimg to 1&gt;&gt;
-&lt;&lt;if _npc.happiness gte 20&gt;&gt;&lt;&lt;set _npc.happiness-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,19)&gt;&gt;
 /*HATES IT*/
 _npc.girlname looks at you with hopelessness in her eyes:
 &lt;br&gt;&lt;br&gt;
@@ -219439,8 +219439,8 @@ BOLTS&lt;br&gt;&lt;br&gt;
 &lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off=adl(_off,-1,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off=adl(_off,-1,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -219459,7 +219459,7 @@ BOLTS&lt;br&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off=adl(_off,-1,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -219494,7 +219494,7 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off=adl(_off,-1,1)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -230502,24 +230502,24 @@ You try to get your bearings again, following the vicious fight.
 /* SLAVE MARKET SATURATION REGROWTH */
 
 &lt;&lt;if $sats isnot undefined&gt;&gt;
-&lt;&lt;if $sats.male gte 20 and $lossroll is 1&gt;&gt;&lt;&lt;set $sats.male-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.fem gte 15 and $lossroll is 2&gt;&gt;&lt;&lt;set $sats.fem-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.male gte 60 and $lossroll is 3&gt;&gt;&lt;&lt;set $sats.male-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.fem gte 55 and $lossroll is 4&gt;&gt;&lt;&lt;set $sats.fem-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.watery gte 10 and $lossroll is 3&gt;&gt;&lt;&lt;set $sats.watery-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.crystal gte 10 and $lossroll gte 3&gt;&gt;&lt;&lt;set $sats.crystal-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.watery gte 50 and $lossroll is 4&gt;&gt;&lt;&lt;set $sats.watery-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.crystal gte 50 and $lossroll gte 2&gt;&gt;&lt;&lt;set $sats.crystal-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 1&gt;&gt;&lt;&lt;set $sats.male=adl($sats.male,-1,19)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 2&gt;&gt;&lt;&lt;set $sats.fem=adl($sats.fem,-1,14)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 3&gt;&gt;&lt;&lt;set $sats.male=adl($sats.male,-1,59)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 4&gt;&gt;&lt;&lt;set $sats.fem=adl($sats.fem,-1,54)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 3&gt;&gt;&lt;&lt;set $sats.watery=adl($sats.watery,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 3&gt;&gt;&lt;&lt;set $sats.crystal=adl($sats.crystal,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 4&gt;&gt;&lt;&lt;set $sats.watery=adl($sats.watery,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 2&gt;&gt;&lt;&lt;set $sats.crystal=adl($sats.crystal,-1,49)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $sats.crystal gte 5 and $lossroll is 1 and $weatherroll is 3&gt;&gt;&lt;&lt;set $sats.crystal-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.watery gte 5 and $lossroll is 2 and $weatherroll is 1&gt;&gt;&lt;&lt;set $sats.watery-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 1 and $weatherroll is 3&gt;&gt;&lt;&lt;set $sats.crystal=adl($sats.crystal,-1,4)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 2 and $weatherroll is 1&gt;&gt;&lt;&lt;set $sats.watery=adl($sats.watery,-1,4)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $faction.ikaanos.prosp gte 60 and ($faction.ikaanos.lib lte 29 or $faction.ikaanos.coorruption gte 60)&gt;&gt;
-&lt;&lt;if $sats.male gte 20 and $lossroll is 1&gt;&gt;&lt;&lt;set $sats.male-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.fem gte 15 and $lossroll is 2&gt;&gt;&lt;&lt;set $sats.fem-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.watery gte 10 and $lossroll is 3&gt;&gt;&lt;&lt;set $sats.watery-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sats.crystal gte 10 and $lossroll gte 3&gt;&gt;&lt;&lt;set $sats.crystal-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 1&gt;&gt;&lt;&lt;set $sats.male=adl($sats.male,-1,19)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 2&gt;&gt;&lt;&lt;set $sats.fem=adl($sats.fem,-1,14)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 3&gt;&gt;&lt;&lt;set $sats.watery=adl($sats.watery,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 3&gt;&gt;&lt;&lt;set $sats.crystal=adl($sats.crystal,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -231754,10 +231754,10 @@ sur: 0,
 &lt;&lt;set $velve[7] to 0&gt;&gt;
 &lt;&lt;set $velve[9] to 0&gt;&gt;
 
-&lt;&lt;if $velve[2] gte 70&gt;&gt;&lt;&lt;set $velve[2]-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $velve[4] gte 70&gt;&gt;&lt;&lt;set $velve[4]-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $velve[6] gte 70&gt;&gt;&lt;&lt;set $velve[6]-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $velve[8] gte 70&gt;&gt;&lt;&lt;set $velve[8]-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $velve[2]=adl($velve[2],-1,69)&gt;&gt;
+&lt;&lt;set $velve[4]=adl($velve[4],-1,69)&gt;&gt;
+&lt;&lt;set $velve[6]=adl($velve[6],-1,69)&gt;&gt;
+&lt;&lt;set $velve[8]=adl($velve[8],-1,69)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -231805,18 +231805,18 @@ sur: 0,
 &lt;&lt;if $faction.christian.power gte 500&gt;&gt;&lt;&lt;set _zespawn-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $facen.e7 isnot 1 and _zespawn gte 7&gt;&gt;&lt;&lt;set $facen.e7 to 1&gt;&gt;&lt;&lt;if $faction.christian.power gte 50&gt;&gt;&lt;&lt;set $faction.christian.power-=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $faction.christian.men gte 10&gt;&gt;&lt;&lt;set $faction.christian.men-=random(1,3)&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e8 isnot 1 and _zespawn gte 8&gt;&gt;&lt;&lt;set $facen.e8 to 1&gt;&gt;&lt;&lt;if $faction.christian.power gte 50&gt;&gt;&lt;&lt;set $faction.christian.power-=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $faction.christian.men gte 10&gt;&gt;&lt;&lt;set $faction.christian.men-=random(1,3)&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $facen.e7 isnot 1 and _zespawn gte 7&gt;&gt;&lt;&lt;set $facen.e7 to 1&gt;&gt;&lt;&lt;set $faction.christian.power=adl($faction.christian.power,-5,45)&gt;&gt;&lt;&lt;set $faction.christian.men=adl($faction.christian.men,-random(1,3),7)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $facen.e8 isnot 1 and _zespawn gte 8&gt;&gt;&lt;&lt;set $facen.e8 to 1&gt;&gt;&lt;&lt;set $faction.christian.power=adl($faction.christian.power,-5,45)&gt;&gt;&lt;&lt;set $faction.christian.men-=random(1,3)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* christians defeat zealots */
 &lt;&lt;if $facen.e7 is 1 and _zespawn lte -2 and ($quest_catho4 gte 6 or $faction.christian.power gte 350)&gt;&gt;
 &lt;&lt;set $facen.e7 to 0&gt;&gt;
-&lt;&lt;if $faction.christian.men gte 10&gt;&gt;&lt;&lt;set $faction.christian.men-=random(0,3)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.christian.men=adl($faction.christian.men,-random(0,3),7)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $facen.e8 is 1 and _zespawn lte -2 and ($quest_catho4 gte 6 or $faction.christian.power gte 350)&gt;&gt;
 &lt;&lt;set $facen.e8 to 0&gt;&gt;
-&lt;&lt;if $faction.christian.men gte 10&gt;&gt;&lt;&lt;set $faction.christian.men-=random(0,3)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.christian.men=adl($faction.christian.men,-random(0,3),7)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $facen.e9 isnot 1 and $lossroll gte 4&gt;&gt;
@@ -258998,10 +258998,10 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 
 
 
-&lt;&lt;if $mch.yardslot1.type is 9 and $mch.yardslot1.level gte 1 and $weatherroll lte 4 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot1.level-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot2.type is 9 and $mch.yardslot2.level gte 1 and $weatherroll gte 5 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot2.level-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot3.type is 9 and $mch.yardslot3.level gte 1 and $weatherroll lte 4 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot3.level-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot4.type is 9 and $mch.yardslot4.level gte 1 and $weatherroll gte 5 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot4.level-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot1.type is 9 and $weatherroll lte 4 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot1.level=adl($mch.yardslot1.level,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot2.type is 9 and $weatherroll gte 5 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot2.level=adl($mch.yardslot2.level,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot3.type is 9 and $weatherroll lte 4 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot3.level=adl($mch.yardslot3.level,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot4.type is 9 and $weatherroll gte 5 and $diff gte 3&gt;&gt;&lt;&lt;set $mch.yardslot4.level=adl($mch.yardslot4.level,-1,0)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -259016,10 +259016,10 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 
 &lt;&lt;set $repairfester+=random(5,15)&gt;&gt;
 
-&lt;&lt;if $faction.bandit.men gte 10&gt;&gt;&lt;&lt;set $faction.bandit.men-=$weatherroll&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $faction.bandit.men=adl($faction.bandit.men,-$weatherroll,2)&gt;&gt;
 
 /* ammo cost */
-&lt;&lt;set $cash-=$raiderloot&gt;&gt;
+&lt;&lt;set $cash=adl($cash,-$raiderloot,0)&gt;&gt;
 
 &lt;&lt;if $weatherroll gte 3&gt;&gt;
 &lt;&lt;if $raiderstr lte 10&gt;&gt;
@@ -259070,14 +259070,12 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt; /* end of chance checker */
 
-&lt;&lt;if $cash lte 0&gt;&gt;&lt;&lt;set $cash to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;for _guardxp range $npc&gt;&gt;
 &lt;&lt;set _xpc to random(1, 10)&gt;&gt;
 
 /* xp gain guards */
-&lt;&lt;if _xpc lte 5 and _guardxp.ranged lte 99 and _guardxp.health gte 1 and (_guardxp.dayblock is 16 or _guardxp.dayblock is 17)&gt;&gt;
-&lt;&lt;set _guardxp.ranged+=1&gt;&gt;
+&lt;&lt;if _xpc lte 5 and _guardxp.health gte 1 and (_guardxp.dayblock is 16 or _guardxp.dayblock is 17)&gt;&gt;
+&lt;&lt;set _guardxp.ranged+=adl(_guardxp.ranged, 1,100)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* health loss guards */
@@ -295465,14 +295463,14 @@ You decide to throw an intimate pool party for your followers!
 &lt;&lt;if _part.girlid is _randomizor&gt;&gt;&lt;&lt;set _av to _randomizor&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _part.traitatt gte 94&gt;&gt;&lt;&lt;set _part.traitatt-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _part.hygiene lte 19&gt;&gt;&lt;&lt;set _part.hygiene+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _part.hygiene=adl(_part.hygiene,10,29)&gt;&gt;
 &lt;&lt;if _part.traitjester gte 51&gt;&gt;
-&lt;&lt;if _part.happiness lte 99 and _happ gte 1&gt;&gt;&lt;&lt;set _part.happiness+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _part.masterlove lte 74 and _aff gte 1&gt;&gt;&lt;&lt;set _part.masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _happ gte 1&gt;&gt;&lt;&lt;set _part.happiness=adl(_part.happiness,3,100)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _aff gte 1&gt;&gt;&lt;&lt;set _part.masterlove=adl(_part.masterlove,1,75)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mctraitparty gte 75&gt;&gt;&lt;&lt;set _part.masterlove+=1&gt;&gt;&lt;&lt;set _part.happiness+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if _part.happiness lte 99 and _happ gte 1&gt;&gt;&lt;&lt;set _part.happiness+=_happ&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _part.masterlove lte 74 and _aff gte 1&gt;&gt;&lt;&lt;set _part.masterlove+=_aff&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _part.happiness=adl(_part.happiness,_happ,100)&gt;&gt;
+&lt;&lt;set _part.masterlove=adl(_part.masterlove,_aff,75)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -295736,8 +295734,7 @@ A small garden dominated by Ternyl grass. Ternyl grass is a calorie rich plant i
 &lt;br&gt;&lt;br&gt;
 
 
-&lt;&lt;set $mcrel.devotion+=_active.level2 + ($swamploot2 gte 2 and $mcrel.faith is 5 ? 3 : 1)&gt;&gt;
-&lt;&lt;if $mcrel.devotion gt 130&gt;&gt;&lt;&lt;set $mcrel.devotion to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mcrel.devotion=adl($mcrel.devotion,_active.level2 + ($swamploot2 gte 2 and $mcrel.faith is 5 ? 3 : 1),130)&gt;&gt;
 
 &lt;&lt;for _pray range $npc&gt;&gt;
 &lt;&lt;set _rand to random(1, 2)&gt;&gt;
@@ -305760,7 +305757,7 @@ The tavern and goldwalker assignments are full-time jobs. You have to remove $gi
 &lt;&lt;set _npc.stress=adl(_npc.stress,-3,0)&gt;&gt;
 
 &lt;&lt;if _npc.willpower lt -15&gt;&gt;&lt;&lt;set _npc.willpower to -15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.willpower lt -10 and _lossroll is 1&gt;&gt;&lt;&lt;set _npc.willpower+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _lossroll is 1&gt;&gt;&lt;&lt;set _npc.willpower=adl(_npc.willpower,1,-10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.happiness lte 90&gt;&gt;&lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,60)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _npc.happiness=adl(_npc.happiness,-1,90)&gt;&gt;
@@ -308704,7 +308701,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* QUESTS BELOW - MOVE? */
 
-&lt;&lt;if $quest_cat gte 7 and $quest_cat lte 9&gt;&gt;&lt;&lt;set $quest_cat+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_cat gte 7&gt;&gt;&lt;&lt;set $quest_cat+=adl($quest_cat,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_cat is 10&gt;&gt;&lt;&lt;set $npc.av13.busy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_cat is 11 or $quest_cat is 12&gt;&gt;&lt;&lt;set $quest_cat+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -308866,8 +308863,8 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 &lt;&lt;set $cumbuild+=1&gt;&gt;
 
-&lt;&lt;if $tired is true and $stampoints gte 5&gt;&gt;
-&lt;&lt;set $stampoints-=3&gt;&gt;
+&lt;&lt;if $tired is true&gt;&gt;
+&lt;&lt;set $stampoints=adl($stampoints,-3,2)&gt;&gt;
 &lt;&lt;set $masterhealth-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -340220,7 +340217,7 @@ _npcs household members.
 
 &lt;&lt;if $npc.av7.bondage gte 1&gt;&gt;&lt;&lt;set _nicchance-=10000&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $forcepol gte 1 and $forcepol isnot _poli2 and $npc.av7.willpower gte 5&gt;&gt;&lt;&lt;set _nicchance-=75&gt;&gt;&lt;&lt;if $npc.av7.happiness gte 51&gt;&gt;&lt;&lt;set $npc.av7.happiness-=2&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _poli2 to $forcepol&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $forcepol gte 1 and $forcepol isnot _poli2 and $npc.av7.willpower gte 5&gt;&gt;&lt;&lt;set _nicchance-=75&gt;&gt;&lt;&lt;set $npc.av7.happiness=adl($npc.av7.happiness,-2,49)&gt;&gt;&lt;&lt;set _poli2 to $forcepol&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $forcepol gte 1&gt;&gt;&lt;&lt;set _poli2 to $forcepol&gt;&gt;&lt;&lt;/if&gt;&gt;
 
