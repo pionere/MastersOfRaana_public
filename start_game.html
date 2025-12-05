@@ -86819,11 +86819,7 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $newen isnot 4 and $newen isnot 5 and _blocknew is undefined&gt;&gt;
 &lt;&lt;if $combat is 191 and _blockcheck is undefined&gt;&gt;
-&lt;&lt;if $wopos gte 100&gt;&gt;
-[[Continue|$passae][$music to 13, $break to true]]
-&lt;&lt;else&gt;&gt;
-[[Continue|$passae][$music to 1, $break to true]]
-&lt;&lt;/if&gt;&gt;
+[[Continue|$passae][$music to $wopos gte 100 ? 13 : 1, $break to true]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -98477,14 +98473,9 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot1 gte 0&gt;&gt;
 &lt;&lt;if $cs1_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs1_posb to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _dir to &quot;Av&quot;+$cs1_girlid&gt;&gt;
-&lt;&lt;if $cs1_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs1_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dir=($cs1_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs1_girlid&gt;&gt;
 
-&lt;&lt;if $cs1_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + _dir+($cs1_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
 &lt;&lt;if $cs1_posb isnot 3 and _cs1upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs1_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -98502,15 +98493,9 @@ _level
 &lt;&lt;if $cslot2 gte 0&gt;&gt;
 &lt;&lt;if $cs2_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs2_posb to 1]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _dir to &quot;Av&quot;+$cs2_girlid&gt;&gt;
-&lt;&lt;if $cs2_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs2_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dir=($cs2_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs2_girlid&gt;&gt;
 
-
-&lt;&lt;if $cs2_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + _dir+($cs2_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
 &lt;&lt;if $cs2_posb isnot 3 and _cs2upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs2_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -98527,14 +98512,9 @@ _level
 &lt;&lt;if $cslot3 gte 0&gt;&gt;
 &lt;&lt;if $cs3_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs3_posb to 1]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _dir to &quot;Av&quot;+$cs3_girlid&gt;&gt;
-&lt;&lt;if $cs3_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs3_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dir=($cs3_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs3_girlid&gt;&gt;
 
-&lt;&lt;if $cs3_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + _dir+($cs3_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
 &lt;&lt;if $cs3_posb isnot 3 and _cs3upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs3_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -98551,14 +98531,9 @@ _level
 &lt;&lt;if $cslot4 gte 0&gt;&gt;
 &lt;&lt;if $cs4_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[$imgpath + &quot;Combat/pos3up.png&quot;][CombatRoom][$cs4_posb to 1]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _dir to &quot;Av&quot;+$cs4_girlid&gt;&gt;
-&lt;&lt;if $cs4_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs4_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dir=($cs4_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs4_girlid&gt;&gt;
 
-&lt;&lt;if $cs4_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + _dir+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
 &lt;&lt;if $cs4_posb isnot 3 and _cs4upok is true&gt;&gt;[img[$imgpath + &quot;Combat/pos3upgo.png&quot;][CombatRoom][$cs4_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -102028,7 +102003,7 @@ $anta1.gold units of Gold added to Inventory!&lt;br&gt;
 &lt;&lt;set $descroll3 to random(0, 0)&gt;&gt;
 &lt;&lt;set $descroll4 to random(0, 0)&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $diff is 3&gt;&gt;&lt;&lt;set $descroll2 to random(15, 55)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll2 to random(15, 100)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $descroll2 to random(15, $diff is 3 ? 55 : 100)&gt;&gt;
 &lt;&lt;set $descroll3 to random(0, 2)&gt;&gt;
 &lt;&lt;set $descroll4 to random(0, 3)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -109113,7 +109088,7 @@ The foreman, //James FitzRichard//, offers you a shift at
 &lt;div class=&quot;vsmalltex&quot;&gt;&lt;hr color=&quot;black&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;Assignment: &#39;&#39; _where&lt;br&gt;
-&#39;&#39;Expected pay:&#39;&#39; &lt;&lt;if $workroll is 1&gt;&gt;$130&lt;&lt;else&gt;&gt;$45&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&#39;&#39;Expected pay:&#39;&#39; $&lt;&lt;=$workroll is 1 ? 130 : 45&gt;&gt;&lt;br&gt;
 &#39;&#39;Theft chance:&#39;&#39; _theft&lt;br&gt;
 &#39;&#39;Risk:&#39;&#39; &lt;&lt;if $workroll isnot 1 and $workroll isnot 3&gt;&gt;_risk&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_risk&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
@@ -201361,11 +201336,7 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _img to _callid2+_img&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if _callid lte 99&gt;&gt;
-&lt;&lt;set _img to $imgpath+&quot;Av&quot;+_img&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to $imgpath+&quot;AvRan/Av&quot;+_img&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img=$imgpath+(_callid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+_img&gt;&gt;
 
 &lt;&lt;if _callid isnot undefined&gt;&gt;
 
@@ -228985,12 +228956,7 @@ Keypass protocol failed. Please try again.
 &lt;&lt;set $callname to &quot;Father&quot;&gt;&gt;
 &lt;&lt;set $mother to _temp.mother&gt;&gt;
 
-&lt;&lt;if $sex is 0&gt;&gt;
-&lt;&lt;set $body to 1&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set $body to 2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $body=$sex is 0 ? 1 : 2&gt;&gt;
 
 &lt;&lt;if $av_str lte 9&gt;&gt;&lt;&lt;set $av_str to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $av_dex lte 9&gt;&gt;&lt;&lt;set $av_dex to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -234954,16 +234920,8 @@ Dead!
 &lt;&lt;if $troopshow4 isnot 1 and $troopshow4 isnot 2&gt;&gt;
 
 &lt;&lt;if $cslot1 gte 0&gt;&gt;
-&lt;&lt;set _dir to &quot;Av&quot;+$cs1_girlid&gt;&gt;
-
-&lt;&lt;if $cs1_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs1_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cs1_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _dir=($cs1_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs1_girlid&gt;&gt;
+[img[$imgpath + _dir+($cs1_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -235083,18 +235041,8 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cslot2 gte 0&gt;&gt;
-&lt;&lt;set _dir to &quot;Av&quot;+$cs2_girlid&gt;&gt;
-
-
-&lt;&lt;if $cs2_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs2_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $cs2_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _dir=($cs2_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs2_girlid&gt;&gt;
+[img[$imgpath + _dir+($cs2_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -235233,17 +235181,8 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cslot3 gte 0&gt;&gt;
-&lt;&lt;set _dir to &quot;Av&quot;+$cs3_girlid&gt;&gt;
-
-&lt;&lt;if $cs3_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs3_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $cs3_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _dir=($cs3_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs3_girlid&gt;&gt;
+[img[$imgpath + _dir+($cs3_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -235362,18 +235301,8 @@ UNASSIGNED&#39;&#39;&lt;/div&gt;
 
 
 &lt;&lt;if $cslot4 gte 0&gt;&gt;
-&lt;&lt;set _dir to &quot;Av&quot;+$cs4_girlid&gt;&gt;
-&lt;&lt;if $cs4_girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+$cs4_girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if $cs4_age lte 14&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + _dir+&quot;/troop.png&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _dir=($cs4_girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+$cs4_girlid&gt;&gt;
+[img[$imgpath + _dir+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -295807,9 +295736,7 @@ A small garden dominated by Ternyl grass. Ternyl grass is a calorie rich plant i
 &lt;br&gt;&lt;br&gt;
 
 
-&lt;&lt;set $mcrel.devotion+=_active.level2&gt;&gt;
-&lt;&lt;set $mcrel.devotion+=1&gt;&gt;
-&lt;&lt;if $swamploot2 gte 2 and $mcrel.faith is 5&gt;&gt;&lt;&lt;set $mcrel.devotion+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mcrel.devotion+=_active.level2 + ($swamploot2 gte 2 and $mcrel.faith is 5 ? 3 : 1)&gt;&gt;
 &lt;&lt;if $mcrel.devotion gt 130&gt;&gt;&lt;&lt;set $mcrel.devotion to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;for _pray range $npc&gt;&gt;
@@ -298900,22 +298827,11 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;include CallPic&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
 
-&lt;&lt;if _girlid lte 99&gt;&gt;
-
-&lt;&lt;set _img to &quot;Pics/Av&quot;+_girlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+_girlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img=(_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+_girlid+&quot;/&quot;&gt;&gt;
 
 &lt;&lt;capture _call&gt;&gt;
 &lt;&lt;capture _actnpc&gt;&gt;
-&lt;&lt;if _age gte 15&gt;&gt;
-[img[_img + &quot;edu_goodsmall.png&quot;][SMenu2][$activenpc to _actnpc, $activeslot to _call, $pnewnpc to true]]
-&lt;&lt;else&gt;&gt;
-[img[_img + &quot;edu_goodsmall_kid.png&quot;][SMenu2][$activenpc to _actnpc, $activeslot to _call, $pnewnpc to true]]
-&lt;&lt;/if&gt;&gt;
+[img[_img + (_age gte 15 ? &quot;edu_goodsmall.png&quot; : &quot;edu_goodsmall_kid.png&quot;)][SMenu2][$activenpc to _actnpc, $activeslot to _call, $pnewnpc to true]]
 &lt;&lt;/capture&gt;&gt;
 &lt;&lt;/capture&gt;&gt;
 &lt;/div&gt;
@@ -308731,8 +308647,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;include MasterSleep&gt;&gt;
 &lt;&lt;include EndRes&gt;&gt;
 
-&lt;&lt;set $masterfilth-=6&gt;&gt;
-&lt;&lt;if $mctraitfilth gte 75&gt;&gt;&lt;&lt;set $masterfilth-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterfilth-=$mctraitfilth gte 75 ? 9 : 6&gt;&gt;
 
 &lt;&lt;if $autoshower is true&gt;&gt;
 &lt;&lt;set $masterfilth=60&gt;&gt;
@@ -308906,8 +308821,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;set $cumbuild+=1&gt;&gt;
 &lt;&lt;set $hascummed to false&gt;&gt;
 
-&lt;&lt;set $masterfilth-=4&gt;&gt;
-&lt;&lt;if $mctraitfilth gte 75&gt;&gt;&lt;&lt;set $masterfilth-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterfilth-=$mctraitfilth gte 75 ? 7 : 4&gt;&gt;
 
 &lt;&lt;set $masterhunger-=4&gt;&gt;
 
@@ -308965,8 +308879,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;unset $goodstart&gt;&gt;
 
 &lt;&lt;set $masterhunger-=5&gt;&gt;
-&lt;&lt;set $masterfilth-=4&gt;&gt;
-&lt;&lt;if $mctraitfilth gte 75&gt;&gt;&lt;&lt;set $masterfilth-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $masterfilth-=$mctraitfilth gte 75 ? 7 : 4&gt;&gt;
 
 &lt;&lt;set $hascummed to false&gt;&gt;
 &lt;&lt;set $showered to false&gt;&gt;
@@ -312686,9 +312599,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if _testnpc.dayblock is 11 and _testnpc.prostloc gte 1&gt;&gt;
 &lt;&lt;set _totgold to 30&gt;&gt;
-&lt;&lt;if $mcpower gte 10&gt;&gt;&lt;&lt;set _famgold to $mcpower&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _famgold/=4&gt;&gt;
-&lt;&lt;set _famgold = Math.round(_famgold)&gt;&gt;
+&lt;&lt;set _famgold=$mcpower gte 10 ? Math.round($mcpower/4) : 0&gt;&gt;
 
 &lt;&lt;if _testnpc.prostloc gte 2&gt;&gt;&lt;&lt;set _totgold+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _testnpc.prostloc is 4&gt;&gt;&lt;&lt;set _totgold+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -312699,10 +312610,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;if _testnpc.likesadist gte 80&gt;&gt;&lt;&lt;set _totgold+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _testnpc.oralxp gte 60&gt;&gt;&lt;&lt;set _totgold+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.corruption gte 75 and $faction.ikaanos.corruption lte 89&gt;&gt;&lt;&lt;set _totgold*=1.25&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $faction.ikaanos.corruption gte 90&gt;&gt;&lt;&lt;set _totgold*=1.5&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $faction.ikaanos.corruption gte 75&gt;&gt;&lt;&lt;set _totgold*=$faction.ikaanos.corruption gte 90 ? 1.5 : 1.25&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _totgold = Math.round(_totgold)&gt;&gt;
 
@@ -332112,11 +332020,7 @@ UI.restart();
 
 &lt;&lt;if _apnpc.girlid is 1 or _apnpc.girlid is 16&gt;&gt;&lt;&lt;set _highcor to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _highcor is true and _apnpc.likesadist gte 40&gt;&gt;
-[img[$imgpath +&quot;Av&quot; +_apnpc.girlid +&quot;/prost2.jpg&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath +&quot;Av&quot; +_apnpc.girlid +&quot;/prost.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
+[img[$imgpath + &quot;Av&quot; +_apnpc.girlid +(_highcor is true and _apnpc.likesadist gte 40 ? &quot;/prost2.jpg&quot; : &quot;/prost.jpg&quot;)]]
 
 &lt;&lt;else&gt;&gt;
 [img[$imgpath +&quot;AvGen/prost.jpg&quot;]]
@@ -377720,8 +377624,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;div class=&quot;vendorleft&quot;&gt;
 
 &lt;div class=&quot;boxholder&quot;&gt;
-&lt;&lt;set _dir to &quot;Av&quot; +_npc.girlid&gt;&gt;
-&lt;&lt;if _npc.girlid gte 100&gt;&gt;&lt;&lt;set _dir to &quot;AvRan/Av&quot;+_npc.girlid&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _dir=(_npc.girlid gte 100 ? &quot;AvRan/Av&quot; : &quot;Av&quot;)+_npc.girlid&gt;&gt;
 
 [img[$imgpath + _dir+&quot;/troop_kid.png&quot;]]
 &lt;/div&gt;
