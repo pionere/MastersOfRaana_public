@@ -153038,7 +153038,7 @@ PLAYER WEAPON
 &lt;&lt;set _collared to $collared&gt;&gt;
 
 /* temp prowler setter for converts */
-&lt;&lt;if _npc.girlid isnot 353 and _npc.transformed gte 1&gt;&gt;
+&lt;&lt;if _npc.transformed gte 1&gt;&gt;
 &lt;&lt;set _tempgirlid to 353&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -192317,7 +192317,7 @@ The juices of victory is still flowing in _npc.girlnames veins, and she looks at
 &lt;&lt;if $justfight isnot 0&gt;&gt;
 &lt;&lt;if _npc.health gte 25&gt;&gt;The girl has a couple of bruises but looks to be in a normal physical state.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.health gte 15 and _npc.health lte 24&gt;&gt;The girl has sustained a couple of nasty wounds, but she&#39;s not critically injured.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.health lte 14 and $justfight isnot 0&gt;&gt;The girl is injuried! Her wounds severely affect her success chances during arena fights.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.health lte 14&gt;&gt;The girl is injuried! Her wounds severely affect her success chances during arena fights.&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
@@ -214792,7 +214792,7 @@ _name is ready to enter your household!
 &lt;&lt;if _upran is 32&gt;&gt;&lt;&lt;set _up to 5000&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _upran is 33&gt;&gt;&lt;&lt;set _up to 5500&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _upran is 34&gt;&gt;&lt;&lt;set _up to 6500&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _upran gte 35 and _upran lte 44&gt;&gt;&lt;&lt;set _up to 9000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _upran gte 35&gt;&gt;&lt;&lt;set _up to 9000&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* 100k */
@@ -219481,7 +219481,7 @@ BOLTS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -219499,8 +219499,8 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219514,7 +219514,7 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -219529,8 +219529,8 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 3&gt;&gt;&lt;&lt;set _off-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219543,8 +219543,8 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219558,8 +219558,8 @@ MAG&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219572,8 +219572,8 @@ ENERGY CELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219587,8 +219587,8 @@ ENERGY CELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 4&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 4&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219602,8 +219602,8 @@ GRENADES&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 4&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 4&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -219981,8 +219981,6 @@ GUNPOWDER&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _off lte 0&gt;&gt;&lt;&lt;set _off to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -231481,7 +231479,7 @@ sur: 0,
 &lt;&lt;set $upgrade2 to false&gt;&gt;
 &lt;&lt;set $furryday to random(1, 5)&gt;&gt;
 
-&lt;&lt;if $quest_valerie lte 1 and $furryday isnot 5 and $weatherroll gte 4&gt;&gt;&lt;&lt;set $furryday to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_valerie lte 1 and $weatherroll gte 4&gt;&gt;&lt;&lt;set $furryday to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $furry_round to 0&gt;&gt;
 &lt;&lt;unset $furry1&gt;&gt;
@@ -231797,11 +231795,11 @@ sur: 0,
 
 &lt;&lt;if $faction.ikaanos.control lte 9&gt;&gt;
 
-&lt;&lt;if $facen.e1 isnot 1 and $lossroll lte 2&gt;&gt;&lt;&lt;set $facen.e1 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e2 isnot 1 and $lossroll lte 3&gt;&gt;&lt;&lt;set $facen.e2 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e3 isnot 1 and $lossroll is 3&gt;&gt;&lt;&lt;set $facen.e3 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e4 isnot 1 and $lossroll lte 4&gt;&gt;&lt;&lt;set $facen.e4 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e5 isnot 1 and $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e5 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll lte 2&gt;&gt;&lt;&lt;set $facen.e1 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll lte 3&gt;&gt;&lt;&lt;set $facen.e2 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll is 3&gt;&gt;&lt;&lt;set $facen.e3 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll lte 4&gt;&gt;&lt;&lt;set $facen.e4 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e5 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* westside */
 
@@ -231839,24 +231837,24 @@ sur: 0,
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e10 isnot 1 and $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e10 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e10 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $faction.ikaanos.control lte 29&gt;&gt;
 /* White mob */
-&lt;&lt;if $facen.e11 isnot 1 and $lossroll gte 4 and $firstmob isnot 2&gt;&gt;&lt;&lt;set $facen.e11 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e12 isnot 1 and $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e12 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 4 and $firstmob isnot 2&gt;&gt;&lt;&lt;set $facen.e11 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e12 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $faction.ikaanos.control lte 29&gt;&gt;
 /* COLES */
-&lt;&lt;if $facen.e13 isnot 1 and $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e13 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e14 isnot 1 and $lossroll lte 2&gt;&gt;&lt;&lt;set $facen.e14 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $facen.e15 isnot 1 and $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e15 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e13 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll lte 2&gt;&gt;&lt;&lt;set $facen.e14 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $lossroll gte 4&gt;&gt;&lt;&lt;set $facen.e15 to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -258998,7 +258996,6 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;set $raiderloot = Math.round($raiderloot)&gt;&gt;
 &lt;&lt;if $raiderloot gte 28000&gt;&gt;&lt;&lt;set $raiderloot to random(22101,28000)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $cash-=$raiderloot&gt;&gt;
-&lt;&lt;if $cash lte 0&gt;&gt;&lt;&lt;set $cash to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $raidedgold to 0&gt;&gt;
 &lt;&lt;set $raidedsilver to 0&gt;&gt;
 &lt;&lt;if $gold gte 50&gt;&gt;&lt;&lt;set $raidedgold to $gold/10&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -259027,29 +259024,22 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 
 
 /* cash added to bandit faction */
-&lt;&lt;if $raiderloot gte 1&gt;&gt;
 &lt;&lt;set $faction.bandit.money+=$raiderloot&gt;&gt;
 &lt;&lt;if $raiderloot gte 14000&gt;&gt;&lt;&lt;set $faction.bandit.power+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 /* cash added to bandit faction ends */
 
 /* gold and silver added to bandit faction */
 &lt;&lt;set _banditgold to 0&gt;&gt;
 
-&lt;&lt;if $raidedgold gte 1&gt;&gt;
 &lt;&lt;set _banditgold+=$raidedgold*200&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $raidedsilver gte 1&gt;&gt;
 &lt;&lt;set _banditgold+=$raidedsilver*20&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _banditgold gte 1&gt;&gt;
 &lt;&lt;set $faction.bandit.money+=_banditgold&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 /* gold and silver added ends */
 
-&lt;&lt;if $raidedgold gte 1&gt;&gt;&lt;&lt;set $gold-=$raidedgold&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $raidedsilver gte 1&gt;&gt;&lt;&lt;set $silver-=$raidedsilver&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $gold-=$raidedgold&gt;&gt;
+&lt;&lt;set $silver-=$raidedsilver&gt;&gt;
 
 
 
@@ -269680,7 +269670,7 @@ $off.work11
 
 /* TOLL BELOW */
 
-&lt;&lt;if $facen.e5 gte 1 and _faci.control lte 4&gt;&gt;
+&lt;&lt;if $facen.e5 gte 1&gt;&gt;
 &lt;div class=&quot;enpos10 lighthover&quot;&gt;&lt;div class=&quot;padd20left&quot;&gt;
 [img[$imgpath + &quot;Maps/enemytoll.png&quot;][Scaving][$combat to 138, $facfight to 5, $scaving to 59]]&lt;/div&gt;&lt;/div&gt;
 
@@ -295486,12 +295476,10 @@ You decide to throw an intimate pool party for your followers!
 
 &lt;&lt;set _crawl to 0&gt;&gt;
 &lt;&lt;set _parti to 0&gt;&gt;
-&lt;&lt;set _anger to 0&gt;&gt;
 &lt;&lt;set _happ to 3&gt;&gt;
 &lt;&lt;set _aff to 1&gt;&gt;
 &lt;&lt;set _affjester to 0&gt;&gt;
 &lt;&lt;set _happjester to 0&gt;&gt;
-&lt;&lt;set _angerjester to 0&gt;&gt;
 &lt;&lt;if _active.level is 2&gt;&gt;&lt;&lt;set _happ+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _active.level2 is 1&gt;&gt;&lt;&lt;set _happ+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _active.level2 is 2&gt;&gt;&lt;&lt;set _happ+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -295502,7 +295490,7 @@ You decide to throw an intimate pool party for your followers!
 
 /* jester trait checker */
 &lt;&lt;for _partj range $npc&gt;&gt;
-&lt;&lt;if _partj.traitjester gte 51 and _partj.bondage lte 0 and _partj.health gte 5 and _partj.state gte 1 and _partj.busy is 0 and !isaway(_partj)&gt;&gt;&lt;&lt;set _happjester+=2&gt;&gt;&lt;&lt;set _angerjester+=1&gt;&gt;&lt;&lt;if _partj.masterlove gte 60&gt;&gt;&lt;&lt;set _affjester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _partj.traitjester gte 51 and _partj.bondage lte 0 and _partj.health gte 5 and _partj.state gte 1 and _partj.busy is 0 and !isaway(_partj)&gt;&gt;&lt;&lt;set _happjester+=2&gt;&gt;&lt;&lt;if _partj.masterlove gte 60&gt;&gt;&lt;&lt;set _affjester+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 
@@ -295530,7 +295518,6 @@ You decide to throw an intimate pool party for your followers!
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if _part.happiness lte 99 and _happ gte 1&gt;&gt;&lt;&lt;set _part.happiness+=_happ&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _part.masterlove lte 74 and _aff gte 1&gt;&gt;&lt;&lt;set _part.masterlove+=_aff&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _part.scarefactor gte 1 and _anger gte 1&gt;&gt;&lt;&lt;set _part.scarefactor-=_anger&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -312501,7 +312488,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;if _maids gte _maidreq&gt;&gt;&lt;&lt;set _maidpen to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $credit gte 25000 and _maids lt _maidreq&gt;&gt;
+&lt;&lt;if _maids lt _maidreq&gt;&gt;
 &lt;&lt;set $credtot-=_maidpen&gt;&gt;&lt;&lt;set _nomaids+=_maidpen&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -312965,9 +312952,9 @@ Most high-demanding issids are excluded by the maxsal checker
 /* turn old ore into pure if smelter is built */
 &lt;&lt;if $mch.yardslot11.level2 gte 1&gt;&gt;
 
-&lt;&lt;if $mch.yardslot11.ironore gte 1&gt;&gt;&lt;&lt;set $mch.yardslot11.ironore*=0.1&gt;&gt;&lt;&lt;set $mch.yardslot11.ironore = Math.round($mch.yardslot11.ironore)&gt;&gt;&lt;&lt;set $mch.yardslot11.iron+=$mch.yardslot11.ironore&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mch.yardslot11.ironore*=0.1&gt;&gt;&lt;&lt;set $mch.yardslot11.ironore = Math.round($mch.yardslot11.ironore)&gt;&gt;&lt;&lt;set $mch.yardslot11.iron+=$mch.yardslot11.ironore&gt;&gt;
 
-&lt;&lt;if $mch.yardslot11.copperore gte 1&gt;&gt;&lt;&lt;set $mch.yardslot11.copperore*=0.1&gt;&gt;&lt;&lt;set $mch.yardslot11.copperore = Math.round($mch.yardslot11.copperore)&gt;&gt;&lt;&lt;set $mch.yardslot11.copper+=$mch.yardslot11.copperore&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $mch.yardslot11.copperore*=0.1&gt;&gt;&lt;&lt;set $mch.yardslot11.copperore = Math.round($mch.yardslot11.copperore)&gt;&gt;&lt;&lt;set $mch.yardslot11.copper+=$mch.yardslot11.copperore&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -313129,7 +313116,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 &lt;&lt;set _totp = Math.round(_totp)&gt;&gt;
 
-&lt;&lt;if _totp gte 0&gt;&gt;&lt;&lt;set $credtot+=_totp&gt;&gt;&lt;&lt;set _heraldinf+=_totp&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $credtot+=_totp&gt;&gt;&lt;&lt;set _heraldinf+=_totp&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -346023,11 +346010,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 
 
 &lt;&lt;if _girlid lte 99&gt;&gt;
-&lt;&lt;if $sandman gte 1&gt;&gt;
 [img[_img + &quot;Av&quot;+_girlid+&quot;/dine.jpg&quot;]]
-&lt;&lt;else&gt;&gt;
-[img[$imgpath + &quot;Av&quot;+_girlid+&quot;/dine.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;elseif _girlid is 212&gt;&gt;
 [img[$imgpath + &quot;AvRan/Av212/dine.jpg&quot;]]
 &lt;&lt;elseif _girlid is 128&gt;&gt;
