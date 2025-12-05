@@ -84646,29 +84646,23 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;set _okslave=_slavechance gte 90 and !_nocaptives&gt;&gt;
+
 &lt;&lt;if $equipped is &quot;gl&quot;&gt;&gt;&lt;&lt;set _spray to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $equipped is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _spray to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;set $malelimit to 5&gt;&gt;
-&lt;&lt;set $femalelimit to 5&gt;&gt;
 
-&lt;&lt;set _noc=($combat is 191 and (($newen gte 2 and $newen lte 5) or ($newen gte 14 and $newen lte 20))) or
-                 ($combat is 41 and $quest_head gte 6)&gt;&gt;
 
-&lt;&lt;if $combat gte 200 or $combat is 121 or $combat is 124 or $combat is 126 or $combat is 2 or $combat is 60 or $combat is 61 or $combat is 78 or $combat is 112 or $combat is 119 or $combat is 115 or $combat is 120 or $combat is 145 or $combat is 55 or $combat is 57 or $combat is 148 or $combat is 149 or $combat is 150 or $combat is 151 or $combat is 152 or $combat is 153 or $combat is 155 or $combat is 157 or $combat is 156 or $combat is 159 or $combat is 158 or $combat is 176 or $combat is 177 or $combat is 178 or $combat is 181 or $combat is 182 or $combat is 183 or $combat is 184 or $combat is 187 or $combat is 190 or _noc is true&gt;&gt;&lt;&lt;set $malelimit to 0&gt;&gt;&lt;&lt;set $femalelimit to 0&gt;&gt;&lt;&lt;set _nocaptives to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+
 
 &lt;&lt;if $calc is 1&gt;&gt;
-&lt;&lt;set _okslave to false&gt;&gt;
 
 &lt;&lt;if $enemy1_health lte $enemy1_htype*0.25 and $enemy1_health lte 150&gt;&gt;
 &lt;&lt;if _combatid is 39 and $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10)&gt;&gt;
 &lt;&lt;set $damage+=100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot $malelimit and $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot $femalelimit and $enemy1_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy1_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy1_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84701,11 +84695,11 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 
 &lt;&lt;if $damage gte $enemy1_health&gt;&gt;
 
-&lt;&lt;if _okslave is true and _slavechance gte 90 and $combat isnot 133&gt;&gt;
+&lt;&lt;if _okslave and $combat isnot 133&gt;&gt;
 &lt;div class=&quot;green&quot;&gt;/* $enemy1 has been incapacitated! */&lt;&lt;set _fo6 to true&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy1)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy1_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy1)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy1_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $capnamemale.push($enemy1)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy1_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy1)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy1_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy1_taken to 1&gt;&gt;
 &lt;&lt;if $enemy1_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -84733,16 +84727,12 @@ $enemy1 is killed, after taking $damage damage points ($enemy1_soak pts. absorbe
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $calc is 2&gt;&gt;
-&lt;&lt;set _okslave to false&gt;&gt;
 
 &lt;&lt;if $enemy2_health lte $enemy2_htype*0.25 and $enemy2_health lte 150&gt;&gt;
 &lt;&lt;if _combatid is 39 and $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10)&gt;&gt;
 &lt;&lt;set $damage+=100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot $malelimit and $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot $femalelimit and $enemy2_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy2_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy2_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84774,11 +84764,11 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;&lt;if $damage gte $enemy2_health&gt;&gt;
 
 
-&lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
+&lt;&lt;if _okslave&gt;&gt;
 /*&lt;div class=&quot;green&quot;&gt;$enemy2 has been incapacitated!&lt;/div&gt;*/
 &lt;&lt;set _fo6 to true&gt;&gt;
 
-&lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy2)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy2_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy2)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy2_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $capnamemale.push($enemy2)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy2_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy2)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy2_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy2_taken to 1&gt;&gt;
 &lt;&lt;if $enemy2_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -84811,16 +84801,12 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $calc is 3&gt;&gt;
-&lt;&lt;set _okslave to false&gt;&gt;
 
 &lt;&lt;if $enemy3_health lte $enemy3_htype*0.25 and $enemy3_health lte 150&gt;&gt;
 &lt;&lt;if _combatid is 39 and $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10)&gt;&gt;
 &lt;&lt;set $damage+=100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot $malelimit and $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot $femalelimit and $enemy3_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy3_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy3_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84849,10 +84835,10 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 
 &lt;&lt;if $damage gte $enemy3_health&gt;&gt;
 
-&lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
+&lt;&lt;if _okslave&gt;&gt;
 &lt;div class=&quot;green&quot;&gt;/* $enemy3 has been incapacitated! */&lt;&lt;set _fo6 to true&gt;&gt;&lt;/div&gt;
 
-&lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy3)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy3_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy3)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy3_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $capnamemale.push($enemy3)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy3_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy3)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy3_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy3_taken to 1&gt;&gt;
 &lt;&lt;if $enemy3_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -84884,16 +84870,12 @@ $enemy3 is killed, after taking $damage damage points ($enemy3_soak pts. absorbe
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $calc is 4&gt;&gt;
-&lt;&lt;set _okslave to false&gt;&gt;
 
 &lt;&lt;if $enemy4_health lte $enemy4_htype*0.25 and $enemy4_health lte 150&gt;&gt;
 &lt;&lt;if _combatid is 39 and $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10)&gt;&gt;
 &lt;&lt;set $damage+=100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot $malelimit and $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot $femalelimit and $enemy4_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy4_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy4_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84921,10 +84903,10 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 
 &lt;&lt;if $damage gte $enemy4_health&gt;&gt;
 
-&lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
+&lt;&lt;if _okslave&gt;&gt;
 &lt;div class=&quot;green&quot;&gt;/* $enemy4 has been incapacitated! */&lt;&lt;set _fo6 to true&gt;&gt;&lt;/div&gt;
 
-&lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy4)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy4_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy4)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy4_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $capnamemale.push($enemy4)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy4_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy4)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy4_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy4_taken to 1&gt;&gt;
 &lt;&lt;if $enemy4_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -84959,16 +84941,12 @@ $enemy4 is killed, after taking $damage damage points ($enemy4_soak pts. absorbe
 
 
 &lt;&lt;if $calc is 5&gt;&gt;
-&lt;&lt;set _okslave to false&gt;&gt;
 
 &lt;&lt;if $enemy5_health lte $enemy5_htype*0.25 and $enemy5_health lte 150&gt;&gt;
 &lt;&lt;if _combatid is 39 and $npc.av39.willpower gte 1 and $npc.av39.likesadist lte 89 and ($npc.av39.status is 5 or $npc.av39.status is 10)&gt;&gt;
 &lt;&lt;set $damage+=100&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $nuslmale isnot $malelimit and $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $nuslgirl isnot $femalelimit and $enemy5_sex is &quot;her&quot;&gt;&gt;&lt;&lt;set _okslave to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _ap is true and $enemy5_soak gte 9&gt;&gt;&lt;&lt;set $damage+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ap is true and $enemy5_soak gte 14&gt;&gt;&lt;&lt;set $damage+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -84997,10 +84975,10 @@ The enemy&#39;s armor soaks &lt;&lt;if $damage lte 0&gt;&gt;all damage, leaving 
 
 &lt;&lt;if $damage gte $enemy5_health&gt;&gt;
 
-&lt;&lt;if _okslave is true and _slavechance gte 90&gt;&gt;
+&lt;&lt;if _okslave&gt;&gt;
 /*&lt;div class=&quot;green&quot;&gt;$enemy5 has been incapacitated!&lt;/div&gt;*/&lt;&lt;set _fo6 to true&gt;&gt;
 
-&lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $nuslmale+=1&gt;&gt;&lt;&lt;set $capnamemale.push($enemy5)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy5_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $nuslgirl+=1&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy5)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy5_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $capnamemale.push($enemy5)&gt;&gt;&lt;&lt;set $capmaleid.push($enemy5_id)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $capnamefemale.push($enemy5)&gt;&gt;&lt;&lt;set $capfemaleid.push($enemy5_id)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $enemy5_taken to 1&gt;&gt;
 &lt;&lt;if $enemy5_sex is &quot;him&quot;&gt;&gt;&lt;&lt;set $descroll6+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $descroll5+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -87259,9 +87237,6 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $move to false&gt;&gt;
 &lt;&lt;set $pos to 1&gt;&gt;
 &lt;&lt;set $round to 1&gt;&gt;
-
-&lt;&lt;set $nuslmale to 0&gt;&gt;
-&lt;&lt;set $nuslgirl to 0&gt;&gt;
 
 &lt;&lt;set $descroll5 to 0&gt;&gt;
 &lt;&lt;set $descroll6 to 0&gt;&gt;
