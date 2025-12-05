@@ -25703,10 +25703,7 @@ Open&lt;br&gt;journal
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $oldone4 gte 4 and $oldone4 lte 22&gt;&gt;&lt;&lt;set _showold4 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $oldone4 is 99&gt;&gt;&lt;&lt;set _showold4 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _showold4 is true&gt;&gt;
+&lt;&lt;if ($oldone4 gte 4 and $oldone4 lte 22) or $oldone4 is 99&gt;&gt;
 &lt;div class=&quot;invholder&quot;&gt;PROWLER IN THE DEPTHS 3&lt;/div&gt;
 &lt;div class=&quot;invitem&quot;&gt;&lt;&lt;link &#39;PROWLER IN THE DEPTHS 3&#39;&gt;&gt;&lt;&lt;set $tutorial to 275&gt;&gt;&lt;&lt;popup &#39;ChrSheet&#39;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;br&gt;&lt;div class=&quot;smalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;br&gt;
@@ -109050,10 +109047,10 @@ The foreman, //James FitzRichard//, shakes his head when you ask him for work.&l
 &lt;&lt;set $write to true&gt;&gt;
 The foreman, //James FitzRichard//, offers you a shift at
 
-&lt;&lt;if $workroll is 1&gt;&gt;the chemical processing plant.&lt;&lt;set _where to &quot;CPP&quot;&gt;&gt;&lt;&lt;set _theft to &quot;None&quot;&gt;&gt;&lt;&lt;set _risk to &quot;Very high!&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workroll is 2&gt;&gt;the munitions band.&lt;&lt;set _where to &quot;Munitions&quot;&gt;&gt;&lt;&lt;set _theft to &quot;Good&quot;&gt;&gt;&lt;&lt;set _risk to &quot;Medium&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workroll is 3&gt;&gt;the concrete plant.&lt;&lt;set _where to &quot;The Sludge&quot;&gt;&gt;&lt;&lt;set _theft to &quot;None&quot;&gt;&gt;&lt;&lt;set _risk to &quot;High&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $workroll gte 4&gt;&gt;the great assembly lines in the main hall.&lt;&lt;set _where to &quot;Assembly Line&quot;&gt;&gt;&lt;&lt;set _theft to &quot;Good&quot;&gt;&gt;&lt;&lt;set _risk to &quot;Low&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workroll is 1&gt;&gt;the chemical processing plant.&lt;&lt;set _where to &quot;CPP&quot;&gt;&gt;&lt;&lt;set _risk to &quot;Very high!&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workroll is 2&gt;&gt;the munitions band.&lt;&lt;set _where to &quot;Munitions&quot;&gt;&gt;&lt;&lt;set _risk to &quot;Medium&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workroll is 3&gt;&gt;the concrete plant.&lt;&lt;set _where to &quot;The Sludge&quot;&gt;&gt;&lt;&lt;set _risk to &quot;High&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $workroll gte 4&gt;&gt;the great assembly lines in the main hall.&lt;&lt;set _where to &quot;Assembly Line&quot;&gt;&gt;&lt;&lt;set _risk to &quot;Low&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
 
@@ -109079,7 +109076,7 @@ The foreman, //James FitzRichard//, offers you a shift at
 &lt;div class=&quot;tex6px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;Assignment: &#39;&#39; _where&lt;br&gt;
 &#39;&#39;Expected pay:&#39;&#39; $&lt;&lt;=$workroll is 1 ? 130 : 45&gt;&gt;&lt;br&gt;
-&#39;&#39;Theft chance:&#39;&#39; _theft&lt;br&gt;
+&#39;&#39;Theft chance:&#39;&#39; &lt;&lt;=$workroll is 1 or $workroll is 3 ? &quot;None&quot; : &quot;Good&quot;&gt;&gt;&lt;br&gt;
 &#39;&#39;Risk:&#39;&#39; &lt;&lt;if $workroll isnot 1 and $workroll isnot 3&gt;&gt;_risk&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;_risk&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
