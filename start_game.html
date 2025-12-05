@@ -308580,11 +308580,11 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;include MidRes&gt;&gt; /* City and quest resetters */
 
 /*NATHEN CODE BEGINS: Calculate the day change progress of the NPCs */
+&lt;&lt;if $nathen is true&gt;&gt;
 &lt;&lt;set $report to 1&gt;&gt;
 &lt;&lt;include SaveReport&gt;&gt;
 &lt;&lt;unset $npc_pm&gt;&gt;
 
-&lt;&lt;if $nathen is true&gt;&gt;
 /*Nathen: Deep copy of the npc array to prevent links between npc objects, will later be used to compare to the new npc data*/
 &lt;&lt;set $npc_am to clone($npc)&gt;&gt;
 /*NATHEN CODE ENDS*/
