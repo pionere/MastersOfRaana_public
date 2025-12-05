@@ -400545,26 +400545,10 @@ traitold2: 359,
 The _noc variable is sufficient to enable this in DarkDantes mod
 
 */
-
-&lt;&lt;if $combat is 15 or $combat is 126 or $combat is 194 or $combat is 195 or $combat is 196 or $combat is 116 or $combat is 117 or $combat is 118&gt;&gt;
-&lt;&lt;set _noc to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 191 and $newen is 2&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 191 and $newen is 3&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 191 and ($newen is 4 or $newen is 5)&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $combat is 191 and $newen gte 14 and $newen lte 20&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $combat is 41 and $quest_head gte 6&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $combat is 199 and $neen lte 12&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* various */
-&lt;&lt;if $combat is 199 and ($neen is 15 or $neen is 16 or $neen is 17 or $neen is 21 or $neen is 22)&gt;&gt;&lt;&lt;set _noc to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* prowler test */
-&lt;&lt;if $combat is 199 and $neen is 16&gt;&gt;&lt;&lt;unset _noc&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _noc=$combat is 15 or $combat is 126 or $combat is 194 or $combat is 195 or $combat is 196 or $combat is 116 or $combat is 117 or $combat is 118 or
+                 ($combat is 191 and (($newen gte 2 and $newen lte 5) or ($newen gte 14 and $newen lte 20))) or
+                 ($combat is 199 and ($neen lte 12 or ($neen is 15 or $neen is 17 or $neen is 21 or $neen is 22))) or
+                 ($combat is 41 and $quest_head gte 6)&gt;&gt;
 
 &lt;&lt;if $combat gte 200 or $combat is 121 or $combat is 124 or $combat is 126 or $combat is 2 or $combat is 60 or $combat is 61 or $combat is 78 or $combat is 112 or $combat is 119 or $combat is 115 or $combat is 120 or $combat is 145 or $combat is 55 or $combat is 57 or $combat is 148 or $combat is 149 or $combat is 150 or $combat is 151 or $combat is 152 or $combat is 153 or $combat is 155 or $combat is 157 or $combat is 156 or $combat is 159 or $combat is 158 or $combat is 176 or $combat is 177 or $combat is 178 or $combat is 181 or $combat is 182 or $combat is 183 or $combat is 184 or $combat is 187 or $combat is 190 or _noc is true&gt;&gt;&lt;&lt;set _nocaptives to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
