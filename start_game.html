@@ -84648,8 +84648,7 @@ REMOVED! USE CapCheck passage instead
 
 &lt;&lt;set _okslave=_slavechance gte 90 and !_nocaptives&gt;&gt;
 
-&lt;&lt;if $equipped is &quot;gl&quot;&gt;&gt;&lt;&lt;set _spray to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $equipped is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _spray to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _spray=$equipped is &quot;gl&quot; ? 1 : ($equipped is &quot;minigun&quot; ? 2 : 0)&gt;&gt;
 
 
 
@@ -167089,17 +167088,9 @@ a daily &#39;&#39;Influence (+12)&#39;&#39; boost!
 
 
 &lt;&lt;if $scaving is 57&gt;&gt;
-&lt;&lt;if $wopos is 3 or $wopos is 60 or $wopos is 92 or $wopos is 105&gt;&gt;&lt;&lt;set _okpro to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _okpro=$wopos is 3 or $wopos is 60 or $wopos is 92 or $wopos is 105&gt;&gt;
 
-&lt;&lt;if $wopos is 62&gt;&gt;&lt;&lt;set _grant to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $wopos is 55 and $quest_sera gte 3&gt;&gt;&lt;&lt;set _grant to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wopos is 57 and $quest_sera gte 3&gt;&gt;&lt;&lt;set _grant to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $quest_aria gte 10 and $quest_aria lte 13 and $wopos is 140&gt;&gt;
-&lt;&lt;set _grant to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _grant=$wopos is 62 or (($wopos is 55 or $wopos is 57) and $quest_sera gte 3) or ($wopos is 140 and $quest_aria gte 10 and $quest_aria lte 13)&gt;&gt;
 
 &lt;&lt;if $donatecom is true&gt;&gt;
 &lt;&lt;if $wopos is 62&gt;&gt;
@@ -174136,7 +174127,7 @@ Dakota&#39;s &#39;&#39;Affection (+3)&#39;&#39; toward you has increased!
 
 
 &lt;&lt;if $scaving is 57&gt;&gt;
-&lt;&lt;if $wopos is 3 or $wopos is 60 or $wopos is 92 or $wopos is 105&gt;&gt;&lt;&lt;set _okpro to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _okpro=$wopos is 3 or $wopos is 60 or $wopos is 92 or $wopos is 105&gt;&gt;
 &lt;&lt;set $action7b to false&gt;&gt;
 
 &lt;&lt;include GirlCheck&gt;&gt;
@@ -351964,8 +351955,7 @@ It&#39;s very quiet up here.
 &lt;&lt;/if&gt;&gt;
 
 /* cat checker */
-&lt;&lt;unset _catbusy2&gt;&gt;
-&lt;&lt;if $quest_cat gte 15 and $quest_cat lte 18 and _ass.girlid is 13&gt;&gt;&lt;&lt;set _catbusy2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _catbusy2=$quest_cat gte 15 and $quest_cat lte 18 and _ass.girlid is 13&gt;&gt;
 
 &lt;&lt;set _ingroup=($groass is 1 ? _ass.group1 is 1 : ($groass is 2 ? _ass.group2 is 1 : ($groass is 3 ? _ass.group3 is 1 : ($groass is 4 ? _ass.group4 is 1 : ($groass is 5 ? _ass.group5 is 1 : ($groass is 6 and _ass.group6 is 1))))))&gt;&gt;
 &lt;&lt;if _ingroup and _ass.bondage lte 0 and !isaway(_ass) and _dayblocked isnot true and _ass.dayoff isnot 1 and _catbusy2 isnot true and _ass.health gte 1&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
