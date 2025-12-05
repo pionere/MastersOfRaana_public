@@ -308631,7 +308631,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* evict script */
 &lt;&lt;if $cash gte 15&gt;&gt;&lt;&lt;set $evict to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cash lte 0&gt;&gt;&lt;&lt;set $evict-=1&gt;&gt;&lt;&lt;set $credit-=3&gt;&gt;&lt;&lt;set $cash=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash lt 0&gt;&gt;&lt;&lt;set $evict-=1&gt;&gt;&lt;&lt;set $credit-=3&gt;&gt;&lt;&lt;set $cash=0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $evict lte 0&gt;&gt;&lt;&lt;set $evicted to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
