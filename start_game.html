@@ -308602,15 +308602,6 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 &lt;&lt;if $ariadays gte 1&gt;&gt;&lt;&lt;set $ariadays-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-/* CREDIT RESET BUG */
-&lt;&lt;if $credit gte -200&gt;&gt;&lt;&lt;set $creditsave to $credit&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $credit is undefined&gt;&gt;
-&lt;&lt;set $credit to $creditsave&gt;&gt;
-&lt;&lt;set $crederror to $days&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
 /* ECONOMY AND INFLUENCE BELOW */
 
 &lt;&lt;set _chgard to true&gt;&gt; /* makes sure ECO page can be viewed without adding food */
