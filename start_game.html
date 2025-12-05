@@ -85702,10 +85702,6 @@ Armor destroyed!
 
 &lt;&lt;set $returned to 0&gt;&gt;
 
-&lt;&lt;if $videos gte 1&gt;&gt;
-&lt;&lt;set _imgvid to &quot;Mods/Videos/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $wploot1 is 0&gt;&gt;
 &lt;&lt;set $take to 1&gt;&gt;
 &lt;&lt;set $wploot1 to -1&gt;&gt;
@@ -85780,7 +85776,7 @@ Armor destroyed!
 
 
 &lt;&lt;if $cs1_sex is 0 and $cs2_sex is 0 and $cs3_sex is 0 and $cs4_sex is 0 and $videos is 1&gt;&gt;
-[img[_imgvid + &quot;wonfem.gif&quot;]]
+[img[Mods/Videos/wonfem.gif]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $weatherroll lte 2&gt;&gt;
 [img[$imgpath + &quot;Combat/won.jpg&quot;]]
@@ -298072,11 +298068,6 @@ IGNORE
 &lt;&lt;include MasterChange&gt;&gt;
 
 
-&lt;&lt;if $videos gte 1&gt;&gt;
-&lt;&lt;set _imgvid to &quot;Mods/Videos/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 /* TRAVEL TIME BACK */
 
 &lt;&lt;if $wopos isnot 1&gt;&gt;
@@ -298330,7 +298321,7 @@ You can manage an NPC&#39;s weapons, armor and applications in his Inventory. Le
 
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $videos is 1&gt;&gt;
-[img[_imgvid + &quot;annexout.gif&quot;]]
+[img[Mods/Videos/annexout.gif]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _an to 0&gt;&gt;
 &lt;&lt;for _ann range $npc&gt;&gt;
