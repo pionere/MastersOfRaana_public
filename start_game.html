@@ -108884,28 +108884,25 @@ A &lt;&lt;if $daycount gte 190&gt;&gt;late-night &lt;&lt;/if&gt;&gt;storage mast
 &lt;/div&gt;
 &lt;div class=&quot;pic&quot;&gt;
 
-&lt;&lt;if $action isnot 77&gt;&gt;
-&lt;&lt;if $action lte 1 and $action2 is false&gt;&gt;
+&lt;&lt;if $action is 77&gt;&gt;
+
+&lt;&lt;include GenSell&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;&lt;if !$action2&gt;&gt;
+
+&lt;&lt;if $action lte 1&gt;&gt;
 [img[Pics/Exterior/chem.jpg]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action2 is false and $action gte 2&gt;&gt;
-
-&lt;&lt;if $workroll is 1&gt;&gt;
+&lt;&lt;elseif $workroll is 1&gt;&gt;
 [img[Pics/Exterior/chem.jpg]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $workroll is 3&gt;&gt;
+&lt;&lt;elseif $workroll is 3&gt;&gt;
 [img[Pics/Exterior/factory.jpg]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $workroll is 2 or $workroll gte 4&gt;&gt;
+&lt;&lt;else&gt;&gt;
 [img[Pics/Exterior/factory2.jpg]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action2 is true&gt;&gt;
+&lt;&lt;else&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;talktraitpic&quot;&gt;
@@ -108935,10 +108932,6 @@ A &lt;&lt;if $daycount gte 190&gt;&gt;late-night &lt;&lt;/if&gt;&gt;storage mast
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;/if&gt;&gt; /* not 77 ends */
-
-&lt;&lt;if $action is 77&gt;&gt;
-&lt;&lt;include GenSell&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
