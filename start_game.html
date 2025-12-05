@@ -32866,8 +32866,9 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 &lt;&lt;if $pq[6] gte 5&gt;&gt;&lt;&lt;set _price-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $background is 104&gt;&gt;&lt;&lt;set _price-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=25&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _price+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -32966,8 +32967,9 @@ You enter Roo&#39;s general store - a musky, tobacco-smelling trove of &quot;goo
 &lt;&lt;if $background is 104&gt;&gt;&lt;&lt;set _price-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=450&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=220&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=450&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=220&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _price+=112&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=112&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=112&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -50442,29 +50444,29 @@ $girlnames &#39;&#39;Defiance (+1)&#39;&#39; has increased!
 &lt;/div&gt;
 
 &lt;div class=&quot;yardmap1&quot;&gt;
-&lt;&lt;if $mch.yardslot1.type is 1&gt;&gt;[img[$imgpath + &quot;Home/yardmap1grove.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot1.type gte 2 and $mch.yardslot1.type isnot 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap1.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot1.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap1gard.png&quot;]]&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $mch.yardslot1.type is 1&gt;&gt;[img[$imgpath + &quot;Home/yardmap1grove.png&quot;]]
+&lt;&lt;elseif $mch.yardslot1.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap1gard.png&quot;]]
+&lt;&lt;elseif $mch.yardslot1.type gte 2&gt;&gt;[img[$imgpath + &quot;Home/yardmap1.png&quot;]]
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;yardmap2&quot;&gt;
-&lt;&lt;if $mch.yardslot2.type gte 2 and $mch.yardslot2.type isnot 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap2.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot2.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap2gard.png&quot;]]&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $mch.yardslot2.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap2gard.png&quot;]]
+&lt;&lt;elseif $mch.yardslot2.type gte 2&gt;&gt;[img[$imgpath + &quot;Home/yardmap2.png&quot;]]
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;yardmap3&quot;&gt;
-&lt;&lt;if $mch.yardslot3.type is 2&gt;&gt;[img[$imgpath + &quot;Home/yardmap3scrap.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot3.type gte 3 and $mch.yardslot3.type isnot 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap3.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot3.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap3gard.png&quot;]]&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $mch.yardslot3.type is 2&gt;&gt;[img[$imgpath + &quot;Home/yardmap3scrap.png&quot;]]
+&lt;&lt;elseif $mch.yardslot3.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap3gard.png&quot;]]
+&lt;&lt;elseif $mch.yardslot3.type gte 3&gt;&gt;[img[$imgpath + &quot;Home/yardmap3.png&quot;]]
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;yardmap4&quot;&gt;
-&lt;&lt;if $mch.yardslot4.type gte 2 and $mch.yardslot4.type isnot 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap4.png&quot;]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $mch.yardslot4.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap4gard.png&quot;]]&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $mch.yardslot4.type is 9&gt;&gt;[img[$imgpath + &quot;Home/yardmap4gard.png&quot;]]
+&lt;&lt;elseif $mch.yardslot4.type gte 2&gt;&gt;[img[$imgpath + &quot;Home/yardmap4.png&quot;]]
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -189535,8 +189537,9 @@ It&#39;s too dark to hunt right now.&lt;br&gt;Try again after daybreak!
 
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set $chance-=25&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set $chance-10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set $chance-=25&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set $chance-10&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -192315,9 +192318,10 @@ The juices of victory is still flowing in _npc.girlnames veins, and she looks at
 
 
 &lt;&lt;if $justfight isnot 0&gt;&gt;
-&lt;&lt;if _npc.health gte 25&gt;&gt;The girl has a couple of bruises but looks to be in a normal physical state.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.health gte 15 and _npc.health lte 24&gt;&gt;The girl has sustained a couple of nasty wounds, but she&#39;s not critically injured.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.health lte 14&gt;&gt;The girl is injuried! Her wounds severely affect her success chances during arena fights.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.health gte 25&gt;&gt;The girl has a couple of bruises but looks to be in a normal physical state.
+&lt;&lt;elseif _npc.health gte 15&gt;&gt;The girl has sustained a couple of nasty wounds, but she&#39;s not critically injured.
+&lt;&lt;else&gt;&gt;The girl is injuried! Her wounds severely affect her success chances during arena fights.
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
@@ -219460,8 +219464,9 @@ BOLTS&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set _off to 1&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219478,8 +219483,9 @@ BOLTS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if _ham is true&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219496,8 +219502,9 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;if _ham is true&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219511,8 +219518,9 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;set _off to 2&gt;&gt;
 &lt;&lt;if _ham is true&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90 and _off gte 2&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219526,8 +219534,9 @@ SHELLS&lt;br&gt;&lt;br&gt;
 &lt;&lt;set _off to 4&gt;&gt;
 &lt;&lt;if _ham is true&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219540,8 +219549,9 @@ SHELLS&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set _off to 4&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219555,8 +219565,9 @@ MAG&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set _off to 16&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=5&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=6&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219569,8 +219580,9 @@ ENERGY CELLS&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set _off to 70&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=30&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=30&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=15&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=12&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219584,8 +219596,9 @@ ENERGY CELLS&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set _off to 8&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=4&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -219599,8 +219612,9 @@ GRENADES&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set _off to 15&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _off+=4&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _off+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control gte 90&gt;&gt;&lt;&lt;set _off-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -220101,21 +220115,18 @@ EMBRYL BUTT PLUG&lt;br&gt;
 /* MASTER CAP PRICE */
 
 
-&lt;&lt;if _cap2 lte 149&gt;&gt;&lt;&lt;set _off*=1.5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cap2 lte 1499 and _cap2 gte 150&gt;&gt;&lt;&lt;set _off*=1.3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cap2 lte 4999 and _cap2 gte 1500&gt;&gt;&lt;&lt;set _off*=1.2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _cap2 gte 15000 and _cap2 lte 24999&gt;&gt;&lt;&lt;set _off*=0.7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cap2 gte 25000 and _cap2 lte 34999&gt;&gt;&lt;&lt;set _off*=0.6&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cap2 gte 35000 and _cap2 lte 49999&gt;&gt;&lt;&lt;set _off*=0.5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _cap2 gte 50000&gt;&gt;&lt;&lt;set _off*=0.35&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if _cap2 lte 149&gt;&gt;&lt;&lt;set _off*=1.5&gt;&gt;
+&lt;&lt;elseif _cap2 lte 1499&gt;&gt;&lt;&lt;set _off*=1.3&gt;&gt;
+&lt;&lt;elseif _cap2 lte 4999&gt;&gt;&lt;&lt;set _off*=1.2&gt;&gt;
+&lt;&lt;elseif _cap2 lte 14999&gt;&gt;
+&lt;&lt;elseif _cap2 lte 24999&gt;&gt;&lt;&lt;set _off*=0.7&gt;&gt;
+&lt;&lt;elseif _cap2 lte 34999&gt;&gt;&lt;&lt;set _off*=0.6&gt;&gt;
+&lt;&lt;elseif _cap2 lte 49999&gt;&gt;&lt;&lt;set _off*=0.5&gt;&gt;
+&lt;&lt;elseif _cap2 gte 50000&gt;&gt;&lt;&lt;set _off*=0.35&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;set _off = Math.round(_off)&gt;&gt;
-
-
-
 
 
 
@@ -222990,8 +223001,9 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;set _price to 20000&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=10000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=5000&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=10000&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=5000&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=3000&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=3000&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -223045,8 +223057,9 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=5&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=2&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -223087,8 +223100,9 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;if _merclevel gte 2&gt;&gt;&lt;&lt;set _price-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=2&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _cap lte 500000&gt;&gt;&lt;&lt;set _price+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -223163,8 +223177,9 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=25&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $duracap lte 10000&gt;&gt;&lt;&lt;set _price+=250&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -223197,8 +223212,9 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;set _backev to 8&gt;&gt;
 &lt;&lt;set _price to 900&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcorescap lte 1000&gt;&gt;&lt;&lt;set _price+=250&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -223238,8 +223254,9 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;if $worldstart is 2&gt;&gt;&lt;&lt;set _price+=1500&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=2000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=250&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=2000&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=250&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _price+=1200&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $back_doc is 3&gt;&gt;&lt;&lt;set _price*=0.75&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -223305,8 +223322,9 @@ Can be used in combat if either the MC or an NPC has &#39;&#39;Medicine 60+&#39;
 
 &lt;&lt;if $stimcontrol[0] gte 151&gt;&gt;&lt;&lt;set _price-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=60&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=25&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=60&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=25&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _price+=12&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=8&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=8&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -223386,8 +223404,9 @@ Can be used in combat if either the MC or an NPC has &#39;&#39;Medicine 60+&#39;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=1000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=500&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=1000&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=500&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.control lte 4&gt;&gt;&lt;&lt;set _price+=250&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=200&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=250&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -223505,8 +223524,9 @@ Can be used in combat if either the MC or an NPC has &#39;&#39;Medicine 60+&#39;
 &lt;&lt;if $event is 14&gt;&gt;
 &lt;&lt;set _price to 320&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=5&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=3&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -223543,8 +223563,9 @@ Can be used in combat if either the MC or an NPC has &#39;&#39;Medicine 60+&#39;
 &lt;&lt;if $event is 15&gt;&gt;
 &lt;&lt;set _price to 900&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=70&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -223582,8 +223603,9 @@ Can be used in combat if either the MC or an NPC has &#39;&#39;Medicine 60+&#39;
 
 &lt;&lt;if $ownadvoc is undefined&gt;&gt;&lt;&lt;set $ownadvoc to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=70&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -223621,8 +223643,9 @@ Can be used in combat if either the MC or an NPC has &#39;&#39;Medicine 60+&#39;
 
 &lt;&lt;if $owngale is undefined&gt;&gt;&lt;&lt;set $owngale to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=50&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=30&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=70&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -224455,8 +224478,9 @@ Using this weapon with a STRENGTH value below 75 adds a noticeable damage penalt
 &lt;&lt;if $event is 50&gt;&gt;
 &lt;&lt;set _price to 1995&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=400&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=400&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -224491,8 +224515,9 @@ Using this weapon with a STRENGTH value below 75 adds a noticeable damage penalt
 &lt;&lt;if $event is 51&gt;&gt;
 &lt;&lt;set _price to 995&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=200&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=100&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=75&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -224628,8 +224653,9 @@ A 23rd-century laptop, cased in DuraSteel, sporting 8TB RAM, a dedicated GPU (Al
 &lt;&lt;if _merclevel gte 2&gt;&gt;&lt;&lt;set _price-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=1000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=500&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=1000&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=500&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=50&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=150&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -224675,8 +224701,9 @@ A 23rd-century laptop, cased in DuraSteel, sporting 8TB RAM, a dedicated GPU (Al
 &lt;&lt;if _merclevel gte 2&gt;&gt;&lt;&lt;set _price-=100&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=2000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=1200&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=2000&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=1200&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=300&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=600&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -226830,8 +226857,9 @@ A high-tech combat armor consisting of PIIR-coated ultra-thin DuraSteel plates w
 &lt;&lt;set _backev to 187&gt;&gt;
 &lt;&lt;set _price to 4&gt;&gt;
 
-&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $faction.ikaanos.prosp lte 14 and $faction.ikaanos.prosp gte 5&gt;&gt;&lt;&lt;set _price+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $faction.ikaanos.prosp lte 4&gt;&gt;&lt;&lt;set _price+=1&gt;&gt;
+&lt;&lt;elseif $faction.ikaanos.prosp lte 14&gt;&gt;&lt;&lt;set _price+=2&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 75&gt;&gt;&lt;&lt;set _price-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.ikaanos.prosp gte 90&gt;&gt;&lt;&lt;set _price-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -255289,17 +255317,16 @@ Your lavish spending has increased your &#39;&#39;Influence (+10)&#39;&#39;!
 &lt;&lt;if _ran1 is 2&gt;&gt;(Scared look). No please, Madame. Not this man again. Oww… Fuck. Please, be careful this time. I beg you, Mr. $pcLastName.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 3&gt;&gt;(Whisper) Fuck. Not this one again…&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 4&gt;&gt;No. Not this man again!&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $velve[4] gte 5 and $velve[4] lte 23&gt;&gt;
+&lt;&lt;elseif $velve[4] lte 23&gt;&gt;
+
 &lt;&lt;if _ran1 is 1&gt;&gt;Fuck (inaudible mumblings)…&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 2&gt;&gt;(Gulp). Ehm… I… I hope this will be quick.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 3&gt;&gt;(Long, painful silence)…&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 4&gt;&gt;I… I… I&#39;m actually not suited for this. Please, be careful, okay? I&#39;m very delicate… down there. I prefer if you finish in my mouth. It hurts less.&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;else&gt;&gt;
 
-&lt;&lt;if $velve[4] gte 24&gt;&gt;
 &lt;&lt;if _ran1 is 1&gt;&gt;Oh… Hello, again. Thanks. The one you didn’t pick will serve Nakamura&#39;s awful son. He&#39;s… Really special.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 2&gt;&gt;Oh, hello again, Sir. (smile). Let&#39;s move into the room. I&#39;ll place myself on the horse and… just trust you&#39;ll treat me good as you always do. Okay?&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 3&gt;&gt;Oh, my favorite. Thanks. Thanks for picking me. Being with you is… like a breath of fresh air.&lt;&lt;/if&gt;&gt;
@@ -255426,16 +255453,15 @@ After walking down through a narrow staircase, you&#39;re finally standing toget
 &lt;&lt;if _ran1 is 2&gt;&gt;I&#39;ll be a good girl. Just treat me well, okay?.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 3&gt;&gt;Okay… There&#39;s no running away. Strap me down. I… I&#39;m ready.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 4&gt;&gt;I… I promise you this… If you do something bad…, I&#39;ll come after you once I&#39;m free. Just… Fuck me and be done with it.&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $velve[4] gte 5 and $velve[4] lte 23&gt;&gt;
+&lt;&lt;elseif $velve[4] lte 23&gt;&gt;
+
 &lt;&lt;if _ran1 is 1&gt;&gt;Alright. Nothing will benefit me by holding this off. I&#39;ll get on the horse. And… do me a favor… Cum in my mouth after fucking me from behind. Okay?&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 2 or _ran1 is 3&gt;&gt;You&#39;d… You&#39;d be doing me a great favor if you&#39;d cum as quickly as possible. I could use a nap before the next customer. If… If that&#39;s possible.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 4&gt;&gt;(Shivering voice) I… I guess I&#39;m ready.&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;else&gt;&gt;
 
-&lt;&lt;if $velve[4] gte 24&gt;&gt;
 &lt;&lt;if _ran1 is 1&gt;&gt;(Smile) Finally some time alone. Thank you again for picking me. Maybe I could sneak in a small nap before my next customer. I know you&#39;re mostly kind to me. And… And I&#39;m very grateful for that.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 2&gt;&gt;Okay, I&#39;ll jump up on The Horse (careful smile). I guess I owe you my pussy for a quickie after paying that huge sum. Haha.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran1 is 3&gt;&gt;Alright. Here we are, again (smile). I&#39;m just gonna go wash my face off and get a glass of water. I really need this break.&lt;&lt;/if&gt;&gt;
@@ -259160,9 +259186,9 @@ During the night, you&#39;re woken up by a loud alarm. A group &lt;&lt;if $weath
 &lt;&lt;set _guardhp to 1&gt;&gt;
 
 
-&lt;&lt;if $raidchance gte 1&gt;&gt;Your household &lt;div class=&quot;green&quot;&gt;successfully&lt;/div&gt; repels the attack!&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $raidchance lte 0&gt;&gt;&lt;div class=&quot;red&quot;&gt;Unfortunately&lt;/div&gt;, the raiders are able to breach your walls and withdraw with a sizeable amount of plunder!&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $raidchance gte 1&gt;&gt;Your household &lt;div class=&quot;green&quot;&gt;successfully&lt;/div&gt; repels the attack!
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;Unfortunately&lt;/div&gt;, the raiders are able to breach your walls and withdraw with a sizeable amount of plunder!
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* raiderattack gte 2 ends */
 
