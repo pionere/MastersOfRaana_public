@@ -80140,10 +80140,6 @@ filename is rackoralgag.jpg and rackdeepgag.jpg
 
 &lt;&lt;set _img to $imgpath + &quot;Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
 
-&lt;&lt;if $sandman is 1&gt;&gt;
-&lt;&lt;set _img to &quot;Mods/Sandman/Pics/&quot;+&quot;Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;include RanCheck&gt;&gt;
 
 
@@ -147397,11 +147393,6 @@ $girlnames &#39;&#39;Jaded Trait (-1)&#39;&#39; has decreased!
 
 &lt;&lt;set _img to $imgpath&gt;&gt;
 
-&lt;&lt;if $sandman is 1&gt;&gt;
-&lt;&lt;set _img to &quot;Mods/Sandman/Pics/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 
 &lt;&lt;if $macevid gte 1&gt;&gt;
 
@@ -152998,10 +152989,6 @@ PLAYER WEAPON
 &lt;&lt;set _tempgirlid to 353&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $sandman is 1&gt;&gt;
-&lt;&lt;include PicCheck&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $nipir is 2 or $nipir is 0&gt;&gt;&lt;&lt;set _nipir to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $clitpir is 2 or $clitpir is 0&gt;&gt;&lt;&lt;set _clitpir to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -153089,8 +153076,6 @@ FOUND IN SLAVEINVENTORY
 
 &lt;&lt;set _img to &quot;Pics/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;
 
-&lt;&lt;if $sandman is 1 and _npcok is true&gt;&gt;&lt;&lt;set _img to &quot;Mods/Sandman/Pics/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if _tempgirlid gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen15/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _nightblock is 0&gt;&gt;&lt;&lt;unset $showbe&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -153125,9 +153110,6 @@ for ONLY full armor sets (no inspect), go to &quot;show is 1&quot; at bottom of 
 
 /* MAIN SETTER FOR RANDIES */
 &lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;if $sandman is 1 and _npcok is true&gt;&gt;&lt;&lt;set _img to &quot;Mods/Sandman/Pics/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;/if&gt;&gt;
 
@@ -153166,9 +153148,6 @@ for ONLY full armor sets (no inspect), go to &quot;show is 1&quot; at bottom of 
 
 &lt;&lt;if _tempgirlid gte 100&gt;&gt;
 &lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;if $sandman is 1 and _npcok is true&gt;&gt;&lt;&lt;set _img to &quot;Mods/Sandman/Pics/AvRan/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -192239,8 +192218,6 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 &lt;&lt;if !_picok&gt;&gt;
 &lt;&lt;set _img=$imgpath+&quot;AvGen/&quot;&gt;&gt;
-&lt;&lt;elseif $sandman gte 1&gt;&gt;
-&lt;&lt;set _img=&quot;Mods/Sandman/&quot;+_img&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -207363,49 +207340,7 @@ Oral wear: _npc.oralwear.&lt;br&gt;
 
 
 &lt;div class=&quot;resholdersmall&quot;&gt;
-
-&lt;&lt;if $sandman2 is 1&gt;&gt;
-
-
-&lt;&lt;if _isinarena isnot true and _npc isnot undefined and _service isnot true and $wopos lte 1 and _bofors is undefined&gt;&gt;
-
-&lt;&lt;if _npc.sandman isnot 1&gt;&gt;
-&lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;hovertip &quot;show Sandman alternative&quot;&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/sandman.png&quot;]]&gt;&gt;
-&lt;&lt;goto `passage()`&gt;&gt;
-&lt;&lt;set _npc.sandman to 1&gt;&gt;
-&lt;&lt;set $showethnu to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/hovertip&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.sandman is 1&gt;&gt;
-&lt;div class=&quot;lighthover&quot;&gt;
-&lt;&lt;hovertip &quot;show Original set&quot;&gt;&gt;
-&lt;&lt;link [img[$imgpath + &quot;Butt/sandmanon.png&quot;]]&gt;&gt;
-&lt;&lt;goto `passage()`&gt;&gt;
-&lt;&lt;set _npc.sandman to 0&gt;&gt;
-&lt;&lt;set $showethnu to true&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;/hovertip&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-
- &lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/sandman.png&quot;]]&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;else&gt;&gt;
- &lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/slbutt1b.png&quot;]]&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt; /* sandman 2 ends */
+&lt;div class=&quot;opac&quot;&gt;[img[$imgpath + &quot;Butt/slbutt1b.png&quot;]]&lt;/div&gt;
 &lt;/div&gt;
 
 /*
@@ -288830,7 +288765,7 @@ You contemplate on sending _npc.girlname _npc.last away to become a full member 
 &lt;&lt;if $pic is 204&gt;&gt;
 /* Master gropes ass. See slave&#39;s face. */
 [img[_img + &quot;spank9.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="410" name="RanCheck" tags="nobr" position="5375,1000" size="100,100">&lt;&lt;include PicCheck&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="410" name="RanCheck" tags="nobr" position="5375,1000" size="100,100">
 
 /*
 
@@ -288853,14 +288788,11 @@ If neither is true, scenes are picked from the AvGen/Body1 archive
 
 &lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
 
-&lt;&lt;if $sandman is 1 and _npcok is true&gt;&gt;&lt;&lt;set _img to &quot;Mods/Sandman/Pics/AvRan/Av&quot;+_girlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* ADD NEW STORY NPCS WITH LIMITED WARDROBES BELOW */
 
 &lt;&lt;if _girlid lte 51&gt;&gt;
 &lt;&lt;set _img to &quot;Pics/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;if $sandman is 1 and _npcok is true&gt;&gt;&lt;&lt;set _img to &quot;Mods/Sandman/Pics/Av&quot;+_girlid+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -301006,7 +300938,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set $analvirgin = _npc.analvirgin&gt;&gt;
 &lt;&lt;set $virgin = _npc.virgin&gt;&gt;
 &lt;&lt;set $give to _npc.give&gt;&gt;
-&lt;&lt;set $sandman to _npc.sandman&gt;&gt;
 
 &lt;&lt;set $back to _npc.back&gt;&gt;
 &lt;&lt;set $back1 to _npc.back1&gt;&gt;
@@ -331463,36 +331394,6 @@ UI.restart();
 &lt;/div&gt;
 
 
-&lt;&lt;if $checksand is true&gt;&gt;
-
-&lt;&lt;if $sandman2 is 1&gt;&gt;
-&lt;&lt;for _sand range $npc&gt;&gt;
-&lt;&lt;set _sand.sandman to 1&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $sandman2 is 0&gt;&gt;
-&lt;&lt;for _sand range $npc&gt;&gt;
-&lt;&lt;set _sand.sandman to 0&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;unset $checksand&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;div class=&quot;row ulvsmall padd70right&quot;&gt;
-
-&lt;div class=&quot;resholderbig tex16px future padd10left&quot;&gt;&lt;div class=&quot;left&quot;&gt;&lt;div class=&quot;tex4px&quot;&gt;&lt;br&gt;&lt;/div&gt;&#39;&#39;SANDMAN&#39;S PICS&#39;&#39;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $sandman2 is 1&gt;&gt;[[off|OptionsMenu2][$sandman2 to 0, $checksand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvsmallselect&quot;&gt;off&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $sandman2 isnot 1&gt;&gt;
-[[On|OptionsMenu2][$sandman2 to 1, $checksand to true]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvsmallselect&quot;&gt;on&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-
-
-
 
 /*
 &lt;div class=&quot;row ulvsmall padd70right&quot;&gt;
@@ -345471,7 +345372,6 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 &lt;&lt;set _girlids to _np.girlid&gt;&gt;
 &lt;&lt;set _girlid to _np.girlid&gt;&gt;
 &lt;&lt;set _mychild to _np.mychild&gt;&gt;
-&lt;&lt;set $sandman to _np.sandman&gt;&gt;
 &lt;&lt;set _sex to _np.sex&gt;&gt;
 &lt;&lt;set _daysa to _np.daysa&gt;&gt;
 &lt;&lt;set _wear to _np.wear&gt;&gt;
@@ -345620,11 +345520,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 &lt;&lt;if _sex is 0 or _girlid is 19 or _girlid is 23 or _girlid is 27 or _girlid is 29 or _girlid is 30 or _girlid is 26 or _girlid is 31 or _girlid is 33 or _girlid is 34&gt;&gt;
 
 
-&lt;&lt;if $sandman gte 1&gt;&gt;
-&lt;&lt;set _img to &quot;Mods/Sandman/Pics/&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
 &lt;&lt;set _img to &quot;Pics/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _girlid lte 99&gt;&gt;
@@ -352877,15 +352773,6 @@ Today, all the paintings and statues of Mr. Adler have either been defamed or de
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="565" name="PicCheck" tags="nobr" position="5275,1100" size="100,100">
-/* CHECKER FOR SANDMAN READY NPCS */
-
-&lt;&lt;unset _npcok&gt;&gt;
-
-&lt;&lt;if _sex is 0&gt;&gt;
-&lt;&lt;set _npcok to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 </tw-passagedata><tw-passagedata pid="566" name="Borsow" tags="nobr" position="2800,3100" size="100,100">
 &lt;&lt;if $npc.av41.girlname is undefined&gt;&gt;
 &lt;&lt;set $npc.av41 = {
