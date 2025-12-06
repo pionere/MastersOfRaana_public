@@ -343128,27 +343128,10 @@ state: 0,
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 20 and $back_doc lte 0 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_doc to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc lte 0 and _nuso gte 3&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc lte 0 and $crepoints lte 19 and _nuso lte 2&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;classbar&quot;&gt;
-
-[img[$imgpath + &quot;Butt/classarrow.png&quot;]]
-
-&lt;/div&gt;
-
-&lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 60 and $back_doc is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_doc to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc lte 0&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc is 1 and $crepoints lte 59&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_doc gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 20 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_doc to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343156,13 +343139,21 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
+&lt;&lt;if $back_doc gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 60 and $back_doc is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_doc to 2]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
 
-&lt;&lt;if $crepoints gte 120 and $back_doc is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_doc to 3, $mastertitle to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc is 2 and $crepoints lte 119&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_doc lte 1&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;classbar&quot;&gt;
+[img[$imgpath + &quot;Butt/classarrow.png&quot;]]
+&lt;/div&gt;
 
-
+&lt;div class=&quot;resholder&quot;&gt;
+&lt;&lt;if $back_doc gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 120 and $back_doc is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_doc to 3, $mastertitle to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -343176,14 +343167,12 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
+
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 20 and $back_aca lte 0 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_aca to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca lte 0 and _nuso gte 3&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $back_aca gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca lte 0 and $crepoints lte 19 and _nuso lte 2&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_aca gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 20 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_aca to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343191,12 +343180,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 60 and $back_aca is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_aca to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca lte 0&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca is 1 and $crepoints lte 59&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_aca gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 60 and $back_aca is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_aca to 2]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343204,13 +343191,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 120 and $back_aca is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_aca to 3, $mastertitle to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca is 2 and $crepoints lte 119&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_aca lte 1&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if $back_aca gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 120 and $back_aca is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_aca to 3, $mastertitle to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -343224,13 +343208,12 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
+
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 20 and $back_hunt lte 0 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_hunt to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt lte 0 and _nuso gte 3&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt lte 0 and $crepoints lte 19 and _nuso lte 2&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_hunt gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 20 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_hunt to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343238,12 +343221,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 60 and $back_hunt is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_hunt to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt lte 0&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt is 1 and $crepoints lte 59&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_hunt gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 60 and $back_hunt is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_hunt to 2]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343251,13 +343232,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 120 and $back_hunt is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_hunt to 3, $mastertitle to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt is 2 and $crepoints lte 119&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_hunt lte 1&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;if $back_hunt gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 120 and $back_hunt is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_hunt to 3, $mastertitle to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -343270,13 +343248,12 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
+
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 20 and $back_sold lte 0 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_sold to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold lte 0 and _nuso gte 3&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold lte 0 and $crepoints lte 19 and _nuso lte 2&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_sold gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 20 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_sold to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343284,12 +343261,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 60 and $back_sold is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_sold to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold lte 0&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold is 1 and $crepoints lte 59&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_sold gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 60 and $back_sold is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_sold to 2]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343297,12 +343272,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 120 and $back_sold is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_sold to 3, $mastertitle to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold is 2 and $crepoints lte 119&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_sold lte 1&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_sold gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 120 and $back_sold is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_sold to 3, $mastertitle to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -343314,13 +343287,12 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
+
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 20 and $back_bus lte 0 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_bus to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus lte 0 and _nuso gte 3&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus lte 0 and $crepoints lte 19 and _nuso lte 2&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_bus gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 20 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_bus to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343328,12 +343300,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 60 and $back_bus is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_bus to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus lte 0&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus is 1 and $crepoints lte 59&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_bus gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 60 and $back_bus is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_bus to 2]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343341,12 +343311,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 120 and $back_bus is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_bus to 3, $mastertitle to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus is 2 and $crepoints lte 119&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_bus lte 1&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_bus gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 120 and $back_bus is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_bus to 3, $mastertitle to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
@@ -343360,13 +343328,12 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;row ulsmall&quot;&gt;
+
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 20 and $back_slave lte 0 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_slave to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave lte 0 and _nuso gte 3&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave lte 0 and $crepoints lte 19 and _nuso lte 2&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_slave gte 1&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 20 and _nuso lte 2&gt;&gt;[[Novice (20)|Ntrait][$crepoints-=20, $back_slave to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Novice (20)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343374,12 +343341,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 60 and $back_slave is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_slave to 2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave lte 0&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave is 1 and $crepoints lte 59&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_slave gte 2&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 60 and $back_slave is 1&gt;&gt;[[Adept (60)|Ntrait][$crepoints-=60, $back_slave to 2]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Adept (60)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;classbar&quot;&gt;
@@ -343387,12 +343352,10 @@ state: 0,
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder&quot;&gt;
-
-&lt;&lt;if $crepoints gte 120 and $back_slave is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_slave to 3, $mastertitle to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave is 2 and $crepoints lte 119&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $back_slave lte 1&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $back_slave gte 3&gt;&gt;&lt;p class=&quot;ulsmallselect&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;elseif $crepoints gte 120 and $back_slave is 2 and $mastertitle is 0 and _masterblock isnot true&gt;&gt;[[expert (120)|Ntrait][$crepoints-=120, $back_slave to 3, $mastertitle to 1]]
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;expert (120)&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 
