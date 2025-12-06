@@ -201193,16 +201193,16 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 
 
 &lt;&lt;if _callage lte 14&gt;&gt;
-&lt;&lt;set _img to &quot;/edu_goodsmall_kid.png&quot;&gt;&gt;
+&lt;&lt;set _tmp to &quot;/edu_goodsmall_kid.png&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to &quot;/edu_goodsmall.png&quot;&gt;&gt;
+&lt;&lt;set _tmp to &quot;/edu_goodsmall.png&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if _smallcall2 is true&gt;&gt;
-&lt;&lt;set _img to _callid+_img&gt;&gt;
+&lt;&lt;set _tmp to _callid+_tmp&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set _img to _callid2+_img&gt;&gt;
+&lt;&lt;set _tmp to _callid2+_tmp&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;set _img=$imgpath+(_callid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+_img&gt;&gt;
+&lt;&lt;set _tmp=$imgpath+(_callid lte 99 ? &quot;Av&quot; : &quot;AvRan/Av&quot;)+_tmp&gt;&gt;
 
 &lt;&lt;if _callid isnot undefined&gt;&gt;
 
@@ -201211,12 +201211,12 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 &lt;&lt;if $wopos is 1 and _nointer isnot true&gt;&gt;
 &lt;&lt;hovertip _calln&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
-[img[_img][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
+[img[_tmp][Interact][$c_npc to &quot;av&quot;+_callid, $nodel to true]]
 &lt;/div&gt;
 &lt;&lt;/hovertip&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opac&quot;&gt;
-[img[_img]]
+[img[_tmp]]
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -201224,7 +201224,7 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 
 &lt;&lt;if _smallcall2 is true&gt;&gt;
 
-[img[_img]]
+[img[_tmp]]
 
 &lt;&lt;/if&gt;&gt;
 
