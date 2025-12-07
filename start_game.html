@@ -147342,383 +147342,51 @@ $girlnames &#39;&#39;Jaded Trait (-1)&#39;&#39; has decreased!
 
 &lt;&lt;if $action1 is true&gt;&gt;
 
-&lt;&lt;if _call is 1&gt;&gt;
-&lt;&lt;if $blowname is &quot;Lovisa&quot;&gt;&gt;
-&lt;&lt;set _lovblow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _call is 1 and ((_girlid gte 1 and _girlid lte 14 and _girlid isnot 10) or _girlid is 16 or _girlid is 18 or _girlid is 39 or _girlid is 42)&gt;&gt;
 
-&lt;&lt;if _call is 1 and _girlid is 11&gt;&gt;
-&lt;&lt;set _ariablow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _call is 1 and _girlid is 14&gt;&gt;
-&lt;&lt;set _emblow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _call is 1 and _girlid is 13&gt;&gt;
-&lt;&lt;set _catblow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _call is 1 and _girlid is 16&gt;&gt;
-&lt;&lt;set _dakblow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _call is 1 and _girlid is 39&gt;&gt;
-&lt;&lt;set _cleablow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _call is 1 and _girlid is 42&gt;&gt;
-&lt;&lt;set _toriblow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* rest of NPCs - NO NEED TO SET INDIVIDUAL SETTERS */
-&lt;&lt;if _call is 1 and (_girlid gte 2 and _girlid lte 9) or (_girlid is 12 or _girlid is 18)&gt;&gt;
-&lt;&lt;set _restblow to true&gt;&gt;
-&lt;&lt;set _speblow to true&gt;&gt;
-
-&lt;&lt;set _restblow to _girlid&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;set _img to $imgpath&gt;&gt;
-
+&lt;&lt;set _tmp=&quot;Pics/Av&quot;+_girlid+&quot;/&quot;&gt;&gt;
 
 &lt;&lt;if $macevid gte 1&gt;&gt;
 
-&lt;&lt;set _img3 to &quot;Mods/Animations/Pics/&quot;+&quot;Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-
+&lt;&lt;set _img3=&quot;Mods/Animations/&quot;+_tmp&gt;&gt;
 
 /* GIRLS WITH MORNING BJ CUM ANIMATIONS */
-
 &lt;&lt;if _npc.girlid is 16 or _npc.girlid is 13&gt;&gt;
-&lt;&lt;set _morningblow4ani to true&gt;&gt;
-&lt;&lt;set _morningblow4anis to _img3 + &quot;morningblow4_ani.mp4&quot;&gt;&gt;
+&lt;&lt;set _morningblow4anis=_img3+&quot;morningblow4_ani.mp4&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt; /* end of ani checker */
 
-
-
-
-&lt;&lt;if _speblow is true&gt;&gt;
-
-
-
-
-
-&lt;&lt;if _restblow gte 1&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/morningblow2.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action is 6&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/morningblow4.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 49&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 50&gt;&gt;
-[img[_img + &quot;Av&quot; + _restblow +&quot;/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-&lt;&lt;if _catblow is true&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av13/morningblow1.jpg&quot;]]
+&lt;&lt;set _mbjlike=_singlelike lte 9 ? 0 : (_singlelike lte (_girlid is 13 ? 44 : 49) ? 1 : 2)&gt;&gt;
+&lt;&lt;if _girlid is 39&gt;&gt;
+&lt;&lt;set _mbjlike=_singlelike lte 19 ? 0 : (_singlelike lte 59 ? 1 : 2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av13/morningblow2.jpg&quot;]]
+&lt;&lt;if _girlid is 1 and $weatherroll lt 5&gt;&gt;
+[img[_tmp+&quot;morningblow2b.jpg&quot;]]
+&lt;&lt;else&gt;&gt;
+[img[_tmp+&quot;morningblow2.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av13/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action is 6&gt;&gt;
-&lt;&lt;if _morningblow4ani is true&gt;&gt;
+&lt;&lt;elseif $action lte 3&gt;&gt;
+[img[_tmp+&quot;morningblow1.jpg&quot;]]
+&lt;&lt;elseif $action lte 5&gt;&gt;
+[img[_tmp+&quot;morningblow3.jpg&quot;]]
+&lt;&lt;elseif $action is 6&gt;&gt;
+&lt;&lt;if _morningblow4anis&gt;&gt;
 &lt;&lt;video _morningblow4anis&gt;&gt;
 &lt;&lt;else&gt;&gt;
-[img[_img + &quot;Av13/morningblow4.jpg&quot;]]
+[img[_tmp+&quot;morningblow4.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av13/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 44&gt;&gt;
-[img[_img + &quot;Av13/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 45&gt;&gt;
-[img[_img + &quot;Av13/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-&lt;&lt;if _lovblow is true&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av1/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $iscleaning is true&gt;&gt;
-&lt;&lt;if $weatherroll gte 5&gt;&gt;
-[img[_img + &quot;Av1/morningblow2.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[_img + &quot;Av1/morningblow2b.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-
-[img[_img + &quot;Av1/morningblow3.jpg&quot;]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action is 6&gt;&gt;
-[img[_img + &quot;Av1/morningblow4.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av1/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 49&gt;&gt;
-[img[_img + &quot;Av1/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 50&gt;&gt;
-[img[_img + &quot;Av1/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _ariablow is true&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av11/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av11/morningblow2.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av11/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action is 6&gt;&gt;
-[img[_img + &quot;Av11/morningblow4.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av11/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 49&gt;&gt;
-[img[_img + &quot;Av11/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 50&gt;&gt;
-[img[_img + &quot;Av11/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if _emblow is true&gt;&gt;
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av14/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av14/morningblow2.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av14/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action is 6&gt;&gt;
-[img[_img + &quot;Av14/morningblow4.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av14/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 49&gt;&gt;
-[img[_img + &quot;Av14/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 50&gt;&gt;
-[img[_img + &quot;Av14/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-&lt;&lt;if _cleablow is true&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av39/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av39/morningblow2.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av39/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action is 6&gt;&gt;
-[img[_img + &quot;Av39/morningblow4.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 19&gt;&gt;
-[img[_img + &quot;Av39/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 20 and _singlelike lte 59&gt;&gt;
-[img[_img + &quot;Av39/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 60&gt;&gt;
-[img[_img + &quot;Av39/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if _toriblow is true&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av42/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av42/morningblow2.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av42/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action is 6&gt;&gt;
-[img[_img + &quot;Av42/morningblow4.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av42/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 49&gt;&gt;
-[img[_img + &quot;Av42/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 50&gt;&gt;
-[img[_img + &quot;Av42/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-&lt;&lt;if _dakblow is true&gt;&gt;
-
-&lt;&lt;if $action lte 3 and $iscleaning isnot true&gt;&gt;
-[img[_img + &quot;Av16/morningblow1.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $iscleaning is true&gt;&gt;
-[img[_img + &quot;Av16/morningblow2.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 4 and $iscleaning isnot true and $action lte 5&gt;&gt;
-[img[_img + &quot;Av16/morningblow3.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action is 6&gt;&gt;
-&lt;&lt;if _morningblow4ani is true&gt;&gt;
-&lt;&lt;video _morningblow4anis&gt;&gt;
+&lt;&lt;if _mbjlike is 0&gt;&gt;
+[img[_tmp+&quot;mbjbad.jpg&quot;]]
+&lt;&lt;elseif _mbjlike is 1&gt;&gt;
+[img[_tmp+&quot;mbjneutral.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[_img + &quot;Av16/morningblow4.jpg&quot;]]
+[img[_tmp+&quot;mbjgood.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $action gte 7&gt;&gt;
-
-&lt;&lt;if _singlelike lte 9&gt;&gt;
-[img[_img + &quot;Av16/mbjbad.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 10 and _singlelike lte 49&gt;&gt;
-[img[_img + &quot;Av16/mbjneutral.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _singlelike gte 50&gt;&gt;
-[img[_img + &quot;Av16/mbjgood.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
 
 
 
