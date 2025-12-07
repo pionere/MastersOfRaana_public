@@ -304563,11 +304563,14 @@ ALSO USED FOR DEATH.
 &lt;&lt;if _dayblock is 1 or _dayblock is 2 or _dayblock is 3 or _dayblock is 4 or _dayblock is 7 or _dayblock is 6 or _dayblock is 9 or _dayblock is 10 or _dayblock is 11 or _dayblock is 13 or _dayblock is 18 or _dayblock is 30&gt;&gt;&lt;&lt;set _dayblocked2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if _dayblock is 5 and _npc.title is 1&gt;&gt;&lt;&lt;set _dayblocked5 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if _dayblock isnot 0 and _dayblock isnot 999&gt;&gt;
 &lt;&lt;if _dayblocked2 is true&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;At work!&lt;/p&gt;
+&lt;&lt;elseif _dayblocked5 is true&gt;&gt;
+&lt;p class=&quot;ulsmallused&quot;&gt;Title locked!&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if _dayblock isnot 0 and _dayblock isnot 999&gt;&gt;
 &lt;div class=&quot;ulsmall&quot;&gt;[[Clear|SMenu2][$workchange to 99, $checkbef to 1]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
