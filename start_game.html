@@ -190332,169 +190332,55 @@ $cs4_name&#39;s &#39;&#39;Happiness (+1)&#39;&#39; has increased (Wild-born trai
 
 &lt;&lt;if $resmanage is undefined&gt;&gt;
 Refine raw materials into resources by selecting an action below.
-&lt;br&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if $resmanage is 1&gt;&gt;
-&lt;&lt;if $meat lte 9&gt;&gt;
-&lt;&lt;set _meathold to $meat*2&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-
-$meat units of meat converted into _meathold food rations!
+&lt;&lt;set $stampoints-=1&gt;&gt;
+&lt;&lt;set _tmp=Math.min($meat,10)&gt;&gt;
+&lt;&lt;set _fome=_tmp*2&gt;&gt;
+_tmp units of meat converted into _fome food rations!
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;set $foodstuff+=$meat*2&gt;&gt;
-&lt;&lt;set $meat to 0&gt;&gt;
+&lt;&lt;set $foodstuff+=_fome&gt;&gt;
+&lt;&lt;set $meat-=_tmp&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $meat gte 10&gt;&gt;
-&lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-
-10 units of meat converted into 20 food rations!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;set $foodstuff+=20&gt;&gt;
-&lt;&lt;set $meat-=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
 
 &lt;&lt;if $resmanage is 2&gt;&gt;
-&lt;&lt;if $skins lte 9&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-2,1)&gt;&gt;
-
-
-&lt;&lt;set _skinhold to $skins&gt;&gt;
-
-$skins units of skins converted into _skinhold leather sheets!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;set $leather+=$skins&gt;&gt;
-&lt;&lt;set $skins to 0&gt;&gt;
+&lt;&lt;set $stampoints-=2&gt;&gt;
+&lt;&lt;set _tmp=Math.min($skins,10)&gt;&gt;
+_tmp units of skins converted into _tmp leather sheets!
+&lt;&lt;set $leather+=_tmp&gt;&gt;
+&lt;&lt;set $skins-=_tmp&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $skins gte 10&gt;&gt;
-&lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-2,1)&gt;&gt;
-
-
-10 units of skins converted into 10 leather sheets!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;set $leather+=10&gt;&gt;
-&lt;&lt;set $skins-=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
 
 &lt;&lt;if $resmanage is 3&gt;&gt;
-&lt;&lt;if $cloth lte 4&gt;&gt;
-
-You need at least 5 units of scrap cloth to refine it into textiles!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cloth gte 5&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-
-
+&lt;&lt;set $stampoints-=1&gt;&gt;
 5 units of scrap cloth converted into 1 textile unit!
-&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $textile+=1&gt;&gt;
 &lt;&lt;set $cloth-=5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-
-
-
 &lt;&lt;if $resmanage is 4&gt;&gt;
-&lt;&lt;if $scrap lte 4&gt;&gt;
-
-You need at least 5 units of scrap metal to refine it into steel!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $scrap gte 5&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-2,1)&gt;&gt;
-
-
+&lt;&lt;set $stampoints-=2&gt;&gt;
 5 units of scrap metal converted into 1 steel unit!
-&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $steel+=1&gt;&gt;
 &lt;&lt;set $scrap-=5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-
-
 &lt;&lt;if $resmanage is 5&gt;&gt;
-&lt;&lt;if $cboards lte 9&gt;&gt;
-
-You need at least 10 units of circuit boards to refine it into gold!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $cboards gte 10&gt;&gt;
 &lt;&lt;passmins 18&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-2,1)&gt;&gt;
-
-
+&lt;&lt;set $stampoints-=2&gt;&gt;
 10 units of circuit boards converted into 1 gold unit!
-&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $gold+=1&gt;&gt;
 &lt;&lt;set $cboards-=10&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-
-
-
-
 &lt;&lt;if $resmanage is 6&gt;&gt;
-&lt;&lt;if $swag lte 1&gt;&gt;
-
-You need at least 2 units of Merchandise to begin!
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $swag gte 2&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
+&lt;&lt;set $stampoints-=1&gt;&gt;
 
 &lt;&lt;set _dura to random(1, 30)&gt;&gt;
 &lt;&lt;set _scrapm to random(1, 3)&gt;&gt;
@@ -190508,7 +190394,6 @@ You need at least 2 units of Merchandise to begin!
 &lt;&lt;set _golde+=5&gt;&gt;&lt;&lt;set _dura+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
-
 
 &lt;&lt;set _dura=_dura gte 30 ? 1 : 0&gt;&gt;
 &lt;&lt;set _connector=_connector gte 8 ? 1 : 0&gt;&gt;
@@ -190524,44 +190409,25 @@ Yield: _dura Durasteel, _scrapm Scrap metal, _cloths Cloth, _connector Fasteners
 &lt;&lt;set $scrap+=_scrapm&gt;&gt;
 &lt;&lt;set $cboards+=_ciboard&gt;&gt;
 &lt;&lt;set $gold+=_golde&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $resmanage is 7&gt;&gt;
-
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-
+&lt;&lt;set $stampoints-=1&gt;&gt;
 10 units of gold ore converted to 1 unit of gold.
-&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $goldore-=10&gt;&gt;
 &lt;&lt;set $gold+=1&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
-
-
 
 &lt;&lt;if $resmanage is 8&gt;&gt;
-
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-
+&lt;&lt;set $stampoints-=1&gt;&gt;
 10 units of silver ore converted to 1 unit of silver.
-&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $silverore-=10&gt;&gt;
 &lt;&lt;set $silver+=1&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
 
-
-
-
+&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $stampoints lte 2&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -216449,62 +216315,22 @@ $hunt_cora
 
 &lt;center&gt;
 &lt;&lt;if $resmanage is 1&gt;&gt;
-&lt;&lt;if $meat lte 9&gt;&gt;
-&lt;&lt;set _meathold to $meat*2&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;
-$meat units of meat converted into _meathold food rations!
-&#39;&#39;
+&lt;&lt;set $stampoints-=1&gt;&gt;
+&lt;&lt;set _tmp=Math.min($meat,10)&gt;&gt;
+&lt;&lt;set _fome=2*_tmp&gt;&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;_tmp units of meat converted into _fome food rations!&#39;&#39;
 &lt;&lt;set $foodstuff+=$meat*2&gt;&gt;
 &lt;&lt;set $meat to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $meat gte 10&gt;&gt;
-&lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-1,1)&gt;&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;
-10 units of meat converted into 20 food rations!
-&#39;&#39;
-&lt;&lt;set $foodstuff+=20&gt;&gt;
-&lt;&lt;set $meat-=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-
 &lt;&lt;if $resmanage is 2&gt;&gt;
-&lt;&lt;if $skins lte 9&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-2,1)&gt;&gt;
-
-
-&lt;&lt;set _skinhold to $skins&gt;&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;
-$skins units of skins converted into _skinhold leather sheets!
-&#39;&#39;
-&lt;&lt;set $leather+=$skins&gt;&gt;
-&lt;&lt;set $skins to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $skins gte 10&gt;&gt;
-&lt;&lt;passmins 12&gt;&gt;
-&lt;&lt;set $stampoints=adl($stampoints,-2,1)&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;
-10 units of skins converted into 10 leather sheets!
-&#39;&#39;
-&lt;&lt;set $leather+=10&gt;&gt;
-&lt;&lt;set $skins-=10&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set $stampoints-=2&gt;&gt;
+&lt;&lt;set _tmp=Math.min($skins,10)&gt;&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;_tmp units of skins converted into _tmp leather sheets!&#39;&#39;
+&lt;&lt;set $leather+=_tmp&gt;&gt;
+&lt;&lt;set $skins-=_tmp&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/center&gt;
 
