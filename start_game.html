@@ -58729,7 +58729,7 @@ _girlname is a paragon of war. &lt;&lt;if _sex is 0&gt;&gt;She receives a +20 ch
 &lt;&lt;set _suitability=Math.round(_suitability)&gt;&gt;
 
 
-&lt;center&gt;&lt;h3&gt;- &lt;&lt;if _npc.sex is 1&gt;&gt;GLADIATOR&lt;&lt;else&gt;&gt;GLADIATRIX&lt;&lt;/if&gt;&gt; –&lt;/h3&gt;&lt;/center&gt;
+&lt;center&gt;&lt;h3&gt;- &lt;&lt;if _npc.sex is 0&gt;&gt;GLADIATRIX&lt;&lt;else&gt;&gt;GLADIATOR&lt;&lt;/if&gt;&gt; –&lt;/h3&gt;&lt;/center&gt;
 &lt;hr&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;questright padd70left future tex18px&quot;&gt;
@@ -58878,7 +58878,7 @@ Having _npc.girlname assigned to The Arena will cost $125/day and noticeably lim
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;center&gt;&lt;h3&gt;- SLAVE &lt;&lt;if _npc.sex is 1&gt;&gt;MASTER&lt;&lt;else&gt;&gt;MISTRESS&lt;&lt;/if&gt;&gt; –&lt;/h3&gt;&lt;/center&gt;
+&lt;center&gt;&lt;h3&gt;- SLAVE &lt;&lt;if _npc.sex is 0&gt;&gt;MISTRESS&lt;&lt;else&gt;&gt;MASTER&lt;&lt;/if&gt;&gt; –&lt;/h3&gt;&lt;/center&gt;
 &lt;hr&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;questright padd70left future tex18px&quot;&gt;
@@ -59676,7 +59676,7 @@ Note! Thanks to Bud’s contacts, maintaining an Amiable+ level of Affection is 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $tutorial is 99&gt;&gt;
-This NPC has a 25% chance of scoring a critical hit in ranged combat instead of the usual 5% – either thanks to &lt;&lt;if _npc.sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; skills or &quot;supernatural&quot; luck.
+This NPC has a 25% chance of scoring a critical hit in ranged combat instead of the usual 5% – either thanks to &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; skills or &quot;supernatural&quot; luck.
 &lt;&lt;/if&gt;&gt;
 
 
@@ -59694,7 +59694,7 @@ This NPC requires your constant attention and more or less demands that you devo
 &lt;br&gt;
 If you don’t perform any Activities with this NPC for a couple of days, &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Affection and Happiness will begin to plummet. Negative effects start when the trait value bar is 100% filled. Positive effects kick in when the bar goes below 15%.
 &lt;br&gt;&lt;br&gt;
-Assigning _girlname as a &lt;&lt;if _sex is 1&gt;&gt;Butler&lt;&lt;else&gt;&gt;Head Maid&lt;&lt;/if&gt;&gt; will keep the Attention Whore Trait from increasing.
+Assigning _girlname as a &lt;&lt;if _sex is 0&gt;&gt;Head Maid&lt;&lt;else&gt;&gt;Butler&lt;&lt;/if&gt;&gt; will keep the Attention Whore Trait from increasing.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;CURRENT EFFECTS&#39;&#39;&lt;br&gt;
 &lt;&lt;if _traitatt lte 93&gt;&gt;
@@ -120017,7 +120017,7 @@ $girlname seems depressed or burdened by something that troubles her. The respon
 &lt;&lt;if _ran is 2&gt;&gt;&lt;&lt;if $procbirth is 2&gt;&gt;First that fancy dinner at the Golden Dragon and now this? Wow, you’re really treating your girls like princesses.&lt;&lt;else&gt;&gt;This is fantastic. Thank you. Yeah, lets hurry before it starts.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 3&gt;&gt;&lt;&lt;if $procbirth is 2&gt;&gt;Dinner, done. Snacks, number two on the list. Three, great movie. Four… Who knows? (smile)&lt;&lt;else&gt;&gt;Wow! Thanks! Yeah, I wanna have some snacks before we begin.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 4&gt;&gt;Oh, I didn’t expect this. Thanks!&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ran is 5&gt;&gt;&lt;&lt;if $procbirth is 2&gt;&gt;Golden Dragon, and then this? Wow. I feel like a true &lt;&lt;if _sex is 1&gt;&gt;nobleman&lt;&lt;else&gt;&gt;noblewoman&lt;&lt;/if&gt;&gt; today. Haha.&lt;&lt;else&gt;&gt;Alright, that’s an order I’ll obey instantly. Haha.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ran is 5&gt;&gt;&lt;&lt;if $procbirth is 2&gt;&gt;Golden Dragon, and then this? Wow. I feel like a true &lt;&lt;if _sex is 0&gt;&gt;noblewoman&lt;&lt;else&gt;&gt;nobleman&lt;&lt;/if&gt;&gt; today. Haha.&lt;&lt;else&gt;&gt;Alright, that’s an order I’ll obey instantly. Haha.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 6&gt;&gt;&lt;&lt;if $willpower gte 10&gt;&gt;Haha, I like that tone, for once. No, just kidding. Thanks!&lt;&lt;else&gt;&gt;I… I always obey your orders, $callname. But sure, haha. You’re funny!&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _ran to random(1, 3)&gt;&gt;
@@ -120059,7 +120059,7 @@ $girlname seems depressed or burdened by something that troubles her. The respon
 
 &lt;&lt;if _bad isnot true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-$girlname appreciates the attention you give &lt;&lt;if _sex is 1&gt;&gt;him&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt;. Your _callit’s &#39;&#39;Happiness (+3)&#39;&#39; and &#39;&#39;Affection (+3)&#39;&#39; toward you have increased!
+$girlname appreciates the attention you give &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt;. Your _callit’s &#39;&#39;Happiness (+3)&#39;&#39; and &#39;&#39;Affection (+3)&#39;&#39; toward you have increased!
 &lt;&lt;set $masterlove+=3&gt;&gt;
 &lt;&lt;set $happiness+=3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -120089,7 +120089,7 @@ The snacks will increase $girlnames willingness to participate in intimate actio
 &lt;&lt;if _ran is 5&gt;&gt;You know what’s perfect together with popcorn? Haalwood syrup. … They got some over at the food counter. I’ll be right back, $callname.&lt;&lt;/if&gt;&gt;
 //
 &lt;br&gt;&lt;br&gt;
-$girlnames &#39;&#39;Happiness (+1)&#39;&#39; and &#39;&#39;Affection (+1)&#39;&#39; toward you have increased due to &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; &#39;&#39;Sweet tooth&#39;&#39; trait!
+$girlnames &#39;&#39;Happiness (+1)&#39;&#39; and &#39;&#39;Affection (+1)&#39;&#39; toward you have increased due to &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; &#39;&#39;Sweet tooth&#39;&#39; trait!
 &lt;&lt;set $hunger+=20&gt;&gt;
 &lt;&lt;set $happiness+=1&gt;&gt;&lt;&lt;set $masterlove+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -120243,12 +120243,12 @@ You place yourselves at the back row, aiming for privacy rather than getting the
 
 
 &lt;&lt;if $chance gte 1&gt;&gt;
-&lt;&lt;if $descroll is 1&gt;&gt;$girlname whole-heartedly enjoys the show and it temporarily relieves &lt;&lt;if _sex is 1&gt;&gt;him&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; from the weight of tedious chores and real-life matters.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll is 2&gt;&gt;The show is an excellent relief for $girlname, who seems to enjoy it whole-heartedly as &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt; engulfs the entertainment.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll is 1&gt;&gt;$girlname whole-heartedly enjoys the show and it temporarily relieves &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; from the weight of tedious chores and real-life matters.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll is 2&gt;&gt;The show is an excellent relief for $girlname, who seems to enjoy it whole-heartedly as &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt; engulfs the entertainment.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll is 3&gt;&gt;This was a perfect place to take $girlname - who’s genuinely enjoying the show.&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if _sex is 1&gt;&gt;His&lt;&lt;else&gt;&gt;Her&lt;&lt;/if&gt;&gt; &#39;&#39;Stress (-2)&#39;&#39; has decreased and &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s become a little &#39;&#39;happier (+1)&#39;&#39;.
+&lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; &#39;&#39;Stress (-2)&#39;&#39; has decreased and &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s become a little &#39;&#39;happier (+1)&#39;&#39;.
 
 &lt;&lt;if $afraid gte 1&gt;&gt;&lt;br&gt;&lt;br&gt;$girlnames &#39;&#39;Fear (-1)&#39;&#39; has decreased!&lt;&lt;set $afraid-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -120260,21 +120260,21 @@ You place yourselves at the back row, aiming for privacy rather than getting the
 
 &lt;&lt;if $traitextro gte 75&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if _sex is 1&gt;&gt;His&lt;&lt;else&gt;&gt;Her&lt;&lt;/if&gt;&gt; &#39;&#39;Extroverted&#39;&#39; nature further increases &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; &#39;&#39;Happiness (+1)&#39;&#39;.
+&lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; &#39;&#39;Extroverted&#39;&#39; nature further increases &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; &#39;&#39;Happiness (+1)&#39;&#39;.
 &lt;&lt;set $happiness+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $chance lte 0&gt;&gt;
-&lt;&lt;if $descroll is 1&gt;&gt;There’s something that makes $girlname unable to relax. &lt;&lt;if _sex is 1&gt;&gt;He&lt;&lt;else&gt;&gt;She&lt;&lt;/if&gt;&gt;’s unfocused and uneasy throughout your stay at the theatre.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll is 2&gt;&gt;$girlname can’t cool down - &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s unfocused and &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; mind seems to drift away repeatedly.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll is 3&gt;&gt;Either $girlname finds the show boring, or there’s something else brooding inside &lt;&lt;if _sex is 1&gt;&gt;him&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; that &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt; can’t shake off. Your _callit is unfocused during the entire evening and fails to appreciate it properly.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll is 1&gt;&gt;There’s something that makes $girlname unable to relax. &lt;&lt;if _sex is 0&gt;&gt;She&lt;&lt;else&gt;&gt;He&lt;&lt;/if&gt;&gt;’s unfocused and uneasy throughout your stay at the theatre.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll is 2&gt;&gt;$girlname can’t cool down - &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s unfocused and &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; mind seems to drift away repeatedly.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll is 3&gt;&gt;Either $girlname finds the show boring, or there’s something else brooding inside &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; that &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt; can’t shake off. Your _callit is unfocused during the entire evening and fails to appreciate it properly.&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $happiness lte 9&gt;&gt;&lt;br&gt;&lt;br&gt;You suspect that &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; depressed state has something to do with it.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $happiness lte 9&gt;&gt;&lt;br&gt;&lt;br&gt;You suspect that &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; depressed state has something to do with it.&lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;b&gt;&lt;The &lt;if _sex is 1&gt;&gt;guy&lt;&lt;else&gt;&gt;girl&lt;&lt;/if&gt;&gt;’s Happiness and Affection toward you remain unchanged.&lt;/b&gt;
+&lt;b&gt;&lt;The &lt;if _sex is 0&gt;&gt;girl&lt;&lt;else&gt;&gt;guy&lt;&lt;/if&gt;&gt;’s Happiness and Affection toward you remain unchanged.&lt;/b&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -160470,7 +160470,7 @@ _npc.girlname will not accept wearing anything revealing unless her WILLPOWER dr
 &lt;&lt;if _rec is true and _norec isnot true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;//
-$girlnames equipped ranged weapon’s RECOIL negatively affects &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; ability to use it. Increase &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; Ranged combat skill to negate this effect!
+$girlnames equipped ranged weapon’s RECOIL negatively affects &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; ability to use it. Increase &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Ranged combat skill to negate this effect!
 //&#39;&#39;
 &lt;&lt;/if&gt;&gt;
 
@@ -304423,8 +304423,8 @@ _girlname cannot act as a prostitute right now due to &lt;&lt;if _sex is 0&gt;&g
 &#39;&#39;Note!&#39;&#39;&lt;br&gt;
 A ring-assigned prostitute will be excluded from a run if:
 &lt;br&gt;
-&lt;li&gt;&lt;&lt;if _npc.sex is 1&gt;&gt;His&lt;&lt;else&gt;&gt;Her&lt;&lt;/if&gt;&gt; Health is 9 or less.&lt;/li&gt;
-&lt;li&gt;One of &lt;&lt;if _npc.sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; sexual wear statuses is 100% or higher.&lt;/li&gt;
+&lt;li&gt;&lt;&lt;if _npc.sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt;His&lt;&lt;/if&gt;&gt; Health is 9 or less.&lt;/li&gt;
+&lt;li&gt;One of &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; sexual wear statuses is 100% or higher.&lt;/li&gt;
 &lt;br&gt;
 The tavern and goldwalker assignments are full-time jobs. You have to remove $girlname from other workplaces first!
 
@@ -322020,10 +322020,10 @@ _npc.girlname is severely depressed and has decided to spend the day inside &lt;
 
 &lt;&lt;else&gt;&gt;
 /* generic texts */
-&lt;&lt;if $girlroll lte 0&gt;&gt;You catch _npc.girlname sitting in your kitchen, where &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s doing some repair work on &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; boots. There are no signs that your servant has anything planned this morning that would benefit the household as a whole.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll lte 0&gt;&gt;You catch _npc.girlname sitting in your kitchen, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s doing some repair work on &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; boots. There are no signs that your servant has anything planned this morning that would benefit the household as a whole.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlroll is 1&gt;&gt;_npc.girlname is currently loitering in your living room. So far, there are no indications that &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s about to make something fruitful out of &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; day.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 2&gt;&gt;_npc.girlname is currently doing &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; &quot;morning routines&quot; locked inside one of your bathrooms. There’s no sign &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s about to perform something beneficial for your household within the next hour.&lt;&lt;unset $serfsay&gt;&gt;&lt;&lt;set _nointer to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname is still in &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; assigned sleeping quarters, reading a couple of magazines. There’s no sign &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s about to get up and start the day.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 2&gt;&gt;_npc.girlname is currently doing &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; &quot;morning routines&quot; locked inside one of your bathrooms. There’s no sign &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s about to perform something beneficial for your household within the next hour.&lt;&lt;unset $serfsay&gt;&gt;&lt;&lt;set _nointer to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname is still in &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; assigned sleeping quarters, reading a couple of magazines. There’s no sign &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s about to get up and start the day.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlroll gte 4&gt;&gt;You catch _npc.girlname in the living room, lying slouched over your sofa.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $serfsay gte 1&gt;&gt;
@@ -322057,9 +322057,9 @@ _npc.girlname is severely depressed and has decided to spend the day inside &lt;
 
 &lt;&lt;else&gt;&gt;
 /* generic texts */
-&lt;&lt;if $girlroll lte 1&gt;&gt;You catch _npc.girlname inside your kitchen, where &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s going through an old cupboard of stuff &lt;&lt;if $pantryskill gte 10 and _npc.title isnot 2&gt;&gt;your pantry girl has deemed obsolete.&lt;&lt;else&gt;&gt;that your brother must’ve stowed away right before he disappeared.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll lte 1&gt;&gt;You catch _npc.girlname inside your kitchen, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s going through an old cupboard of stuff &lt;&lt;if $pantryskill gte 10 and _npc.title isnot 2&gt;&gt;your pantry girl has deemed obsolete.&lt;&lt;else&gt;&gt;that your brother must’ve stowed away right before he disappeared.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlroll is 2&gt;&gt;_npc.girlname is currently preparing &lt;&lt;if _sex is 0&gt;&gt;herself&lt;&lt;else&gt;&gt;himself&lt;&lt;/if&gt;&gt; for today’s chores.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll gte 3&gt;&gt;_npc.girlname is currently stoving away &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.traitmat lte 40&gt;&gt;meager &lt;&lt;/if&gt;&gt;belongings and preparing &lt;&lt;if _sex is 1&gt;&gt;himself&lt;&lt;else&gt;&gt;herself&lt;&lt;/if&gt;&gt; for today’s tasks.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll gte 3&gt;&gt;_npc.girlname is currently stoving away &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.traitmat lte 40&gt;&gt;meager &lt;&lt;/if&gt;&gt;belongings and preparing &lt;&lt;if _sex is 0&gt;&gt;herself&lt;&lt;else&gt;&gt;himself&lt;&lt;/if&gt;&gt; for today’s tasks.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $serfsay gte 1&gt;&gt;
 &lt;&lt;set _serfdia to 2&gt;&gt;
@@ -322093,8 +322093,8 @@ _npc.girlname is severely depressed and has decided to spend the day inside &lt;
 &lt;&lt;else&gt;&gt;
 /* generic texts */
 
-&lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname seems to have been up for at least a couple of hours, preparing &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; equipment and doing chores that are not part of &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; current work schedule.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname outside in your yard, where &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s sweeping the area between your main entrance and the gate.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname seems to have been up for at least a couple of hours, preparing &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; equipment and doing chores that are not part of &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; current work schedule.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname outside in your yard, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s sweeping the area between your main entrance and the gate.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlroll gte 3&gt;&gt;You catch your servant doing some extra house chores in one of your many rooms – adding an unexpected layer to the opulence of your household.&lt;&lt;set _opu to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -322141,8 +322141,8 @@ _npc.girlname is severely depressed and has decided to spend the day inside &lt;
 
 
 &lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname is currently idling inside your living room, walking between the sofa and the great windows overlooking the backyard of your mansion.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname in the foyer, where &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s sitting on a chair, waiting for the hours to pass.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname alternates between your living room, the bathroom and your kitchen, where &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s drinking unusually large amounts of water, trying to make the hours pass.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname in the foyer, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s sitting on a chair, waiting for the hours to pass.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname alternates between your living room, the bathroom and your kitchen, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s drinking unusually large amounts of water, trying to make the hours pass.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlroll gte 4&gt;&gt;_npc.girlname is walking between your brother’s old book shelf and the living room sofa, trying to make the hours pass by reading old magazines and post-Severance paperbacks.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $serfsay gte 1&gt;&gt;
@@ -322177,10 +322177,10 @@ _npc.girlname is severely depressed and has decided to spend the day inside &lt;
 &lt;&lt;else&gt;&gt;
 /* generic texts */
 
-&lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname tries to make &lt;&lt;if _sex is 1&gt;&gt;himself&lt;&lt;else&gt;&gt;herself&lt;&lt;/if&gt;&gt; useful by doing small chores here and there. &lt;&lt;if $daycount lte 150 and _npc.title is 0 and _npc.dayblock is 0&gt;&gt;There’s no question that &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s waiting to get assigned to some form of work schedule, however.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname inside your kitchen, where &lt;&lt;if _sex is 1&gt;&gt;he&lt;&lt;else&gt;&gt;she&lt;&lt;/if&gt;&gt;’s taken the initiative to do some dishes.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname is currently idling inside your living room, with &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; hands behind &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; back, waiting for the household Master to take command.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll gte 4&gt;&gt;_npc.girlname is currently outside&lt;&lt;if $weatherroll lte 3&gt;&gt;, despite the awful weather,&lt;&lt;/if&gt;&gt; waiting for someone to put &lt;&lt;if _sex is 1&gt;&gt;him&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; to work.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname tries to make &lt;&lt;if _sex is 0&gt;&gt;herself&lt;&lt;else&gt;&gt;himself&lt;&lt;/if&gt;&gt; useful by doing small chores here and there. &lt;&lt;if $daycount lte 150 and _npc.title is 0 and _npc.dayblock is 0&gt;&gt;There’s no question that &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s waiting to get assigned to some form of work schedule, however.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname inside your kitchen, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s taken the initiative to do some dishes.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname is currently idling inside your living room, with &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; hands behind &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; back, waiting for the household Master to take command.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll gte 4&gt;&gt;_npc.girlname is currently outside&lt;&lt;if $weatherroll lte 3&gt;&gt;, despite the awful weather,&lt;&lt;/if&gt;&gt; waiting for someone to put &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; to work.&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $serfsay gte 1&gt;&gt;
@@ -322218,10 +322218,10 @@ _npc.girlname is severely depressed and has decided to spend the day inside &lt;
 &lt;&lt;else&gt;&gt;
 /* generic texts */
 
-&lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname has decided to fill &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; day with some extra janitorial work by clearing away dungah moss, removing leaves from a nearby tree and cutting the grass. &lt;&lt;if $weatherroll lte 4&gt;&gt;&lt;&lt;if _sex is 1&gt;&gt;He&lt;&lt;else&gt;&gt;She&lt;&lt;/if&gt;&gt;’s doing all this despite the terrible weather.&lt;&lt;/if&gt;&gt;&lt;&lt;set _dis to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll lte 1&gt;&gt;_npc.girlname has decided to fill &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; day with some extra janitorial work by clearing away dungah moss, removing leaves from a nearby tree and cutting the grass. &lt;&lt;if $weatherroll lte 4&gt;&gt;&lt;&lt;if _sex is 0&gt;&gt;She&lt;&lt;else&gt;&gt;He&lt;&lt;/if&gt;&gt;’s doing all this despite the terrible weather.&lt;&lt;/if&gt;&gt;&lt;&lt;set _dis to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlroll is 2&gt;&gt;You catch _npc.girlname going through the large number of shoes and boots standing in the foyer, doing some basic repair work and adding grease to improve their water repellant capabilities.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname is spending &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; time as an extra //helper//, throwing &lt;&lt;if _sex is 1&gt;&gt;himself&lt;&lt;else&gt;&gt;herself&lt;&lt;/if&gt;&gt; into any project that needs a hand or is one man short.&lt;&lt;set _opu to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlroll gte 4&gt;&gt;_npc.girlname has decided to spend most of &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; day scouring your household for items that are in need of repairs.&lt;&lt;set _dis to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll is 3&gt;&gt;_npc.girlname is spending &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; time as an extra //helper//, throwing &lt;&lt;if _sex is 0&gt;&gt;herself&lt;&lt;else&gt;&gt;himself&lt;&lt;/if&gt;&gt; into any project that needs a hand or is one man short.&lt;&lt;set _opu to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlroll gte 4&gt;&gt;_npc.girlname has decided to spend most of &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; day scouring your household for items that are in need of repairs.&lt;&lt;set _dis to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $serfsay gte 1&gt;&gt;
@@ -322670,7 +322670,7 @@ _npc.girlname turns silent in your presence. You understand that &lt;&lt;if _sex
 
 &lt;&lt;if _npc.status is 10&gt;&gt;
 /* Wife does something. */
-&lt;&lt;if _npc.sex is 1&gt;&gt;&lt;&lt;set _call to &quot;partner&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _call to &quot;wife&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.sex is 0&gt;&gt;&lt;&lt;set _call to &quot;wife&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _call to &quot;partner&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _npc.happiness lte 5&gt;&gt;
@@ -324171,7 +324171,7 @@ You spend roughly two hours&lt;br&gt;educating the &lt;&lt;if _kids gte 2&gt;&gt
 &lt;div class=&quot;padd30left&quot;&gt;
 &#39;&#39;Mother:&#39;&#39; _mother&lt;br&gt;
 &#39;&#39;Age:&#39;&#39; &lt;&lt;if _age gte 2980&gt;&gt;&lt;div class=&quot;green&quot;&gt;Ready!&lt;/div&gt;&lt;&lt;else&gt;&gt;_age days&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Sex:&#39;&#39; &lt;&lt;if _sex is 1&gt;&gt;Male&lt;&lt;else&gt;&gt;Female&lt;&lt;/if&gt;&gt;
+&#39;&#39;Sex:&#39;&#39; &lt;&lt;if _sex is 0&gt;&gt;Female&lt;&lt;else&gt;&gt;Male&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;if _name isnot &quot;CHILD&quot;&gt;&gt;
 &lt;&lt;if _age gte 2980&gt;&gt;&lt;&lt;if _okadd is true&gt;&gt;[[Process|CCCP][$addingchild to true, $childslot to _slotted, $action1 to true, $event to 4, $action to 3, $addch to _slotcheck]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;House full!&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulsmallused&quot;&gt;Process&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -366599,7 +366599,7 @@ Her &#39;&#39;Happiness (+3)&#39;&#39; and &#39;&#39;Affection (+4)&#39;&#39; to
 &lt;&lt;if $girlrollhp is 1&gt;&gt;_girlname is currently sitting on a chair in the kitchen, obviously affected by &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; current state.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlrollhp is 2&gt;&gt;You catch _girlname in the living room, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s currently lying motionless on the sofa.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlrollhp is 3&gt;&gt;_girlname is currently inside your bathroom, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s tending to &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; wounds.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $girlrollhp is 4&gt;&gt;_girlname is lying in &lt;&lt;if _sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; designated room, moving in and out of consciousness.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlrollhp is 4&gt;&gt;_girlname is lying in &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; designated room, moving in and out of consciousness.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlrollhp is 5&gt;&gt;You’re able to find _girlname inside the kitchen, where &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt;’s occupied a chair. The &lt;&lt;if _sex is 0&gt;&gt;girl&lt;&lt;else&gt;&gt;guy&lt;&lt;/if&gt;&gt; is obviously hurt, seemingly drifting in and out of consciousness.&lt;&lt;/if&gt;&gt;
 
 
@@ -377570,7 +377570,7 @@ _temp &lt;&lt;if _temp is 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;(+10)&lt;/
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;ab1 lighthover&quot;&gt;
 &lt;&lt;hovertip &quot;
-Instruct your educator to use drastic disciplinary actions when interacting with &lt;&lt;if _npc.sex is 1&gt;&gt;his&lt;&lt;else&gt;&gt;her&lt;&lt;/if&gt;&gt; assigned NPCs.
+Instruct your educator to use drastic disciplinary actions when interacting with &lt;&lt;if _npc.sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; assigned NPCs.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Available:&#39;&#39;
 &lt;&lt;if _npc.likesadist gte 60 or _npc.traitdom gte 51 or _npc.traitpure lte 24 or _npc.kind lte 24&gt;&gt;
@@ -377625,7 +377625,7 @@ Allow an educator to have sexual relationships with his or her non-blocked assig
 &lt;&lt;if _yess is true or _npc.traitnymfo gte 51 or _npc.traitperv gte 51&gt;&gt;
 Yes.
 &lt;&lt;else&gt;&gt;
-No (requires Corruption &lt;&lt;if _npc.sex is 1&gt;&gt;25&lt;&lt;else&gt;&gt;60&lt;&lt;/if&gt;&gt;+, Nymphomaniac trait or Perverted trait).
+No (requires Corruption &lt;&lt;if _npc.sex is 0&gt;&gt;60&lt;&lt;else&gt;&gt;25&lt;&lt;/if&gt;&gt;+, Nymphomaniac trait or Perverted trait).
 &lt;&lt;/if&gt;&gt;&lt;br&gt;
 &#39;&#39;Vaginal skill&#39;&#39; (cap: 100 for male and cap: 70 for female educators).&lt;br&gt;
 &#39;&#39;Oral skill&#39;&#39; (cap: 100).&lt;br&gt;
