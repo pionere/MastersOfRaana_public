@@ -82940,9 +82940,8 @@ Enemies have exhausted all their actions.&lt;br&gt;Your turn!
 
 
 /* BUD PROSP 9 DYING WORLD AMMO PACK UNSETTER */
-&lt;&lt;if $round lte 5 and _combatid is 30 and _aff gte 60 and $equipped isnot &quot;cybercannon&quot;&gt;&gt;
+&lt;&lt;if $round lte 5 and _combatid is 30 and _aff gte 60&gt;&gt;
 &lt;&lt;unset _noammopack&gt;&gt;
-&lt;&lt;set $budok to true&gt;&gt;
 &lt;&lt;unset _showam&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -83005,9 +83004,8 @@ REMOVED! USE CapCheck passage instead
 
 
 /* BUD PROSP 9 DYING WORLD AMMO PACK UNSETTER */
-&lt;&lt;if $round lte 5 and _combatid is 30 and _aff gte 60 and $equipped isnot &quot;cybercannon&quot;&gt;&gt;
+&lt;&lt;if $round lte 5 and _combatid is 30 and _aff gte 60&gt;&gt;
 &lt;&lt;unset _noammopack&gt;&gt;
-&lt;&lt;set $budok to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -232504,12 +232502,9 @@ FOR INCOME CHECK ECONOMY 2
 
 
 /* BUD PROSP 9 DYING WORLD AMMO PACK UNSETTER */
-&lt;&lt;if $round lte 5 and _combatid is 30 and _aff gte 60 and _rangedw isnot &quot;cybercannon&quot;&gt;&gt;
+&lt;&lt;if $round lte 5 and _combatid is 30 and _aff gte 60&gt;&gt;
 &lt;&lt;unset _noammopack&gt;&gt;
-&lt;&lt;set $budok to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _rangedw is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _noammopack to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _rangedw is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _ammoout=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -232523,7 +232518,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _rangedw is &quot;rifle50&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;prifle&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;gl&quot;&gt;&gt;&lt;&lt;set _ammoout=$agl lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _rangedw is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _ammoout=$awega lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _rangedw is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _ammoout=$awega lte 0&gt;&gt;&lt;&lt;set _noammopack to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;neme&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50srr lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _ammoout=$a556 lte 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;r55&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
