@@ -232512,8 +232512,6 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _rangedw is &quot;cybercannon&quot;&gt;&gt;&lt;&lt;set _noammopack to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _csam lte 0 or _noammopack is true&gt;&gt;
-
 &lt;&lt;if _rangedw is &quot;crossbow&quot;&gt;&gt;&lt;&lt;set _ammoout=$bolts lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;pistol&quot;&gt;&gt;&lt;&lt;set _ammoout=$a9mm lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;revolver&quot;&gt;&gt;&lt;&lt;set _ammoout=$a45 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -232530,7 +232528,7 @@ FOR INCOME CHECK ECONOMY 2
 &lt;&lt;if _rangedw is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _ammoout=$a556 lte 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _rangedw is &quot;r55&quot;&gt;&gt;&lt;&lt;set _ammoout=$a50 lte 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ammoout&gt;&gt;&lt;&lt;set _ammoout=_csam lte 0 or _noammopack&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $round is 2&gt;&gt;
