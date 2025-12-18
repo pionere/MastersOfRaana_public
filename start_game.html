@@ -11816,7 +11816,7 @@ Your newly aquired slave nods obediently as you approach her.
 &lt;&lt;set $ionafirst to 2&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal upated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal upated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -27932,12 +27932,8 @@ Whitehaven Academy shortcut added to NPC MENU!
 
 
 &lt;&lt;if $noaca is 1&gt;&gt;
-&lt;center&gt;
 &lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New fast travel location added!&#39;&#39;&lt;br&gt;
-&#39;&#39;WHITEHAVEN ACADEMY&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New fast travel location added!&lt;br&gt;WHITEHAVEN ACADEMY&lt;/div&gt;
 &lt;&lt;unset $noaca&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -45432,7 +45428,7 @@ Also, I’m gonna make it so nice for you, now that it’s your birthday and all
 &lt;&lt;if $bondage is 0 and $bondready gte 1&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $nightblock gte 1&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;//$girlnames butt plug has been removed!//&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;//$girlnames butt plug has been removed!//&lt;/div&gt;
 &lt;&lt;if $nightblock is 1&gt;&gt;&lt;&lt;set $ownaplug1+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nightblock is 2&gt;&gt;&lt;&lt;set $ownaplug2+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $nightblock is 3&gt;&gt;&lt;&lt;set $ownaplug3+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -53892,10 +53888,10 @@ Each round of drinks will last for roughly two hours and might present you with 
 &lt;&lt;unset $fochance&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $cs1_girlid gte 1&gt;&gt;$cs1_name &lt;&lt;if _cs1up2 gte 0&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs2_girlid gte 1&gt;&gt;$cs2_name &lt;&lt;if _cs2up2 gte 0&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs3_girlid gte 1&gt;&gt;$cs3_name &lt;&lt;if _cs3up2 gte 0&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $cs4_girlid gte 1&gt;&gt;$cs4_name &lt;&lt;if _cs4up2 gte 0&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs1_girlid gte 1&gt;&gt;$cs1_name &lt;&lt;if _cs1up2 gte 0&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs2_girlid gte 1&gt;&gt;$cs2_name &lt;&lt;if _cs2up2 gte 0&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs3_girlid gte 1&gt;&gt;$cs3_name &lt;&lt;if _cs3up2 gte 0&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cs4_girlid gte 1&gt;&gt;$cs4_name &lt;&lt;if _cs4up2 gte 0&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Affection (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;for _csup range $npc&gt;&gt;
 
@@ -55448,12 +55444,8 @@ You manage to pick up some interesting information while asking around about rum
 &lt;&lt;if $furryrumorb is 2&gt;&gt;There’s a rumor going on that Furry is planning on marrying one of his prostitutes.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $furryrumorb is 3&gt;&gt;There’s an entrance in Stokke Hills that leads down to a gigantic pre-severance fuel silo. This silo is now called &quot;The Underworld&quot; by locals – housing at least 200 misfits, thieves and other freebooter trash that can’t afford living in the sod houses of Marston Swamps.
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI (Stokke Hills) added!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
-
+&lt;&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New POI (Stokke Hills) added!&lt;/div&gt;
 &lt;&lt;set $knowunder to true&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -55639,10 +55631,8 @@ You ask Mr. Furry about the need for slaves at his tavern.
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $furrysell is undefined&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;Furry’s Tavern added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&#39;&#39;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Furry’s Tavern added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
 &lt;&lt;set $furrysell to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -62617,7 +62607,7 @@ I have all the dung I need. I should return to Toshi Gardens in Raikan.
 &#39;&#39;Blueprints copied!&#39;&#39;
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -65047,7 +65037,7 @@ While their brand is still well-known among the scientists of House Teresto and 
 &lt;br&gt;
 
 &lt;&lt;if $quest_swg is 1&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New Census Records unlocked!&#39;&#39;&lt;br&gt;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New Census Records unlocked!&lt;br&gt;&lt;/div&gt;
 &lt;&lt;set $quest_swg to 2&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
@@ -74599,7 +74589,7 @@ Your words strike just in the right place and convince $girlname to sign &lt;&lt
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;//$girlname’s Status has changed to &quot;Slave&quot;!//&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;//$girlname’s Status has changed to &quot;Slave&quot;!//&lt;/div&gt;
 
 &lt;&lt;set _npc.status to 2&gt;&gt;&lt;&lt;set _npc.salary to 0&gt;&gt;
 
@@ -74719,7 +74709,7 @@ I like that thought. $girlname, forced into sexual slavery. I’ll do it (smile)
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;//$girlname’s Status has changed to &quot;Slave&quot;!//&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;//$girlname’s Status has changed to &quot;Slave&quot;!//&lt;/div&gt;
 
 
 &lt;&lt;set _npc.status to 2&gt;&gt;&lt;&lt;set _npc.salary to 0&gt;&gt;
@@ -78496,7 +78486,7 @@ I instructed one of her guys how to pilot a shuttle. I had an entire course with
 
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $quest_aria is 11 and $quest_aria3 is 0&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;New Interaction options unlocked (Talk &gt; Ask)!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New Interaction options unlocked (Talk &gt; Ask)!&lt;/div&gt;
 &lt;&lt;set $quest_aria3 to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -79411,11 +79401,7 @@ Your servant is eager to start up some kind of business in Ikaanos. She obviousl
 Rebecca has offered her knowledge if you wish to indulge yourself in the business of trading. Her participation will greatly increase the profits from any trades or businesses you choose to invest in.
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;New Title assignment available (Skulduggerist)!&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New Title assignment available (Skulduggerist)!&lt;/div&gt;
 
 &lt;&lt;set $rebbus to 1&gt;&gt;
 
@@ -99288,9 +99274,7 @@ Despite the bloodshed and overwhelming odds, you successfully pull out from Mars
 &lt;&lt;if $combat is 133 and $onbh isnot 3&gt;&gt;
 &lt;&lt;unset $bhidol&gt;&gt;
 &lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;BOUNTY MISSION CANCELLED!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;BOUNTY MISSION CANCELLED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $onbh to 3&gt;&gt;
 &lt;&lt;unset $prowlerbh&gt;&gt;
@@ -99420,7 +99404,7 @@ A terrible plague is unleashed upon the citizens of Ikaanos!
 &lt;center&gt;
 You’ve been defeated by $interro_spec’s old comrades!
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;QUEST CANCELLED!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;QUEST CANCELLED!&lt;/div&gt;
 
 &lt;/center&gt;
 
@@ -99518,10 +99502,8 @@ You’ve been &lt;&lt;if $neen is 21&gt;&gt;added to the ever-growing army of th
 
 
 &lt;&lt;if _gameover&gt;&gt;
-&lt;center&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;red blink_me&quot;&gt;&#39;&#39;GAME OVER!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;GAME OVER!&lt;/div&gt;
 &lt;&lt;set $specialcombat to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -99766,12 +99748,11 @@ Other than a mysterious gold pentacle, its body carries nothing more than rags o
 The store turns silent, and you conclude that there are no additional threats in the building.
 &lt;br&gt;&lt;br&gt;
 
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
+&lt;div class=&quot;center blink_me&quot;&gt;
 &#39;&#39;Task successful!&#39;&#39;&lt;br&gt;
 You’ve freed Nicole Boulay from her creditors!
 &lt;/div&gt;
-&lt;/center&gt;
+
 &lt;&lt;set $quest_nic to 9&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -100629,9 +100610,7 @@ You have defeated a group of Carozza hoodlums!
 &lt;&lt;if $mobfight is 8&gt;&gt;&lt;&lt;unset $moben8&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $applaud to true&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;HOUSE CAROZZA HAS BEEN DESTROYED!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;HOUSE CAROZZA HAS BEEN DESTROYED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 Your &#39;&#39;Influence (+2,000)&#39;&#39; has increased!&lt;br&gt;
 &#39;&#39;$185,500 added to Inventory!&#39;&#39;&lt;br&gt;
@@ -100694,9 +100673,7 @@ Your &#39;&#39;Influence (+600)&#39;&#39; has increased!
 &lt;&lt;set $famepoints+=1&gt;&gt;
 Congratulations! You have defeated the vicious predator that’s been terrorizing Kahill outpost!
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me center&quot;&gt;
-&#39;&#39;TASK (The Terror) updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;TASK (The Terror) updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_baddy to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -100738,9 +100715,7 @@ Your &#39;&#39;Influence (+1,500)&#39;&#39; has increased!&lt;br&gt;
 &lt;&lt;set $famepoints+=1&gt;&gt;
 You’ve killed your target!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
- &lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;JOURNAL UPDATED!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -100753,9 +100728,7 @@ You’ve killed the raiders that tried to ambush you inside Stokke Hills’ old 
 &lt;&lt;set $faction.bandit.men-=3&gt;&gt;
 &#39;&#39;Bandit faction troops decreased (-3)!&#39;&#39;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
- &lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_ai to 8&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -100964,11 +100937,7 @@ Bud’s &#39;&#39;Affection (+30)&#39;&#39; toward you has increased!
 &lt;&lt;audio &quot;complete&quot; volume 0.8 play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;FACTION DESTROYED!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;FACTION DESTROYED!&lt;/div&gt;
 &lt;br&gt;
 The Second Republic of Ikaanos has been obliterated!
 &lt;br&gt;&lt;br&gt;
@@ -101145,9 +101114,7 @@ You have defeated $interro_spec’s old comrades!
 &lt;/center&gt;
 
 &lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;8,600 dollars added to Inventory (old stash)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;8,600 dollars added to Inventory (old stash)!&lt;/div&gt;
 &lt;&lt;set $cash+=8600&gt;&gt;
 &lt;&lt;set $take to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -101521,12 +101488,7 @@ You’ve defeated a group of elite zealots!
 
 &lt;&lt;if $crusadego is 3&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-
-&lt;center&gt;
-&lt;div class=&quot;center green blink_me&quot;&gt;
-&#39;&#39;THE CRUSADE ENDS IN TRIUMPH!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me green&quot;&gt;THE CRUSADE ENDS IN TRIUMPH!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $faction.christian.standing lte 49&gt;&gt;&#39;&#39;Standing (Catholics):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2.&lt;/div&gt;&lt;&lt;set $faction.christian.standing+=1&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $faction.christian.power lte 980&gt;&gt;&#39;&#39;Power (Catholics):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+20.&lt;/div&gt;&lt;&lt;set $faction.christian.power+=20&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
@@ -101743,7 +101705,7 @@ Your former enemy’s sex slave is too broken to even make an attempt at fleeing
 In the backpack of OPPORTUNIST, who’s a surprisingly normal human, you find an interesting notebook.
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Diary of Helmut Kohl added to Library!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Diary of Helmut Kohl added to Library!&lt;/div&gt;
 &lt;&lt;set $dengibook2 to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -125222,7 +125184,7 @@ If you’d deposit $6,000 for the survival of my store, I’ll give you one of m
 //
 
 &lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Task started:&#39;&#39; Acquisition of Piper Holdman. &lt;/div&gt;
+&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Task started:&#39;&#39; Acquisition of Piper Holdman.&lt;/div&gt;
 &lt;br&gt;(Bring miss Devious $6,000 to complete the task and gain ownership of her slave).
 &lt;/center&gt;
 
@@ -127521,16 +127483,11 @@ For an unknown reason, $girlname refuses to work at The Secret Garden Bookstore!
 
 
 </tw-passagedata><tw-passagedata pid="189" name="QuestStart" tags="nobr" position="3450,25" size="100,100">
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;QUEST STARTED!&#39;&#39;&lt;br&gt;
-&#39;&#39;//
-&quot;_questname&quot;
-//&#39;&#39;
+&lt;div class=&quot;center blink_me&quot;&gt;
+&#39;&#39;QUEST STARTED!&lt;br&gt;
+//&quot;_questname&quot;//&#39;&#39;
 &lt;br&gt;
 //(See Journal for further instructions)//
-
-&lt;/center&gt;
 &lt;/div&gt;
 
 &lt;&lt;if $effect is true&gt;&gt;
@@ -130565,12 +130522,12 @@ You shove the startled girl toward the brute, who grabs her and starts pulling h
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;$girlname: &#39;&#39;//Oh, God! Please! No!//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;tex16px blink_me&quot;&gt; &#39;&#39;$girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me tex16px&quot;&gt;$girlname has been removed from your household!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;$8,000 added to inventory!&#39;&#39;
+$8,000 added to inventory!
 &lt;&lt;set $take to 1&gt;&gt;
-&lt;/center&gt;
+&#39;&#39;&lt;/center&gt;
 
 &lt;&lt;set _michpic to 1&gt;&gt;
 &lt;&lt;unset $michelle_coon&gt;&gt;
@@ -133216,7 +133173,7 @@ The resemblance to Joseph Winton is striking and you conclude with sadness that 
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -133454,9 +133411,8 @@ You see some interesting notes lying on a workbench next to a cracked window on 
 
 &lt;&lt;if $action1 is true and $oldone3 isnot 5&gt;&gt;
 &lt;&lt;set $openbook to true&gt;&gt;
-
-&lt;div class=&quot;written 17px padd40left padd40right&quot;&gt;
 &#39;&#39;
+&lt;div class=&quot;written 17px padd40left padd40right&quot;&gt;
 Dear Mr. Thorndike,
 &lt;br&gt;&lt;br&gt;
 Here are the correct values for what you’ve requested.
@@ -133467,13 +133423,10 @@ Here are the correct values for what you’ve requested.
 And I’m warning you again, do not delve too deep into waters you know very little about. They might not be as shallow as you think.
 &lt;br&gt;&lt;br&gt;
 Prof. Wolf
-&#39;&#39;
 &lt;/div&gt;
-
-&lt;center&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;//Journal updated!//&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me&quot;&gt;Journal updated!&lt;/div&gt;
+&#39;&#39;
 &lt;&lt;set $oldone3 to 5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -135472,7 +135425,7 @@ Ehm. Well. It was mostly about the older girls and boys. Whom he could trust. Th
 &lt;&lt;set $action3 to true&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_bro to 7&gt;&gt;
-&lt;div class=&quot;center blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -135635,11 +135588,7 @@ She leans toward you across the desk, a coquettish smile on her face, and a twin
 You raise an eyebrow, hiding your surprise at the former officer’s forwardness. She laughs, though to your ears it feels slightly forced.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&#39;&#39;FACTION LOCATION UNLOCKED!&#39;&#39;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
-
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;FACTION LOCATION UNLOCKED!&lt;br&gt;&lt;br&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $faction.warlord1.standing to 5&gt;&gt;
@@ -135736,8 +135685,7 @@ Shaking your head, you head into the admin building. Another recruit announces y
 &#39;&#39;Maj. Valkess:&#39;&#39; //Correct. We need weapons and armor for all the new troops. Say twenty five automatic rifles and 40 swords? For now, we want to keep everything standardized, so that everyone learns to use the same set of weapons. Further down the road we can look into getting some different equipment and training for specialized roles.//
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
-
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 2&gt;&gt;
@@ -135810,7 +135758,7 @@ You nod, sighing to yourself. She’s asked for a not insignificant amount of mo
 
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -135859,7 +135807,7 @@ Major Valkess immediately turns to you and says:
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Maj. Valkess:&#39;&#39; //Sir. We need your help too. Do you have any troops available? Mercenaries? Scoop up any enemies to the east and south while we concentrate on the forest clearing. I think we can hold them off for some time but we need you to make a counteroffensive move ASAP! Move!//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -138526,11 +138474,7 @@ The census records is a huge, analog database containing all registered inhabita
 
 &lt;&lt;if $oldone3 is 2&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;//Journal updated!//&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $oldone3 to 3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -138624,9 +138568,9 @@ The census records is a huge, analog database containing all registered inhabita
 &lt;/div&gt;
 
 &lt;br&gt;
-&lt;&lt;if $quest_miche is 9&gt;&gt;&lt;&lt;set $quest_miche to 10&gt;&gt;&lt;br&gt;&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 &lt;center&gt;
+&lt;&lt;if $quest_miche is 9&gt;&gt;&lt;&lt;set $quest_miche to 10&gt;&gt;&lt;br&gt;&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;br&gt;
 &lt;&lt;link &#39;Appears in news report (1532/2-2-2488).&#39;&gt;&gt;&lt;&lt;set $tutorial to 213&gt;&gt;&lt;&lt;popup &#39;QuestTexts&#39;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;/center&gt;
 
@@ -138738,9 +138682,7 @@ The census records is a huge, analog database containing all registered inhabita
 
 &lt;&lt;if $quest_swg is 2&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New POI unlocked (Westside Heights)!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New POI unlocked (Westside Heights)!&lt;/div&gt;
 &lt;&lt;set $quest_swg to 3&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -138833,9 +138775,7 @@ The census records is a huge, analog database containing all registered inhabita
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;NEW POI ADDED (Westside Heights &gt; Angar)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;NEW POI ADDED (Westside Heights &gt; Angar)!&lt;/div&gt;
 
 &lt;/div&gt;
 
@@ -138925,12 +138865,13 @@ $bh1[3]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $brian is 2&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;REWARD CLAIMED!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;REWARD CLAIMED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//2,000 dollars added to Inventory!//&#39;&#39;
+//2,000 dollars added to Inventory!//
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Your Influence has increased (+200)!//&#39;&#39;
-&lt;/center&gt;
+//Your Influence has increased (+200)!//
+&#39;&#39;&lt;/center&gt;
 &lt;&lt;set $cash+=2000&gt;&gt;
 &lt;&lt;set $credit+=200&gt;&gt;
 &lt;&lt;set $bhpoints+=1&gt;&gt;
@@ -138970,21 +138911,20 @@ $bh1[3]
 
 &lt;&lt;if $oldmonk is 1&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;POI added (The Docks)!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;POI added (The Docks)!&lt;/div&gt;
 &lt;&lt;set $oldmonk to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $oldmonk is 4 and $haiclose isnot true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;REWARD CLAIMED!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;REWARD CLAIMED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//1,200 dollars added to Inventory!//&#39;&#39;
+//1,200 dollars added to Inventory!//
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Your Influence has increased (+100)!//&#39;&#39;
-&lt;/center&gt;
+//Your Influence has increased (+100)!//
+&#39;&#39;&lt;/center&gt;
 &lt;&lt;set $cash+=1200&gt;&gt;
 &lt;&lt;set $credit+=100&gt;&gt;
 &lt;&lt;set $oldmonk to 6&gt;&gt;
@@ -139032,12 +138972,13 @@ $bh1[3]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $anders is 3&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;REWARD CLAIMED!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;REWARD CLAIMED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//600 dollars added to Inventory!//&#39;&#39;
+//600 dollars added to Inventory!//
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Your Influence has increased (+30)!//&#39;&#39;
-&lt;/center&gt;
+//Your Influence has increased (+30)!//
+&#39;&#39;&lt;/center&gt;
 &lt;&lt;set $anders to 4&gt;&gt;
 &lt;&lt;set $cash+=600&gt;&gt;
 &lt;&lt;set $credit+=30&gt;&gt;
@@ -139079,13 +139020,13 @@ $bh1[3]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $pq[0] is 3&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;REWARD CLAIMED!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;REWARD CLAIMED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//2,500 dollars added to Inventory!//&#39;&#39;
+//2,500 dollars added to Inventory!//
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Your Influence has increased (+80)!//&#39;&#39;
-&lt;/center&gt;
-
+//Your Influence has increased (+80)!//
+&#39;&#39;&lt;/center&gt;
 &lt;&lt;set $cash+=2500&gt;&gt;
 &lt;&lt;set $credit+=80&gt;&gt;
 &lt;&lt;set $bhpoints+=1&gt;&gt;
@@ -139142,12 +139083,13 @@ $bh1[3]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $tuner is 2&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;REWARD CLAIMED!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;REWARD CLAIMED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//900 dollars added to Inventory!//&#39;&#39;
+//900 dollars added to Inventory!//
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Your Influence has increased (+30)!//&#39;&#39;
-&lt;/center&gt;
+//Your Influence has increased (+30)!//
+&#39;&#39;&lt;/center&gt;
 &lt;&lt;set $tuner to 3&gt;&gt;
 &lt;&lt;set $cash+=900&gt;&gt;
 &lt;&lt;set $credit+=30&gt;&gt;
@@ -139256,13 +139198,13 @@ This bounty has a known location (_loci). Enter that district and click on the &
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $bh1[3] lte 0&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;REWARD CLAIMED!&#39;&#39;&lt;/div&gt;
+&lt;center&gt;&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;REWARD CLAIMED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//$bh1[4] dollars added to Inventory!//&#39;&#39;
+//$bh1[4] dollars added to Inventory!//
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Your Influence has increased (+50)!//&#39;&#39;
-&lt;/center&gt;
-
+//Your Influence has increased (+50)!//
+&#39;&#39;&lt;/center&gt;
 &lt;&lt;set $cash+=$bh1[4]&gt;&gt;
 &lt;&lt;set $credit+=50&gt;&gt;
 &lt;&lt;set $bhpoints+=1&gt;&gt;
@@ -146107,7 +146049,7 @@ $descroll2 $
 
 &lt;&lt;if _reward is undefined&gt;&gt;&lt;&lt;set _reward to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;div class=&quot;center&quot;&gt;&lt;div class=&quot;blink_me green&quot;&gt;&lt;&lt;if _main is true&gt;&gt;MAIN &lt;&lt;/if&gt;&gt;QUEST COMPLETED&lt;&lt;if _reward gte 1&gt;&gt; (+&amp;#36;&lt;&lt;print setup.formatNumber(_reward)&gt;&gt;)&lt;&lt;/if&gt;&gt;!&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me green&quot;&gt;&lt;&lt;if _main is true&gt;&gt;MAIN &lt;&lt;/if&gt;&gt;QUEST COMPLETED&lt;&lt;if _reward gte 1&gt;&gt; (+&amp;#36;&lt;&lt;print setup.formatNumber(_reward)&gt;&gt;)&lt;&lt;/if&gt;&gt;!&lt;/div&gt;
 
 &lt;&lt;set $cash+=_reward&gt;&gt;
 
@@ -156929,7 +156871,7 @@ Until we meet again,
 &lt;br&gt;
 //Joseph//
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $quest_bro is 2&gt;&gt;&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;JOURNAL UPDATED!&lt;/div&gt;&lt;/center&gt;&lt;&lt;set $quest_bro to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_bro is 2&gt;&gt;&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;set $quest_bro to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
@@ -157163,17 +157105,14 @@ I’m sorry I can’t give you any more details. You would think I’m crazy. An
 &lt;br&gt;&lt;br&gt;
 I wish you the very best, my dear brother!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;future center&quot;&gt;
 
 &lt;&lt;if $ownbrobook2 isnot 2&gt;&gt;
 &lt;&lt;set $mchouse to &quot;HALIDOR&quot;&gt;&gt;
 &lt;&lt;set $ownbrobook2 to 2&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;JOURNAL UPDATED!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;future center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;br&gt;
-
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
@@ -157299,7 +157238,7 @@ Effects of serum have started to fade. Took new dose at 14:15.
 &lt;br&gt;
 
 
-&lt;&lt;if $oldone3 is 1&gt;&gt;&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;JOURNAL UPDATED!&lt;/div&gt;&lt;/center&gt;&lt;&lt;set $oldone3 to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $oldone3 is 1&gt;&gt;&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;set $oldone3 to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -157363,12 +157302,7 @@ Work has been slow. Energy cells are a viable replacement for the melted reactor
 
 &lt;&lt;if $quest_amel is 3&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-NEW LOCATION ADDED (Mausoleum)!
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;br&gt;&lt;br&gt;Journal updated!
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW LOCATION ADDED (Mausoleum)!&lt;br&gt;&lt;br&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_amel to 4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -157434,11 +157368,7 @@ My day of reckoning. Plans have been set in motion. I’m moving to The Belows u
 
 &lt;&lt;if $quest_miche is 8&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-Journal updated!
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_miche to 9&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -157496,20 +157426,14 @@ Now consider yourself warned. I’d advice a reader to close this book and never
 
 &lt;&lt;if _side is 2&gt;&gt;
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
-&lt;center&gt;
-&lt;div class=&quot;tex18px&quot;&gt;
-&lt;br&gt;
 &lt;&lt;if $ownkessian is 1&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;KESSIAN MANUSCRIPTS&#39;&#39;&lt;br&gt;
+&lt;div class=&quot;center blink_me tex18px&quot;&gt;
+&lt;br&gt;&#39;&#39;KESSIAN MANUSCRIPTS&#39;&#39;&lt;br&gt;
 added to &quot;Skill Books&quot; section!
 &lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $ownkessian to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -157616,7 +157540,7 @@ At ten occasions, spread out over almost two weeks, a &lt;&lt;if $bookclue2.aca 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Note 3 ($bookclue3.girlname):&#39;&#39; Today, one of Mrs. Buchard’s girls, Elsa Wender, had a really bad panic attack. She was sobbing uncontrollably for almost an hour. &lt;&lt;if $bookclue3.kind gte 50 and $bookclue3.traitpure gte 25&gt;&gt;&lt;div class=&quot;green&quot;&gt;(Kindness check passed!)&lt;/div&gt; I managed to calm the girl down and she was very appreciative of the comfort I gave her. Miss Wender said Mrs. Bouchard doesn’t like it when her girls lose their sacred focus and excused herself, saying that I should forget all about it. She mentioned something about how Mrs. Bouchard had entrusted her with an important task but she didn’t say what that was. Elsa should definitely be investigated further. &lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;(Kindness/Malevolent trait checkers failed!)&lt;/div&gt; It looked pretty pathetic. She’s definitely not fit for surviving in this world. But I’ve suspected she’s hiding something or has information about things that could be important. Maybe investigating her further could reveal more about what’s so //secret// about The Secret Garden.&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $quest_book is 1&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;set $quest_book to 2&gt;&gt;&lt;&lt;set $missiontake to true&gt;&gt;&lt;&lt;set $quest_book2 to 1&gt;&gt;&lt;&lt;set $quest_book3 to 1&gt;&gt;&lt;&lt;set $quest_book4 to 1&gt;&gt;&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;JOURNAL UPDATED!&#39;&#39;&lt;/div&gt;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_book is 1&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;set $quest_book to 2&gt;&gt;&lt;&lt;set $missiontake to true&gt;&gt;&lt;&lt;set $quest_book2 to 1&gt;&gt;&lt;&lt;set $quest_book3 to 1&gt;&gt;&lt;&lt;set $quest_book4 to 1&gt;&gt;&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -157655,7 +157579,7 @@ I am forever your eternal servant.
 
 &lt;&lt;if $quest_book3 is 3&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;JOURNAL UPDATED!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_book3 to 4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -157729,11 +157653,7 @@ Amir Hasan&lt;br&gt;
 [img[Pics/qpics/stuff/onyx.png]]
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $blackamir is 1&gt;&gt;
-
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;NEW DIALOGUE OPTIONS!&lt;br&gt;(Kansas Adler &gt; Talk &gt; Ask)&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
-
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW DIALOGUE OPTIONS!&lt;br&gt;(Kansas Adler &gt; Talk &gt; Ask)&lt;/div&gt;
 &lt;&lt;set $blackamir to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -158212,11 +158132,7 @@ Servants of The Yellow Queen
 
 
 &lt;&lt;if $watertravel is true&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New fast travel location added!&#39;&#39;&lt;br&gt;
-&#39;&#39;WATERY EYES&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New fast travel location added!&lt;br&gt;WATERY EYES&lt;/div&gt;
 &lt;&lt;unset $watertravel&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -163568,17 +163484,13 @@ Most of the store’s inventory seems to be spread out haphazardly over large ta
 
 &lt;&lt;if $sawnikas is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;Nika’s added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&#39;&#39;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Nika’s added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;tex16px&quot;&gt;
-&#39;&#39;
 Perform piercings on NPCs by navigating to
 &lt;br&gt;
 NPC Menu &gt; Actions &gt; Tasks &amp; Locations!
-&#39;&#39;
 &lt;/div&gt;
-&lt;/center&gt;
 &lt;/div&gt;
 &lt;&lt;set $sawnikas to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -165200,11 +165112,7 @@ Nika looks at you apologetically.
 &lt;&lt;include WeatherTimeEffect&gt;&gt;
 
 &lt;&lt;if $nomars is 1&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New fast travel location added!&#39;&#39;&lt;br&gt;
-&#39;&#39;MARSTON AVENUE&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New fast travel location added!&lt;br&gt;MARSTON AVENUE&lt;/div&gt;
 &lt;&lt;unset $nomars&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -167053,7 +166961,7 @@ There’s also a strange carving on one of the walls. It looks like a set of let
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $action2 is true&gt;&gt;
-You move closer to the wall and observe a string of letters. You have no idea what they mean, but something tells you that they might be good to remember. &lt;&lt;if $quest_swg is undefined&gt;&gt;&lt;br&gt;&lt;br&gt;Maybe you could investigate this further at Town Hall in Hamilton Square.&lt;br&gt;&lt;br&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+You move closer to the wall and observe a string of letters. You have no idea what they mean, but something tells you that they might be good to remember. &lt;&lt;if $quest_swg is undefined&gt;&gt;&lt;br&gt;&lt;br&gt;Maybe you could investigate this further at Town Hall in Hamilton Square.&lt;br&gt;&lt;br&gt;&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if _genmerc isnot undefined and $quest_swg is undefined and (_genmerc is &quot;Ansel&quot; or _genmerc is &quot;Connor&quot; or _genmerc is &quot;Ayden&quot; or _genmerc is &quot;Dexter&quot; or _genmerc is &quot;Jack&quot; or _genmerc is &quot;Loren&quot; or _genmerc is &quot;Doyle&quot;)&gt;&gt;
 &#39;&#39;_genmerc: &#39;&#39;//It looks like a military identification. SWG. I saw it on a crawler once when I did guard duty outside. The other part was, ehm, was not exactly the same as this, but I recognize the structure.//
@@ -168196,7 +168104,7 @@ You’ve opened the lid and are looking down on a swirl of streaming water.
 &lt;&lt;/timed&gt;&gt;
 You pour the contents of the pouch given to you by the Caravan Master into the water supply.
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Task completed!&#39;&#39;&lt;/div&gt;&lt;br&gt;//The Space Marines at Kasey’s Orifice will now fight with reduced Health!//
+&lt;div class=&quot;blink_me bold&quot;&gt;Task completed!&lt;/div&gt;&lt;br&gt;//The Space Marines at Kasey’s Orifice will now fight with reduced Health!//
 &lt;&lt;set $quest_hulk to 2&gt;&gt;
 &lt;&lt;unset $hulk1&gt;&gt;
 &lt;&lt;unset $hulk2&gt;&gt;
@@ -169015,7 +168923,7 @@ The wagon will pick us up in the park opposite the Yidhra temple in one week. Me
 &lt;br&gt;&lt;br&gt;
 Talika
 &lt;/div&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;New Enemy POI added!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New Enemy POI added!&lt;/div&gt;
 
 &lt;&lt;set $oldmonk to 3&gt;&gt;
 &lt;&lt;set $action3b to true&gt;&gt;
@@ -171259,11 +171167,7 @@ I got another assignment for us once we’re back. Just speak to me when you’r
 
 &lt;&lt;set $a9mm+=31&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -174644,9 +174548,7 @@ Your &#39;&#39;Manipulate skill (+2)&#39;&#39; has increased!&lt;&lt;set $manipu
 &lt;&lt;set $staart to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -175119,8 +175021,7 @@ Use Hounds
 &lt;&lt;if $chance gte 1&gt;&gt;
 &lt;div class=&quot;red&quot;&gt;Successful ESCAPE roll (Dice: $skillroll, Result: +$chance)!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&lt;div class=&quot;uppernocut&quot;&gt;&#39;&#39;_girlname has been removed from your household!&#39;&#39;&lt;/div&gt;&lt;/center&gt;&lt;/div&gt;
-
+&lt;div class=&quot;center blink_me bold uppernocut&quot;&gt;_girlname has been removed from your household!&lt;/div&gt;
 
 
 &lt;&lt;if $slesc is 3&gt;&gt;
@@ -175355,19 +175256,13 @@ These jobs are currently available at The Goat’s Toe.
 &lt;&lt;if $quest_dung is 0&gt;&gt;
 &#39;&#39;Tradesman:&#39;&#39; //Yeah, I’m willing to pay top dollars for a couple of batches of baneclaw dung. $300 apiece. Just bring them back here when you have at least two (x2) units, okay? //
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me center&quot;&gt;
-&#39;&#39;TASK STARTED&#39;&#39;&lt;br&gt;//Dung collector//
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;TASK STARTED&lt;br&gt;//Dung collector//&lt;/div&gt;
 &lt;&lt;set $quest_dung to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $quest_dung gte 3&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me green&quot;&gt;
-&#39;&#39;TASK COMPLETED!&#39;&#39;&lt;br&gt;//Dung collector//
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me green&quot;&gt;TASK COMPLETED!&lt;br&gt;//Dung collector//&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Tradesman:&#39;&#39; //Here’s your cash! Great job. I’m sending this back to Lake City. I might need more in a couple of days. Check back soon, okay?//
 &lt;br&gt;&lt;br&gt;
@@ -175394,25 +175289,18 @@ These jobs are currently available at The Goat’s Toe.
 There’s a beast roaming around, an overgrown baneclaw. An old mother, apparently, who’s terrorizing the local hunters and tradesmen in this area. I’m willing to pay you good cash, $5,000, if you help Kahill with this problem.
 //
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;TASK STARTED&#39;&#39;&lt;br&gt;//The Mother//
+&lt;div class=&quot;center blink_me bold&quot;&gt;TASK STARTED&lt;br&gt;//The Mother//
 &lt;br&gt;&lt;br&gt;
 New POI added (Silfren woods)!
-&lt;&lt;set $missiontake to true&gt;&gt;
 &lt;/div&gt;
-&lt;/center&gt;
+&lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_baddy to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $quest_baddy is 2&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;TASK COMPLETED!&#39;&#39;&lt;br&gt;//The Mother//
+&lt;div class=&quot;center blink_me green&quot;&gt;TASK COMPLETED!&lt;br&gt;//The Mother//&lt;/div&gt;
 &lt;&lt;set $complete to true&gt;&gt;
-&lt;/div&gt;
-&lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 
 &#39;&#39;Magistrate:&#39;&#39; //Wonderful! I didn’t think you had it in you, boy. You’ve rid our kingdom from a great menace. Here’s your reward.//
@@ -175439,22 +175327,17 @@ New POI added (Silfren woods)!
 &lt;br&gt;&lt;br&gt;
 We don’t want her alive. Either kill or enslave the bitch. You’ll get $1,200 once the problem has been dealt with. But watch your step! She carries one of those expensive .50 caliber hunting rifles.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me center&quot;&gt;
-&#39;&#39;TASK STARTED&#39;&#39;&lt;br&gt;//The Arena Champion//
+&lt;div class=&quot;center blink_me bold&quot;&gt;TASK STARTED&lt;br&gt;//The Arena Champion//
 &lt;br&gt;&lt;br&gt;
 New POI added (Kahill outpost)!
-
 &lt;/div&gt;
+&lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_kah to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $quest_kah gte 2&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me green&quot;&gt;
-&#39;&#39;TASK COMPLETED!&#39;&#39;&lt;br&gt;//The Arena Champion//
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me green&quot;&gt;TASK COMPLETED!&lt;br&gt;//The Arena Champion//&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Magistrate:&#39;&#39; //Here’s your cash, Sir! And thank you. If our current militia didn’t consist of a modest six men, this problem wouldn’t have existed. It’s wonderful knowing there are still real heroes walking on the surface of Raana.//
 &lt;br&gt;&lt;br&gt;
@@ -175902,9 +175785,7 @@ Oh, and for your own safety – don’t touch anything down here, okay? Just lea
 Amir has left a large batch of papers and heavy binders in one of the alcoves. It looks like data sheets and blueprints of a scientific nature.
 &lt;&lt;else&gt;&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Evidence collected!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Evidence collected!&lt;/div&gt;
 &lt;br&gt;
 &lt;&lt;include Journal&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -175925,9 +175806,7 @@ Your mission to track down and deal with Amir has been completed.
 &lt;&lt;if $adpos3 is 0&gt;&gt;
 Your target has also left a large batch of papers and heavy binders in one of the alcoves. It looks like data sheets and blueprints of a scientific nature.
 &lt;&lt;else&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Evidence collected!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Evidence collected!&lt;/div&gt;
 
 
 &lt;br&gt;&lt;br&gt;
@@ -176081,10 +175960,7 @@ I’ll take you to my household where we’ll find a proper spot for both of you
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt; &lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;ASSET LOCATION UNLOCKED!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;ASSET LOCATION UNLOCKED!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Aisha Hasan&#39;&#39; and &#39;&#39;Farah Samad&#39;&#39; will remain at this location until you’ve claimed and transferred them over to your household.
@@ -176304,9 +176180,7 @@ While the interface has a type of screen and user input that’re utterly advanc
 &lt;br&gt;&lt;br&gt;
 You could probably extract that information and try to decrypt or study the alien data more closely at home.
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;br&gt;
 &#39;&#39;Extracting data requires a handheld computer (lvl 1+)!&#39;&#39;
@@ -176325,11 +176199,7 @@ You could probably extract that information and try to decrypt or study the alie
 
 
 &lt;&lt;if $oldonedata is 0&gt;&gt;
-&#39;&#39;DATA EXTRACTED!&#39;&#39;
-&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;DATA EXTRACTED!&lt;br&gt;&lt;br&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $goodhack to true&gt;&gt;
 &lt;&lt;set $oldonedata to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -180371,9 +180241,7 @@ $string4b
 
 &lt;&lt;if $interro is 1&gt;&gt;
 &lt;&lt;set $take to 1&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;x24 units of Gold added to Inventory!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;x24 units of Gold added to Inventory!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $gold+=24&gt;&gt;
 &lt;&lt;unset $interro&gt;&gt;
@@ -188287,11 +188155,10 @@ $hunt_imogen
 
 &lt;&lt;if $interro is 1&gt;&gt;
 &lt;&lt;set $take to 1&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;x5 Automatic rifles added to Inventory!&lt;br&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;
+x5 Automatic rifles added to Inventory!&lt;br&gt;
 x10 Pistols (9mm) added to Inventory!&lt;br&gt;
 x213 units of 7.62 ammunition added to Inventory!
-&#39;&#39;
 &lt;/div&gt;
 
 &lt;&lt;set $ownautorifle+=5&gt;&gt;
@@ -188304,11 +188171,7 @@ x213 units of 7.62 ammunition added to Inventory!
 
 
 &lt;&lt;if $nobarrow is 1&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New fast travel location added!&#39;&#39;&lt;br&gt;
-&#39;&#39;IMOGEN’S BARROW&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New fast travel location added!&lt;br&gt;IMOGEN’S BARROW&lt;/div&gt;
 &lt;&lt;unset $nobarrow&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -191223,9 +191086,7 @@ A seasoned warrior with enough Influence can also fight single combatants or par
 
 &lt;&lt;if $sawarena is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;The Arena added to &quot;Jobs &amp; Titles&quot; (NPC Menu)!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;The Arena added to &quot;Jobs &amp; Titles&quot; (NPC Menu)!&lt;/div&gt;
 &lt;&lt;set $sawarena to 1&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -191401,9 +191262,7 @@ A group of //Body Runners// pull you back into the undercroft of the arena, wher
 
 &lt;&lt;set $arenascore=Math.min($arenascore,100)&gt;&gt;
 
-&lt;center&gt;
-&lt;div class=&quot;green blink_me&quot;&gt;VICTORY!&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me green&quot;&gt;VICTORY!&lt;/div&gt;
 &lt;br&gt;
 
 &lt;&lt;include CheckOut&gt;&gt;
@@ -192421,9 +192280,8 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _ran gte 4&gt;&gt;Your warrior continues to dominate her opponent as the seconds pass and she’s never in any serious danger. _opname finally falls unconscious after a series of heavy blows against her armored chest.&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;green&quot;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;_npc.girlname has won the battle!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;center green&quot;&gt;
+&lt;div class=&quot;blink_me&quot;&gt;_npc.girlname has won the battle!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 +$reward dollars added to inventory!&lt;br&gt;
 +$infl Influence!&lt;br&gt;
@@ -192436,7 +192294,6 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 &lt;&lt;if _npc.melee lte 89 and _ran is 1&gt;&gt;&lt;br&gt;&lt;br&gt;_npc.girlnames Melee skill has increased (+1)!&lt;&lt;set _npc.melee+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/center&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -197296,11 +197153,7 @@ You step into the opulent halls of The Golden Dragon, one of Crystal Hills’ mo
 
 &lt;&lt;if $sawdragon is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New Events &amp; Activities Location added!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New Events &amp; Activities Location added!&lt;/div&gt;
 &lt;&lt;set $sawdragon to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -204755,11 +204608,7 @@ $hunt_dark
 
 
 &lt;&lt;if $nodarkmere is 1&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New stable travel location added!&#39;&#39;&lt;br&gt;
-&#39;&#39;DARKMERE&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New stable travel location added!&lt;br&gt;DARKMERE&lt;/div&gt;
 &lt;&lt;unset $nodarkmere&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -205287,7 +205136,7 @@ You’re required to pay a handler’s fee of $150 (one-hundred-and-fifty dollar
 Captain Jean Deverringer
 
 
-&lt;&lt;if $quest_bro is 4&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;&lt;&lt;set $quest_bro to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_bro is 4&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;set $quest_bro to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -205347,9 +205196,7 @@ Madame Eleonore Stuckey
 
 &lt;&lt;if $quest_velve is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;Conversation options unlocked!&lt;br&gt;(Dockgrave Tavern &gt; The Velvet Room)&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me&quot;&gt;Conversation options unlocked!&lt;br&gt;(Dockgrave Tavern &gt; The Velvet Room)&lt;/div&gt;
 &lt;&lt;set $quest_velve to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -205403,9 +205250,7 @@ Best regards, A.H.
 &lt;&lt;if $quest_ai is 6&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_ai to 7&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -205426,9 +205271,7 @@ Professor Wolf
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $oldone4 to 5&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
@@ -205448,9 +205291,7 @@ Aurora
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $oldone4 to 17&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
@@ -205508,11 +205349,7 @@ Hawaii Adler
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;NEW POI ADDED!&lt;br&gt;(The Palace &gt; Old City Hall)&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW POI ADDED!&lt;br&gt;(The Palace &gt; Old City Hall)&lt;/div&gt;
 &lt;&lt;set $hawaii to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -209234,7 +209071,7 @@ Has been added to your household!
 
 &lt;&lt;if _jor is true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;Journal updated!&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &#39;&#39;
 &lt;/center&gt;
@@ -211301,13 +211138,7 @@ Influence:&lt;br&gt;
 
 
 </tw-passagedata><tw-passagedata pid="320" name="VendDisc" tags="nobr" position="950,3100" size="100,100">
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;
-Vendor location added to&lt;br&gt;NPC CONTROL MENU!
-&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Vendor location added to&lt;br&gt;NPC CONTROL MENU!&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="321" name="Heights" tags="nobr gray" position="1875,3750" size="200,100">&lt;div id=&quot;borderwrapex&quot;&gt;&lt;div id=&quot;explorewrapper&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;explorepic2&quot;&gt;
@@ -211577,20 +211408,7 @@ The Slave Gallery is temporarily open, however, to oust one of the last groups s
 
 &lt;&lt;if $sawcrystal is undefined and $wopos is 93&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;Crystal Market added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&#39;&#39;
-
-&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;tex16px&quot;&gt;
-&#39;&#39;
-You’re now able to sell certain NPCs at this location by navigating to
-&lt;br&gt;
-NPC Menu &gt; Actions &gt; Tasks &amp; Locations &gt; Crystal market!
-&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
-
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Crystal Market added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&lt;/div&gt;
 &lt;&lt;set $sawcrystal to true&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -211601,19 +211419,7 @@ NPC Menu &gt; Actions &gt; Tasks &amp; Locations &gt; Crystal market!
 
 &lt;&lt;if $sawwatery is undefined and $wopos is 63&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;tex16px&quot;&gt;
-&#39;&#39;
-You’re able to sell certain NPCs at this location by navigating to
-&lt;br&gt;
-NPC Menu &gt; Actions &gt; Tasks &amp; Locations &gt; Watery Eyes!
-&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
-
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Watery Eyes added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&lt;/div&gt;
 &lt;&lt;set $sawwatery to true&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -211838,9 +211644,7 @@ Doctor’s Hall, formally known as Crystal Height’s Hospital or Hunt Research 
 
 &lt;&lt;if $sawdoctor is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;Doctor’s Hall added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Doctor’s Hall added to &quot;Tasks &amp; Locations&quot; (NPC Menu)!&lt;/div&gt;
 &lt;&lt;set $sawdoctor to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -217926,8 +217730,7 @@ Events:
 &lt;div class=&quot;storybottom&quot;&gt;
 &lt;div class=&quot;white&quot;&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New fast travel location added!&#39;&#39;&lt;/div&gt;
-&#39;&#39;RED RIVER (NORTH)&#39;&#39;
+&lt;div class=&quot;blink_me bold&quot;&gt;New fast travel location added!&lt;br&gt;RED RIVER (NORTH)&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -228979,9 +228782,7 @@ Unfortunately, you fail to find anything interesting.
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;BOUNTY MISSION CANCELLED!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;BOUNTY MISSION CANCELLED!&lt;/div&gt;
 &lt;&lt;if $effect is true&gt;&gt;
 &lt;&lt;audio &quot;complete&quot; volume 0.8 play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -229011,9 +228812,7 @@ The family man thanks you from the bottom of his heart and gives you a pouch of 
 &#39;&#39;
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;BOUNTY MISSION CANCELLED!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;BOUNTY MISSION CANCELLED!&lt;/div&gt;
 &lt;&lt;unset $bhvalue&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -252151,9 +251950,7 @@ You’re able to hear upset voices coming from an adjacent room - it sounds like
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Aimee:&#39;&#39; //Well... I guess.... We could discuss it. No contracts or anything. If you help us out, I could let you in on the profits. But nothing more. Okay? No strings attached.//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Location Menu unlocked!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Location Menu unlocked!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -253075,9 +252872,8 @@ talking to one of his guards.
 &#39;&#39;Mr. Finnegan:&#39;&#39; //Girls? Yeah. I need new slaves just like you need new barrels of ale. But I do require them to be service-minded right from the start. We don’t offer any training days at this place - here, you start workin’ with a cock in your mouth from day one.&lt;br&gt;&lt;br&gt;I’ll give you a list of what I need, in order of importance.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;center&gt;
-&lt;&lt;if $dockslave is 1&gt;&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;TASK ADDED: &quot;FULL HOUSE&quot;.&#39;&#39;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
-&lt;/center&gt;
+&lt;&lt;if $dockslave is 1&gt;&gt;&lt;div class=&quot;center blink_me bold&quot;&gt;TASK ADDED: &quot;FULL HOUSE&quot;.&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 
@@ -253501,10 +253297,7 @@ talking to one of his guards.
 &lt;&lt;if $giveth is true&gt;&gt;
 &lt;&lt;set $noclick to true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;HAND VALUE&#39;&#39;&lt;br&gt;
-$myhand
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;HAND VALUE&lt;br&gt;$myhand&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -253534,10 +253327,7 @@ $myhand
 &lt;&lt;set _nogo to true&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;NEW HAND&#39;&#39;&lt;br&gt;
-$myhand
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;NEW HAND&lt;br&gt;$myhand&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -253614,13 +253404,13 @@ Your &#39;&#39;Gambling (+1)&#39;&#39; skill has increased!
 &lt;div class=&quot;paddslnik&quot;&gt;&lt;div class=&quot;slnick&quot;&gt;&lt;div class=&quot;padd10top tex13px&quot;&gt;$pl1name&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 &#39;&#39;HAND:&#39;&#39; &lt;&lt;if $round isnot 97&gt;&gt;&lt;&lt;if $pl1over isnot true&gt;&gt;Unknown&lt;&lt;else&gt;&gt;FOLDED!&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;$pl1hand/1,000&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _raise1 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _raise1 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;&lt;div class=&quot;resholderbig&quot;&gt;
 &lt;div class=&quot;paddslnik&quot;&gt;&lt;div class=&quot;slnick&quot;&gt;&lt;div class=&quot;padd10top tex13px&quot;&gt;$pl2name&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 &#39;&#39;HAND:&#39;&#39; &lt;&lt;if $round isnot 97&gt;&gt;&lt;&lt;if $pl2over isnot true&gt;&gt;Unknown&lt;&lt;else&gt;&gt;FOLDED!&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;$pl2hand/1,000&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _raise2 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _raise2 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;&lt;div class=&quot;resholderbig&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -253631,7 +253421,7 @@ Your &#39;&#39;Gambling (+1)&#39;&#39; skill has increased!
 &lt;div class=&quot;paddslnik&quot;&gt;&lt;div class=&quot;slnick&quot;&gt;&lt;div class=&quot;padd10top tex13px&quot;&gt;THE HOUSE&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 &#39;&#39;HAND:&#39;&#39; &lt;&lt;if $round isnot 97&gt;&gt;Unknown&lt;&lt;else&gt;&gt;$pl4hand/1,000&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _raise4 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _raise4 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 
@@ -253640,9 +253430,7 @@ Your &#39;&#39;Gambling (+1)&#39;&#39; skill has increased!
 &lt;div class=&quot;pokerholder&quot;&gt;
 &lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;if $iwon is true&gt;&gt;
-&lt;div class=&quot;green blink_me&quot;&gt;
-+&amp;#36;$pott!
-&lt;/div&gt;
+&lt;div class=&quot;blink_me green&quot;&gt;+&amp;#36;$pott!&lt;/div&gt;
 &lt;&lt;set $removebutt to true&gt;&gt;
 &lt;&lt;set $cash+=$pott&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -253658,7 +253446,7 @@ Your &#39;&#39;Gambling (+1)&#39;&#39; skill has increased!
 &lt;div class=&quot;paddslnik&quot;&gt;&lt;div class=&quot;slnick&quot;&gt;&lt;div class=&quot;padd10top tex13px&quot;&gt;$pl3name&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 &#39;&#39;HAND:&#39;&#39; &lt;&lt;if $round isnot 97&gt;&gt;&lt;&lt;if $pl3over isnot true&gt;&gt;Unknown&lt;&lt;else&gt;&gt;FOLDED!&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;$pl3hand/1,000&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _raise3 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _raise3 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Raise!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;/div&gt;&lt;div class=&quot;resholderbig&quot;&gt;
@@ -253669,10 +253457,7 @@ Your &#39;&#39;Gambling (+1)&#39;&#39; skill has increased!
 
 &lt;&lt;if $iwon is true&gt;&gt;
 &#39;&#39;HAND:&#39;&#39; $myhand/1,000
-&lt;div class=&quot;green blink_me&quot;&gt;
-VICTORY!&lt;br&gt;
-+&amp;#36;$pott!
-
+&lt;div class=&quot;blink_me green&quot;&gt;VICTORY!&lt;br&gt;+&amp;#36;$pott!&lt;/div&gt;
 &lt;&lt;if $effect is true&gt;&gt;
 &lt;&lt;audio &quot;complete&quot; volume 0.8 play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -253681,17 +253466,16 @@ VICTORY!&lt;br&gt;
 &lt;&lt;set $dockstuff[5]+=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $dockstuff[6]+=$pott&gt;&gt;
-&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $ilost is true&gt;&gt;
 &#39;&#39;HAND:&#39;&#39; $myhand/1,000
-&lt;div class=&quot;red blink_me&quot;&gt;
-DEFEAT!
+&lt;div class=&quot;red blink_me&quot;&gt;DEFEAT!&lt;/div&gt;
 &lt;&lt;if $dockstuff[5] gte 1&gt;&gt;
 &lt;&lt;set $dockstuff[5]-=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;unset $ilost&gt;&gt;
@@ -255439,11 +255223,7 @@ Madame Stuckey then looks up at you and says:
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Madame:&#39;&#39; //Yes. And we’ll meet again, Mr. $pcLastName. Don’t worry.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;green blink_me&quot;&gt;NEW TRAIT GAINED!&lt;br&gt;
-(Touch of Adonis)&lt;/div&gt;
-
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me green&quot;&gt;NEW TRAIT GAINED!&lt;br&gt;(Touch of Adonis)&lt;/div&gt;
 
 &lt;&lt;set $plimp[5] to 1&gt;&gt;
 
@@ -255526,7 +255306,7 @@ Alright. Whenever you’re ready, Mr. $pcLastName!//
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Avery:&#39;&#39; //(Nervous smile) H… Hello, mister. I’m happy to make your acquaintance.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;New Velverette option unlocked!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New Velverette option unlocked!&lt;/div&gt;
 &lt;&lt;set $quest_velve to 4&gt;&gt;
 
 
@@ -255544,7 +255324,7 @@ Oh, here she is. Avery! Come. I’ve finally found our stallion. Sexy, isn’t h
 Alright. Whenever you change your mind, Mr. $pcLastName!//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;New Velverette option unlocked!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New Velverette option unlocked!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 Your &#39;&#39;Influence (+100)&#39;&#39; has increased!&lt;br&gt;
 &lt;&lt;set $credit+=100&gt;&gt;
@@ -270595,7 +270375,7 @@ After telling one of the older children that you’d like to have a word with th
 &lt;&lt;set $inve.orph.standing+=5&gt;&gt;
 &#39;&#39;Mrs. Ardbegger:&#39;&#39; //(Blushing face) Oh, Mr. $pcLastName. I wouldn’t dare to ask anything from you. Never. You are considered to be the governing body of Redhaven and you’ve done more than enough for this district already.&lt;br&gt;&lt;br&gt;However, if you’d ever decide you’d want to &quot;help out&quot;, I’d make it worth your while (wink). Trust me. The kids around here are very agile. They have very... lucrative fingers. To keep the older ones in check, I have them working a few hours per week down in the basement, doing baskets, garments and repairing scrap cloth. A larger donation would be considered an investment that’ll benefit your household as well.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me center&quot;&gt;&#39;&#39;Location menu unlocked!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Location menu unlocked!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $action2 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -276350,7 +276130,7 @@ The girl is obviously shaken by your dominant words, even if she tries to hide i
 
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_ring to 3&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -276377,7 +276157,7 @@ Miss Jonsson smiles wryly.
 &#39;&#39;300 Dollars removed from Inventory!&#39;&#39;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_ring to 3&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $cash-=300&gt;&gt;
 
@@ -277058,7 +276838,7 @@ You’re standing inside Hunt Research Laboratories’ great bio vault. There ar
 &lt;&lt;if $event is 2&gt;&gt;
 &#39;&#39;Danugah spores added to Inventory!&#39;&#39;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;red blink_me&quot;&gt;SOMEONE HAS TRIGGERED AN ALARM!&lt;/div&gt;
+&lt;div class=&quot;blink_me red&quot;&gt;SOMEONE HAS TRIGGERED AN ALARM!&lt;/div&gt;
 &lt;&lt;set $alarmsound to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -277148,11 +276928,7 @@ But… as the destroyer of The Black Scorpion, these lands, ungoverned, untaken,
 &lt;&lt;if $inve.bura.standing is 3&gt;&gt;
 &#39;&#39;You:&#39;&#39; //That’s good to know. I’ll see if I can help you.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;LOCATION MENU UNLOCKED!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;LOCATION MENU UNLOCKED!&lt;/div&gt;
 
 &lt;&lt;set $inve.bura.standing to 15&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -277332,7 +277108,7 @@ After stepping into the dusty Winton Town House, expecting a naked Leia standing
 &#39;&#39;Leia:&#39;&#39; //Oh. Will you? That would make me very happy. Thank you, Mr. $pcLastName. Thank you for taking care of a frail, young woman who’s not equipped to deal with the real terrors of this world.//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me center&quot;&gt;&#39;&#39;New conversation options unlocked (Hamilton Square&gt;Town Hall)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New conversation options unlocked (Hamilton Square&gt;Town Hall)!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -277408,7 +277184,7 @@ This also includes servants and house occupants, since Miss Winton is the sole d
 &lt;&lt;if $adpos is 2&gt;&gt;
 &#39;&#39;Leia Winton contract purchased!&#39;&#39;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New PoI added (Crow’s End)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New PoI added (Crow’s End)!&lt;/div&gt;
 
 &lt;&lt;set $removebutt to true&gt;&gt;
 &lt;&lt;set $cash-=10250&gt;&gt;
@@ -277498,9 +277274,7 @@ You see, I belong to the Republic Council. Simpletons call us &quot;Spheremaster
 Anyway. The reason I need this to be handled discretely is because we council members have eyes and ears on us from a million different directions. This mission must look like a raider attack. You’ll be paid ten times the normal rate of a bounty of this magnitude. That way, I’ll also buy your discretion. Don’t mention this to anyone. If someone would ask, you’re here for an interview as one of my new security guards. Everything’s clear?&lt;br&gt;&lt;br&gt;This is his exact location. Not far from where you’re living. I’ll mark it on your map.//
 &lt;br&gt;&lt;br&gt;
 
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_ai to 3&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
@@ -277810,9 +277584,7 @@ Ask for me at SGPD Headquarters when you’re done. It’s next to Hamilton Jail
 &#39;&#39;Lt. Heyes:&#39;&#39; //Alright. You’re a free man. I can’t force you into doing anything. We’ll have our eyes on you, however, considering your… history with Mr. Hasan. Good day.//
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;QUEST CANCELLED!&lt;br&gt;(In the name of God)&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;QUEST CANCELLED!&lt;br&gt;(In the name of God)&lt;/div&gt;
 
 &lt;&lt;set $quest_ai to 99&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -278434,11 +278206,7 @@ Hernando shines up with a smile on his face and responds after a moment’s sile
 &lt;&lt;set $quest_rosita to 2&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -278470,7 +278238,7 @@ The punks react strongly to your name. It’s obvious that they’ve heard about
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Dolken:&#39;&#39; //Okay, Okay. I didn’t know he was that important, Mr. $pcLastName. We only wanted to make business with him and the rest of his lot up there. Got some lovely daughters has he not? Anyway, we won’t disappoint you. Message is clear.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_rosita to 3&gt;&gt;
 
 &lt;&lt;set $gooniesremain to true&gt;&gt;
@@ -278498,7 +278266,7 @@ The punks seem oblivious to your name.
 The debris-ridden yard turns silent – with gun smoke floating around like a thick jungle mist.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_rosita to 3&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -278662,7 +278430,7 @@ You also find a strange note attached to the rifle case.
 &lt;&lt;set $take to 1&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New Town Hall Archive notation unlocked!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New Town Hall Archive notation unlocked!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -281350,7 +281118,7 @@ Threaten
 &lt;&lt;set $quest_reds to 5&gt;&gt;
 &lt;&lt;set $scrapplace to 1&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_reds to 5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -281364,7 +281132,7 @@ Threaten
 &#39;&#39;Mr. Thomson:&#39;&#39; //I’ll make it worth your while. I promise. One businessman to another (smile). You see, we &#39;&#39;don’t&#39;&#39; want to use Redhaven square as our place of industry, but the current state of Ikaanos leaves us with little choice.//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_reds to 4&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -281401,7 +281169,7 @@ Unfortunately, this area is currently occupied by a band of hostile vagrants.
 You have defeated the vagrants, allowing Mr. Thomson to move up his scrapping here instead of doing it down in South Redhaven.
 
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $quest_reds is 4&gt;&gt;&lt;&lt;set $quest_reds to 5&gt;&gt;&lt;&lt;set $freds to true&gt;&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_reds is 4&gt;&gt;&lt;&lt;set $quest_reds to 5&gt;&gt;&lt;&lt;set $freds to true&gt;&gt;&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $scrapdeal is 0&gt;&gt;
 &lt;&lt;set _notleave to true&gt;&gt;
@@ -281520,9 +281288,7 @@ It’s either your good looks or your well-placed words that strike a chord in L
 &#39;&#39;Lt. Skye:&#39;&#39; //Alright. … If you pay? I’m always up at the Rec Rooms after running the bird so you’ll find me there. Catch you later, Raanian (wink).//
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;New POI added (Deck II, Section 2)!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New POI added (Deck II, Section 2)!&lt;/div&gt;
 
 &lt;&lt;set $quest_skye to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -281678,7 +281444,7 @@ Lt. Skye chuckles and takes another gulp of whiskey before continuing:
 &lt;br&gt;&lt;br&gt;
 Alright. I’ll tell you what. I’m here for the money. I happen to have expensive hobbies. If you can top what they’re payin’ here, I’m ready to take a long leave of absence. To be honest, I’m getting pretty fed up with walking around in the same halls being half-drunk every fucking day. Show some dollars and we’ll talk (smile).//
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New roaming NPC location added (S2 - Deck II)!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;New roaming NPC location added (S2 - Deck II)!&lt;/div&gt;
 
 &lt;&lt;set $quest_skye to 3&gt;&gt;
 
@@ -281985,9 +281751,7 @@ That is our main priority for now. Call it phase one.
 I’ll tell you when we’re ready for phase two. &lt;&lt;if $npc.av11.willpower lte 14&gt;&gt;Sorry for sounding so bossy, Master. I don’t mean any disrespect.&lt;&lt;/if&gt;&gt;
 //
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
- &lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;br&gt;
 &#39;&#39;TASKS ADDED:&#39;&#39;&lt;br&gt;
 &lt;li&gt;Unlock rebel faction interaction location.&lt;/li&gt;
@@ -283228,9 +282992,7 @@ Lt. Milou Skye MUST ALSO be unassigned from all jobs and bonded states.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $missionstart to true&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 
 &lt;&lt;set $quest_aria to 13&gt;&gt;
@@ -283309,14 +283071,7 @@ The girl looks at you with a forced smile and says:
 You’re stunned by her exceptional voice – it’s beautiful, almost drone-like, with undertones that could easily capture the entire grand opera in Emerald City.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;NEW ROAMING NPC LOCATION!&lt;br&gt;
-(Furry’s Tavern)
-
-&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW ROAMING NPC LOCATION!&lt;br&gt;(Furry’s Tavern)&lt;/div&gt;
 
 &lt;&lt;set $quest_valerie to 3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -283336,7 +283091,7 @@ You’re stunned by her exceptional voice – it’s beautiful, almost drone-lik
 
 &lt;&lt;if $quest_valerie is 4&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_valerie to 5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -284009,9 +283764,7 @@ A group of rebel fighters storm the apartment just seconds after you’ve secure
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set _ariapics to 2&gt;&gt;
 &lt;&lt;set $quest_aria to 17&gt;&gt;
@@ -284931,9 +284684,7 @@ Aria moves over to one of the windows and looks down on the green planet below. 
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $ariaass to 4&gt;&gt;
 &lt;&lt;set $quest_aria to 19&gt;&gt;
@@ -285116,7 +284867,7 @@ The nobles are released back into Emerald City after Aria’s speech is over and
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set _npc to $npc.av11&gt;&gt;
 &lt;&lt;include ClearSlot&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;tex19px blink_me&quot;&gt;&#39;&#39;ARIA BIANCHI HAS LEFT YOUR HOUSEHOLD!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold tex19px&quot;&gt;ARIA BIANCHI HAS LEFT YOUR HOUSEHOLD!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 //
 &lt;&lt;if $npc.av11.willpower gte 15&gt;&gt;
@@ -285188,7 +284939,7 @@ Iona smiles and take the pouch of gold dollars.
 &#39;&#39;Iona:&#39;&#39; //You’ll hear from me in two or three days. And don’t forget about those 15 bucks per day, okay? (wink)//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
@@ -285268,9 +285019,7 @@ We are always looking for more manpower over here, Commander $pcLastName. We wil
 You watch as _npc.girlname is led away by Sgt. Williams.
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 &lt;br&gt;
 &lt;br&gt;
 
@@ -285302,9 +285051,7 @@ You present _npc.girlname to the godes of the Aesir Tribe. An unfamiliar gode ca
 You watch as _npc.girlname is led down a dimly lit corridor and out of sight to an uncertain future.
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;&lt;set $mcrel.devotion+=5&gt;&gt;
@@ -285342,9 +285089,7 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;elseif $adpos is 1&gt;&gt;
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 
 &lt;&lt;set $mch.yardslot9.other5+=1&gt;&gt;
 
@@ -285400,9 +285145,7 @@ A transfer also costs $100 in shipping fees.
 
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 
 &lt;&lt;if $guardsend is true&gt;&gt;
 &lt;&lt;set $mch.yardslot10.other8+=1&gt;&gt;
@@ -285455,9 +285198,7 @@ A transfer also costs $100 in shipping fees.
 
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 
 &lt;&lt;if $guardsend is true&gt;&gt;
 &lt;&lt;set $mch.yardslot11.other8+=1&gt;&gt;
@@ -285558,9 +285299,7 @@ Mr. Furry takes off Iona’s top and starts patting her naked upper body with hi
 
 
 
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 
 &#39;&#39;New occupation (_npc.girlname):&#39;&#39;
@@ -285622,9 +285361,7 @@ You disembark inside a hidden cove, about 100 yards south of Camp Yoshida’s Pi
 
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_ave to 2&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -285787,9 +285524,7 @@ They have a large house on Pembroke Street, in Whitehaven. Owner is a distinguis
 //
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $oldone4 to 6&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -286265,10 +286000,9 @@ Unfortunately, professor Wolf’s usual table is empty tonight.
 &#39;&#39;Nicole:&#39;&#39; //I have a bad feeling about this. Did we check The Academy?//
 &lt;&lt;/if&gt;&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;
 &lt;br&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 
@@ -286971,9 +286705,7 @@ A transfer also costs $100 in shipping fees.
 
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 
 &lt;&lt;if $guardsend is true&gt;&gt;
 &lt;&lt;set $mch.yardslot20.other8+=1&gt;&gt;
@@ -287016,9 +286748,7 @@ A transfer also costs $100 in shipping fees.
 &lt;&lt;elseif $adpos is 1&gt;&gt;
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 
 &lt;&lt;set $mch.yardslot20.other5+=1&gt;&gt;
 
@@ -287074,9 +286804,7 @@ A transfer also costs $100 in shipping fees.
 
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
 
 &lt;&lt;set $inve.bura.soldiers+=1&gt;&gt;
 
@@ -287114,9 +286842,8 @@ You contemplate on trading _npc.girlname for the Helmet of Charlemagne.
 You watch as _npc.girlname is led out from your yard and walks away towards a new and most likely depraved future.
 &lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
+
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Helmet of Charlemagne added to Inventory!&#39;&#39;
 &lt;br&gt;&lt;br&gt;
@@ -287173,9 +286900,8 @@ You contemplate on sending _npc.girlname _npc.last away to become a full member 
 
 &lt;br&gt;&lt;br&gt;
 &lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me bigtex uppernocut&quot;&gt;&#39;&#39;_npc.girlname has been removed from your household!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold bigtex uppernocut&quot;&gt;_npc.girlname has been removed from your household!&lt;/div&gt;
+
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set $faction.christian.ironmen+=1&gt;&gt;
@@ -289572,7 +289298,7 @@ No money, not enough seeds. I have bled out like baneclaw mother getting defeate
 &#39;&#39;Mr. Oshiro:&#39;&#39; //Oh, Mai. Remember what I said. Hope is a silent killer. Never &#39;&#39;hope&#39;&#39; for anything.//
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;br&gt;
 &#39;&#39;New Interaction option enabled (TEA)!&#39;&#39;
@@ -289600,7 +289326,7 @@ Toshi Oshiro eyes shine like The Two Moons when you present him the seeds inside
 &lt;br&gt;&lt;br&gt;
 //If you could retrieve the dung somehow, maybe from traders in Kahill outpost, or directly from the baneclaw’s lair, our business could start right away. But you have to promise me not to include Mai-Lynn in any dangerous excursions!//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_mai to 8&gt;&gt;
 
@@ -289951,9 +289677,7 @@ Letric seeds? What does House $pcLastName want Letric seeds for? (Smile) Am I pe
 Anyway. To get to the point (long silence). In these troublesome times, there’s always a solution to every problem, especially between gentlemen like us, and, ehm, that donation (wink) we talked about earlier would really come to use now that Project Hyperion and Project Terra are about to begin. I’ll arrange an exchange later today (smile).&lt;br&gt;&lt;br&gt;Always a pleasure, Mr. $pcLastName!//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;br&gt;
 &#39;&#39;New location interaction options available!&#39;&#39;
@@ -289980,9 +289704,7 @@ Anyway, he asked for some specimens that I know you keep in storage here. Letric
 Anyway. To get to the point (long silence). In these troublesome times, there’s always a solution to every problem, especially between gentlemen like us, and, ehm, that donation (wink) we talked about earlier would really come in handy now that Project Hyperion and Project Terra are about to begin. I’ll arrange an exchange later today (smile).&lt;br&gt;&lt;br&gt;Always a pleasure, Mr. $pcLastName!//
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;br&gt;
 &#39;&#39;New location interaction options available!&#39;&#39;
@@ -290223,10 +289945,9 @@ I’m going to be honest with you.
 //
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;center&gt;
 &lt;&lt;set $justsold to true&gt;&gt;
-&lt;&lt;if $huntslave is 1&gt;&gt;&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;TASK ADDED: &quot;PROJECT EREBOS&quot; (NPC Menu &gt; Actions) &#39;&#39;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
-&lt;/center&gt;
+&lt;&lt;if $huntslave is 1&gt;&gt;&lt;div class=&quot;center blink_me bold&quot;&gt;TASK ADDED: &quot;PROJECT EREBOS&quot; (NPC Menu &gt; Actions)&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 
@@ -294795,9 +294516,8 @@ A small garden dominated by Ternyl grass. Ternyl grass is a calorie rich plant i
 
 &lt;&lt;if $sawshrine is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;//New travel shortcut added (Shrine)!//&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;//New travel shortcut added (Shrine)!//&lt;/div&gt;
+
 &lt;&lt;set $sawshrine to true&gt;&gt;
 &lt;&lt;set _ba to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -313070,11 +312790,7 @@ Most high-demanding issids are excluded by the maxsal checker
 &lt;&lt;include FoSlots&gt;&gt;
 &lt;&lt;set _npc.dayblock to 999&gt;&gt;
 
-&lt;center&gt;
-&lt;div class=&quot;blink_me tex16px&quot;&gt;
-&#39;&#39;_npc.girlname _npc.last has been added to your Follower group!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold tex16px&quot;&gt;_npc.girlname _npc.last has been added to your Follower group!&lt;/div&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -313082,11 +312798,7 @@ Most high-demanding issids are excluded by the maxsal checker
 
 
 &lt;&lt;if $hire is true&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me tex16px&quot;&gt;
-&#39;&#39;_npc.girlname _npc.last has been added to your household!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold tex16px&quot;&gt;_npc.girlname _npc.last has been added to your household!&lt;/div&gt;
 
 
 &lt;&lt;if _npc.girlid is 19&gt;&gt;&lt;&lt;set $a9mm+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -315356,7 +315068,7 @@ Guard! Take her to the dungeon and search through her clothes. I’ll be with yo
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Kelly:&#39;&#39; //You fucking bastard! You’ll regret this!//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;Roaming NPC location added (Redhaven)!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Roaming NPC location added (Redhaven)!&lt;/div&gt;
 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;
@@ -315396,7 +315108,7 @@ Kelly looks at the gun held by one of your guards before turning her exotic eyes
 &#39;&#39;Kelly:&#39;&#39; //Don’t have much choice, do I? I guess it’s a fair… deal. Jobs have been pretty scarce lately anyway. Okay, Sir. I’m ready. Where’s my bunk?//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;Roaming NPC location added (Redhaven)!&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Roaming NPC location added (Redhaven)!&lt;/div&gt;
 
 &lt;&lt;set _npc.salary to 40&gt;&gt;
 &lt;&lt;set _npc.salarynow to 40&gt;&gt;
@@ -315498,12 +315210,7 @@ For starters, you have me, of course (wide smile). I’m of good old-Ikaanian st
 //
 
 &lt;br&gt;&lt;br&gt;
-
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -320811,7 +320518,7 @@ Unfortunately, it’s not enough to raise your STRENGTH this time.
 &lt;&lt;if $cs1_body gte 8&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs1_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs1_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs1_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup1 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs1_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs1_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup1 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -320848,7 +320555,7 @@ $cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs2_body gte 8&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs2_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs2_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs2_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup2 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs2_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs2_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup2 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -320885,7 +320592,7 @@ $cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs3_body gte 8&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs3_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs3_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs3_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup3 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs3_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs3_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup3 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -320924,7 +320631,7 @@ $cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs4_body gte 8&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs4_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs4_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs4_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup4 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs4_str+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs4_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STRENGTH! &lt;&lt;if _hup4 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321029,7 +320736,7 @@ Unfortunately, it’s not enough to raise your STAMINA this time.
 
 
 
-$cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs1_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs1_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup1 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs1_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs1_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup1 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321061,7 +320768,7 @@ $cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs2_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-$cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs2_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs2_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup2 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs2_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs2_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup2 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321092,7 +320799,7 @@ $cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs3_body gte 7&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs3_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs3_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs3_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup3 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs3_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs3_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup3 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321124,7 +320831,7 @@ $cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs4_body gte 7&gt;&gt;&lt;&lt;set $chance+=15&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs4_afraid gte 6&gt;&gt;&lt;&lt;set $chance+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs4_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs4_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup4 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs4_stamina+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs4_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; STAMINA! &lt;&lt;if _hup4 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321436,7 +321143,7 @@ Unfortunately, it’s not enough to raise your Melee combat skill this time.
 &lt;&lt;if $cs1_body gte 8&gt;&gt;&lt;&lt;set $chance+=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cs1_traitaggro lte 24&gt;&gt;&lt;&lt;set $chance-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-$cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs1_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs1_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat skill! &lt;&lt;if _hup1 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs1_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs1_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat skill! &lt;&lt;if _hup1 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321470,7 +321177,7 @@ $cs1_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs2_traitaggro lte 24&gt;&gt;&lt;&lt;set $chance-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-$cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs2_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs2_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat skill! &lt;&lt;if _hup2 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs2_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs2_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat skill! &lt;&lt;if _hup2 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321504,7 +321211,7 @@ $cs2_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs3_traitaggro lte 24&gt;&gt;&lt;&lt;set $chance-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-$cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs3_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs3_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat skill! &lt;&lt;if _hup3 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs3_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs3_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat skill! &lt;&lt;if _hup3 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321539,7 +321246,7 @@ $cs3_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;suc
 &lt;&lt;if $cs4_traitaggro lte 24&gt;&gt;&lt;&lt;set $chance-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-$cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs4_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs4_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat techniques! &lt;&lt;if _hup4 is true&gt;&gt;&lt;div class=&quot;green blink_me&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+$cs4_name &lt;&lt;if $chance gte 1&gt;&gt;&lt;div class=&quot;green&quot;&gt;successfully (chance: $chance)&lt;/div&gt; increases&lt;&lt;set $cs4_melee+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;div class=&quot;red&quot;&gt;fails (chance: $chance)&lt;/div&gt; to increase&lt;&lt;/if&gt;&gt; &lt;&lt;if $cs4_sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; Melee combat techniques! &lt;&lt;if _hup4 is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;Maximum Health (+1)!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -321969,11 +321676,7 @@ If you want to get that old anvil up and running and craft a couple of items, or
 //
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_tut to 8&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set _notext to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -330086,7 +329789,7 @@ You approach the store owner, Kira Denser, who’s always close at hand to help 
 &lt;&lt;set $kira_standing to 2&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Location Menu unlocked!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Location Menu unlocked!&lt;/div&gt;
 
 &lt;&lt;else&gt;&gt;
 &#39;&#39;Kira:&#39;&#39; //Well... It’s tough. And you know why. At least it’s better living behind the walls than out in the wilderness. One can only fantazise what would happen to a city gal like me out there.//
@@ -330108,7 +329811,7 @@ You approach the store owner, Kira Denser, who’s always close at hand to help 
 &#39;&#39;Kira:&#39;&#39; //It’s you! You... took out the Wrool Cats! I am truly in your debt. Thank you! All store owners of southern Procoms are. If you want to make any business deals or use my shop for selling your goods, I’m totally available. Just say the word.//
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Location Menu unlocked!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Location Menu unlocked!&lt;/div&gt;
 
 &lt;&lt;set $kira_standing to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -337169,45 +336872,20 @@ Your &#39;&#39;Academics skill (+1)&#39;&#39; has increased!
 &lt;&lt;if $addingbook is 1&gt;&gt;
 &lt;&lt;if $quest_oldone is 2&gt;&gt;
 &lt;&lt;set $closebook to true&gt;&gt;
-&lt;center&gt;&#39;&#39;
-Book (THE PROWLER) added to Library!
-&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;Journal updated!&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Book (THE PROWLER) added to Library!&lt;br&gt;&lt;br&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_oldone to 3&gt;&gt;
 &lt;&lt;include NewSounds&gt;&gt;
-&#39;&#39;&lt;/center&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $addingbook is 1&gt;&gt;
-&lt;&lt;if $quest_oldone is 2&gt;&gt;
-&lt;&lt;set $closebook to true&gt;&gt;
-&lt;center&gt;&#39;&#39;
-Book (THE PROWLER) added to Library!
-&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;Journal updated!&lt;/div&gt;
-&lt;&lt;set $quest_oldone to 3&gt;&gt;
-&lt;&lt;include NewSounds&gt;&gt;
-&#39;&#39;&lt;/center&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
 
 
 &lt;&lt;if $addingbook is 2&gt;&gt;
 &lt;&lt;set $closebook to true&gt;&gt;
-
-&lt;center&gt;&#39;&#39;
-Book (BROTHER’S NOTES) added to Library!
-&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;Journal updated!&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Book (BROTHER’S NOTES) added to Library!&lt;br&gt;&lt;br&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_bro to 2&gt;&gt;
 &lt;&lt;set $lidhealth to 100&gt;&gt;
 &lt;&lt;unset $tookbro&gt;&gt;
 &lt;&lt;include NewSounds&gt;&gt;
-&#39;&#39;&lt;/center&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -337221,7 +336899,7 @@ The Raxior Stone is a disturbing geological relic. It looks like a large piece o
 &lt;&lt;if $studyraxior is undefined&gt;&gt;
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 Your &#39;&#39;WILLPOWER (-2)&#39;&#39; and &#39;&#39;Occult skill (+2)&#39;&#39; have been modified!&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;New entry added (Town Hall).&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New entry added (Town Hall).&lt;/div&gt;
 &lt;&lt;set $studyraxior to true&gt;&gt;
 &lt;&lt;set $masterwill-=2&gt;&gt;
 &lt;&lt;set $occult+=2&gt;&gt;
@@ -337533,7 +337211,7 @@ You spend over three hours reading about Raanic history – from the century old
 
 &lt;div class=&quot;sessionlow&quot;&gt;
 &lt;center&gt;
-&lt;&lt;if _comp is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;&#39;&#39;SESSION COMPLETED!&#39;&#39;&lt;/div&gt;&lt;&lt;else&gt;&gt;
+&lt;&lt;if _comp is true&gt;&gt;&lt;div class=&quot;blink_me green&quot;&gt;SESSION COMPLETED!&lt;/div&gt;&lt;&lt;else&gt;&gt;
 &lt;progress @value=&quot;$libtime&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;&lt;br&gt;
 &#39;&#39;COMPLETED SESSIONS:&#39;&#39; $libtot/7.
 &lt;&lt;/if&gt;&gt;
@@ -354194,9 +353872,7 @@ I know I agreed to marry you and it has been a... pleasant experience (long paus
 This won’t stop us from seeing each other, though. It doesn’t change a thing other than some scribbles on a paper.
 //
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;ARIA HAS TERMINATED YOUR MARRIAGE!&#39;&#39;&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;ARIA HAS TERMINATED YOUR MARRIAGE!&lt;/div&gt;
 
 &lt;&lt;set _npc.status to 5&gt;&gt;
 &lt;&lt;set $wives-=1&gt;&gt;
@@ -354279,9 +353955,7 @@ Aria is currently in your kitchen drinking a hot cup of coffee. She’s sitting 
 &#39;&#39;Aria:&#39;&#39; //&lt;&lt;if $willpower lte 14&gt;&gt;Master.&lt;&lt;else&gt;&gt;Hey!&lt;&lt;/if&gt;&gt; Alright, I’ve prepared an official Skyguard document for you. As long as you continue fighting for my cause &#39;&#39;(Aria’s Affection Amiable+)&#39;&#39;, you’re able to grab five combat tendstims per week from The Transit Department. Maybe &lt;&lt;if _npc.masterlove lte 89&gt;&gt;you’ll&lt;&lt;else&gt;&gt;we’ll&lt;&lt;/if&gt;&gt; need them if anything wild happens in the future (wink).//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New harvest location unlocked (Transit Department)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New harvest location unlocked (Transit Department)!&lt;/div&gt;
 
 
 &lt;&lt;set $cstims to 1&gt;&gt;
@@ -354371,9 +354045,7 @@ Let’s hurry! Gear up, commander!
 //
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New enemy location added (Procoms)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New enemy location added (Procoms)!&lt;/div&gt;
 
 &lt;br&gt;
 &#39;&#39;NOTE!&#39;&#39; You must have Aria as your Follower for the enemy location to appear.
@@ -358718,7 +358390,7 @@ You want to relay a message?
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -358731,10 +358403,7 @@ You want to relay a message?
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_tori to 5&gt;&gt;
 
@@ -358916,11 +358585,9 @@ Gregory nods in silence. His wife isn’t as quiet, however:
 &lt;br&gt;&lt;br&gt;
 //&lt;&lt;if $action11 is true&gt;&gt;So that is what you’ve been doing to our daughters? You’re a sick man! Just like the rest of all perverted slave masters in Ikaanos. Alright, I’ll offer myself. But never touch Lovisa and Tori again. Got it?&lt;&lt;else&gt;&gt;Don’t you touch my daughters! You’ll be sorry if you do! I can offer myself but not them. Okay?&lt;&lt;/if&gt;&gt;//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
+&lt;div class=&quot;center blink_me&quot;&gt;
 &#39;&#39;Permanent effect added (Valeria Helm)&#39;&#39;&lt;br&gt;
 +50 acceptance chance bonus if asking for sex (Demanding tone)
-&lt;/center&gt;
 &lt;/div&gt;
 &lt;&lt;set $valperv to true&gt;&gt;
 
@@ -359003,9 +358670,7 @@ The girl has trouble keeping her tears away as she responds:
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Seve:&#39;&#39; //Alright, I understand if you need some time to think about it. I’ll be here at The Academy. At least for a couple of weeks.//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;NEW ROAMING LOCATION ADDED (Whitehaven Academy)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;NEW ROAMING LOCATION ADDED (Whitehaven Academy)!&lt;/div&gt;
 
 
 &lt;&lt;set $missiontake to true&gt;&gt;
@@ -359222,10 +358887,8 @@ Despite spending almost thirty minutes terrorizing your captive, you’re unable
 &lt;&lt;if $quest_interro is undefined&gt;&gt;&lt;&lt;set $quest_interro to 0&gt;&gt;&lt;&lt;set $quest_interro2 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $quest_interro+=1&gt;&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;SECRET REVEALED!&#39;&#39;
+&lt;div class=&quot;blink_me bold&quot;&gt;SECRET REVEALED!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
 
 
 /* SENSITIVE INFO – AUTO CLEARS – NEXT MISSION AVAILABLE */
@@ -359240,11 +358903,7 @@ _girlname is apparently sitting on some sensitive government information that co
 &lt;&lt;if $quest_interro is 2&gt;&gt;
 &#39;&#39;_girlname:&#39;&#39; //Alright. Alright… I have this stash of weapons and other stuff that my comrades and I stole from The Skyguard some time ago. The thing is that our stash contains stuff that would point directly toward me. If The Skyguard eventually finds it, because I know they’re looking, both of us will be in serious trouble! Yeah, that’s you and me, &lt;&lt;if _npc.sex is 0&gt;&gt;Sir&lt;&lt;else&gt;&gt;buddy&lt;&lt;/if&gt;&gt;!//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI added (Imogen’s Barrow)!&#39;&#39;
-&lt;br&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Imogen’s Barrow)!&lt;br&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_interro2 to 1&gt;&gt;
 
@@ -359254,11 +358913,7 @@ _girlname is apparently sitting on some sensitive government information that co
 &lt;&lt;if $quest_interro is 3&gt;&gt;
 &#39;&#39;_girlname:&#39;&#39; //(Long pause). Okay. I might as well tell you what I’m sitting on. … It’s this cache of black gold that I once stole from a Carozza representative. They’re after my head, which they’ll take after taking my kneecaps and fingers. It’s yours if you want it. As long as you promise to protect me. I’m safe here, at House $pcLastName. Deal? Here are the coordinates.//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI added (Kasey’s Park)!&#39;&#39;
-&lt;br&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Kasey’s Park)!&lt;br&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_interro2 to 2&gt;&gt;
 
@@ -359269,11 +358924,7 @@ _girlname is apparently sitting on some sensitive government information that co
 &lt;&lt;if $quest_interro is 4&gt;&gt;
 &#39;&#39;_girlname:&#39;&#39; //Alright. Here’s the thing. Me and three other comrades were able to rob a cash transport heading to Fort Vishnu. We spent most of it partyin’ and &lt;&lt;if _sex is 0&gt;&gt;the guys in my party, well, to be honest, me too, screwed luxury prostitutes until there were no more mouths and holes to use&lt;&lt;else&gt;&gt;screwing luxury prostitutes&lt;&lt;/if&gt;&gt;. We hid the rest, intending to stay low until the dust cleared. We have to grab it before the others. I hope you’ll give me a nice salary if we manage to find it?//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI added (Watery Eyes)!&#39;&#39;
-&lt;br&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Watery Eyes)!&lt;br&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_interro2 to 3&gt;&gt;
 &lt;&lt;set $interro_spec to _npc.girlname&gt;&gt;
@@ -359305,11 +358956,7 @@ _girlnames &#39;&#39;WILLPOWER (-5)&#39;&#39; has decreased!
 &lt;&lt;if $quest_interro is 6&gt;&gt;
 &#39;&#39;_girlname:&#39;&#39; //I guess I’ll never get you out of my hair unless I tell you, right? Okay… I did this perfect heist just before you got your hands on me and hid my, ehm, reward, in a tree trunk out in the wilds. It’s something extremely valuable. I’m afraid someone else will find it unless I hurry. I understand that… never mind. It’s yours. I give up!//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI added (Darkmere)!&#39;&#39;
-&lt;br&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Darkmere)!&lt;br&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_interro2 to 6&gt;&gt;
 &lt;&lt;set $interro_spec to _npc.girlname&gt;&gt;
@@ -359320,11 +358967,7 @@ _girlnames &#39;&#39;WILLPOWER (-5)&#39;&#39; has decreased!
 &lt;&lt;if $quest_interro is 7&gt;&gt;
 &#39;&#39;_girlname:&#39;&#39; //Alright, alright. Enough! &lt;&lt;if _sex is 0&gt;&gt;(Faint sobbing) I… have a friend, okay, and she’s wanted by the Skyguard for things we’ve done together. She’s a young girl and she’s hiding out in the wilds right now, extremely scared. And I’m very worried about her.&lt;&lt;else&gt;&gt;I have this… young girl that I’ve been &quot;taking care of&quot; for the past years. She’s part of my old crew and I’m terribly worried about her. She’s hiding out in the woods, probably terrified. We need to get to her ASAP before some raider gang captures her and turns her into their camp slut.&lt;&lt;/if&gt;&gt; Can you go and rescue her? Maybe she can come and stay with us?//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI added (Imogen’s Barrow)!&#39;&#39;
-&lt;br&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Imogen’s Barrow)!&lt;br&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $quest_interro2 to 7&gt;&gt;
 &lt;&lt;set $interro_spec to _npc.girlname&gt;&gt;
@@ -359476,16 +359119,13 @@ You’re able to purchase mining rights and other property documents at the Town
 &lt;&lt;if $adpos2 is 0&gt;&gt;
 &lt;&lt;if $cash gte 350000 and $mch.yardslot10.type is 0&gt;&gt;[[Purchase|M2Scaving][$adpos2 to 1, $cash-=350000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;
-&#39;&#39;Contract transferred!&#39;&#39;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;NEW POI ADDED (Kahill outpost)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Contract transferred!&lt;br&gt;&lt;br&gt;NEW POI ADDED (Kahill outpost)!&lt;/div&gt;
 &lt;&lt;set $removebutt to true&gt;&gt;
 
 /* MINE becomes active */
 
 &lt;&lt;set $mch.yardslot10.type to 16&gt;&gt;
 
-&lt;/center&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
@@ -359515,16 +359155,10 @@ You’re able to purchase mining rights and other property documents at the Town
 &lt;&lt;if $adpos2 is 0&gt;&gt;
 &lt;&lt;if $cash gte 30000 and $mch.yardslot20.type is 0&gt;&gt;[[Purchase|M2Scaving][$adpos2 to 1, $cash-=30000]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;
-&#39;&#39;Contract transferred!&#39;&#39;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;NEW POI ADDED (Darkmere)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Contract transferred!&lt;br&gt;&lt;br&gt;NEW POI ADDED (Darkmere)!&lt;/div&gt;
 &lt;&lt;set $removebutt to true&gt;&gt;
-
 /* MILL becomes active */
-
 &lt;&lt;set $mch.yardslot20.type to 17&gt;&gt;
-
-&lt;/center&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
@@ -359651,9 +359285,7 @@ Vallas suddenly fixes her eyes on Aria Bianchi and gives the girl a respectful n
 &#39;&#39;Vallas:&#39;&#39; //We don’t have time to discuss that now. (Long pause) Alright. Meet me at The Orient tomorrow and we’ll have a sit-down. I’m there most days between 5pm and 8pm. NOW MOVE!//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
 &lt;&lt;set $quest_clea to 2&gt;&gt;
@@ -359771,13 +359403,7 @@ Anyway. This was great. The food, I mean. I really like their faun fish. Especia
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_clea to 4&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me tex18px&quot;&gt;
-&#39;&#39;
-New Roaming NPC location added (The Orient)!
-&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold tex18px&quot;&gt;New Roaming NPC location added (The Orient)!&lt;/div&gt;
 
 &lt;&lt;if $npc.av39.traitdistrust lte 0&gt;&gt;&lt;&lt;set $npc.av39.masterlove+=10&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $npc.av39.traitdistrust gte 1&gt;&gt;&lt;&lt;set $npc.av39.salary+=30&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $npc.av39.traitdistrust gte 2&gt;&gt;&lt;&lt;set $npc.av39.masterlove-=5&gt;&gt;&lt;&lt;set $npc.av39.salary+=30&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $npc.av39.traitdistrust gte 3&gt;&gt;&lt;&lt;set $npc.av39.masterlove-=5&gt;&gt;&lt;&lt;set $npc.av39.salary+=30&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $npc.av39.traitdistrust gte 4&gt;&gt;&lt;&lt;set $npc.av39.salary+=30&gt;&gt;&lt;&lt;set $npc.av39.respect-=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -359835,11 +359461,7 @@ Erica and Celeste Sunderland are currently the property of Johnny Templin, livin
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $quest_black to 2&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
@@ -359974,7 +359596,7 @@ No. Those are staying with me. I’m not interested in transferring any of my hu
 
 &lt;&lt;if $quest_black gte 3&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;Journal updated!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -359986,9 +359608,7 @@ No. Those are staying with me. I’m not interested in transferring any of my hu
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Mr Templin:&#39;&#39; //Of course, I’m not a Davidian (laughter). Here are their contracts. You can find them in the backyard, inside the old brewery. I have to tell you one thing, however. These two women are not of the most disciplined type. They need to be molded, and molded hard, into servitude. &lt;&lt;if $broway gte 20&gt;&gt;I know the ways of your brother. That’s just the right &quot;way&quot; for Mrs. and Miss Sunderland.&lt;&lt;/if&gt;&gt;//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Journal updated!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_black to 4&gt;&gt;
@@ -360521,7 +360141,7 @@ I… I never got to chose what to wear. These men. They captured me almost a mon
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Girl:&#39;&#39; //(Shivering voice) Thank you. I’ll be waiting in here, my Lord. Let me know when you’re ready to leave. &lt;&lt;if $guardloot4 is undefined&gt;&gt;Oh. It looks like you found my dress. And my father’s gold necklace. That piece of jewelry is actually from Earth. It’s ancient. I hope I can get it back if I serve you diligently.&lt;&lt;/if&gt;&gt;//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&lt;center&gt;&#39;&#39;NEW NPC LOCATION ADDED!&lt;br&gt;(Marston Tower &gt; Private Room)&#39;&#39;&lt;/center&gt;&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;NEW NPC LOCATION ADDED!&lt;br&gt;(Marston Tower &gt; Private Room)&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -360784,12 +360404,7 @@ You won’t be able to scavenge Marston Watchtower after claiming it. Do you wis
 &lt;&lt;set $epic to true&gt;&gt;
 
 &lt;br&gt;
-&lt;div class=&quot;blink_me tex18px&quot;&gt;
-&lt;center&gt;
-&#39;&#39;MARSTON WATCH TOWER HAS BEEN CLAIMED!&#39;&#39;
-&lt;/center&gt;
-
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold tex18px&quot;&gt;MARSTON WATCH TOWER HAS BEEN CLAIMED!&lt;/div&gt;
 
 &lt;&lt;set $faction.warlord1.money-=75000&gt;&gt;
 &lt;&lt;set $faction.warlord1.men-=15&gt;&gt;
@@ -360967,7 +360582,7 @@ Are you on a scientific mission or something? Are you from The Academy? They’v
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;set $quest_swg to 4&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New POI added (Stokke Hills)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Stokke Hills)!&lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;include Fail&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -361004,7 +360619,7 @@ There’s an entrance underneath a large slab of concrete covered by an enormous
 &#39;&#39;Lamar:&#39;&#39; //Not my pleasure. Please, leave.//
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New POI added (Stokke Hills)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Stokke Hills)!&lt;/div&gt;
 &lt;&lt;set $quest_swg to 4&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
@@ -361041,7 +360656,7 @@ Are you from The Academy? They’ve asked about it before.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New POI added (Stokke Hills)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Stokke Hills)!&lt;/div&gt;
 
 &lt;&lt;set $quest_swg to 4&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
@@ -361257,7 +360872,7 @@ ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
 
 &lt;&lt;if $adpos is 8&gt;&gt;
 &lt;center&gt;
-&lt;div class=&quot;red blink_me&quot;&gt;WARNING!&lt;/div&gt;&lt;br&gt;High levels of radiation detected!
+&lt;div class=&quot;blink_me red&quot;&gt;WARNING!&lt;/div&gt;&lt;br&gt;High levels of radiation detected!
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 Anyone entering the SWG-R22 facility without &lt;&lt;hovertip &quot;HULC or WEGA armor&quot;&gt;&gt;&lt;div class=&quot;red&quot;&gt;protective suits&lt;/div&gt;&lt;&lt;/hovertip&gt;&gt; equipped with anti-radiation layers suffers &#39;&#39;severe radiation&#39;&#39; damage (-1 STAMINA/turn).
@@ -361963,12 +361578,8 @@ Your girl may continue working here and I’ll treat her like I treat my own dau
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;JOURNAL UPDATED!&#39;&#39;
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
-&lt;/div&gt;
-&lt;/center&gt;
 
 &lt;&lt;unset $bookclue1&gt;&gt;
 &lt;&lt;unset $bookclue2&gt;&gt;
@@ -364321,9 +363932,7 @@ Unfortunately, the guardians manage to secure their belongings and run away with
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;red blink_me&quot;&gt;MISSION FAILED!&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me red&quot;&gt;MISSION FAILED!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
 &lt;&lt;set $adpos3 to 0&gt;&gt;
@@ -364551,9 +364160,7 @@ ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
 &lt;&lt;include RanMale&gt;&gt;
 &lt;&lt;set _occy to either(&quot;seasoned Emkid&quot;, &quot;prominent professor&quot;, &quot;artifact collector&quot;, &quot;whore-house owner&quot;, &quot;warlord&quot;, &quot;Academy Council member&quot;, &quot;slave trainer&quot;, &quot;famous Poker Player&quot;, &quot;Bondage Fanatic&quot;, &quot;Academy Professor&quot;, &quot;Esteemed Scholar&quot;, &quot;Broker&quot;, &quot;Money-lender&quot;, &quot;Despised Money-lender&quot;, &quot;famous Usurer&quot;, &quot;Con-artist&quot;, &quot;Arena champion&quot;, &quot;Property Magnate&quot;, &quot;Industrial Magnate&quot;, &quot;Lake City Magnate&quot;)&gt;&gt;
 &lt;center&gt;
-&lt;div class=&quot;blink_me tex17px&quot;&gt;
-&#39;&#39;$quest_staceyname has been sold!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold tex17px&quot;&gt;$quest_staceyname has been sold!&lt;/div&gt;
 &lt;br&gt;
 &#39;&#39;Buyer:&#39;&#39; _name _surname (_occy).
 
@@ -364574,10 +364181,7 @@ ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
 &lt;&lt;if $doart is 2&gt;&gt;
 
 &lt;center&gt;
-&lt;div class=&quot;blink_me tex17px&quot;&gt;
-&#39;&#39;$quest_staceyname has been donated to The Historical Society!&#39;&#39;
-&lt;/div&gt;
-
+&lt;div class=&quot;blink_me bold tex17px&quot;&gt;$quest_staceyname has been donated to The Historical Society!&lt;/div&gt;
 
 &lt;&lt;if $faction.his.standing lte 69&gt;&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;Standing (Historical Society):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$artpower.&lt;/div&gt;&lt;&lt;set $faction.his.standing+=$artpower&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -364607,10 +364211,7 @@ Stacey’s &#39;&#39;Affection (+12)&#39;&#39; toward you has increased!
 &lt;&lt;if $doart is 3&gt;&gt;
 &lt;br&gt;
 &lt;center&gt;
-&lt;div class=&quot;blink_me tex17px&quot;&gt;
-&#39;&#39;Relic added to collection!&#39;&#39;
-&lt;/div&gt;
-
+&lt;div class=&quot;blink_me bold tex17px&quot;&gt;Relic added to collection!&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 Your &#39;&#39;Influence (+&lt;&lt;print setup.formatNumber(_infgain)&gt;&gt;)&#39;&#39; has increased!
 
@@ -365393,9 +364994,11 @@ Captain Sharpe gestures toward the other man who shared the cage with him:
 &lt;&lt;set $quest_space to 5&gt;&gt;
 &lt;&lt;include Fury&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New Roaming NPC Location added (Redhaven)!&#39;&#39;&lt;/div&gt;
+&#39;&#39;
+&lt;div class=&quot;blink_me&quot;&gt;New Roaming NPC Location added (Redhaven)!&lt;/div&gt;
 &lt;br&gt;
-&#39;&#39;Samuel’s Roaming Location changed (Redhaven)!&#39;&#39;
+Samuel’s Roaming Location changed (Redhaven)!
+&#39;&#39;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;include MissionComp&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -365644,7 +365247,7 @@ Tell you what. I’m gonna be really generous here. She’s yours for $10,000. I
 &lt;&lt;include Journal&gt;&gt;
 &lt;&lt;include Evelyn&gt;&gt;
 &lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New Roaming NPC location added (Redhaven)!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New Roaming NPC location added (Redhaven)!&lt;/div&gt;
 &lt;br&gt;
 &#39;&#39;NOTE!&#39;&#39; Evelyn has a small risk of receiving HEALTH, STAMINA, Wear and WILLPOWER penalties from Abbot Roo each day until you pick her up!
 &lt;br&gt;
@@ -365739,7 +365342,7 @@ We’re looking at another $1,200. If your funds are too low at the moment, we c
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;$1,200 removed from Inventory!&#39;&#39;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me tex16px&quot;&gt;&#39;&#39;BUSINESS DEAL SIGNED!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold tex16px&quot;&gt;BUSINESS DEAL SIGNED!&lt;/div&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $falthday to 100&gt;&gt;
@@ -365752,8 +365355,7 @@ We’re looking at another $1,200. If your funds are too low at the moment, we c
 &#39;&#39;Roger:&#39;&#39; //(Chuckle) Alright. I’ll tell Lennart you’re no longer part of our crew. Bad choice, Sir. You’ll regret it.//
 
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;blink_me tex16px&quot;&gt;&#39;&#39;BUSINESS DEAL CANCELLED!&#39;&#39;&lt;/div&gt;&lt;/center&gt;
-
+&lt;div class=&quot;center blink_me bold tex16px&quot;&gt;BUSINESS DEAL CANCELLED!&lt;/div&gt;
 
 &lt;&lt;set $wateryen3 to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -366485,9 +366087,7 @@ _girlname is looking for the quickest way out – investigating locks, windows a
 //
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Special interaction option unlocked (&quot;Interrogation&quot;)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Special interaction option unlocked (&quot;Interrogation&quot;)!&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -366987,9 +366587,7 @@ You catch Louisiana walking around in the main hallway, stroking her hands acros
 Oh, and if you wouldn’t mind, there’s a place in the basement I’d like to investigate. If it’s okay with you. Might require an… invasive action, so I thought it would be best to ask first.
 //
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New POI added (Manage House &gt; Basement)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New POI added (Manage House &gt; Basement)!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $luitalk1 to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -369916,9 +369514,7 @@ Westside Abbey is part of the Catholic Church of Ikaanos. The abbey’s prosperi
 
 &lt;&lt;if $sawmona is undefined&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;The Abbey added to &quot;Jobs &amp; Titles&quot; (NPC Menu)!&#39;&#39;&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;The Abbey added to &quot;Jobs &amp; Titles&quot; (NPC Menu)!&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $sawmona to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -380753,11 +380349,8 @@ Chancellor
 */</tw-passagedata><tw-passagedata pid="611" name="Journal" tags="nobr" position="3650,150" size="100,100">
 
 &lt;&lt;if _mutejor is undefined&gt;&gt;&lt;&lt;set $missiontake to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;JOURNAL UPDATED!&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+
+&lt;div class=&quot;center blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="613" name="NPCEat" tags="nobr" position="4025,1475" size="100,100">
 
 /* EATING, WEIGHT, FOOD NOTE! FOR MC SEE &quot;OTHERSTUFF&quot; PASSAGE */
@@ -388899,7 +388492,7 @@ A successful &#39;&#39;Pro Corruption&#39;&#39; proposal will reward you with &#
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;NEW TASK ADDED!&#39;&#39;&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;NEW TASK ADDED!&lt;/div&gt;
 &lt;&lt;set $mcsenateask2 to true&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $mcsenateask3 to 14&gt;&gt;
@@ -389018,10 +388611,7 @@ The girl points toward an adjacent building and nods at you one more time.
 &lt;br&gt;&lt;br&gt;
 //Have a great day, Sir.//
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;NEW NPC POI ADDED!&#39;&#39;&lt;br&gt;(Hamilton Square)&lt;/center&gt;
-&lt;/div&gt;
-
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW NPC POI ADDED!&lt;br&gt;(Hamilton Square)&lt;/div&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_ellen to 0&gt;&gt;
 
@@ -389305,10 +388895,8 @@ Her &#39;&#39;WILLPOWER (-10)&#39;&#39; has also drastically decreased!
 
 &lt;&lt;if $adpos gte 1&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;NEW CITY ASSIGNMENT AVAILABLE&#39;&#39;&lt;br&gt;
+&lt;div class=&quot;center blink_me&quot;&gt;&#39;&#39;NEW CITY ASSIGNMENT AVAILABLE&#39;&#39;&lt;br&gt;
 //SGPD OFFICER (Ellen Shaw)//&lt;/div&gt;
-&lt;/center&gt;
 
 &lt;br&gt;
 &lt;&lt;include MissionComp&gt;&gt;
@@ -390634,9 +390222,7 @@ Chima hands you the weapon, but only after glancing at Arizona, who gives a sile
 
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;Broken coilgun added to Inventory!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;Broken coilgun added to Inventory!&lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -391512,11 +391098,7 @@ I’ve missed you dearly, Master. This is… something I never excepted. I can�
 //
 
 &lt;div class=&quot;storybottom&quot;&gt;
-&lt;center&gt;
-&lt;div class=&quot;tex16px blink_me&quot;&gt;
-&#39;&#39;NEW NPC LOCATION ADDED!&lt;br&gt;(Aria Bianchi, Republic Palace)&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold tex16px&quot;&gt;NEW NPC LOCATION ADDED!&lt;br&gt;(Aria Bianchi, Republic Palace)&lt;/div&gt;
 &lt;/div&gt;
 /* UNIQUE ARIA SMR SETTERS */
 
@@ -392659,9 +392241,7 @@ A shadow of dread settles over Mordecai’s face, and you can see the strain as 
 
 &lt;&lt;include Lui&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;&#39;&#39;NEW NPC POI ADDED!&#39;&#39;&lt;br&gt;(Republic Palace)&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW NPC POI ADDED!&lt;br&gt;(Republic Palace)&lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;include Journal&gt;&gt;
@@ -393617,9 +393197,7 @@ Kansas looks away from the charred body, his voice close to breaking.
 &lt;br&gt;&lt;br&gt;
 Your &#39;&#39;Influence (+25,000)&#39;&#39; has increased!
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New Trait Added:&#39;&#39; Savior of Ikaanos.
-&lt;/div&gt;
+&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New Trait Added:&#39;&#39; Savior of Ikaanos.&lt;/div&gt;
 &lt;&lt;set $mctraitsavior to 100&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -394727,11 +394305,7 @@ If you wish to take a more active role in rebuilding the Church and spreading th
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Father Marinelli:&#39;&#39; // You can speak with me directly – I’m rarely away from The Holy Virgin. My aide, Father Dacré, can brief you on the details of our most urgent matters. But again, just following in the footsteps of Jesus Christ, praying and spreading the Christian values, are enough to help us. I wouldn’t ask anything of you other than honest respect. &lt;&lt;if _goodfaith is true&gt;&gt;I know you are already a devoted Christian, so I have no doubts you’re walking the right path.&lt;&lt;/if&gt;&gt;//
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;TASKS UNLOCKED!&lt;br&gt;(The Holy Virgin)&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;TASKS UNLOCKED!&lt;br&gt;(The Holy Virgin)&lt;/div&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $quest_catho1 to 1&gt;&gt;
@@ -394919,11 +394493,7 @@ You don’t have to decide right away, and I suspect getting the cash required t
 &lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;NEW QUEST OPTIONS ADDED!&lt;br&gt;(Preacher’s Hall)&#39;&#39;
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW QUEST OPTIONS ADDED!&lt;br&gt;(Preacher’s Hall)&lt;/div&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
 
@@ -396649,9 +396219,7 @@ Angar White
 &lt;/div&gt;
 
 &lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New Census entry added (Town Hall)!&#39;&#39;
-&lt;/div&gt;
+&lt;div class=&quot;blink_me bold&quot;&gt;New Census entry added (Town Hall)!&lt;/div&gt;
 &lt;&lt;set $catho5letter to 1&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -397100,9 +396668,7 @@ On a nearby table rests an Iron Order cape that has evidently been left for you 
 &#39;&#39;Knight cape added to Inventory!&#39;&#39;
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&#39;&#39;New Trait gained:&#39;&#39; Iron Knight.
-&lt;/div&gt;
+&lt;div class=&quot;blink_me&quot;&gt;&#39;&#39;New Trait gained:&#39;&#39; Iron Knight.&lt;/div&gt;
 
 &lt;&lt;set $missiontake to true&gt;&gt;
 &lt;&lt;set $ironpray to 0&gt;&gt;
@@ -397189,12 +396755,7 @@ The other &lt;&lt;print setup.formatNumber($faction.christian.ironmen-2)&gt;&gt;
 //Deus Vult!//
 
 &lt;br&gt;&lt;br&gt;
-&lt;div class=&quot;blink_me&quot;&gt;
-&lt;center&gt;
-&#39;&#39;NEW ENEMY POIs ADDED!&lt;br&gt;
-(Silfren woods)&#39;&#39;
-&lt;/center&gt;
-&lt;/div&gt;
+&lt;div class=&quot;center blink_me bold&quot;&gt;NEW ENEMY POIs ADDED!&lt;br&gt;(Silfren woods)&lt;/div&gt;
 
 &lt;br&gt;
 After defeating the zealots at Silfren Woods, there is a 10% daily change they’ll respawn. You can track new crusader calls in the &#39;&#39;News tooltip&#39;&#39; (Home &gt; News).
