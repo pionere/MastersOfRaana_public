@@ -261698,18 +261698,28 @@ The honorable Chancellor Aria Bianchi of The Third Republic
 
 &lt;&lt;if $pollroll is 42 or $pollroll is 43&gt;&gt;
 
-&lt;&lt;if $pushcash is undefined&gt;&gt;&lt;&lt;set $pushcash to either(4, 5, 6, 12, 25, 6, 5, 8, 10)&gt;&gt;&lt;&lt;set $randesc to random(1, 7)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pushcash is undefined&gt;&gt;
+&lt;&lt;set $pushcash to either(4, 5, 6, 12, 25, 6, 5, 8, 10)&gt;&gt;
+&lt;&lt;set _tmp=[$faction.viking,$faction.muslim,$faction.bel,$faction.cyker,$faction.christian,$faction.elder,$faction.moon,$faction.ikaanos]&gt;&gt;
+&lt;&lt;for _i=0; ; _i++&gt;&gt;
+&lt;&lt;set _rnd=random(1, 8)&gt;&gt;
+&lt;&lt;if _tmp[_rnd-1].state gte 1&gt;&gt;
+&lt;&lt;set $randesc=_rnd&gt;&gt;
+&lt;&lt;break&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;center bold tex18px&quot;&gt;- DOMESTIC TROUBLE -&lt;/div&gt;
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;&lt;if $randesc is 1&gt;&gt;&lt;&lt;if $faction.viking.state gte 1&gt;&gt;The Aesir tribe has lost both influence and warriors after clashing against their enemies. May Odin welcome the brave men who perished in battle!&lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 2&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 2&gt;&gt;&lt;&lt;if $faction.muslim.state gte 1&gt;&gt;The Muslims have clashed against cultists and lost a great deal of power and men in urban skirmishes. Allah Akbar! Death to Allah’s enemies!&lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 3&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 3&gt;&gt;&lt;&lt;if $faction.bel.state gte 1&gt;&gt;House Bellemme has been ambushed by raiders, leaving several elite soldiers dead.&lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 4&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 4&gt;&gt;&lt;&lt;if $faction.cyker.state gte 1&gt;&gt;House Cyker has suffered both influence and men in a recent ambush in Westside!&lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 5&gt;&gt;&lt;&lt;if $faction.christian.state gte 1&gt;&gt;God’s chosen people have recently suffered casualties while doing missionary work in The Badlands further up north. &lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 6&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 6&gt;&gt;&lt;&lt;if $faction.elder.state gte 1&gt;&gt;The Davidian army has suffered casualties while patrolling the borders between Ikaanos and The Kingdom. &lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 7&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $randesc is 7&gt;&gt;&lt;&lt;if $faction.moon.state gte 1&gt;&gt;The Great Moon Church has recently suffered casualties after a cowardly ambush, while the good priests of the moons performed missionary work in The Badlands.&lt;&lt;else&gt;&gt;&lt;&lt;set $randesc to 8&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $randesc is 1&gt;&gt;The Aesir tribe has lost both influence and warriors after clashing against their enemies. May Odin welcome the brave men who perished in battle!&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $randesc is 2&gt;&gt;The Muslims have clashed against cultists and lost a great deal of power and men in urban skirmishes. Allah Akbar! Death to Allah’s enemies!
+&lt;&lt;if $randesc is 3&gt;&gt;House Bellemme has been ambushed by raiders, leaving several elite soldiers dead.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $randesc is 4&gt;&gt;House Cyker has suffered both influence and men in a recent ambush in Westside!&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $randesc is 5&gt;&gt;God’s chosen people have recently suffered casualties while doing missionary work in The Badlands further up north.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $randesc is 6&gt;&gt;The Davidian army has suffered casualties while patrolling the borders between Ikaanos and The Kingdom.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $randesc is 7&gt;&gt;The Great Moon Church has recently suffered casualties after a cowardly ambush, while the good priests of the moons performed missionary work in The Badlands.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 8&gt;&gt;The Republic has suffered casualties after a terrorist attack against one of Skyguard’s city-based outposts.&lt;&lt;/if&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
