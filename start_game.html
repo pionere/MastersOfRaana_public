@@ -110555,92 +110555,71 @@ You have also increased $girlnames &#39;&#39;Fear (+1)&#39;&#39;!
 
 
 
-</tw-passagedata><tw-passagedata pid="152" name="Terminal" tags="nobr" position="2450,2325" size="100,100">
+</tw-passagedata><tw-passagedata pid="153" name="TerminalSnippet" tags="nobr" position="2450,2225" size="200,100">
+&lt;&lt;if $key gte 0 and $key lte 9&gt;&gt;
 
-&lt;&lt;if $string1 is -1 and $key gte 0 and $key lte 9&gt;&gt;
+&lt;&lt;if $string1 is -1&gt;&gt;
 &lt;&lt;set $string1=$key&gt;&gt;
 &lt;&lt;set $key=-1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $string2 is -1 and $key gte 0 and $key lte 9&gt;&gt;
+&lt;&lt;elseif $string2 is -1&gt;&gt;
 &lt;&lt;set $string2=$key&gt;&gt;
 &lt;&lt;set $key=-1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $string3 is -1 and $key gte 0 and $key lte 9&gt;&gt;
+&lt;&lt;elseif $string3 is -1&gt;&gt;
 &lt;&lt;set $string3=$key&gt;&gt;
 &lt;&lt;set $key=-1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $string4 is -1 and $key gte 0 and $key lte 9&gt;&gt;
+&lt;&lt;elseif $string4 is -1&gt;&gt;
 &lt;&lt;set $string4=$key&gt;&gt;
 &lt;&lt;set $key=-1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $key is -2&gt;&gt;
+&lt;&lt;elseif $key is -2&gt;&gt;
+
 &lt;&lt;set $string1 to -1&gt;&gt;
 &lt;&lt;set $string2 to -1&gt;&gt;
 &lt;&lt;set $string3 to -1&gt;&gt;
 &lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $key is 99&gt;&gt;
+&lt;&lt;elseif $key is 99&gt;&gt;
 &lt;&lt;set $execute to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="153" name="TerminalSnippet" tags="" position="2450,2225" size="200,100">&lt;&lt;include Terminal&gt;&gt;
 
+&lt;div class=&quot;center bold future&quot;&gt;
+&lt;br&gt;
 
 &lt;&lt;if $execute is false&gt;&gt;
-&lt;center&gt;PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENT TO EXECUTE.&lt;/center&gt;
+PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 4 and $string2 is 4 and $string3 is 1 and $string4 is 1&gt;&gt;
-
+&lt;&lt;elseif $string1 is _code[0] and $string2 is _code[1] and $string3 is _code[2] and $string4 is _code[3]&gt;&gt;
 CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
+
 &lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set _opendoor to true&gt;&gt;
+&lt;&lt;set $gateopen to true&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
 
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-
+&lt;&lt;if $string1 lt 0 or $string2 lt 0 or $string3 lt 0 or $string4 lt 0&gt;&gt;
+ACCESS CODE TOO SHORT - RESETTING.
+&lt;&lt;else&gt;&gt;
+ACCESS DENIED - RESETTING.
 &lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
+&lt;br&gt;PLEASE TRY AGAIN.
 &lt;&lt;set $string1 to -1&gt;&gt;
 &lt;&lt;set $string2 to -1&gt;&gt;
 &lt;&lt;set $string3 to -1&gt;&gt;
 &lt;&lt;set $string4 to -1&gt;&gt;
 &lt;&lt;set $execute to false&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;h3&gt;
 &lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
 &lt;/h3&gt;
+
+&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="154" name="CreChoise" tags="nobr gray no-transition" position="100,650" size="100,100">&lt;div id=&quot;borderwrapem&quot;&gt;&lt;div id=&quot;introwrapper&quot;&gt;
 
 &lt;&lt;if $round is 0&gt;&gt;
@@ -131138,68 +131117,8 @@ You’re now standing in front of a military class III reinforced steel door. It
 
 
 &lt;&lt;if $action is 11&gt;&gt;
-
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 1 and $string2 is 0 and $string3 is 6 and $string4 is 6&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
+&lt;&lt;set _code=[1,0,6,6]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -132918,69 +132837,9 @@ The door is open and leads into a small storage chamber.
 
 
 &lt;&lt;if $adpos2 is 2&gt;&gt;
-
+&lt;&lt;set _code=[2,3,0,6]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _keying to true&gt;&gt;
-
-/* KEYPAD*/
-
-
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 2 and $string2 is 3 and $string3 is 0 and $string4 is 6&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -134428,70 +134287,11 @@ The closet reveals a sturdy metal door, protected by a classic, pre-severance ke
 
 
 &lt;&lt;if $adpos gte 2&gt;&gt;
+&lt;&lt;set _code=[8,8,1,2]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set $pic to 99&gt;&gt;
 &lt;&lt;if $open isnot true&gt;&gt;&lt;&lt;set _leaveok&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _keying to true&gt;&gt;
-
-/* KEYPAD*/
-
-
-&lt;div class=&quot;bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 8 and $string2 is 8 and $string3 is 1 and $string4 is 2&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -134958,76 +134758,11 @@ You search through at least a dozen rooms and end up with a small bag of goodies
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 2&gt;&gt;
-
+&lt;&lt;set _code=[1,7,7,6]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set $pic to 99&gt;&gt;
 &lt;&lt;if $open isnot true&gt;&gt;&lt;&lt;set _leaveok&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _keying to true&gt;&gt;
-
-/* KEYPAD*/
-
-
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 1 and $string2 is 7 and $string3 is 7 and $string4 is 6&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -166923,79 +166658,9 @@ Your prize is right in front of you - a mysterious metal gate, no longer guarded
 
 
 &lt;&lt;if $adpos2 is 3&gt;&gt;
+&lt;&lt;set _code=[4,2,1,8]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-
-
-
-
-
-
-
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 4 and $string2 is 2 and $string3 is 1 and $string4 is 8&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-
-
-/*GATE PARAMETERS ENDS BELOW*/
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -167092,68 +166757,9 @@ You approach the door and give it a tentative push, but it doesn’t budge. You�
 
 
 &lt;&lt;if $adpos is 1 and $adpos2 is 2 and $open isnot true&gt;&gt;
+&lt;&lt;set _code=[2,5,2,9]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 2 and $string2 is 5 and $string3 is 2 and $string4 is 9&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -167659,69 +167265,9 @@ Your standing in front of a Durasteel gate. You can either guess the password or
 
 
 &lt;&lt;if $adpos is 2&gt;&gt;
-
+&lt;&lt;set _code=[$hulk1,$hulk2,$hulk3,$hulk4]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is $hulk1 and $string2 is $hulk2 and $string3 is $hulk3 and $string4 is $hulk4&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 3&gt;&gt;
@@ -168306,74 +167852,9 @@ Rumors are that the Skyguard frequently stop by this place but no one really kno
 
 
 &lt;&lt;if $adpos is 1&gt;&gt;
-
+&lt;&lt;set _code=[$barrow1,$barrow2,$barrow3,$barrow4]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-
-
-
-
-
-
-
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is $barrow1 and $string2 is $barrow2 and $string3 is $barrow3 and $string4 is $barrow4&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-/*ADPOS is 1 ENDS BELOW*/
 &lt;&lt;/if&gt;&gt;
 
 
@@ -175194,74 +174675,13 @@ You’re standing in one of the outhouses – the high-tech security door is jus
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 3&gt;&gt;
-/* START OF DOOR */
 
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[2,4,7,1]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 2 and $string2 is 4 and $string3 is 7 and $string4 is 1&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -275831,78 +275251,11 @@ You’re standing in front of a 250-year-old DuraSteel security door. There’s 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 1&gt;&gt;
-/* START OF DOOR */
-
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[$mairan1,$mairan2,$mairan3,$mairan4]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is $mairan1 and $string2 is $mairan2 and $string3 is $mairan3 and $string4 is $mairan4&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -276000,78 +275353,11 @@ Using the blueprints, you’re able to localize the bio door just 20 meters furt
 
 
 &lt;&lt;if $adpos is 8&gt;&gt;
-/* START OF DOOR 2 */
-
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[$mairan1b,$mairan2b,$mairan3b,$mairan4b]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is $mairan1b and $string2 is $mairan2b and $string3 is $mairan3b and $string4 is $mairan4b&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -281506,70 +280792,11 @@ There’s a hidden security panel in one of the thick lattices.
 
 
 &lt;&lt;if $adpos is 6&gt;&gt;
-/* START OF DOOR */
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[2,2,9,0]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 2 and $string2 is 2 and $string3 is 9 and $string4 is 0&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -281623,68 +280850,11 @@ Its greyish hue also tells you that this is a //solid// DuraSteel door. Not even
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 12&gt;&gt;
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[1,9,8,6]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 1 and $string2 is 9 and $string3 is 8 and $string4 is 6&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -282051,70 +281221,11 @@ You’re standing in front of a locked security door.
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 5&gt;&gt;
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[5,5,4,4]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 5 and $string2 is 5 and $string3 is 4 and $string4 is 4&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
 &lt;&lt;/if&gt;&gt;
 
 
@@ -283653,74 +282764,12 @@ After reaching the top of the stairs, your way forward is blocked by a massive s
 
 
 &lt;&lt;if $adpos is 2&gt;&gt;
-
-/* START OF DOOR */
-
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[2,3,1,1]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 2 and $string2 is 3 and $string3 is 1 and $string4 is 1&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;/if&gt;&gt; /* end of door */
 
 
 
@@ -285376,78 +284425,11 @@ You’re standing in front of a robust, Pre-Severance security door.
 
 
 &lt;&lt;if $adpos is 1&gt;&gt;
-/* START OF DOOR */
-
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[5,5,5,5]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 5 and $string2 is 5 and $string3 is 5 and $string4 is 5 &gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -360005,77 +358987,11 @@ After descending down a set of old stairs, now accessible after removing the tru
 
 
 &lt;&lt;if $adpos is 7&gt;&gt;
-/* START OF DOOR SWG */
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[8,6,4,4]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 8 and $string2 is 6 and $string3 is 4 and $string4 is 4 &gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -363162,77 +362078,11 @@ Wake up after fight from guardians. Area deserted artifact has fled.
 
 
 &lt;&lt;if $adpos is 10&gt;&gt;
-/* START OF GEN DOOR RELIC HUNTER ENGINE */
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[$staceykey1,$staceykey2,$staceykey3,$staceykey4]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is $staceykey1 and $string2 is $staceykey2 and $string3 is $staceykey3 and $string4 is $staceykey4&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF GEN DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -390920,77 +389770,11 @@ Your brother-in-arms seems right. After examining the door, you conclude that a 
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $adpos is 1&gt;&gt;
-/* START OF DOOR TERESTO */
-
 &lt;&lt;if $open isnot true&gt;&gt;
+&lt;&lt;set _code=[1,4,5,3]&gt;&gt;
+&lt;&lt;include TerminalSnippet&gt;&gt;
 &lt;&lt;set _inspectdoor to true&gt;&gt;
-&lt;div class=&quot;center bold future&quot;&gt;
-
-&lt;&lt;include Terminal&gt;&gt;
-
-&lt;&lt;if $execute is false&gt;&gt;
-PLEASE ENTER ACCESS CODE.&lt;br&gt;PRESS ENTER TO EXECUTE.
-
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $execute is true&gt;&gt;
-
-&lt;&lt;if $string1 isnot -1 and $string2 isnot -1 and $string3 isnot -1 and $string4 isnot -1&gt;&gt;
-
-/* Below is correct code for snippet. */
-
-&lt;&lt;if $string1 is 1 and $string2 is 4 and $string3 is 5 and $string4 is 3&gt;&gt;
-
-CODE ACCEPTED!&lt;br&gt;ACCESS GRANTED.
-&lt;&lt;set $open to true&gt;&gt;
-&lt;&lt;set $gateopen to true&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-ACCESS DENIED - RESETTING CODE.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-
-&lt;&lt;audio &quot;denied&quot; play&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $execute is true&gt;&gt;
-&lt;&lt;if $string1 is -1 or $string2 is -1 or $string3 is -1 or $string4 is -1&gt;&gt;
-ACCESS CODE TOO SHORT.&lt;br&gt;RESETTING.&lt;br&gt;PLEASE TRY AGAIN.
-
-&lt;&lt;set $string1 to -1&gt;&gt;
-&lt;&lt;set $string2 to -1&gt;&gt;
-&lt;&lt;set $string3 to -1&gt;&gt;
-&lt;&lt;set $string4 to -1&gt;&gt;
-&lt;&lt;set $execute to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;h3&gt;
-&lt;&lt;if $string1 gte 0&gt;&gt;$string1&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string2 gte 0&gt;&gt;$string2&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string3 gte 0&gt;&gt;$string3&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt; - &lt;&lt;if $string4 gte 0&gt;&gt;$string4&lt;&lt;else&gt;&gt;_&lt;&lt;/if&gt;&gt;
-&lt;/h3&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-/* END OF DOOR */
 &lt;&lt;/if&gt;&gt;
 
 
