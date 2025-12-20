@@ -151938,6 +151938,16 @@ PLAYER WEAPON
 
 &lt;&lt;if _atcrit is true&gt;&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;//Critical success (Attractive trait) +60!//&#39;&#39;&lt;&lt;/if&gt;&gt;
 
+</tw-passagedata><tw-passagedata pid="152" name="PVCheck" tags="nobr" position="2450,2325" size="100,100">
+&lt;center&gt;
+&lt;&lt;set _pwc=$mcpower gte _pw&gt;&gt;
+&lt;&lt;set _tmp=setup.formatNumber($mcpower)+&quot;/&quot;+setup.formatNumber(_pw)&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
+&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value (_tmp)!&lt;/div&gt;
+&lt;&lt;else&gt;&gt;
+&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value (_tmp)!&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/center&gt;
 </tw-passagedata><tw-passagedata pid="236" name="SlavePics" tags="nobr" position="5275,1000" size="100,100">/* THIS PASSAGE CONTROLS ALL WARDROBE PICS */
 
 
@@ -171198,12 +171208,12 @@ He then turns his eyes toward you, exclaiming in a much harsher tone: &quot;//Ho
 &lt;&lt;if $action1 is true and $action1b isnot true&gt;&gt;
 &lt;&lt;set $pic to 58&gt;&gt;
 &#39;&#39;You:&#39;&#39; //What stops me from taking the girl back, using force? Force that would end with you getting killed.//
-
-&lt;&lt;if $mcpower gte 25&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
-&#39;&#39;The Preacher:&#39;&#39; //Mmmh… Take women by force. I like that. And I like power! You are obviously one soaking in just that. Alright, from one warlord to another, take her. As a gift. As a symbol of us two understanding each other. //
+&lt;&lt;set _pw=25&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;b&gt;The Preacher:&lt;/b&gt;
+&lt;&lt;if _pwc&gt;&gt;
+//Mmmh… Take women by force. I like that. And I like power! You are obviously one soaking in just that. Alright, from one warlord to another, take her. As a gift. As a symbol of us two understanding each other. //
 
 &lt;&lt;set $quest_miche to 14&gt;&gt;
 &lt;&lt;set $adpos to 0&gt;&gt;
@@ -171213,14 +171223,9 @@ He then turns his eyes toward you, exclaiming in a much harsher tone: &quot;//Ho
 &lt;center&gt;
 &#39;&#39;New NPC icon added (Preacher’s Pond)!&#39;&#39;
 &lt;/center&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $mcpower lte 24 or $mcpower is undefined&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;&lt;&lt;if $mcpower is undefined&gt;&gt;Tier2+ Great House parameters are currently UNDEFINED!&lt;&lt;else&gt;&gt;Insufficient Power Value ($mcpower/25)!&lt;&lt;/if&gt;&gt;&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
-&#39;&#39;The Preacher:&#39;&#39; //Yes! I love it when a man uses &quot;force&quot; and &quot;girl&quot; in the same sentence. (warm laughter) However, my squadron of female gladiatrixes here are quite forceful, and such an act &#39;&#39;would&#39;&#39; probably end with me getting killed, I acknowledge that, but also the demise of the lovely, petite and very cute Miss Adrienne Keller. Now, we wouldn’t want that, would we?//
+&lt;&lt;else&gt;&gt;
+//Yes! I love it when a man uses &quot;force&quot; and &quot;girl&quot; in the same sentence. (warm laughter) However, my squadron of female gladiatrixes here are quite forceful, and such an act &#39;&#39;would&#39;&#39; probably end with me getting killed, I acknowledge that, but also the demise of the lovely, petite and very cute Miss Adrienne Keller. Now, we wouldn’t want that, would we?//
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;You:&#39;&#39; //Ehm… I guess you’re right. Maybe there are other ways we could solve this.//
 &lt;&lt;/if&gt;&gt;
@@ -172346,23 +172351,18 @@ They respond professionally and place themselves in a defensive line the moment 
 &lt;&lt;if $adpos is 6&gt;&gt;
 &lt;&lt;set $pic to 73&gt;&gt;
 &#39;&#39;You:&#39;&#39; //We can do this the easy way or the hard way. It’s up to you guys. You know who I am?//
-
-&lt;&lt;if $mcpower gte 12&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=12&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 &#39;&#39;Bandit chief:&#39;&#39; //Eh… Yeah. Sort of. What the hell are you doing here? I thought you ruled in Redhaven?//
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;You:&#39;&#39; //I’m investing down in Stokke Hills now. I’ve just claimed this area. … Listen. I’m having one of my good days. I’ll let you go if you hand over the girl and leave Stokke Hills to me. She’s part of a deal I’m striking with one of the local businesses here. No unnecessary bloodshed, no ammo wasted. What do you say?//
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Bandit:&#39;&#39; //Yeah, yeah. Whatever. We… ehm, didn’t know this was your turf, okay? Take the lassie if you wanna have her. That spicy head wouldn’t bring much up at the Lake City slave auction anyway. BOYS! Let’s head out!//
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mcpower lte 11 or $mcpower is undefined&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;&lt;&lt;if $mcpower is undefined&gt;&gt;Tier2+ Great House parameters are currently UNDEFINED!&lt;&lt;else&gt;&gt;Insufficient Power Value ($mcpower/12)!&lt;&lt;/if&gt;&gt;&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
-&#39;&#39;Bandit:&#39;&#39; //Ehm, no? You look like a pansy faced mommy’s boy that shouldn’t be where the big boys are. Now… these boys here’s gonna teach you a lesson! Get him! //
+&lt;&lt;else&gt;&gt;
+&#39;&#39;Bandit:&#39;&#39; //Ehm, no? You look like a pansy faced mommy’s boy that shouldn’t be where the big boys are. Now… these boys here’s gonna teach you a lesson! Get him!//
 &lt;&lt;set $amb to true&gt;&gt;
 &lt;&lt;set _aton to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -173712,16 +173712,14 @@ A guardsmaid, standing behind a counter in the crammed lobby, penetrates you wit
 
 
 &#39;&#39;You:&#39;&#39; //Anyway. I need access to his room. It is of great importance. For Mr. Atlow and anyone else involved or affected by his disappearance.//
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower gte 10&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/10)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;&lt;set _pw=10&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 &#39;&#39;Guardsmaid:&#39;&#39; //Ehm, normally that’s nothing I’d allow unless you’re under Skyguard jurisdiction but since… Since it’s you, Mr. $pcLastName, I guess a quick look wouldn’t hurt. You’re in luck. His uncle in New Tokyo paid three years in advanced for his rent so his room should be intact. Here’s the key. Room number 14.//
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $mcpower lte 9&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;br&gt;
 &lt;&lt;if $chance gte 1&gt;&gt;
 &lt;&lt;include Success&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -269050,23 +269048,17 @@ After telling one of the older children that you’d like to have a word with th
 
 &lt;&lt;if $adpos is 2 and $action2 isnot true&gt;&gt;
 &#39;&#39;You:&#39;&#39; //Are you in need of any help? Bothersome bandits, investments or any other stuff? You must be leaking gold here.//
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower lte 19&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;red tex17px&quot;&gt;Insufficient Power Value ($mcpower/20)!&lt;/div&gt;
-&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
-&#39;&#39;Mrs. Ardbegger:&#39;&#39; //Ehm. No. We’re fine. ... I know your type. Don’t bother. There’s nothing for you to fetch here. I get a monthly sum of cash from the government. It’s meager but it’s enough to get us food on the table.//
-&lt;&lt;else&gt;&gt;
-&lt;center&gt;
-&lt;div class=&quot;green tex17px&quot;&gt;Sufficient Power Value ($mcpower/20)!&lt;/div&gt;
-&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;&lt;set _pw=20&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;b&gt;Mrs. Ardbegger:&lt;/b&gt;
+&lt;&lt;if _pwc&gt;&gt;
 &lt;&lt;set $inve.orph.standing+=5&gt;&gt;
-&#39;&#39;Mrs. Ardbegger:&#39;&#39; //(Blushing face) Oh, Mr. $pcLastName. I wouldn’t dare to ask anything from you. Never. You are considered to be the governing body of Redhaven and you’ve done more than enough for this district already.&lt;br&gt;&lt;br&gt;However, if you’d ever decide you’d want to &quot;help out&quot;, I’d make it worth your while (wink). Trust me. The kids around here are very agile. They have very... lucrative fingers. To keep the older ones in check, I have them working a few hours per week down in the basement, doing baskets, garments and repairing scrap cloth. A larger donation would be considered an investment that’ll benefit your household as well.//
+//(Blushing face) Oh, Mr. $pcLastName. I wouldn’t dare to ask anything from you. Never. You are considered to be the governing body of Redhaven and you’ve done more than enough for this district already.&lt;br&gt;&lt;br&gt;However, if you’d ever decide you’d want to &quot;help out&quot;, I’d make it worth your while (wink). Trust me. The kids around here are very agile. They have very... lucrative fingers. To keep the older ones in check, I have them working a few hours per week down in the basement, doing baskets, garments and repairing scrap cloth. A larger donation would be considered an investment that’ll benefit your household as well.//
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;center blink_me bold&quot;&gt;Location menu unlocked!&lt;/div&gt;
+&lt;&lt;else&gt;&gt;
+//Ehm. No. We’re fine. ... I know your type. Don’t bother. There’s nothing for you to fetch here. I get a monthly sum of cash from the government. It’s meager but it’s enough to get us food on the table.//
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $action2 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -274958,10 +274950,10 @@ You don’t have to look for room 1055, however, as a gang of punks emerge from 
 
 &lt;&lt;if $adpos2 is 1 and $action10 isnot true&gt;&gt;
 &#39;&#39;You:&#39;&#39; //I am Mr. $pcLastName. You’ve heard of me? I’m not here to purchase from or enquire anything about your business. I’ll leave you to it.//
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $mcpower gte 15&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/15)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=15&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 The punks react strongly to your name. It’s obvious that they’ve heard about you.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Damien:&#39;&#39; //Yeah. Yeah. I know who you are. So… Ehm, there’s gotta be a reason for you climbing all those stairs.//
@@ -274970,8 +274962,6 @@ The punks react strongly to your name. It’s obvious that they’ve heard about
 &#39;&#39;Persuasion bonus activated!&#39;&#39;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/15)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 The punks seem oblivious to your name.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Damien:&#39;&#39; //There are a lot of &quot;Misters&quot; in Ikaanos. Can’t say I’m familiar with you. Should I? Anyway, why have you climbed all them stairs if you’re not here for business?//
@@ -276781,10 +276771,10 @@ You don’t have time to fully take in the fascinating sight before a man in his
 &lt;&lt;if $adpos is 1&gt;&gt;
 
 &#39;&#39;You:&#39;&#39; //I am Mr. $pcLastName. You’ve heard of me? Hernando Ice in Marston Avenue is now under my protection. Stop harassing him. I’ll wipe out this entire block if I hear you’ve even walked past his house from now on. Understood?//
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $mcpower gte 35&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/35)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=35&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 The punks react strongly to your name. It’s obvious that they’ve heard about you.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Dolken:&#39;&#39; //Okay, Okay. I didn’t know he was that important, Mr. $pcLastName. We only wanted to make business with him and the rest of his lot up there. Got some lovely daughters has he not? Anyway, we won’t disappoint you. Message is clear.//
@@ -276795,8 +276785,6 @@ The punks react strongly to your name. It’s obvious that they’ve heard about
 &lt;&lt;set $gooniesremain to true&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/35)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 The punks seem oblivious to your name.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Leader:&#39;&#39; //(Laughter) Boys. This emkid here needs to be taught a lesson. Destroy him!//
@@ -279450,12 +279438,10 @@ Redhaven’s appointed &quot;court master&quot;, Lucas Earnshaw, is a well-respe
 &lt;&lt;if $adpos is 2&gt;&gt;
 &lt;&lt;set _magpic to 2&gt;&gt;
 &#39;&#39;You:&#39;&#39; //As you may know, I am a freelancer that specializes in all sorts of business ventures. If you need any help… Any help at all, I’m available. My family’s been in the &quot;problem-solving&quot; market for a very long time. //
-&lt;br&gt;&lt;br&gt;
-
-
-&lt;&lt;if $mcpower gte 3&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/3)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=3&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 The magistrate looks at you silently for a couple of seconds before responding:
 &lt;br&gt;&lt;br&gt;
 //Ah, yes. I am very well familiar with you and your family.
@@ -279477,8 +279463,6 @@ While this mission is strictly off the books, I don’t want you to kill or hurt
 
 &lt;&lt;set $adpos to 3&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/3)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 &#39;&#39;Mr. Earnshaw:&#39;&#39; //Thank you but we have professional soldiers and accountants that provide us with all the help we need. I’d advice that you take care of your civilian business and let the authorities handle any administrative or military problems that might arise in or around Redhaven.
 &lt;br&gt;&lt;br&gt;
 Anything else I can help you with?
@@ -287872,14 +287856,9 @@ There’s an active supply mission available here for all slave traders with an 
 
 &lt;&lt;if $adpos is 1&gt;&gt;
 
-&lt;&lt;if $mcpower lte 69&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/70)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
-You’re not influential enough to get an audience with HRF’s chief engineer!
-
-&lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/70)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
+&lt;&lt;set _pw=70&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 While it’s far from the normal procedure of a strictly governed research facility that still adheres to pre-Severance corporate standards, the chief-engineer of HRF is willing to have a sit-down with a man of your status.
 &lt;br&gt;&lt;br&gt;
 After asking about an audience, it only takes ten minutes before you’re guided into Doctor Colton’s office.
@@ -287890,6 +287869,8 @@ After asking about an audience, it only takes ten minutes before you’re guided
 &lt;&lt;set _huntpic to 1&gt;&gt;
 &lt;&lt;set $maiseedask to 1&gt;&gt;
 &lt;&lt;passmins 12&gt;&gt;
+&lt;&lt;else&gt;&gt;
+You’re not influential enough to get an audience with HRF’s chief engineer!
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -313868,11 +313849,10 @@ The work would entail everything – questing for emeralds and artifacts in dark
 &lt;br&gt;&lt;br&gt;
 What do you say, Mr. Adler?
 //
-
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $mcpower gte 15&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/15)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=15&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 Mr. Adler smiles like a child who’s just heard the greatest story in his life.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Kansas Adler:&#39;&#39; //I am actually available, a sword for hire, with many adventures under my belt, adventures both in bed and in deep, lizard-infected wildlands (confident laughter). And I believe I’ve heard your name before. Aren’t you the Bane of The Swallow?//
@@ -313885,8 +313865,6 @@ Mr. Adler smiles like a child who’s just heard the greatest story in his life.
 &lt;&lt;set $quest_kansas to 1&gt;&gt;
 &lt;&lt;unset _speblock&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/15)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 &#39;&#39;Kansas Adler:&#39;&#39; //(Laughter) Sorry, Mr. $pcLastName, I have lots of fans who want nothing more than to become my comrade. I’ve never heard of you so I guess you’re just here looking to bask in the glory of my presence – trying to impress me with a fancy tale about being a warlord.
 &lt;br&gt;&lt;br&gt;
 I am however in need of a squire. Someone who’ll serve me drinks and carry my tent while out on the road. It’s hard labor, the pay’s lousy, but I guarantee you an adventure that’ll open up a completely new world, far away from the grease-monkey hole you share with fifteen other novice engineers here on USS Seneca. Because I assume you’re a starship technician? I think I’ve seen you around here before.
@@ -356467,11 +356445,10 @@ Let me prove my worth. As I said, you won’t be disappointed.
 
 &lt;&lt;if $adpos is 3&gt;&gt;
 You inquire about the young masseuse known as Tori Helm, and the possibility to change ownership over to your household.
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower gte 5&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/5)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=5&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 &#39;&#39;Brother:&#39;&#39; //Ehm. (Long Pause). The thing is, all slaves bound to the brotherhood are under our care. For life.
 &lt;br&gt;&lt;br&gt;
 This particular girl, however, she could benefit from getting a… different view on things. To tell you the truth, she’s an obstinate little wrix that does more harm than good. We could transfer her to your household but if you ever want to get rid of her, which I know you eventually will, she’s going back here. Deal?
@@ -356485,8 +356462,6 @@ This particular girl, however, she could benefit from getting a… different vie
 &lt;&lt;set $quest_tori to 2&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/5)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 &#39;&#39;Caretaker:&#39;&#39; //(Laughter) If the Brotherhood would receive a golden dollar each time someone asked about our girls, we’d be able to build a cathedral by now. No, sorry, Sir. Can’t help you there. Besides, all slaves bound to the Brotherhood are here for life. We never get rid of them. They’re under our divine care.//
 &lt;&lt;/if&gt;&gt;
 
@@ -356509,15 +356484,12 @@ This particular girl, however, she could benefit from getting a… different vie
 &lt;&lt;if $adpos is 0&gt;&gt;
 &lt;&lt;passmins 6&gt;&gt;
 Since slave transfer protocols are not publicly available, you ask one of the clerks about arranging a meeting with the high-magistrate of justice, who deals with seized land assets and other colony-related affairs.
-&lt;br&gt;&lt;br&gt;
-
-
-
-&lt;&lt;if $mcpower gte 20&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/20)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
-&#39;&#39;Clerk:&#39;&#39; //Oh, $mctitle. Of course, he’s a busy man but I’m sure he could spare a minute or two. This way, Sir.
-//
+&lt;&lt;set _pw=20&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&#39;&#39;Clerk:&#39;&#39;
+&lt;&lt;if _pwc&gt;&gt;
+//Oh, $mctitle. Of course, he’s a busy man but I’m sure he could spare a minute or two. This way, Sir.//
 &lt;br&gt;&lt;br&gt;
 You follow the clerk through a brightly-lit corridor, decked with paintings and pre-Severance photography that display a long-gone city with clean streets, automobiles and other technological wonders.
 &lt;br&gt;&lt;br&gt;
@@ -356528,9 +356500,7 @@ Mr. Ranci, the justiciar of Hamilton Square, and a respected member of The Senat
 &#39;&#39;High-magistrate Ranci:&#39;&#39; //Ah. Yes, how can I help you?//
 &lt;&lt;set _okask to true&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/20)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
-&#39;&#39;Clerk:&#39;&#39; //(Fake smile) I’m sorry, Sir, but magistrate Ranci is a very busy man and he doesn’t attend common public matters. You’re free to use the archives if you’re looking for something.//
+//(Fake smile) I’m sorry, Sir, but magistrate Ranci is a very busy man and he doesn’t attend common public matters. You’re free to use the archives if you’re looking for something.//
 &lt;&lt;/if&gt;&gt;
 
 
@@ -356558,17 +356528,13 @@ You want to relay a message?
 
 &lt;&lt;if $adpos is 2&gt;&gt;
 &#39;&#39;You:&#39;&#39; //Would it be possible to transfer these two slaves, Mr. and Mrs. Helm, over to my household? For your information, I’m a fully licensed slave trader, working with Kymanto Hall, so all documents are in order.//
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;set $quest_tori to 4&gt;&gt;
-
-&lt;&lt;if $mcpower gte 25&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/25)!&lt;/div&gt;&lt;/center&gt;
-
-
 &lt;br&gt;
-&#39;&#39;High-magistrate Ranci:&#39;&#39; //I… I don’t see why we couldn’t arrange something. It’s rather odd a slave handler of your caliber is interested in middle-age cattle with no apparent qualities but who am I to judge (chuckle). I can start the transfer – for a small fee, of course. The slaves should arrive in roughly one week’s time if we go ahead with this.//
+&lt;&lt;set $quest_tori to 4&gt;&gt;
+&lt;&lt;set _pw=25&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&#39;&#39;High-magistrate Ranci:&#39;&#39;
+&lt;&lt;if _pwc&gt;&gt;
+//I… I don’t see why we couldn’t arrange something. It’s rather odd a slave handler of your caliber is interested in middle-age cattle with no apparent qualities but who am I to judge (chuckle). I can start the transfer – for a small fee, of course. The slaves should arrive in roughly one week’s time if we go ahead with this.//
 &lt;&lt;set _slavego to true&gt;&gt;
 &lt;&lt;set $missiontake to true&gt;&gt;
 
@@ -356578,9 +356544,7 @@ You want to relay a message?
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/25)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
-&#39;&#39;High-magistrate Ranci:&#39;&#39; //(Chuckle) $mctitle. Not only do I find this interest of yours peculiar, it’s also impossible unless I want to break the IC state protocol. Too much of a hassle, sorry. I’d advice you to seek what you’re looking for at the slave auctions in Crystal Heights. &lt;&lt;if $faction.ikaanos.lib gte 90&gt;&gt;Oh, I forgot. The slave halls were recently closed.&lt;&lt;/if&gt;&gt;//
+//(Chuckle) $mctitle. Not only do I find this interest of yours peculiar, it’s also impossible unless I want to break the IC state protocol. Too much of a hassle, sorry. I’d advice you to seek what you’re looking for at the slave auctions in Crystal Heights. &lt;&lt;if $faction.ikaanos.lib gte 90&gt;&gt;Oh, I forgot. The slave halls were recently closed.&lt;&lt;/if&gt;&gt;//
 &lt;&lt;/if&gt;&gt;
 
 
@@ -357609,9 +357573,6 @@ Anyway. This was great. The food, I mean. I really like their faun fish. Especia
 
 &lt;&lt;if $m2scaving is 13&gt;&gt;
 
-&lt;&lt;set _mcreq to 15&gt;&gt;
-&lt;&lt;if _blackiehere is true&gt;&gt;&lt;&lt;set _mcreq to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 &lt;&lt;if $adpos isnot 1&gt;&gt;
 After asking for information about a state transfer, you’re led into the office of one of the magistrate’s trusted clerks, Mrs. Waybill, who looks up at you from a ledger that she’s currently filling with numbers and odd-looking equations.
@@ -357631,13 +357592,12 @@ Bringing him here probably wasn’t a very good idea.
 
 &lt;&lt;if $adpos is 1&gt;&gt;
 &#39;&#39;You:&#39;&#39; //I’m just here on an administrative errand, Mrs. Waybill. We have an inheritance issue within our family and I need to locate a certain Mrs. Erica Sunderland and her daughter. Your excellent skills in finding people can probably solve this matter for me.//
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower gte _mcreq&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/_mcreq)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
-&#39;&#39;Clerk:&#39;&#39; //Of course, $mctitle. Happy to be of service. I’ll be right back. Just let me check the citizen archives.//
+&lt;&lt;set _pw=_blackiehere ? 40 : 15&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&#39;&#39;Clerk:&#39;&#39;
+&lt;&lt;if _pwc&gt;&gt;        
+//Of course, $mctitle. Happy to be of service. I’ll be right back. Just let me check the citizen archives.//
 &lt;br&gt;&lt;br&gt;
 The clerk leaves you alone in her office, returning after roughly ten minutes, holding a large scroll in her hands.
 &lt;br&gt;&lt;br&gt;
@@ -357660,9 +357620,7 @@ Erica and Celeste Sunderland are currently the property of Johnny Templin, livin
 &lt;&lt;set $quest_black to 2&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/_mcreq)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
-&#39;&#39;Clerk:&#39;&#39; //Hmm… Let me check the transfer archives. One moment, Sir. You can wait here. Don’t touch anything.//
+//Hmm… Let me check the transfer archives. One moment, Sir. You can wait here. Don’t touch anything.//
 &lt;br&gt;&lt;br&gt;
 The clerk leaves her office, returning after what feels like forever. She looks up at you with a tired, almost irritated gaze:
 &lt;br&gt;&lt;br&gt;
@@ -362760,16 +362718,18 @@ Samuel grabs the helmet from the merchant’s hands before you’re even able to
 You decide to confront the merchant, who’s already grown cautious due to Samuel’s obvious distress.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;You:&#39;&#39; //Where did you get this helmet from? Did you &quot;find&quot; it? If not, who gave it to you?//
-&lt;br&gt;&lt;br&gt;
-&#39;&#39;Merchant:&#39;&#39; //
-&lt;&lt;if $mcpower gte 50&gt;&gt;&lt;div class=&quot;green&quot;&gt;Sufficient Power Value ($mcpower/50)!&lt;/div&gt;
+&lt;br&gt;
+&lt;&lt;set _pw=50&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&#39;&#39;Merchant:&#39;&#39;
+//
+&lt;&lt;if _pwc&gt;&gt;
 Eh. Look, I don’t want any trouble, Sir. I… I… I bought it off a slaver’s cart. His name’s Thomas Decker, okay? I have nothing to do with it where ever it came from. Mr. Decker usually wheels his goods through Celior Forest after loading’s caravan with tribalists. I thin’ he was up at Elder’s Head &lt;div class=&quot;green&quot;&gt;(Clue collected!)&lt;/div&gt; when he returned last time.&lt;br&gt;&lt;br&gt;He’s here, at The Oasis, if you wanna speak to him. Please don’t mention I said anythin’. That guy’s a real brute.
 &lt;&lt;set $spaceclue1 to 1&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;div class=&quot;red&quot;&gt;Insufficient Power Value ($mcpower/50)!&lt;/div&gt; (Angry stare) What? You got a problem? I’m an honest tradesman. I didn’t steal anything. I got that piece in a fully rectitude way from Mr. Decker. He’s one of the big slavers that usually hauls his goods through here. I believe he’s down at The Oasis right now. (Confident smile) Why don’t you go and harass him instead? That would be a scene.
+(Angry stare) What? You got a problem? I’m an honest tradesman. I didn’t steal anything. I got that piece in a fully rectitude way from Mr. Decker. He’s one of the big slavers that usually hauls his goods through here. I believe he’s down at The Oasis right now. (Confident smile) Why don’t you go and harass him instead? That would be a scene.
 &lt;&lt;/if&gt;&gt;
 //
-
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Space Marine:&#39;&#39; //&lt;&lt;if $mcpower gte 50&gt;&gt;Ah. Just the kind of trouble I’m good at dealing with. Whoever stole this is going to pay.&lt;&lt;else&gt;&gt;Yeah. I think it would.&lt;&lt;/if&gt;&gt;//
 &lt;br&gt;&lt;br&gt;
@@ -363728,12 +363688,10 @@ One of the newly arrived men, a muscular guy with a shaved head, speaks out firs
 &lt;&lt;if $adpos is 6&gt;&gt;
 
 &#39;&#39;You:&#39;&#39; //(Laughter) You have no idea who you’re dealing with. I’m $pcFirstName $pcLastName of Redhaven&lt;&lt;if $courtlevel gte 5&gt;&gt; - High Senator of Ikaanos&lt;&lt;/if&gt;&gt;. You’ve probably heard my name before. Now hand it over, the gold, the stone and everything else you pulled out of that vault or you’ll be food for the wrool cats!//
-&lt;br&gt;&lt;br&gt;
-
-
-&lt;&lt;if $mcpower gte 1000&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value (&lt;&lt;print setup.formatNumber($mcpower)&gt;&gt;/1,000)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;&lt;set _pw=1000&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 Your presence strikes the men like an orbital bombardment from USS Seneca and Lt. Masters’ confident face melts away instantly when you declare your name.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Lt. Masters:&#39;&#39; //(Long pause) I see no need for bloodshed here. Alright. We only took it to make a statement. My House is still a power to be reckoned with – our adversaries should know that by now.
@@ -363760,8 +363718,6 @@ $53,500 added to Inventory!
 &lt;&lt;include Journal&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/1,000)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 &#39;&#39;Lt. Masters:&#39;&#39; //(Laughter) You’re messing with the wrong guys, Mr. $pcLastName. We’re no scrap metal raiders from Marston Avenue. … Kill them!//
 &lt;&lt;/if&gt;&gt;
 
@@ -386707,21 +386663,17 @@ Officer $npc.av50.last? What are you doing here? And why are you still in a unif
 &lt;&lt;if $adpos is 1&gt;&gt;
 
 &#39;&#39;You:&#39;&#39; //Detective. Ellen’s with me and she’s protected by House $pcLastName. It is my desire to look into this and purge the city from their operations. You’d do everyone a favor if you cooperated. I know you want what’s best for Ikaanos.//
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower gte 50&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/50)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
-&#39;&#39;Lt. Heyes:&#39;&#39; //(Long Pause). Well, as long as you can guarantee Ellen won’t be in any MORE trouble than what she already is. I’ll keep the lid on about this at the HQ. That should at least give you some time. I can’t officially help you in any way, however. I’m doing this for Elijah.
+&lt;&lt;set _pw=50&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&#39;&#39;Lt. Heyes:&#39;&#39;
 //
-
+&lt;&lt;if _pwc&gt;&gt;
+(Long Pause). Well, as long as you can guarantee Ellen won’t be in any MORE trouble than what she already is. I’ll keep the lid on about this at the HQ. That should at least give you some time. I can’t officially help you in any way, however. I’m doing this for Elijah.
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/50)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
-&#39;&#39;Lt. Heyes:&#39;&#39; //(Shakes his head) Sure, I can give you the details but my hands are tied. I hope you understand. I can’t be involved or help you in any way. I know I sound like a coward but getting killed because of this won’t help the 100-or-so other cases I’m working my ass off to solve right now.//
+(Shakes his head) Sure, I can give you the details but my hands are tied. I hope you understand. I can’t be involved or help you in any way. I know I sound like a coward but getting killed because of this won’t help the 100-or-so other cases I’m working my ass off to solve right now.
 &lt;&lt;/if&gt;&gt;
 
-//
 &lt;br&gt;&lt;br&gt;
 Alright.
 
@@ -393908,11 +393860,10 @@ Mr. Brayden lets out a short, mocking laugh, his voice dripping with false innoc
 &lt;br&gt;
 Refuse, and I’ll make you regret it - not with empty words, but by taking apart everything that keeps you safe: your influence, your reputation and this pussy-drenched peace you surround yourself with. Trust me, you’ll wish you’d handed it over.
 //
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower gte 300&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/300)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=300&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 Your voice reverberates with authority - as though the weight of your name and household stand behind you like shining gods looking down on Mr. Brayden.
 &lt;br&gt;&lt;br&gt;
 
@@ -393924,8 +393875,6 @@ Your voice reverberates with authority - as though the weight of your name and h
 &lt;&lt;include Journal&gt;&gt;
 &lt;&lt;set $quest_catho4 to 4&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/300)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 &#39;&#39;Ken:&#39;&#39; //Is that a threat? You and your lot get one chance to leave with your heads intact. Nobody insults Mr. Brayden and lives. Lucky for you we’re in civilized territory - otherwise my men would use you for target practice.
 &lt;br&gt;&lt;br&gt;
 Get out!
@@ -399110,11 +399059,10 @@ You’re viewing a group of Margrave Zealots!&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $adpos is 1&gt;&gt;
 You make it very clear to the occupiers that their actions are unlawful and unacceptable, threatening them with everything your status in Ikaanos can muster.
-&lt;br&gt;&lt;br&gt;
-
-&lt;&lt;if $mcpower gte 50&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;green tex18px&quot;&gt;Sufficient Power Value ($mcpower/50)!&lt;/div&gt;&lt;/center&gt;
 &lt;br&gt;
+&lt;&lt;set _pw=50&gt;&gt;
+&lt;&lt;include PVCheck&gt;&gt;
+&lt;&lt;if _pwc&gt;&gt;
 The fact that you’re a prominent warlord in a nearby district is enough to convince the zealots. After much debating and cursing, their leader eventually spits out:
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;Zealot:&#39;&#39; //Alright, asshole. We’ll go. There are other ways we can harass these Bible-thumpers. Break camp!//
@@ -399124,8 +399072,6 @@ The fact that you’re a prominent warlord in a nearby district is enough to con
 &lt;&lt;unset $encatho2b&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;red tex18px&quot;&gt;Insufficient Power Value ($mcpower/50)!&lt;/div&gt;&lt;/center&gt;
-&lt;br&gt;
 &#39;&#39;Zealot:&#39;&#39; //You wanna die for your cross, Bible-thumper? Come on. We’re ready.//
 &lt;&lt;/if&gt;&gt;
 
