@@ -259993,7 +259993,6 @@ Several gangs of heavily armed raiders are causing trouble in the outskirts of I
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Power (Bandits):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=1&gt;&gt;
@@ -260014,7 +260013,6 @@ The Spheremasters have recruited a large gang of ex-raiders to their ranks, hopi
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+3&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+150&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-3&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=3&gt;&gt;
@@ -260038,7 +260036,6 @@ The night sky of Ikaanos is once again colored red by the flaming houses of Whit
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity:&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control -=2&gt;&gt;
@@ -260060,7 +260057,6 @@ The Republic Navy has launched a new battlecruiser, IMS Ulthar, that’ll patrol
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+12&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Cash (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$110,000,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.money-=110000000&gt;&gt;
@@ -260085,7 +260081,6 @@ House Cyker spends an obscene amount of money in an attempt to gain more power a
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (House Cyker):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Cash (House Cyker):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.cyker.power+=5&gt;&gt;
@@ -260112,7 +260107,6 @@ The Kymanto Syndicate spends an obscene amount of money in an attempt to expand 
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Kymanto):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Cash (Kymanto):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.kymanto.power+=5&gt;&gt;
@@ -260143,7 +260137,6 @@ in his attempt at dominating The North.
 &lt;li&gt;&#39;&#39;Power value (Bellemme):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;if $randesc gte 3&gt;&gt;&lt;li&gt;&#39;&#39;Soldiers (Bellemme):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+500&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;li&gt;&#39;&#39;Cash (Bellemme):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.bel.power+=5&gt;&gt;
@@ -260172,7 +260165,6 @@ Major Valkess
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value ($serafort):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+3&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Cash ($serafort):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.warlord1.power+=3&gt;&gt;
@@ -260201,7 +260193,6 @@ The rebel army
 &lt;li&gt;&#39;&#39;Power value (Rebels):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+3&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;if $randesc is 2 or $randesc is 3&gt;&gt;&lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-24&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 1&gt;&gt;&lt;li&gt;&#39;&#39;Fighters (Rebels):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+50&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.rebel.power+=3&gt;&gt;
@@ -260232,7 +260223,6 @@ The rebel army
 &lt;&lt;if $randesc is 2&gt;&gt;&lt;li&gt;&#39;&#39;Money (Aesir tribe):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;10,000&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 3&gt;&gt;&lt;li&gt;&#39;&#39;Money (Aesir tribe):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+&amp;#36;15,000&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 4&gt;&gt;&lt;li&gt;&#39;&#39;Soldiers (Aesir tribe):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+50&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.viking.power+=3&gt;&gt;
@@ -260267,7 +260257,6 @@ The Republic Army has received reinforcements
 &lt;li&gt;&#39;&#39;Power value (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+15&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+250&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Cash (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.power+=15&gt;&gt;
@@ -260299,7 +260288,6 @@ A devastating hurricane has wreaked havoc
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Weather conditions (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;Storm&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp-=$pushcash&gt;&gt;
@@ -260326,7 +260314,6 @@ This event has significantly increased the corruption of Ikaanian society.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.corruption+=5&gt;&gt;
@@ -260354,7 +260341,6 @@ This event has significantly increased the corruption of Ikaanian society.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-5&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.corruption-=5&gt;&gt;
@@ -260380,7 +260366,6 @@ executed an offensive action against an off-city militia camp today, killing a d
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-12&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.men-=12&gt;&gt;
@@ -260401,7 +260386,6 @@ In an unexpected surge of charity, the noble families of Ikaanos have distribute
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp+=2&gt;&gt;
@@ -260422,8 +260406,6 @@ A local drought in the Red River basin has caused a shortage of food. Prices are
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;if $mch.yardslot9.type is 15 and $quest_ave gte 3&gt;&gt;&lt;li&gt;&#39;&#39;Field II (Zapin):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp-=2&gt;&gt;
@@ -260454,7 +260436,6 @@ Earlier today, a fierce battle between bandits and republic soldiers took place
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Fighters (Bandits):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.men-=10&gt;&gt;
@@ -260484,7 +260465,6 @@ Earlier today, a fierce battle between bandits and republic soldiers took place
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;25,000&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Warriors (Aesir tribe):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-60&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Aesir tribe):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+&amp;#36;25,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.men+=60&gt;&gt;
@@ -260517,7 +260497,6 @@ Earlier today, a fierce battle between bandits and republic soldiers took place
 &lt;li&gt;&#39;&#39;Soldiers ($serafort):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-20&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money ($serafort):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+&amp;#36;15,000&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;My standing (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.men+=20&gt;&gt;
@@ -260547,7 +260526,6 @@ An unsanctioned priest belonging to The Moon Religion has lashed out against the
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.corruption-=$pushcash&gt;&gt;
@@ -260581,7 +260559,6 @@ Nothing more needs to be said – gossips about the details are all over Ikaanos
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Academy):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.his.power-=2&gt;&gt;
@@ -260611,7 +260588,6 @@ Large amounts of money have found its way to the pockets of powerful men and wom
 &lt;li&gt;&#39;&#39;Power Value (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-5&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$1,000,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.power-=5&gt;&gt;
@@ -260648,7 +260624,6 @@ Chancellor Bianchi has ordered a festival to be held; honoring Adonis, the offic
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;&lt;&lt;if _corfest is true&gt;&gt;+3&lt;&lt;else&gt;&gt;+1&lt;&lt;/if&gt;&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$500,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=1&gt;&gt;
@@ -260689,7 +260664,6 @@ In a recent display of power, Chancellor Bianchi held a public court against a n
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;if _corfest is true&gt;&gt;&lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+3&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=2&gt;&gt;
@@ -260736,8 +260710,6 @@ Chancellor Aria has invested in improved defenses and hired more soldiers to gua
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$1,000,000&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;br&gt;
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.power+=5&gt;&gt;
 &lt;&lt;set _ika.men+=300&gt;&gt;
@@ -260769,7 +260741,6 @@ A company of soldiers from _tmp have joined The Republic army, for the service o
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$pushcash&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.men+=$pushcash&gt;&gt;
@@ -260803,7 +260774,6 @@ Chancellor Aria Bianchi has also ordered a lavish harvest festival, adorned by n
 &lt;&lt;if _corfest is true&gt;&gt;&lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+3&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$300,000&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp+=3&gt;&gt;
@@ -260833,8 +260803,6 @@ It’s not a society-changing event, but still enough to make a small contributi
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
-
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp+=1&gt;&gt;
@@ -260919,7 +260887,6 @@ Unfortunately, Chancellor Bianchi’s power is not enough to squelch the siniste
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$pushcash&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.corruption+=$pushcash&gt;&gt;
@@ -260974,8 +260941,6 @@ A company of soldiers from
 &lt;&lt;if $pushcash is 2&gt;&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 
@@ -261050,8 +261015,6 @@ A company of soldiers from
 &lt;&lt;if $pushcash is 2&gt;&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 
@@ -261237,9 +261200,6 @@ In a grand attempt at grabbing their &quot;sacred&quot; capital, Kingsport Towns
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;br&gt;
-
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 
 &lt;&lt;if $redtidewar is 1&gt;&gt;
@@ -261374,7 +261334,6 @@ has decided on some society-changing investments.
 &lt;&lt;if $descroll3 is 1&gt;&gt;&lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$150,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.money-=150000&gt;&gt;
@@ -261407,7 +261366,6 @@ has decided on some society-changing investments.
 &lt;&lt;if $randesc is 2&gt;&gt;&lt;li&gt;&#39;&#39;Power value (Aesir Tribe):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 3&gt;&gt;&lt;li&gt;&#39;&#39;Power value (Islam):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 4&gt;&gt;&lt;li&gt;&lt;&lt;if _ika.state is 1&gt;&gt;&#39;&#39;Power value (Cult of The Elder):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10&lt;/div&gt;&lt;&lt;else&gt;&gt;&#39;&#39;Control (Ikaanos)&#39;&#39;: &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $randesc is 1&gt;&gt;&lt;&lt;set $faction.christian.power-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -261462,7 +261420,6 @@ has decided on some society-changing investments.
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;&lt;if _nocor isnot true&gt;&gt;&lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=1&gt;&gt;
@@ -261489,7 +261446,6 @@ has decided on some society-changing investments.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=1&gt;&gt;
@@ -261546,7 +261502,6 @@ A medium-sized fusion power plant has recently collapsed after three centuries o
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;&lt;if $pushcash lte 6&gt;&gt;&lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;&lt;&lt;else&gt;&gt;&lt;li&gt;&#39;&#39;None.&#39;&#39;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pushcash is 2&gt;&gt;&lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=1&gt;&gt;
@@ -261620,7 +261575,6 @@ The honorable Chancellor Aria Bianchi of The Third Republic
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-4&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+4&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 
@@ -261757,8 +261711,6 @@ The honorable Chancellor Aria Bianchi of The Third Republic
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;br&gt;
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $randesc is 1&gt;&gt;&lt;&lt;set $faction.viking.power-=2, $faction.viking.men-=$pushcash&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 2&gt;&gt;&lt;&lt;set $faction.muslim.power-=2, $faction.muslim.men-=$pushcash&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -261814,7 +261766,6 @@ Chancellor Aria Bianchi has ordered new investments to stave off the rampant law
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+3&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&amp;#36;&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=3&gt;&gt;
@@ -261844,7 +261795,6 @@ Chancellor Aria Bianchi has ordered new investments to stave off the rampant law
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Men (Rebels):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-25&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=2&gt;&gt;
@@ -261874,7 +261824,6 @@ Chancellor Aria Bianchi has ordered new investments to stave off the rampant law
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Men (Rebels):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-&lt;&lt;print setup.formatNumber($pushcash)&gt;&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-30&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=2&gt;&gt;
@@ -261908,7 +261857,6 @@ Chancellor Aria Bianchi has ordered new investments to stave off the rampant law
 &lt;&lt;if $randesc is 2&gt;&gt;&lt;li&gt;&#39;&#39;Power (CTM):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 3&gt;&gt;&lt;li&gt;&#39;&#39;Power &lt;&lt;if $faction.mob.state gte 1&gt;&gt;(House Carozza)&lt;&lt;else&gt;&gt;(Muslims)&lt;&lt;/if&gt;&gt;:&#39;&#39; &lt;div class=&quot;green&quot;&gt;+4&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $randesc is 4&gt;&gt;&lt;li&gt;&#39;&#39;Power (Russians):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+4&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $randesc is 1&gt;&gt;&lt;&lt;set $faction.his.power+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -261953,7 +261901,6 @@ The aging Molly Paine of Elidir recently organized &quot;The march of a hundred 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;&lt;&lt;if $paineevent isnot 2&gt;&gt;+8&lt;&lt;else&gt;&gt;+1&lt;&lt;/if&gt;&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -262044,7 +261991,6 @@ The Republic continues to invest in its ongoing research project.
 
 
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$2,000,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -262072,7 +262018,6 @@ The Republic continues to invest in its ongoing research project.
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 
 &lt;li&gt;&#39;&#39;Influence (You):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -262094,7 +262039,6 @@ Your previous work in fighting off the dreadful disease known as Fetid Blindness
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Influence (You):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -262116,7 +262060,6 @@ The post-apocalyptic dilapidation can be felt everywhere – even in the shimmer
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1.&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1.&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -262138,7 +262081,6 @@ adding their numbers and strength to the enemies of everything civilized.
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Bandits):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+4.&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Fighters (Bandits):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$pushcash.&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.bandit.power+=2&gt;&gt;
@@ -262169,7 +262111,6 @@ adding their numbers and strength to the enemies of everything civilized.
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Bandits):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-4&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Fighters (Bandits):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.bandit.power-=4&gt;&gt;
@@ -262197,7 +262138,6 @@ has been infected by vicious raider gangs!&lt;br&gt;
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=1&gt;&gt;
@@ -262246,7 +262186,6 @@ has been infected by vicious raider gangs!&lt;br&gt;
 &lt;&lt;if $holiday is 3&gt;&gt;&#39;&#39;Affection (Household):&#39;&#39; +1/day.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $holiday is 4&gt;&gt;&#39;&#39;City Control:&#39;&#39; +1/day.&lt;&lt;/if&gt;&gt;
 &lt;/li&gt;
-&lt;br&gt;
 
 
 
@@ -262276,7 +262215,6 @@ The raiders from //Stokke Hills//
 &lt;&lt;else&gt;&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $randesc lte 2&gt;&gt;
@@ -262316,7 +262254,6 @@ The raiders that are currently festering in //Marston Avenue//
 &lt;li&gt;&#39;&#39;Fighters (Bandits):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10 &lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $randesc lte 2&gt;&gt;
@@ -262374,7 +262311,6 @@ Ikaanos Colony welcomes the village of
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp+=1&gt;&gt;
@@ -262431,7 +262367,6 @@ Ikaanos Colony welcomes the village of
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.corruption+=1&gt;&gt;
@@ -262608,9 +262543,6 @@ In an attempt to bombard their opponent into submission, the entire republic fle
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;br&gt;
-
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 
 &lt;&lt;if $lakewar is 1&gt;&gt;
@@ -262726,7 +262658,6 @@ performed an attack against a government building earlier today, leaving a trail
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-3&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-20&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=3&gt;&gt;
@@ -262756,7 +262687,6 @@ Tensions have erupted between The&lt;&lt;if _ika.state is 2&gt;&gt; Third&lt;&lt
 &lt;li&gt;&#39;&#39;Power Value (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-15&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-225&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Fighters (Bandits):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-25&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.men-=225&gt;&gt;
@@ -262787,7 +262717,6 @@ Reports from the recent plague of
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-10&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;if $diff gte 3&gt;&gt;&lt;li&gt;&#39;&#39;All household gardens:&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mch.yardslot9.type is 15 and $quest_ave gte 3&gt;&gt;&lt;li&gt;&#39;&#39;Fields (Zapin):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.power-=25&gt;&gt;
@@ -262834,7 +262763,6 @@ today, with massive casualties as a result.
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-3&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Soldiers (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Fighters (Bandits):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-150 &lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.power-=35&gt;&gt;
@@ -262872,8 +262800,6 @@ The soaring prosperity in Raikan’s old Burakumin village has attracted a gang 
 &lt;li&gt;&#39;&#39;Power Value (Bandits):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;br&gt;
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $buraattack is 1&gt;&gt;&lt;&lt;set $inve.bura.soldiers-=$randesc&gt;&gt;&lt;&lt;set $faction.bandit.men-=7&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $buraattack is 2&gt;&gt;&lt;&lt;set $inve.bura.storage-=$pushcash&gt;&gt;&lt;&lt;set $faction.bandit.power+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -262897,7 +262823,6 @@ New enemy PoI added (Kasey’s Park)!
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-5&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-5&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=5&gt;&gt;
@@ -262919,7 +262844,6 @@ Due to unusually heavy rains in the Beryll Mountain range, Red River and Prometh
 &lt;br&gt;&lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+5&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp+=5&gt;&gt;
@@ -262947,7 +262871,6 @@ The majestic pre-severance skyscraper complex known as the &quot;Riverwood Cente
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.prosp-=2&gt;&gt;
@@ -262987,7 +262910,6 @@ All business ventures on Raana are affected by the price of gold.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Current gold modifier:&#39;&#39; &lt;&lt;if $goldprice gte 0&gt;&gt;+&lt;&lt;/if&gt;&gt;$goldprice&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263008,7 +262930,6 @@ The Catholic Church has, with their recently renewed power, dealt a severe blow 
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-3&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263025,7 +262946,6 @@ In an attempt to rid the streets of organized crime, The Republic has made a cra
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power (Carozza):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$pushcash&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.mob.power-=$pushcash&gt;&gt;
@@ -263058,7 +262978,6 @@ The council has decided to increase property tax throughout Ikaanos, in an attem
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2,000,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263079,7 +262998,6 @@ Now that Ikaanos is back up on its feet, The council has, in an unexpected bout 
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Tax factor (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Prosperity (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263104,7 +263022,6 @@ purchased a H.U.L.C. armor set from The Transit Department in Emerald City.
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;H.U.L.C. sets supply (TD):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263121,7 +263038,6 @@ The chancellor’s security guards killed Mr. Hasan and his crew of hired soldie
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=1&gt;&gt;
@@ -263143,7 +263059,6 @@ To stop the spiraling deterioration of Ikaanos, The Republic Council has decided
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+500&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-9,000,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.power+=500&gt;&gt;
@@ -263180,8 +263095,6 @@ dealt a powerful blow to the Scandinavian infrastructure earlier this week, whic
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Aesir tribe):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-50&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Warriors (Aesir tribe):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-5&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
-
 
 &lt;&lt;/if&gt;&gt;
 
@@ -263208,7 +263121,6 @@ dealt a powerful blow to the Christian infrastructure earlier this week, signifi
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Power value (Catholic Church):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-20&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263233,7 +263145,6 @@ One of Ikaanos’ renowned bounty hunters, Clea Vallas, has just liquidated a po
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Killed:&#39;&#39; $randesc $pushcash&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control-=1&gt;&gt;
@@ -263260,8 +263171,6 @@ The rebel army
 &lt;li&gt;&#39;&#39;Power value (Rebels):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+50&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Rebels):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$100,000&lt;/div&gt;&lt;/li&gt;
 
-&lt;br&gt;
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.rebel.power+=50&gt;&gt;
 &lt;&lt;set $faction.rebel.money-=100000&gt;&gt;
@@ -263284,8 +263193,6 @@ The rebel army has recently strengthened their ranks with a platoon of able-bodi
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Fighters (Rebels):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+25&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Rebels):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$50,000&lt;/div&gt;&lt;/li&gt;
-
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $faction.rebel.men+=25&gt;&gt;
@@ -263328,7 +263235,6 @@ Chancellor Mordecai has ordered the imprisonment of an Ikaanian family, citing o
 &lt;&lt;if $pollapp gte 6&gt;&gt;&lt;li&gt;&#39;&#39;Power Value (Rebels):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+4&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pollapp is 5 and $sats isnot undefined&gt;&gt;&lt;&lt;set $sats.male+=5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;br&gt;
 &lt;&lt;/if&gt;&gt; /* END OF MORDECAI EVENT */
 
 
@@ -263431,7 +263337,6 @@ Unfortunately, Aria spent the night at the house of one of her mercenaries and w
 &lt;li&gt;&#39;&#39;Power Value (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-50&lt;/div&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;br&gt;
 &lt;&lt;/if&gt;&gt; /* END OF ARIA EVENT */
 
 
@@ -263498,9 +263403,6 @@ After Mordecai Adler’s disappearance, the power of House Adler is slowly dimin
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;br&gt;
-
-
 &lt;&lt;else&gt;&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
@@ -263523,8 +263425,6 @@ Rumors are currently circulating that Chancellor Mordecai Adler recently added a
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$10,000&lt;/div&gt;&lt;/li&gt;
-
-&lt;br&gt;
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -263551,10 +263451,6 @@ Today, Marshal Ezra Waylen married the daughter of Moussa Assiatou, a former Mor
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$50,000&lt;/div&gt;&lt;/li&gt;
-
-&lt;br&gt;
-
-
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263618,9 +263514,6 @@ A massive ion beam has been fired from USS Seneca, killing at least three dozen 
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;br&gt;
-
-
 
 &lt;&lt;else&gt;&gt;
 
@@ -263644,7 +263537,6 @@ The rebel faction has just hired a company (100 soldiers)
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Fighters (Rebels):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+100&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&#39;&#39;Money (Rebels):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-$300,000&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;/if&gt;&gt; /* ORBIT EVENT ENDS */
 
@@ -263965,7 +263857,6 @@ Chancellor Aria has made a noticeable reform of The Second Republic’s constitu
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Liberty (Ikaanos):&#39;&#39; &lt;&lt;if _down is true&gt;&gt;&lt;div class=&quot;red&quot;&gt;-1&lt;/div&gt; &lt;&lt;else&gt;&gt;&lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;&lt;/if&gt;&gt;&lt;/li&gt;
-&lt;br&gt;
 
 
 &lt;&lt;/if&gt;&gt;
@@ -263993,7 +263884,6 @@ It has become known that
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;&lt;if $faction.christian.power gte 200 or $christianp is true&gt;&gt;&lt;li&gt;&#39;&#39;Power Value (Catholic Church):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-3&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;li&gt;&#39;&#39;Corruption (enrolled NPCs):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+$pushcash&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $faction.christian.power gte 200&gt;&gt;&lt;&lt;set $faction.christian.power-=3&gt;&gt;&lt;&lt;set $christianp to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -264138,9 +264028,6 @@ After inflicting catastrophic losses to the dengi menace for the past couple of 
 
 
 
-&lt;br&gt;
-
-
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 
 &lt;&lt;if $quest_dengi is 100&gt;&gt;
@@ -264201,7 +264088,6 @@ After inflicting catastrophic losses to the dengi menace for the past couple of 
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;&lt;if $pushcash lte 2&gt;&gt;&lt;li&gt;&#39;&#39;Corruption (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+2&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pushcash gte 3&gt;&gt;&lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;red&quot;&gt;-2&lt;/div&gt;&lt;/li&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;if $pushcash lte 2&gt;&gt;&lt;&lt;set _ika.corruption+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -264254,7 +264140,6 @@ After inflicting catastrophic losses to the dengi menace for the past couple of 
 &lt;br&gt;&lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Control (Ikaanos):&#39;&#39; &lt;div class=&quot;green&quot;&gt;+1&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set _ika.control+=1&gt;&gt;
@@ -264280,7 +264165,6 @@ One of Ikaanos’ largest illegal distilleries down in Stokke Hills has been des
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;Business deal (Felton Gang):&#39;&#39; &lt;div class=&quot;red&quot;&gt;Terminated!&lt;/div&gt;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;if $pollapp is undefined&gt;&gt;
 &lt;&lt;set $stokkeen4holder to true&gt;&gt;
@@ -264345,7 +264229,6 @@ Despite Ikaanos’ state of lawlessness, nothing overly-serious has occurred dur
 &lt;br&gt;&lt;br&gt;
 &#39;&#39;EFFECTS:&#39;&#39;&lt;br&gt;
 &lt;li&gt;&#39;&#39;None.&#39;&#39;&lt;/li&gt;
-&lt;br&gt;
 
 &lt;&lt;/if&gt;&gt;
 
