@@ -79835,8 +79835,6 @@ filename is rackoralgag.jpg and rackdeepgag.jpg
 
 
 
-&lt;&lt;set _img to &quot;Pics/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-
 &lt;&lt;include RanCheck&gt;&gt;
 
 
@@ -285947,36 +285945,19 @@ You contemplate on sending _npc.girlname _npc.last away to become a full member 
 &lt;&lt;if $pic is 204&gt;&gt;
 /* Master gropes ass. See slave’s face. */
 [img[_img + &quot;spank9.jpg&quot;]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="410" name="RanCheck" tags="nobr" position="5375,1000" size="100,100">
-
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="410" name="RanCheck" tags="nobr" position="5375,1000" size="100,100">
 /*
-
 BELOW CONTROLS FULL NPC SCENES OR LIMITED SCENES
-
-Add an &quot;isnot&quot; checker to the first line to enable FULL Sex scenes
-
-Add an &quot;is&quot; checker to the second line to enable limited (completed sex scenes).
-
-If neither is true, scenes are picked from the AvGen/Body1 archive
-
 */
+&lt;&lt;set _img=npath(_girlid)&gt;&gt;
 
+&lt;&lt;if _girlid gte 18 and !(_girlid is 42 or _girlid is 45 or _girlid is 52)&gt;&gt;
 
-&lt;&lt;if _girlid gte 18 and _girlid isnot 42 and _girlid isnot 45 and _girlid isnot 52&gt;&gt;
-
-&lt;&lt;if _girlid lte 113 or _girlid is 126 or _girlid is 129 or _girlid is 133 or _girlid is 134 or _girlid is 136 or _girlid is 154 or _girlid is 124 or _girlid is 128 or _girlid is 129 or _girlid is 133 or _girlid is 135 or _girlid is 138 or _girlid is 137 or _girlid is 140 or _girlid is 168 or _girlid is 170 or _girlid is 179 or _girlid is 180 or _girlid is 182 or _girlid is 184 or _girlid is 199 or _girlid is 201 or _girlid is 202 or _girlid gte 204 or _girlid is 300&gt;&gt;
+&lt;&lt;set _tmp=[124,126,128,129,133,134,135,136,137,138,140,154,168,170,179,180,182,184,199,201,202]&gt;&gt;
+&lt;&lt;if _girlid lte 113 or _tmp.contains(_girlid) or _girlid gte 204&gt;&gt;
 
 &lt;&lt;set _respic to 1&gt;&gt;
-
-&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-
-
-/* ADD NEW STORY NPCS WITH LIMITED WARDROBES BELOW */
-
-&lt;&lt;if _girlid lte 51&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 
@@ -285984,7 +285965,8 @@ If neither is true, scenes are picked from the AvGen/Body1 archive
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="411" name="SpankSet" tags="nobr" position="6000,1450" size="100,100">
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="411" name="SpankSet" tags="nobr" position="6000,1450" size="100,100">
 &lt;&lt;if $spankwho is 1&gt;&gt;
 
 &lt;&lt;if $justspanked gte 1 or $action5 is true or _suggopen is true&gt;&gt;
