@@ -212294,74 +212294,33 @@ _name is ready to enter your household!
 &lt;div class=&quot;talktraitpic&quot;&gt;
 &lt;div class=&quot;alignleft&quot;&gt;
 
-&lt;&lt;if $action1 isnot true&gt;&gt;
-&lt;&lt;else&gt;&gt;
-
-
-&lt;&lt;if $adisplay gte 100 and $nsfw is undefined&gt;&gt;
-
-&lt;&lt;set _path to &quot;Pics/AvRan/Av&quot;+$adisplay+&quot;/inter_naked.png&quot;&gt;&gt;
-
 /* SCRIPT BELOW SHOWS UNDIES FOR CERTAIN DISPLAY PICS */
-
-&lt;&lt;if _takebody is 6&gt;&gt;
-
-/*
-&lt;&lt;if _takenid lte 7&gt;&gt;
-[img[Pics/AvGen/maleslave.png]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _takenid gte 8 and _takenid lte 16&gt;&gt;
-[img[Pics/AvGen/maleslave8.png]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _takenid is 18&gt;&gt;
-[img[Pics/AvGen/maleslave18.png]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _takenid is 19&gt;&gt;
-[img[Pics/AvGen/maleslave19.png]]
-&lt;&lt;/if&gt;&gt;
-*/
-
-
-&lt;&lt;set _path to &quot;Pics/AvRan/Av&quot;+$adisplay+&quot;/inter_casual.png&quot;&gt;&gt;
-[img[_path]]
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $adisplay is 102 or $adisplay is 136 or $adisplay is 104 or $adisplay is 132 or $adisplay is 199 or $adisplay is 138 or $adisplay is 100 or $adisplay is 201 or $adisplay is 160 or $adisplay is 150 or $adisplay is 157 or $adisplay is 213&gt;&gt;
-&lt;&lt;set _path to &quot;Pics/AvRan/Av&quot;+$adisplay+&quot;/inter_undies.png&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _img=npath($adisplay)&gt;&gt;
 
 &lt;&lt;if $aage lte 17&gt;&gt;
-&lt;&lt;set _path to &quot;Pics/AvRan/Av&quot;+$adisplay+&quot;/inter_casual_kid.png&quot;&gt;&gt;
+[img[_img+&quot;inter_casual_kid.png&quot;]]
+&lt;&lt;elseif _takebody is 6 or $nsfw&gt;&gt;
+[img[_img+&quot;inter_casual.png&quot;]]
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _tmp=[100,102,104,132,136,138,150,157,160,199,201,213]&gt;&gt;
+[img[_img+(_tmp.contains($adisplay) ? &quot;inter_undies.png&quot; : &quot;inter_naked.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
-[img[_path]]
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;picstats&quot;&gt;
+&lt;center&gt;
 
-&lt;&lt;if $action1 is true&gt;&gt;
 &lt;&lt;if _takebody gte 6 and $takeslot gte 1&gt;&gt;&lt;&lt;set $aage to _takenage&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;center&gt;
 &lt;div class=&quot;bold tex19px uppernocut&quot;&gt;$aname $alast&lt;/div&gt;
 &lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;resholder bold&quot;&gt;&#39;&#39;AGE&#39;&#39;&lt;br&gt;&lt;&lt;if _unknown is true&gt;&gt;Unknown&lt;&lt;else&gt;&gt;$aage&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
 &lt;div class=&quot;resholder bold&quot;&gt;&#39;&#39;VALUE&#39;&#39;&lt;br&gt;$avalue&lt;/div&gt;
-
 &lt;div class=&quot;resholder bold&quot;&gt;&#39;&#39;VIRGIN&#39;&#39;&lt;br&gt;&lt;&lt;if $avirgin is true&gt;&gt;Yes&lt;&lt;else&gt;&gt;No&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
-
 &lt;/div&gt;
 
 &lt;div class=&quot;bold tex18px uppernocut&quot;&gt;MODIFIERS&lt;/div&gt;&lt;br&gt;&lt;div class=&quot;tex5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -212508,8 +212467,7 @@ _name is ready to enter your household!
 
 &lt;/div&gt;
 
-
-
+&lt;&lt;/if&gt;&gt; /* unknown ends */
 
 /*
 &lt;div class=&quot;padd40left&quot;&gt;
@@ -212557,26 +212515,8 @@ _name is ready to enter your household!
 &lt;/div&gt;
 */
 
-
-&lt;&lt;/if&gt;&gt; /* unknown ends */
 &lt;/center&gt;
-
-
-
-
-&lt;div class=&quot;traitholder&quot;&gt;
-
-&lt;&lt;set _isinau to true&gt;&gt;
-
-&lt;br&gt;
-
-
 &lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-
 
 &lt;/div&gt;
 
