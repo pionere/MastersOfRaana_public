@@ -59,6 +59,7 @@ romanize = function(num) {
 sgnv = function (v) {
  return v >= 0 ? '+'+v : v;
 }
+npath = function (i) { return 'Pics/Av' + (i < 100 ? '' : 'Ran/Av') + i + '/' }
 wloot = function(w) {
 //  (w == 'fists')
 //  (w == 'whipstick')
@@ -18658,7 +18659,7 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 &lt;&lt;include TalkTraits&gt;&gt;
 &lt;&lt;else&gt;&gt;
 
-&lt;&lt;if $tpic is 1&gt;&gt;[img[&quot;Pics/Av&quot; + $girlid+ &quot;/enslave.jpg&quot;]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $tpic is 1&gt;&gt;[img[npath($girlid)+&quot;enslave.jpg&quot;]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -24475,7 +24476,7 @@ Remaining withdrawal days: $boosterdays
 &lt;&lt;if $girlid is 1 or $girlid is 2 or $girlid is 3 or $girlid is 5 or $girlid is 14 or $girlid is 10 or $girlid is 15 or $girlid is 16&gt;&gt;
 &lt;&lt;set _okgirl to true&gt;&gt;
 
-&lt;&lt;set _path to &quot;Pics/Av&quot;+$girlid&gt;&gt;
+&lt;&lt;set _path=npath($girlid)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $bondage gte 1 or $avatarunc is true or $busy gte 1 or $nsfw is true&gt;&gt;&lt;&lt;set _okgirl to false&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -24488,8 +24489,8 @@ Remaining withdrawal days: $boosterdays
 &lt;&lt;if $daycount gte 60 and $daycount lte 190&gt;&gt;
 /*DAYTIME PICS */
 
-&lt;&lt;if $liveroom lte 1&gt;&gt;&lt;&lt;if _okgirl is true&gt;&gt;[img[_path + &quot;/home1.jpg&quot;]]&lt;&lt;else&gt;&gt;[img[Pics/Interiors/house1d.jpg]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $liveroom is 2&gt;&gt;&lt;&lt;if _okgirl is true&gt;&gt;[img[_path + &quot;/home2.jpg&quot;]]&lt;&lt;else&gt;&gt;[img[Pics/Interiors/house2d.jpg]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $liveroom lte 1&gt;&gt;&lt;&lt;if _okgirl is true&gt;&gt;[img[_path + &quot;home1.jpg&quot;]]&lt;&lt;else&gt;&gt;[img[Pics/Interiors/house1d.jpg]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $liveroom is 2&gt;&gt;&lt;&lt;if _okgirl is true&gt;&gt;[img[_path + &quot;home2.jpg&quot;]]&lt;&lt;else&gt;&gt;[img[Pics/Interiors/house2d.jpg]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $liveroom is 3&gt;&gt;[img[Pics/Interiors/house3d.jpg]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $liveroom is 4&gt;&gt;[img[Pics/Interiors/house4d.jpg]]&lt;&lt;/if&gt;&gt;
 
@@ -35035,7 +35036,7 @@ $girlname has a normal and healthy body weight.&lt;br&gt;&lt;br&gt;She might hav
 &lt;&lt;if _npc.wear is &quot;naked&quot;&gt;&gt;&lt;&lt;set $edunaked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;set _img=($girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$girlid+&quot;/&quot;&gt;&gt;
+&lt;&lt;set _img=npath($girlid)&gt;&gt;
 
 
 /* onetrain means no training pics */
@@ -98139,9 +98140,8 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot1 gte 0&gt;&gt;
 &lt;&lt;if $cs1_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[Pics/Combat/pos3up.png][CombatRoom][$cs1_posb to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _dir=($cs1_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs1_girlid&gt;&gt;
 
-[img[_dir+($cs1_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs1_girlid)+($cs1_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 
 &lt;&lt;if $cs1_posb isnot 3 and _cs1upok is true&gt;&gt;[img[Pics/Combat/pos3upgo.png][CombatRoom][$cs1_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -98158,9 +98158,8 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot2 gte 0&gt;&gt;
 &lt;&lt;if $cs2_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[Pics/Combat/pos3up.png][CombatRoom][$cs2_posb to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _dir=($cs2_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs2_girlid&gt;&gt;
 
-[img[_dir+($cs2_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs2_girlid)+($cs2_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 
 &lt;&lt;if $cs2_posb isnot 3 and _cs2upok is true&gt;&gt;[img[Pics/Combat/pos3upgo.png][CombatRoom][$cs2_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -98176,9 +98175,8 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot3 gte 0&gt;&gt;
 &lt;&lt;if $cs3_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[Pics/Combat/pos3up.png][CombatRoom][$cs3_posb to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _dir=($cs3_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs3_girlid&gt;&gt;
 
-[img[_dir+($cs3_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs3_girlid)+($cs3_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 
 &lt;&lt;if $cs3_posb isnot 3 and _cs3upok is true&gt;&gt;[img[Pics/Combat/pos3upgo.png][CombatRoom][$cs3_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -98194,9 +98192,8 @@ _level
 &lt;div class=&quot;resholderbig&quot;&gt;
 &lt;&lt;if $cslot4 gte 0&gt;&gt;
 &lt;&lt;if $cs4_posb isnot 3&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;else&gt;&gt;[img[Pics/Combat/pos3up.png][CombatRoom][$cs4_posb to 1]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _dir=($cs4_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs4_girlid&gt;&gt;
 
-[img[_dir+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs4_girlid)+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
 
 &lt;&lt;if $cs4_posb isnot 3 and _cs4upok is true&gt;&gt;[img[Pics/Combat/pos3upgo.png][CombatRoom][$cs4_posb to 3]]&lt;&lt;/if&gt;&gt;
 
@@ -127989,10 +127986,7 @@ The HR rep returns, however, and hands over a leather satchel that’s surprisin
 
 
 &lt;&lt;if $mcrel.faith lte 3&gt;&gt;
-
-&lt;&lt;set _path to &quot;Pics/Av&quot;+$girlid&gt;&gt;
-
-[img[_path + &quot;/mar.jpg&quot;]]
+[img[npath($girlid)+&quot;/mar.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -146592,7 +146586,7 @@ $girlnames &#39;&#39;Jaded Trait (-1)&#39;&#39; has decreased!
 
 &lt;&lt;if _call is 1 and ((_girlid gte 1 and _girlid lte 14 and _girlid isnot 10) or _girlid is 16 or _girlid is 18 or _girlid is 39 or _girlid is 42)&gt;&gt;
 
-&lt;&lt;set _tmp=&quot;Pics/Av&quot;+_girlid+&quot;/&quot;&gt;&gt;
+&lt;&lt;set _tmp=npath(_girlid)&gt;&gt;
 
 &lt;&lt;if $macevid gte 1&gt;&gt;
 
@@ -190504,7 +190498,7 @@ She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; l
 
 
 
-&lt;&lt;set _img=(_npc.girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+_npc.girlid+&quot;/&quot;&gt;&gt;
+&lt;&lt;set _img=npath(_npc.girlid)&gt;&gt;
 &lt;&lt;if $slavefighting or _showafterpic&gt;&gt;
 /* has fight pics below */
 &lt;&lt;set _tmp=[28,32,36,40,42,50,52,128,202,205,206,207,209,213,215]&gt;&gt;
@@ -199419,10 +199413,7 @@ $avIn_girlname is still upset over something and remains silent as you leave you
 [img[Pics/AvGen/edu_goodsmall.png]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $girlids gte 1&gt;&gt;&lt;&lt;set _img to &quot;Pics/Av&quot;+$girlids+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/*&lt;&lt;if $girlids gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen1/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;*/
-&lt;&lt;if $girlids gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+$girlids+&quot;/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $girlids gte 1&gt;&gt;&lt;&lt;set _img=npath($girlids)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;unset $girlids&gt;&gt;
 
@@ -232790,8 +232781,7 @@ _girlname remains unaffected. &lt;&lt;if _sex is 0&gt;&gt;Her&lt;&lt;else&gt;&gt
 &lt;&lt;if $troopshow4 isnot 1 and $troopshow4 isnot 2&gt;&gt;
 
 &lt;&lt;if $cslot1 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs1_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs1_girlid&gt;&gt;
-[img[_dir+($cs1_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs1_girlid)+($cs1_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -232910,8 +232900,7 @@ UNASSIGNED
 
 
 &lt;&lt;if $cslot2 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs2_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs2_girlid&gt;&gt;
-[img[_dir+($cs2_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs2_girlid)+($cs2_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -233049,8 +233038,7 @@ UNASSIGNED
 
 
 &lt;&lt;if $cslot3 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs3_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs3_girlid&gt;&gt;
-[img[_dir+($cs3_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs3_girlid)+($cs3_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -233168,8 +233156,7 @@ UNASSIGNED
 
 
 &lt;&lt;if $cslot4 gte 0&gt;&gt;
-&lt;&lt;set _dir=($cs4_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+$cs4_girlid&gt;&gt;
-[img[_dir+($cs4_age lte 14 ? &quot;/troop_kid.png&quot; : &quot;/troop.png&quot;)]]
+[img[npath($cs4_girlid)+($cs4_age lte 14 ? &quot;troop_kid.png&quot; : &quot;troop.png&quot;)]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -251212,12 +251199,9 @@ Carefully, you sneak up toward the sleeping &lt;&lt;if $age lte 21&gt;&gt;girl&l
 &lt;div class=&quot;pic&quot;&gt;
 
 &lt;&lt;if $girlid is 1 or $girlid is 6&gt;&gt;
-
-&lt;&lt;set _img to &quot;Pics/Av&quot;+$girlid+&quot;/&quot;&gt;&gt;
-[img[_img + &quot;sleep1.jpg&quot;]]
+[img[npath($girlid)+&quot;sleep1.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/sleep1.jpg]]
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
@@ -270980,7 +270964,7 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 &lt;&lt;set _wpic+=1&gt;&gt;
 
 &lt;&lt;if _wpic is 1 or _wpic is 6 or _wpic is 16&gt;&gt;
-[img[&quot;Pics/Av&quot;+_wpic +&quot;/wcaf.jpg&quot;]]
+[img[npath(_wpic)+&quot;wcaf.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/wcaf.jpg]]
 &lt;&lt;/if&gt;&gt;
@@ -270993,7 +270977,7 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 &lt;&lt;set _wpic+=1&gt;&gt;
 
 &lt;&lt;if _wpic is 1 or _wpic is 16&gt;&gt;
-[img[&quot;Pics/Av&quot;+_wpic +&quot;/wdine.jpg&quot;]]
+[img[npath(_wpic)+&quot;wdine.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/wdine.jpg]]
 &lt;&lt;/if&gt;&gt;
@@ -271022,9 +271006,9 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 
 &lt;&lt;if $hanger lte 17&gt;&gt;
 &lt;&lt;if _npc.wear is &quot;naked&quot; or _npc.wear is &quot;harness&quot; or _npc.wear is &quot;harness2&quot;&gt;&gt;
-[img[&quot;Pics/Av&quot;+_npc.girlid +&quot;/hangout_nude&quot;+&quot;.jpg&quot;]]
+[img[npath(_npc.girlid)+&quot;hangout_nude.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[&quot;Pics/Av&quot;+_npc.girlid +&quot;/hangout&quot;+&quot;.jpg&quot;]]
+[img[npath(_npc.girlid)+&quot;hangout.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -295695,11 +295679,9 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;include CallPic&gt;&gt;
 &lt;div class=&quot;lighthover&quot;&gt;
 
-&lt;&lt;set _img=(_girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+_girlid+&quot;/&quot;&gt;&gt;
-
 &lt;&lt;capture _call&gt;&gt;
 &lt;&lt;capture _actnpc&gt;&gt;
-[img[_img + (_age gte 15 ? &quot;edu_goodsmall.png&quot; : &quot;edu_goodsmall_kid.png&quot;)][SMenu2][$activenpc to _actnpc, $activeslot to _call, $pnewnpc to true]]
+[img[npath(_girlid)+(_age gte 15 ? &quot;edu_goodsmall.png&quot; : &quot;edu_goodsmall_kid.png&quot;)][SMenu2][$activenpc to _actnpc, $activeslot to _call, $pnewnpc to true]]
 &lt;&lt;/capture&gt;&gt;
 &lt;&lt;/capture&gt;&gt;
 &lt;/div&gt;
@@ -310958,20 +310940,20 @@ Health: _npc.health/_npc.toughness
 &lt;&lt;else&gt;&gt;&lt;&lt;set _aff to &quot;Undying&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _path to &quot;Pics/Av&quot;+_npc.girlid&gt;&gt;
+&lt;&lt;set _path=npath(_npc.girlid)&gt;&gt;
 
 &lt;&lt;if _npc.age gte 16&gt;&gt;
 &lt;&lt;if _chancellor is true&gt;&gt;
-[img[_path + &quot;/inter_casual3.png&quot;]]
+[img[_path+&quot;inter_casual3.png&quot;]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if _npc.girlid is 11 and $smraria is true&gt;&gt;
-[img[_path + &quot;/inter_unique.png&quot;]]
+[img[_path+&quot;inter_unique.png&quot;]]
 &lt;&lt;else&gt;&gt;
-[img[_path + &quot;/inter_casual.png&quot;]]
+[img[_path+&quot;inter_casual.png&quot;]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-[img[_path + &quot;/inter_casual_kid.png&quot;]]
+[img[_path+&quot;inter_casual_kid.png&quot;]]
 
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
@@ -311172,24 +311154,24 @@ _npc.dex
 
 &lt;&lt;else&gt;&gt;
 
-&lt;&lt;set _path to &quot;Pics/Av&quot;+_npc.girlid&gt;&gt;
+&lt;&lt;set _path=npath(_npc.girlid)&gt;&gt;
 
 &lt;&lt;if $nsfw is undefined&gt;&gt;
 
 &lt;&lt;if $pic is 1&gt;&gt;
-[img[_path + &quot;/roaming.jpg&quot;]]
+[img[_path+&quot;roaming.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $pic is 2&gt;&gt;
-[img[_path + &quot;/roaming.jpg&quot;]]
+[img[_path+&quot;roaming.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $pic is 4&gt;&gt;
-[img[_path + &quot;/roaming2.jpg&quot;]]
+[img[_path+&quot;roaming2.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $pic is 3&gt;&gt;
-[img[_path + &quot;/roaming3.jpg&quot;]]
+[img[_path+&quot;roaming3.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 /* CAITLINS CLINIC */
@@ -311200,7 +311182,7 @@ _npc.dex
 &lt;&lt;/if&gt;&gt; /* NSFW CHECKER ENDS */
 
 &lt;&lt;if $pic is 16&gt;&gt;
-[img[_path + &quot;/tut1.jpg&quot;]]
+[img[_path+&quot;tut1.jpg&quot;]]
 &lt;&lt;/if&gt;&gt;
 
 
@@ -328800,7 +328782,7 @@ UI.restart();
 
 &lt;&lt;if _apnpc.girlid is 1 or _apnpc.girlid is 16&gt;&gt;&lt;&lt;set _highcor to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-[img[&quot;Pics/Av&quot; +_apnpc.girlid +(_highcor is true and _apnpc.likesadist gte 40 ? &quot;/prost2.jpg&quot; : &quot;/prost.jpg&quot;)]]
+[img[npath(_apnpc.girlid)+(_highcor is true and _apnpc.likesadist gte 40 ? &quot;prost2.jpg&quot; : &quot;prost.jpg&quot;)]]
 
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/prost.jpg]]
@@ -342624,14 +342606,8 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 
 &lt;&lt;if _sex is 0 or _girlid is 19 or _girlid is 23 or _girlid is 27 or _girlid is 29 or _girlid is 30 or _girlid is 26 or _girlid is 31 or _girlid is 33 or _girlid is 34&gt;&gt;
 
-
-&lt;&lt;set _img to &quot;Pics/&quot;&gt;&gt;
-
-
-&lt;&lt;if _girlid lte 99&gt;&gt;
-[img[_img + &quot;Av&quot;+_girlid+&quot;/dine.jpg&quot;]]
-&lt;&lt;elseif _girlid is 212&gt;&gt;
-[img[Pics/AvRan/Av212/dine.jpg]]
+&lt;&lt;if _girlid lte 99 or _girlid is 212&gt;&gt;
+[img[npath(_girlid)+&quot;dine.jpg&quot;]]
 &lt;&lt;elseif _girlid is 128&gt;&gt;
 &lt;&lt;if _wear is &quot;naked&quot;&gt;&gt;
 [img[Pics/AvRan/Av128/dinenude.jpg]]
@@ -342723,7 +342699,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 
 &lt;&lt;if _mainatt gte 1&gt;&gt;
 &lt;&lt;if _orgchillcomp is true&gt;&gt;
-[img[&quot;Pics/Av&quot; +_mainatt +&quot;/chillorgy.jpg&quot;]] /* comp dineorgy scene */
+[img[npath(_mainatt)+&quot;chillorgy.jpg&quot;]] /* comp dineorgy scene */
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/fc_chillsmall.jpg]] /* generic main att orgy scene */
 &lt;&lt;/if&gt;&gt;
@@ -342746,7 +342722,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 &lt;&lt;if _golesb is true&gt;&gt;
 
 &lt;&lt;if _main is true&gt;&gt;
-[img[&quot;Pics/Av&quot; +_mainatt +&quot;/lesbchillorgy.jpg&quot;]]
+[img[npath(_mainatt)+&quot;lesbchillorgy.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if _fcs gte 2&gt;&gt;
 [img[Pics/AvGen/fc_lesbchill.jpg]]
@@ -342778,7 +342754,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 
 &lt;&lt;if _mainatt gte 1&gt;&gt;
 &lt;&lt;if _orgdinecomp is true&gt;&gt;
-[img[&quot;Pics/Av&quot; +_mainatt +&quot;/dineorgy.jpg&quot;]] /* comp dineorgy scene */
+[img[npath(_mainatt)+&quot;dineorgy.jpg&quot;]] /* comp dineorgy scene */
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/fc_dinesmall.jpg]] /* generic main att dineorgy scene */
 &lt;&lt;/if&gt;&gt;
@@ -342800,7 +342776,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 &lt;&lt;if _golesb is true&gt;&gt;
 
 &lt;&lt;if _main is true&gt;&gt;
-[img[&quot;Pics/Av&quot; +_mainatt +&quot;/lesbdineorgy.jpg&quot;]]
+[img[npath(_mainatt)+&quot;lesbdineorgy.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if _fcs gte 2&gt;&gt;
 [img[Pics/AvGen/fc_lesbdine.jpg]]
@@ -342828,7 +342804,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 
 &lt;&lt;if _mainatt gte 1&gt;&gt;
 &lt;&lt;if _orgpartycomp is true&gt;&gt;
-[img[&quot;Pics/Av&quot; +_mainatt +&quot;/partyorgy.jpg&quot;]] /* comp partyorgy scene */
+[img[npath(_mainatt)+&quot;partyorgy.jpg&quot;]] /* comp partyorgy scene */
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/fc_party.jpg]] /* generic main att orgy scene */
 &lt;&lt;/if&gt;&gt;
@@ -342851,7 +342827,7 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 &lt;&lt;if _golesb is true&gt;&gt;
 
 &lt;&lt;if _main is true&gt;&gt;
-[img[&quot;Pics/Av&quot; +_mainatt +&quot;/lesbpartyorgy.jpg&quot;]]
+[img[npath(_mainatt)+&quot;lesbpartyorgy.jpg&quot;]]
 &lt;&lt;else&gt;&gt;
 [img[Pics/AvGen/fc_lesbparty.jpg]]
 &lt;&lt;/if&gt;&gt;
@@ -366993,8 +366969,7 @@ Her &#39;&#39;Acrobatics (+1)&#39;&#39; skill has increased!
 /* has gym pics */
 &lt;&lt;if _gymgo is true&gt;&gt;
 
-&lt;&lt;set _img=(_npc.girlid lte 99 ? &quot;Pics/AvRan/Av&quot; : &quot;Pics/Av&quot;)+_npc.girlid+&quot;/&quot;&gt;&gt;
-[img[_img + &quot;gym.jpg&quot;]]
+[img[npath(_npc.girlid)+&quot;gym.jpg&quot;]]
 
 &lt;&lt;else&gt;&gt;
 [img[Pics/Interiors/gym.jpg]]
@@ -374049,8 +374024,7 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 &lt;div class=&quot;vendorleft&quot;&gt;
 
 &lt;div class=&quot;boxholder&quot;&gt;
-&lt;&lt;set _dir=(_npc.girlid lte 99 ? &quot;Pics/Av&quot; : &quot;Pics/AvRan/Av&quot;)+_npc.girlid&gt;&gt;
-[img[_dir+&quot;/troop_kid.png&quot;]]
+[img[npath(_npc.girlid)+&quot;troop_kid.png&quot;]]
 &lt;/div&gt;
 
 
