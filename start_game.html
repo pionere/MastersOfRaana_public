@@ -151923,29 +151923,20 @@ FOUND IN SLAVEINVENTORY
 
 /* MAIN SETTER FOR STORY NPCS */
 
-&lt;&lt;set _img to &quot;Pics/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;
-
-&lt;&lt;if _tempgirlid gte 100&gt;&gt;&lt;&lt;set _img to &quot;Pics/AvGen15/&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _img=npath(_tempgirlid)&gt;&gt;
 
 &lt;&lt;if _nightblock is 0&gt;&gt;&lt;&lt;unset $showbe&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-
-
-
 /* RANDIES WHO HAVE FULL WARDROBES */
-
 
 &lt;&lt;if _tempgirlid gte 100&gt;&gt;
 
 &lt;&lt;set _ranok to true&gt;&gt;
 
-
 /* use below for simplified inspect/combat NPCs - only one closeup AND only one armor - this will override full setter above - note &quot;ranok = true&quot; means that full inspect and wardrobe will be used! */
 
-&lt;&lt;if _tempgirlid gte 100&gt;&gt;&lt;&lt;set _simplein to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _simplein to true&gt;&gt;
 
 /*
 randies with full inspect pics and armors will unset simplified inspect/combat variable above.
@@ -151954,11 +151945,8 @@ for ONLY full armor sets (no inspect), go to &quot;show is 1&quot; at bottom of 
 */
 
 /* unset simplified - these random AVs have full inspect pics and armors */
-&lt;&lt;if _tempgirlid is 128 or _tempgirlid is 138 or _tempgirlid is 212 or _tempgirlid is 218 or _tempgirlid is 201 or _tempgirlid is 204 or _tempgirlid is 208 or _tempgirlid is 211 or _tempgirlid is 213 or _tempgirlid is 214 or _tempgirlid is 215&gt;&gt;&lt;&lt;unset _simplein&gt;&gt;&lt;&lt;set _turning to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/* MAIN SETTER FOR RANDIES */
-&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;
+&lt;&lt;set _tmp=[128,138,201,204,208,211,212,213,214,215,218]&gt;&gt;
+&lt;&lt;if _tmp.contains(_tempgirlid)&gt;&gt;&lt;&lt;unset _simplein&gt;&gt;&lt;&lt;set _turning to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -151992,22 +151980,9 @@ for ONLY full armor sets (no inspect), go to &quot;show is 1&quot; at bottom of 
 &lt;&lt;if _tempbondage gte 10&gt;&gt;&lt;&lt;set _pris to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-
-/* MAIN SETTER FOR RANDIES II */
-
-&lt;&lt;if _tempgirlid gte 100&gt;&gt;
-&lt;&lt;set _img to &quot;Pics/AvRan/Av&quot;+_tempgirlid+&quot;/&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _tempgirlid gte 100 and _tempwear isnot &quot;casual&quot; and _tempwear isnot &quot;undies&quot; and _tempwear isnot &quot;naked&quot; and _speca isnot true and _ranok isnot true&gt;&gt;
-
+&lt;&lt;if _tempgirlid gte 100 and _tempwear isnot &quot;casual&quot; and _tempwear isnot &quot;undies&quot; and _tempwear isnot &quot;naked&quot; and _ranok isnot true&gt;&gt;
 &lt;&lt;set _tempbondage to 0&gt;&gt;
-
-
 &lt;&lt;set _img to &quot;Pics/AvRan/Body1/&quot;&gt;&gt;
-
-
 &lt;&lt;/if&gt;&gt;
 
 
