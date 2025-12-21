@@ -31397,17 +31397,9 @@ Mr. Derwin is not available right now!
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $addingslave is true&gt;&gt;
-
-&lt;&lt;if $event1&gt;&gt;&lt;&lt;set _call to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event2&gt;&gt;&lt;&lt;set _call to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event3&gt;&gt;&lt;&lt;set _call to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event4&gt;&gt;&lt;&lt;set _call to 8&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event5&gt;&gt;&lt;&lt;set _call to 9&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event6&gt;&gt;&lt;&lt;set _call to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _tmp=[1,2,3,8,9,10]&gt;&gt;
+&lt;&lt;set _call=_tmp[$event1-1]&gt;&gt;
 &lt;&lt;include IncludeSlave&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $action2 is true and $addingslave isnot true&gt;&gt;
@@ -31425,25 +31417,19 @@ Here, living under austere conditions in small rooms with four beds, you find a 
 &lt;br&gt;&lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;if $ownlov is 0&gt;&gt;
-&lt;&lt;if $event1 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Lovisa Helm|Kymanto][$event1 to true, $event2 to false, $event3 to false, $event4 to false, $event5 to false, $event6 to false, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Lovisa Helm&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&lt;&lt;if $event1 isnot 1&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Lovisa Helm|Kymanto][$event1 to 1, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Lovisa Helm&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Lovisa Helm&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ownlov gte 1 or $ownlov is undefined&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Lovisa Helm&lt;/p&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;br&gt;
 &lt;&lt;if $ownreb is 0&gt;&gt;
-&lt;&lt;if $event2 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Rebecca Higgs|Kymanto][$event2 to true, $event1 to false, $event3 to false, $event4 to false, $event5 to false, $event6 to false, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Rebecca Higgs&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&lt;&lt;if $event1 isnot 2&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Rebecca Higgs|Kymanto][$event1 to 2, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Rebecca Higgs&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Rebecca Higgs&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ownreb gte 1 or $ownreb is undefined&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Rebecca Higgs&lt;/p&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;br&gt;
 &lt;&lt;if $ownamel is 0&gt;&gt;
-&lt;&lt;if $event3 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Amelia Stark|Kymanto][$event3 to true, $event2 to false, $event1 to false, $event4 to false, $event5 to false, $event6 to false, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Amelia Stark&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event1 isnot 3&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Amelia Stark|Kymanto][$event1 to 3, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Amelia Stark&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Amelia Stark&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ownamel gte 1 or $ownamel is undefined&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Amelia Stark&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-
 
 &lt;/div&gt;
 
@@ -31453,24 +31439,19 @@ Here, living under austere conditions in small rooms with four beds, you find a 
 &lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;&lt;if $ownrach is 0&gt;&gt;
-&lt;&lt;if $event4 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Rachel Stapleton|Kymanto][$event3 to false, $event2 to false, $event1 to false, $event4 to true, $event5 to false, $event6 to false, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Rachel Stapleton&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&lt;&lt;if $event1 isnot 4&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Rachel Stapleton|Kymanto][$event1 to 4, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Rachel Stapleton&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Rachel Stapleton&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ownrach gte 1 or $ownrach is undefined&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Rachel Stapleton&lt;/p&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;br&gt;
 &lt;&lt;if $ownsofia is 0&gt;&gt;
-&lt;&lt;if $event5 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Sofia Ortega|Kymanto][$event3 to false, $event2 to false, $event1 to false, $event4 to false, $event5 to true, $event6 to false, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Sofia Ortega&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&lt;&lt;if $event1 isnot 5&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Sofia Ortega|Kymanto][$event1 to 5, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Sofia Ortega&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Sofia Ortega&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ownsofia gte 1 or $ownsofia is undefined&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Sofia Ortega&lt;/p&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-
+&lt;br&gt;
 &lt;&lt;if $ownaveril is 0&gt;&gt;
-&lt;&lt;if $event6 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Averil Lewis|Kymanto][$event3 to false, $event2 to false, $event1 to false, $event4 to false, $event5 to false, $event6 to true, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Averil Lewis&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $event1 isnot 6&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Averil Lewis|Kymanto][$event1 to 6, $action3 to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Averil Lewis&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Averil Lewis&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $ownaveril gte 1 or $ownaveril is undefined&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Averil Lewis&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
 
 &lt;/div&gt;
 
@@ -31526,58 +31507,9 @@ It’s fully equipped, however, and still used for producing gunpowder, bombs an
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;talktraitpic&quot;&gt;
 
-&lt;&lt;if $event1 is true&gt;&gt;
-&lt;&lt;if $nakedinspect isnot true&gt;&gt;
-[img[Pics/Av1/inter_undies.png]]
-&lt;&lt;else&gt;&gt;
-[img[Pics/Av1/inspect2.png]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event2 is true&gt;&gt;
-&lt;&lt;if $nakedinspect isnot true&gt;&gt;
-[img[Pics/Av2/inter_undies.png]]
-&lt;&lt;else&gt;&gt;
-[img[Pics/Av2/inspect2.png]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event3 is true&gt;&gt;
-&lt;&lt;if $nakedinspect isnot true&gt;&gt;
-[img[Pics/Av3/inter_undies.png]]
-&lt;&lt;else&gt;&gt;
-[img[Pics/Av3/inspect2.png]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event4 is true&gt;&gt;
-&lt;&lt;if $nakedinspect isnot true&gt;&gt;
-[img[Pics/Av8/inter_undies.png]]
-&lt;&lt;else&gt;&gt;
-[img[Pics/Av8/inspect2.png]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event5 is true&gt;&gt;
-&lt;&lt;if $nakedinspect isnot true&gt;&gt;
-[img[Pics/Av9/inter_undies.png]]
-&lt;&lt;else&gt;&gt;
-[img[Pics/Av9/inspect2.png]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event6 is true&gt;&gt;
-&lt;&lt;if $nakedinspect isnot true&gt;&gt;
-[img[Pics/Av10/inter_undies.png]]
-&lt;&lt;else&gt;&gt;
-[img[Pics/Av10/inspect2.png]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;set _tmp=[1,2,3,8,9,10]&gt;&gt;
+&lt;&lt;set _call=_tmp[$event1-1]&gt;&gt;
+[img[npath(_call)+($nakedinspect ? &quot;inspect2.png&quot; : &quot;inter_undies.png&quot;)]]
 
 &lt;/div&gt;
 
@@ -31585,17 +31517,17 @@ It’s fully equipped, however, and still used for producing gunpowder, bombs an
 &lt;div class=&quot;picstats&quot;&gt;
 
 &lt;div class=&quot;signvendor&quot;&gt;
-&lt;&lt;if $event1 is true&gt;&gt;LOVISA&lt;&lt;set _cost to 2500&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event2 is true&gt;&gt;REBECCA&lt;&lt;set _cost to 1200&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event3 is true&gt;&gt;AMELIA&lt;&lt;set _cost to 2500&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event4 is true&gt;&gt;RACHEL&lt;&lt;set _cost to 3000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event5 is true&gt;&gt;SOFIA&lt;&lt;set _cost to 2000&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event6 is true&gt;&gt;AVERIL&lt;&lt;set _cost to 3500&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;switch $event1&gt;&gt;
+&lt;&lt;case 1&gt;&gt;LOVISA&lt;&lt;set _cost to 2500&gt;&gt;
+&lt;&lt;case 2&gt;&gt;REBECCA&lt;&lt;set _cost to 1200&gt;&gt;
+&lt;&lt;case 3&gt;&gt;AMELIA&lt;&lt;set _cost to 2500&gt;&gt;
+&lt;&lt;case 4&gt;&gt;RACHEL&lt;&lt;set _cost to 3000&gt;&gt;
+&lt;&lt;case 5&gt;&gt;SOFIA&lt;&lt;set _cost to 2000&gt;&gt;
+&lt;&lt;case 6&gt;&gt;AVERIL&lt;&lt;set _cost to 3500&gt;&gt;
+&lt;&lt;/switch&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;if $event4 is true or $event5 is true or $event6 is true&gt;&gt;
-&lt;&lt;if $disp_kym lte 14&gt;&gt;&lt;&lt;set _notier to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _notier=$event1 gte 4 and $disp_kym lte 14&gt;&gt;
 
 &lt;br&gt;
 &lt;&lt;if $action6 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;&lt;&lt;link &#39;Background&#39;&gt;&gt;&lt;&lt;set $action to 1&gt;&gt;&lt;&lt;popup &#39;SlaveInfo2&#39;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Background&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -31685,7 +31617,7 @@ It’s fully equipped, however, and still used for producing gunpowder, bombs an
 
 &lt;div class=&quot;alt2&quot;&gt;
 &lt;&lt;include OptionsOther&gt;&gt;
-&lt;&lt;if $action2 is true or $action10 is true or $action9 is true or $action8 is true&gt;&gt;[[Return|Kymanto][$action2 to false, $action3 to false, $action8 to false, $action9 to false, $action10 to false, $event1 to false, $event2 to false, $event3 to false, $intalk to false]]
+&lt;&lt;if $action2 is true or $action10 is true or $action9 is true or $action8 is true&gt;&gt;[[Return|Kymanto][$action2 to false, $action3 to false, $action8 to false, $action9 to false, $action10 to false, $event1 to 0, $intalk to false]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $action10 is false and $action2 is false and $action9 is false and $action8 is false&gt;&gt;
