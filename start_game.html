@@ -13205,7 +13205,8 @@ MALL
 &lt;&lt;for _con range $npc&gt;&gt;
 
 
-&lt;&lt;if _con.state gte 1 and _con.bondage lte 0 and _con.girlid is 23 and _con.health gte 5 and _con.traitrela is 217 and _con.dayblock isnot 409 and _con.dayblock isnot 413 and (_con.busy is 0 or _con.dayblock is 15 or _con.dayblock is 17 or _con.dayblock is 0 or _con.dayblock is 14 or _con.dayblock is 15 or _con.dayblock is 999)&gt;&gt;
+&lt;&lt;set _tmp=[0,14,15,17,999]&gt;&gt;
+&lt;&lt;if _con.state gte 1 and _con.bondage lte 0 and _con.girlid is 23 and _con.health gte 5 and _con.traitrela is 217 and _con.dayblock isnot 409 and _con.dayblock isnot 413 and (_con.busy is 0 or _tmp.contains(_con.dayblock))&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $chance gte 1&gt;&gt;
 &lt;&lt;include Success&gt;&gt;
@@ -13897,13 +13898,12 @@ What position did you have in mind?
 
 &lt;&lt;set _blockmiss to true&gt;&gt;
 
-&lt;&lt;if $girlid isnot 7 and $girlid isnot 17 and $girlid isnot 105 and $girlid isnot 35 and $girlid isnot 9 and $goingtooff is undefined&gt;&gt;
-&lt;&lt;unset _blockmiss&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _tmp=[7,9,17,35,105]&gt;&gt;
+&lt;&lt;if !_tmp.contains($girlid) and $goingtooff is undefined&gt;&gt;&lt;&lt;unset _blockmiss&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* office missionary renders done */
-&lt;&lt;if _girlid is 7 or _girlid is 35 or _girlid is 45 or _girlid is 50 or _girlid is 212 or _girlid is 211 or _girlid is 17&gt;&gt;&lt;&lt;unset _blockmiss&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[7,17,35,45,50,211,212]&gt;&gt;
+&lt;&lt;if _tmp.contains(_girlid)&gt;&gt;&lt;&lt;unset _blockmiss&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _blockmiss isnot true&gt;&gt;[[Missionary|Pussyini][$pussyscene1 to true, $action12 to false, $action6 to false]]&lt;&lt;/if&gt;&gt;
@@ -20006,8 +20006,8 @@ Special birthday event available!&lt;br&gt;
 
 &lt;&lt;for _con range $npc&gt;&gt;
 
-
-&lt;&lt;if _con.state gte 1 and _con.bondage lte 0 and _con.girlid is 23 and _con.health gte 5 and _con.traitrela is 217 and _con.dayblock isnot 409 and _con.dayblock isnot 413 and (_con.busy is 0 or _con.dayblock is 15 or _con.dayblock is 17 or _con.dayblock is 0 or _con.dayblock is 14 or _con.dayblock is 15 or _con.dayblock is 999)&gt;&gt;
+&lt;&lt;set _tmp=[0,14,15,17,999]&gt;&gt;
+&lt;&lt;if _con.state gte 1 and _con.bondage lte 0 and _con.girlid is 23 and _con.health gte 5 and _con.traitrela is 217 and _con.dayblock isnot 409 and _con.dayblock isnot 413 and (_con.busy is 0 or _tmp.contains(_con.dayblock))&gt;&gt;
 &lt;&lt;if $chance gte 1&gt;&gt;
 &lt;&lt;include Success&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -24473,7 +24473,8 @@ Remaining withdrawal days: $boosterdays
 &lt;/div&gt;
 &lt;div class=&quot;pic&quot;&gt;
 
-&lt;&lt;if $girlid is 1 or $girlid is 2 or $girlid is 3 or $girlid is 5 or $girlid is 14 or $girlid is 10 or $girlid is 15 or $girlid is 16&gt;&gt;
+&lt;&lt;set _tmp=[1,2,3,5,10,14,15,16]&gt;&gt;
+&lt;&lt;if _tmp.contains($girlid)&gt;&gt;
 &lt;&lt;set _okgirl to true&gt;&gt;
 
 &lt;&lt;set _path=npath($girlid)&gt;&gt;
@@ -27586,7 +27587,8 @@ $girlname is like a lifeless doll - with her anus totally relaxed. You spray you
 
 &lt;&lt;include GirlCheck&gt;&gt;
 
-&lt;&lt;set _wolfaway=($oldone4 is 12 or $oldone4 is 13 or $oldone4 is 14 or $oldone4 is 19 or $oldone4 is 17)&gt;&gt;
+&lt;&lt;set _tmp=[12,13,14,17,19]&gt;&gt;&lt;&lt;
+set _wolfaway=_tmp.contains($oldone4)&gt;&gt;
 
 &lt;&lt;if $comesfromhouse is true&gt;&gt;
 &lt;&lt;include CAuto&gt;&gt;
@@ -31024,11 +31026,8 @@ The scouting ship from the second wave of settlers stands as a historic monument
 &lt;&lt;set $noshow to false&gt;&gt;
 
 &lt;&lt;if $wasino isnot true and $wopos isnot 10&gt;&gt;
-&lt;&lt;if $wopos is 11 or $wopos is 12 or $wopos is 14 or $wopos is 15 or $wopos is 17&gt;&gt;
-&lt;&lt;set _tmp=1&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _tmp=3&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[11,12,14,15,17]&gt;&gt;
+&lt;&lt;set _tmp=_tmp.contains($wopos) ? 1 : 3&gt;&gt;
 &lt;&lt;if $mctraitlimp gte 75 and $mch.stables is 0&gt;&gt;&lt;&lt;set _tmp=((2 * _tmp+2)/ 3)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _tmp*=6&gt;&gt;
 &lt;&lt;passmins _tmp&gt;&gt;
@@ -35605,7 +35604,8 @@ $girlname has a normal and healthy body weight.&lt;br&gt;&lt;br&gt;She might hav
 
 
 /* RETURN HOME ABLE OUTSIDE DISTRICTS */
-&lt;&lt;if $wopos is 3 or $wopos is 10 or $wopos is 20 or $wopos is 30 or $wopos is 40 or $wopos is 50 or $wopos is 50 or $wopos is 60 or $wopos is 65 or $wopos is 70 or $wopos is 75 or $wopos is 85 or $wopos is 92 or $wopos is 55 or $wopos is 58 or $wopos is 59 or $wopos is 80 or $wopos is 96 or $wopos is 45 or $wopos is 25 or $wopos is 29&gt;&gt;
+&lt;&lt;set _tmp=[3,10,20,25,29,30,40,45,50,55,58,59,60,65,70,75,80,85,92,96]&gt;&gt;
+&lt;&lt;if _tmp.contains($wopos)&gt;&gt;
 
 &lt;&lt;if _atms isnot true&gt;&gt;
 &lt;&lt;hovertip &quot;Return Home&quot;&gt;&gt;
@@ -35853,8 +35853,8 @@ $girlname has a normal and healthy body weight.&lt;br&gt;&lt;br&gt;She might hav
 &lt;&lt;/if&gt;&gt;
 
 
-
-&lt;&lt;if $wopos is 100 or $wopos is 105 or $wopos is 110 or $wopos gte 200 or $wopos is 112 or $wopos is 115 or $wopos is 120 or $wopos is 125 or $wopos is 130 or $wopos is 135 or $wopos is 136 or $wopos is 140 or $wopos is 160 or _atms is true&gt;&gt;
+&lt;&lt;set _tmp=[100,105,110,112,115,120,125,130,135,136,140,160]&gt;&gt;
+&lt;&lt;if _tmp.contains($wopos) or $wopos gte 200 or _atms is true&gt;&gt;
 
 &lt;&lt;if $mch.stables is 1 and $wopos lte 110 and _atms isnot true&gt;&gt;
 &lt;&lt;hovertip &quot;Return Home&quot;&gt;&gt;
@@ -51502,7 +51502,8 @@ Sweat and saliva completely cover the girl’s face. She looks at you with sad, 
 
 /* extra checker for girls with office scenes */
 
-&lt;&lt;if $girlid is 7 or $girlid is 9 or $girlid is 35 or $girlid is 17 or $girlid is 45 or $girlid is 43 or $girlid is 44 or $girlid is 50 or $girlid is 105 or $girlid is 211 or $girlid is 212 or $girlid is 213&gt;&gt;&lt;&lt;set $sexscene to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[7,9,17,35,43,44,45,50,105,211,212,213]&gt;&gt;
+&lt;&lt;if _tmp.contains($girlid)&gt;&gt;&lt;&lt;set $sexscene to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $hadoral&gt;&gt;
 
@@ -79711,10 +79712,8 @@ Having a child with you would somehow fulfill that primal drive and complete the
 
 
 /* HAS FULL BATHROOM SCENES */
-&lt;&lt;if _npc.girlid lte 14 or _npc.girlid is 16 or _npc.girlid is 42 or _npc.girlid is 50 or _npc.girlid is 100 or _npc.girlid is 128&gt;&gt;
-&lt;&lt;set _fullbathroom to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _tmp=[16,42,50,100,128]&gt;&gt;
+&lt;&lt;set _fullbathroom=_npc.girlid lte 14 or _tmp.contains(_npc.girlid)&gt;&gt;
 
 
 /*
@@ -82586,10 +82585,6 @@ Enemies have exhausted all their actions.&lt;br&gt;Your turn!
 &lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _cs_se to $cs4_se&gt;&gt;&lt;&lt;if $cs4_health lt $cs4_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs4_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs4_rel&gt;&gt;&lt;&lt;set _curstr to $cs4_str&gt;&gt;&lt;&lt;set _aff to $cs4_aff&gt;&gt;&lt;&lt;set _curwill to $cs4_will&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-
-/*
-&lt;&lt;if _csnow gte 41 or $round is 1 or _csnow lte 5 or _csnow is 9 or _csnow is 7 or _csnow is 11 or _csnow is 12 or _csnow is 14 or _csnow is 15 or _csnow is 16&gt;&gt;&lt;&lt;set _showam to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-*/
 
 
 /* BUD PROSP 9 DYING WORLD AMMO PACK UNSETTER */
@@ -86631,7 +86626,8 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $combat is 114 or $combat is 14 or $combat gte 200 or $combat is 133 or _advfight is true or $combat is 146 or $combat is 165&gt;&gt;
+&lt;&lt;set _tmp=[14 ,114,133,146,165]&gt;&gt;
+&lt;&lt;if _tmp.contains($combat) or $combat gte 200 or _advfight is true&gt;&gt;
 
 &lt;&lt;if !($equipped is &quot;knife&quot; or $equipped is &quot;sword&quot; or $equipped is &quot;fists&quot;)&gt;&gt;
 &lt;&lt;set _randomroll=_badass_idx&gt;&gt;
@@ -86703,9 +86699,11 @@ $descroll6 slave&lt;&lt;if $descroll6 gte 2&gt;&gt;s&lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="136" name="PlayerSlot" tags="nobr" position="2200,1250" size="100,100">
 &lt;&lt;if $masterhealth gte 1&gt;&gt;
 
-&lt;&lt;if $activeweapon is &quot;automaticrifle&quot; or $activeweapon is &quot;rifle&quot; or $activeweapon is &quot;shotgun&quot; or $activeweapon is &quot;crossbow&quot; or $activeweapon is &quot;coil&quot; or $activeweapon is &quot;plasma&quot; or $activeweapon is &quot;rifle50&quot; or $activeweapon is &quot;prifle&quot; or $activeweapon is &quot;cybercannon&quot; or $activeweapon is &quot;neme&quot;&gt;&gt;&lt;&lt;set _playshow to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[&quot;automaticrifle&quot;,&quot;rifle&quot;,&quot;shotgun&quot;,&quot;crossbow&quot;,&quot;coil&quot;,&quot;plasma&quot;.&quot;rifle50&quot;,&quot;prifle&quot;,&quot;cybercannon&quot;,&quot;neme&quot;]&gt;&gt;
+&lt;&lt;if _tmp.contains($activeweapon)&gt;&gt;&lt;&lt;set _playshow to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $activeweapon is &quot;pistol&quot; or $activeweapon is &quot;revolver&quot; or $activeweapon is &quot;r55&quot;&gt;&gt;&lt;&lt;set _playshow to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $activeweapon is &quot;sword&quot; or $activeweapon is &quot;whipstick&quot; or $activeweapon is &quot;powerkatana&quot; or $activeweapon is &quot;waki&quot; or $activeweapon is &quot;iceblade&quot;&gt;&gt;&lt;&lt;set _playshow to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[&quot;sword&quot;,&quot;whipstick&quot;,&quot;powerkatana&quot;,&quot;waki&quot;,&quot;iceblade&quot;]&gt;&gt;
+&lt;&lt;if _tmp.contains($activeweapon)&gt;&gt;&lt;&lt;set _playshow to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $activeweapon is &quot;knife&quot;&gt;&gt;&lt;&lt;set _playshow to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $activeweapon is &quot;gl&quot;&gt;&gt;&lt;&lt;set _playshow to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $activeweapon is &quot;minigun&quot;&gt;&gt;&lt;&lt;set _playshow to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -101145,7 +101143,8 @@ You’ve defeated a group of elite zealots!
 &lt;&lt;unset $famepoints&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $combat lte 39 and $combat isnot 10 and $combat isnot 11 and $combat isnot 16 and $combat isnot 17 and $combat isnot 13 and $combat isnot 4 and $combat isnot 19&gt;&gt;
+&lt;&lt;set _tmp=[4,10,11,13,16,17,19]&gt;&gt;
+&lt;&lt;if $combat lte 39 and !_tmp.contains($combat)&gt;&gt;
 &lt;&lt;if $descroll3 lte 1&gt;&gt;Everything around you is silent except a gurgling sound coming from a heap of what was once your enemy.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 2&gt;&gt;Your ears are still ringing, but everything around you have turned dead silent.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 3&gt;&gt;Your nostrils fill up with the smell of blood as your body begins to wind down from the adrenaline-soaked combat.&lt;&lt;/if&gt;&gt;
@@ -152177,7 +152176,8 @@ for ONLY full armor sets (no inspect), go to &quot;show is 1&quot; at bottom of 
 
 /* tier request harness combos */
 
-&lt;&lt;if _tempgirlid is 1 or _tempgirlid is 4 or _tempgirlid is 6 or _tempgirlid is 5 or _tempgirlid is 2 or _tempgirlid is 12 or _tempgirlid is 13 or _tempgirlid is 14 or _tempgirlid is 16 or _tempgirlid is 10 or _tempgirlid is 8 or _tempgirlid is 11 or _tempgirlid is 15 or _tempgirlid is 18 or _tempgirlid is 20 or _tempgirlid is 28 or _tempgirlid is 35 or _tempgirlid is 42 or _tempgirlid is 32 or _tempgirlid is 22 or _tempgirlid is 45 or _tempgirlid is 50 or _tempgirlid is 52 or _tempgirlid is 184 or _tempgirlid is 213&gt;&gt;
+&lt;&lt;set _tmp=[1,2,4,5,6,8,10,11,12,13,14,15,16,18,20,22,28,32,35,42,45,50,52,184,213]&gt;&gt;
+&lt;&lt;if _tmp.contains(_tempgirlid)&gt;&gt;
 &lt;&lt;if _collared gte 1&gt;&gt;&lt;&lt;set _harnew to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _collared gte 1 and _nichain gte 1&gt;&gt;&lt;&lt;set _harnew to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -159492,14 +159492,8 @@ You
 
 /* REVEALING CLOTHES - MARINKO ALTS */
 
-&lt;&lt;if $ownskimpybox gte 1&gt;&gt;
-
-&lt;&lt;if _girlid is 1 or _girlid is 7 or _girlid is 9 or _girlid is 10 or _girlid is 11 or _girlid is 13 or _girlid is 16 or _girlid is 17 or _npc.girlid is 28 or _girlid is 32 or _girlid is 50 or _girlid is 51 or _girlid is 52&gt;&gt;
-&lt;&lt;set _revealing to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _tmp=[1,7,9,10,11,13,16,17,28,32,50,51,52]&gt;&gt;
+&lt;&lt;set _revealing=$ownskimpybox gte 1 and _tmp.contains(_girlid)&gt;&gt;
 
 
 
@@ -166186,7 +166180,8 @@ There’s also a strange carving on one of the walls. It looks like a set of let
 &lt;&lt;if $action2 is true&gt;&gt;
 You move closer to the wall and observe a string of letters. You have no idea what they mean, but something tells you that they might be good to remember. &lt;&lt;if $quest_swg is undefined&gt;&gt;&lt;br&gt;&lt;br&gt;Maybe you could investigate this further at Town Hall in Hamilton Square.&lt;br&gt;&lt;br&gt;&lt;div class=&quot;blink_me bold&quot;&gt;Journal updated!&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if _genmerc isnot undefined and $quest_swg is undefined and (_genmerc is &quot;Ansel&quot; or _genmerc is &quot;Connor&quot; or _genmerc is &quot;Ayden&quot; or _genmerc is &quot;Dexter&quot; or _genmerc is &quot;Jack&quot; or _genmerc is &quot;Loren&quot; or _genmerc is &quot;Doyle&quot;)&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Ansel&quot;,&quot;Connor&quot;,&quot;Ayden&quot;,&quot;Dexter&quot;,&quot;Jack&quot;,&quot;Loren&quot;,&quot;Doyle&quot;]&gt;&gt;
+&lt;&lt;if _tmp.contains(_genmerc) and $quest_swg is undefined&gt;&gt;
 &#39;&#39;_genmerc: &#39;&#39;//It looks like a military identification. SWG. I saw it on a crawler once when I did guard duty outside. The other part was, ehm, was not exactly the same as this, but I recognize the structure.//
 &lt;&lt;/if&gt;&gt;
 
@@ -181521,7 +181516,8 @@ I absolutely love history. I’ve studied works about great historical leaders s
 
 
 &lt;&lt;if _girlid isnot 42 and _girlid isnot 45 and _girlid isnot 51 and _girlid isnot 52&gt;&gt;
-&lt;&lt;if _girlids gte 33 or _girlids is 17 or _girlids is 18 or _girlids is 22 or _girlids is 23 or _girlids is 25 or _girlids is 27 or _girlids is 28 or _girlids is 19 or _girlids is 29&gt;&gt;
+&lt;&lt;set _tmp=[17,18,19,22,23,25,27,28,29]&gt;&gt;
+&lt;&lt;if _girlids gte 33 or _tmp.contains(_girlids)&gt;&gt;
 /* Randies at party*/
 
 &lt;&lt;set _ran2b to _back3&gt;&gt;
@@ -230690,7 +230686,8 @@ FOR INCOME CHECK ECONOMY 2
 
 &lt;div class=&quot;combatbackground2&quot;&gt;
 
-&lt;&lt;if $wopos isnot 999 and ($wopos is 55 or $wopos is 58 or $wopos is 59 or $wopos gte 100 or $combat is 75 or $combat is 186 or $wopos is 29)&gt;&gt;
+&lt;&lt;set _tmp=[29,55,58,59]&gt;&gt;
+&lt;&lt;if $wopos isnot 999 and (_tmp.contains($wopos) or $wopos gte 100 or $combat is 75 or $combat is 186)&gt;&gt;
 &lt;&lt;set _nature to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -273845,7 +273842,8 @@ This is the main hub for raider activity in southern Ikaanos. Distributing guns 
 
 &lt;/div&gt;
 &lt;div class=&quot;alt3&quot;&gt;
-&lt;&lt;if $mscaving isnot 11 and $mscaving isnot 48 and $mscaving isnot 49 and $mscaving isnot 44 and $mscaving isnot 69 and $mscaving isnot 31&gt;&gt;
+&lt;&lt;set _tmp=[11,31,44,48,49,69]&gt;&gt;
+&lt;&lt;if !_tmp.contains($mscaving)&gt;&gt;
 &lt;&lt;include InteractStart&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -289669,7 +289667,8 @@ I’m going to be honest with you.
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _active.type isnot 10 and _active.type isnot 3 and _active.type isnot 14 and _active.type isnot 15 and _active.type isnot 16 and _active.type isnot 17 and _active.type isnot 8&gt;&gt;
+&lt;&lt;set _tmp=[3,8,10,14,15,16,17]&gt;&gt;
+&lt;&lt;if !_tmp.contains(_active.type)&gt;&gt;
 [[Demolish|House][$event to 99]]
 &lt;div class=&quot;tex9px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -295398,7 +295397,8 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;&lt;set _dayoff=_npc2.dayoff gte 1&gt;&gt;
 
 &lt;&lt;if $daycount gte 90 and $daycount lte 155 and $diff gte 3&gt;&gt;
-&lt;&lt;if _day gte 1 and _day isnot 5 and _day isnot 8 and _day isnot 12 and _day isnot 14 and _day isnot 15 and _day isnot 16 and _day isnot 19&gt;&gt;&lt;&lt;set _away to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;unset _away&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[5,8,12,14,15,16,19]&gt;&gt;
+&lt;&lt;if _day gte 1 and !_tmp.contains(_day)&gt;&gt;&lt;&lt;set _away to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;unset _away&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -295853,7 +295853,8 @@ Visit Whitehaven Academy to unlock this menu!
 
 &lt;&lt;if $diff gte 3 and $daycount gte 70 and $daycount lte 160&gt;&gt;
 
-&lt;&lt;if _day is 1 or _day is 2 or _day is 3 or _day is 4 or _day is 7 or _day is 6 or _day is 9 or _day is 10 or _day is 11 or _day is 13 or _day is 18 or _day is 30 or _day is 31 or _day is 34&gt;&gt;&lt;&lt;set _dayblocked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[1,2,3,4,6,7,9,10,11,13,18,30,31,34]&gt;&gt;
+&lt;&lt;if _tmp.contains(_day)&gt;&gt;&lt;&lt;set _dayblocked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -295898,11 +295899,6 @@ Visit Whitehaven Academy to unlock this menu!
 &lt;/div&gt;
 &lt;/div&gt;
 
-/*
-&lt;&lt;if _busy gte 1 and _day isnot 25 and _busy isnot 55 and _busy isnot 56 and _busy isnot 10 and _day isnot 999 and $diff gte 3&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-*/
 
 &lt;&lt;set _npc = $npc&gt;&gt;
 &lt;&lt;set _skeys = Object.keys(_npc)&gt;&gt;
@@ -298121,15 +298117,10 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if $daycount gte 65 and $daycount lte 88&gt;&gt;
 &lt;&lt;set _npc.busy to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $daycount gte 89 and $daycount lte 159&gt;&gt;
-&lt;&lt;if _npc.dayblock gte 1 and _npc.dayblock isnot 5 and _npc.dayblock isnot 12 and _npc.dayblock isnot 999 and _npc.dayblock isnot 14 and _npc.dayblock isnot 15 and _npc.dayblock isnot 16 and _npc.dayblock isnot 17 and _npc.dayblock isnot 19&gt;&gt;
-&lt;&lt;set _npc.busy to 1&gt;&gt;
-&lt;&lt;set $busy to 1&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.busy to 0&gt;&gt;
-&lt;&lt;set $busy to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if $daycount gte 89 and $daycount lte 159&gt;&gt;
+&lt;&lt;set _tmp=[5,12,14,15,16,17,19,999]&gt;&gt;
+&lt;&lt;set _npc.busy=(!_npc.dayblock gte 1 and _tmp.contains(_npc.dayblock)) ? 1 : 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $daycount gte 161 and $daycount lte 179&gt;&gt;
@@ -301849,14 +301840,13 @@ ALSO USED FOR DEATH.
 
 
 
-&lt;&lt;if $diff gte 3 and $daycount gte 80 and $daycount lte 160&gt;&gt;
-&lt;&lt;if _dayblock is 1 or _dayblock is 2 or _dayblock is 3 or _dayblock is 4 or _dayblock is 7 or _dayblock is 6 or _dayblock is 9 or _dayblock is 10 or _dayblock is 11 or _dayblock is 13 or _dayblock is 18 or _dayblock is 30&gt;&gt;&lt;&lt;set _dayblocked2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[1,2,3,4,6,7,9,10,11,13,18,30]&gt;&gt;
+&lt;&lt;set _dayblocked2=$diff gte 3 and $daycount gte 80 and $daycount lte 160 and _tmp.contains(_dayblock)&gt;&gt;
 
 &lt;&lt;if _dayblock is 5 and _npc.title is 1&gt;&gt;&lt;&lt;set _dayblocked5 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _dayblock isnot 0 and _dayblock isnot 999&gt;&gt;
-&lt;&lt;if _dayblocked2 is true&gt;&gt;
+&lt;&lt;if _dayblocked2&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;At work!&lt;/p&gt;
 &lt;&lt;elseif _dayblocked5 is true&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Title locked!&lt;/p&gt;
@@ -336485,15 +336475,6 @@ This unlawful act has also negatively affected your &#39;&#39;Influence (-500)&#
 &lt;&lt;include GenBusy&gt;&gt;
 
 
-/* busy chekcer
-&lt;&lt;for _che range $npc&gt;&gt;
-&lt;&lt;if _che.state is 1&gt;&gt;
-&lt;&lt;if _che.dayblock gte 1 and _che.dayblock isnot 8 and _che.dayblock isnot 5 and _che.dayblock isnot 12 and _che.dayblock isnot 15 and _che.dayblock isnot 16 and _che.dayblock isnot 19 and $daycount gte 80 and $daycount lte 159 and _che.dayblock isnot 999&gt;&gt;&lt;&lt;set _che.busy to 1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _che.busy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-*/
-
-
 
 &lt;&lt;set _shrinebonus to $mch.shrine.level&gt;&gt;
 &lt;&lt;set _shrinebonus+=$mch.shrine.level2&gt;&gt;
@@ -341072,12 +341053,14 @@ The Ikaaian Republic is on the brink of collapse, experiencing its second Dark A
 
 
  /* living room */
-&lt;&lt;if $girlid is 4 or $girlid is 15 or $girlid is 10 or $girlid is 18 or $girlid is 40 or $girlid is 41 or $girlid is 47 or $girlid is 126 or $girlid is 133 or $girlid is 129 or $girlid is 215&gt;&gt;
+&lt;&lt;set _tmp=[4,10,15,18,40,41,47,126,129,133,215]&gt;&gt;
+&lt;&lt;if _tmp.contains($girlid)&gt;&gt;
 &lt;&lt;set _room to 2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
  /*the office - DONT FORGET TO ADD IN FINISHDESCS */
-&lt;&lt;if $girlid is 7 or $girlid is 9 or $girlid is 17 or $girlid is 35 or $girlid is 43 or $girlid is 44 or $girlid is 105 or $girlid is 211 or $girlid is 212 or $girlid is 213&gt;&gt;
+&lt;&lt;set _tmp=[7,9,17,35,43,44,105,211,212,213]&gt;&gt;
+&lt;&lt;if _tmp.contains($girlid)&gt;&gt;
 &lt;&lt;set _room to 3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -342404,7 +342387,8 @@ _crawl.girlnames &#39;&#39;Oral wear (+_wear)&#39;&#39;&lt;&lt;if _crawl.oralxp 
 /* LONESOME DINNER PIC */
 &lt;&lt;if $event is 2 and $guests is 1&gt;&gt;
 
-&lt;&lt;if _sex is 0 or _girlid is 19 or _girlid is 23 or _girlid is 27 or _girlid is 29 or _girlid is 30 or _girlid is 26 or _girlid is 31 or _girlid is 33 or _girlid is 34&gt;&gt;
+&lt;&lt;set _tmp=[19,23,26,27,29,30,31,33,34]&gt;&gt;
+&lt;&lt;if _sex is 0 or _tmp.contains(_girlid)&gt;&gt;
 
 &lt;&lt;if _girlid lte 99 or _girlid is 212&gt;&gt;
 [img[npath(_girlid)+&quot;dine.jpg&quot;]]
@@ -348640,16 +348624,14 @@ It’s very quiet up here.
 /* assign new */
 &lt;&lt;for _ass range $npc&gt;&gt;
 
-&lt;&lt;unset _dayblocked&gt;&gt;
-&lt;&lt;if $diff gte 3 and $daycount gte 70 and $daycount lte 160&gt;&gt;
-&lt;&lt;if _ass.dayblock is 1 or _ass.dayblock is 2 or _ass.dayblock is 3 or _ass.dayblock is 4 or _ass.dayblock is 7 or _ass.dayblock is 6 or _ass.dayblock is 9 or _ass.dayblock is 10 or _ass.dayblock is 13 or _ass.dayblock is 11 or _ass.dayblock is 30 or _ass.dayblock is 31 or _ass.dayblock is 18 or _ass.dayblock is 34&gt;&gt;&lt;&lt;set _dayblocked to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[1,2,3,4,6,7,9,10,11,13,18,30,31,34]&gt;&gt;
+&lt;&lt;set _dayblocked=$diff gte 3 and $daycount gte 70 and $daycount lte 160 and _tmp.contains(_ass.dayblock)&gt;&gt;
 
 /* cat checker */
 &lt;&lt;set _catbusy2=$quest_cat gte 15 and $quest_cat lte 18 and _ass.girlid is 13&gt;&gt;
 
 &lt;&lt;set _ingroup=($groass is 1 ? _ass.group1 is 1 : ($groass is 2 ? _ass.group2 is 1 : ($groass is 3 ? _ass.group3 is 1 : ($groass is 4 ? _ass.group4 is 1 : ($groass is 5 ? _ass.group5 is 1 : ($groass is 6 and _ass.group6 is 1))))))&gt;&gt;
-&lt;&lt;if _ingroup and _ass.bondage lte 0 and !isaway(_ass) and _dayblocked isnot true and _ass.dayoff isnot 1 and _catbusy2 isnot true and _ass.health gte 1&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ingroup and _ass.bondage lte 0 and !isaway(_ass) and !_dayblocked and _ass.dayoff isnot 1 and _catbusy2 isnot true and _ass.health gte 1&gt;&gt;&lt;&lt;set _asse to _ass.actnpc&gt;&gt;&lt;&lt;set _asse+=1&gt;&gt;&lt;&lt;set $followcommand to &quot;av&quot;+_asse&gt;&gt;&lt;&lt;include MasterChange&gt;&gt;&lt;&lt;set $followers+=1&gt;&gt;&lt;&lt;unset _stop&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 &lt;&lt;include LoadFollow&gt;&gt;
@@ -366098,10 +366080,8 @@ You enter the halls of Ikaanos’ old gymnasium. This was once a distinguished s
 
 
 /* has gym pics */
-&lt;&lt;if _npc.girlid is 218 or _npc.girlid is 1 or _npc.girlid is 15 or _npc.girlid is 16 or _npc.girlid is 32 or _npc.girlid is 41 or _npc.girlid is 42 or _npc.girlid is 18 or _npc.girlid is 128 or _npc.girlid is 204&gt;&gt;
-&lt;&lt;if _npc.girlid is 18 and _npc.age lte 17&gt;&gt;&lt;&lt;unset _gymgo&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set _gymgo to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[1,15,16,18,32,41,42,128,204,218]&gt;&gt;
+&lt;&lt;set _gymgo=_tmp.contains(_npc.girlid) and !(_npc.girlid is 18 and _npc.age lt 18)&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
@@ -373015,13 +372995,9 @@ currently testing this at Home, pool parties(yardSlot), party engine. Lextures a
 
 /* generic jobs - busy unsetter for home based work */
 &lt;&lt;if $daycount gte 89 and $daycount lte 159&gt;&gt;
-&lt;&lt;if _checkbusy.dayblock gte 1 and _checkbusy.dayblock isnot 5 and _checkbusy.dayblock isnot 12 and _checkbusy.dayblock isnot 999 and _checkbusy.dayblock isnot 14 and _checkbusy.dayblock isnot 15 and _checkbusy.dayblock isnot 16 and _checkbusy.dayblock isnot 17 and _checkbusy.dayblock isnot 19&gt;&gt;
-/* standard jobs sets npcs to busy */
-&lt;&lt;set _checkbusy.busy to 1&gt;&gt;
-&lt;&lt;else&gt;&gt;
-/* this sets unemployed, home based jobs and followers to not busy */
-&lt;&lt;set _checkbusy.busy to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[5,12,14,15,16,17,19,999]&gt;&gt;
+/* standard jobs sets npcs to busy, home based jobs and followers to not busy */
+&lt;&lt;set _checkbusy.busy=(_checkbusy.dayblock gte 1 and !_tmp.contains(_checkbusy.dayblock)) ? 1 : 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* got home from work checker */
@@ -377319,14 +377295,13 @@ Chancellor
 
 &lt;div class=&quot;clearnpc&quot;&gt;
 
-&lt;&lt;if $diff gte 3 and $daycount gte 80 and $daycount lte 160&gt;&gt;
-&lt;&lt;if _dayblock is 1 or _dayblock is 2 or _dayblock is 3 or _dayblock is 4 or _dayblock is 7 or _dayblock is 6 or _dayblock is 9 or _dayblock is 10 or _dayblock is 11 or _dayblock is 13 or _dayblock is 18 or _dayblock is 30&gt;&gt;&lt;&lt;set _dayblocked2 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=[1,2,3,4,6,7,9,10,11,13,18,30]&gt;&gt;
+&lt;&lt;set _dayblocked2=$diff gte 3 and $daycount gte 80 and $daycount lte 160 and _tmp.contains(_dayblock)&gt;&gt;
 
 &lt;&lt;if _dayblock is 5 and _npc.title is 1&gt;&gt;&lt;&lt;set _dayblocked5 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _dayblock isnot 0 and _dayblock isnot 999&gt;&gt;
-&lt;&lt;if _dayblocked2 is true&gt;&gt;
+&lt;&lt;if _dayblocked2&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;At work!&lt;/p&gt;
 &lt;&lt;elseif _dayblocked5 is true&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Title locked!&lt;/p&gt;
@@ -380149,7 +380124,8 @@ TRADE OFFER&lt;br&gt;
 &lt;&lt;set $sexscene to 1&gt;&gt;
 
  /* living room */
-&lt;&lt;if $girlid is 4 or $girlid is 15 or $girlid is 10 or $girlid is 18 or $girlid is 40 or $girlid is 41 or $girlid is 47 or $girlid is 126 or $girlid is 133 or $girlid is 129 or $girlid is 215&gt;&gt;
+&lt;&lt;set _tmp=[4,10,15,18,40,41,47,126,129,133,215]&gt;&gt;
+&lt;&lt;if _tmp.contains($girlid)&gt;&gt;
 &lt;&lt;set _room to 2&gt;&gt;
 &lt;&lt;set $sexscene=2&gt;&gt;
 &lt;&lt;set $jumpup to 2&gt;&gt;
@@ -380157,7 +380133,8 @@ TRADE OFFER&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
  /*the office - DONT FORGET TO ADD IN FINISHDESCS */
-&lt;&lt;if $girlid is 7 or $girlid is 9 or $girlid is 17 or $girlid is 35 or $girlid is 43 or $girlid is 44 or $girlid is 50 or $girlid is 105 or $girlid is 211 or $girlid is 212 or $girlid is 213&gt;&gt;
+&lt;&lt;set _tmp=[7,9,17,35,43,44,50,105,211,212,213]&gt;&gt;
+&lt;&lt;if _tmp.contains($girlid)&gt;&gt;
 &lt;&lt;set _room to 3&gt;&gt;
 
 &lt;&lt;set $sexscene=5&gt;&gt;&lt;&lt;set $jumpup to 2&gt;&gt;&lt;&lt;set $goingtooff to true&gt;&gt;
@@ -396659,17 +396636,13 @@ traitold2: 359,
  &lt;&lt;set $luitalk1 to true&gt;&gt;
  &lt;&lt;set $luitalk2 to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="638" name="CapCheck" tags="nobr" position="2450,1675" size="100,100">/* PASSAGE INCLUDED IN NEW COMBAT SIMULATOR - USE TO SET NON CAPTIVE COMBATS
-
-The _noc variable is sufficient to enable this in DarkDantes mod
-
-*/
-&lt;&lt;set _noc=$combat is 15 or $combat is 126 or $combat is 194 or $combat is 195 or $combat is 196 or $combat is 116 or $combat is 117 or $combat is 118 or
+</tw-passagedata><tw-passagedata pid="638" name="CapCheck" tags="nobr" position="2450,1675" size="100,100">
+/* PASSAGE INCLUDED IN NEW COMBAT SIMULATOR - USE TO SET NON CAPTIVE COMBATS */
+&lt;&lt;set _tmp=[2,15,55,57,60,61,78,112,115,116,117,118,119,120,121,124,126,145,148,149,150,151,152,153,155,156,157,158,159,176,177,178,181,182,183,184,187,190,194,195,196]&gt;&gt;
+&lt;&lt;set _nocaptives=$combat gte 200 or _tmp.contains($combat) or
                  ($combat is 191 and (($newen gte 2 and $newen lte 5) or ($newen gte 14 and $newen lte 20))) or
                  ($combat is 199 and ($neen lte 12 or ($neen is 15 or $neen is 17 or $neen is 21 or $neen is 22))) or
                  ($combat is 41 and $quest_head gte 6)&gt;&gt;
-
-&lt;&lt;if $combat gte 200 or $combat is 121 or $combat is 124 or $combat is 126 or $combat is 2 or $combat is 60 or $combat is 61 or $combat is 78 or $combat is 112 or $combat is 119 or $combat is 115 or $combat is 120 or $combat is 145 or $combat is 55 or $combat is 57 or $combat is 148 or $combat is 149 or $combat is 150 or $combat is 151 or $combat is 152 or $combat is 153 or $combat is 155 or $combat is 157 or $combat is 156 or $combat is 159 or $combat is 158 or $combat is 176 or $combat is 177 or $combat is 178 or $combat is 181 or $combat is 182 or $combat is 183 or $combat is 184 or $combat is 187 or $combat is 190 or _noc is true&gt;&gt;&lt;&lt;set _nocaptives to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 /* PROWLER FIGHT CHECKERS */
