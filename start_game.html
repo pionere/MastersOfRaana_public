@@ -10915,7 +10915,6 @@ faithn: &quot;Atheism&quot;,
 &lt;div class=&quot;story&quot;&gt;
 
 &lt;&lt;include IniTop&gt;&gt;
-&lt;&lt;include AllCh&gt;&gt;
 
 &lt;&lt;if $evefirst is undefined&gt;&gt;&lt;&lt;set $evefirst to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $ionafirst is undefined&gt;&gt;&lt;&lt;set $ionafirst to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -11826,7 +11825,7 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 [[Bondage|Bondagemaster]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $sexacts is true and $gifts isnot true and _sex is 0 and _bld isnot true and _blss isnot true and _npc.away isnot true&gt;&gt;
+&lt;&lt;if $sexacts is true and $gifts isnot true and _sex is 0 and !_mychild and _blss isnot true and _npc.away isnot true&gt;&gt;
 
 &lt;&lt;if $busy is 0 and _ariano is undefined&gt;&gt;
 
@@ -11961,9 +11960,9 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 
 
 &lt;&lt;if _sex is 0 and _blocksex isnot true and _npc.mychild isnot true and _blocksex2 isnot true and $cens is undefined&gt;&gt;
-&lt;&lt;if _npc.refuseshower isnot true and _bld isnot true and _blss is undefined&gt;&gt;[[take a shower|Bathroom][$gonnashower to true, $action to 2, $comesfromintera to true, $dids to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;take a shower&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _bathgood is true and _bld isnot true&gt;&gt;
-&lt;&lt;if _npc.refuseshower isnot true and _bld isnot true and _blss is undefined&gt;&gt;[[take a bath|Bathroom][$gonnashower to true, $action to 2, $comesfromintera to true, $dids to 2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;take a bath&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.refuseshower isnot true and _blss is undefined&gt;&gt;[[take a shower|Bathroom][$gonnashower to true, $action to 2, $comesfromintera to true, $dids to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;take a shower&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _bathgood is true&gt;&gt;
+&lt;&lt;if _npc.refuseshower isnot true and _blss is undefined&gt;&gt;[[take a bath|Bathroom][$gonnashower to true, $action to 2, $comesfromintera to true, $dids to 2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;take a bath&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -297890,9 +297889,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set _npc.girlnames to &quot;Talika’s&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;include AllCh&gt;&gt;
-
-
 &lt;&lt;if _npc.traitrela gte 1 and _npc.traitrela2 is undefined&gt;&gt;&lt;&lt;set _npc.traitrela2 to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _npc.girlname is &quot;Aisha&quot; and _npc.mother isnot &quot;Amani&quot;&gt;&gt;&lt;&lt;set _npc.mother to &quot;Amani&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -377746,9 +377742,7 @@ Chancellor
 
 &lt;&lt;if _npc.state is 0 or _isaway&gt;&gt;&lt;&lt;set _npc.hunger to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="614" name="AllCh" tags="nobr" position="5275,1200" size="100,100">&lt;&lt;if _npc.status is 9&gt;&gt;
-&lt;&lt;set _bld to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="615" name="GenComb" tags="nobr" position="2600,1775" size="100,100">&lt;&lt;set _nervewill to 5&gt;&gt;
+</tw-passagedata><tw-passagedata pid="615" name="GenComb" tags="nobr" position="2600,1775" size="100,100">&lt;&lt;set _nervewill to 5&gt;&gt;
 &lt;&lt;if $diff gte 3&gt;&gt;&lt;&lt;set _nervewill to 25&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
