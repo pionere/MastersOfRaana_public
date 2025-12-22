@@ -11862,10 +11862,10 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 /* arizona no mayor */
 &lt;&lt;if $girlid is 52 and $nomayortalk is 1&gt;&gt;[[Mayor assignment|M3Scaving][$m3scaving to 47, $adpos to 0, $adpos2 to 0]]&lt;&lt;set _talkblock to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _sex is 0 and _blss isnot true and _incestblock isnot true and _npc.mychild isnot true and $cens is undefined and _bhd is undefined and _blss is undefined and _talkblock is undefined&gt;&gt;
+&lt;&lt;if _sex is 0 and _blss isnot true and _incestblock isnot true and !_mychild and $cens is undefined and _bhd is undefined and _blss is undefined and _talkblock is undefined&gt;&gt;
 [[Sexual options|Interact][$sexacts to true]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _sex is 0 and _incestblock isnot true and _npc.mychild isnot true and $cens is 1 and _blss isnot true and _talkblock is undefined&gt;&gt;&lt;&lt;if $cancelmakeout is false&gt;&gt;[[Start seduction|Seduceini][$sedrounds=0, $saynow to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Start seduction&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _sex is 0 and _incestblock isnot true and !_mychild and $cens is 1 and _blss isnot true and _talkblock is undefined&gt;&gt;&lt;&lt;if $cancelmakeout is false&gt;&gt;[[Start seduction|Seduceini][$sedrounds=0, $saynow to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Start seduction&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _imprisononly isnot true and _talkblock is undefined&gt;&gt;
 [[Events &amp; activities|EventEngine]]
@@ -11959,7 +11959,7 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 &lt;&lt;if $mch.bathroom.level gte 2&gt;&gt;&lt;&lt;set _bathgood to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _sex is 0 and _blocksex isnot true and _npc.mychild isnot true and _blocksex2 isnot true and $cens is undefined&gt;&gt;
+&lt;&lt;if _sex is 0 and _blocksex isnot true and !_mychild and _blocksex2 isnot true and $cens is undefined&gt;&gt;
 &lt;&lt;if _npc.refuseshower isnot true and _blss is undefined&gt;&gt;[[take a shower|Bathroom][$gonnashower to true, $action to 2, $comesfromintera to true, $dids to 1]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;take a shower&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _bathgood is true&gt;&gt;
 &lt;&lt;if _npc.refuseshower isnot true and _blss is undefined&gt;&gt;[[take a bath|Bathroom][$gonnashower to true, $action to 2, $comesfromintera to true, $dids to 2]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;take a bath&lt;/p&gt;&lt;&lt;/if&gt;&gt;
@@ -18703,7 +18703,7 @@ $girlnames &#39;&#39;Defiance (+_defscore)&#39;&#39; has increased!
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlid lte 99&gt;&gt;&lt;&lt;if $hopesanswer is false&gt;&gt;[[Hopes and dreams?|Talk][$action to 3]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Hopes and dreams?&lt;/p&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 [[About me?|Talk][$action to 4]]
-&lt;&lt;if _sex is 0 and _age gte 18 and _blocksex isnot true and _npc.mychild isnot true&gt;&gt;[[Sexual preferences|Talk][$action to 6]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _sex is 0 and _age gte 18 and _blocksex isnot true and !_mychild&gt;&gt;[[Sexual preferences|Talk][$action to 6]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $girlid is 14 and $masterlove gte 60 and $quest_bro is 6 and $invhold gte 5&gt;&gt;[[About my brother|QuestRoom][$questgo to 23, $adpos to 0, $adpos2 to 0, $adpos3 to 0]]&lt;&lt;/if&gt;&gt;
 
 /* stacey finished */
@@ -196137,7 +196137,7 @@ $avIn_hunger/100
 &lt;&lt;if $action9b is true&gt;&gt;
 &lt;p class=&quot;usedpassfull&quot;&gt;Declare love&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $action9b isnot true and $action7b is true and _blocksex isnot true and _npc.mychild isnot true&gt;&gt;[[Declare love|Golden][$action9b to true, $event to 3]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Declare love&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $action9b isnot true and $action7b is true and _blocksex isnot true and !_mychild&gt;&gt;[[Declare love|Golden][$action9b to true, $event to 3]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Declare love&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -245924,7 +245924,7 @@ Recalling a slave to a full household will move your currently&lt;br&gt;active s
 </tw-passagedata><tw-passagedata pid="373" name="RanHistory" tags="nobr" position="3525,325" size="100,100">
 /* TYPE OF BACKGROUND FOR TEXT VARIATIONS */
 
-&lt;&lt;if _npc.mychild is true&gt;&gt;&lt;&lt;set _npc.back to -99&gt;&gt;&lt;&lt;set _npc.back1 to -99&gt;&gt;&lt;&lt;set _npc.back4 to -99&gt;&gt;&lt;&lt;set $back to -99&gt;&gt;&lt;&lt;set $back1 to -99&gt;&gt;&lt;&lt;set $back4 to -99&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _mychild&gt;&gt;&lt;&lt;set _npc.back to -99&gt;&gt;&lt;&lt;set _npc.back1 to -99&gt;&gt;&lt;&lt;set _npc.back4 to -99&gt;&gt;&lt;&lt;set $back to -99&gt;&gt;&lt;&lt;set $back1 to -99&gt;&gt;&lt;&lt;set $back4 to -99&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _parback to $back&gt;&gt;
 &lt;&lt;set _back1 to $back1&gt;&gt;
@@ -248465,7 +248465,7 @@ My father… Oh God… He… has some very weird ideas, and that’s why I’m h
 &lt;&lt;if _parback is -107&gt;&gt;&lt;&lt;set _sp to 107&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if _npc.mychild is true&gt;&gt;&lt;&lt;set _sp to 99&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _mychild&gt;&gt;&lt;&lt;set _sp to 99&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $back is -21&gt;&gt;&lt;&lt;set _sp to 21&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
@@ -249204,7 +249204,7 @@ REASON FOR ENSLAVEMENT EXPLANATION
 &lt;&lt;if _girlid is 217&gt;&gt;&lt;&lt;set _spec to 217&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _girlid is 218&gt;&gt;&lt;&lt;set _spec to 218&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.mychild is true&gt;&gt;&lt;&lt;set _spec to 999&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _mychild&gt;&gt;&lt;&lt;set _spec to 999&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if _spec gte 1&gt;&gt;
@@ -297725,7 +297725,7 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;unset $nodel&gt;&gt;
 &lt;&lt;unset $newimp&gt;&gt;
 
-&lt;&lt;if _npc.mychild is true&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _mychild&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set _status to _npc.status&gt;&gt;
 
