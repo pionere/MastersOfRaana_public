@@ -297216,18 +297216,236 @@ Combat modifier:
 
 /* MAIN NPC INITIATOR */
 &lt;&lt;set _npc = $npc[$c_npc]&gt;&gt;
-
-
-
-
-
-
-
 /* NPC MORNING BJ INITIATOR */
 &lt;&lt;if _service is true&gt;&gt;
-&lt;&lt;set _weare to true&gt;&gt;
 &lt;&lt;set _npc = $npc[$mbjgirl]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+
+/* UPDATE _npc (Use either $newimp (true) or $nodel (true) to override old slot framework priority. Use at specific page bu also when going back from page to interactions.) */
+&lt;&lt;if _isinarena is true&gt;&gt;&lt;&lt;set $newimp to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $checkingstats is true and $nodel isnot true and $newimp isnot true&gt;&gt;
+&lt;&lt;include EndExe&gt;&gt;
+&lt;&lt;set _checkstats to true&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/* FIXERS */
+
+/* SEX APPLY */
+&lt;&lt;if _npc.girlid lte 299&gt;&gt;
+&lt;&lt;set _npc.sex to 0&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _npc.sex to 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid gte 23 and _npc.girlid lte 27&gt;&gt;&lt;&lt;set _npc.sex to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 19 or _npc.girlid is 21 or _npc.girlid is 29 or _npc.girlid is 30 or _npc.girlid is 31 or _npc.girlid is 33 or _npc.girlid is 34 or _npc.girlid is 37 or _npc.girlid is 38 or _npc.girlid is 46 or _npc.girlid is 48 or _npc.girlid is 49 or _npc.girlid is 53&gt;&gt;&lt;&lt;set _npc.sex to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 202 and (_npc.girlname is &quot;TALIKA&quot; or _npc.girlname is &quot;Talika&quot;)&gt;&gt;
+&lt;&lt;set _npc.girlname to &quot;Talika&quot;&gt;&gt;
+&lt;&lt;set _npc.girlnames to &quot;Talika’s&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlname is &quot;Aisha&quot;&gt;&gt;&lt;&lt;set _npc.mother to &quot;Amani&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.girlid is 18 or _npc.girlid is 19&gt;&gt;&lt;&lt;set _npc.mother to &quot;Huskah&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.girlid is 52&gt;&gt;&lt;&lt;set _npc.mother to $npc.av48.mother&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 36 or _npc.girlid is 37&gt;&gt;&lt;&lt;set _npc.mychild to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 210 and _npc.girlname is &quot;Rosita&quot;&gt;&gt;&lt;&lt;set _npc.body to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.girlid is 34&gt;&gt;&lt;&lt;set _npc.body to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 27&gt;&gt;&lt;&lt;set _npc.armorwear to &quot;wega&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* Aria gets her original paragon status set */
+&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set _npc.ostatus to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+
+/* fields */
+&lt;&lt;if _npc.ostatus is undefined&gt;&gt;&lt;&lt;set _npc.ostatus to _npc.status&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.improve is undefined&gt;&gt;&lt;&lt;set _npc.improve to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.virgin is undefined&gt;&gt;&lt;&lt;set _npc.virgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.usecrawl is undefined&gt;&gt;&lt;&lt;set _npc.usecrawl to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.enslave is undefined&gt;&gt;&lt;&lt;set _npc.enslave to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.battles is undefined&gt;&gt;&lt;&lt;set _npc.battles to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.arencour is undefined&gt;&gt;&lt;&lt;set _npc.arencour to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.spokensex is undefined&gt;&gt;&lt;&lt;set _npc.spokensex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.taint is undefined&gt;&gt;&lt;&lt;set _npc.taint to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.hopessaidno is undefined&gt;&gt;&lt;&lt;set _npc.hopessaidno to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.refuseshower is undefined&gt;&gt;&lt;&lt;set _npc.refuseshower to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.cancelmakeout is undefined&gt;&gt;&lt;&lt;set _npc.cancelmakeout to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.prostring is undefined&gt;&gt;&lt;&lt;set _npc.prostring to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.refuseclass is undefined&gt;&gt;&lt;&lt;set _npc.refuseclass to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.prisdays is undefined&gt;&gt;&lt;&lt;set _npc.prisdays to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.poutlearn is undefined&gt;&gt;&lt;&lt;set _npc.poutlearn to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.didring is undefined&gt;&gt;&lt;&lt;set _npc.didring to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.giftsgiven is undefined&gt;&gt;&lt;&lt;set _npc.giftsgiven to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.daysabond is undefined&gt;&gt;&lt;&lt;set _npc.daysabond to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.nopussyday is undefined&gt;&gt;&lt;&lt;set _npc.nopussyday to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.nooralday is undefined&gt;&gt;&lt;&lt;set _npc.nooralday to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.noanalday is undefined&gt;&gt;&lt;&lt;set _npc.noanalday to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.justfight is undefined&gt;&gt;&lt;&lt;set _npc.justfight to 99&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.likepussy is undefined&gt;&gt;&lt;&lt;set _npc.likepussy to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likeoral is undefined&gt;&gt;&lt;&lt;set _npc.likeoral to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likeanal is undefined&gt;&gt;&lt;&lt;set _npc.likeanal to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.topir is undefined&gt;&gt;&lt;&lt;set _npc.topir to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.prest is undefined&gt;&gt;&lt;&lt;set _npc.prest to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.refuseoral is undefined&gt;&gt;&lt;&lt;set _npc.refuseoral to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.refusedanalvirgin is undefined&gt;&gt;&lt;&lt;set _npc.refusedanalvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.refusedvirgin is undefined&gt;&gt;&lt;&lt;set _npc.refusedvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.wantgift is undefined&gt;&gt;&lt;&lt;set _npc.wantgift to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.sex is 0 and _npc.cumpussy is undefined&gt;&gt;
+&lt;&lt;set _npc.cumpussy to 0&gt;&gt;
+&lt;&lt;set _npc.cumass to 0&gt;&gt;
+&lt;&lt;set _npc.cumface to 0&gt;&gt;
+&lt;&lt;set _npc.cumthroat to 0&gt;&gt;
+&lt;&lt;set _npc.cummouth to 0&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.sex is 0 and _npc.deepxp is undefined&gt;&gt;
+&lt;&lt;set _npc.deepxp to _npc.oralxp&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/* SALARYNOW UNDEFINED FIX */
+
+&lt;&lt;if _npc.salarynow is undefined&gt;&gt;&lt;&lt;set _npc.salarynow to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.killed is undefined&gt;&gt;&lt;&lt;set _npc.killed to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* married fix */
+&lt;&lt;if _npc.mardays is undefined and _npc.sex is 0 and _npc.status is 10&gt;&gt;&lt;&lt;set _npc.mardays to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* traits */
+&lt;&lt;if _npc.girlid is 16 or _npc.girlid is 17&gt;&gt;
+&lt;&lt;if _npc.traitbrat is undefined&gt;&gt;&lt;&lt;set _npc.traitbrat to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.traitpure is undefined&gt;&gt;&lt;&lt;set _npc.traitpure to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitmind is undefined&gt;&gt;&lt;&lt;set _npc.traitmind to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.traitstealth is undefined&gt;&gt;&lt;&lt;set _npc.traitstealth to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.traitrela gte 1 and _npc.traitrela2 is undefined&gt;&gt;&lt;&lt;set _npc.traitrela2 to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 1 or _npc.girlid is 18 or _npc.girlid is 19&gt;&gt;&lt;&lt;set _npc.traitsib to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* UNBREAKABLE TRAIT FIXER */
+
+&lt;&lt;if _npc.traitun is undefined&gt;&gt;
+&lt;&lt;set _npc.traitun to 50&gt;&gt;
+
+&lt;&lt;if _npc.willpower gte 60&gt;&gt;
+&lt;&lt;if _npc.girlid is 11 or _npc.girlid is 39&gt;&gt;&lt;&lt;set _npc.traitun to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+
+/* ATT WHORE BUG FIXER */
+
+&lt;&lt;if _npc.girlid isnot 9 and _npc.girlid isnot 30&gt;&gt;&lt;&lt;set _npc.traitatt to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* SUPERFICIAL TRAIT FIXERS */
+
+&lt;&lt;if _npc.traitsu is undefined&gt;&gt;
+&lt;&lt;set _npc.traitsu=(_npc.girlid is 6 or _npc.girlid is 8 or _npc.girlid is 9 or _npc.girlid is 28) ? 100 : 50&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.girlid is 39&gt;&gt;
+&lt;&lt;if _npc.traitdistrust is undefined&gt;&gt;&lt;&lt;set _npc.traitdistrust to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/* NOBILITY FIXERS */
+
+&lt;&lt;if _npc.girlid is 17 or _npc.girlid is 39 or _npc.girlid is 208 or _npc.girlid is 215&gt;&gt;&lt;&lt;set _npc.traitnobi to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* JESTER FIXERS */
+
+&lt;&lt;if _npc.girlid is 30 and _npc.traitjester is undefined&gt;&gt;&lt;&lt;set _npc.traitjester to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* WEAPON SPEC FIXERS */
+
+&lt;&lt;if _npc.girlid is 27&gt;&gt;&lt;&lt;set _npc.traitweapon to 3&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.girlid is 31&gt;&gt;&lt;&lt;set _npc.traitweapon to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.girlid is 33&gt;&gt;&lt;&lt;set _npc.traitweapon to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* MALE DISPOSITION FIXERS */
+
+&lt;&lt;if _npc.sex is 1&gt;&gt;
+&lt;&lt;if _npc.likepussy lte 24&gt;&gt;&lt;&lt;set _npc.likepussy to random(25,120)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likeanal gte 30&gt;&gt;&lt;&lt;set _npc.likeanal to random(0,29)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+
+/* transitions */
+&lt;&lt;if _npc.build gte 100&gt;&gt;&lt;&lt;set _npc.toughness+=1&gt;&gt;&lt;&lt;set _npc.build to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.taint gte 100&gt;&gt;&lt;&lt;set _girlid to 353&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _girlid is 353 or _npc.transformed gte 1&gt;&gt;&lt;&lt;set _blockall to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.virgin isnot true&gt;&gt;
+&lt;&lt;set _npc.traitvestal to 0&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.age gte 18 and _npc.sex is 0&gt;&gt;&lt;&lt;set _npc.away to false&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.status is 9&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.age lte 17&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.age gte 15 and _npc.sex is 1 and _npc.body lte 5&gt;&gt;&lt;&lt;set _npc.body to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* SPARTAN CHECKERS */
+
+&lt;&lt;if $quest_space gte 7&gt;&gt;
+&lt;&lt;if _npc.girlid is 25 or _npc.girlid is 46&gt;&gt;
+&lt;&lt;set _npc.masterlove to 130&gt;&gt;
+&lt;&lt;set _npc.traitloyal to 100&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/* CAITLIN at the mastersphere */
+
+&lt;&lt;if $quest_cat gte 15 and $quest_cat lte 18 and $girlid is 13&gt;&gt;&lt;&lt;set _npc.busy to 56&gt;&gt;&lt;&lt;set _catbusy to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+/* ARIZONA MAYOR AC */
+
+&lt;&lt;if _npc.girlid is 52 and _npc.aca gte 90 and _npc.int gte 90 and _npc.admin gte 120 and _npc.traitmayor lte 99&gt;&gt;
+&lt;&lt;set _npc.traitmayor to 100&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/* MASTER CAP SCRITPS */
+
+&lt;&lt;set _npc.happiness=Math.clamp(_npc.happiness,0,100)&gt;&gt;
+
+&lt;&lt;set _npc.defcount=Math.clamp(_npc.defcount,0,50)&gt;&gt;
+
+&lt;&lt;if _npc.likepussy gt 130&gt;&gt;&lt;&lt;set _npc.likepussy to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likeoral gt 130&gt;&gt;&lt;&lt;set _npc.likeoral to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.likeanal gt 130&gt;&gt;&lt;&lt;set _npc.likeanal to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.seload gt 10&gt;&gt;&lt;&lt;set _npc.seload to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.humiliation gt 15&gt;&gt;&lt;&lt;set _npc.humiliation to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;set _npc.scarefactor=Math.max(_npc.scarefactor,0)&gt;&gt;
+
+&lt;&lt;set _npc.hunger=Math.max(_npc.hunger,0)&gt;&gt;
+
 
 
 &lt;&lt;if _npc.age lte 17&gt;&gt;
@@ -297247,8 +297465,6 @@ Combat modifier:
 &lt;&lt;set _blss to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
 /* NO KILL OR SELL CHANCELLOR */
 &lt;&lt;if _npc.girlid is 11 and $quest_aria gte 18 and $quest_aria lte 98&gt;&gt;
 &lt;&lt;set _ariablock to true&gt;&gt;
@@ -297256,6 +297472,16 @@ Combat modifier:
 &lt;&lt;if _npc.activityblock gte 1&gt;&gt;&lt;&lt;set _npc.activityblock to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+/* ARIA SMR CHECKER */
+&lt;&lt;if _npc.girlid is 11 and _npc.traitsmr gte 1&gt;&gt;
+&lt;&lt;set _smraria to true&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/* BOFORS CHECKER */
+&lt;&lt;if _npc.girlid is 49&gt;&gt;
+&lt;&lt;set _prostblock to true&gt;&gt;
+&lt;&lt;set _machine to true&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 /* Wholesome MoR activator */
 &lt;&lt;if $cens gte 1&gt;&gt;
@@ -297265,53 +297491,7 @@ Combat modifier:
 &lt;&lt;/if&gt;&gt;
 
 
-
-
-
-
-/*
-
-Dayblock 1: Working at Roos
-Dayblock 2: Working at Devious Tools
-Dayblock 3: Book store
-Dayblock 4: Working at Walton’s
-Dayblock 5: Maid service at home
-Dayblock 6: Study (Academy)
-Dayblock 7: Teacher (Academy)
-Dayblock 8: Newsroom (only Nicole)
-Dayblock 9: Working at Nikas
-Dayblock 10: Singer at Golden Dragon
-Dayblock 11: Goldwalker (simple)
-Dayblock 12: Gardener
-Dayblock 13: Scavenger
-Dayblock 14: Janitor
-Dayblock 15: Accountant
-Dayblock 16: Guard
-Dayblock 17: Captain
-
-Dayblock 20: Built whore house
-
-NOTE!
-
-Use either $newimp (true) or $nodel (true) to override old slot framework priority. Use at specific page bu also when going back from page to interactions.
-
-
-*/
-
-
-
-
-
-&lt;&lt;if _isinarena is true&gt;&gt;&lt;&lt;set $newimp to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $checkingstats is true and $nodel isnot true and $newimp isnot true&gt;&gt;
-&lt;&lt;include EndExe&gt;&gt;
-&lt;&lt;set _checkstats to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
+/* Update/reset locals */
 &lt;&lt;set _last to _npc.last&gt;&gt;
 &lt;&lt;set _daysa to _npc.daysa&gt;&gt;
 &lt;&lt;set _girlid to _npc.girlid&gt;&gt;
@@ -297322,9 +297502,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set _girlnames = _npc.girlnames&gt;&gt;
 &lt;&lt;set _status = _npc.status&gt;&gt;
 &lt;&lt;set _daybef = _npc.daybef&gt;&gt;
-&lt;&lt;if _npc.traitmind isnot undefined&gt;&gt;
-&lt;&lt;set _traitmind to _npc.traitmind&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 &lt;&lt;set _toughness = _npc.toughness&gt;&gt;
 &lt;&lt;set _kind = _npc.kind&gt;&gt;
 &lt;&lt;set _discipline = _npc.discipline&gt;&gt;
@@ -297422,13 +297599,11 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set _foods to _npc.foods&gt;&gt;
 &lt;&lt;set _focus to _npc.focus&gt;&gt;
 &lt;&lt;set _arousal = _npc.arousal&gt;&gt;
-&lt;&lt;set _lube = _npc.lube&gt;&gt;
 &lt;&lt;set _afraid = _npc.afraid&gt;&gt;
 &lt;&lt;set _scarefactor to _npc.scarefactor&gt;&gt;
 &lt;&lt;set _girldo to _npc.girldo&gt;&gt;
 &lt;&lt;set _dinner to _npc.dinner&gt;&gt;
 &lt;&lt;set _dinnertime to _npc.dinnertime&gt;&gt;
-&lt;&lt;set _agedays to _npc.agedays&gt;&gt;
 
 
 &lt;&lt;set _av_armorwear to _npc.armorwear&gt;&gt;
@@ -297725,10 +297900,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;unset $nodel&gt;&gt;
 &lt;&lt;unset $newimp&gt;&gt;
 
-&lt;&lt;if _mychild&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _status to _npc.status&gt;&gt;
-
 &lt;&lt;if _npc.status lte 2&gt;&gt;
 &lt;&lt;set _callyou to &quot;master&quot;&gt;&gt;
 &lt;&lt;set _callit to &quot;slave&quot;&gt;&gt;
@@ -297762,17 +297933,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _sex is 1&gt;&gt;&lt;&lt;set _callthem to &quot;partners&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _sex is 0&gt;&gt;&lt;&lt;set _callit to &quot;wife&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _sex is 0&gt;&gt;&lt;&lt;set _callthem to &quot;wives&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* ARIA SMR CHECKER */
-&lt;&lt;if _npc.girlid is 11 and _npc.traitsmr gte 1&gt;&gt;
-&lt;&lt;set _smraria to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* BOFORS CHECKER */
-&lt;&lt;if _npc.girlid is 49&gt;&gt;
-&lt;&lt;set _prostblock to true&gt;&gt;
-&lt;&lt;set _machine to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -297816,10 +297976,29 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if $hatemod isnot true and _npc.hate gte 1&gt;&gt;&lt;&lt;set _npc.hate to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
+/* GREAT BUSY ENGINE
 
+Dayblock 1: Working at Roos
+Dayblock 2: Working at Devious Tools
+Dayblock 3: Book store
+Dayblock 4: Working at Walton’s
+Dayblock 5: Maid service at home
+Dayblock 6: Study (Academy)
+Dayblock 7: Teacher (Academy)
+Dayblock 8: Newsroom (only Nicole)
+Dayblock 9: Working at Nikas
+Dayblock 10: Singer at Golden Dragon
+Dayblock 11: Goldwalker (simple)
+Dayblock 12: Gardener
+Dayblock 13: Scavenger
+Dayblock 14: Janitor
+Dayblock 15: Accountant
+Dayblock 16: Guard
+Dayblock 17: Captain
 
-/* GREAT BUSY ENGINE */
+Dayblock 20: Built whore house
 
+*/
 &lt;&lt;if _npc.busy isnot 5 and _npc.busy isnot 55 and _npc.busy isnot 56 and !isaway(_npc)&gt;&gt;
 
 
@@ -297845,7 +298024,7 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set _npc.busy to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if _npc.dayoff gte 1&gt;&gt;&lt;&lt;set _npc.busy to 5&gt;&gt;&lt;&lt;set $busy to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.dayoff gte 1&gt;&gt;&lt;&lt;set _npc.busy to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $wopos isnot 1 and $dayblock is 999&gt;&gt;&lt;&lt;set _nosleep to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -297873,133 +298052,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;set $dayblock to _npc.dayblock&gt;&gt;
 &lt;&lt;set $busy to _npc.busy&gt;&gt;
 
-
-
-
-/* FIXERS */
-
-
-/* bratty trait setter */
-&lt;&lt;if _npc.girlid is 16 or _npc.girlid is 17&gt;&gt;
-&lt;&lt;if _npc.traitbrat is undefined&gt;&gt;&lt;&lt;set _npc.traitbrat to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 202 and (_npc.girlname is &quot;TALIKA&quot; or _npc.girlname is &quot;Talika&quot;)&gt;&gt;
-&lt;&lt;set _npc.girlname to &quot;Talika&quot;&gt;&gt;
-&lt;&lt;set _npc.girlnames to &quot;Talika’s&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.traitrela gte 1 and _npc.traitrela2 is undefined&gt;&gt;&lt;&lt;set _npc.traitrela2 to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlname is &quot;Aisha&quot; and _npc.mother isnot &quot;Amani&quot;&gt;&gt;&lt;&lt;set _npc.mother to &quot;Amani&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.improve is undefined&gt;&gt;&lt;&lt;set _npc.improve to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 27&gt;&gt;&lt;&lt;set _npc.armorwear to &quot;wega&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.virgin is undefined&gt;&gt;&lt;&lt;set _npc.virgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.usecrawl is undefined&gt;&gt;&lt;&lt;set _npc.usecrawl to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.enslave is undefined&gt;&gt;&lt;&lt;set _npc.enslave to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.battles is undefined&gt;&gt;
-&lt;&lt;set _npc.battles to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.age gte 18 and _npc.sex is 0&gt;&gt;&lt;&lt;set _npc.away to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.status is 9&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.age lte 17&gt;&gt;&lt;&lt;set _npc.away to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.ostatus is undefined&gt;&gt;&lt;&lt;set _npc.ostatus to _npc.status&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.arencour is undefined&gt;&gt;&lt;&lt;set _npc.arencour to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.spokensex is undefined&gt;&gt;&lt;&lt;set _npc.spokensex to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.taint is undefined&gt;&gt;&lt;&lt;set _npc.taint to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/*
-&lt;&lt;if _npc.girlid is 35 and _npc.salary gte 40 and $firstkel is undefined&gt;&gt;&lt;&lt;set _npc.status to 4&gt;&gt;&lt;&lt;set $firstkel to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-*/
-
-&lt;&lt;if _npc.hopessaidno is undefined&gt;&gt;&lt;&lt;set _npc.hopessaidno to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.traitpure is undefined&gt;&gt;&lt;&lt;set _npc.traitpure to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.traitmind is undefined&gt;&gt;&lt;&lt;set _npc.traitmind to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.refuseshower is undefined&gt;&gt;&lt;&lt;set _npc.refuseshower to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.cancelmakeout is undefined&gt;&gt;&lt;&lt;set _npc.cancelmakeout to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.prostring is undefined&gt;&gt;&lt;&lt;set _npc.prostring to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.refuseclass is undefined&gt;&gt;&lt;&lt;set _npc.refuseclass to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.prisdays is undefined&gt;&gt;&lt;&lt;set _npc.prisdays to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.poutlearn is undefined&gt;&gt;&lt;&lt;set _npc.poutlearn to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.didring is undefined&gt;&gt;&lt;&lt;set _npc.didring to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.giftsgiven is undefined&gt;&gt;&lt;&lt;set _npc.giftsgiven to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.daysabond is undefined&gt;&gt;&lt;&lt;set _npc.daysabond to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.nopussyday is undefined&gt;&gt;&lt;&lt;set _npc.nopussyday to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.nooralday is undefined&gt;&gt;&lt;&lt;set _npc.nooralday to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.noanalday is undefined&gt;&gt;&lt;&lt;set _npc.noanalday to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.justfight is undefined&gt;&gt;&lt;&lt;set _npc.justfight to 99&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.likepussy is undefined&gt;&gt;&lt;&lt;set _npc.likepussy to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.likeoral is undefined&gt;&gt;&lt;&lt;set _npc.likeoral to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.likeanal is undefined&gt;&gt;&lt;&lt;set _npc.likeanal to 40&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.topir is undefined&gt;&gt;&lt;&lt;set _npc.topir to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.prest is undefined&gt;&gt;&lt;&lt;set _npc.prest to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.improve is undefined&gt;&gt;&lt;&lt;set _npc.improve to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.refuseoral is undefined&gt;&gt;&lt;&lt;set _npc.refuseoral to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.refusedanalvirgin is undefined&gt;&gt;&lt;&lt;set _npc.refusedanalvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.refusedvirgin is undefined&gt;&gt;&lt;&lt;set _npc.refusedvirgin to false&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.wantgift is undefined&gt;&gt;&lt;&lt;set _npc.wantgift to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.age gte 15 and _npc.sex is 1 and _npc.body lte 5&gt;&gt;&lt;&lt;set _npc.body to 6&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 208 and _npc.traitnobi isnot 50&gt;&gt;&lt;&lt;set _npc.traitnobi to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.girlid is 210 and _npc.girlname is &quot;Rosita&quot;&gt;&gt;&lt;&lt;set _npc.body to 4&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.girlid is 1 and _npc.traitsib isnot 100&gt;&gt;&lt;&lt;set _npc.traitsib to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 19 and _npc.traitsib isnot 100&gt;&gt;&lt;&lt;set _npc.traitsib to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 18 and _npc.traitsib isnot 100&gt;&gt;&lt;&lt;set _npc.traitsib to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/* UNBREAKABLE TRAIT FIXER */
-
-&lt;&lt;if _npc.traitun is undefined&gt;&gt;
-&lt;&lt;set _npc.traitun to 50&gt;&gt;
-
-&lt;&lt;if _npc.willpower gte 60&gt;&gt;
-&lt;&lt;if _npc.girlid is 11 or _npc.girlid is 39&gt;&gt;&lt;&lt;set _npc.traitun to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-
-/* SPARTAN CHECKERS */
-
-&lt;&lt;if $quest_space gte 7&gt;&gt;
-&lt;&lt;if _npc.girlid is 25 or _npc.girlid is 46&gt;&gt;
-&lt;&lt;set _npc.masterlove to 130&gt;&gt;
-&lt;&lt;set _npc.traitloyal to 100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* CAITLIN */
-
- /* at the mastersphere */
-&lt;&lt;if $quest_cat gte 15 and $quest_cat lte 18 and $girlid is 13&gt;&gt;&lt;&lt;set $busy to 56&gt;&gt;&lt;&lt;set _catbusy to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
 /* RESISTANCE FACTOR */
 
 &lt;&lt;set _bres to _npc.age&gt;&gt;
@@ -298009,110 +298061,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _npc.body lte 1&gt;&gt;&lt;&lt;set _bres-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.body gte 3&gt;&gt;&lt;&lt;set _bres+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.body gte 4&gt;&gt;&lt;&lt;set _bres+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if _npc.traitstealth is undefined&gt;&gt;
-&lt;&lt;set _npc.traitstealth to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-/* ATT WHORE BUG FIXER */
-
-&lt;&lt;if _npc.girlid isnot 9 and _npc.girlid isnot 30&gt;&gt;&lt;&lt;set _npc.traitatt to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-
-/* SEX APPLY */
-&lt;&lt;if _npc.girlid lte 299&gt;&gt;
-&lt;&lt;set _npc.sex to 0&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _npc.sex to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid gte 23 and _npc.girlid lte 27&gt;&gt;&lt;&lt;set _npc.sex to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 19 or _npc.girlid is 21 or _npc.girlid is 29 or _npc.girlid is 30 or _npc.girlid is 31 or _npc.girlid is 33 or _npc.girlid is 34 or _npc.girlid is 37 or _npc.girlid is 38 or _npc.girlid is 46 or _npc.girlid is 48 or _npc.girlid is 49 or _npc.girlid is 53&gt;&gt;&lt;&lt;set _npc.sex to 1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 34&gt;&gt;&lt;&lt;set _npc.body to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 18 or _npc.girlid is 19&gt;&gt;&lt;&lt;set _npc.mother to &quot;Huskah&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/* Aria gets her original paragon status set */
-&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set _npc.ostatus to 5&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $girlid is 36 or $girlid is 37&gt;&gt;&lt;&lt;set _npc.mychild to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/* SUPERFICIAL TRAIT FIXERS */
-
-&lt;&lt;if _npc.traitsu is undefined and (_npc.girlid is 6 or _npc.girlid is 8 or _npc.girlid is 9 or _npc.girlid is 28)&gt;&gt;
-&lt;&lt;set _npc.traitsu to 100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.traitsu is undefined&gt;&gt;&lt;&lt;set _npc.traitsu to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-/* MASTER CAP SCRITPS */
-
-&lt;&lt;if _npc.happiness gt 100&gt;&gt;&lt;&lt;set _npc.happiness to 100&gt;&gt;&lt;&lt;set $happiness to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.defcount gt 50&gt;&gt;&lt;&lt;set _npc.defcount to 50&gt;&gt;&lt;&lt;set $defcount to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.likepussy gt 130&gt;&gt;&lt;&lt;set _npc.likepussy to 130&gt;&gt;&lt;&lt;set $likepussy to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.likeoral gt 130&gt;&gt;&lt;&lt;set _npc.likeoral to 130&gt;&gt;&lt;&lt;set $likeoral to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.likeanal gt 130&gt;&gt;&lt;&lt;set _npc.likeanal to 130&gt;&gt;&lt;&lt;set $likeanal to 130&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if _npc.happiness lt 0&gt;&gt;&lt;&lt;set _npc.happiness to 0&gt;&gt;&lt;&lt;set $happiness to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.humiliation gt 15&gt;&gt;&lt;&lt;set _npc.humiliation to 15&gt;&gt;&lt;&lt;set $humiliation to 15&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.scarefactor lt 0&gt;&gt;&lt;&lt;set _npc.scarefactor to 0&gt;&gt;&lt;&lt;set $scarefactor to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.hunger lt 0&gt;&gt;&lt;&lt;set _npc.hunger to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.defcount lt 0&gt;&gt;&lt;&lt;set _npc.defcount to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.build gte 100&gt;&gt;&lt;&lt;set _npc.toughness+=1&gt;&gt;&lt;&lt;set _npc.build to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.taint gte 100&gt;&gt;&lt;&lt;set _girlid to 353&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _girlid is 353 or _npc.transformed gte 1&gt;&gt;&lt;&lt;set _blockall to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.virgin isnot true&gt;&gt;
-&lt;&lt;set _npc.traitvestal to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 39&gt;&gt;
-&lt;&lt;if _npc.traitdistrust is undefined&gt;&gt;&lt;&lt;set _npc.traitdistrust to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-
-
-/* NOBILITY FIXERS */
-
-&lt;&lt;if _npc.girlid is 17 or _npc.girlid is 215 or _npc.girlid is 39&gt;&gt;&lt;&lt;set _npc.traitnobi to 50&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-/* JESTER FIXERS */
-
-&lt;&lt;if _npc.girlid is 30 and _npc.traitjester is undefined&gt;&gt;&lt;&lt;set _npc.traitjester to 100&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-
 
 
 &lt;&lt;unset _libdis&gt;&gt;
@@ -298130,7 +298078,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _ach.state is 1 and _ach.status is 10&gt;&gt;&lt;&lt;set _achnpcs2+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ach.state is 1 and _ach.semenswallowed gte 10000&gt;&gt;&lt;&lt;set _achnpcs3 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ach.state is 1 and _ach.likesadist gte 100&gt;&gt;&lt;&lt;set _achnpcs4+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/for&gt;&gt;
 
 &lt;&lt;if _achnpcs gte 50&gt;&gt;&lt;&lt;set $ach33 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -298138,58 +298085,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _achnpcs3 is true&gt;&gt;&lt;&lt;set $ach37 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _achnpcs4 gte 10&gt;&gt;&lt;&lt;set $ach38 to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.sex is 0 and _npc.cumpussy is undefined&gt;&gt;
-&lt;&lt;set _npc.cumpussy to 0&gt;&gt;
-&lt;&lt;set _npc.cumass to 0&gt;&gt;
-&lt;&lt;set _npc.cumface to 0&gt;&gt;
-&lt;&lt;set _npc.cumthroat to 0&gt;&gt;
-&lt;&lt;set _npc.cummouth to 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _npc.sex is 0 and _npc.deepxp is undefined&gt;&gt;
-&lt;&lt;set _npc.deepxp to _npc.oralxp&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* semen counter cap */
-&lt;&lt;if _npc.seload gt 10&gt;&gt;&lt;&lt;set _npc.seload to 10&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* married fix */
-&lt;&lt;if _npc.mardays is undefined and _npc.sex is 0 and _npc.status is 10&gt;&gt;&lt;&lt;set _npc.mardays to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-/* ARIZONA MAYOR AC */
-
-&lt;&lt;if _npc.girlid is 52 and _npc.aca gte 90 and _npc.int gte 90 and _npc.admin gte 120 and _npc.traitmayor lte 99&gt;&gt;
-&lt;&lt;set _npc.traitmayor to 100&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 52&gt;&gt;
-&lt;&lt;set _npc.mother to $npc.av48.mother&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-/* SALARYNOW UNDEFINED FIX */
-
-&lt;&lt;if _npc.salarynow is undefined&gt;&gt;&lt;&lt;set _npc.salarynow to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.killed is undefined&gt;&gt;&lt;&lt;set _npc.killed to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-/* WEAPON SPEC FIXERS */
-
-&lt;&lt;if _npc.girlid is 27&gt;&gt;&lt;&lt;set _npc.traitweapon to 3&gt;&gt;&lt;&lt;/if&gt;&gt; /* ayden */
-&lt;&lt;if _npc.girlid is 31&gt;&gt;&lt;&lt;set _npc.traitweapon to 2&gt;&gt;&lt;&lt;/if&gt;&gt; /* r savant */
-&lt;&lt;if _npc.girlid is 33&gt;&gt;&lt;&lt;set _npc.traitweapon to 1&gt;&gt;&lt;&lt;/if&gt;&gt; /* dexter */
-
-
-/* MALE DISPOSITION FIXERS */
-
-&lt;&lt;if _npc.sex is 1&gt;&gt;
-&lt;&lt;if _npc.likepussy lte 24&gt;&gt;&lt;&lt;set _npc.likepussy to random(25,120)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.likeanal gte 30&gt;&gt;&lt;&lt;set _npc.likeanal to random(0,29)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
 
 
 /* CHAR AND BEAUTY MODS BELOW */
@@ -298221,7 +298116,6 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _npc.necklace is 4&gt;&gt;&lt;&lt;set _beauty+=6&gt;&gt;&lt;&lt;set _charisma+=6&gt;&gt;&lt;&lt;set _beamod+=6&gt;&gt;&lt;&lt;set _charmod+=6&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.necklace is 5&gt;&gt;&lt;&lt;set _beauty+=7&gt;&gt;&lt;&lt;set _charisma+=7&gt;&gt;&lt;&lt;set _beamod+=7&gt;&gt;&lt;&lt;set _charmod+=7&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.nightblock is 4 and _npc.wear is &quot;naked&quot;&gt;&gt;&lt;&lt;set _beauty+=2&gt;&gt;&lt;&lt;set _charisma+=2&gt;&gt;&lt;&lt;set _beamod+=2&gt;&gt;&lt;&lt;set _charmod+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-
 
 
 /* ranged weapon power value */
@@ -298265,12 +298159,12 @@ Use either $newimp (true) or $nodel (true) to override old slot framework priori
 &lt;&lt;if _npc.melee lte 59&gt;&gt;&lt;&lt;set _npc.meleepower=adl(_npc.meleepower,-1,4)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 /* armor */
-
 &lt;&lt;set _npc.armorpower to 0&gt;&gt;
 &lt;&lt;if _npc.armorwear is &quot;padded&quot; or _npc.armorwear is &quot;leather&quot; or _npc.armorwear is &quot;stealth&quot;&gt;&gt;&lt;&lt;set _npc.armorpower+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.armorwear is &quot;hleather&quot; or _npc.armorwear is &quot;combat&quot;&gt;&gt;&lt;&lt;set _npc.armorpower+=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _npc.armorwear is &quot;duraplate&quot; or _npc.armorwear is &quot;weave&quot;&gt;&gt;&lt;&lt;set _npc.armorpower+=3&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.armorwear is &quot;hulc&quot; or _npc.armorwear is &quot;wega&quot; or _npc.armorwear is &quot;aet&quot;&gt;&gt;&lt;&lt;set _npc.armorpower+=4&gt;&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="436" name="Move" tags="nobr" position="3775,2425" size="100,100">
+&lt;&lt;if _npc.armorwear is &quot;hulc&quot; or _npc.armorwear is &quot;wega&quot; or _npc.armorwear is &quot;aet&quot;&gt;&gt;&lt;&lt;set _npc.armorpower+=4&gt;&gt;&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="436" name="Move" tags="nobr" position="3775,2425" size="100,100">
 &lt;&lt;if $ownannex2 is true&gt;&gt;
 &lt;&gt;
 &lt;div class=&quot;storytop center&quot;&gt;
