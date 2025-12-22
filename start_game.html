@@ -123761,43 +123761,34 @@ $girlnames &lt;b&gt;WILLPOWER&lt;/b&gt; and affection for you have decreased!
 &lt;&lt;if $ownaplug1 is undefined&gt;&gt;&lt;&lt;set $ownaplug1 to 0&gt;&gt;&lt;&lt;set $ownaplug2 to 0&gt;&gt;&lt;&lt;set $ownaplug3 to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;headsign&quot;&gt;
-&lt;&lt;if $action2 is false and $action3 is false&gt;&gt;DEVIOUS TOOLS&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action2 is true&gt;&gt;BONDAGE DEVICES&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action3 is true&gt;&gt;BOOKS&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $action2&gt;&gt;BONDAGE DEVICES
+&lt;&lt;if $action3&gt;&gt;BOOKS
+&lt;&lt;else&gt;&gt;DEVIOUS TOOLS
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;if $action1 is false&gt;&gt;
-
+&lt;&lt;if !$action1&gt;&gt;
 You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-asian atmosphere offer the visitor a broad assortment of bondage devices that beg to be applied, inserted, or lashed over a new victim.
-&lt;br&gt;&lt;br&gt;
-
-
 &lt;&lt;if $aca_devi lte 7 and $daycount gte 161&gt;&gt;
-&lt;br&gt;&lt;br&gt;&#39;&#39;//Miss Devious’ bondage course is only available before 4 p.m!//&#39;&#39;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&#39;&#39;//Miss Devious’ bondage course is only available before 4 p.m!//&#39;&#39;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $action1=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $action1 to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $intalk is true&gt;&gt;
+&lt;&lt;if $intalk&gt;&gt;
 &lt;&lt;include DeviText&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $action2 is true&gt;&gt;
-
-
-
-
+&lt;&lt;if $action2&gt;&gt;
 &lt;div class=&quot;storybox&quot;&gt;
+
 
 &lt;div class=&quot;row&quot;&gt;
 
-
-
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/dildobutt.png][Devious][$event2 to true, $action to 1]]
+[img[Pics/Stuff/dildobutt.png][Devious][$event1 to 2, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
@@ -123808,283 +123799,187 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 [img[Pics/Stuff/aplug2butt.png][Devious][$event to 21, $action to 1]]
 &lt;/div&gt;
 
-
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 [img[Pics/Stuff/aplug3butt.png][Devious][$event to 22, $action to 1]]
 &lt;/div&gt;
 
-
-
 &lt;/div&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;row&quot;&gt;
 
-
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/harnessbutt.png][Devious][$event5 to true, $action to 1]]
-&lt;/div&gt;
-
-
-&lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/canebutt.png][Devious][$event6 to true, $action to 1]]
+[img[Pics/Stuff/harnessbutt.png][Devious][$event1 to 4, $action to 1]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/buttgags.png][Devious][$event8 to true, $action to 1]]
+[img[Pics/Stuff/canebutt.png][Devious][$event1 to 5, $action to 1]]
 &lt;/div&gt;
-
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/analhookbutt.png][Devious][$event4 to true, $action to 1]]
+[img[Pics/Stuff/buttgags.png][Devious][$event1 to 6, $action to 1]]
 &lt;/div&gt;
 
+&lt;div class=&quot;resholder lighthover&quot;&gt;
+[img[Pics/Stuff/analhookbutt.png][Devious][$event1 to 3, $action to 1]]
+&lt;/div&gt;
 /*
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/cuffsbutt.png][Devious][$event9 to true, $action to 1]]
+[img[Pics/Stuff/cuffsbutt.png][Devious][$event1 to 7, $action to 1]]
 &lt;/div&gt;
-
 */
-
 &lt;/div&gt;
-
-
-
-
 
 
 &lt;br&gt;&lt;br&gt;
 &lt;div class=&quot;row&quot;&gt;
-
 /*THIRD ROW*/
-
 &lt;div class=&quot;resholder lighthover&quot;&gt;
 [img[Pics/Stuff/collarbutt.png][Devious][$event to 23, $action to 1]]
 &lt;/div&gt;
 
-
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/karadabutt.png][Devious][$event12 to true, $action to 1]]
+[img[Pics/Stuff/karadabutt.png][Devious][$event1 to 8, $action to 1]]
 &lt;/div&gt;
-
 /*
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/stoolbutt.png][Devious][$event1 to true, $action to 1]]
+[img[Pics/Stuff/stoolbutt.png][Devious][$event1 to 1, $action to 1]]
 &lt;/div&gt;
 */
-
 &lt;div class=&quot;resholder opac&quot;&gt;
 [img[Pics/Weapons/buttempty.png]]
 &lt;/div&gt;
 
 &lt;div class=&quot;resholder lighthover&quot;&gt;
-[img[Pics/Stuff/nipplechainsbutt.png][Devious][$event15 to true, $action to 1]]
+[img[Pics/Stuff/nipplechainsbutt.png][Devious][$event1 to 9, $action to 1]]
 &lt;/div&gt;
 
 &lt;/div&gt;
 
 
-
-
-
-
-
-
-
-
 &lt;/div&gt;
-
-
-
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $action3 is true&gt;&gt;
 
+
+&lt;&lt;if $action3&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
+
 &lt;div class=&quot;vendorleft&quot;&gt;
-
-&lt;&lt;if $bondbook1 lte 0 and $event11 is false&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[The art of Paine I|Devious][$event11 to true, $action to 1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event11 is true and $bondbook1 lte 0&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;The art of Paine I&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bondbook1 gte 1&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;The art of Paine I&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $bondbook1 gte 1&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;The art of Paine I&lt;/p&gt;
+&lt;&lt;elseif $event1 is 10&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;The art of Paine I&lt;/p&gt;
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[The art of Paine I|Devious][$event1 to 10, $action to 1]]&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
-
-
-&lt;&lt;if $bondbook2 lte 0 and $event14 isnot true&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Demonic pleasure|Devious][$event14 to true, $action to 1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event14 is true and $bondbook2 lte 0&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Demonic pleasure&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bondbook2 gte 1&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Demonic pleasure&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;if $bondbook2 gte 1&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Demonic pleasure&lt;/p&gt;
+&lt;&lt;elseif $event1 is 11&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;Demonic pleasure&lt;/p&gt;
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Demonic pleasure|Devious][$event1 to 11, $action to 1]]&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;br&gt;
-
-
-&lt;&lt;if $bondbook4 lte 0 and $event13 isnot true&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[The pain of rose|Devious][$event13 to true, $action to 1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $event13 is true and $bondbook4 lte 0&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;The Pain of rose&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bondbook4 gte 1&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;The pain of rose&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-
-
-
-
+&lt;&lt;if $bondbook4 gte 1&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;The pain of rose&lt;/p&gt;
+&lt;&lt;elseif $event1 is 12&gt;&gt;&lt;p class=&quot;ulvendoriown&quot;&gt;The Pain of rose&lt;/p&gt;
+&lt;&lt;else&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[The pain of rose|Devious][$event1 to 12, $action to 1]]&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;vendorright&quot;&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;/div&gt;
 &lt;div class=&quot;pic&quot;&gt;
 
-&lt;&lt;if $mq is 6 or $mq is 7&gt;&gt;
+&lt;&lt;if $action is 0&gt;&gt;
+
 
 &lt;&lt;if $mq is 6&gt;&gt;
 [img[Pics/Av5/devi1.jpg]]
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $mq is 7&gt;&gt;
+&lt;&lt;elseif $mq is 7&gt;&gt;
 [img[Pics/Av5/devi2.jpg]]
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set _showpiper to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
 
-
-
-&lt;&lt;if $action is 0 and _showpiper isnot true and $pic isnot 1 and $pic isnot 2 and $pic isnot 3 and $pic isnot 4 and $pic isnot 5 and $pic isnot 6 and $pic isnot 7 and $pic isnot 8&gt;&gt;
-&lt;&lt;if $intalk is true and $mq isnot 6 and $mq isnot 8&gt;&gt;
+&lt;&lt;switch $pic&gt;&gt;
+&lt;&lt;case 1&gt;&gt;[img[Pics/qpics/devi1.jpg]]
+&lt;&lt;case 2&gt;&gt;[img[Pics/qpics/devi2.jpg]]
+&lt;&lt;case 3&gt;&gt;[img[Pics/qpics/devi3.jpg]]
+&lt;&lt;case 4&gt;&gt;[img[Pics/qpics/devi4.jpg]]
+&lt;&lt;case 5&gt;&gt;[img[Pics/qpics/devi5.jpg]]
+&lt;&lt;case 6&gt;&gt;[img[Pics/qpics/devi6.jpg]]
+&lt;&lt;case 7&gt;&gt;[img[Pics/qpics/devi7.jpg]]
+&lt;&lt;case 8&gt;&gt;[img[Pics/qpics/devi8.jpg]]
+&lt;&lt;case 9&gt;&gt;[img[Pics/qpics/devi9.jpg]]
+&lt;&lt;default&gt;&gt;
+&lt;&lt;if $intalk and $mq isnot 8&gt;&gt;
 [img[Pics/Interiors/devi.jpg]]
 &lt;&lt;else&gt;&gt;
 [img[Pics/Interiors/devi2.jpg]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if _showpiper isnot true and _ran is 1&gt;&gt;
-&lt;&lt;if $pic is 1&gt;&gt;[img[Pics/qpics/devi1.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 2&gt;&gt;[img[Pics/qpics/devi2.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 3&gt;&gt;[img[Pics/qpics/devi3.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 4&gt;&gt;[img[Pics/qpics/devi4.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 5&gt;&gt;[img[Pics/qpics/devi5.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 6&gt;&gt;[img[Pics/qpics/devi6.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 7&gt;&gt;[img[Pics/qpics/devi7.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 8&gt;&gt;[img[Pics/qpics/devi8.jpg]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pic is 9&gt;&gt;[img[Pics/qpics/devi9.jpg]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;/switch&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $action is 1&gt;&gt;
+&lt;&lt;elseif $action is 1&gt;&gt;
+
 &lt;&lt;if $event gte 20&gt;&gt;
 &lt;&lt;include GenBuy&gt;&gt;
 
-&lt;&lt;set _noby to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event lte 19 and _noby isnot true&gt;&gt;
+&lt;&lt;else&gt;&gt;
 &lt;div class=&quot;vendorpic&quot;&gt;
 
+&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;
+&lt;&lt;switch $event1&gt;&gt;
+&lt;&lt;case 1&gt;&gt;DILDO STOOL
+&lt;&lt;case 2&gt;&gt;SET OF DILDOS
+&lt;&lt;case 3&gt;&gt;ANAL HOOK
+&lt;&lt;case 4&gt;&gt;TRAINING HARNESS
+&lt;&lt;case 5&gt;&gt;CANE
+&lt;&lt;case 6&gt;&gt;SET OF GAGS
+&lt;&lt;case 7&gt;&gt;HANDCUFFS
+&lt;&lt;case 8&gt;&gt;ROPE BONDAGE
+&lt;&lt;case 9&gt;&gt;NIPPLE CHAINS
+&lt;&lt;case 10&gt;&gt;THE ART OF PAINE I
+&lt;&lt;case 11&gt;&gt;DEMONIC PLEASURE
+&lt;&lt;case 12&gt;&gt;THE PAIN OF ROSE (ART OF PAINE SERIES)
+&lt;&lt;/switch&gt;&gt;
+&lt;/div&gt;
 
-&lt;&lt;if $event1 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;DILDO STOOL&lt;/div&gt;&lt;/center&gt;
-[img[Pics/Stuff/stool.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event2 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;SET OF DILDOS&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/dildoset.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event3 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;ANAL PLUGS&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/buttplug.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event4 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;ANAL HOOK&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/analhook.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event5 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;TRAINING HARNESS&lt;/div&gt;&lt;/center&gt;&lt;br&gt;
-[img[Pics/Stuff/harness.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event6 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;CANE&lt;/div&gt;&lt;/center&gt;&lt;br&gt;
-[img[Pics/Stuff/cane.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event7 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;ROPE&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/rope.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event8 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;SET OF GAGS&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/gags.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event9 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;HANDCUFFS&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/cuffs.png]]
-
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event11 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;THE ART OF PAINE I&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/bondbook1.png]]
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $event12 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;ROPE BONDAGE&lt;/div&gt;&lt;/center&gt;
-[img[Pics/Stuff/karada.png]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event13 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;THE PAIN OF ROSE (ART OF PAINE SERIES)&lt;/div&gt;&lt;/center&gt;
-[img[Pics/Stuff/bondbook4.png]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event14 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;DEMONIC PLEASURE&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/bondbook2.png]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event15 is true&gt;&gt;
-&lt;center&gt;&lt;div class=&quot;vsmalltex&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div class=&quot;bold bigtex&quot;&gt;NIPPLE CHAINS&lt;/div&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;
-[img[Pics/Stuff/nipplechains.png]]
-&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;switch $event1&gt;&gt;
+&lt;&lt;case 1&gt;&gt;&lt;[img[Pics/Stuff/stool.png]]
+&lt;&lt;case 2&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/dildoset.png]]
+&lt;&lt;case 3&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/analhook.png]]
+&lt;&lt;case 4&gt;&gt;&lt;br&gt;[img[Pics/Stuff/harness.png]]
+&lt;&lt;case 5&gt;&gt;&lt;br&gt;[img[Pics/Stuff/cane.png]]
+&lt;&lt;case 6&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/gags.png]]
+&lt;&lt;case 7&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/cuffs.png]]
+&lt;&lt;case 8&gt;&gt;[img[Pics/Stuff/karada.png]]
+&lt;&lt;case 9&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/nipplechains.png]]
+&lt;&lt;case 10&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/bondbook1.png]]
+&lt;&lt;case 11&gt;&gt;&lt;br&gt;&lt;br&gt;[img[Pics/Stuff/bondbook2.png]]
+&lt;&lt;case 12&gt;&gt;[img[Pics/Stuff/bondbook4.png]]
+&lt;&lt;/switch&gt;&gt;
 
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
 
-
-&lt;&lt;if $event1 is true&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
+&lt;&lt;switch $event1&gt;&gt;
+&lt;&lt;case 1&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //An advanced steel contraption for sinister bondage games. Equipped with a set of double-penetrating dildos.//
+
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $removebutt is false&gt;&gt;
 &lt;&lt;if $cash gte 1200&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $1,200&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Not enough cash! ($1,200)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 1200&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event1 to true, $cash-=1200, $owndildost+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 1200&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=1200, $owndildost+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124093,18 +123988,13 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event1 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event1 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event2 is true&gt;&gt;
 
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 2&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //A set of three silicone dildos - ranging in thickness from 1 inch to 2.3 inches. High quality. Largest didlo may cause injuries if used carelessly.//
@@ -124114,7 +124004,7 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;if $removebutt is false&gt;&gt;
 &lt;&lt;if $cash gte 90&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $90&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($90)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 90&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event2 to true, $cash-=90, $owndildo+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 90&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=90, $owndildo+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124123,48 +124013,13 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event2 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event2 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event3 is true&gt;&gt;
 
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;vendorinfonew&quot;&gt;
-
-//A set of silicone and metal butt plugs. Used for anal training. Range in size from a normal thumb up to a woman’s fist. Largest plug may cause serious injuries if used carelessly.//
-
-&lt;/div&gt;
-&lt;div class=&quot;vendorbuynew&quot;&gt;
-&lt;&lt;if $removebutt is false&gt;&gt;
-&lt;&lt;if $cash gte 50&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $50&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($50)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 50&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event3 to true, $cash-=50, $ownanalplugs+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $removebutt is true&gt;&gt;
-&lt;center&gt;&#39;&#39;//Item added to inventory!//&#39;&#39;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
-&lt;&lt;timed 1s&gt;&gt;
-&lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event3 to true&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event3 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event4 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 3&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //A device for executing anal punishments. Made from stainless steel.//
@@ -124174,7 +124029,7 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;if $removebutt is false&gt;&gt;
 &lt;&lt;if $cash gte 150&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $150&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($150)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 150&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event4 to true, $cash-=150, $ownanalhook+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 150&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=150, $ownanalhook+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124183,19 +124038,13 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event4 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event4 to false&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event5 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 4&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //An adjustable slave attire made of leather and steel. Often used as a kinky and completely revealing everyday dress for &quot;sluts in training&quot;.//
@@ -124205,7 +124054,7 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;if $removebutt is false&gt;&gt;
 &lt;&lt;if $cash gte 180&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $180&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($180)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 180&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event5 to true, $cash-=180, $ownharness2+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 180&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=180, $ownharness2+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124214,19 +124063,13 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event5 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event5 to false&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $event6 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 5&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //A sturdy and flexible bamboo cane. Perfect for executing punishments. Can be used as a simple melee weapon. Damage modified by &#39;&#39;STRENGTH&#39;&#39; and &#39;&#39;Melee skill.&#39;&#39;//
@@ -124237,8 +124080,8 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;if $cash gte 20&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $20&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($20)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;tex3-5px&quot;&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;div class=&quot;ulvendor&quot;&gt;[[View stats|Devious][$action15 to true, $event6 to true]]&lt;/div&gt;
-&lt;&lt;if $cash gte 20&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event6 to true, $cash-=20, $ownwhipstick+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;ulvendor&quot;&gt;[[View stats|Devious][$action15 to true]]&lt;/div&gt;
+&lt;&lt;if $cash gte 20&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=20, $ownwhipstick+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124247,7 +124090,6 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event6 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -124262,60 +124104,25 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;/fadein&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;timed 1s&gt;&gt;
-&lt;&lt;if $cash gte 20&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event6 to true, $cash-=20, $ownwhipstick+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 20&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=20, $ownwhipstick+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;set $action15 to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event6 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $event7 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;vendorinfonew&quot;&gt;
-
-//A strong rope made from hemp. Excellent for construction work, wilderness survival or tying someone up. //
-
-&lt;/div&gt;
-&lt;div class=&quot;vendorbuynew&quot;&gt;
-&lt;&lt;if $removebutt is false&gt;&gt;
-&lt;&lt;if $cash gte 10&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $10&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($10)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 10&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event7 to true, $cash-=10, $ownrope+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $removebutt is true&gt;&gt;
-&lt;center&gt;&#39;&#39;//Item added to inventory!//&#39;&#39;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
-&lt;&lt;timed 1s&gt;&gt;
-&lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event7 to true&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event7 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $event8 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 6&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //A large set of different ball and oral gags. Great scream-mufflers or for easing your way down someone’s throat.//
+
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $removebutt is false&gt;&gt;
 &lt;&lt;if $cash gte 185&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $185&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds! ($185)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 185&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event8 to true, $cash-=185, $owngags+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 185&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=185, $owngags+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124324,34 +124131,23 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event8 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event8 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
-
-
-
-
-
-&lt;&lt;if $event9 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 7&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
-//A set of polished iron handcuffs. Great for milder Bondage games, or for apprehending a criminal. //
+//A set of polished iron handcuffs. Great for milder Bondage games, or for apprehending a criminal.//
 
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $removebutt is false&gt;&gt;
 &lt;&lt;if $cash gte 20&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $20&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($20)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 20&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event9 to true, $cash-=20, $owncuffs+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 20&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=20, $owncuffs+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -124360,21 +124156,63 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event9 to true&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
+
+
+&lt;&lt;case 8&gt;&gt;
+&lt;div class=&quot;vendorinfonew&quot;&gt;
+
+//The Karada. A rope bondage dress. Hand tied and thoroughly tested by Miss Devious loyal staff of girls.//
+
 &lt;/div&gt;
-&lt;&lt;set $event9 to false&gt;&gt;
+&lt;div class=&quot;vendorbuynew&quot;&gt;
+&lt;&lt;if $removebutt isnot true&gt;&gt;
+&lt;&lt;if $cash gte 120&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $120&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Not enough cash! ($120)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;&lt;if $cash gte 120&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=120, $ownharness+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
+&lt;&lt;if $removebutt is true&gt;&gt;
+&lt;center&gt;&#39;&#39;//Item added to inventory!//&#39;&#39;&lt;/center&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;
+&lt;&lt;goto Devious&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;/div&gt;
 
 
+&lt;&lt;case 9&gt;&gt;
+&lt;div class=&quot;vendorinfonew&quot;&gt;
 
-&lt;&lt;if $event11 is true&gt;&gt;
+//One set of nipple chains that goes together with the collar. Perfect for decorating, controlling, rewarding or punishing a slave.//
 
-&lt;div class=&quot;row&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;vendorbuynew&quot;&gt;
+&lt;&lt;if $removebutt is false&gt;&gt;
+&lt;&lt;if $cash gte 200&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $200&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($200)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;&lt;if $cash gte 200&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=200, $ownnipplechains+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $removebutt is true&gt;&gt;
+&lt;center&gt;&#39;&#39;//Item added to inventory!//&#39;&#39;&lt;/center&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
+&lt;&lt;timed 0.2s&gt;&gt;
+&lt;&lt;goto Devious&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;/div&gt;
+
+
+&lt;&lt;case 10&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //A popular book among Miss Devious’s more shadowy clientele, containing numerous techniques aiming to conjure up delights of sexual pain and the pleasantness of submissive mind-states.//
@@ -124385,7 +124223,7 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;if $cash gte 350&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $350&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($350)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &#39;&#39;Output: 10-15 skillpoints&#39;&#39;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 350&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event11 to true, $cash-=350, $bondbook1 to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 350&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=350, $bondbook1 to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $bondbook1 gte 1&gt;&gt;
@@ -124395,77 +124233,9 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event11 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
-
-
-&lt;&lt;if $event12 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;vendorinfonew&quot;&gt;
-
-//The Karada. A rope bondage dress. Hand tied and thoroughly tested by Miss Devious loyal staff of girls.//
-&lt;/div&gt;
-&lt;div class=&quot;vendorbuynew&quot;&gt;
-&lt;&lt;if $removebutt isnot true&gt;&gt;
-&lt;&lt;if $cash gte 120&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $120&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Not enough cash! ($120)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 120&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event12 to true, $cash-=120, $ownharness+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $removebutt is true&gt;&gt;
-&lt;center&gt;&#39;&#39;//Item added to inventory!//&#39;&#39;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
-&lt;&lt;timed 1s&gt;&gt;
-&lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event12 to true&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;set $event12 to false&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-
-&lt;&lt;if $event13 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-&lt;div class=&quot;vendorinfonew&quot;&gt;
-
-//A rare book, informally dubbed &quot;The Art of Paine III&quot;. Written by Elin Rose, who endured many years as the ageing Molly Paine’s lesbian sex toy after her release from the Mastersphere.//
-
-&lt;/div&gt;
-&lt;div class=&quot;vendorbuynew&quot;&gt;
-&lt;&lt;if $bondbook4 lte 0&gt;&gt;
-&lt;&lt;if $cash gte 650&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $650&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($650)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
-&#39;&#39;Output: 14-23 skillpoints&#39;&#39;
-&lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 650&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event13 to true, $cash-=650, $bondbook4 to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $bondbook4 gte 1&gt;&gt;
-&lt;center&gt;&#39;&#39;//Skill book added!//&#39;&#39;&lt;/center&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;unset $event13&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-
-&lt;&lt;if $event14 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 11&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //A shockingly detailed book written by Samatha Kiduro (2400-2453). Its 556 pages describe how to break down and rebuild a slave or partner using an unusual approach when applying physical pain.//
@@ -124476,7 +124246,7 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;if $cash gte 350&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $350&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($350)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &#39;&#39;Output: 9-13 skillpoints&#39;&#39;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 350&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event14 to true, $cash-=350, $bondbook2 to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 350&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=350, $bondbook2 to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $bondbook2 gte 1&gt;&gt;
@@ -124486,49 +124256,37 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;unset $event14&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $event15 is true&gt;&gt;
-
-&lt;div class=&quot;row&quot;&gt;
+&lt;&lt;case 12&gt;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
-//One set of nipple chains that goes together with the collar. Perfect for decorating, controlling, rewarding or punishing a slave.//
+//A rare book, informally dubbed &quot;The Art of Paine III&quot;. Written by Elin Rose, who endured many years as the ageing Molly Paine’s lesbian sex toy after her release from the Mastersphere.//
 
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
-&lt;&lt;if $removebutt is false&gt;&gt;
-&lt;&lt;if $cash gte 200&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $200&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($200)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $bondbook4 lte 0&gt;&gt;
+&lt;&lt;if $cash gte 650&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; $650&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds ($650)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&#39;&#39;Output: 14-23 skillpoints&#39;&#39;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte 200&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$event15 to true, $cash-=200, $ownnipplechains+=1, $removebutt to true]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte 650&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|Devious][$cash-=650, $bondbook4 to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $removebutt is true&gt;&gt;
-&lt;center&gt;&#39;&#39;//Item added to inventory!//&#39;&#39;&lt;/center&gt;
+&lt;&lt;if $bondbook4 gte 1&gt;&gt;
+&lt;center&gt;&#39;&#39;//Skill book added!//&#39;&#39;&lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;
-&lt;&lt;timed 0.2s&gt;&gt;
-&lt;&lt;goto Devious&gt;&gt;
-&lt;&lt;set $event15 to true&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
+
+&lt;&lt;/switch&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;unset $event15&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 
-
-
-
-
-
-
-/* EVENT LTE 19 BELOW */
+/* ACTION 1 ENDS BELOW */
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
@@ -124537,38 +124295,37 @@ You’re standing inside //Devious Tools//. Neatly arranged shelves in an east-a
 &lt;div class=&quot;acts&quot;&gt;
 &lt;div class=&quot;alt1&quot;&gt;
 &lt;&lt;include OptionsMain&gt;&gt;
+&lt;&lt;if !_nogo&gt;&gt;
 
-&lt;&lt;if $intalk is false and _nogo isnot true&gt;&gt;
-&lt;&lt;if $action2 is false and _nogo isnot true&gt;&gt;[[Bondage devices|Devious][$action2 to true, $action3 to false, $action to 0, $pic to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Bondage devices&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $action3 is false and _nogo isnot true&gt;&gt;[[Books|Devious][$action3 to true, $action2 to false, $action to 0, $pic to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Books&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $aca_devi lte 7 and $daycount gte 80 and $daycount lte 160 and _nogo isnot true&gt;&gt;[[Courses|Devious][$action5 to true, $intalk to true, $aca_devi+=1, $action2 to false, $action3 to false, $action to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Courses&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
-&lt;&lt;if $intalk is true and _nogo isnot true and $action5 is false&gt;&gt;
+&lt;&lt;if !$intalk&gt;&gt;
+&lt;&lt;if !$action2&gt;&gt;[[Bondage devices|Devious][$action2 to true, $action3 to false, $action to 0, $pic to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Bondage devices&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if !$action3&gt;&gt;[[Books|Devious][$action3 to true, $action2 to false, $action to 0, $pic to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Books&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $aca_devi lte 7 and $daycount gte 80 and $daycount lte 160&gt;&gt;[[Courses|Devious][$action5 to true, $intalk to true, $aca_devi+=1, $action2 to false, $action3 to false, $action to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Courses&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;elseif !$action5&gt;&gt;
 &lt;&lt;include TalkEngines&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;alt2&quot;&gt;
 &lt;&lt;include OptionsOther&gt;&gt;
-&lt;&lt;if $intalk is false&gt;&gt;
-&lt;&lt;if _nogo isnot true&gt;&gt;[[Talk to owner|Devious][$action2 to false, $action3 to false, $intalk to true, $action to 0, $pic to 0]]&lt;&lt;else&gt;&gt;&lt;p class=&quot;usedpass&quot;&gt;Talk to owner&lt;/p&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if !_nogo&gt;&gt;
 
-&lt;&lt;if $intalk is true and $mq isnot 6 and _nogo isnot true&gt;&gt;
-
+&lt;&lt;if !$intalk&gt;&gt;
+[[Talk to owner|Devious][$action2 to false, $action3 to false, $intalk to true, $action to 0, $pic to 0]]
+&lt;&lt;else&gt;&gt;
+&lt;&lt;if $mq isnot 6&gt;&gt;
 [[End conversation|Devious][$intalk to false, $event to 0, $mq to 0, $br1talk to 0, $br2talk to 0, $pic to 0, $action5 to false]]
 &lt;&lt;if $mq gte 1 and $disp_devi gte 0&gt;&gt;[[Back|Devious][$mq to 0, $br1talk to 0, $br2talk to 0, $comesfromchange to true]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $delivery1 gte 2 and $delivery1 isnot 5&gt;&gt;[[Deliver crates|Devious][$delivery1 to 5, $mq to 8]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $delivery1 gte 2 and $delivery1 isnot 5 and $intalk is true and _nogo isnot true&gt;&gt;[[Deliver crates|Devious][$delivery1 to 5, $mq to 8]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;alt3&quot;&gt;
 &lt;&lt;include InteractStart&gt;&gt;
-
 &lt;/div&gt;
 
 &lt;div class=&quot;alt4&quot;&gt;
@@ -125089,7 +124846,6 @@ Oh, and here’s the delivery confirmation.
 
 
 &lt;&lt;if $aca_devi is 2&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;set $pic to 1&gt;&gt;
 &lt;&lt;if $begin is 1&gt;&gt;
 Over ten students have gathered down in Miss Devious basement, eagerly waiting for the lean store owner to start her course.
@@ -125122,7 +124878,6 @@ Course progress:&lt;br&gt;
 &lt;/div&gt;
 
 &lt;&lt;passhours 8&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;unset $begin&gt;&gt;
 &lt;&lt;set $intalk to false&gt;&gt;
 &lt;&lt;set $stampoints-=12&gt;&gt;
@@ -125137,7 +124892,6 @@ Course progress:&lt;br&gt;
 
 
 &lt;&lt;if $aca_devi is 3&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;set $pic to 1&gt;&gt;
 After Seven, one of Miss Devious’ newest slaves, has served you all with a surprisingly tasty coffee, the strong-eyed storeowner enters the room and starts her second lecture – which is another day of academic anecdotes.
 &lt;br&gt;&lt;div class=&quot;tex10px&quot;&gt;&lt;br&gt;&lt;/div&gt;
@@ -125163,7 +124917,6 @@ Course progress:&lt;br&gt;
 
 
 &lt;&lt;if $aca_devi is 4&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;if $misstre isnot true&gt;&gt;
 &lt;&lt;set $pic to 2&gt;&gt;
 Miss Devious greets you all down in the basement for the third lecture – but this time, she shares the podium with one of her obedient slaves.
@@ -125200,13 +124953,11 @@ Course progress:&lt;br&gt;
 &lt;&lt;set $action4 to false&gt;&gt;
 &lt;&lt;set $action5 to false&gt;&gt;
 &lt;&lt;unset $misstre&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;if $aca_devi is 5&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 
 &lt;&lt;if $misstre isnot true&gt;&gt;
 &lt;&lt;set $pic to 4&gt;&gt;
@@ -125249,7 +125000,6 @@ Course progress:&lt;br&gt;
 
 
 &lt;&lt;if $aca_devi is 6&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;set $pic to 1&gt;&gt;
 Today’s lesson is a simple history class – quite mundane compared to yesterday’s magical moment.
 &lt;br&gt;&lt;br&gt;
@@ -125276,7 +125026,6 @@ Course progress:&lt;br&gt;
 
 
 &lt;&lt;if $aca_devi is 7&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;set $pic to 1&gt;&gt;
 Today’s class is more technical in nature – as Miss Devious gives you a thorough tour through the usage of whips, canes, belts and butt plugs. Unfortunately, there’s only a quick &quot;don’t touch&quot; visit from one of her other slaves – who’s forced to take twelve different items up her anal cavity and over 20 lashes from Miss Devious’ whips during a demonstration session.
 &lt;br&gt;&lt;br&gt;
@@ -125302,7 +125051,6 @@ Course progress:&lt;br&gt;
 
 
 &lt;&lt;if $aca_devi is 8&gt;&gt;
-&lt;&lt;set _ran to 1&gt;&gt;
 &lt;&lt;if $devilast isnot true&gt;&gt;
 &lt;&lt;set _nogo to true&gt;&gt;
 &lt;&lt;set $pic to 6&gt;&gt;
