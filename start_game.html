@@ -39830,10 +39830,7 @@ $girlname is leaning against the kitchen sink, while you’re fucking her anally
 &lt;&lt;if $descroll2 is 4&gt;&gt;You’d really do that to me? (Suggestive smile). Well, if you’re careful, maybe I could… offer myself to you…&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll2 is 5&gt;&gt;Mmh… this body would really appreciate if someone ravaged it. Perhaps a strong and brawny man!&lt;&lt;/if&gt;&gt;
 //
-
-&lt;br&gt;&lt;br&gt;&lt;b&gt;//Special bonus activated!&lt;br&gt;&lt;br&gt;$girlname is considerably easier to persuade into having sex for the rest of the day!//&lt;/b&gt;
-
-
+&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;
 &lt;&lt;set $specialsex to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -69474,7 +69471,7 @@ Your _callit appears to be relatively content with &lt;&lt;if _sex is 0&gt;&gt;h
 Your concern for &lt;&lt;if _sex is 0&gt;&gt;the girl&lt;&lt;else&gt;&gt;the guy&lt;&lt;/if&gt;&gt;’s well-being makes you look like a true gentleman.
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if _ran is 1&gt;&gt;$girlnames &#39;&#39;Affection (+1)&#39;&#39; toward you has increased!&lt;&lt;set $masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ran is 2&gt;&gt;&lt;&lt;if $scarefactor lte 0 and $masterlove gte 55 and _sex is 0 and $age gte 18&gt;&gt;&#39;&#39;//$girlname is so affected by your apparent kindness that she’ll be a little easier to persuade (+20) into having sex for the rest of today!&#39;&#39;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;else&gt;&gt;$girlnames &#39;&#39;Affection (+1)&#39;&#39; toward you has increased!&lt;&lt;set $masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _ran is 2&gt;&gt;&lt;&lt;if $scarefactor lte 0 and $masterlove gte 55 and _sex is 0 and $age gte 18&gt;&gt;&lt;b&gt;//$girlname is so affected by your apparent kindness that she is now much easier to persuade into having sex for the rest of the day!//&lt;/b&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;else&gt;&gt;$girlnames &#39;&#39;Affection (+1)&#39;&#39; toward you has increased!&lt;&lt;set $masterlove+=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran is 3&gt;&gt;&lt;&lt;if $respect lte 10&gt;&gt;$girlnames &#39;&#39;Respect (+1)&#39;&#39; toward you has increased!&lt;&lt;set $respect+=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $masterlove lte 89&gt;&gt;$girlnames &#39;&#39;Affection (+2)&#39;&#39; toward you has increased!&lt;&lt;set $masterlove+=2&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _ran to 5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _ran gte 4&gt;&gt;Unfortunately, there are no lasting positive effects, even if your kindness is duly noted.&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -72374,7 +72371,7 @@ You need to increase $girlnames &#39;&#39;Affection&#39;&#39; in order to reveal
 &lt;&lt;if $descroll2 is 4&gt;&gt;&lt;b&gt;$girlname:&lt;/b&gt; //I… I… I love it! It’s as simple as that. I really like to experiment with it too. Different places, different positions… Mmh…//&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll2 is 5&gt;&gt;&lt;b&gt;$girlname:&lt;/b&gt; //Sex turns me on. It makes me almost… animalistic!//&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $specialsex is true and $age gte 18 and _sex is 0&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Special bonus activated!&lt;br&gt;&lt;br&gt;$girlname is considerably easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $specialsex and $age gte 18 and _sex is 0&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -72638,7 +72635,7 @@ $girlname responds with genuine excitement&lt;&lt;if $action3 is true&gt;&gt;, w
 &lt;&lt;if $descroll2 is 4&gt;&gt;I love it. My ass used as a fuck-toy. Just talking about it makes me so horny.&lt;&lt;if $masterlove gte 75&gt;&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll2 gte 5&gt;&gt;It’s fantastic. It turns me on, and I get so much pleasure from it.&lt;&lt;/if&gt;&gt;
 //
-&lt;&lt;if $specialsex is true&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Special bonus activated!&lt;br&gt;&lt;br&gt;For the remainder of the day, persuading $girlname to have sex is a breeze! &lt;/b&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $specialsex&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -72906,7 +72903,7 @@ Your awful hygiene makes the discussion uneasy, which $girlname recognizes after
 &lt;&lt;if $descroll2 is 4&gt;&gt;I really like it. I like the taste of cock, the feeling of it growing inside my mouth… well, yeah, I like everything about oral!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll2 gte 5&gt;&gt;It’s really, really nice. I absolutely love having a big cock in my mouth. The taste of it makes me submissive and that can be so hot!&lt;&lt;/if&gt;&gt;
 //
-&lt;&lt;if $specialsex is true and _blocksex isnot true and _sex is 0&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Special bonus activated!&lt;br&gt;&lt;br&gt;$girlname is a lot easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $specialsex and !_blocksex and _sex is 0&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -104990,7 +104987,7 @@ Rebecca’s &#39;&#39;Defiance (+7)&#39;&#39; has increased!
 &lt;br&gt;&lt;br&gt;
 You notice right away that the girl’s used to living under a master’s mercy, even if there are certain things that could improve. $girlnames already done some basic chores during the first hour and you understand that she’s willing to offer herself sexually – if you’ve not completely misread the signs.
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//In an effort to impress her new master, $girlnames much easier to persuade into having sex (+20) during her first day at your household.//&#39;&#39;
+&lt;b&gt;//In an effort to impress her new master, $girlnames now much easier to persuade into having sex for the rest of the day!//&lt;/b&gt;
 &lt;&lt;set $specialsex to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -118493,9 +118490,10 @@ Oh, thank you honey. I like you too. Very much. I’m very happy to be your wife
 
 &lt;&lt;if $masterlove gte 75 and $scarefactor lte 1&gt;&gt;
 &lt;&lt;if $descroll2 is 1&gt;&gt;(Smiling) I love you too, dear! You know that!&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll2 is 2&gt;&gt;You’re really something special! I love you too! I love you so much! &lt;&lt;if _blocksex isnot true&gt;&gt; You know what? How about we do something… sexy when we get back home? &lt;&lt;if $age lte 19 and $likesadist gte 15&gt;&gt;I want you to fuck my teenage ass tonight.&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;&lt;if _blocksex isnot true&gt;&gt;&#39;&#39;Special event available! $girlname is now much easier to persuade into having sex. The effect lasts until you go to bed (Conclude Day).&#39;&#39;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll2 is 3&gt;&gt;You’re so sweet… &lt;&lt;if _blocksex isnot true&gt;&gt;You know what? I’m really wet down there. Should we head home and do something… naughty? &lt;&lt;if $masterage gte 46 and $body lte 2 and $likesadist gte 15&gt;&gt;You want to thrust yourself into my teenage body?&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Special event available! $girlname is now much easier to persuade into having sex. The effect will last until you go to bed (End Day).&lt;/b&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll2 is 2&gt;&gt;You’re really something special! I love you too! I love you so much! &lt;&lt;if _blocksex isnot true&gt;&gt; You know what? How about we do something… sexy when we get back home? &lt;&lt;if $age lte 19 and $likesadist gte 15&gt;&gt;I want you to fuck my teenage ass tonight.&lt;&lt;/if&gt;&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll2 is 3&gt;&gt;You’re so sweet… &lt;&lt;if _blocksex isnot true&gt;&gt;You know what? I’m really wet down there. Should we head home and do something… naughty? &lt;&lt;if $masterage gte 46 and $body lte 2 and $likesadist gte 15&gt;&gt;You want to thrust yourself into my teenage body?&lt;&lt;/if&gt;&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll2 is 4&gt;&gt;I really love you too. Me and you forever! &lt;&lt;if $masterage gte 46 and $body lte 2&gt;&gt;I’ll take care of you when you grow older, I’ll be at your side, always.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $specialsex&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
@@ -119191,13 +119189,9 @@ A shiver in the girl’s voice reveals that she’s having trouble shaking the r
 &lt;&lt;if $masterlove gte 75 and $scarefactor lte 1&gt;&gt;
 &lt;&lt;if $descroll2 is 1&gt;&gt;And you know I love you too! Wow, this occasion is really something special. I’m so grateful for everything you do with me!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll2 is 2&gt;&gt;And you know that I love you too. You and me forever, right? (Smiling) This date was such a good idea!&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll2 is 3&gt;&gt;Oww… Thanks. &lt;&lt;if _blocksex isnot true&gt;&gt;And you know what’ll happen later tonight, when you take your girl out for dinner and sweet-talk her like this?&lt;br&gt;&lt;br&gt;&lt;b&gt;Special event available! $girlname is now much easier to persuade into having sex. The effect will last until you go to bed (End Day).&lt;/b&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll2 is 4&gt;&gt;You’re so sweet! I love you too! &lt;&lt;if _blocksex isnot true&gt;&gt;
-
-You know what I wanna do when we get home? (naughty smile)
-
-&lt;br&gt;&lt;br&gt;&lt;b&gt;Special event available! $girlname is now much easier to persuade into having sex. The effect will last until you go to bed (End Day).&lt;/b&gt;&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll2 is 3&gt;&gt;Oww… Thanks. &lt;&lt;if _blocksex isnot true&gt;&gt;And you know what’ll happen later tonight, when you take your girl out for dinner and sweet-talk her like this?&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll2 is 4&gt;&gt;You’re so sweet! I love you too!&lt;&lt;if _blocksex isnot true&gt;&gt; You know what I wanna do when we get home? (naughty smile)&lt;&lt;set $specialsex to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $specialsex&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 //
@@ -120044,7 +120038,7 @@ A &lt;b&gt;dominant approach&lt;/b&gt; will decrease $girlnames &lt;b&gt;WILLPOW
 &lt;&lt;if $descroll3 is 1&gt;&gt;I’ve been thinking about your &lt;&lt;if $cock gte 2&gt;&gt;big &lt;&lt;/if&gt;&gt;cock today. I want it! Let’s do this now – come on, strip!&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 2&gt;&gt;&lt;&lt;if $cock gte 3&gt;&gt;Alright, I’ve been having nightmares about that huge fucking dick of yours… It’s time to face my fears (smiling). Nah, I’m actually up for it. Come on! Strip!&lt;&lt;else&gt;&gt;Alright. I’m actually feeling overly horny today. I want some cock, and fucking my pussy here is a bit too indiscrete, right?&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 3&gt;&gt;I thought you’d never ask! Strip, I want some dick!&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 4&gt;&gt;I’ll blow you, just because I’m so fucking horny. But when we get back, I want you to fuck my pussy, okay?&lt;&lt;set $specialsex to true&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Special event available! $girlname is now much easier to persuade into having sex. The effect will last until you go to bed (End Day).&lt;/b&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll3 is 4&gt;&gt;I’ll blow you, just because I’m so fucking horny. But when we get back, I want you to fuck my pussy, okay?&lt;&lt;set $specialsex to true&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -120169,7 +120163,7 @@ The blowjob meets a premature end and you’ve suffered a catastrophic drop in y
 &lt;b&gt;$girlname:&lt;/b&gt;
 //
 &lt;&lt;if $descroll3 is 1&gt;&gt;Please, $callname, not here. It’s too crowded… We’ll be thrown out!&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 2&gt;&gt;Please, I wanna enjoy this show! I promise… I promise I’ll offer myself to you when we get back home, okay?&lt;&lt;set $specialsex to true&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Special event available! $girlname is now much easier to persuade into having sex. The effect will last until you go to bed (End Day).&lt;/b&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll3 is 2&gt;&gt;Please, I wanna enjoy this show! I promise… I promise I’ll offer myself to you when we get back home, okay?&lt;&lt;set $specialsex to true&gt;&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 3&gt;&gt;No, please, don’t force me into doing something like that here. I beg you! &lt;&lt;if $masterfilth lte 9&gt;&gt;Besides, you need to… you need to wash before I’d ever put that thing in my mouth, $callname.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 4&gt;&gt;&lt;&lt;if $masterfilth lte 14&gt;&gt;Please, no… You’re very… filthy, Sir, and this place is too crowded. I won’t do it. I hope you can respect that.&lt;&lt;else&gt;&gt;No, not here. Are you serious? It’s too crowded!&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -196420,9 +196414,7 @@ Your proclamation has impressed _birthgirl&lt;&lt;if _mad is true&gt;&gt; - desp
 
 &lt;&lt;if _avbirth is true and $traitdaddy gte 90 and $masterage gte 40 and _mad isnot true&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&#39;&#39;//Special Daddy Issues Trait bonus activated!//&#39;&#39;
-&lt;br&gt;&lt;br&gt;
-$girlname is much easier to persuade into having sex for the rest of tonight.
+&lt;b&gt;//Special Daddy Issues Trait bonus activated!//&lt;br&gt;$girlnames now much easier to persuade into having sex for the rest of the day!&lt;/b&gt;
 &lt;&lt;set $specialsex to true&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
