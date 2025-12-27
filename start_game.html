@@ -42196,7 +42196,7 @@ Your &#39;&#39;Bondage skill (+1)&#39;&#39; has increased!
 
 &lt;&lt;set $analhook to true&gt;&gt;
 &lt;&lt;set _justhooked to true&gt;&gt;
-&lt;&lt;if $descroll2 is 4 and&gt;&gt;&lt;&lt;set $defcount=adl($defcount,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $descroll2 is 4&gt;&gt;&lt;&lt;set $defcount=adl($defcount,-1,9)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $likesadist=adl($likesadist,-1,2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -106067,9 +106067,8 @@ She’s currently trying to increase her martial prowess by
 &lt;br&gt;&lt;br&gt;
 &lt;&lt;if $girlroll isnot 2&gt;&gt;
 &lt;b&gt;//$girlnames discipline has increased her &#39;&#39;STRENGTH (+1)&#39;&#39;!//&lt;/b&gt;
-&lt;&lt;set $av_str+=1&gt;&gt;&lt;&lt;set $tempstamina=adl($tempstamina,-5,2)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $girlroll is 2&gt;&gt;
+&lt;&lt;set $av_str+=1&gt;&gt;&lt;&lt;set $tempstamina=adl($tempstamina,-5,2)&gt;&gt;
+&lt;&lt;else&gt;&gt;
 &lt;b&gt;//$girlnames studies have increased her &#39;&#39;Ranged combat (+1)&#39;&#39; skill!//&lt;/b&gt;
 &lt;&lt;set $av_ranged+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
