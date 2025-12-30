@@ -365161,27 +365161,12 @@ Select one additional participant below.
 
 
 /* has scenes checker */
-&lt;&lt;set $others to []&gt;&gt;
-&lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set $others.push(16)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set $others.push(1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set $others.push(20)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 20&gt;&gt;&lt;&lt;set $others.push(1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 28&gt;&gt;&lt;&lt;set $others.push(6)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 6&gt;&gt;&lt;&lt;set $others.push(28)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 213&gt;&gt;&lt;&lt;set $others.push(11)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set $others.push(213)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 52&gt;&gt;&lt;&lt;set _ooo to true&gt;&gt;&lt;&lt;set $others.push(11)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set $others.push(52)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _scene=0&gt;&gt;
+&lt;&lt;set _tmp=[[1,16], [1,20], [6,28], [11,213], [11,52]]&gt;&gt;
+&lt;&lt;for _pair range _tmp&gt;&gt;&lt;&lt;set _scene |=_pair.contains(_npc.girlid) and _pair.contains(_other.girlid)&gt;&gt;&lt;&lt;/for&gt;&gt;
 
 &lt;div class=&quot;ab1 lighthover&quot;&gt;
-&lt;&lt;if $others.includes(_other.girlid)&gt;&gt;&lt;&lt;hovertip &quot;available scenes!&quot;&gt;&gt;[img[Pics/Butt/lesb.png]]
-&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $others to []&gt;&gt;
-
+&lt;&lt;if _scene&gt;&gt;&lt;&lt;hovertip &quot;available scenes!&quot;&gt;&gt;[img[Pics/Butt/lesb.png]]&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;ab2 ulsmall&quot;&gt;
@@ -365273,27 +365258,12 @@ Select one additional participant below.
 
 
 /* has scenes checker */
-&lt;&lt;set $others to []&gt;&gt;
-&lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set $others.push(16)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 16&gt;&gt;&lt;&lt;set $others.push(1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 1&gt;&gt;&lt;&lt;set $others.push(20)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 20&gt;&gt;&lt;&lt;set $others.push(1)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 28&gt;&gt;&lt;&lt;set $others.push(6)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 6&gt;&gt;&lt;&lt;set $others.push(28)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 213&gt;&gt;&lt;&lt;set $others.push(11)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set $others.push(213)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if _npc.girlid is 52&gt;&gt;&lt;&lt;set _ooo to true&gt;&gt;&lt;&lt;set $others.push(11)&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.girlid is 11&gt;&gt;&lt;&lt;set $others.push(52)&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _scene=0&gt;&gt;
+&lt;&lt;set _tmp=[[1,16], [1,20], [6,28], [11,213], [11,52]]&gt;&gt;
+&lt;&lt;for _pair range _tmp&gt;&gt;&lt;&lt;set _scene |=_pair.contains(_npc.girlid) and _pair.contains(_other.girlid)&gt;&gt;&lt;&lt;/for&gt;&gt;
 
 &lt;div class=&quot;ab1 lighthover&quot;&gt;
-&lt;&lt;if $others.includes(_other.girlid)&gt;&gt;&lt;&lt;hovertip &quot;available scenes!&quot;&gt;&gt;[img[Pics/Butt/lesb.png]]
-&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;set $others to []&gt;&gt;
-
+&lt;&lt;if _scene&gt;&gt;&lt;&lt;hovertip &quot;available scenes!&quot;&gt;&gt;[img[Pics/Butt/lesb.png]]&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;ab2 ulsmall&quot;&gt;
