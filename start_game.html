@@ -220259,21 +220259,20 @@ EMBRYL BUTT PLUG&lt;br&gt;
 
 &lt;&lt;if _price lte 1&gt;&gt;&lt;&lt;set _price to 2&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;set _price*=10&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //Food for the hungry. A batch of ten rations.//
 
-&lt;&lt;set _fprice=_price*=10&gt;&gt;
-
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $removebutt isnot true&gt;&gt;
-&lt;&lt;if $cash gte _fprice&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; &amp;#36;&lt;&lt;print setup.formatNumber(_fprice)&gt;&gt;&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds (&amp;#36;&lt;&lt;print setup.formatNumber(_fprice)&gt;&gt;)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte _price&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; &amp;#36;&lt;&lt;print setup.formatNumber(_price)&gt;&gt;&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds (&amp;#36;&lt;&lt;print setup.formatNumber(_price)&gt;&gt;)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &#39;&#39;MARKET SUPPLY:&#39;&#39; &lt;&lt;print setup.formatNumber(_cap)&gt;&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte _fprice and _cap gte 10&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|$passa][$cash-=_fprice, $foodstuff+=10, $removebutt to true, $event to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte _price and _cap gte 10&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|$passa][$cash-=_price, $foodstuff+=10, $removebutt to true, $event to 1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
@@ -220362,20 +220361,20 @@ EMBRYL BUTT PLUG&lt;br&gt;
 &lt;&lt;if $manipulate gte 80&gt;&gt;&lt;&lt;set _price-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $manipulate gte 130&gt;&gt;&lt;&lt;set _price-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;set _price*=6&gt;&gt;
+
 &lt;div class=&quot;row&quot;&gt;
 &lt;div class=&quot;vendorinfonew&quot;&gt;
 
 //Pelts (x5) from witter scards and giant squirrels. //
 
-&lt;&lt;set _fprice=_price*=6&gt;&gt;
-
 &lt;/div&gt;
 &lt;div class=&quot;vendorbuynew&quot;&gt;
 &lt;&lt;if $removebutt isnot true&gt;&gt;
-&lt;&lt;if $cash gte _fprice&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; &amp;#36;_fprice&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds (&amp;#36;_fprice)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte _price&gt;&gt;&lt;center&gt;&#39;&#39;PRICE:&#39;&#39; &amp;#36;_price&lt;/center&gt;&lt;&lt;else&gt;&gt;&lt;center&gt;&#39;&#39;Insufficient funds (&amp;#36;_price)&#39;&#39;&lt;/center&gt;&lt;&lt;/if&gt;&gt;
 &#39;&#39;MARKET SUPPLY:&#39;&#39; _cap
 &lt;br&gt;&lt;br&gt;
-&lt;&lt;if $cash gte _fprice and _okcap is true&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|$passa][$cash-=_fprice, $pelts+=5, $removebutt to true, $event to 2]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cash gte _price and _okcap is true&gt;&gt;&lt;div class=&quot;ulvendor&quot;&gt;[[Purchase|$passa][$cash-=_price, $pelts+=5, $removebutt to true, $event to 2]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;p class=&quot;ulvendorown&quot;&gt;Purchase&lt;/p&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $removebutt is true&gt;&gt;
