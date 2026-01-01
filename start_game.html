@@ -63268,17 +63268,11 @@ You also lose 75% less Stamina during hunting excursions thanks to your natural 
 &lt;&lt;set _aw to 55&gt;&gt;&lt;&lt;set _ah to 168&gt;&gt;
 
 
-&lt;&lt;if $measure is 1&gt;&gt;
-&lt;&lt;set _showw=&quot;_aw kg&quot;&gt;&gt;
-&lt;&lt;set _showh=&quot;_ah cm&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;set _showlbs1 to _aw&gt;&gt;
-&lt;&lt;set _showlbs2 to _showlbs1*=2.2&gt;&gt;
-&lt;&lt;set _showw=_showlbs2&gt;&gt;
-
+&lt;&lt;set _showw=_aw&gt;&gt;
+&lt;&lt;set _showh=_ah&gt;&gt;
+&lt;&lt;if $measure is 2&gt;&gt;
+&lt;&lt;set _showw=Math.round(_aw*2.2)&gt;&gt;
 &lt;&lt;set _showh=Math.round(_ah*0.3937)&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;row&quot;&gt;
@@ -63287,8 +63281,8 @@ You also lose 75% less Stamina during hunting excursions thanks to your natural 
 &#39;&#39;Body type:&#39;&#39; Normal.&lt;br&gt;
 &#39;&#39;Corruption:&#39;&#39; 10.&lt;br&gt;
 &#39;&#39;Discipline:&#39;&#39; 30.&lt;br&gt;
-&#39;&#39;Weight:&#39;&#39; &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; lbs&lt;&lt;else&gt;&gt;_showw&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Height:&#39;&#39; &lt;&lt;if $measure is 1&gt;&gt;_showh&lt;&lt;else&gt;&gt;
+&#39;&#39;Weight:&#39;&#39; _showw &lt;&lt;if $measure is 2&gt;&gt;lbs&lt;&lt;else&gt;&gt;kg&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&#39;&#39;Height:&#39;&#39; &lt;&lt;if $measure is 1&gt;&gt;_showh cm&lt;&lt;else&gt;&gt;
 &lt;&lt;print Math.floor(_showh / 12)&gt;&gt;&amp;#x2032;&lt;&lt;print _showh % 12&gt;&gt;&amp;#x2033;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;
@@ -68214,28 +68208,15 @@ These unfortunate NPCs have either fallen in battle or deceased due to starvatio
 &lt;div class=&quot;nopleft&quot;&gt;
 &lt;div class=&quot;divipadd&quot;&gt;
 
-&lt;&lt;if $measure is 1&gt;&gt;
-&lt;&lt;set _showw=&quot;$aw kg&quot;&gt;&gt;
-&lt;&lt;set _showh=&quot;$ah cm&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;set _showlbs1 to $aw&gt;&gt;
-&lt;&lt;set _showlbs2 to _showlbs1*=2.2&gt;&gt;
-&lt;&lt;set _showw=_showlbs2&gt;&gt;
-
-&lt;&lt;if $ah is 150&gt;&gt;&lt;&lt;set _showh=59&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ah is 160&gt;&gt;&lt;&lt;set _showh=63&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ah is 165&gt;&gt;&lt;&lt;set _showh=65&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ah is 170&gt;&gt;&lt;&lt;set _showh=67&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ah is 178&gt;&gt;&lt;&lt;set _showh=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _showw=$aw&gt;&gt;
+&lt;&lt;set _showh=$ah&gt;&gt;
+&lt;&lt;if $measure is 2&gt;&gt;
+&lt;&lt;set _showw=Math.round($aw*2.2)&gt;&gt;
 &lt;&lt;set _showh=Math.round($ah*0.3937)&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
-
-&#39;&#39;Weight:&#39;&#39; &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; lbs&lt;&lt;else&gt;&gt;_showw&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Height:&#39;&#39; &lt;&lt;if $measure is 1&gt;&gt;_showh&lt;&lt;else&gt;&gt;
+&#39;&#39;Weight:&#39;&#39; _showw &lt;&lt;if $measure is 2&gt;&gt;lbs&lt;&lt;else&gt;&gt;kg&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&#39;&#39;Height:&#39;&#39; &lt;&lt;if $measure is 1&gt;&gt;_showh cm&lt;&lt;else&gt;&gt;
 &lt;&lt;print Math.floor(_showh / 12)&gt;&gt;&amp;#x2032;&lt;&lt;print _showh % 12&gt;&gt;&amp;#x2033;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -190039,16 +190020,9 @@ The juices of victory is still flowing in _npc.girlnames veins, and she looks at
 
 
 
-&lt;&lt;if $measure is 1&gt;&gt;
-&lt;&lt;set _showw=&quot;_npc.aw kg&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;set _showlbs1 to _npc.aw&gt;&gt;
-&lt;&lt;set _showlbs2 to _showlbs1*=2.2&gt;&gt;
-&lt;&lt;set _showw=_showlbs2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _showw=Math.round(_npc.aw*($measure is 2 ? 2.2 : 1))&gt;&gt;
 
-
-She weighs &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; lbs&lt;&lt;else&gt;&gt;_showw&lt;&lt;/if&gt;&gt;.
+She weighs _showw &lt;&lt;if $measure is 2&gt;&gt;lbs&lt;&lt;else&gt;&gt;kg&lt;&lt;/if&gt;&gt;.
 
 
 &lt;div class=&quot;storybottom center&quot;&gt;
@@ -303010,30 +302984,15 @@ MOVED TO SALARY DEMANDS - JOBS PASSAGE
 &lt;div class=&quot;nopleft&quot;&gt;
 &lt;div class=&quot;divipadd&quot;&gt;
 
-&lt;&lt;if $measure is 1&gt;&gt;
-&lt;&lt;set _showw=&quot;_aw kg&quot;&gt;&gt;
-&lt;&lt;set _showh=&quot;_ah cm&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-
-&lt;&lt;set _showlbs1 to _aw&gt;&gt;
-&lt;&lt;set _showlbs2 to _showlbs1*=2.2&gt;&gt;
-&lt;&lt;set _showw=_showlbs2&gt;&gt;
-
-&lt;&lt;if _ah is 150&gt;&gt;&lt;&lt;set _showh=59&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ah is 155&gt;&gt;&lt;&lt;set _showh=61&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ah is 160&gt;&gt;&lt;&lt;set _showh=63&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ah is 165&gt;&gt;&lt;&lt;set _showh=65&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ah is 170&gt;&gt;&lt;&lt;set _showh=67&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _ah is 178&gt;&gt;&lt;&lt;set _showh=70&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _showw=_aw&gt;&gt;
+&lt;&lt;set _showh=_ah&gt;&gt;
+&lt;&lt;if $measure is 2&gt;&gt;
+&lt;&lt;set _showw=Math.round(_aw*2.2)&gt;&gt;
 &lt;&lt;set _showh=Math.round(_ah*0.3937)&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
-
-
-&#39;&#39;Weight:&#39;&#39; &lt;&lt;if $measure is 2&gt;&gt;&lt;&lt;= _showw.toFixed(0)&gt;&gt; lbs&lt;&lt;else&gt;&gt;_showw&lt;&lt;/if&gt;&gt;&lt;br&gt;
-&#39;&#39;Height:&#39;&#39; &lt;&lt;if $measure is 1&gt;&gt;_showh&lt;&lt;else&gt;&gt;
+&#39;&#39;Weight:&#39;&#39; _showw &lt;&lt;if $measure is 2&gt;&gt;lbs&lt;&lt;else&gt;&gt;kg&lt;&lt;/if&gt;&gt;&lt;br&gt;
+&#39;&#39;Height:&#39;&#39; &lt;&lt;if $measure is 1&gt;&gt;_showh cm&lt;&lt;else&gt;&gt;
 &lt;&lt;print Math.floor(_showh / 12)&gt;&gt;&amp;#x2032;&lt;&lt;print _showh % 12&gt;&gt;&amp;#x2033;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
