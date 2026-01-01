@@ -255929,9 +255929,9 @@ During the night, you’re woken up by a loud alarm. A group &lt;&lt;if $weather
 &lt;&lt;set $raiderloot = Math.round($raiderloot)&gt;&gt;
 &lt;&lt;if $raiderloot gte 28000&gt;&gt;&lt;&lt;set $raiderloot-=random(0,5899)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $cash-=$raiderloot&gt;&gt;
-&lt;&lt;set $raidedgold=$gold gte 50 ? Math.round(($gold/10) : 0&gt;&gt;
+&lt;&lt;set $raidedgold=$gold gte 50 ? Math.round($gold/10) : 0&gt;&gt;
 &lt;&lt;set $gold-=$raidedgold&gt;&gt;
-&lt;&lt;set $raidedsilver=$silver gte 50 ? Math.round(($silver/10) : 0&gt;&gt;
+&lt;&lt;set $raidedsilver=$silver gte 50 ? Math.round($silver/10) : 0&gt;&gt;
 &lt;&lt;set $silver-=$raidedsilver&gt;&gt;
 &lt;&lt;set $raidrepair to random(15,30)&gt;&gt;
 &lt;&lt;set $repairfester+=$raidrepair&gt;&gt;
