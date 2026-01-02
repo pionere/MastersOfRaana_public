@@ -82547,11 +82547,11 @@ Enemies have exhausted all their actions.&lt;br&gt;Your turn!
 &lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _csnow to $cs3_id&gt;&gt;&lt;&lt;set _csam to $cs3_traitammo&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _csnow to $cs4_id&gt;&gt;&lt;&lt;set _csam to $cs4_traitammo&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _cs_se to $mc_se&gt;&gt;&lt;&lt;if $masterhealth lt $mastermaxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _curstr to $masterstrength&gt;&gt;&lt;&lt;set _curwill to $masterwill&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _cs_se to $cs1_se&gt;&gt;&lt;&lt;if $cs1_health lt $cs1_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs1_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs1_rel&gt;&gt;&lt;&lt;set _curstr to $cs1_str&gt;&gt;&lt;&lt;set _aff to $cs1_aff&gt;&gt;&lt;&lt;set _curwill to $cs1_will&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _cs_se to $cs2_se&gt;&gt;&lt;&lt;if $cs2_health lt $cs2_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs2_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs2_rel&gt;&gt;&lt;&lt;set _curstr to $cs2_str&gt;&gt;&lt;&lt;set _aff to $cs2_aff&gt;&gt;&lt;&lt;set _curwill to $cs2_will&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _cs_se to $cs3_se&gt;&gt;&lt;&lt;if $cs3_health lt $cs3_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs3_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs3_rel&gt;&gt;&lt;&lt;set _curstr to $cs3_str&gt;&gt;&lt;&lt;set _aff to $cs3_aff&gt;&gt;&lt;&lt;set _curwill to $cs3_will&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _cs_se to $cs4_se&gt;&gt;&lt;&lt;if $cs4_health lt $cs4_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs4_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs4_rel&gt;&gt;&lt;&lt;set _curstr to $cs4_str&gt;&gt;&lt;&lt;set _aff to $cs4_aff&gt;&gt;&lt;&lt;set _curwill to $cs4_will&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _cs_se to $mc_se&gt;&gt;&lt;&lt;set _curstr to $masterstrength&gt;&gt;&lt;&lt;set _curwill to $masterwill&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _cs_se to $cs1_se&gt;&gt;&lt;&lt;set _combatid to $cs1_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs1_rel&gt;&gt;&lt;&lt;set _curstr to $cs1_str&gt;&gt;&lt;&lt;set _aff to $cs1_aff&gt;&gt;&lt;&lt;set _curwill to $cs1_will&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _cs_se to $cs2_se&gt;&gt;&lt;&lt;set _combatid to $cs2_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs2_rel&gt;&gt;&lt;&lt;set _curstr to $cs2_str&gt;&gt;&lt;&lt;set _aff to $cs2_aff&gt;&gt;&lt;&lt;set _curwill to $cs2_will&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _cs_se to $cs3_se&gt;&gt;&lt;&lt;set _combatid to $cs3_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs3_rel&gt;&gt;&lt;&lt;set _curstr to $cs3_str&gt;&gt;&lt;&lt;set _aff to $cs3_aff&gt;&gt;&lt;&lt;set _curwill to $cs3_will&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _cs_se to $cs4_se&gt;&gt;&lt;&lt;set _combatid to $cs4_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs4_rel&gt;&gt;&lt;&lt;set _curstr to $cs4_str&gt;&gt;&lt;&lt;set _aff to $cs4_aff&gt;&gt;&lt;&lt;set _curwill to $cs4_will&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -82607,15 +82607,15 @@ REMOVED! USE CapCheck passage instead
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _cs_se to $mc_se&gt;&gt;&lt;&lt;if $masterhealth lt $mastermaxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _curstr to $masterstrength&gt;&gt;&lt;&lt;set _curwill to $masterwill&gt;&gt;&lt;&lt;set _actnpc to -99&gt;&gt;&lt;&lt;set _ironorder to $mctraitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;set _cs_se to $mc_se&gt;&gt;&lt;&lt;set _curstr to $masterstrength&gt;&gt;&lt;&lt;set _curwill to $masterwill&gt;&gt;&lt;&lt;set _actnpc to -99&gt;&gt;&lt;&lt;set _ironorder to $mctraitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _cs_se to $cs1_se&gt;&gt;&lt;&lt;if $cs1_health lt $cs1_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs1_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs1_rel&gt;&gt;&lt;&lt;set _curstr to $cs1_str&gt;&gt;&lt;&lt;set _aff to $cs1_aff&gt;&gt;&lt;&lt;set _curwill to $cs1_will&gt;&gt;&lt;&lt;set _combatprow to $cs1_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs1_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs1_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs1_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs1_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;set _cs_se to $cs1_se&gt;&gt;&lt;&lt;set _combatid to $cs1_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs1_rel&gt;&gt;&lt;&lt;set _curstr to $cs1_str&gt;&gt;&lt;&lt;set _aff to $cs1_aff&gt;&gt;&lt;&lt;set _curwill to $cs1_will&gt;&gt;&lt;&lt;set _combatprow to $cs1_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs1_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs1_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs1_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs1_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _cs_se to $cs2_se&gt;&gt;&lt;&lt;if $cs2_health lt $cs2_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs2_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs2_rel&gt;&gt;&lt;&lt;set _curstr to $cs2_str&gt;&gt;&lt;&lt;set _aff to $cs2_aff&gt;&gt;&lt;&lt;set _curwill to $cs2_will&gt;&gt;&lt;&lt;set _combatprow to $cs2_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs2_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs2_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs2_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs2_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;set _cs_se to $cs2_se&gt;&gt;&lt;&lt;set _combatid to $cs2_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs2_rel&gt;&gt;&lt;&lt;set _curstr to $cs2_str&gt;&gt;&lt;&lt;set _aff to $cs2_aff&gt;&gt;&lt;&lt;set _curwill to $cs2_will&gt;&gt;&lt;&lt;set _combatprow to $cs2_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs2_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs2_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs2_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs2_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _cs_se to $cs3_se&gt;&gt;&lt;&lt;if $cs3_health lt $cs3_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs3_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs3_rel&gt;&gt;&lt;&lt;set _curstr to $cs3_str&gt;&gt;&lt;&lt;set _aff to $cs3_aff&gt;&gt;&lt;&lt;set _curwill to $cs3_will&gt;&gt;&lt;&lt;set _combatprow to $cs3_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs3_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs3_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs3_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs3_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;set _cs_se to $cs3_se&gt;&gt;&lt;&lt;set _combatid to $cs3_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs3_rel&gt;&gt;&lt;&lt;set _curstr to $cs3_str&gt;&gt;&lt;&lt;set _aff to $cs3_aff&gt;&gt;&lt;&lt;set _curwill to $cs3_will&gt;&gt;&lt;&lt;set _combatprow to $cs3_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs3_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs3_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs3_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs3_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _cs_se to $cs4_se&gt;&gt;&lt;&lt;if $cs4_health lt $cs4_maxh&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;set _combatid to $cs4_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs4_rel&gt;&gt;&lt;&lt;set _curstr to $cs4_str&gt;&gt;&lt;&lt;set _aff to $cs4_aff&gt;&gt;&lt;&lt;set _curwill to $cs4_will&gt;&gt;&lt;&lt;set _combatprow to $cs4_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs4_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs4_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs4_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs4_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;set _cs_se to $cs4_se&gt;&gt;&lt;&lt;set _combatid to $cs4_girlid&gt;&gt;&lt;&lt;set _traitrel to $cs4_rel&gt;&gt;&lt;&lt;set _curstr to $cs4_str&gt;&gt;&lt;&lt;set _aff to $cs4_aff&gt;&gt;&lt;&lt;set _curwill to $cs4_will&gt;&gt;&lt;&lt;set _combatprow to $cs4_combatprow&gt;&gt;&lt;&lt;set _actnpc to $cs4_actnpc&gt;&gt;&lt;&lt;set _happiness to $cs4_happiness&gt;&gt;&lt;&lt;set _rangedw to $cs4_rweapon&gt;&gt;&lt;&lt;set _ironorder to $cs4_traitiron&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -231178,17 +231178,18 @@ FOR INCOME CHECK ECONOMY 2
 
 
 
-&lt;&lt;if $round is 1&gt;&gt;&lt;&lt;if $masterhealth lt $mastermaxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 2&gt;&gt;&lt;&lt;if $cs1_health lt $cs1_maxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 3&gt;&gt;&lt;&lt;if $cs2_health lt $cs2_maxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 4&gt;&gt;&lt;&lt;if $cs3_health lt $cs3_maxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $round is 5&gt;&gt;&lt;&lt;if $cs4_health lt $cs4_maxhealth&gt;&gt;&lt;&lt;set _healthlow to true&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
-
 &lt;&lt;if $round lte 5 and $action is 0&gt;&gt;
+
+&lt;&lt;switch $round&gt;&gt;
+&lt;&lt;case 1&gt;&gt;&lt;&lt;set _healthlow to $masterhealth lt $mastermaxhealth&gt;&gt;
+&lt;&lt;case 2&gt;&gt;&lt;&lt;set _healthlow to $cs1_health lt $cs1_maxhealth&gt;&gt;
+&lt;&lt;case 3&gt;&gt;&lt;&lt;set _healthlow to $cs2_health lt $cs2_maxhealth&gt;&gt;
+&lt;&lt;case 4&gt;&gt;&lt;&lt;set _healthlow to $cs3_health lt $cs3_maxhealth&gt;&gt;
+&lt;&lt;case 5&gt;&gt;&lt;&lt;set _healthlow to $cs4_health lt $cs4_maxhealth&gt;&gt;
+&lt;&lt;/switch&gt;&gt;
+
 &lt;div class=&quot;resholdersmall&quot;&gt;
-&lt;&lt;if $ownstima gte 1 and _healthlow is true and $meduse gte 1&gt;&gt;
+&lt;&lt;if $ownstima gte 1 and _healthlow and $meduse gte 1&gt;&gt;
 &lt;&lt;hovertip &quot;tendstim (uses: $meduse)&quot;&gt;&gt;
 &lt;&lt;link [img[Pics/Butt/tendstimacomb.png]]&gt;&gt;
 &lt;&lt;goto NewCombatSimulator&gt;&gt;
