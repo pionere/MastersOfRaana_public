@@ -304823,7 +304823,7 @@ IS IN MID AS ITS ACTIVE OUTSIDE HOUSEHOLD */
 
 /* QUESTS BELOW - MOVE? */
 
-&lt;&lt;if $quest_cat gte 7&gt;&gt;&lt;&lt;set $quest_cat+=adl($quest_cat,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $quest_cat gte 7&gt;&gt;&lt;&lt;set $quest_cat=adl($quest_cat,1,10)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_cat is 10&gt;&gt;&lt;&lt;set $npc.av13.busy to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $quest_cat is 11 or $quest_cat is 12&gt;&gt;&lt;&lt;set $quest_cat+=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
@@ -320061,7 +320061,7 @@ She turns silent in your presence. There’s no doubt she’s upset about someth
 /* CONTENTMENT INCREASE */
 
 &lt;&lt;if $mch isnot undefined&gt;&gt;
-&lt;&lt;if $mch.yardslot1.type is 1&gt;&gt;&lt;&lt;set $goodfester+=adl($goodfester,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mch.yardslot1.type is 1&gt;&gt;&lt;&lt;set $goodfester=adl($goodfester,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mch.yardslot1.type is 1 and $mch.yardslot1.level gte 2&gt;&gt;&lt;&lt;set $goodfester=adl($goodfester,3,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="484" name="Nursery" tags="nobr" position="3525,1575" size="100,100">
