@@ -115688,23 +115688,18 @@ You prepare
 &#39;&#39;//You’ve upset $girlname during your earlier class and &lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt; refuses to let you teach &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;him&lt;&lt;/if&gt;&gt; anything more today! Try again tomorrow.//&#39;&#39;
 &lt;&lt;/if&gt;&gt;
 
-
 &lt;&lt;if $refuseclass is false&gt;&gt;
 &lt;&lt;if $pussywear gte 50 or $analwear gte 50 or $oralwear gte 50&gt;&gt;
 
-&lt;&lt;if $pussywear gte 50 and $analwear gte 50&gt;&gt;&#39;&#39;NOTE!&#39;&#39; $girlname is suffering from the complications of vaginal and anal abuse, which currently affects &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; ability to learn.&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=$pussywear gte 50 ? ($analwear gte 50 ? &quot;vaginal and anal&quot; : &quot;vaginal&quot;) : ($analwear gte 50 ? &quot;anal&quot; : &quot;oral&quot;)&gt;&gt;
+&#39;&#39;NOTE!&#39;&#39; $girlname is suffering from the complications of _tmp abuse, which currently affects &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; ability to learn.
 
-&lt;&lt;if $pussywear gte 50 and $analwear lte 49&gt;&gt;&#39;&#39;NOTE!&#39;&#39; $girlname is suffering from the complications of vaginal abuse, which currently affects &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; ability to perform adequately.&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $pussywear lte 49 and $analwear gte 50&gt;&gt;&#39;&#39;NOTE!&#39;&#39; $girlname is suffering from the complications of anal abuse, which currently affects &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; ability to learn.&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $oralwear gte 50&gt;&gt;
-&lt;&lt;if $pussywear gte 50 or $analwear gte 50&gt;&gt;&lt;br&gt;&lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt; also suffers from recent oral abuse, which further complicates &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; absorption of knowledge.&lt;&lt;else&gt;&gt;&#39;&#39;NOTE!&#39;&#39; $girlname is suffering from the complications of oral abuse, which currently affects &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; ability to learn.&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;br&gt;
+&lt;&lt;if $oralwear gte 50 and ($pussywear gte 50 or $analwear gte 50)&gt;&gt;
+&lt;br&gt;&lt;br&gt;&lt;&lt;if _sex is 0&gt;&gt;she&lt;&lt;else&gt;&gt;he&lt;&lt;/if&gt;&gt; also suffers from recent oral abuse, which further complicates &lt;&lt;if _sex is 0&gt;&gt;her&lt;&lt;else&gt;&gt;his&lt;&lt;/if&gt;&gt; absorption of knowledge.
 &lt;&lt;/if&gt;&gt;
 
+&lt;br&gt;&lt;br&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $action1b to true&gt;&gt;
