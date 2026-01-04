@@ -119591,76 +119591,35 @@ Where do you place yourselves?
 &lt;&lt;if $action1 is false&gt;&gt;
 
 &lt;&lt;if $seat is 1 and $refresh isnot true&gt;&gt;
-&lt;&lt;if $descroll4 is 1&gt;&gt;Tonight’s attraction is a standup comedian who’s popular for his political satires and sexual language.
+&lt;&lt;set $justexp to $descroll4&gt;&gt;
+&lt;&lt;switch $justexp&gt;&gt;
+&lt;&lt;case 1&gt;&gt;Tonight’s attraction is a standup comedian who’s popular for his political satires and sexual language.
 
-&lt;&lt;set $justexp to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 2&gt;&gt;Tonight is TV-night, and you’re about to experience two hours of
-
+&lt;&lt;case 2&gt;&gt;Tonight is TV-night, and you’re about to experience two hours of
 &lt;&lt;if $descroll3 is 1&gt;&gt;a popular comedy series that aired in the 2090s. It’s about a family living on a large moon base and their frequent run-ins with a neighboring Neo-Soviet science station.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 2&gt;&gt;an old 1990s comedy production about six friends and their relationships.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 3&gt;&gt;a cult fantasy series about dragons, magic and large battles.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $descroll3 is 4&gt;&gt;an old 1980s Robin Hood production filled with mysteries, sword fighting and magical forests.&lt;&lt;set $ros to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $justexp to 2&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 3&gt;&gt;&lt;center&gt;Tonight’s attraction is a classic action movie:
-&lt;br&gt;
-&lt;b&gt;
-&lt;&lt;if $descroll3 is 1&gt;&gt;&quot;Warrior’s redoubt (2077)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 2&gt;&gt;&quot;Last flash (2031)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 3&gt;&gt;&quot;Crimson Tides (2099)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 4&gt;&gt;&quot;Fallout (2180)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;/b&gt;
+&lt;&lt;case 3&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Warrior’s redoubt (2077)&quot;,&quot;Last flash (2031)&quot;,&quot;Crimson Tides (2099)&quot;,&quot;Fallout (2180)&quot;][$descroll3-1]&gt;&gt;
+&lt;center&gt;Tonight’s attraction is a classic action movie:&lt;br&gt;&lt;b&gt;_tmp&lt;/b&gt;&lt;/center&gt;
 
-&lt;/center&gt;
-&lt;&lt;set $justexp to 3&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 4&gt;&gt;&lt;center&gt;Tonight’s big show is a comedy movie:
+&lt;&lt;case 4&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Keeping up appearances (2099)&quot;,&quot;Making Sandy Pay (2177)&quot;,&quot;Voltaire’s mistress (2087)&quot;,&quot;Never-ending laugh (2155)&quot;][$descroll3-1]&gt;&gt;
+&lt;center&gt;Tonight’s big show is a comedy movie:&lt;br&gt;&lt;b&gt;_tmp&lt;/b&gt;&lt;/center&gt;
 
-&lt;br&gt;
-&lt;b&gt;
-&lt;&lt;if $descroll3 is 1&gt;&gt;&quot;Keeping up appearances (2099)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 2&gt;&gt;&quot;Making Sandy Pay (2177)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 3&gt;&gt;&quot;Voltaire’s mistress (2087)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 4&gt;&gt;&quot;Never-ending laugh (2155)&quot;.&lt;&lt;/if&gt;&gt;
-&lt;/b&gt;
+&lt;&lt;case 5&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Making babies with God (2122)&quot;,&quot;Faltering dilemma (2200)&quot;,&quot;Scream (1996)&quot;,&quot;Catch me if you can (2002)&quot;][$descroll3-1]&gt;&gt;
+&lt;center&gt;It’s movie night, and you’re about to experience a classic:&lt;br&gt;&lt;b&gt;_tmp&lt;/b&gt;&lt;/center&gt;
 
-&lt;/center&gt;
+&lt;&lt;case 6&gt;&gt;
+&lt;&lt;set _tmp=[&quot;Halo’s Emergency (2050)&quot;,&quot;Designated man (2144)&quot;,&quot;Ben Hur (1959)&quot;,&quot;Innsmouth Terror (2034)&quot;][$descroll3-1]&gt;&gt;
+&lt;center&gt;It’s movie night, and the theatre will blast the crowd with a real classic:&lt;br&gt;&lt;b&gt;_tmp&lt;/b&gt;&lt;/center&gt;
 
-&lt;&lt;set $justexp to 4&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 5&gt;&gt;&lt;center&gt;It’s movie night, and you’re about to experience a classic:
-&lt;br&gt;
-&lt;b&gt;
-&lt;&lt;if $descroll3 is 1&gt;&gt;&quot;Making babies with God (2122)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 2&gt;&gt;&quot;Faltering dilemma (2200)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 3&gt;&gt;&quot;Scream (1996)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 4&gt;&gt;&quot;Catch me if you can (2002)&quot;&lt;&lt;/if&gt;&gt;
-&lt;/b&gt;
-
-&lt;/center&gt;
-
-&lt;&lt;set $justexp to 5&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 6&gt;&gt;&lt;center&gt;It’s movie night, and the theatre will blast the crowd with a real classic:
-&lt;br&gt;
-&lt;b&gt;
-&lt;&lt;if $descroll3 is 1&gt;&gt;&quot;Halo’s Emergency (2050)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 2&gt;&gt;&quot;Designated man (2144)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 3&gt;&gt;&quot;Ben Hur (1959)&quot;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll3 is 4&gt;&gt;&quot;Innsmouth Terror (2034)&quot;&lt;&lt;/if&gt;&gt;
-&lt;/b&gt;
-
-&lt;/center&gt;
-.
-&lt;&lt;set $justexp to 6&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 7&gt;&gt;Tonight, the usual ensemble will put up a live show - //Raana’s destiny//, and you prepare for a three-hour run of bombastic theatrical displays.&lt;&lt;set $justexp to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $descroll4 is 8&gt;&gt;The usual ensemble will perform //Mother’s gift// tonight – a long-running show about the life of Ikaanos’ poorest.&lt;&lt;set $justexp to 7&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;case 7&gt;&gt;Tonight, the usual ensemble will put up a live show - //Raana’s destiny//, and you prepare for a three-hour run of bombastic theatrical displays.
+&lt;&lt;case 8&gt;&gt;The usual ensemble will perform //Mother’s gift// tonight – a long-running show about the life of Ikaanos’ poorest.&lt;&lt;set $justexp to 7&gt;&gt;
+&lt;&lt;/switch&gt;&gt;
 
 &lt;br&gt;&lt;br&gt;
 In what part of the auditorium do you want to sit?
