@@ -204878,15 +204878,21 @@ Your &#39;&#39;Stealth skill (+1)&#39;&#39; has increased!
 
 
 &lt;div class=&quot;row&quot;&gt;
-
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $favbox[0] is -1&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[Pics/AvGen/edu_goodsmall.png]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _callid2 to $favbox[0]&gt;&gt;&lt;&lt;set _callid to $favbox[1]&gt;&gt;&lt;&lt;set _calln to $favbox[2]&gt;&gt;&lt;&lt;set _callage to $favbox[12]&gt;&gt;&lt;&lt;capture _callid _callid2&gt;&gt;&lt;&lt;include CallPic&gt;&gt;&lt;&lt;/capture&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $favbox[3] is -1&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[Pics/AvGen/edu_goodsmall.png]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _callid2 to $favbox[3]&gt;&gt;&lt;&lt;set _callid to $favbox[4]&gt;&gt;&lt;&lt;set _calln to $favbox[5]&gt;&gt;&lt;&lt;set _callage to $favbox[13]&gt;&gt;&lt;&lt;capture _callid _callid2&gt;&gt;&lt;&lt;include CallPic&gt;&gt;&lt;&lt;/capture&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
-&lt;div class=&quot;resholder&quot;&gt;&lt;&lt;if $favbox[6] is -1&gt;&gt;&lt;div class=&quot;opac&quot;&gt;[img[Pics/AvGen/edu_goodsmall.png]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _callid2 to $favbox[6]&gt;&gt;&lt;&lt;set _callid to $favbox[7]&gt;&gt;&lt;&lt;set _calln to $favbox[8]&gt;&gt;&lt;&lt;set _callage to $favbox[14]&gt;&gt;&lt;&lt;capture _callid _callid2&gt;&gt;&lt;&lt;include CallPic&gt;&gt;&lt;&lt;/capture&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-
-
-
+&lt;&lt;for _i=0; _i lt 3; _i++&gt;&gt;
+&lt;div class=&quot;resholder&quot;&gt;
+&lt;&lt;if $favbox[_i*3] is -1&gt;&gt;
+&lt;div class=&quot;opac&quot;&gt;[img[Pics/AvGen/edu_goodsmall.png]]&lt;/div&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _callid2 to $favbox[_i*3]&gt;&gt;
+&lt;&lt;set _callid to $favbox[_i*3+1]&gt;&gt;
+&lt;&lt;set _calln to $favbox[_i*3+2]&gt;&gt;
+&lt;&lt;set _callage to $favbox[_i+12]&gt;&gt;
+&lt;&lt;capture _callid _callid2&gt;&gt;
+&lt;&lt;include CallPic&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
+&lt;&lt;/for&gt;&gt;
 &lt;/div&gt;
 
 &lt;br&gt;
@@ -300791,9 +300797,9 @@ ALSO USED FOR DEATH.
 
 
 /* CLEARING FROM FAVORITE SLOT */
-&lt;&lt;if $favbox[1] is _npc.girlid&gt;&gt;&lt;&lt;set $favbox[0] to -1&gt;&gt;&lt;&lt;set $favbox[1] to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[4] is _npc.girlid&gt;&gt;&lt;&lt;set $favbox[3] to -1&gt;&gt;&lt;&lt;set $favbox[4] to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[7] is _npc.girlid&gt;&gt;&lt;&lt;set $favbox[6] to -1&gt;&gt;&lt;&lt;set $favbox[7] to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $favbox[0] is _clearslot&gt;&gt;&lt;&lt;set $favbox[0] to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $favbox[3] is _clearslot&gt;&gt;&lt;&lt;set $favbox[3] to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $favbox[6] is _clearslot&gt;&gt;&lt;&lt;set $favbox[6] to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 
@@ -313576,50 +313582,28 @@ We have more pressing things to do, however, even if I consider the corruption o
 
 
 &lt;&lt;if $favo is true&gt;&gt;
-&lt;&lt;if $favbox[0] is -1&gt;&gt;&lt;&lt;set $favbox[0] to _npc.actnpc&gt;&gt;&lt;&lt;set $favbox[0]+=1&gt;&gt;&lt;&lt;set $favbox[1] to _npc.girlid&gt;&gt;&lt;&lt;set $favbox[2] to _npc.girlname&gt;&gt;&lt;&lt;set $favbox[12] to _npc.age&gt;&gt;&lt;&lt;set _stopfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[3] is -1 and _stopfav isnot true&gt;&gt;&lt;&lt;set $favbox[3] to _npc.actnpc&gt;&gt;&lt;&lt;set $favbox[3]+=1&gt;&gt;&lt;&lt;set $favbox[4] to _npc.girlid&gt;&gt;&lt;&lt;set $favbox[5] to _npc.girlname&gt;&gt;&lt;&lt;set $favbox[13] to _npc.age&gt;&gt;&lt;&lt;set _stopfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[6] is -1 and _stopfav isnot true&gt;&gt;&lt;&lt;set $favbox[6] to _npc.actnpc&gt;&gt;&lt;&lt;set $favbox[6]+=1&gt;&gt;&lt;&lt;set $favbox[7] to _npc.girlid&gt;&gt;&lt;&lt;set $favbox[8] to _npc.girlname&gt;&gt;&lt;&lt;set $favbox[14] to _npc.age&gt;&gt;&lt;&lt;set _stopfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp to $favbox[0] is -1 ? 0 : ($favbox[3] is -1 ? 1 : 2)&gt;&gt;
+&lt;&lt;set $favbox[_tmp*3+0] to _npc.actnpc+1&gt;&gt;
+&lt;&lt;set $favbox[_tmp*3+1] to _npc.girlid&gt;&gt;
+&lt;&lt;set $favbox[_tmp*3+2] to _npc.girlname&gt;&gt;
+&lt;&lt;set $favbox[_tmp+12] to _npc.age&gt;&gt;
 
 &lt;&lt;unset $favo&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $favodel is true&gt;&gt;
-&lt;&lt;set _delcoma to _npc.actnpc&gt;&gt;
-&lt;&lt;set _delcoma+=1&gt;&gt;
+&lt;&lt;set _delcoma to _npc.actnpc+1&gt;&gt;
 
-&lt;&lt;if $favbox[0] is _delcoma&gt;&gt;&lt;&lt;set $favbox[0] to -1, $favbox[1] to 0, $favbox[2] to &quot;Empty&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[3] is _delcoma&gt;&gt;&lt;&lt;set $favbox[3] to -1, $favbox[4] to 0, $favbox[5] to &quot;Empty&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[6] is _delcoma&gt;&gt;&lt;&lt;set $favbox[6] to -1, $favbox[7] to 0, $favbox[8] to &quot;Empty&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $favbox[9] is _delcoma&gt;&gt;&lt;&lt;set $favbox[9] to -1, $favbox[10] to 0, $favbox[11] to &quot;Empty&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $favbox[0] is _delcoma&gt;&gt;&lt;&lt;set $favbox[0] to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $favbox[3] is _delcoma&gt;&gt;&lt;&lt;set $favbox[3] to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $favbox[6] is _delcoma&gt;&gt;&lt;&lt;set $favbox[6] to -1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;unset $favodel&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;if $favbox[0] isnot -1 and $favbox[3] isnot -1 and $favbox[6] isnot -1&gt;&gt;&lt;&lt;set _favfull to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-
 /*
-&lt;&lt;if $favbox[1] is _girlid or $favbox[4] is _girlid or $favbox[7] is _girlid&gt;&gt;&lt;&lt;set _blockfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-*/
-
-
-/*
-
-&lt;div class=&quot;ulsmall&quot;&gt;
-&lt;&lt;if _blockfav isnot true&gt;&gt;
-&lt;&lt;if _favfull is undefined&gt;&gt;
-[[favorite [add]|SMenu2][$favo to true]]
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;ulsmallused&quot;&gt;Slots full!&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-[[favorite [del]|SMenu2][$favodel to true]]
-&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;
-
-
 
 
 
@@ -313955,28 +313939,15 @@ We have more pressing things to do, however, even if I consider the corruption o
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;&lt;set _favoa to _npc.actnpc&gt;&gt;
-&lt;&lt;set _favoa+=1&gt;&gt;
-
-&lt;&lt;if $favbox[1] is _girlid and $favbox[0] is _favoa&gt;&gt;
-&lt;&lt;set _blockfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $favbox[4] is _girlid and $favbox[3] is _favoa&gt;&gt;
-&lt;&lt;set _blockfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $favbox[7] is _girlid and $favbox[6] is _favoa&gt;&gt;
-&lt;&lt;set _blockfav to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set _favoa to _npc.actnpc+1&gt;&gt;
 
 &lt;div class=&quot;ulsmall&quot;&gt;
-&lt;&lt;if _blockfav isnot true&gt;&gt;
-&lt;&lt;if _favfull is undefined&gt;&gt;
+&lt;&lt;if $favbox[0] is _favoa or $favbox[3] is _favoa or $favbox[6] is _favoa&gt;&gt;
+[[favorite [del]|SMenu2][$favodel to true]]
+&lt;&lt;elseif $favbox[0] is -1 or $favbox[3] is -1 or $favbox[6] is -1&gt;&gt;
 [[favorite [add]|SMenu2][$favo to true]]
 &lt;&lt;else&gt;&gt;
 &lt;p class=&quot;ulsmallused&quot;&gt;Slots full!&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-[[favorite [del]|SMenu2][$favodel to true]]
 &lt;&lt;/if&gt;&gt;
 
 
