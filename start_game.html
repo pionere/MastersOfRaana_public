@@ -306137,42 +306137,34 @@ Calculate range weapon yield and ammo usage in one block*/
 &lt;&lt;set _croll to random(1, 130)&gt;&gt;
 &lt;&lt;set _croll2 to random(1, 130)&gt;&gt;
 &lt;&lt;set _croll3 to random(1, 160)&gt;&gt;
-&lt;&lt;set _guards to 0&gt;&gt;
 
-&lt;&lt;if _npc.traitperf lte 24&gt;&gt;&lt;&lt;set _chance-=10&gt;&gt;&lt;&lt;set _chance2-=10&gt;&gt;&lt;&lt;set _chance3-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.age gte 35&gt;&gt;&lt;&lt;set _chance+=10&gt;&gt;&lt;&lt;set _chance2+=10&gt;&gt;&lt;&lt;set _chance3+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.warfame lte 15&gt;&gt;&lt;&lt;set _chance-=10&gt;&gt;&lt;&lt;set _chance2-=10&gt;&gt;&lt;&lt;set _chance3-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.warfame gte 150&gt;&gt;&lt;&lt;set _chance+=10&gt;&gt;&lt;&lt;set _chance2+=10&gt;&gt;&lt;&lt;set _chance3+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _npc.warfame gte 600&gt;&gt;&lt;&lt;set _chance+=10&gt;&gt;&lt;&lt;set _chance2+=10&gt;&gt;&lt;&lt;set _chance3+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _tmp=$captainskill&gt;&gt;
 
-&lt;&lt;if _npc.salarynow gte _npc.salary*1.25&gt;&gt;&lt;&lt;set _chance+=10&gt;&gt;&lt;&lt;set _chance2+=10&gt;&gt;&lt;&lt;set _chance3+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.age gte 35&gt;&gt;&lt;&lt;set _tmp+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.warfame lte 15&gt;&gt;&lt;&lt;set _tmp-=15&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.warfame gte 150&gt;&gt;&lt;&lt;set _tmp+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.warfame gte 600&gt;&gt;&lt;&lt;set _tmp+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if _npc.salarynow lt _npc.salary&gt;&gt;&lt;&lt;set _tmp-=10&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _npc.salarynow gte _npc.salary*1.25&gt;&gt;&lt;&lt;set _tmp+=10&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;for _guard range $npc&gt;&gt;
+&lt;&lt;if _guard.dayblock is 16&gt;&gt;
 
-&lt;&lt;if _guard.dayblock is 16 and _guard.bondage is 0&gt;&gt;
-
-&lt;&lt;set _chance to $captainskill&gt;&gt;
-&lt;&lt;set _chance2 to $captainskill&gt;&gt;
-&lt;&lt;set _chance3 to $captainskill&gt;&gt;
-
-&lt;&lt;set _chance-=_croll&gt;&gt;
-&lt;&lt;set _chance2-=_croll2&gt;&gt;
-&lt;&lt;set _chance3-=_croll3&gt;&gt;
-
-&lt;&lt;set _guards+=1&gt;&gt;
+&lt;&lt;set _chance=_tmp-_croll&gt;&gt;
+&lt;&lt;set _chance2=_tmp-_croll2&gt;&gt;
+&lt;&lt;set _chance3=_tmp-_croll3&gt;&gt;
 
 &lt;&lt;if _guard.melee gte 50&gt;&gt;&lt;&lt;set _chance-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _guard.ranged gte 50&gt;&gt;&lt;&lt;set _chance2-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _guard.discipline gte 50&gt;&gt;&lt;&lt;set _chance3-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _guard.traitaggro lte 24&gt;&gt;&lt;&lt;set _chance-=20&gt;&gt;&lt;&lt;set _chance2-=20&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _guards gte 1&gt;&gt;&lt;&lt;set _chance-=_guards&gt;&gt;&lt;&lt;set _chance2-=_guards&gt;&gt;&lt;&lt;set _chance3-=_guards&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _chance gte 1&gt;&gt;&lt;&lt;set _guard.melee=adl(_guard.melee,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _chance2 gte 1&gt;&gt;&lt;&lt;set _guard.ranged=adl(_guard.ranged,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if _chance3 gte 1&gt;&gt;&lt;&lt;set _guard.discipline=adl(_guard.discipline,1,80)&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-
 &lt;&lt;/for&gt;&gt;
 
 
