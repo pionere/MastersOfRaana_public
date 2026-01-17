@@ -219,7 +219,7 @@ A Pics/qpics/aapreach.jpg
 A Pics/qpics/aapreach2.jpg
 A Pics/qpics/cath1..67.jpg + 17b
 M Pics/qpics/priest.jpg
-R Pics/qpics/qstacey_exitbuyi.jpg -> Pics/qpics/qstacey_exitbuy.jpg
+AR Pics/qpics/qstacey_exitbuyi.jpg -> Pics/qpics/qstacey_exitbuy.jpg
 A Pics/Stuff/Materials/apeskull.png
 A Pics/Stuff/Materials/wine.png
 A Pics/Stuff/aplug4butt.png
